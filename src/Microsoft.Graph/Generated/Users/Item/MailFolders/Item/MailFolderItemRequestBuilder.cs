@@ -7,7 +7,9 @@ using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.PermanentDelete;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UserConfigurations;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -50,10 +52,20 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.mailFolder entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations.OperationsRequestBuilder Operations
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateAllMessagesReadState method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder UpdateAllMessagesReadState
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UserConfigurations.UserConfigurationsRequestBuilder UserConfigurations

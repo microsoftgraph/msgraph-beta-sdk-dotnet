@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("audiences", value); }
         }
 #endif
+        /// <summary>Enables the use of claims matching expressions against specified claims. For the list of supported expression syntax and claims, visit the Flexible FIC reference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression? ClaimsMatchingExpression
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression?>("claimsMatchingExpression"); }
+            set { BackingStore?.Set("claimsMatchingExpression", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression ClaimsMatchingExpression
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression>("claimsMatchingExpression"); }
+            set { BackingStore?.Set("claimsMatchingExpression", value); }
+        }
+#endif
         /// <summary>The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "audiences", n => { Audiences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "claimsMatchingExpression", n => { ClaimsMatchingExpression = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression>(global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -126,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("audiences", Audiences);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression>("claimsMatchingExpression", ClaimsMatchingExpression);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("name", Name);

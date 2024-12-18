@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.contract" => new global::Microsoft.Graph.Beta.Models.Contract(),
                 "#microsoft.graph.crossTenantAccessPolicy" => new global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy(),
                 "#microsoft.graph.device" => new global::Microsoft.Graph.Beta.Models.Device(),
+                "#microsoft.graph.deviceTemplate" => new global::Microsoft.Graph.Beta.Models.DeviceTemplate(),
                 "#microsoft.graph.directoryObjectPartnerReference" => new global::Microsoft.Graph.Beta.Models.DirectoryObjectPartnerReference(),
                 "#microsoft.graph.directoryRole" => new global::Microsoft.Graph.Beta.Models.DirectoryRole(),
                 "#microsoft.graph.directoryRoleTemplate" => new global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate(),
@@ -55,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy(),
                 "#microsoft.graph.multiTenantOrganizationMember" => new global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationMember(),
+                "#microsoft.graph.mutualTlsOauthConfiguration" => new global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration(),
                 "#microsoft.graph.organization" => new global::Microsoft.Graph.Beta.Models.Organization(),
                 "#microsoft.graph.orgContact" => new global::Microsoft.Graph.Beta.Models.OrgContact(),
                 "#microsoft.graph.pendingExternalUserProfile" => new global::Microsoft.Graph.Beta.Models.PendingExternalUserProfile(),
@@ -70,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.tokenIssuancePolicy" => new global::Microsoft.Graph.Beta.Models.TokenIssuancePolicy(),
                 "#microsoft.graph.tokenLifetimePolicy" => new global::Microsoft.Graph.Beta.Models.TokenLifetimePolicy(),
                 "#microsoft.graph.trustedCertificateAuthorityAsEntityBase" => new global::Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityAsEntityBase(),
+                "#microsoft.graph.trustedCertificateAuthorityBase" => new global::Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityBase(),
                 "#microsoft.graph.user" => new global::Microsoft.Graph.Beta.Models.User(),
                 _ => new global::Microsoft.Graph.Beta.Models.DirectoryObject(),
             };

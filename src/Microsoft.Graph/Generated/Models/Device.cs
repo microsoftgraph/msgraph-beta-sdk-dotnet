@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
+        /// <summary>The alternativeNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AlternativeNames
+        {
+            get { return BackingStore?.Get<List<string>?>("alternativeNames"); }
+            set { BackingStore?.Set("alternativeNames", value); }
+        }
+#nullable restore
+#else
+        public List<string> AlternativeNames
+        {
+            get { return BackingStore?.Get<List<string>>("alternativeNames"); }
+            set { BackingStore?.Set("alternativeNames", value); }
+        }
+#endif
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +140,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("deviceOwnership"); }
             set { BackingStore?.Set("deviceOwnership", value); }
+        }
+#endif
+        /// <summary>The deviceTemplate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>? DeviceTemplate
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>?>("deviceTemplate"); }
+            set { BackingStore?.Set("deviceTemplate", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate> DeviceTemplate
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>>("deviceTemplate"); }
+            set { BackingStore?.Set("deviceTemplate", value); }
         }
 #endif
         /// <summary>For internal use only.</summary>
@@ -632,6 +664,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
+                { "alternativeNames", n => { AlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "alternativeSecurityIds", n => { AlternativeSecurityIds = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AlternativeSecurityId>(global::Microsoft.Graph.Beta.Models.AlternativeSecurityId.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "approximateLastSignInDateTime", n => { ApproximateLastSignInDateTime = n.GetDateTimeOffsetValue(); } },
                 { "commands", n => { Commands = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Command>(global::Microsoft.Graph.Beta.Models.Command.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -640,6 +673,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceMetadata", n => { DeviceMetadata = n.GetStringValue(); } },
                 { "deviceOwnership", n => { DeviceOwnership = n.GetStringValue(); } },
+                { "deviceTemplate", n => { DeviceTemplate = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceTemplate>(global::Microsoft.Graph.Beta.Models.DeviceTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceVersion", n => { DeviceVersion = n.GetIntValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
@@ -686,6 +720,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("alternativeNames", AlternativeNames);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AlternativeSecurityId>("alternativeSecurityIds", AlternativeSecurityIds);
             writer.WriteDateTimeOffsetValue("approximateLastSignInDateTime", ApproximateLastSignInDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Command>("commands", Commands);
@@ -694,6 +729,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceMetadata", DeviceMetadata);
             writer.WriteStringValue("deviceOwnership", DeviceOwnership);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceTemplate>("deviceTemplate", DeviceTemplate);
             writer.WriteIntValue("deviceVersion", DeviceVersion);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("domainName", DomainName);

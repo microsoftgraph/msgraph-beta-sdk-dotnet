@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
         {
         }
         /// <summary>
-        /// Get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangerestoresession-list-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to mailboxRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The initial status upon creation of the restore session is active. When all the mailboxes are added to the corresponding Exchange restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangerestoresession-post-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to mailboxRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The initial status upon creation of the restore session is active. When all the mailboxes are added to the corresponding Exchange restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.MailboxRestoreArtifactsBulkAdditionRequests.MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters 

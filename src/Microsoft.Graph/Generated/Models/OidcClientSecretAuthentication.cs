@@ -5,51 +5,45 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess
+namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelatedProcess : global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource, IParsable
+    public partial class OidcClientSecretAuthentication : global::Microsoft.Graph.Beta.Models.OidcClientAuthentication, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isSuspicious property</summary>
-        public bool? IsSuspicious
-        {
-            get { return BackingStore?.Get<bool?>("isSuspicious"); }
-            set { BackingStore?.Set("isSuspicious", value); }
-        }
-        /// <summary>The processName property</summary>
+        /// <summary>The client secret obtained from configuring the client application on the external OpenID Connect identity provider. The property includes the client secret and enables the identity provider to use either the clientsecretpost authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessName
+        public string? ClientSecret
         {
-            get { return BackingStore?.Get<string?>("processName"); }
-            set { BackingStore?.Set("processName", value); }
+            get { return BackingStore?.Get<string?>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
         }
 #nullable restore
 #else
-        public string ProcessName
+        public string ClientSecret
         {
-            get { return BackingStore?.Get<string>("processName"); }
-            set { BackingStore?.Set("processName", value); }
+            get { return BackingStore?.Get<string>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedProcess"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.OidcClientSecretAuthentication"/> and sets the default values.
         /// </summary>
-        public RelatedProcess() : base()
+        public OidcClientSecretAuthentication() : base()
         {
-            OdataType = "#microsoft.graph.networkaccess.relatedProcess";
+            OdataType = "#microsoft.graph.oidcClientSecretAuthentication";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedProcess"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.OidcClientSecretAuthentication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedProcess CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.OidcClientSecretAuthentication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedProcess();
+            return new global::Microsoft.Graph.Beta.Models.OidcClientSecretAuthentication();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,8 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isSuspicious", n => { IsSuspicious = n.GetBoolValue(); } },
-                { "processName", n => { ProcessName = n.GetStringValue(); } },
+                { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,8 +64,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isSuspicious", IsSuspicious);
-            writer.WriteStringValue("processName", ProcessName);
+            writer.WriteStringValue("clientSecret", ClientSecret);
         }
     }
 }

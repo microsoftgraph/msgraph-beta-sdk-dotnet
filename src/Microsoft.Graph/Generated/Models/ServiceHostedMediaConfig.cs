@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ServiceHostedMediaConfig : global::Microsoft.Graph.Beta.Models.MediaConfig, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The liveCaptionOptions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.LiveCaptionOptions? LiveCaptionOptions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LiveCaptionOptions?>("liveCaptionOptions"); }
+            set { BackingStore?.Set("liveCaptionOptions", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.LiveCaptionOptions LiveCaptionOptions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LiveCaptionOptions>("liveCaptionOptions"); }
+            set { BackingStore?.Set("liveCaptionOptions", value); }
+        }
+#endif
         /// <summary>The list of media to prefetch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "liveCaptionOptions", n => { LiveCaptionOptions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LiveCaptionOptions>(global::Microsoft.Graph.Beta.Models.LiveCaptionOptions.CreateFromDiscriminatorValue); } },
                 { "preFetchMedia", n => { PreFetchMedia = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MediaInfo>(global::Microsoft.Graph.Beta.Models.MediaInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -64,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LiveCaptionOptions>("liveCaptionOptions", LiveCaptionOptions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MediaInfo>("preFetchMedia", PreFetchMedia);
         }
     }

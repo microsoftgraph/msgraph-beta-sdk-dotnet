@@ -285,6 +285,54 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("verifiedCustomDomainPasswordCredential", value); }
         }
 #endif
+        /// <summary>The wafAllowedHeaders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary? WafAllowedHeaders
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary?>("wafAllowedHeaders"); }
+            set { BackingStore?.Set("wafAllowedHeaders", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary WafAllowedHeaders
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary>("wafAllowedHeaders"); }
+            set { BackingStore?.Set("wafAllowedHeaders", value); }
+        }
+#endif
+        /// <summary>The wafIpRanges property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IpRange>? WafIpRanges
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IpRange>?>("wafIpRanges"); }
+            set { BackingStore?.Set("wafIpRanges", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IpRange> WafIpRanges
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IpRange>>("wafIpRanges"); }
+            set { BackingStore?.Set("wafIpRanges", value); }
+        }
+#endif
+        /// <summary>The wafProvider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WafProvider
+        {
+            get { return BackingStore?.Get<string?>("wafProvider"); }
+            set { BackingStore?.Set("wafProvider", value); }
+        }
+#nullable restore
+#else
+        public string WafProvider
+        {
+            get { return BackingStore?.Get<string>("wafProvider"); }
+            set { BackingStore?.Set("wafProvider", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.OnPremisesPublishing"/> and sets the default values.
         /// </summary>
@@ -335,6 +383,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
                 { "verifiedCustomDomainKeyCredential", n => { VerifiedCustomDomainKeyCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue); } },
                 { "verifiedCustomDomainPasswordCredential", n => { VerifiedCustomDomainPasswordCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PasswordCredential>(global::Microsoft.Graph.Beta.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
+                { "wafAllowedHeaders", n => { WafAllowedHeaders = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary>(global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary.CreateFromDiscriminatorValue); } },
+                { "wafIpRanges", n => { WafIpRanges = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IpRange>(global::Microsoft.Graph.Beta.Models.IpRange.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "wafProvider", n => { WafProvider = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -368,6 +419,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.KeyCredential>("verifiedCustomDomainKeyCredential", VerifiedCustomDomainKeyCredential);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PasswordCredential>("verifiedCustomDomainPasswordCredential", VerifiedCustomDomainPasswordCredential);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary>("wafAllowedHeaders", WafAllowedHeaders);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IpRange>("wafIpRanges", WafIpRanges);
+            writer.WriteStringValue("wafProvider", WafProvider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -5,7 +5,9 @@ using Microsoft.Graph.Beta.Me.MailFolders.Item.Copy;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.MessageRules;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Move;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Operations;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.PermanentDelete;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.UpdateAllMessagesReadState;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.UserConfigurations;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -50,10 +52,20 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.mailFolder entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.MailFolders.Item.Operations.OperationsRequestBuilder Operations
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateAllMessagesReadState method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder UpdateAllMessagesReadState
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.</summary>
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.UserConfigurations.UserConfigurationsRequestBuilder UserConfigurations
@@ -124,8 +136,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailFolder>(requestInfo, global::Microsoft.Graph.Beta.Models.MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of mailFolder object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-beta" />
+        /// Update the writable properties of a mailSearchFolder object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +200,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of mailFolder object.
+        /// Update the writable properties of a mailSearchFolder object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

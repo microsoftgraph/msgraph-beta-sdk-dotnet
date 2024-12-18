@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcReviewStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessTier property</summary>
+        /// <summary>The blob access tier of the Azure Storage account in which the Cloud PC snapshot is saved with. Possible values are hot, cool, cold, and archive, default value is hot.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier? AccessTier
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier?>("accessTier"); }

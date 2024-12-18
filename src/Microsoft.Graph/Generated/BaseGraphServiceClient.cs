@@ -23,6 +23,7 @@ using Microsoft.Graph.Beta.AuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.BookingBusinesses;
 using Microsoft.Graph.Beta.BookingCurrencies;
 using Microsoft.Graph.Beta.BusinessFlowTemplates;
+using Microsoft.Graph.Beta.CertificateAuthorities;
 using Microsoft.Graph.Beta.CertificateBasedAuthConfiguration;
 using Microsoft.Graph.Beta.Chats;
 using Microsoft.Graph.Beta.Commands;
@@ -118,6 +119,7 @@ using Microsoft.Graph.Beta.TeamTemplateDefinition;
 using Microsoft.Graph.Beta.Teams;
 using Microsoft.Graph.Beta.TeamsTemplates;
 using Microsoft.Graph.Beta.Teamwork;
+using Microsoft.Graph.Beta.Templates;
 using Microsoft.Graph.Beta.TenantRelationships;
 using Microsoft.Graph.Beta.TermStore;
 using Microsoft.Graph.Beta.ThreatSubmission;
@@ -248,6 +250,11 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.BusinessFlowTemplates.BusinessFlowTemplatesRequestBuilder BusinessFlowTemplates
         {
             get => new global::Microsoft.Graph.Beta.BusinessFlowTemplates.BusinessFlowTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the certificateAuthorityPath singleton.</summary>
+        public global::Microsoft.Graph.Beta.CertificateAuthorities.CertificateAuthoritiesRequestBuilder CertificateAuthorities
+        {
+            get => new global::Microsoft.Graph.Beta.CertificateAuthorities.CertificateAuthoritiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of certificateBasedAuthConfiguration entities.</summary>
         public global::Microsoft.Graph.Beta.CertificateBasedAuthConfiguration.CertificateBasedAuthConfigurationRequestBuilder CertificateBasedAuthConfiguration
@@ -698,6 +705,11 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.Teamwork.TeamworkRequestBuilder Teamwork
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.TeamworkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the template singleton.</summary>
+        public global::Microsoft.Graph.Beta.Templates.TemplatesRequestBuilder Templates
+        {
+            get => new global::Microsoft.Graph.Beta.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
         public global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder TenantRelationships
