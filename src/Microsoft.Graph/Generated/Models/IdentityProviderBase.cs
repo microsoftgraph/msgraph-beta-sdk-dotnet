@@ -42,6 +42,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.appleManagedIdentityProvider" => new global::Microsoft.Graph.Beta.Models.AppleManagedIdentityProvider(),
                 "#microsoft.graph.builtInIdentityProvider" => new global::Microsoft.Graph.Beta.Models.BuiltInIdentityProvider(),
                 "#microsoft.graph.internalDomainFederation" => new global::Microsoft.Graph.Beta.Models.InternalDomainFederation(),
+                "#microsoft.graph.oidcIdentityProvider" => new global::Microsoft.Graph.Beta.Models.OidcIdentityProvider(),
                 "#microsoft.graph.openIdConnectIdentityProvider" => new global::Microsoft.Graph.Beta.Models.OpenIdConnectIdentityProvider(),
                 "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new global::Microsoft.Graph.Beta.Models.SamlOrWsFedExternalDomainFederation(),
                 "#microsoft.graph.samlOrWsFedProvider" => new global::Microsoft.Graph.Beta.Models.SamlOrWsFedProvider(),

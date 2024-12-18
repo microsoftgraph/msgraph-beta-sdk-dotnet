@@ -104,6 +104,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
+        /// <summary>The operations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MailFolderOperation>? Operations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailFolderOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MailFolderOperation> Operations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailFolderOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#endif
         /// <summary>The unique identifier for the mailFolder&apos;s parent mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -210,6 +226,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "messageRules", n => { MessageRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MessageRule>(global::Microsoft.Graph.Beta.Models.MessageRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Message>(global::Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>(global::Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailFolderOperation>(global::Microsoft.Graph.Beta.Models.MailFolderOperation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
                 { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>(global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totalItemCount", n => { TotalItemCount = n.GetIntValue(); } },
@@ -233,6 +250,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MessageRule>("messageRules", MessageRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Message>("messages", Messages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailFolderOperation>("operations", Operations);
             writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteIntValue("totalItemCount", TotalItemCount);

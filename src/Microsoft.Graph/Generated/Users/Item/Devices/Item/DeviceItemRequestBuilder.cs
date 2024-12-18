@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.Commands;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.DeviceTemplate;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.Extensions;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.MemberOf;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.Commands.CommandsRequestBuilder Commands
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.Commands.CommandsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deviceTemplate property of the microsoft.graph.device entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.DeviceTemplate.DeviceTemplateRequestBuilder DeviceTemplate
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.DeviceTemplate.DeviceTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.device entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.Extensions.ExtensionsRequestBuilder Extensions

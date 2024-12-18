@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         {
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to siteRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to siteRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifactsBulkAdditionRequests.SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters 

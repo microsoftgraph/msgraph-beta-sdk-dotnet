@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteRestoreArtifacts", value); }
         }
 #endif
-        /// <summary>The siteRestoreArtifactsBulkAdditionRequests property</summary>
+        /// <summary>A collection of SharePoint site URLs and destination details that can be used to restore SharePoint sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest>? SiteRestoreArtifactsBulkAdditionRequests

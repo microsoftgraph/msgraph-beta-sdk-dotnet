@@ -21,6 +21,7 @@ using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
 using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
 using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscriptionId;
+using Microsoft.Graph.Beta.DirectoryNamespace.Templates;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -133,6 +134,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public global::Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the templates property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.TemplatesRequestBuilder Templates
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.DirectoryRequestBuilder"/> and sets the default values.

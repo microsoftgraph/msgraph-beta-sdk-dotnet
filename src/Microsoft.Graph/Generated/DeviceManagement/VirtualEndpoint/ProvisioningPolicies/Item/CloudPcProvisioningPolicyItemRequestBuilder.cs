@@ -3,6 +3,9 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplyActionResult;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.SchedulePolicyApplyTask;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -35,6 +38,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrievePolicyApplyActionResult method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplyActionResult.RetrievePolicyApplyActionResultRequestBuilder RetrievePolicyApplyActionResult
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplyActionResult.RetrievePolicyApplyActionResultRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrievePolicyApplySchedule method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule.RetrievePolicyApplyScheduleRequestBuilder RetrievePolicyApplySchedule
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule.RetrievePolicyApplyScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the schedulePolicyApplyTask method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.SchedulePolicyApplyTask.SchedulePolicyApplyTaskRequestBuilder SchedulePolicyApplyTask
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.SchedulePolicyApplyTask.SchedulePolicyApplyTaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.CloudPcProvisioningPolicyItemRequestBuilder"/> and sets the default values.

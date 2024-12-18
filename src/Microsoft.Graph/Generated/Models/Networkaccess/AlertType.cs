@@ -44,5 +44,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         #pragma warning disable CS1591
         Malware,
         #pragma warning restore CS1591
+        [EnumMember(Value = "patientZero")]
+        #pragma warning disable CS1591
+        PatientZero,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dlp")]
+        #pragma warning disable CS1591
+        Dlp,
+        #pragma warning restore CS1591
     }
 }

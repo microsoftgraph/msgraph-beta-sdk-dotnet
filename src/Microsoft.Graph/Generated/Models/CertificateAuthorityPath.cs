@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateBasedApplicationConfigurations", value); }
         }
 #endif
+        /// <summary>The mutualTlsOauthConfigurations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>? MutualTlsOauthConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>?>("mutualTlsOauthConfigurations"); }
+            set { BackingStore?.Set("mutualTlsOauthConfigurations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration> MutualTlsOauthConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>>("mutualTlsOauthConfigurations"); }
+            set { BackingStore?.Set("mutualTlsOauthConfigurations", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "certificateBasedApplicationConfigurations", n => { CertificateBasedApplicationConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration>(global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mutualTlsOauthConfigurations", n => { MutualTlsOauthConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>(global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration>("certificateBasedApplicationConfigurations", CertificateBasedApplicationConfigurations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>("mutualTlsOauthConfigurations", MutualTlsOauthConfigurations);
         }
     }
 }

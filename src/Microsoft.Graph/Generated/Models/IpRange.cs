@@ -8,10 +8,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    /// <summary>
+    /// IP range base class for representing IPV4, IPV6 address ranges
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class IpRange : IAdditionalDataHolder, IBackedModel, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData

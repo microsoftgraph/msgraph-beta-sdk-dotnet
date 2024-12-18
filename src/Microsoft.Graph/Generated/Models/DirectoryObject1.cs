@@ -316,6 +316,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
+        /// <summary>The templates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Template? Templates
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Template?>("templates"); }
+            set { BackingStore?.Set("templates", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Template Templates
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Template>("templates"); }
+            set { BackingStore?.Set("templates", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -353,6 +369,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "recommendations", n => { Recommendations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Recommendation>(global::Microsoft.Graph.Beta.Models.Recommendation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sharedEmailDomains", n => { SharedEmailDomains = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedEmailDomain>(global::Microsoft.Graph.Beta.Models.SharedEmailDomain.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CompanySubscription>(global::Microsoft.Graph.Beta.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "templates", n => { Templates = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Template>(global::Microsoft.Graph.Beta.Models.Template.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -382,6 +399,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Recommendation>("recommendations", Recommendations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedEmailDomain>("sharedEmailDomains", SharedEmailDomains);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CompanySubscription>("subscriptions", Subscriptions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Template>("templates", Templates);
         }
     }
 }

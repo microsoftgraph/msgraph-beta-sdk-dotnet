@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
+        /// <summary>The externalRegistrationInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation? ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation?>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#endif
         /// <summary>Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,6 +150,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "attendanceIntervals", n => { AttendanceIntervals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceInterval>(global::Microsoft.Graph.Beta.Models.AttendanceInterval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "externalRegistrationInformation", n => { ExternalRegistrationInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>(global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "registrantId", n => { RegistrantId = n.GetStringValue(); } },
                 { "registrationId", n => { RegistrationId = n.GetStringValue(); } },
@@ -151,6 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation", ExternalRegistrationInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("identity", Identity);
             writer.WriteStringValue("registrantId", RegistrantId);
             writer.WriteStringValue("registrationId", RegistrationId);

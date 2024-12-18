@@ -34,6 +34,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
+        /// <summary>The external information for a virtual event registration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation? ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation?>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#endif
         /// <summary>First name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,6 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "cancelationDateTime", n => { CancelationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "externalRegistrationInformation", n => { ExternalRegistrationInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>(global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation.CreateFromDiscriminatorValue); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
@@ -199,6 +216,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("cancelationDateTime", CancelationDateTime);
             writer.WriteStringValue("email", Email);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation", ExternalRegistrationInformation);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);

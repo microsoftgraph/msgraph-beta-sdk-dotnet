@@ -61,7 +61,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 "#microsoft.graph.networkaccess.relatedFile" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedFile(),
                 "#microsoft.graph.networkaccess.relatedFileHash" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedFileHash(),
                 "#microsoft.graph.networkaccess.relatedMalware" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedMalware(),
-                "#microsoft.graph.networkaccess.relatedProcess" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedProcess(),
                 "#microsoft.graph.networkaccess.relatedRemoteNetwork" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedRemoteNetwork(),
                 "#microsoft.graph.networkaccess.relatedTenant" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedTenant(),
                 "#microsoft.graph.networkaccess.relatedThreatIntelligence" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedThreatIntelligence(),

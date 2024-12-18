@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Devices.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.Devices.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Devices.Item.Commands;
+using Microsoft.Graph.Beta.Devices.Item.DeviceTemplate;
 using Microsoft.Graph.Beta.Devices.Item.Extensions;
 using Microsoft.Graph.Beta.Devices.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Devices.Item.GetMemberObjects;
@@ -44,6 +45,11 @@ namespace Microsoft.Graph.Beta.Devices.Item
         public global::Microsoft.Graph.Beta.Devices.Item.Commands.CommandsRequestBuilder Commands
         {
             get => new global::Microsoft.Graph.Beta.Devices.Item.Commands.CommandsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deviceTemplate property of the microsoft.graph.device entity.</summary>
+        public global::Microsoft.Graph.Beta.Devices.Item.DeviceTemplate.DeviceTemplateRequestBuilder DeviceTemplate
+        {
+            get => new global::Microsoft.Graph.Beta.Devices.Item.DeviceTemplate.DeviceTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.device entity.</summary>
         public global::Microsoft.Graph.Beta.Devices.Item.Extensions.ExtensionsRequestBuilder Extensions

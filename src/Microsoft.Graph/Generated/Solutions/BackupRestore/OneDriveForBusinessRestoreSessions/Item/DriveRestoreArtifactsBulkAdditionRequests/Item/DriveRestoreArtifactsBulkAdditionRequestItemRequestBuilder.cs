@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         {
         }
         /// <summary>
-        /// Delete navigation property driveRestoreArtifactsBulkAdditionRequests for solutions
+        /// Delete a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driverestoreartifactsbulkadditionrequest-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a driveRestoreArtifactsBulkAdditionRequest object by its id, associated with a oneDriveForBusinessRestoreSession.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driverestoreartifactsbulkadditionrequest-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>(requestInfo, global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property driveRestoreArtifactsBulkAdditionRequests for solutions
+        /// Delete a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             return requestInfo;
         }
         /// <summary>
-        /// Get driveRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a driveRestoreArtifactsBulkAdditionRequest object by its id, associated with a oneDriveForBusinessRestoreSession.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         {
         }
         /// <summary>
-        /// Get driveRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a driveRestoreArtifactsBulkAdditionRequest object by its id, associated with a oneDriveForBusinessRestoreSession.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveRestoreArtifactsBulkAdditionRequestItemRequestBuilderGetQueryParameters 

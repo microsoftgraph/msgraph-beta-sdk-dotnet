@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Publish;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SessionsWithJoinWebUrl;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SetExternalEventInformation;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -42,6 +43,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.SessionsRequestBuilder Sessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setExternalEventInformation method.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SetExternalEventInformation.SetExternalEventInformationRequestBuilder SetExternalEventInformation
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SetExternalEventInformation.SetExternalEventInformationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.VirtualEventItemRequestBuilder"/> and sets the default values.
