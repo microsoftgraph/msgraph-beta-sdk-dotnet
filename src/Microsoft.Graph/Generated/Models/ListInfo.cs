@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>If true, indicates that content types are enabled for this list.</summary>
+        /// <summary>If true, it indicates that content types are enabled for this list.</summary>
         public bool? ContentTypesEnabled
         {
             get { return BackingStore?.Get<bool?>("contentTypesEnabled"); }
             set { BackingStore?.Set("contentTypesEnabled", value); }
         }
-        /// <summary>If true, indicates that the list isn&apos;t normally visible in the SharePoint user experience.</summary>
+        /// <summary>If true, it indicates that the list isn&apos;t normally visible in the SharePoint user experience.</summary>
         public bool? Hidden
         {
             get { return BackingStore?.Get<bool?>("hidden"); }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.</summary>
+        /// <summary>Represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Template

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>true for persistent session. false for non-persistent session (view mode)</summary>
+        /// <summary>Set to true for persistent session. Set to false for non-persistent session (view mode).</summary>
         public bool? PersistChanges
         {
             get { return BackingStore?.Get<bool?>("persistChanges"); }

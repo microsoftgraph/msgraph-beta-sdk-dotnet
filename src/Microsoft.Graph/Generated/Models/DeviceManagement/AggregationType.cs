@@ -28,5 +28,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "durationInMinutes")]
+        #pragma warning disable CS1591
+        DurationInMinutes,
+        #pragma warning restore CS1591
     }
 }

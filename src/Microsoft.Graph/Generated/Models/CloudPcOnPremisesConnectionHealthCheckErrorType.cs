@@ -84,6 +84,10 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         EndpointConnectivityCheckLocaleUrlNotAllowListed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "endpointConnectivityCheckVMAgentEndPointCommunicationError")]
+        #pragma warning disable CS1591
+        EndpointConnectivityCheckVMAgentEndPointCommunicationError,
+        #pragma warning restore CS1591
         [EnumMember(Value = "endpointConnectivityCheckUnknownError")]
         #pragma warning disable CS1591
         EndpointConnectivityCheckUnknownError,

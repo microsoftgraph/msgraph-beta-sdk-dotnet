@@ -71,6 +71,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Indicates whether the client allows the end user to initiate a disaster recovery activation. True indicates that the client includes the option for the end user to activate Backup Cloud PC. When false, the end user doesn&apos;t have the option to activate disaster recovery. The default value is false. Currently, only premium disaster recovery is supported.</summary>
+        public bool? UserInitiatedDisasterRecoveryAllowed
+        {
+            get { return BackingStore?.Get<bool?>("userInitiatedDisasterRecoveryAllowed"); }
+            set { BackingStore?.Set("userInitiatedDisasterRecoveryAllowed", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting"/> and sets the default values.
         /// </summary>
@@ -102,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "disasterRecoveryType", n => { DisasterRecoveryType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType>(); } },
                 { "maintainCrossRegionRestorePointEnabled", n => { MaintainCrossRegionRestorePointEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "userInitiatedDisasterRecoveryAllowed", n => { UserInitiatedDisasterRecoveryAllowed = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -116,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType>("disasterRecoveryType", DisasterRecoveryType);
             writer.WriteBoolValue("maintainCrossRegionRestorePointEnabled", MaintainCrossRegionRestorePointEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteBoolValue("userInitiatedDisasterRecoveryAllowed", UserInitiatedDisasterRecoveryAllowed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

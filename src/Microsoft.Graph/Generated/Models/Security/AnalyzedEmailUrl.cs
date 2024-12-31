@@ -69,6 +69,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The tenantAllowBlockListDetailInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenantAllowBlockListDetailInfo
+        {
+            get { return BackingStore?.Get<string?>("tenantAllowBlockListDetailInfo"); }
+            set { BackingStore?.Set("tenantAllowBlockListDetailInfo", value); }
+        }
+#nullable restore
+#else
+        public string TenantAllowBlockListDetailInfo
+        {
+            get { return BackingStore?.Get<string>("tenantAllowBlockListDetailInfo"); }
+            set { BackingStore?.Set("tenantAllowBlockListDetailInfo", value); }
+        }
+#endif
         /// <summary>The type of threat associated with the URL. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ThreatType? ThreatType
         {
@@ -120,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "detectionMethod", n => { DetectionMethod = n.GetStringValue(); } },
                 { "detonationDetails", n => { DetonationDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationDetails>(global::Microsoft.Graph.Beta.Models.Security.DetonationDetails.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "tenantAllowBlockListDetailInfo", n => { TenantAllowBlockListDetailInfo = n.GetStringValue(); } },
                 { "threatType", n => { ThreatType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.ThreatType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -134,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("detectionMethod", DetectionMethod);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationDetails>("detonationDetails", DetonationDetails);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("tenantAllowBlockListDetailInfo", TenantAllowBlockListDetailInfo);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.ThreatType>("threatType", ThreatType);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

@@ -12,9 +12,9 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRawRemote
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports;
@@ -86,11 +86,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports.GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the getSharedUseLicenseUsageReport method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the getTotalAggregatedRemoteConnectionReports method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports.GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports
         {
@@ -100,6 +95,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder RetrieveBulkActionStatusReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcTroubleshootReports method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports.RetrieveCloudPcTroubleshootReportsRequestBuilder RetrieveCloudPcTroubleshootReports
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports.RetrieveCloudPcTroubleshootReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveConnectionQualityReports method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports.RetrieveConnectionQualityReportsRequestBuilder RetrieveConnectionQualityReports

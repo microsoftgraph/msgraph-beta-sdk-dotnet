@@ -20,14 +20,6 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         TotalAggregatedRemoteConnectionReports,
         #pragma warning restore CS1591
-        [EnumMember(Value = "sharedUseLicenseUsageReport")]
-        #pragma warning disable CS1591
-        SharedUseLicenseUsageReport,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "sharedUseLicenseUsageRealTimeReport")]
-        #pragma warning disable CS1591
-        SharedUseLicenseUsageRealTimeReport,
-        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
@@ -99,6 +91,22 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "bulkActionStatusReport")]
         #pragma warning disable CS1591
         BulkActionStatusReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "troubleshootDetailsReport")]
+        #pragma warning disable CS1591
+        TroubleshootDetailsReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "troubleshootTrendCountReport")]
+        #pragma warning disable CS1591
+        TroubleshootTrendCountReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "troubleshootRegionalReport")]
+        #pragma warning disable CS1591
+        TroubleshootRegionalReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "troubleshootIssueCountReport")]
+        #pragma warning disable CS1591
+        TroubleshootIssueCountReport,
         #pragma warning restore CS1591
     }
 }

@@ -117,6 +117,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signIns", value); }
         }
 #endif
+        /// <summary>The signUps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>? SignUps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>?>("signUps"); }
+            set { BackingStore?.Set("signUps", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp> SignUps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>>("signUps"); }
+            set { BackingStore?.Set("signUps", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AuditLogRoot"/> and sets the default values.
         /// </summary>
@@ -149,6 +165,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>(global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signIns", n => { SignIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignIn>(global::Microsoft.Graph.Beta.Models.SignIn.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "signUps", n => { SignUps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>(global::Microsoft.Graph.Beta.Models.SelfServiceSignUp.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -164,6 +181,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>("provisioning", Provisioning);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignIn>("signIns", SignIns);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>("signUps", SignUps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

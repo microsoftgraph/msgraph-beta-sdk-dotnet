@@ -146,6 +146,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The frontlineCloudPcAvailability property</summary>
+        public global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability? FrontlineCloudPcAvailability
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability?>("frontlineCloudPcAvailability"); }
+            set { BackingStore?.Set("frontlineCloudPcAvailability", value); }
+        }
         /// <summary>The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? GracePeriodEndDateTime
         {
@@ -461,6 +467,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability>(global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
                 { "diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "frontlineCloudPcAvailability", n => { FrontlineCloudPcAvailability = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability>(); } },
                 { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>(global::Microsoft.Graph.Beta.Models.CloudPcLoginResult.CreateFromDiscriminatorValue); } },
@@ -503,6 +510,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability", DisasterRecoveryCapability);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState>("diskEncryptionState", DiskEncryptionState);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability>("frontlineCloudPcAvailability", FrontlineCloudPcAvailability);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>("lastLoginResult", LastLoginResult);

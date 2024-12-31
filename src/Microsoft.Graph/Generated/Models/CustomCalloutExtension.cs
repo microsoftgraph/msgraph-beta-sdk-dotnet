@@ -111,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.identityGovernance.customTaskExtension" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtension(),
                 "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionStartCustomExtension(),
                 "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitCustomExtension(),
+                "#microsoft.graph.onOtpSendCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnOtpSendCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension(),
                 _ => new global::Microsoft.Graph.Beta.Models.CustomCalloutExtension(),
             };

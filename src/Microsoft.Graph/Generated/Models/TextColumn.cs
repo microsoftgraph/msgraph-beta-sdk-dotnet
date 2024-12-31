@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The type of text being stored. Must be one of plain or richText</summary>
+        /// <summary>The type of text being stored. Must be one of plain or richText.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TextType

@@ -27,6 +27,38 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The compromiseIndicators property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>? CompromiseIndicators
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>?>("compromiseIndicators"); }
+            set { BackingStore?.Set("compromiseIndicators", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator> CompromiseIndicators
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>>("compromiseIndicators"); }
+            set { BackingStore?.Set("compromiseIndicators", value); }
+        }
+#endif
+        /// <summary>The detonationBehaviourDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails? DetonationBehaviourDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails?>("detonationBehaviourDetails"); }
+            set { BackingStore?.Set("detonationBehaviourDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails DetonationBehaviourDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails>("detonationBehaviourDetails"); }
+            set { BackingStore?.Set("detonationBehaviourDetails", value); }
+        }
+#endif
         /// <summary>The chain of detonation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +89,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetonationObservables>("detonationObservables"); }
             set { BackingStore?.Set("detonationObservables", value); }
+        }
+#endif
+        /// <summary>The detonationScreenshotUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetonationScreenshotUri
+        {
+            get { return BackingStore?.Get<string?>("detonationScreenshotUri"); }
+            set { BackingStore?.Set("detonationScreenshotUri", value); }
+        }
+#nullable restore
+#else
+        public string DetonationScreenshotUri
+        {
+            get { return BackingStore?.Get<string>("detonationScreenshotUri"); }
+            set { BackingStore?.Set("detonationScreenshotUri", value); }
         }
 #endif
         /// <summary>The verdict of the detonation.</summary>
@@ -134,8 +182,11 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "analysisDateTime", n => { AnalysisDateTime = n.GetDateTimeOffsetValue(); } },
+                { "compromiseIndicators", n => { CompromiseIndicators = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>(global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "detonationBehaviourDetails", n => { DetonationBehaviourDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails>(global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails.CreateFromDiscriminatorValue); } },
                 { "detonationChain", n => { DetonationChain = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationChain>(global::Microsoft.Graph.Beta.Models.Security.DetonationChain.CreateFromDiscriminatorValue); } },
                 { "detonationObservables", n => { DetonationObservables = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationObservables>(global::Microsoft.Graph.Beta.Models.Security.DetonationObservables.CreateFromDiscriminatorValue); } },
+                { "detonationScreenshotUri", n => { DetonationScreenshotUri = n.GetStringValue(); } },
                 { "detonationVerdict", n => { DetonationVerdict = n.GetStringValue(); } },
                 { "detonationVerdictReason", n => { DetonationVerdictReason = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -149,8 +200,11 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("analysisDateTime", AnalysisDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>("compromiseIndicators", CompromiseIndicators);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails>("detonationBehaviourDetails", DetonationBehaviourDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationChain>("detonationChain", DetonationChain);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationObservables>("detonationObservables", DetonationObservables);
+            writer.WriteStringValue("detonationScreenshotUri", DetonationScreenshotUri);
             writer.WriteStringValue("detonationVerdict", DetonationVerdict);
             writer.WriteStringValue("detonationVerdictReason", DetonationVerdictReason);
             writer.WriteStringValue("@odata.type", OdataType);

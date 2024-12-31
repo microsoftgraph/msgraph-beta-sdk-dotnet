@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.</summary>
+        /// <summary>If you&apos;re configuring a traffic manager in front of multiple app proxy applications, this user-friendly URL points to the traffic manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateUrl
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applicationServerTimeout", value); }
         }
 #endif
-        /// <summary>Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.</summary>
+        /// <summary>System-defined value that indicates whether this application is an application proxy configured application. The possible values are quickaccessapp and nonwebapp. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationType
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationType?>("externalAuthenticationType"); }
             set { BackingStore?.Set("externalAuthenticationType", value); }
         }
-        /// <summary>The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.</summary>
+        /// <summary>The published external URL for the application. For example, https://intranet-contoso.msappproxy.net/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalUrl
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("internalUrl", value); }
         }
 #endif
-        /// <summary>The isAccessibleViaZTNAClient property</summary>
+        /// <summary>Indicates whether the application is accessible via a Global Secure Access client on a managed device.</summary>
         public bool? IsAccessibleViaZTNAClient
         {
             get { return BackingStore?.Get<bool?>("isAccessibleViaZTNAClient"); }
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isBackendCertificateValidationEnabled"); }
             set { BackingStore?.Set("isBackendCertificateValidationEnabled", value); }
         }
-        /// <summary>The isDnsResolutionEnabled property</summary>
+        /// <summary>Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.</summary>
         public bool? IsDnsResolutionEnabled
         {
             get { return BackingStore?.Get<bool?>("isDnsResolutionEnabled"); }
@@ -231,7 +231,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
 #endif
-        /// <summary>The useAlternateUrlForTranslationAndRedirect property</summary>
+        /// <summary>Indicates whether the application should use alternateUrl instead of externalUrl.</summary>
         public bool? UseAlternateUrlForTranslationAndRedirect
         {
             get { return BackingStore?.Get<bool?>("useAlternateUrlForTranslationAndRedirect"); }

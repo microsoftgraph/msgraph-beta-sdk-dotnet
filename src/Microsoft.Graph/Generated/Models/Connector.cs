@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The version of the connector.</summary>
+        /// <summary>The version of the connector. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version

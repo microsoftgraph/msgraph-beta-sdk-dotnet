@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomAuthenticationExtension : global::Microsoft.Graph.Beta.Models.CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The behaviorOnError property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError? BehaviorOnError
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError?>("behaviorOnError"); }
+            set { BackingStore?.Set("behaviorOnError", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError BehaviorOnError
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError>("behaviorOnError"); }
+            set { BackingStore?.Set("behaviorOnError", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension"/> and sets the default values.
         /// </summary>
@@ -32,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionStartCustomExtension(),
                 "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitCustomExtension(),
+                "#microsoft.graph.onOtpSendCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnOtpSendCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension(),
                 _ => new global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension(),
             };
@@ -44,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "behaviorOnError", n => { BehaviorOnError = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError>(global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -54,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError>("behaviorOnError", BehaviorOnError);
         }
     }
 }

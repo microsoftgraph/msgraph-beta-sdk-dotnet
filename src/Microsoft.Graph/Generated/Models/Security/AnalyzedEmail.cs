@@ -44,12 +44,6 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
-        /// <summary>The number of attachments in the email.</summary>
-        public int? AttachmentsCount
-        {
-            get { return BackingStore?.Get<int?>("attachmentsCount"); }
-            set { BackingStore?.Set("attachmentsCount", value); }
-        }
         /// <summary>The authentication details associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +74,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("bulkComplaintLevel"); }
             set { BackingStore?.Set("bulkComplaintLevel", value); }
+        }
+#endif
+        /// <summary>The clientType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientType
+        {
+            get { return BackingStore?.Get<string?>("clientType"); }
+            set { BackingStore?.Set("clientType", value); }
+        }
+#nullable restore
+#else
+        public string ClientType
+        {
+            get { return BackingStore?.Get<string>("clientType"); }
+            set { BackingStore?.Set("clientType", value); }
         }
 #endif
         /// <summary>Provides context of the email.</summary>
@@ -136,6 +146,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("distributionList", value); }
         }
 #endif
+        /// <summary>The dlpRules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo>? DlpRules
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo>?>("dlpRules"); }
+            set { BackingStore?.Set("dlpRules", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo> DlpRules
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo>>("dlpRules"); }
+            set { BackingStore?.Set("dlpRules", value); }
+        }
+#endif
         /// <summary>The identifier for the group of similar emails clustered based on heuristic analysis of their content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,6 +192,38 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>>("exchangeTransportRules"); }
             set { BackingStore?.Set("exchangeTransportRules", value); }
+        }
+#endif
+        /// <summary>The forwardingDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ForwardingDetail
+        {
+            get { return BackingStore?.Get<string?>("forwardingDetail"); }
+            set { BackingStore?.Set("forwardingDetail", value); }
+        }
+#nullable restore
+#else
+        public string ForwardingDetail
+        {
+            get { return BackingStore?.Get<string>("forwardingDetail"); }
+            set { BackingStore?.Set("forwardingDetail", value); }
+        }
+#endif
+        /// <summary>The inboundConnectorFormattedName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InboundConnectorFormattedName
+        {
+            get { return BackingStore?.Get<string?>("inboundConnectorFormattedName"); }
+            set { BackingStore?.Set("inboundConnectorFormattedName", value); }
+        }
+#nullable restore
+#else
+        public string InboundConnectorFormattedName
+        {
+            get { return BackingStore?.Get<string>("inboundConnectorFormattedName"); }
+            set { BackingStore?.Set("inboundConnectorFormattedName", value); }
         }
 #endif
         /// <summary>A public-facing identifier for the email that is sent. The message ID is in the format specified by RFC2822.</summary>
@@ -318,6 +376,54 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("policyAction", value); }
         }
 #endif
+        /// <summary>The policyType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyType
+        {
+            get { return BackingStore?.Get<string?>("policyType"); }
+            set { BackingStore?.Set("policyType", value); }
+        }
+#nullable restore
+#else
+        public string PolicyType
+        {
+            get { return BackingStore?.Get<string>("policyType"); }
+            set { BackingStore?.Set("policyType", value); }
+        }
+#endif
+        /// <summary>The primaryOverrideSource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrimaryOverrideSource
+        {
+            get { return BackingStore?.Get<string?>("primaryOverrideSource"); }
+            set { BackingStore?.Set("primaryOverrideSource", value); }
+        }
+#nullable restore
+#else
+        public string PrimaryOverrideSource
+        {
+            get { return BackingStore?.Get<string>("primaryOverrideSource"); }
+            set { BackingStore?.Set("primaryOverrideSource", value); }
+        }
+#endif
+        /// <summary>The recipientDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail? RecipientDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail?>("recipientDetail"); }
+            set { BackingStore?.Set("recipientDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail RecipientDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail>("recipientDetail"); }
+            set { BackingStore?.Set("recipientDetail", value); }
+        }
+#endif
         /// <summary>Contains the email address of the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -404,6 +510,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("subject", value); }
         }
 #endif
+        /// <summary>The threatDetectionDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>? ThreatDetectionDetails
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>?>("threatDetectionDetails"); }
+            set { BackingStore?.Set("threatDetectionDetails", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail> ThreatDetectionDetails
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>>("threatDetectionDetails"); }
+            set { BackingStore?.Set("threatDetectionDetails", value); }
+        }
+#endif
         /// <summary>Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -418,6 +540,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ThreatType?>>("threatTypes"); }
             set { BackingStore?.Set("threatTypes", value); }
+        }
+#endif
+        /// <summary>The timelineEvents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>? TimelineEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>?>("timelineEvents"); }
+            set { BackingStore?.Set("timelineEvents", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent> TimelineEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>>("timelineEvents"); }
+            set { BackingStore?.Set("timelineEvents", value); }
         }
 #endif
         /// <summary>A collection of the URLs in the email.</summary>
@@ -436,12 +574,6 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("urls", value); }
         }
 #endif
-        /// <summary>The number of URLs in the email.</summary>
-        public int? UrlsCount
-        {
-            get { return BackingStore?.Get<int?>("urlsCount"); }
-            set { BackingStore?.Set("urlsCount", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -462,15 +594,18 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "alertIds", n => { AlertIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "attachmentsCount", n => { AttachmentsCount = n.GetIntValue(); } },
                 { "authenticationDetails", n => { AuthenticationDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail.CreateFromDiscriminatorValue); } },
                 { "bulkComplaintLevel", n => { BulkComplaintLevel = n.GetStringValue(); } },
+                { "clientType", n => { ClientType = n.GetStringValue(); } },
                 { "contexts", n => { Contexts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "detectionMethods", n => { DetectionMethods = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "directionality", n => { Directionality = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AntispamDirectionality>(); } },
                 { "distributionList", n => { DistributionList = n.GetStringValue(); } },
+                { "dlpRules", n => { DlpRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emailClusterId", n => { EmailClusterId = n.GetStringValue(); } },
                 { "exchangeTransportRules", n => { ExchangeTransportRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "forwardingDetail", n => { ForwardingDetail = n.GetStringValue(); } },
+                { "inboundConnectorFormattedName", n => { InboundConnectorFormattedName = n.GetStringValue(); } },
                 { "internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "latestDelivery", n => { LatestDelivery = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail.CreateFromDiscriminatorValue); } },
@@ -481,15 +616,19 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "phishConfidenceLevel", n => { PhishConfidenceLevel = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetStringValue(); } },
                 { "policyAction", n => { PolicyAction = n.GetStringValue(); } },
+                { "policyType", n => { PolicyType = n.GetStringValue(); } },
+                { "primaryOverrideSource", n => { PrimaryOverrideSource = n.GetStringValue(); } },
+                { "recipientDetail", n => { RecipientDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail.CreateFromDiscriminatorValue); } },
                 { "recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
                 { "returnPath", n => { ReturnPath = n.GetStringValue(); } },
                 { "senderDetail", n => { SenderDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail.CreateFromDiscriminatorValue); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetIntValue(); } },
                 { "spamConfidenceLevel", n => { SpamConfidenceLevel = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
+                { "threatDetectionDetails", n => { ThreatDetectionDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>(global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "threatTypes", n => { ThreatTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.ThreatType>()?.AsList(); } },
+                { "timelineEvents", n => { TimelineEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>(global::Microsoft.Graph.Beta.Models.Security.TimelineEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "urls", n => { Urls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "urlsCount", n => { UrlsCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -502,15 +641,18 @@ namespace Microsoft.Graph.Beta.Models.Security
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("alertIds", AlertIds);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment>("attachments", Attachments);
-            writer.WriteIntValue("attachmentsCount", AttachmentsCount);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail>("authenticationDetails", AuthenticationDetails);
             writer.WriteStringValue("bulkComplaintLevel", BulkComplaintLevel);
+            writer.WriteStringValue("clientType", ClientType);
             writer.WriteCollectionOfPrimitiveValues<string>("contexts", Contexts);
             writer.WriteCollectionOfPrimitiveValues<string>("detectionMethods", DetectionMethods);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AntispamDirectionality>("directionality", Directionality);
             writer.WriteStringValue("distributionList", DistributionList);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo>("dlpRules", DlpRules);
             writer.WriteStringValue("emailClusterId", EmailClusterId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>("exchangeTransportRules", ExchangeTransportRules);
+            writer.WriteStringValue("forwardingDetail", ForwardingDetail);
+            writer.WriteStringValue("inboundConnectorFormattedName", InboundConnectorFormattedName);
             writer.WriteStringValue("internetMessageId", InternetMessageId);
             writer.WriteStringValue("language", Language);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>("latestDelivery", LatestDelivery);
@@ -521,15 +663,19 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("phishConfidenceLevel", PhishConfidenceLevel);
             writer.WriteStringValue("policy", Policy);
             writer.WriteStringValue("policyAction", PolicyAction);
+            writer.WriteStringValue("policyType", PolicyType);
+            writer.WriteStringValue("primaryOverrideSource", PrimaryOverrideSource);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail>("recipientDetail", RecipientDetail);
             writer.WriteStringValue("recipientEmailAddress", RecipientEmailAddress);
             writer.WriteStringValue("returnPath", ReturnPath);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail>("senderDetail", SenderDetail);
             writer.WriteIntValue("sizeInBytes", SizeInBytes);
             writer.WriteStringValue("spamConfidenceLevel", SpamConfidenceLevel);
             writer.WriteStringValue("subject", Subject);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>("threatDetectionDetails", ThreatDetectionDetails);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.ThreatType>("threatTypes", ThreatTypes);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>("timelineEvents", TimelineEvents);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>("urls", Urls);
-            writer.WriteIntValue("urlsCount", UrlsCount);
         }
     }
 }

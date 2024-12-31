@@ -44,5 +44,13 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "frontlineBufferUsageDuration")]
+        #pragma warning disable CS1591
+        FrontlineBufferUsageDuration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "frontlineBufferUsageThreshold")]
+        #pragma warning disable CS1591
+        FrontlineBufferUsageThreshold,
+        #pragma warning restore CS1591
     }
 }
