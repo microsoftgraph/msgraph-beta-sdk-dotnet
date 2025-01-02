@@ -56,20 +56,20 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The URL to check to find out whether the certificate is revoked.</summary>
+        /// <summary>The deltaCertificateRevocationListUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeltacertificateRevocationListUrl
+        public string? DeltaCertificateRevocationListUrl
         {
-            get { return BackingStore?.Get<string?>("deltacertificateRevocationListUrl"); }
-            set { BackingStore?.Set("deltacertificateRevocationListUrl", value); }
+            get { return BackingStore?.Get<string?>("deltaCertificateRevocationListUrl"); }
+            set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
 #nullable restore
 #else
-        public string DeltacertificateRevocationListUrl
+        public string DeltaCertificateRevocationListUrl
         {
-            get { return BackingStore?.Get<string>("deltacertificateRevocationListUrl"); }
-            set { BackingStore?.Set("deltacertificateRevocationListUrl", value); }
+            get { return BackingStore?.Get<string>("deltaCertificateRevocationListUrl"); }
+            set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
 #endif
         /// <summary>The display name of the certificate authority.</summary>
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "certificateAuthorityType", n => { CertificateAuthorityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CertificateAuthorityType>(); } },
                 { "certificateRevocationListUrl", n => { CertificateRevocationListUrl = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "deltacertificateRevocationListUrl", n => { DeltacertificateRevocationListUrl = n.GetStringValue(); } },
+                { "deltaCertificateRevocationListUrl", n => { DeltaCertificateRevocationListUrl = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isIssuerHintEnabled", n => { IsIssuerHintEnabled = n.GetBoolValue(); } },
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CertificateAuthorityType>("certificateAuthorityType", CertificateAuthorityType);
             writer.WriteStringValue("certificateRevocationListUrl", CertificateRevocationListUrl);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteStringValue("deltacertificateRevocationListUrl", DeltacertificateRevocationListUrl);
+            writer.WriteStringValue("deltaCertificateRevocationListUrl", DeltaCertificateRevocationListUrl);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteBoolValue("isIssuerHintEnabled", IsIssuerHintEnabled);

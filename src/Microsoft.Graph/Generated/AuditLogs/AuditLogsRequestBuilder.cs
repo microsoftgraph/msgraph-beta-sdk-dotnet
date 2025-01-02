@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.AuditLogs.DirectoryAudits;
 using Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning;
 using Microsoft.Graph.Beta.AuditLogs.Provisioning;
 using Microsoft.Graph.Beta.AuditLogs.SignIns;
+using Microsoft.Graph.Beta.AuditLogs.SignUps;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.Beta.AuditLogs
         public global::Microsoft.Graph.Beta.AuditLogs.SignIns.SignInsRequestBuilder SignIns
         {
             get => new global::Microsoft.Graph.Beta.AuditLogs.SignIns.SignInsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the signUps property of the microsoft.graph.auditLogRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.AuditLogs.SignUps.SignUpsRequestBuilder SignUps
+        {
+            get => new global::Microsoft.Graph.Beta.AuditLogs.SignUps.SignUpsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.AuditLogs.AuditLogsRequestBuilder"/> and sets the default values.

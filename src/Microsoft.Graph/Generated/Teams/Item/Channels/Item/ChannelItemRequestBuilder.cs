@@ -2,11 +2,11 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Archive;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder;
-using Microsoft.Graph.Beta.Teams.Item.Channels.Item.GetAllMembers;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.ProvisionEmail;
@@ -30,6 +30,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChannelItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the allMembers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder AllMembers
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the archive method.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Archive.ArchiveRequestBuilder Archive
         {
@@ -49,11 +54,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the getAllMembers property of the microsoft.graph.channel entity.</summary>
-        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.GetAllMembers.GetAllMembersRequestBuilder GetAllMembers
-        {
-            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.GetAllMembers.GetAllMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.MembersRequestBuilder Members

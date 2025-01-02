@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AuthenticationMethod : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn&apos;t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

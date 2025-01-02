@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class IpApplicationSegment : global::Microsoft.Graph.Beta.Models.ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The application property</summary>
+        /// <summary>The on-premises nonweb application published through Microsoft Entra application proxy. Expanded by default and supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Application? Application
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("application", value); }
         }
 #endif
-        /// <summary>The destinationHost property</summary>
+        /// <summary>Either the IP address, IP range, or FQDN of the applicationSegment, with or without wildcards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationHost
@@ -44,19 +44,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("destinationHost", value); }
         }
 #endif
-        /// <summary>The destinationType property</summary>
+        /// <summary>The possible values are: ipAddress, ipRange, ipRangeCidr, fqdn, dnsSuffix, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType? DestinationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType?>("destinationType"); }
             set { BackingStore?.Set("destinationType", value); }
         }
-        /// <summary>The port property</summary>
+        /// <summary>Port supported for the application segment. DO NOT USE.</summary>
         public int? Port
         {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
-        /// <summary>The ports property</summary>
+        /// <summary>List of ports supported for the application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ports
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ports", value); }
         }
 #endif
-        /// <summary>The protocol property</summary>
+        /// <summary>Indicates the protocol of the network traffic acquired for the application segment. The possible values are: tcp, udp, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PrivateNetworkProtocol? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivateNetworkProtocol?>("protocol"); }

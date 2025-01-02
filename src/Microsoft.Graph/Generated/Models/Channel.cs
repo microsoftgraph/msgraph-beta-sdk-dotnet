@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Channel : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember>? AllMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>?>("allMembers"); }
+            set { BackingStore?.Set("allMembers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember> AllMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>>("allMembers"); }
+            set { BackingStore?.Set("allMembers", value); }
+        }
+#endif
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -82,22 +98,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("filesFolder", value); }
         }
 #endif
-        /// <summary>The getAllMembers property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ConversationMember>? GetAllMembers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>?>("getAllMembers"); }
-            set { BackingStore?.Set("getAllMembers", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.ConversationMember> GetAllMembers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>>("getAllMembers"); }
-            set { BackingStore?.Set("getAllMembers", value); }
-        }
-#endif
         /// <summary>Indicates whether the channel is archived. Read-only.</summary>
         public bool? IsArchived
         {
@@ -109,6 +109,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
             set { BackingStore?.Set("isFavoriteByDefault", value); }
+        }
+        /// <summary>The layoutType property</summary>
+        public global::Microsoft.Graph.Beta.Models.ChannelLayoutType? LayoutType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChannelLayoutType?>("layoutType"); }
+            set { BackingStore?.Set("layoutType", value); }
         }
         /// <summary>A collection of membership records associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -262,14 +268,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allMembers", n => { AllMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "filesFolder", n => { FilesFolder = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>(global::Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
-                { "getAllMembers", n => { GetAllMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
+                { "layoutType", n => { LayoutType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChannelLayoutType>(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membershipType", n => { MembershipType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>(global::Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -289,14 +296,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("allMembers", AllMembers);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>("filesFolder", FilesFolder);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("getAllMembers", GetAllMembers);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChannelLayoutType>("layoutType", LayoutType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("members", Members);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>("messages", Messages);

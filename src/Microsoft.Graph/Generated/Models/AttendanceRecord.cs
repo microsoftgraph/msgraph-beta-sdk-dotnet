@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>The externalRegistrationInformation property</summary>
+        /// <summary>The external information for a virtual event registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation? ExternalRegistrationInformation

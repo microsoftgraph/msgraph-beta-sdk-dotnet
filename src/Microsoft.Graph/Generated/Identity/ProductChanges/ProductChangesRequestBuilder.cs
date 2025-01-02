@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Identity.ProductChanges
         {
         }
         /// <summary>
-        /// Get a list of the changeItemBase objects and their properties.
+        /// Get a list of the changeItemBase objects and their properties. The API returns both Microsoft Entra change announcements and releases.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-productchanges?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChangeItemBaseCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Identity.ProductChanges
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ChangeItemBase>(requestInfo, global::Microsoft.Graph.Beta.Models.ChangeItemBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the changeItemBase objects and their properties.
+        /// Get a list of the changeItemBase objects and their properties. The API returns both Microsoft Entra change announcements and releases.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Identity.ProductChanges
             return new global::Microsoft.Graph.Beta.Identity.ProductChanges.ProductChangesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the changeItemBase objects and their properties.
+        /// Get a list of the changeItemBase objects and their properties. The API returns both Microsoft Entra change announcements and releases.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProductChangesRequestBuilderGetQueryParameters 

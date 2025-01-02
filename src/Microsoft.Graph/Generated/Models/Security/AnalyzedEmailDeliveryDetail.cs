@@ -27,6 +27,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The latestThreats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LatestThreats
+        {
+            get { return BackingStore?.Get<string?>("latestThreats"); }
+            set { BackingStore?.Set("latestThreats", value); }
+        }
+#nullable restore
+#else
+        public string LatestThreats
+        {
+            get { return BackingStore?.Get<string>("latestThreats"); }
+            set { BackingStore?.Set("latestThreats", value); }
+        }
+#endif
         /// <summary>The delivery location of the email. The possible values are: unknown, inboxfolder, junkFolder, deletedFolder, quarantine, onpremexternal, failed, dropped, others, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.DeliveryLocation? Location
         {
@@ -47,6 +63,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
+        }
+#endif
+        /// <summary>The originalThreats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalThreats
+        {
+            get { return BackingStore?.Get<string?>("originalThreats"); }
+            set { BackingStore?.Set("originalThreats", value); }
+        }
+#nullable restore
+#else
+        public string OriginalThreats
+        {
+            get { return BackingStore?.Get<string>("originalThreats"); }
+            set { BackingStore?.Set("originalThreats", value); }
         }
 #endif
         /// <summary>
@@ -76,8 +108,10 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeliveryAction>(); } },
+                { "latestThreats", n => { LatestThreats = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeliveryLocation>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "originalThreats", n => { OriginalThreats = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,8 +122,10 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeliveryAction>("action", Action);
+            writer.WriteStringValue("latestThreats", LatestThreats);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeliveryLocation>("location", Location);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("originalThreats", OriginalThreats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

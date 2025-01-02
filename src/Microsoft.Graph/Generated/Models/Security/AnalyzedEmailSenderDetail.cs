@@ -21,6 +21,60 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The domainCreationDateTime property</summary>
+        public DateTimeOffset? DomainCreationDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("domainCreationDateTime"); }
+            set { BackingStore?.Set("domainCreationDateTime", value); }
+        }
+        /// <summary>The domainName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DomainName
+        {
+            get { return BackingStore?.Get<string?>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#nullable restore
+#else
+        public string DomainName
+        {
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#endif
+        /// <summary>The domainOwner property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DomainOwner
+        {
+            get { return BackingStore?.Get<string?>("domainOwner"); }
+            set { BackingStore?.Set("domainOwner", value); }
+        }
+#nullable restore
+#else
+        public string DomainOwner
+        {
+            get { return BackingStore?.Get<string>("domainOwner"); }
+            set { BackingStore?.Set("domainOwner", value); }
+        }
+#endif
         /// <summary>The sender email address in the mail From header, also known as the envelope sender or the P1 sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +107,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("ipv4", value); }
         }
 #endif
+        /// <summary>The location property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Location
+        {
+            get { return BackingStore?.Get<string?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#nullable restore
+#else
+        public string Location
+        {
+            get { return BackingStore?.Get<string>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#endif
         /// <summary>The sender email address in the From header, which is visible to email recipients on their email clients. Also known as P2 sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +137,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("mailFromAddress"); }
             set { BackingStore?.Set("mailFromAddress", value); }
+        }
+#endif
+        /// <summary>The mailFromDomainName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MailFromDomainName
+        {
+            get { return BackingStore?.Get<string?>("mailFromDomainName"); }
+            set { BackingStore?.Set("mailFromDomainName", value); }
+        }
+#nullable restore
+#else
+        public string MailFromDomainName
+        {
+            get { return BackingStore?.Get<string>("mailFromDomainName"); }
+            set { BackingStore?.Set("mailFromDomainName", value); }
         }
 #endif
         /// <summary>The OdataType property</summary>
@@ -111,9 +197,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "domainCreationDateTime", n => { DomainCreationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "domainName", n => { DomainName = n.GetStringValue(); } },
+                { "domainOwner", n => { DomainOwner = n.GetStringValue(); } },
                 { "fromAddress", n => { FromAddress = n.GetStringValue(); } },
                 { "ipv4", n => { Ipv4 = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
                 { "mailFromAddress", n => { MailFromAddress = n.GetStringValue(); } },
+                { "mailFromDomainName", n => { MailFromDomainName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -124,9 +216,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("domainCreationDateTime", DomainCreationDateTime);
+            writer.WriteStringValue("domainName", DomainName);
+            writer.WriteStringValue("domainOwner", DomainOwner);
             writer.WriteStringValue("fromAddress", FromAddress);
             writer.WriteStringValue("ipv4", Ipv4);
+            writer.WriteStringValue("location", Location);
             writer.WriteStringValue("mailFromAddress", MailFromAddress);
+            writer.WriteStringValue("mailFromDomainName", MailFromDomainName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

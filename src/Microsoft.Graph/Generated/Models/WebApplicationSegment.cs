@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WebApplicationSegment : global::Microsoft.Graph.Beta.Models.ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.</summary>
+        /// <summary>If you&apos;re configuring a traffic manager in front of multiple app proxy application segments, this property contains the user-friendly URL that points to the traffic manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateUrl

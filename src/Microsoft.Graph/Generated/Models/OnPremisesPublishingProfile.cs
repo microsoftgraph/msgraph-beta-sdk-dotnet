@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agents", value); }
         }
 #endif
-        /// <summary>The applicationSegments property</summary>
+        /// <summary>Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.IpApplicationSegment>? ApplicationSegments
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
 #endif
-        /// <summary>The isDefaultAccessEnabled property</summary>
+        /// <summary>Specifies whether default access for app proxy is enabled or disabled.</summary>
         public bool? IsDefaultAccessEnabled
         {
             get { return BackingStore?.Get<bool?>("isDefaultAccessEnabled"); }

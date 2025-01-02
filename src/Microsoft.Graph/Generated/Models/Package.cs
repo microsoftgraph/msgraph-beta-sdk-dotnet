@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>An string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.</summary>
+        /// <summary>Indicates the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

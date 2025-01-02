@@ -37,6 +37,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("detonationDetails", value); }
         }
 #endif
+        /// <summary>The fileExtension property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FileExtension
+        {
+            get { return BackingStore?.Get<string?>("fileExtension"); }
+            set { BackingStore?.Set("fileExtension", value); }
+        }
+#nullable restore
+#else
+        public string FileExtension
+        {
+            get { return BackingStore?.Get<string>("fileExtension"); }
+            set { BackingStore?.Set("fileExtension", value); }
+        }
+#endif
         /// <summary>The name of the attachment in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +69,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
+        /// <summary>The fileSize property</summary>
+        public int? FileSize
+        {
+            get { return BackingStore?.Get<int?>("fileSize"); }
+            set { BackingStore?.Set("fileSize", value); }
+        }
         /// <summary>The type of the attachment in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +89,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("fileType"); }
             set { BackingStore?.Set("fileType", value); }
+        }
+#endif
+        /// <summary>The malwareFamily property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MalwareFamily
+        {
+            get { return BackingStore?.Get<string?>("malwareFamily"); }
+            set { BackingStore?.Set("malwareFamily", value); }
+        }
+#nullable restore
+#else
+        public string MalwareFamily
+        {
+            get { return BackingStore?.Get<string>("malwareFamily"); }
+            set { BackingStore?.Set("malwareFamily", value); }
         }
 #endif
         /// <summary>The OdataType property</summary>
@@ -101,20 +139,20 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sha256", value); }
         }
 #endif
-        /// <summary>The threat name associated with the threat type.</summary>
+        /// <summary>The tenantAllowBlockListDetailInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreatName
+        public string? TenantAllowBlockListDetailInfo
         {
-            get { return BackingStore?.Get<string?>("threatName"); }
-            set { BackingStore?.Set("threatName", value); }
+            get { return BackingStore?.Get<string?>("tenantAllowBlockListDetailInfo"); }
+            set { BackingStore?.Set("tenantAllowBlockListDetailInfo", value); }
         }
 #nullable restore
 #else
-        public string ThreatName
+        public string TenantAllowBlockListDetailInfo
         {
-            get { return BackingStore?.Get<string>("threatName"); }
-            set { BackingStore?.Set("threatName", value); }
+            get { return BackingStore?.Get<string>("tenantAllowBlockListDetailInfo"); }
+            set { BackingStore?.Set("tenantAllowBlockListDetailInfo", value); }
         }
 #endif
         /// <summary>The threat type associated with the attachment. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.</summary>
@@ -150,11 +188,14 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "detonationDetails", n => { DetonationDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationDetails>(global::Microsoft.Graph.Beta.Models.Security.DetonationDetails.CreateFromDiscriminatorValue); } },
+                { "fileExtension", n => { FileExtension = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "fileSize", n => { FileSize = n.GetIntValue(); } },
                 { "fileType", n => { FileType = n.GetStringValue(); } },
+                { "malwareFamily", n => { MalwareFamily = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
-                { "threatName", n => { ThreatName = n.GetStringValue(); } },
+                { "tenantAllowBlockListDetailInfo", n => { TenantAllowBlockListDetailInfo = n.GetStringValue(); } },
                 { "threatType", n => { ThreatType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.ThreatType>(); } },
             };
         }
@@ -166,11 +207,14 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationDetails>("detonationDetails", DetonationDetails);
+            writer.WriteStringValue("fileExtension", FileExtension);
             writer.WriteStringValue("fileName", FileName);
+            writer.WriteIntValue("fileSize", FileSize);
             writer.WriteStringValue("fileType", FileType);
+            writer.WriteStringValue("malwareFamily", MalwareFamily);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sha256", Sha256);
-            writer.WriteStringValue("threatName", ThreatName);
+            writer.WriteStringValue("tenantAllowBlockListDetailInfo", TenantAllowBlockListDetailInfo);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.ThreatType>("threatType", ThreatType);
             writer.WriteAdditionalData(AdditionalData);
         }

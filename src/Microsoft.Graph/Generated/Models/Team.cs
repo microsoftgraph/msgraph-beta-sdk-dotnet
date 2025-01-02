@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The firstChannelName property</summary>
+        /// <summary>The name of the first channel in the team. This property is only used during team creation and isn&apos;t returned in methods to get and list teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstChannelName

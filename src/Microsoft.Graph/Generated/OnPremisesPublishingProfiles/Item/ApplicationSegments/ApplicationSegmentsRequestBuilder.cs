@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ApplicationSegm
         {
         }
         /// <summary>
-        /// Get applicationSegments from onPremisesPublishingProfiles
+        /// Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IpApplicationSegmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ApplicationSegm
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IpApplicationSegmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.IpApplicationSegmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get applicationSegments from onPremisesPublishingProfiles
+        /// Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ApplicationSegm
             return new global::Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ApplicationSegments.ApplicationSegmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get applicationSegments from onPremisesPublishingProfiles
+        /// Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationSegmentsRequestBuilderGetQueryParameters 
