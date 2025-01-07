@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
-        /// <summary>The alternativeNames property</summary>
+        /// <summary>List of alternative names for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AlternativeNames
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceCategory", value); }
         }
 #endif
-        /// <summary>Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).</summary>
+        /// <summary>Unique identifier set by Azure Device Registration Service at the time of registration. This ID is an alternate key that can be used to reference the device object. Also supports $filter (eq, ne, not, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceMetadata", value); }
         }
 #endif
-        /// <summary>Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.</summary>
+        /// <summary>Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceOwnership
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceOwnership", value); }
         }
 #endif
-        /// <summary>The deviceTemplate property</summary>
+        /// <summary>Device template used to instantiate this device. Nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>? DeviceTemplate
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.</summary>
+        /// <summary>The on-premises domain name of Microsoft Entra hybrid joined devices. Intune sets this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.</summary>
+        /// <summary>Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. Intune sets this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrollmentProfileName
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
 #endif
-        /// <summary>Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.</summary>
+        /// <summary>Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrollmentType
@@ -316,7 +316,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kind", value); }
         }
 #endif
-        /// <summary>Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.</summary>
+        /// <summary>Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagementType

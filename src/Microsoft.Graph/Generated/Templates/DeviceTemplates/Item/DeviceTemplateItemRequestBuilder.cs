@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item
             return new global::Microsoft.Graph.Beta.Templates.DeviceTemplates.Item.DeviceInstancesWithDeviceId.DeviceInstancesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
         /// <summary>
-        /// Get deviceTemplates from templates
+        /// Defines the templates that are common to a set of device objects, such as IoT devices.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get deviceTemplates from templates
+        /// Defines the templates that are common to a set of device objects, such as IoT devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item
         {
         }
         /// <summary>
-        /// Get deviceTemplates from templates
+        /// Defines the templates that are common to a set of device objects, such as IoT devices.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceTemplateItemRequestBuilderGetQueryParameters 

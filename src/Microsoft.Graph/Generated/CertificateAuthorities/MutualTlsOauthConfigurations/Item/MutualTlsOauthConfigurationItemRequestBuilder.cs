@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
         {
         }
         /// <summary>
-        /// Delete navigation property mutualTlsOauthConfigurations for certificateAuthorities
+        /// Delete the specified mutualTlsOauthConfiguration resource. You must first delete the deviceTemplate object that references the ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mutualtlsoauthconfiguration-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from certificateAuthorities
+        /// Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>(requestInfo, global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property mutualTlsOauthConfigurations for certificateAuthorities
+        /// Delete the specified mutualTlsOauthConfiguration resource. You must first delete the deviceTemplate object that references the ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
             return requestInfo;
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from certificateAuthorities
+        /// Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +183,7 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
         {
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from certificateAuthorities
+        /// Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters 

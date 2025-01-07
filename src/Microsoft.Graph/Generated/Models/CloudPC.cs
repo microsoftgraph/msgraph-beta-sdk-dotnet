@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The frontlineCloudPcAvailability property</summary>
+        /// <summary>The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.</summary>
         public global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability? FrontlineCloudPcAvailability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability?>("frontlineCloudPcAvailability"); }

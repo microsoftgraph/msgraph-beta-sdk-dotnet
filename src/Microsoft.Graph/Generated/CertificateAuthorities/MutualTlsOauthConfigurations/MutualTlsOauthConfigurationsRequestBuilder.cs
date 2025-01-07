@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
         {
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from certificateAuthorities
+        /// Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>(requestInfo, global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from certificateAuthorities
+        /// Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfiguratio
             return new global::Microsoft.Graph.Beta.CertificateAuthorities.MutualTlsOauthConfigurations.MutualTlsOauthConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from certificateAuthorities
+        /// Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters 

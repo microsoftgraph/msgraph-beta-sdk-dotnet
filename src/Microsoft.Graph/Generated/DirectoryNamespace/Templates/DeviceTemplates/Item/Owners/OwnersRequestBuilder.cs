@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
         {
         }
         /// <summary>
-        /// Get owners from directory
+        /// Get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicetemplate-list-owners?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get owners from directory
+        /// Get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item.Owners.OwnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get owners from directory
+        /// Get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OwnersRequestBuilderGetQueryParameters 

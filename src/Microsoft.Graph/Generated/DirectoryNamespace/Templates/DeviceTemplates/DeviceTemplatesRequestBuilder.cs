@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates
         {
         }
         /// <summary>
-        /// Get deviceTemplates from directory
+        /// Get a list of deviceTemplate objects registered in the directory.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/template-list-devicetemplates?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceTemplateCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to deviceTemplates for directory
+        /// Create a new deviceTemplate used to identify attributes and manage a group of devices with similar characteristics.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/template-post-devicetemplates?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceTemplate>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get deviceTemplates from directory
+        /// Get a list of deviceTemplate objects registered in the directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to deviceTemplates for directory
+        /// Create a new deviceTemplate used to identify attributes and manage a group of devices with similar characteristics.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.DeviceTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get deviceTemplates from directory
+        /// Get a list of deviceTemplate objects registered in the directory.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceTemplatesRequestBuilderGetQueryParameters 

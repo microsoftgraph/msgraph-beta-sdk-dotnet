@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Template : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The deviceTemplates property</summary>
+        /// <summary>Defines the templates that are common to a set of device objects, such as IoT devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>? DeviceTemplates

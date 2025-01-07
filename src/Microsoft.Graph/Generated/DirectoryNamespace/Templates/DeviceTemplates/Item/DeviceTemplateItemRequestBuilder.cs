@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
         {
         }
         /// <summary>
-        /// Delete navigation property deviceTemplates for directory
+        /// Delete a registered deviceTemplate. You must first delete all devices linked to the template before deleting the template itself. Only registered owners of the template can perform this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicetemplate-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item.DeviceInstancesWithDeviceId.DeviceInstancesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
         /// <summary>
-        /// Get deviceTemplates from directory
+        /// Get the properties and relationships of a deviceTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicetemplate-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceTemplate>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property deviceTemplates for directory
+        /// Delete a registered deviceTemplate. You must first delete all devices linked to the template before deleting the template itself. Only registered owners of the template can perform this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +155,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get deviceTemplates from directory
+        /// Get the properties and relationships of a deviceTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -211,7 +213,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
         {
         }
         /// <summary>
-        /// Get deviceTemplates from directory
+        /// Get the properties and relationships of a deviceTemplate object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceTemplateItemRequestBuilderGetQueryParameters 
