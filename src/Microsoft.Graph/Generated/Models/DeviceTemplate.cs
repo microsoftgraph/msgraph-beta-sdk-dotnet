@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DeviceTemplate : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The deviceAuthority property</summary>
+        /// <summary>A tenant-defined name for the party that&apos;s responsible for provisioning and managing devices on the Microsoft Entra tenant. For example, Tailwind Traders (the manufacturer) makes security cameras that are installed in customer buildings and managed by Lakeshore Retail (the device authority). This value is provided to the customer by the device authority (manufacturer or reseller).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceAuthority
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceAuthority", value); }
         }
 #endif
-        /// <summary>The deviceInstances property</summary>
+        /// <summary>Collection of device objects created based on this template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Device>? DeviceInstances
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceInstances", value); }
         }
 #endif
-        /// <summary>The manufacturer property</summary>
+        /// <summary>Manufacturer name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>Model name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>The mutualTlsOauthConfigurationId property</summary>
+        /// <summary>Object ID of the mutualTlsOauthConfiguration. This value isn&apos;t required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MutualTlsOauthConfigurationId
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mutualTlsOauthConfigurationId", value); }
         }
 #endif
-        /// <summary>The mutualTlsOauthConfigurationTenantId property</summary>
+        /// <summary>ID (tenant ID for device authority) of the tenant that contains the mutualTlsOauthConfiguration. This value isn&apos;t required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MutualTlsOauthConfigurationTenantId
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mutualTlsOauthConfigurationTenantId", value); }
         }
 #endif
-        /// <summary>The operatingSystem property</summary>
+        /// <summary>Operating system type. Supports $filter (eq, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #endif
-        /// <summary>The owners property</summary>
+        /// <summary>Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn&apos;t require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? Owners

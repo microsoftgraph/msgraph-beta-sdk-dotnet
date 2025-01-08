@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateBasedApplicationConfigurations", value); }
         }
 #endif
-        /// <summary>The mutualTlsOauthConfigurations property</summary>
+        /// <summary>Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>? MutualTlsOauthConfigurations

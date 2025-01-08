@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.MutualT
         {
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from directory
+        /// Get a list of the available mutualTlsOauthConfiguration resources.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthoritypath-list-mutualtlsoauthconfigurations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.MutualT
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to mutualTlsOauthConfigurations for directory
+        /// Create a mutualTlsOauthConfiguration resource that contains a specified certificate authority object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthoritypath-post-mutualtlsoauthconfigurations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.MutualT
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration>(requestInfo, global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from directory
+        /// Get a list of the available mutualTlsOauthConfiguration resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.MutualT
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to mutualTlsOauthConfigurations for directory
+        /// Create a mutualTlsOauthConfiguration resource that contains a specified certificate authority object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.MutualT
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.MutualTlsOauthConfigurations.MutualTlsOauthConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mutualTlsOauthConfigurations from directory
+        /// Get a list of the available mutualTlsOauthConfiguration resources.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters 

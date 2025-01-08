@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item.CreateDeviceFromTe
         {
         }
         /// <summary>
-        /// Invoke action createDeviceFromTemplate
+        /// Create a new device from a deviceTemplate.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicetemplate-createdevicefromtemplate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Device"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item.CreateDeviceFromTe
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Device>(requestInfo, global::Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action createDeviceFromTemplate
+        /// Create a new device from a deviceTemplate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

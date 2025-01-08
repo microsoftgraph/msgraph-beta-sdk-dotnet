@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CopilotAdminLimitedMode : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of a Microsoft Entra group to which the value of the isEnabledForGroup property is applied value. The default value is null. This parameter is optional. If isEnabledForGroup is set to true, the groupId value must be provided in order for Copilot limited mode in Teams Meetings to be enabled for the members of the group.</summary>
+        /// <summary>The ID of a Microsoft Entra group to which the value of the isEnabledForGroup property is applied value. The default value is null. This parameter is optional. If isEnabledForGroup is set to true, the groupId value must be provided in order for Copilot limited mode in Teams meetings to be enabled for the members of the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId

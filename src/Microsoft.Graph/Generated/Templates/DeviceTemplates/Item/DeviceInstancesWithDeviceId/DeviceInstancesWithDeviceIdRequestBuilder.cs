@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item.DeviceInstancesWit
         {
         }
         /// <summary>
-        /// Get deviceInstances from templates
+        /// Collection of device objects created based on this template.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Device"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item.DeviceInstancesWit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Device>(requestInfo, global::Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get deviceInstances from templates
+        /// Collection of device objects created based on this template.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Templates.DeviceTemplates.Item.DeviceInstancesWit
             return new global::Microsoft.Graph.Beta.Templates.DeviceTemplates.Item.DeviceInstancesWithDeviceId.DeviceInstancesWithDeviceIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get deviceInstances from templates
+        /// Collection of device objects created based on this template.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceInstancesWithDeviceIdRequestBuilderGetQueryParameters 

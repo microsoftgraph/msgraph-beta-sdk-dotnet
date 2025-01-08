@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationMethodDevices", value); }
         }
 #endif
-        /// <summary>The certificateAuthorities property</summary>
+        /// <summary>Container for certificate authorities-related configurations for applications in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CertificateAuthorityPath? CertificateAuthorities
@@ -316,7 +316,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
-        /// <summary>The templates property</summary>
+        /// <summary>A container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Template? Templates

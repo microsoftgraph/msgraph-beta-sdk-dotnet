@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class MutualTlsOauthConfiguration : global::Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>Friendly name. Supports $filter (eq, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
