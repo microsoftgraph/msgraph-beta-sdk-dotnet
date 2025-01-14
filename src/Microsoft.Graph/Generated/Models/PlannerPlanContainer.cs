@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, and user. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem, and user. Optional.</summary>
+        /// <summary>The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, user, and teamsChannel . You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem,user, and,teamsChannel. Optional.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerContainerType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerContainerType?>("type"); }

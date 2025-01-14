@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ReferenceAttachment : global::Microsoft.Graph.Beta.Models.Attachment, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.</summary>
+        /// <summary>Specifies whether the attachment is a link to a folder. You must set this property to true if sourceUrl is a link to a folder. Optional.</summary>
         public bool? IsFolder
         {
             get { return BackingStore?.Get<bool?>("isFolder"); }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider?>("providerType"); }
             set { BackingStore?.Set("providerType", value); }
         }
-        /// <summary>URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
+        /// <summary>URL to get the attachment content. If this value is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceUrl
