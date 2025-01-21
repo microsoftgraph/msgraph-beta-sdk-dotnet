@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Schedule : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether copied shifts should include the activities.</summary>
+        /// <summary>Indicates whether copied shifts should include the activities. This property will be removed by November 20, 2027. Use isActivitiesIncludedWhenCopyingShiftsEnabled instead. activitiesIncludedWhenCopyingShiftsEnabled and isActivitiesIncludedWhenCopyingShiftsEnabled always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isActivitiesIncludedWhenCopyingShiftsEnabled takes precedence.</summary>
         public bool? ActivitiesIncludedWhenCopyingShiftsEnabled
         {
             get { return BackingStore?.Get<bool?>("activitiesIncludedWhenCopyingShiftsEnabled"); }

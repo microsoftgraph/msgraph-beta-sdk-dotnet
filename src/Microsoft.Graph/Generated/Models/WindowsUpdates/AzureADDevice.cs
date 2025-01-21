@@ -12,20 +12,20 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
     public partial class AzureADDevice : global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies areas in which the device is enrolled. Read-only. Returned by default.</summary>
+        /// <summary>The enrollment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment>? Enrollments
+        public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment? Enrollment
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment>?>("enrollments"); }
-            set { BackingStore?.Set("enrollments", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment?>("enrollment"); }
+            set { BackingStore?.Set("enrollment", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment> Enrollments
+        public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment Enrollment
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment>>("enrollments"); }
-            set { BackingStore?.Set("enrollments", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment>("enrollment"); }
+            set { BackingStore?.Set("enrollment", value); }
         }
 #endif
         /// <summary>Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.</summary>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "enrollments", n => { Enrollments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "enrollment", n => { Enrollment = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment>("enrollments", Enrollments);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment>("enrollment", Enrollment);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError>("errors", Errors);
         }
     }

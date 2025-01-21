@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnOtpSendCustomExtensionHandler : global::Microsoft.Graph.Beta.Models.OnOtpSendHandler, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configuration property</summary>
+        /// <summary>Configuration regarding properties of the custom extension that are can be overwritten for the onEmailOtpSendListener event listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration? Configuration

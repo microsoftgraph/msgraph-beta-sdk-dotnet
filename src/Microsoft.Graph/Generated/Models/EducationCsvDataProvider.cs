@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationCsvDataProvider : global::Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Optional customizations to be applied to the synchronization profile.</summary>
+        /// <summary>The customizations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations? Customizations

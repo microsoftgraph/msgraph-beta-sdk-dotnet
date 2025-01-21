@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dataProvider", value); }
         }
 #endif
-        /// <summary>Name of the configuration profile for syncing identities.</summary>
+        /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>All errors associated with this synchronization profile.</summary>
+        /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.EducationSynchronizationError>? Errors
@@ -61,13 +61,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errors", value); }
         }
 #endif
-        /// <summary>The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)</summary>
+        /// <summary>The expirationDate property</summary>
         public Date? ExpirationDate
         {
             get { return BackingStore?.Get<Date?>("expirationDate"); }
             set { BackingStore?.Set("expirationDate", value); }
         }
-        /// <summary>Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.</summary>
+        /// <summary>The handleSpecialCharacterConstraint property</summary>
         public bool? HandleSpecialCharacterConstraint
         {
             get { return BackingStore?.Get<bool?>("handleSpecialCharacterConstraint"); }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identitySynchronizationConfiguration", value); }
         }
 #endif
-        /// <summary>License setup configuration.</summary>
+        /// <summary>The licensesToAssign property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment>? LicensesToAssign
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("licensesToAssign", value); }
         }
 #endif
-        /// <summary>The synchronization status.</summary>
+        /// <summary>The profileStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus? ProfileStatus
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("profileStatus", value); }
         }
 #endif
-        /// <summary>The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.</summary>
+        /// <summary>The state property</summary>
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfileState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfileState?>("state"); }

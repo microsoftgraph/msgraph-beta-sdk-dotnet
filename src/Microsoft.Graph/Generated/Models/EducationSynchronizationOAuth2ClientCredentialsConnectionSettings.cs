@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : global::Microsoft.Graph.Beta.Models.EducationSynchronizationConnectionSettings, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The scope of the access request (see RFC6749).</summary>
+        /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Scope
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scope", value); }
         }
 #endif
-        /// <summary>The URL to get access tokens for the data provider.</summary>
+        /// <summary>The tokenUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TokenUrl

@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #endif
-        /// <summary>Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn&apos;t require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.</summary>
+        /// <summary>Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn&apos;t require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners. There can be a maximum of 100 owners on a device template.  Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? Owners

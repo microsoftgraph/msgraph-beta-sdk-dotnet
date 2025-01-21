@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomAuthenticationExtension : global::Microsoft.Graph.Beta.Models.CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The behaviorOnError property</summary>
+        /// <summary>The behaviour on error for the custom authentication extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError? BehaviorOnError

@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationPowerSchoolDataProvider : global::Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether the source has multiple identifiers for a single student or teacher.</summary>
+        /// <summary>The allowTeachersInMultipleSchools property</summary>
         public bool? AllowTeachersInMultipleSchools
         {
             get { return BackingStore?.Get<bool?>("allowTeachersInMultipleSchools"); }
             set { BackingStore?.Set("allowTeachersInMultipleSchools", value); }
         }
-        /// <summary>The client ID used to connect to PowerSchool.</summary>
+        /// <summary>The clientId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientId
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientId", value); }
         }
 #endif
-        /// <summary>The client secret to authenticate the connection to the PowerSchool instance.</summary>
+        /// <summary>The clientSecret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientSecret", value); }
         }
 #endif
-        /// <summary>The connection URL to the PowerSchool instance.</summary>
+        /// <summary>The connectionUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectionUrl
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("connectionUrl", value); }
         }
 #endif
-        /// <summary>Optional customization to be applied to the synchronization profile.</summary>
+        /// <summary>The customizations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations? Customizations
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customizations", value); }
         }
 #endif
-        /// <summary>The list of schools to sync.</summary>
+        /// <summary>The schoolsIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SchoolsIds
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("schoolsIds", value); }
         }
 #endif
-        /// <summary>The school year to sync.</summary>
+        /// <summary>The schoolYear property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SchoolYear

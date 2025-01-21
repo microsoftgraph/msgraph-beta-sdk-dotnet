@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnEmailOtpSendListener : global::Microsoft.Graph.Beta.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The handler property</summary>
+        /// <summary>Used to configure what to invoke if the onEmailOTPSend event resolves to this listener. This base class serves as a generic OTP event handler used for both email and SMS OTP messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OnOtpSendHandler? Handler

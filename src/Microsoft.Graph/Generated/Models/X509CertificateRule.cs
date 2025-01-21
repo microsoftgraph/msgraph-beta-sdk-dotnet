@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.X509CertificateAffinityLevel?>("x509CertificateRequiredAffinityLevel"); }
             set { BackingStore?.Set("x509CertificateRequiredAffinityLevel", value); }
         }
-        /// <summary>The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.</summary>
+        /// <summary>The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.</summary>
         public global::Microsoft.Graph.Beta.Models.X509CertificateRuleType? X509CertificateRuleType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.X509CertificateRuleType?>("x509CertificateRuleType"); }

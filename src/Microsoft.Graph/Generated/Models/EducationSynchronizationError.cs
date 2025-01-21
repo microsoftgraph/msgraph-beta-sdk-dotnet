@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationSynchronizationError : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the sync entity (school, section, student, teacher).</summary>
+        /// <summary>The entryType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EntryType
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("entryType", value); }
         }
 #endif
-        /// <summary>Represents the error code for this error.</summary>
+        /// <summary>The errorCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorCode
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errorCode", value); }
         }
 #endif
-        /// <summary>Contains a description of the error.</summary>
+        /// <summary>The errorMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errorMessage", value); }
         }
 #endif
-        /// <summary>The unique identifier for the entry.</summary>
+        /// <summary>The joiningValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JoiningValue
@@ -76,13 +76,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("joiningValue", value); }
         }
 #endif
-        /// <summary>The time of occurrence of this error.</summary>
+        /// <summary>The recordedDateTime property</summary>
         public DateTimeOffset? RecordedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
             set { BackingStore?.Set("recordedDateTime", value); }
         }
-        /// <summary>The identifier of this error entry.</summary>
+        /// <summary>The reportableIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportableIdentifier

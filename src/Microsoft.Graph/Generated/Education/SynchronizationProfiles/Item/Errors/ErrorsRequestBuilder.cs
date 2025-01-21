@@ -56,8 +56,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors
         {
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-beta" />
+        /// Get errors from education
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationSynchronizationErrorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EducationSynchronizationError>(requestInfo, global::Microsoft.Graph.Beta.Models.EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+        /// Get errors from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +159,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors
             return new global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors.ErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+        /// Get errors from education
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ErrorsRequestBuilderGetQueryParameters 
