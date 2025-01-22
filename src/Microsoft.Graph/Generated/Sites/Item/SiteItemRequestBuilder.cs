@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Analytics;
+using Microsoft.Graph.Beta.Sites.Item.Archive;
 using Microsoft.Graph.Beta.Sites.Item.Columns;
 using Microsoft.Graph.Beta.Sites.Item.ContentModels;
 using Microsoft.Graph.Beta.Sites.Item.ContentTypes;
@@ -26,6 +27,7 @@ using Microsoft.Graph.Beta.Sites.Item.Permissions;
 using Microsoft.Graph.Beta.Sites.Item.RecycleBin;
 using Microsoft.Graph.Beta.Sites.Item.Sites;
 using Microsoft.Graph.Beta.Sites.Item.TermStore;
+using Microsoft.Graph.Beta.Sites.Item.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -46,6 +48,11 @@ namespace Microsoft.Graph.Beta.Sites.Item
         public global::Microsoft.Graph.Beta.Sites.Item.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.Columns.ColumnsRequestBuilder Columns
@@ -146,6 +153,11 @@ namespace Microsoft.Graph.Beta.Sites.Item
         public global::Microsoft.Graph.Beta.Sites.Item.TermStore.TermStoreRequestBuilder TermStore
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Sites.Item.SiteItemRequestBuilder"/> and sets the default values.

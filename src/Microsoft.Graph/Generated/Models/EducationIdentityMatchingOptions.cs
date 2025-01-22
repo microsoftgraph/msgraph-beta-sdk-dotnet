@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The name of the source property, which should be a field name in the source data. This property is case-sensitive.</summary>
+        /// <summary>The sourcePropertyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourcePropertyName
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourcePropertyName", value); }
         }
 #endif
-        /// <summary>The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.</summary>
+        /// <summary>The targetDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDomain
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDomain", value); }
         }
 #endif
-        /// <summary>The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.</summary>
+        /// <summary>The targetPropertyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetPropertyName

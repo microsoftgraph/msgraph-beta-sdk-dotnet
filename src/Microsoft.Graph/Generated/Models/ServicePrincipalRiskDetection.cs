@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ServicePrincipalRiskDetection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the activity type the detected risk is linked to. The possible values are: signin, servicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipal.</summary>
+        /// <summary>Indicates the activity type the detected risk is linked to. The possible values are: signin, servicePrincipal. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipal.</summary>
         public global::Microsoft.Graph.Beta.Models.ActivityType? Activity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActivityType?>("activity"); }
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requestId", value); }
         }
 #endif
-        /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
+        /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }

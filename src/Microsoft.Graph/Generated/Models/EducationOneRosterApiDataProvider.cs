@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("connectionSettings", value); }
         }
 #endif
-        /// <summary>The connection URL to the OneRoster instance.</summary>
+        /// <summary>The connectionUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectionUrl
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("connectionUrl", value); }
         }
 #endif
-        /// <summary>Optional customization to be applied to the synchronization profile.</summary>
+        /// <summary>The customizations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations? Customizations
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customizations", value); }
         }
 #endif
-        /// <summary>The OneRoster Service Provider name as defined by the OneRoster specification.</summary>
+        /// <summary>The providerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderName
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("providerName", value); }
         }
 #endif
-        /// <summary>The list of School/Org sourcedId to sync.</summary>
+        /// <summary>The schoolsIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SchoolsIds
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("schoolsIds", value); }
         }
 #endif
-        /// <summary>The list of academic sessions to sync.</summary>
+        /// <summary>The termIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TermIds

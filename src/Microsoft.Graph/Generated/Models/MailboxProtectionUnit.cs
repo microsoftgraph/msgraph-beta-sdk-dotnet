@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
+        /// <summary>The type of mailbox which is assigned to the user with id: directoryObjectId.The possible values are: unknown, user, shared, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.MailboxType? MailboxType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MailboxType?>("mailboxType"); }
+            set { BackingStore?.Set("mailboxType", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit"/> and sets the default values.
         /// </summary>
@@ -88,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "directoryObjectId", n => { DirectoryObjectId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "mailboxType", n => { MailboxType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MailboxType>(); } },
             };
         }
         /// <summary>
@@ -99,6 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("directoryObjectId", DirectoryObjectId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MailboxType>("mailboxType", MailboxType);
         }
     }
 }

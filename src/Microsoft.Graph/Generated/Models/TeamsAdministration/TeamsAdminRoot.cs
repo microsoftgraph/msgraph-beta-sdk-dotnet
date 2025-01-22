@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
     public partial class TeamsAdminRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The policy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment? Policy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment?>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment Policy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "policy", n => { Policy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment>(global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -40,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment>("policy", Policy);
         }
     }
 }

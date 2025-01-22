@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationSynchronizationCustomizations : global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizationsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Customizations for School entities.</summary>
+        /// <summary>The school property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? School
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("school", value); }
         }
 #endif
-        /// <summary>Customizations for Section entities.</summary>
+        /// <summary>The section property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? Section
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("section", value); }
         }
 #endif
-        /// <summary>Customizations for Student entities.</summary>
+        /// <summary>The student property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? Student
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("student", value); }
         }
 #endif
-        /// <summary>Customizations for Student Enrollments.</summary>
+        /// <summary>The studentEnrollment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? StudentEnrollment
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("studentEnrollment", value); }
         }
 #endif
-        /// <summary>Customizations for Teacher entities.</summary>
+        /// <summary>The teacher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? Teacher
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("teacher", value); }
         }
 #endif
-        /// <summary>Customizations for Teacher Rosters.</summary>
+        /// <summary>The teacherRoster property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? TeacherRoster

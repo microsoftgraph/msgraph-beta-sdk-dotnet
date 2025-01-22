@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The user role type to assign to license. Possible values are: student, teacher, faculty.</summary>
+        /// <summary>The appliesTo property</summary>
         public global::Microsoft.Graph.Beta.Models.EducationUserRole? AppliesTo
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationUserRole?>("appliesTo"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Represents the SKU identifiers of the licenses to assign.</summary>
+        /// <summary>The skuIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SkuIds

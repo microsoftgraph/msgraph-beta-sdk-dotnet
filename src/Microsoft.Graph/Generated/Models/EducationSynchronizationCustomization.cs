@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Indicates whether the display name of the resource can be overwritten by the sync.</summary>
+        /// <summary>The allowDisplayNameUpdate property</summary>
         public bool? AllowDisplayNameUpdate
         {
             get { return BackingStore?.Get<bool?>("allowDisplayNameUpdate"); }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether synchronization of the parent entity is deferred to a later date.</summary>
+        /// <summary>The isSyncDeferred property</summary>
         public bool? IsSyncDeferred
         {
             get { return BackingStore?.Get<bool?>("isSyncDeferred"); }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters</summary>
+        /// <summary>The optionalPropertiesToSync property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OptionalPropertiesToSync
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("optionalPropertiesToSync", value); }
         }
 #endif
-        /// <summary>The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments</summary>
+        /// <summary>The synchronizationStartDate property</summary>
         public DateTimeOffset? SynchronizationStartDate
         {
             get { return BackingStore?.Get<DateTimeOffset?>("synchronizationStartDate"); }

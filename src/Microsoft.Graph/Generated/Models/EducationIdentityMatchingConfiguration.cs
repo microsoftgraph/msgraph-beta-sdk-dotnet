@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationIdentityMatchingConfiguration : global::Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Mapping between the user account and the options to use to uniquely identify the user to update.</summary>
+        /// <summary>The matchingOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.EducationIdentityMatchingOptions>? MatchingOptions

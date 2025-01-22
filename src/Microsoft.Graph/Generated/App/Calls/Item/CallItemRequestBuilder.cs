@@ -16,6 +16,10 @@ using Microsoft.Graph.Beta.App.Calls.Item.RecordResponse;
 using Microsoft.Graph.Beta.App.Calls.Item.Redirect;
 using Microsoft.Graph.Beta.App.Calls.Item.Reject;
 using Microsoft.Graph.Beta.App.Calls.Item.SendDtmfTones;
+using Microsoft.Graph.Beta.App.Calls.Item.StartRecording;
+using Microsoft.Graph.Beta.App.Calls.Item.StartTranscription;
+using Microsoft.Graph.Beta.App.Calls.Item.StopRecording;
+using Microsoft.Graph.Beta.App.Calls.Item.StopTranscription;
 using Microsoft.Graph.Beta.App.Calls.Item.SubscribeToTone;
 using Microsoft.Graph.Beta.App.Calls.Item.Transfer;
 using Microsoft.Graph.Beta.App.Calls.Item.Unmute;
@@ -117,6 +121,26 @@ namespace Microsoft.Graph.Beta.App.Calls.Item
         public global::Microsoft.Graph.Beta.App.Calls.Item.SendDtmfTones.SendDtmfTonesRequestBuilder SendDtmfTones
         {
             get => new global::Microsoft.Graph.Beta.App.Calls.Item.SendDtmfTones.SendDtmfTonesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startRecording method.</summary>
+        public global::Microsoft.Graph.Beta.App.Calls.Item.StartRecording.StartRecordingRequestBuilder StartRecording
+        {
+            get => new global::Microsoft.Graph.Beta.App.Calls.Item.StartRecording.StartRecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startTranscription method.</summary>
+        public global::Microsoft.Graph.Beta.App.Calls.Item.StartTranscription.StartTranscriptionRequestBuilder StartTranscription
+        {
+            get => new global::Microsoft.Graph.Beta.App.Calls.Item.StartTranscription.StartTranscriptionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopRecording method.</summary>
+        public global::Microsoft.Graph.Beta.App.Calls.Item.StopRecording.StopRecordingRequestBuilder StopRecording
+        {
+            get => new global::Microsoft.Graph.Beta.App.Calls.Item.StopRecording.StopRecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopTranscription method.</summary>
+        public global::Microsoft.Graph.Beta.App.Calls.Item.StopTranscription.StopTranscriptionRequestBuilder StopTranscription
+        {
+            get => new global::Microsoft.Graph.Beta.App.Calls.Item.StopTranscription.StopTranscriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subscribeToTone method.</summary>
         public global::Microsoft.Graph.Beta.App.Calls.Item.SubscribeToTone.SubscribeToToneRequestBuilder SubscribeToTone

@@ -34,8 +34,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Pause
         {
         }
         /// <summary>
-        /// Pause the sync of a specific school data synchronization profile in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-pause?view=graph-rest-beta" />
+        /// Invoke action pause
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,7 +57,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Pause
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Pause the sync of a specific school data synchronization profile in the tenant.
+        /// Invoke action pause
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

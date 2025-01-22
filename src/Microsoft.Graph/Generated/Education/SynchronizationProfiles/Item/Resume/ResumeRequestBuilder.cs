@@ -34,8 +34,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Resume
         {
         }
         /// <summary>
-        /// Resume the sync of a specific school data synchronization profile in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-resume?view=graph-rest-beta" />
+        /// Invoke action resume
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,7 +57,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Resume
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Resume the sync of a specific school data synchronization profile in the tenant.
+        /// Invoke action resume
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics;
+using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Archive;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Columns;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.ContentModels;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.ContentTypes;
@@ -25,6 +26,7 @@ using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Permissions;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.RecycleBin;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Sites;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.TermStore;
+using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -45,6 +47,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Columns.ColumnsRequestBuilder Columns
@@ -145,6 +152,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.TermStore.TermStoreRequestBuilder TermStore
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.GetByPathWithPathRequestBuilder"/> and sets the default values.

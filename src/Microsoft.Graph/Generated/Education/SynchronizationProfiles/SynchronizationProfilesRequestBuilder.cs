@@ -56,8 +56,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles
         {
         }
         /// <summary>
-        /// Retrieve the collection of school data synchronization profiles in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-list?view=graph-rest-beta" />
+        /// Get synchronizationProfiles from education
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile>(requestInfo, global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the collection of school data synchronization profiles in the tenant.
+        /// Get synchronizationProfiles from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +159,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles
             return new global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.SynchronizationProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the collection of school data synchronization profiles in the tenant.
+        /// Get synchronizationProfiles from education
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SynchronizationProfilesRequestBuilderGetQueryParameters 

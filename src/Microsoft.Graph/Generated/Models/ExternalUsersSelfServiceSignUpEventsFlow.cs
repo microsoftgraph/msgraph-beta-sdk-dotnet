@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onAttributeCollection", value); }
         }
 #endif
-        /// <summary>The configuration for what to invoke when attribution collection has started.</summary>
+        /// <summary>The configuration for what to invoke when attribution collection starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler? OnAttributeCollectionStart
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onAttributeCollectionStart", value); }
         }
 #endif
-        /// <summary>The configuration for what to invoke when attributes have been submitted at the end of attribution collection.</summary>
+        /// <summary>The configuration for what to invoke when attributes are submitted at the end of attribution collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler? OnAttributeCollectionSubmit

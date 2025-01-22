@@ -34,8 +34,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl
         {
         }
         /// <summary>
-        /// Retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-uploadurl?view=graph-rest-beta" />
+        /// Invoke function uploadUrl
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,8 +58,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlGetResponse>(requestInfo, global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-uploadurl?view=graph-rest-beta" />
+        /// Invoke function uploadUrl
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +82,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlResponse>(requestInfo, global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
+        /// Invoke function uploadUrl
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

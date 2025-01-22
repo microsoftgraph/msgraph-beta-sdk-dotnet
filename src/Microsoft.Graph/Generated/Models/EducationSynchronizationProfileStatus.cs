@@ -12,31 +12,31 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationSynchronizationProfileStatus : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Number of errors during synchronization.</summary>
+        /// <summary>The errorCount property</summary>
         public long? ErrorCount
         {
             get { return BackingStore?.Get<long?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
-        /// <summary>Date and time when most recent changes were observed in the profile.</summary>
+        /// <summary>The lastActivityDateTime property</summary>
         public DateTimeOffset? LastActivityDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActivityDateTime"); }
             set { BackingStore?.Set("lastActivityDateTime", value); }
         }
-        /// <summary>Date and time of the most recent successful synchronization.</summary>
+        /// <summary>The lastSynchronizationDateTime property</summary>
         public DateTimeOffset? LastSynchronizationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSynchronizationDateTime"); }
             set { BackingStore?.Set("lastSynchronizationDateTime", value); }
         }
-        /// <summary>The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.</summary>
+        /// <summary>The status property</summary>
         public global::Microsoft.Graph.Beta.Models.EducationSynchronizationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationSynchronizationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Status message for the synchronization stage of the current profile.</summary>
+        /// <summary>The statusMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusMessage
