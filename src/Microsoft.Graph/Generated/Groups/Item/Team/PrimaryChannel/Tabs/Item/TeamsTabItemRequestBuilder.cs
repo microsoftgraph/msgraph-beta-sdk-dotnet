@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of all the tabs in the channel. A navigation property.
+        /// A collection of all the tabs in the channel.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsTab"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs.Item
             return requestInfo;
         }
         /// <summary>
-        /// A collection of all the tabs in the channel. A navigation property.
+        /// A collection of all the tabs in the channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs.Item
         {
         }
         /// <summary>
-        /// A collection of all the tabs in the channel. A navigation property.
+        /// A collection of all the tabs in the channel.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsTabItemRequestBuilderGetQueryParameters 

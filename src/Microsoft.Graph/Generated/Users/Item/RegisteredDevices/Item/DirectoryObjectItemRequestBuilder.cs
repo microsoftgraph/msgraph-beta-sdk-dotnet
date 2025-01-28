@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item.GraphAppRoleAssignment;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item.GraphDevice;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item.GraphEndpoint;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to device.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
         {
         }
         /// <summary>
-        /// A collection of all the messages in the channel. A navigation property. Nullable.
+        /// A collection of all the messages in the channel. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChatMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ChatMessage>(requestInfo, global::Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of all the messages in the channel. A navigation property. Nullable.
+        /// A collection of all the messages in the channel. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
             return new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Messages.MessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of all the messages in the channel. A navigation property. Nullable.
+        /// A collection of all the messages in the channel. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessagesRequestBuilderGetQueryParameters 

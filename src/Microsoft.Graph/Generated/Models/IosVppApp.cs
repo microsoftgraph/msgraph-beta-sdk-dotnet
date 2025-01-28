@@ -149,6 +149,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("vppTokenAppleId", value); }
         }
 #endif
+        /// <summary>Display name of the VPP token associated with this app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VppTokenDisplayName
+        {
+            get { return BackingStore?.Get<string?>("vppTokenDisplayName"); }
+            set { BackingStore?.Set("vppTokenDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string VppTokenDisplayName
+        {
+            get { return BackingStore?.Get<string>("vppTokenDisplayName"); }
+            set { BackingStore?.Set("vppTokenDisplayName", value); }
+        }
+#endif
         /// <summary>Identifier of the VPP token associated with this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,6 +233,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
                 { "vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.VppTokenAccountType>(); } },
                 { "vppTokenAppleId", n => { VppTokenAppleId = n.GetStringValue(); } },
+                { "vppTokenDisplayName", n => { VppTokenDisplayName = n.GetStringValue(); } },
                 { "vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
                 { "vppTokenOrganizationName", n => { VppTokenOrganizationName = n.GetStringValue(); } },
             };
@@ -240,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("usedLicenseCount", UsedLicenseCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.VppTokenAccountType>("vppTokenAccountType", VppTokenAccountType);
             writer.WriteStringValue("vppTokenAppleId", VppTokenAppleId);
+            writer.WriteStringValue("vppTokenDisplayName", VppTokenDisplayName);
             writer.WriteStringValue("vppTokenId", VppTokenId);
             writer.WriteStringValue("vppTokenOrganizationName", VppTokenOrganizationName);
         }

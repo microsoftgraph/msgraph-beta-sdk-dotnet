@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphAppRoleAssignment;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphApplication;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphEndpoint;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphGroup;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint

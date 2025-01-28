@@ -67,6 +67,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defaultMacOsEnrollmentProfile", value); }
         }
 #endif
+        /// <summary>Default TvOS Enrollment Profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile? DefaultTvOSEnrollmentProfile
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile?>("defaultTvOSEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultTvOSEnrollmentProfile", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile DefaultTvOSEnrollmentProfile
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile>("defaultTvOSEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultTvOSEnrollmentProfile", value); }
+        }
+#endif
+        /// <summary>Default VisionOS Enrollment Profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile? DefaultVisionOSEnrollmentProfile
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile?>("defaultVisionOSEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultVisionOSEnrollmentProfile", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile DefaultVisionOSEnrollmentProfile
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile>("defaultVisionOSEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultVisionOSEnrollmentProfile", value); }
+        }
+#endif
         /// <summary>The enrollment profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,6 +233,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "dataSharingConsentGranted", n => { DataSharingConsentGranted = n.GetBoolValue(); } },
                 { "defaultIosEnrollmentProfile", n => { DefaultIosEnrollmentProfile = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
                 { "defaultMacOsEnrollmentProfile", n => { DefaultMacOsEnrollmentProfile = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
+                { "defaultTvOSEnrollmentProfile", n => { DefaultTvOSEnrollmentProfile = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
+                { "defaultVisionOSEnrollmentProfile", n => { DefaultVisionOSEnrollmentProfile = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
                 { "enrollmentProfiles", n => { EnrollmentProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EnrollmentProfile>(global::Microsoft.Graph.Beta.Models.EnrollmentProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "importedAppleDeviceIdentities", n => { ImportedAppleDeviceIdentities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>(global::Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -227,6 +261,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("dataSharingConsentGranted", DataSharingConsentGranted);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile", DefaultIosEnrollmentProfile);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile", DefaultMacOsEnrollmentProfile);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile>("defaultTvOSEnrollmentProfile", DefaultTvOSEnrollmentProfile);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile>("defaultVisionOSEnrollmentProfile", DefaultVisionOSEnrollmentProfile);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EnrollmentProfile>("enrollmentProfiles", EnrollmentProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>("importedAppleDeviceIdentities", ImportedAppleDeviceIdentities);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Me.GetMemberObjects
         {
         }
         /// <summary>
-        /// Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+        /// Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.GetMemberObjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsPostResponse>(requestInfo, global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+        /// Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.GetMemberObjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsResponse>(requestInfo, global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+        /// Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

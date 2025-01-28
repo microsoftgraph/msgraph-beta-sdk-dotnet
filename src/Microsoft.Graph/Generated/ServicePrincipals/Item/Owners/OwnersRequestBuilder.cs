@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphAppRoleAssignment;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphEndpoint;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphServicePrincipal;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphUser;
@@ -28,6 +29,11 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint

@@ -33,6 +33,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
+        /// <summary>Indicates whether this action happens at an approved location.</summary>
+        public bool? IsAtApprovedLocation
+        {
+            get { return BackingStore?.Get<bool?>("isAtApprovedLocation"); }
+            set { BackingStore?.Set("isAtApprovedLocation", value); }
+        }
         /// <summary>Notes about the timeCardEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
                 { "dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
+                { "isAtApprovedLocation", n => { IsAtApprovedLocation = n.GetBoolValue(); } },
                 { "notes", n => { Notes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -106,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("atApprovedLocation", AtApprovedLocation);
             writer.WriteDateTimeOffsetValue("dateTime", DateTime);
+            writer.WriteBoolValue("isAtApprovedLocation", IsAtApprovedLocation);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("notes", Notes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

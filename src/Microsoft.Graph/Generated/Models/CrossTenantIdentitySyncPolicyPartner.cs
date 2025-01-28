@@ -37,6 +37,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The externalCloudAuthorizedApplicationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalCloudAuthorizedApplicationId
+        {
+            get { return BackingStore?.Get<string?>("externalCloudAuthorizedApplicationId"); }
+            set { BackingStore?.Set("externalCloudAuthorizedApplicationId", value); }
+        }
+#nullable restore
+#else
+        public string ExternalCloudAuthorizedApplicationId
+        {
+            get { return BackingStore?.Get<string>("externalCloudAuthorizedApplicationId"); }
+            set { BackingStore?.Set("externalCloudAuthorizedApplicationId", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +128,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalCloudAuthorizedApplicationId", n => { ExternalCloudAuthorizedApplicationId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound>(global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
@@ -125,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("externalCloudAuthorizedApplicationId", ExternalCloudAuthorizedApplicationId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);

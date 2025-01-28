@@ -288,6 +288,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPowerState?>("powerState"); }
             set { BackingStore?.Set("powerState", value); }
         }
+        /// <summary>The product type of the Cloud PC. The possible values are: enterprise, frontline, devBox, powerAutomate, business, unknownFutureValue. For the available service plans and pricing for enterprise, frontline, and business, see Windows 365 for business. For pricing information for devBox, see Microsoft Dev Box pricing. For the available plans and pricing for powerAutomate, see Power Automate pricing. The default value is enterprise. Supports $filter and $select. For more information, see Example 4: List Cloud PCs filtered by product type. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcProductType? ProductType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProductType?>("productType"); }
+            set { BackingStore?.Set("productType", value); }
+        }
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -479,6 +485,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "osVersion", n => { OsVersion = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem>(); } },
                 { "partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>(global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "powerState", n => { PowerState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>(); } },
+                { "productType", n => { ProductType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>(); } },
                 { "provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 { "provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
@@ -522,6 +529,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem>("osVersion", OsVersion);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>("partnerAgentInstallResults", PartnerAgentInstallResults);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>("powerState", PowerState);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>("productType", ProductType);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);

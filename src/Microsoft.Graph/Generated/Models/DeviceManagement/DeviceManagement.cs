@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement
 {
     /// <summary>
-    /// Singleton entity that acts as a container for all device management functionality.
+    /// Singleton that acts as container for a collection of Resource Access entities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable

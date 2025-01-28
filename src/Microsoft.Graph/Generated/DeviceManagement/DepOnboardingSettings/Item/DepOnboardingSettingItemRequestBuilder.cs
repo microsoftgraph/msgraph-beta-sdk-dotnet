@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultTvOSEnrollmentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultVisionOSEnrollmentProfile;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey;
@@ -37,6 +39,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder DefaultMacOsEnrollmentProfile
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the defaultTvOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultTvOSEnrollmentProfile.DefaultTvOSEnrollmentProfileRequestBuilder DefaultTvOSEnrollmentProfile
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultTvOSEnrollmentProfile.DefaultTvOSEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the defaultVisionOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultVisionOSEnrollmentProfile.DefaultVisionOSEnrollmentProfileRequestBuilder DefaultVisionOSEnrollmentProfile
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultVisionOSEnrollmentProfile.DefaultVisionOSEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.EnrollmentProfilesRequestBuilder EnrollmentProfiles

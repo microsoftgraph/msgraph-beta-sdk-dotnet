@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The isAtApprovedLocation property</summary>
+        public bool? IsAtApprovedLocation
+        {
+            get { return BackingStore?.Get<bool?>("isAtApprovedLocation"); }
+            set { BackingStore?.Set("isAtApprovedLocation", value); }
+        }
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +77,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
+                { "isAtApprovedLocation", n => { IsAtApprovedLocation = n.GetBoolValue(); } },
                 { "notes", n => { Notes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
             };
         }
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("atApprovedLocation", AtApprovedLocation);
+            writer.WriteBoolValue("isAtApprovedLocation", IsAtApprovedLocation);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("notes", Notes);
             writer.WriteAdditionalData(AdditionalData);
         }

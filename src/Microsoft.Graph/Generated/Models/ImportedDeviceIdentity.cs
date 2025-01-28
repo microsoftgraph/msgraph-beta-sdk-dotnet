@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The platform property</summary>
+        /// <summary>Supported platform types for policies.</summary>
         public global::Microsoft.Graph.Beta.Models.Platform? Platform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Platform?>("platform"); }
