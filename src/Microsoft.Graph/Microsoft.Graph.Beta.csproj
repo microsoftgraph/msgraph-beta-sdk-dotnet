@@ -27,7 +27,7 @@
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <!-- x-release-please-start-version -->
-    <Version>5.94.0-preview</Version>
+    <Version>5.95.0-preview</Version>
     <!-- x-release-please-end -->
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
