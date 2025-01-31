@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
 #endif
+        /// <summary>The appOwnerTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppOwnerTenantId
+        {
+            get { return BackingStore?.Get<string?>("appOwnerTenantId"); }
+            set { BackingStore?.Set("appOwnerTenantId", value); }
+        }
+#nullable restore
+#else
+        public string AppOwnerTenantId
+        {
+            get { return BackingStore?.Get<string>("appOwnerTenantId"); }
+            set { BackingStore?.Set("appOwnerTenantId", value); }
+        }
+#endif
         /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the app token was bound to the device.</summary>
         public global::Microsoft.Graph.Beta.Models.TokenProtectionStatus? AppTokenProtectionStatus
         {
@@ -592,6 +608,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
+        /// <summary>The resourceOwnerTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceOwnerTenantId
+        {
+            get { return BackingStore?.Get<string?>("resourceOwnerTenantId"); }
+            set { BackingStore?.Set("resourceOwnerTenantId", value); }
+        }
+#nullable restore
+#else
+        public string ResourceOwnerTenantId
+        {
+            get { return BackingStore?.Get<string>("resourceOwnerTenantId"); }
+            set { BackingStore?.Set("resourceOwnerTenantId", value); }
+        }
+#endif
         /// <summary>The identifier of the service principal representing the target resource in the sign-in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -760,7 +792,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sessionLifetimePolicies", value); }
         }
 #endif
-        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).</summary>
+        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&amp;$filter=signInEventTypes/any(t: t eq &apos;nonInteractiveUser&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SignInEventTypes
@@ -964,6 +996,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appOwnerTenantId", n => { AppOwnerTenantId = n.GetStringValue(); } },
                 { "appTokenProtectionStatus", n => { AppTokenProtectionStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TokenProtectionStatus>(); } },
                 { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "appliedEventListeners", n => { AppliedEventListeners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>(global::Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1007,6 +1040,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "processingTimeInMilliseconds", n => { ProcessingTimeInMilliseconds = n.GetIntValue(); } },
                 { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "resourceOwnerTenantId", n => { ResourceOwnerTenantId = n.GetStringValue(); } },
                 { "resourceServicePrincipalId", n => { ResourceServicePrincipalId = n.GetStringValue(); } },
                 { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 { "riskDetail", n => { RiskDetail = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>(); } },
@@ -1048,6 +1082,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>("appliedEventListeners", AppliedEventListeners);
+            writer.WriteStringValue("appOwnerTenantId", AppOwnerTenantId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TokenProtectionStatus>("appTokenProtectionStatus", AppTokenProtectionStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails", AuthenticationAppDeviceDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails>("authenticationAppPolicyEvaluationDetails", AuthenticationAppPolicyEvaluationDetails);
@@ -1089,6 +1124,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("processingTimeInMilliseconds", ProcessingTimeInMilliseconds);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("resourceOwnerTenantId", ResourceOwnerTenantId);
             writer.WriteStringValue("resourceServicePrincipalId", ResourceServicePrincipalId);
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>("riskDetail", RiskDetail);

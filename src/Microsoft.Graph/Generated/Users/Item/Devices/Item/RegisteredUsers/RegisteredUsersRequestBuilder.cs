@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Count;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphAppRoleAssignment;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphEndpoint;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphServicePrincipal;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphUser;
@@ -28,6 +29,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint

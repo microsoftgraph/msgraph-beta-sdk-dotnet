@@ -12,7 +12,19 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcForensicStorageAccount : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the storage account.</summary>
+        /// <summary>The access tier of the storage account. Possible values are hot, cool, premium, cold, and unknownFutureValue. Default value is hot. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcStorageAccountAccessTier? AccessTier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcStorageAccountAccessTier?>("accessTier"); }
+            set { BackingStore?.Set("accessTier", value); }
+        }
+        /// <summary>Indicates whether immutability policies are configured for the storage account. When true, the storage account only accepts hot as the snapshot access tier. When false, the storage account accepts all valid access tiers. Read-Only.</summary>
+        public bool? ImmutableStorage
+        {
+            get { return BackingStore?.Get<bool?>("immutableStorage"); }
+            set { BackingStore?.Set("immutableStorage", value); }
+        }
+        /// <summary>The ID of the storage account. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageAccountId
@@ -28,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("storageAccountId", value); }
         }
 #endif
-        /// <summary>The name of the storage account.</summary>
+        /// <summary>The name of the storage account. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageAccountName
@@ -62,6 +74,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "accessTier", n => { AccessTier = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcStorageAccountAccessTier>(); } },
+                { "immutableStorage", n => { ImmutableStorage = n.GetBoolValue(); } },
                 { "storageAccountId", n => { StorageAccountId = n.GetStringValue(); } },
                 { "storageAccountName", n => { StorageAccountName = n.GetStringValue(); } },
             };
@@ -74,6 +88,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcStorageAccountAccessTier>("accessTier", AccessTier);
+            writer.WriteBoolValue("immutableStorage", ImmutableStorage);
             writer.WriteStringValue("storageAccountId", StorageAccountId);
             writer.WriteStringValue("storageAccountName", StorageAccountName);
         }

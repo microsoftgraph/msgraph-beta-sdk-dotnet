@@ -32,5 +32,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         User,
         #pragma warning restore CS1591
+        [EnumMember(Value = "teamsChannel")]
+        #pragma warning disable CS1591
+        TeamsChannel,
+        #pragma warning restore CS1591
     }
 }

@@ -94,6 +94,8 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.depEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepEnrollmentProfile(),
                 "#microsoft.graph.depIOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile(),
                 "#microsoft.graph.depMacOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile(),
+                "#microsoft.graph.depTvOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile(),
+                "#microsoft.graph.depVisionOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile(),
                 _ => new global::Microsoft.Graph.Beta.Models.EnrollmentProfile(),
             };
         }

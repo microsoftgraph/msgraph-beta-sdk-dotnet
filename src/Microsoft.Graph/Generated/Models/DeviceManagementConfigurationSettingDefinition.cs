@@ -210,6 +210,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("referredSettingInformationList", value); }
         }
 #endif
+        /// <summary>Setting RiskLevel</summary>
+        public global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingRiskLevel? RiskLevel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingRiskLevel?>("riskLevel"); }
+            set { BackingStore?.Set("riskLevel", value); }
+        }
         /// <summary>Root setting definition id if the setting is a child setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -302,6 +308,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "occurrence", n => { Occurrence = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence>(global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
                 { "offsetUri", n => { OffsetUri = n.GetStringValue(); } },
                 { "referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation>(global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "riskLevel", n => { RiskLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingRiskLevel>(); } },
                 { "rootDefinitionId", n => { RootDefinitionId = n.GetStringValue(); } },
                 { "settingUsage", n => { SettingUsage = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage>(); } },
                 { "uxBehavior", n => { UxBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationControlType>(); } },
@@ -330,6 +337,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence>("occurrence", Occurrence);
             writer.WriteStringValue("offsetUri", OffsetUri);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation>("referredSettingInformationList", ReferredSettingInformationList);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingRiskLevel>("riskLevel", RiskLevel);
             writer.WriteStringValue("rootDefinitionId", RootDefinitionId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage>("settingUsage", SettingUsage);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationControlType>("uxBehavior", UxBehavior);

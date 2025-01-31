@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Count;
+using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphAppRoleAssignment;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphDevice;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphEndpoint;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Beta.Users.Item.RegisteredDevices
         public global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphDevice.GraphDeviceRequestBuilder GraphDevice

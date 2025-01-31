@@ -512,6 +512,8 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.depIOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile(),
                 "#microsoft.graph.depMacOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile(),
                 "#microsoft.graph.depOnboardingSetting" => new global::Microsoft.Graph.Beta.Models.DepOnboardingSetting(),
+                "#microsoft.graph.depTvOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile(),
+                "#microsoft.graph.depVisionOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile(),
                 "#microsoft.graph.detectedApp" => new global::Microsoft.Graph.Beta.Models.DetectedApp(),
                 "#microsoft.graph.device" => new global::Microsoft.Graph.Beta.Models.Device(),
                 "#microsoft.graph.deviceAndAppManagementAssignmentFilter" => new global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter(),

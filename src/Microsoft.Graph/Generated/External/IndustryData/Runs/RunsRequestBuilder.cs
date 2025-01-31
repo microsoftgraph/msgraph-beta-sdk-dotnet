@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.External.IndustryData.Runs.Count;
 using Microsoft.Graph.Beta.External.IndustryData.Runs.Item;
 using Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataGetStatistics;
+using Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataStart;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs
         public global::Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataGetStatistics.MicrosoftGraphIndustryDataGetStatisticsRequestBuilder MicrosoftGraphIndustryDataGetStatistics
         {
             get => new global::Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataGetStatistics.MicrosoftGraphIndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the start method.</summary>
+        public global::Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataStart.MicrosoftGraphIndustryDataStartRequestBuilder MicrosoftGraphIndustryDataStart
+        {
+            get => new global::Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataStart.MicrosoftGraphIndustryDataStartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
         /// <param name="position">The unique identifier of industryDataRun</param>

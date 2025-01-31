@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AppRoleAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class AppRoleAssignment : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application&apos;s service principal (resourceId). If the resource application hasn&apos;t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</summary>
@@ -83,6 +83,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<Guid?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AppRoleAssignment"/> and sets the default values.
+        /// </summary>
+        public AppRoleAssignment() : base()
+        {
+            OdataType = "#microsoft.graph.appRoleAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

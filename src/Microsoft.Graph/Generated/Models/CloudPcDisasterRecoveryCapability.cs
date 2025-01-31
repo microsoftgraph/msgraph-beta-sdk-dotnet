@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapabilityType?>("capabilityType"); }
             set { BackingStore?.Set("capabilityType", value); }
         }
+        /// <summary>The licenseType property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType? LicenseType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType?>("licenseType"); }
+            set { BackingStore?.Set("licenseType", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "capabilityType", n => { CapabilityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapabilityType>(); } },
+                { "licenseType", n => { LicenseType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "primaryRegion", n => { PrimaryRegion = n.GetStringValue(); } },
                 { "secondaryRegion", n => { SecondaryRegion = n.GetStringValue(); } },
@@ -115,6 +122,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapabilityType>("capabilityType", CapabilityType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType>("licenseType", LicenseType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("primaryRegion", PrimaryRegion);
             writer.WriteStringValue("secondaryRegion", SecondaryRegion);

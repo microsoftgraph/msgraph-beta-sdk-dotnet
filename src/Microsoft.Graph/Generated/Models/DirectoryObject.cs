@@ -33,6 +33,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.administrativeUnit" => new global::Microsoft.Graph.Beta.Models.AdministrativeUnit(),
                 "#microsoft.graph.application" => new global::Microsoft.Graph.Beta.Models.Application(),
                 "#microsoft.graph.appManagementPolicy" => new global::Microsoft.Graph.Beta.Models.AppManagementPolicy(),
+                "#microsoft.graph.appRoleAssignment" => new global::Microsoft.Graph.Beta.Models.AppRoleAssignment(),
                 "#microsoft.graph.authorizationPolicy" => new global::Microsoft.Graph.Beta.Models.AuthorizationPolicy(),
                 "#microsoft.graph.certificateAuthorityDetail" => new global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail(),
                 "#microsoft.graph.certificateBasedApplicationConfiguration" => new global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration(),

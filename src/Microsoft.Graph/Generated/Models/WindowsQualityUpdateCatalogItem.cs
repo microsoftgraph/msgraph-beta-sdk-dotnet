@@ -13,10 +13,10 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsQualityUpdateCatalogItem : global::Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem, IParsable
     {
-        /// <summary>Windows quality update classification</summary>
-        public global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification? Classification
+        /// <summary>Windows quality update category</summary>
+        public global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory? Classification
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification?>("classification"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Flag indicating if update qualifies for expedite</summary>
@@ -41,6 +41,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kbArticleId", value); }
         }
 #endif
+        /// <summary>The operating system product revisions that are released as part of this quality update. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision>? ProductRevisions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision>?>("productRevisions"); }
+            set { BackingStore?.Set("productRevisions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision> ProductRevisions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision>>("productRevisions"); }
+            set { BackingStore?.Set("productRevisions", value); }
+        }
+#endif
+        /// <summary>The publishing cadence of the quality update. Possible values are: monthly, outOfBand. This property cannot be modified and is automatically populated when the catalog is created.</summary>
+        public global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCadence? QualityUpdateCadence
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCadence?>("qualityUpdateCadence"); }
+            set { BackingStore?.Set("qualityUpdateCadence", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogItem"/> and sets the default values.
         /// </summary>
@@ -66,9 +88,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "classification", n => { Classification = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification>(); } },
+                { "classification", n => { Classification = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory>(); } },
                 { "isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
                 { "kbArticleId", n => { KbArticleId = n.GetStringValue(); } },
+                { "productRevisions", n => { ProductRevisions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision>(global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "qualityUpdateCadence", n => { QualityUpdateCadence = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCadence>(); } },
             };
         }
         /// <summary>
@@ -79,9 +103,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification>("classification", Classification);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory>("classification", Classification);
             writer.WriteBoolValue("isExpeditable", IsExpeditable);
             writer.WriteStringValue("kbArticleId", KbArticleId);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision>("productRevisions", ProductRevisions);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCadence>("qualityUpdateCadence", QualityUpdateCadence);
         }
     }
 }

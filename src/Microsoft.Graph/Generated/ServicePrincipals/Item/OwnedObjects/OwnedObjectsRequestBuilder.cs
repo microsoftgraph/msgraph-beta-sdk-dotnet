@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphApplication;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphEndpoint;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphGroup;
@@ -33,6 +34,11 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint

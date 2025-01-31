@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChannelMembershipType?>("membershipType"); }
             set { BackingStore?.Set("membershipType", value); }
         }
-        /// <summary>A collection of all the messages in the channel. A navigation property. Nullable.</summary>
+        /// <summary>A collection of all the messages in the channel. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ChatMessage>? Messages
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("summary", value); }
         }
 #endif
-        /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
+        /// <summary>A collection of all the tabs in the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TeamsTab>? Tabs

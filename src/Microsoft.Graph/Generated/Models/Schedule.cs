@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
+        /// <summary>Indicates whether copied shifts include activities from the original shift.</summary>
+        public bool? IsActivitiesIncludedWhenCopyingShiftsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isActivitiesIncludedWhenCopyingShiftsEnabled"); }
+            set { BackingStore?.Set("isActivitiesIncludedWhenCopyingShiftsEnabled", value); }
+        }
         /// <summary>Indicates whether approval is required by a manager of this schedule for cross location shift requests.</summary>
         public bool? IsCrossLocationShiftRequestApprovalRequired
         {
@@ -355,6 +361,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "activitiesIncludedWhenCopyingShiftsEnabled", n => { ActivitiesIncludedWhenCopyingShiftsEnabled = n.GetBoolValue(); } },
                 { "dayNotes", n => { DayNotes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DayNote>(global::Microsoft.Graph.Beta.Models.DayNote.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "isActivitiesIncludedWhenCopyingShiftsEnabled", n => { IsActivitiesIncludedWhenCopyingShiftsEnabled = n.GetBoolValue(); } },
                 { "isCrossLocationShiftRequestApprovalRequired", n => { IsCrossLocationShiftRequestApprovalRequired = n.GetBoolValue(); } },
                 { "isCrossLocationShiftsEnabled", n => { IsCrossLocationShiftsEnabled = n.GetBoolValue(); } },
                 { "offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OfferShiftRequest>(global::Microsoft.Graph.Beta.Models.OfferShiftRequest.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -392,6 +399,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("activitiesIncludedWhenCopyingShiftsEnabled", ActivitiesIncludedWhenCopyingShiftsEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DayNote>("dayNotes", DayNotes);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("isActivitiesIncludedWhenCopyingShiftsEnabled", IsActivitiesIncludedWhenCopyingShiftsEnabled);
             writer.WriteBoolValue("isCrossLocationShiftRequestApprovalRequired", IsCrossLocationShiftRequestApprovalRequired);
             writer.WriteBoolValue("isCrossLocationShiftsEnabled", IsCrossLocationShiftsEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OfferShiftRequest>("offerShiftRequests", OfferShiftRequests);

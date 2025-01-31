@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    /// <summary>Windows quality update classification</summary>
+    /// <summary>Windows quality update category</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum WindowsQualityUpdateClassification
+    public enum WindowsQualityUpdateCategory
     {
         /// <summary>All update type</summary>
         [EnumMember(Value = "all")]

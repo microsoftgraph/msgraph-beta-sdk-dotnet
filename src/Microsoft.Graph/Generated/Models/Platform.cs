@@ -3,28 +3,36 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    /// <summary>Supported platform types for policies.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Platform
-    #pragma warning restore CS1591
     {
-        /// <summary>Unknown device platform</summary>
+        /// <summary>Default.Indicates the managed device is not known and is associated with &apos;Unknown&apos; device platform.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,
-        /// <summary>IOS device platform</summary>
+        /// <summary>Indicates the managed device is Apple device that runs on iOS operation system.</summary>
         [EnumMember(Value = "ios")]
         Ios,
-        /// <summary>Android device platform</summary>
+        /// <summary>Indicates the managed device is a Android device that runs on Android operation system. </summary>
         [EnumMember(Value = "android")]
         Android,
-        /// <summary>Windows device platform</summary>
+        /// <summary>Indicates the managed device is a Windows device that runs on Windows operation system.</summary>
         [EnumMember(Value = "windows")]
         Windows,
-        /// <summary>WindowsMobile device platform</summary>
+        /// <summary>Indicates the managed device is a Windows-based mobile device that runs on Windows Mobile operation system.</summary>
         [EnumMember(Value = "windowsMobile")]
         WindowsMobile,
-        /// <summary>Mac device platform</summary>
+        /// <summary>Indicates the managed device is Apple device that runs on MacOS operation system.</summary>
         [EnumMember(Value = "macOS")]
         MacOS,
+        /// <summary>Indicates the managed device is Apple device that runs on VisionOS operation system.</summary>
+        [EnumMember(Value = "visionOS")]
+        VisionOS,
+        /// <summary>Indicates the managed device is Apple device that runs on tvOS operation system.</summary>
+        [EnumMember(Value = "tvOS")]
+        TvOS,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }
