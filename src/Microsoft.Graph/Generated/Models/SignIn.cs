@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
 #endif
-        /// <summary>The appOwnerTenantId property</summary>
+        /// <summary>The identifier of the tenant that owns the client application.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppOwnerTenantId
@@ -608,7 +608,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
-        /// <summary>The resourceOwnerTenantId property</summary>
+        /// <summary>The identifier of the owner of the resource.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceOwnerTenantId

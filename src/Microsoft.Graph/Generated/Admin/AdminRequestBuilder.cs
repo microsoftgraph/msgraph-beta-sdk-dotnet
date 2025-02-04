@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Admin.AppsAndServices;
 using Microsoft.Graph.Beta.Admin.Dynamics;
 using Microsoft.Graph.Beta.Admin.Edge;
 using Microsoft.Graph.Beta.Admin.Entra;
+using Microsoft.Graph.Beta.Admin.Exchange;
 using Microsoft.Graph.Beta.Admin.Forms;
 using Microsoft.Graph.Beta.Admin.Microsoft365Apps;
 using Microsoft.Graph.Beta.Admin.People;
@@ -49,6 +50,11 @@ namespace Microsoft.Graph.Beta.Admin
         public global::Microsoft.Graph.Beta.Admin.Entra.EntraRequestBuilder Entra
         {
             get => new global::Microsoft.Graph.Beta.Admin.Entra.EntraRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the exchange property of the microsoft.graph.admin entity.</summary>
+        public global::Microsoft.Graph.Beta.Admin.Exchange.ExchangeRequestBuilder Exchange
+        {
+            get => new global::Microsoft.Graph.Beta.Admin.Exchange.ExchangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forms property of the microsoft.graph.admin entity.</summary>
         public global::Microsoft.Graph.Beta.Admin.Forms.FormsRequestBuilder Forms
