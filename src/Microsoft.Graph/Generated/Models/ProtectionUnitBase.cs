@@ -88,6 +88,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
+        /// <summary>The protectionSources property</summary>
+        public global::Microsoft.Graph.Beta.Models.ProtectionSource? ProtectionSources
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionSource?>("protectionSources"); }
+            set { BackingStore?.Set("protectionSources", value); }
+        }
         /// <summary>The status of the protection unit. The possible values are: protectRequested, protected, unprotectRequested, unprotected, removeRequested, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus? Status
         {
@@ -125,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "protectionSources", n => { ProtectionSources = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus>(); } },
             };
         }
@@ -142,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("policyId", PolicyId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionSource>("protectionSources", ProtectionSources);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus>("status", Status);
         }
     }

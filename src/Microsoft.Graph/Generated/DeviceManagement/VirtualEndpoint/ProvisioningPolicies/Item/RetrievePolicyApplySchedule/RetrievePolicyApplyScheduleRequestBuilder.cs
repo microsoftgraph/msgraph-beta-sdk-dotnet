@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
         }
         /// <summary>
-        /// Invoke function retrievePolicyApplySchedule
+        /// Get the scheduled apply rule set on the policy. Frontline shared only. Administrators only.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-retrievepolicyapplyschedule?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPolicyScheduledApplyActionDetail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPolicyScheduledApplyActionDetail>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPolicyScheduledApplyActionDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrievePolicyApplySchedule
+        /// Get the scheduled apply rule set on the policy. Frontline shared only. Administrators only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

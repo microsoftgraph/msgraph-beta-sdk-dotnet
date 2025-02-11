@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
         {
         }
         /// <summary>
-        /// Delete an updatableAsset object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-beta" />
+        /// Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an updatableAsset object.
+        /// Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

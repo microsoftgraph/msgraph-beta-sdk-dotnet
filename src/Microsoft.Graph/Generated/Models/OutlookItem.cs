@@ -73,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.eventMessage" => new global::Microsoft.Graph.Beta.Models.EventMessage(),
                 "#microsoft.graph.eventMessageRequest" => new global::Microsoft.Graph.Beta.Models.EventMessageRequest(),
                 "#microsoft.graph.eventMessageResponse" => new global::Microsoft.Graph.Beta.Models.EventMessageResponse(),
+                "#microsoft.graph.mailboxItem" => new global::Microsoft.Graph.Beta.Models.MailboxItem(),
                 "#microsoft.graph.message" => new global::Microsoft.Graph.Beta.Models.Message(),
                 "#microsoft.graph.note" => new global::Microsoft.Graph.Beta.Models.Note(),
                 "#microsoft.graph.outlookTask" => new global::Microsoft.Graph.Beta.Models.OutlookTask(),
