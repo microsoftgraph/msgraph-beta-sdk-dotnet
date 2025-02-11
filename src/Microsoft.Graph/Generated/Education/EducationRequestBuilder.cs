@@ -4,7 +4,6 @@ using Microsoft.Graph.Beta.Education.Classes;
 using Microsoft.Graph.Beta.Education.Me;
 using Microsoft.Graph.Beta.Education.Reports;
 using Microsoft.Graph.Beta.Education.Schools;
-using Microsoft.Graph.Beta.Education.SynchronizationProfiles;
 using Microsoft.Graph.Beta.Education.Users;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -43,11 +42,6 @@ namespace Microsoft.Graph.Beta.Education
         public global::Microsoft.Graph.Beta.Education.Schools.SchoolsRequestBuilder Schools
         {
             get => new global::Microsoft.Graph.Beta.Education.Schools.SchoolsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.</summary>
-        public global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.SynchronizationProfilesRequestBuilder SynchronizationProfiles
-        {
-            get => new global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.SynchronizationProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.educationRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Education.Users.UsersRequestBuilder Users

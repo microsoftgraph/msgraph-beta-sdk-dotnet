@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Beta.RiskDetections
         {
         }
         /// <summary>
-        /// Retrieve the properties of a collection of riskDetection objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta" />
+        /// Retrieve the properties of a riskDetection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RiskDetectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.RiskDetections
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RiskDetection>(requestInfo, global::Microsoft.Graph.Beta.Models.RiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a collection of riskDetection objects.
+        /// Retrieve the properties of a riskDetection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.RiskDetections
             return new global::Microsoft.Graph.Beta.RiskDetections.RiskDetectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of a collection of riskDetection objects.
+        /// Retrieve the properties of a riskDetection object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RiskDetectionsRequestBuilderGetQueryParameters 

@@ -101,22 +101,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("schools", value); }
         }
 #endif
-        /// <summary>The synchronizationProfiles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile>? SynchronizationProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile>?>("synchronizationProfiles"); }
-            set { BackingStore?.Set("synchronizationProfiles", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile> SynchronizationProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile>>("synchronizationProfiles"); }
-            set { BackingStore?.Set("synchronizationProfiles", value); }
-        }
-#endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,7 +148,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "reports", n => { Reports = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ReportsRoot>(global::Microsoft.Graph.Beta.Models.ReportsRoot.CreateFromDiscriminatorValue); } },
                 { "schools", n => { Schools = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationSchool>(global::Microsoft.Graph.Beta.Models.EducationSchool.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "synchronizationProfiles", n => { SynchronizationProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile>(global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "users", n => { Users = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationUser>(global::Microsoft.Graph.Beta.Models.EducationUser.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -180,7 +163,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ReportsRoot>("reports", Reports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationSchool>("schools", Schools);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationSynchronizationProfile>("synchronizationProfiles", SynchronizationProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationUser>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }

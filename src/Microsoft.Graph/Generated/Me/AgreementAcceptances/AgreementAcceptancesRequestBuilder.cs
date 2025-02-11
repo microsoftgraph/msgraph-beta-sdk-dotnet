@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.AgreementAcceptances
         {
         }
         /// <summary>
-        /// Retrieve a user&apos;s agreementAcceptance objects.
+        /// Allows the signed-in user to retrieve their agreementAcceptance objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AgreementAcceptanceCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Me.AgreementAcceptances
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AgreementAcceptanceCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.AgreementAcceptanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a user&apos;s agreementAcceptance objects.
+        /// Allows the signed-in user to retrieve their agreementAcceptance objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Me.AgreementAcceptances
             return new global::Microsoft.Graph.Beta.Me.AgreementAcceptances.AgreementAcceptancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a user&apos;s agreementAcceptance objects.
+        /// Allows the signed-in user to retrieve their agreementAcceptance objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AgreementAcceptancesRequestBuilderGetQueryParameters 

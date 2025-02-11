@@ -49,6 +49,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("excludeSaml"); }
             set { BackingStore?.Set("excludeSaml", value); }
         }
+        /// <summary>If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.</summary>
+        public bool? IsStateSetByMicrosoft
+        {
+            get { return BackingStore?.Get<bool?>("isStateSetByMicrosoft"); }
+            set { BackingStore?.Set("isStateSetByMicrosoft", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +112,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "excludeActors", n => { ExcludeActors = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>(global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions.CreateFromDiscriminatorValue); } },
                 { "excludeAppsReceivingV2Tokens", n => { ExcludeAppsReceivingV2Tokens = n.GetBoolValue(); } },
                 { "excludeSaml", n => { ExcludeSaml = n.GetBoolValue(); } },
+                { "isStateSetByMicrosoft", n => { IsStateSetByMicrosoft = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppManagementRestrictionState>(); } },

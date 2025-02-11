@@ -85,6 +85,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("entra", value); }
         }
 #endif
+        /// <summary>A container for the Exchange admin functionality. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ExchangeAdmin? Exchange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExchangeAdmin?>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ExchangeAdmin Exchange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExchangeAdmin>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#endif
         /// <summary>The forms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -259,6 +275,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "dynamics", n => { Dynamics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminDynamics>(global::Microsoft.Graph.Beta.Models.AdminDynamics.CreateFromDiscriminatorValue); } },
                 { "edge", n => { Edge = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Edge>(global::Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue); } },
                 { "entra", n => { Entra = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Entra>(global::Microsoft.Graph.Beta.Models.Entra.CreateFromDiscriminatorValue); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExchangeAdmin>(global::Microsoft.Graph.Beta.Models.ExchangeAdmin.CreateFromDiscriminatorValue); } },
                 { "forms", n => { Forms = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminForms>(global::Microsoft.Graph.Beta.Models.AdminForms.CreateFromDiscriminatorValue); } },
                 { "microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminMicrosoft365Apps>(global::Microsoft.Graph.Beta.Models.AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -281,6 +298,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminDynamics>("dynamics", Dynamics);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Edge>("edge", Edge);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Entra>("entra", Entra);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExchangeAdmin>("exchange", Exchange);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminForms>("forms", Forms);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminMicrosoft365Apps>("microsoft365Apps", Microsoft365Apps);
             writer.WriteStringValue("@odata.type", OdataType);

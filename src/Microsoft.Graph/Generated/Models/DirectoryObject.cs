@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.group" => new global::Microsoft.Graph.Beta.Models.Group(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.mailbox" => new global::Microsoft.Graph.Beta.Models.Mailbox(),
                 "#microsoft.graph.multiTenantOrganizationMember" => new global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationMember(),
                 "#microsoft.graph.mutualTlsOauthConfiguration" => new global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration(),
                 "#microsoft.graph.organization" => new global::Microsoft.Graph.Beta.Models.Organization(),

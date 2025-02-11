@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers
         {
         }
         /// <summary>
-        /// Retrieve a list of conversationMember objects from a team channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+        /// Get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list-allmembers?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConversationMemberCollectionResponse"/></returns>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConversationMember>(requestInfo, global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of conversationMember objects from a team channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+        /// Get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers
             return new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of conversationMember objects from a team channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+        /// Get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AllMembersRequestBuilderGetQueryParameters 
