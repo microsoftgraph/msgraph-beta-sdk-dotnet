@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions;
+using Microsoft.Graph.Beta.Users.Item.Settings.Exchange;
 using Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings;
 using Microsoft.Graph.Beta.Users.Item.Settings.ShiftPreferences;
@@ -28,6 +29,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         public global::Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions.ContactMergeSuggestionsRequestBuilder ContactMergeSuggestions
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions.ContactMergeSuggestionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the exchange property of the microsoft.graph.userSettings entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Settings.Exchange.ExchangeRequestBuilder Exchange
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Settings.Exchange.ExchangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights.ItemInsightsRequestBuilder ItemInsights

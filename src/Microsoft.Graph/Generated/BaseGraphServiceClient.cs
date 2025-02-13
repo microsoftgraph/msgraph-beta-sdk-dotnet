@@ -10,7 +10,6 @@ using Microsoft.Graph.Beta.Agreements;
 using Microsoft.Graph.Beta.AllowedDataLocations;
 using Microsoft.Graph.Beta.App;
 using Microsoft.Graph.Beta.AppCatalogs;
-using Microsoft.Graph.Beta.AppRoleAssignments;
 using Microsoft.Graph.Beta.ApplicationTemplates;
 using Microsoft.Graph.Beta.Applications;
 using Microsoft.Graph.Beta.ApplicationsWithAppId;
@@ -205,11 +204,6 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.ApplicationTemplates.ApplicationTemplatesRequestBuilder ApplicationTemplates
         {
             get => new global::Microsoft.Graph.Beta.ApplicationTemplates.ApplicationTemplatesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the collection of appRoleAssignment entities.</summary>
-        public global::Microsoft.Graph.Beta.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
-        {
-            get => new global::Microsoft.Graph.Beta.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
         public global::Microsoft.Graph.Beta.ApprovalWorkflowProviders.ApprovalWorkflowProvidersRequestBuilder ApprovalWorkflowProviders

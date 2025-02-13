@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuse
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.FilesFolder;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Members;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages;
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.ProvisionEmail;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.RemoveEmail;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams;
@@ -64,6 +65,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel
         public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the planner property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner.PlannerRequestBuilder Planner
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the provisionEmail method.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.ProvisionEmail.ProvisionEmailRequestBuilder ProvisionEmail
