@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
             set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }
         }
+        /// <summary>The customAppSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CustomAppSettings? CustomAppSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomAppSettings?>("customAppSettings"); }
+            set { BackingStore?.Set("customAppSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CustomAppSettings CustomAppSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomAppSettings>("customAppSettings"); }
+            set { BackingStore?.Set("customAppSettings", value); }
+        }
+#endif
         /// <summary>Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.</summary>
         public bool? IsChatResourceSpecificConsentEnabled
         {
@@ -49,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowUserRequestsForAppAccess", n => { AllowUserRequestsForAppAccess = n.GetBoolValue(); } },
+                { "customAppSettings", n => { CustomAppSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomAppSettings>(global::Microsoft.Graph.Beta.Models.CustomAppSettings.CreateFromDiscriminatorValue); } },
                 { "isChatResourceSpecificConsentEnabled", n => { IsChatResourceSpecificConsentEnabled = n.GetBoolValue(); } },
                 { "isUserPersonalScopeResourceSpecificConsentEnabled", n => { IsUserPersonalScopeResourceSpecificConsentEnabled = n.GetBoolValue(); } },
             };
@@ -62,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowUserRequestsForAppAccess", AllowUserRequestsForAppAccess);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomAppSettings>("customAppSettings", CustomAppSettings);
             writer.WriteBoolValue("isChatResourceSpecificConsentEnabled", IsChatResourceSpecificConsentEnabled);
             writer.WriteBoolValue("isUserPersonalScopeResourceSpecificConsentEnabled", IsUserPersonalScopeResourceSpecificConsentEnabled);
         }

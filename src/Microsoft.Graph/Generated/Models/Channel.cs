@@ -170,6 +170,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("moderationSettings", value); }
         }
 #endif
+        /// <summary>Selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner? Planner
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner?>("planner"); }
+            set { BackingStore?.Set("planner", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner Planner
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>("planner"); }
+            set { BackingStore?.Set("planner", value); }
+        }
+#endif
         /// <summary>A collection of teams with which a channel is shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -281,6 +297,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "membershipType", n => { MembershipType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>(global::Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "moderationSettings", n => { ModerationSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChannelModerationSettings>(global::Microsoft.Graph.Beta.Models.ChannelModerationSettings.CreateFromDiscriminatorValue); } },
+                { "planner", n => { Planner = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>(global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner.CreateFromDiscriminatorValue); } },
                 { "sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>(global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "summary", n => { Summary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChannelSummary>(global::Microsoft.Graph.Beta.Models.ChannelSummary.CreateFromDiscriminatorValue); } },
                 { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>(global::Microsoft.Graph.Beta.Models.TeamsTab.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -309,6 +326,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>("messages", Messages);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChannelModerationSettings>("moderationSettings", ModerationSettings);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>("planner", Planner);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChannelSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>("tabs", Tabs);

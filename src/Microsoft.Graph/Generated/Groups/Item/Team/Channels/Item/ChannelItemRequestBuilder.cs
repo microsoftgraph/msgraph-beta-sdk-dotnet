@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.DoesUserHaveAccessuser
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.FilesFolder;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages;
+using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.ProvisionEmail;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.RemoveEmail;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams;
@@ -64,6 +65,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the planner property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner.PlannerRequestBuilder Planner
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the provisionEmail method.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.ProvisionEmail.ProvisionEmailRequestBuilder ProvisionEmail
