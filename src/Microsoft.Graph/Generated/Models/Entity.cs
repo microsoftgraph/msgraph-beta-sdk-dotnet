@@ -1273,6 +1273,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.onlineMeeting" => new global::Microsoft.Graph.Beta.Models.OnlineMeeting(),
                 "#microsoft.graph.onlineMeetingBase" => new global::Microsoft.Graph.Beta.Models.OnlineMeetingBase(),
                 "#microsoft.graph.onOtpSendCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnOtpSendCustomExtension(),
+                "#microsoft.graph.onPhoneMethodLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnPhoneMethodLoadStartListener(),
                 "#microsoft.graph.onPremisesAgent" => new global::Microsoft.Graph.Beta.Models.OnPremisesAgent(),
                 "#microsoft.graph.onPremisesAgentGroup" => new global::Microsoft.Graph.Beta.Models.OnPremisesAgentGroup(),
                 "#microsoft.graph.onPremisesConditionalAccessSettings" => new global::Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings(),
