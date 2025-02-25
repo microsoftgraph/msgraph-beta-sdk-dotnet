@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that a surface Hub 2S  AutoPilot Profile is assigned to a device that is not surface Hub 2S.</summary>
         [EnumMember(Value = "surfaceHub2SProfileNotSupported")]
         SurfaceHub2SProfileNotSupported,
-        /// <summary>Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn&apos;t be necessary.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

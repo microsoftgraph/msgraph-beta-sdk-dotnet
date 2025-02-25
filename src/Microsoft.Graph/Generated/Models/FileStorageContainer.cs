@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class FileStorageContainer : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The archivalDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SiteArchivalDetails? ArchivalDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails?>("archivalDetails"); }
+            set { BackingStore?.Set("archivalDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SiteArchivalDetails ArchivalDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails>("archivalDetails"); }
+            set { BackingStore?.Set("archivalDetails", value); }
+        }
+#endif
         /// <summary>Sensitivity label assigned to the fileStorageContainer. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -260,6 +276,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "archivalDetails", n => { ArchivalDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails>(global::Microsoft.Graph.Beta.Models.SiteArchivalDetails.CreateFromDiscriminatorValue); } },
                 { "assignedSensitivityLabel", n => { AssignedSensitivityLabel = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AssignedLabel>(global::Microsoft.Graph.Beta.Models.AssignedLabel.CreateFromDiscriminatorValue); } },
                 { "columns", n => { Columns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>(global::Microsoft.Graph.Beta.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "containerTypeId", n => { ContainerTypeId = n.GetGuidValue(); } },
@@ -290,6 +307,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails>("archivalDetails", ArchivalDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AssignedLabel>("assignedSensitivityLabel", AssignedSensitivityLabel);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>("columns", Columns);
             writer.WriteGuidValue("containerTypeId", ContainerTypeId);

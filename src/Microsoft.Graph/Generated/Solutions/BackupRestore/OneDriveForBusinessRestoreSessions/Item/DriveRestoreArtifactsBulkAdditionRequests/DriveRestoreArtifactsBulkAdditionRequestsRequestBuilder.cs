@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The initial status upon creation of the restore session is active. When all the drives are added to the corresponding OneDrive restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The following steps describe how to create and manage a oneDriveForBusinessRestoreSession with bulk artifact additions.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-post-driverestoreartifactsbulkadditionrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             return requestInfo;
         }
         /// <summary>
-        /// Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The initial status upon creation of the restore session is active. When all the drives are added to the corresponding OneDrive restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The following steps describe how to create and manage a oneDriveForBusinessRestoreSession with bulk artifact additions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

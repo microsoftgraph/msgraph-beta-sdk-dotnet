@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.</summary>
         [EnumMember(Value = "singlePlatformRestriction")]
         SinglePlatformRestriction,
-        /// <summary>Unknown future value</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
         /// <summary>Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.</summary>

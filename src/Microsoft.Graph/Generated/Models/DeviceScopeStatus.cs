@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Device scope is enabled and finished recalculating the report metric. Device scope is now ready to be used.</summary>
         [EnumMember(Value = "completed")]
         Completed,
-        /// <summary>Placeholder value for future expansion.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

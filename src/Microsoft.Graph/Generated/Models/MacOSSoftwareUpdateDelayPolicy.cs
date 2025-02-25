@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Force delays for app software updates.</summary>
         [EnumMember(Value = "delayAppUpdateVisibility")]
         DelayAppUpdateVisibility = 4,
-        /// <summary>Sentinel member for cases where the client cannot handle the new enum values.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 8,
         /// <summary>Force delays for major OS software updates.</summary>

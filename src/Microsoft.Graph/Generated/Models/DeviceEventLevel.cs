@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the device event level is critical.</summary>
         [EnumMember(Value = "critical")]
         Critical,
-        /// <summary>Placeholder value for future expansion.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

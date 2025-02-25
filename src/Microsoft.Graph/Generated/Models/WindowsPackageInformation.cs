@@ -9,7 +9,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// Contains properties for the package information for a Windows line of business app. Used as property within windowsPhone81AppXBundle object, which is also being deprecated. This complex type will be deprecated in February 2023.
+    /// Contains properties for the package information for a Windows line-of-business app. Used as property within windowsPhone81AppXBundle object, which is also being deprecated. This complex type will be deprecated in February 2023.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsPackageInformation : IAdditionalDataHolder, IBackedModel, IParsable

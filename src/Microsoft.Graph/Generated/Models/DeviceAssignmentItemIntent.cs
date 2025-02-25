@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the application or configuration already under removal through previous actions and is now intended to be restored on the managed device</summary>
         [EnumMember(Value = "restore")]
         Restore,
-        /// <summary>Evolvable enumeration sentinel value. Do not use</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

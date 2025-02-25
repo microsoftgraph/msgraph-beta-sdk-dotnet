@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This status is set when the device license removing fails.</summary>
         [EnumMember(Value = "deviceLicenseRemoveFailed")]
         DeviceLicenseRemoveFailed,
-        /// <summary>This is put here as a place holder for future extension.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

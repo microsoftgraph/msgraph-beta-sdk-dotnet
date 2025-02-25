@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>use Scope Tag as parameter for the device scope configuration.</summary>
         [EnumMember(Value = "scopeTag")]
         ScopeTag,
-        /// <summary>Placeholder value for future expansion.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

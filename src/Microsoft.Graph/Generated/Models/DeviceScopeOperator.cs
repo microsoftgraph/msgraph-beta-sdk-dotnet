@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Operator for the device configuration query to be used (Equals).</summary>
         [EnumMember(Value = "equals")]
         Equals,
-        /// <summary>Placeholder value for future expansion enums such as notEquals, contains, notContains, greaterThan, lessThan.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

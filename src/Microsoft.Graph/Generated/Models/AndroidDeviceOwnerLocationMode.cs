@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Location setting is disabled on the device</summary>
         [EnumMember(Value = "disabled")]
         Disabled,
-        /// <summary>Evolvable enumeration sentinel value. Do not use</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

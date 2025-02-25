@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser
     public partial class DailyPrintUsageSummariesByUserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser
         /// <summary>Provides operations to manage the dailyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.</summary>
         /// <param name="position">The unique identifier of printUsageByUser</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Item.PrintUsageByUserItemRequestBuilder"/></returns>
-        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Item.PrintUsageByUserItemRequestBuilder this[string position]
         {
             get
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrintUsageByUserCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder.DailyPrintUsageSummariesByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrintUsageByUser?> PostAsync(global::Microsoft.Graph.Beta.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder.DailyPrintUsageSummariesByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder(rawUrl, RequestAdapter);

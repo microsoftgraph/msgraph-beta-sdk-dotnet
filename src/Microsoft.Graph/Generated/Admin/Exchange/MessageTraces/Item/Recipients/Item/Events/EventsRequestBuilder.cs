@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
         public global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item
         /// <summary>Provides operations to manage the events property of the microsoft.graph.messageRecipient entity.</summary>
         /// <param name="position">The unique identifier of messageEvent</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.Item.MessageEventItemRequestBuilder"/></returns>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
         public global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.Item.MessageEventItemRequestBuilder this[string position]
         {
             get
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MessageEventCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MessageEvent?> PostAsync(global::Microsoft.Graph.Beta.Models.MessageEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MessageEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.EventsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
         public global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.EventsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.Item.Events.EventsRequestBuilder(rawUrl, RequestAdapter);

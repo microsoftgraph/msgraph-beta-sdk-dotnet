@@ -25,31 +25,31 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators
     public partial class TiIndicatorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Security.TiIndicators.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicators method.</summary>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators.DeleteTiIndicatorsRequestBuilder DeleteTiIndicators
         {
             get => new global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators.DeleteTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId.DeleteTiIndicatorsByExternalIdRequestBuilder DeleteTiIndicatorsByExternalId
         {
             get => new global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId.DeleteTiIndicatorsByExternalIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the submitTiIndicators method.</summary>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsRequestBuilder SubmitTiIndicators
         {
             get => new global::Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateTiIndicators method.</summary>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators.UpdateTiIndicatorsRequestBuilder UpdateTiIndicators
         {
             get => new global::Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators.UpdateTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators
         /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of tiIndicator</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.TiIndicators.Item.TiIndicatorItemRequestBuilder"/></returns>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.Item.TiIndicatorItemRequestBuilder this[string position]
         {
             get
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.TiIndicatorCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Security.TiIndicators.TiIndicatorsRequestBuilder.TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.TiIndicator?> PostAsync(global::Microsoft.Graph.Beta.Models.TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Security.TiIndicators.TiIndicatorsRequestBuilder.TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.TiIndicators.TiIndicatorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.TiIndicatorsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Security.TiIndicators.TiIndicatorsRequestBuilder(rawUrl, RequestAdapter);

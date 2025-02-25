@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Disconnected state indicates that the account was connected in the past and later disconnected.</summary>
         [EnumMember(Value = "disconnected")]
         Disconnected,
-        /// <summary>Unknown future enum value.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

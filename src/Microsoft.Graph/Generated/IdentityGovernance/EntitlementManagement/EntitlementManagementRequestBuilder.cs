@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogsWithUniqueName.AccessPackageCatalogsWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of accessPackageCatalog</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions")]
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogsWithUniqueName.AccessPackageCatalogsWithUniqueNameRequestBuilder AccessPackageCatalogsWithUniqueName(string uniqueName)
         {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));

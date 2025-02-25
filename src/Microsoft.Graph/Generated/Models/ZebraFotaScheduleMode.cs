@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Schedule an update to be installed at a specified date and time.</summary>
         [EnumMember(Value = "scheduled")]
         Scheduled,
-        /// <summary>Unknown future enum value.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The device always looks for the latest package available in the repo and tries to update whenever a new package is available. This continues until the admin cancels the auto update.</summary>
         [EnumMember(Value = "auto")]
         Auto,
-        /// <summary>Unknown future enum value.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    /// <summary>
-    /// Singleton entity that acts as a container for all reports functionality.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class DeviceManagementReports : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Entity representing the configuration of a cached report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

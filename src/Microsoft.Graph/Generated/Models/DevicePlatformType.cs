@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates Mobile Application Management (MAM) for iOS devices</summary>
         [EnumMember(Value = "iOSMobileApplicationManagement")]
         IOSMobileApplicationManagement,
-        /// <summary>Evolvable enumeration sentinel value. Do not use</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
         /// <summary>Indicates Mobile Application Management (MAM) for Windows devices.</summary>

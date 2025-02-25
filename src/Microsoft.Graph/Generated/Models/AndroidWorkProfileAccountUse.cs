@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Allow addition of all accounts (including Google accounts) in Android Work Profile.</summary>
         [EnumMember(Value = "allowAll")]
         AllowAll,
-        /// <summary>Unknown future value for evolvable enum patterns.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

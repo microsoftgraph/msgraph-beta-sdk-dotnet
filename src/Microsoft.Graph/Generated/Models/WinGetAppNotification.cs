@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Hide all notifications.</summary>
         [EnumMember(Value = "hideAll")]
         HideAll,
-        /// <summary>Unknown future value, reserved for future usage as expandable enum.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

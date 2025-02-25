@@ -19,6 +19,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The archivedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentitySet? ArchivedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("archivedBy"); }
+            set { BackingStore?.Set("archivedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentitySet ArchivedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("archivedBy"); }
+            set { BackingStore?.Set("archivedBy", value); }
+        }
+#endif
+        /// <summary>The archivedDateTime property</summary>
+        public DateTimeOffset? ArchivedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("archivedDateTime"); }
+            set { BackingStore?.Set("archivedDateTime", value); }
+        }
         /// <summary>Represents the current archive status of the site collection. Returned only on $select.</summary>
         public global::Microsoft.Graph.Beta.Models.SiteArchiveStatus? ArchiveStatus
         {
@@ -70,6 +92,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "archiveStatus", n => { ArchiveStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SiteArchiveStatus>(); } },
+                { "archivedBy", n => { ArchivedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "archivedDateTime", n => { ArchivedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -80,6 +104,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("archivedBy", ArchivedBy);
+            writer.WriteDateTimeOffsetValue("archivedDateTime", ArchivedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SiteArchiveStatus>("archiveStatus", ArchiveStatus);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

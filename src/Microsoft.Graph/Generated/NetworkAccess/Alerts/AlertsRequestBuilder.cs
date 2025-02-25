@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Alerts
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        [Obsolete(" as of 2022-06/PrivatePreview:NetworkAccess")]
+        [Obsolete(" as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01")]
         public global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Alerts
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        [Obsolete(" as of 2022-06/PrivatePreview:NetworkAccess")]
+        [Obsolete(" as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01")]
         public global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));

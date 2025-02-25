@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS LOB App Provisioning Configuration resource.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosLobAppProvisioningConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable

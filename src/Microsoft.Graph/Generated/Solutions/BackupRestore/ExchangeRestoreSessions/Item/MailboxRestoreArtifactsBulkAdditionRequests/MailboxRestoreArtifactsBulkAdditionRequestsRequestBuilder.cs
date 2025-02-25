@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The initial status upon creation of the restore session is active. When all the mailboxes are added to the corresponding Exchange restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The following steps describe how to create and manage an exchangeRestoreSession with bulk artifact additions:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangerestoresession-post-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
             return requestInfo;
         }
         /// <summary>
-        /// Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The initial status upon creation of the restore session is active. When all the mailboxes are added to the corresponding Exchange restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Create a new mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession. The following steps describe how to create and manage an exchangeRestoreSession with bulk artifact additions:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

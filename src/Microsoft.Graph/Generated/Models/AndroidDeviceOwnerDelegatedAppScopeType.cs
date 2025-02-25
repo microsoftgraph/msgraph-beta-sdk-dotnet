@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specified that the admin has given permission to capture security logs on device. More info on Security logs: https://developer.android.com/work/dpc/security#log_enterprise_device_activity</summary>
         [EnumMember(Value = "captureSecurityLog")]
         CaptureSecurityLog,
-        /// <summary>Unknown future value (reserved, not used right now)</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

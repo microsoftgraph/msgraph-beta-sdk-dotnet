@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.BaseSitePageCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.BaseSitePageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new sitePage in the site pages list in a site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-beta" />
+        /// Create a new newsLinkPage in the site pages list of a site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/newslinkpage-create?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.BaseSitePage"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages
             return requestInfo;
         }
         /// <summary>
-        /// Create a new sitePage in the site pages list in a site.
+        /// Create a new newsLinkPage in the site pages list of a site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

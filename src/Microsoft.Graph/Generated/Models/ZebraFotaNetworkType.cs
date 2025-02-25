@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The device will install the update when connected both WiFi and Cellular.</summary>
         [EnumMember(Value = "wifiAndCellular")]
         WifiAndCellular,
-        /// <summary>Unknown future enum value.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

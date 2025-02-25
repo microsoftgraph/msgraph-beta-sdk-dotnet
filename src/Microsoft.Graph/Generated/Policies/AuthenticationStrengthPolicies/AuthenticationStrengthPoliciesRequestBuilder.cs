@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/></returns>
         /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
-        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove")]
+        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31")]
         public global::Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder FindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes)
         {
             if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize")]
+        [Obsolete("The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize on 2023-05-24 and will be removed 2023-09-24")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizePostResponse?> PostAsBulkResizePostResponseAsync(global::Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize")]
+        [Obsolete("The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize on 2023-05-24 and will be removed 2023-09-24")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize")]
+        [Obsolete("The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize on 2023-05-24 and will be removed 2023-09-24")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizeRequestBuilder(rawUrl, RequestAdapter);

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the failure of the upgrade during the upgrade cycle of when Intune begins upgrading servers, one server at a time</summary>
         [EnumMember(Value = "upgradeFailed")]
         UpgradeFailed,
-        /// <summary>Evolvable enumeration sentinel value. Do not use enums.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

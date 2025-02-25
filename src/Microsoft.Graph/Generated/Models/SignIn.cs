@@ -279,16 +279,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessAudience>? ConditionalAccessAudiences
+        public List<string>? ConditionalAccessAudiences
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessAudience>?>("conditionalAccessAudiences"); }
+            get { return BackingStore?.Get<List<string>?>("conditionalAccessAudiences"); }
             set { BackingStore?.Set("conditionalAccessAudiences", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessAudience> ConditionalAccessAudiences
+        public List<string> ConditionalAccessAudiences
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessAudience>>("conditionalAccessAudiences"); }
+            get { return BackingStore?.Get<List<string>>("conditionalAccessAudiences"); }
             set { BackingStore?.Set("conditionalAccessAudiences", value); }
         }
 #endif
@@ -1013,7 +1013,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "azureResourceId", n => { AzureResourceId = n.GetStringValue(); } },
                 { "clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
                 { "clientCredentialType", n => { ClientCredentialType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ClientCredentialType>(); } },
-                { "conditionalAccessAudiences", n => { ConditionalAccessAudiences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessAudience>(global::Microsoft.Graph.Beta.Models.ConditionalAccessAudience.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conditionalAccessAudiences", n => { ConditionalAccessAudiences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessStatus>(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -1097,7 +1097,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("azureResourceId", AzureResourceId);
             writer.WriteStringValue("clientAppUsed", ClientAppUsed);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ClientCredentialType>("clientCredentialType", ClientCredentialType);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessAudience>("conditionalAccessAudiences", ConditionalAccessAudiences);
+            writer.WriteCollectionOfPrimitiveValues<string>("conditionalAccessAudiences", ConditionalAccessAudiences);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeR
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport;
@@ -95,6 +96,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder RetrieveBulkActionStatusReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcTenantMetricsReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport.RetrieveCloudPcTenantMetricsReportRequestBuilder RetrieveCloudPcTenantMetricsReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport.RetrieveCloudPcTenantMetricsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCloudPcTroubleshootReports method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports.RetrieveCloudPcTroubleshootReportsRequestBuilder RetrieveCloudPcTroubleshootReports

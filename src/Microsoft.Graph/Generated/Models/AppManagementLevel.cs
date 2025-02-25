@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Android Open Source Project (AOSP) userless devices</summary>
         [EnumMember(Value = "androidOpenSourceProjectUserless")]
         AndroidOpenSourceProjectUserless = 64,
-        /// <summary>Place holder for evolvable enum</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 128,
     }

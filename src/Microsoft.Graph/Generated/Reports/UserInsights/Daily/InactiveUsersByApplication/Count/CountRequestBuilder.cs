@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs")]
+        [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs on 2024-02-02 and will be removed 2024-02-16")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs")]
+        [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs on 2024-02-02 and will be removed 2024-02-16")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Count.CountRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs")]
+        [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs on 2024-02-02 and will be removed 2024-02-16")]
         public global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Count.CountRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Count.CountRequestBuilder(rawUrl, RequestAdapter);
