@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Deployment has been successfully canceled by Zebra.</summary>
         [EnumMember(Value = "canceled")]
         Canceled,
-        /// <summary>Unknown future enum value.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

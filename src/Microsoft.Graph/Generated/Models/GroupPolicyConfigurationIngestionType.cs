@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicated atleast 1 tenant admin &amp; system ingested definitions configured for this policy</summary>
         [EnumMember(Value = "mixed")]
         Mixed,
-        /// <summary>Unknown future enum value</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

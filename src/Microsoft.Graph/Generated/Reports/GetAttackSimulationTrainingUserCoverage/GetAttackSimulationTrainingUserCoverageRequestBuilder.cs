@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans")]
+        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageGetResponse?> GetAsGetAttackSimulationTrainingUserCoverageGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans")]
+        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder.GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans")]
+        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20")]
         public global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl, RequestAdapter);

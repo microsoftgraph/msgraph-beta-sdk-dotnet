@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Hardware change detected on client that could not resolved automatically. Additional remediation is required.</summary>
         [EnumMember(Value = "manualRemediationRequired")]
         ManualRemediationRequired,
-        /// <summary>Marks the end of known enum values, and allows for additional values in the future.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

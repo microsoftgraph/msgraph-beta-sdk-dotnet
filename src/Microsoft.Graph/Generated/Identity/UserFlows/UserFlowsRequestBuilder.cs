@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
     public partial class UserFlowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
         public global::Microsoft.Graph.Beta.Identity.UserFlows.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Identity.UserFlows.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// <summary>Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.</summary>
         /// <param name="position">The unique identifier of identityUserFlow</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder"/></returns>
-        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
         public global::Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder this[string position]
         {
             get
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityUserFlow?> PostAsync(global::Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
         public global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder(rawUrl, RequestAdapter);

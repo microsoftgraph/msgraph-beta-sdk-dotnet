@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Office Open Document Format selected</summary>
         [EnumMember(Value = "officeOpenDocumentFormat")]
         OfficeOpenDocumentFormat,
-        /// <summary>Placeholder for evolvable enum.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

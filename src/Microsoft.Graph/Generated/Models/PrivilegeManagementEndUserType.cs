@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user who performed the elevation logged in using a Windows local account.</summary>
         [EnumMember(Value = "local")]
         Local,
-        /// <summary>Evolvable emuneration sentinel value. Do not use.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -519,7 +519,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reports singleton
+        /// Get reports from deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagementReports"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -586,7 +586,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
             return requestInfo;
         }
         /// <summary>
-        /// Reports singleton
+        /// Get reports from deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -644,7 +644,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         {
         }
         /// <summary>
-        /// Reports singleton
+        /// Get reports from deviceManagement
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 

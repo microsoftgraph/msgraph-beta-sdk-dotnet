@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Name of action to initiate On Demand Proactive Remediation</summary>
         [EnumMember(Value = "initiateOnDemandProactiveRemediation")]
         InitiateOnDemandProactiveRemediation,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
         /// <summary>Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it</summary>

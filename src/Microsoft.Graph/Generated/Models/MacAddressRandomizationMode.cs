@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates MAC randomization is disabled and the factory MAC address is used when connecting to the internet.</summary>
         [EnumMember(Value = "hardware")]
         Hardware,
-        /// <summary>Indicates evolvable enumeration sentinel value. Do not use.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

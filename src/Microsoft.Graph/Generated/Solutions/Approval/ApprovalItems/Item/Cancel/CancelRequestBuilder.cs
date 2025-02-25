@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Solutions.Approval.ApprovalItems.Item.Cancel
         {
         }
         /// <summary>
-        /// Cancel the approval item. The owner of the approval can trigger this endpoint.
+        /// Cancel the approval item. The owner of the approval is the only user who can trigger this endpoint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalitem-cancel?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Solutions.Approval.ApprovalItems.Item.Cancel
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancel the approval item. The owner of the approval can trigger this endpoint.
+        /// Cancel the approval item. The owner of the approval is the only user who can trigger this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

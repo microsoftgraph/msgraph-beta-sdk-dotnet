@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
     public partial class RegistrantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <summary>Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.</summary>
         /// <param name="position">The unique identifier of meetingRegistrantBase</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder"/></returns>
-        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder this[string position]
         {
             get
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase?> PostAsync(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder(rawUrl, RequestAdapter);

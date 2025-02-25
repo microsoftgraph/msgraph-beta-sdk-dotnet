@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the device assignment item type for the action is `graph.managedDeviceMobileAppConfiguration`. MobileAppConfiguration associated settings are removed on removal and added back on restoration</summary>
         [EnumMember(Value = "mobileAppConfiguration")]
         MobileAppConfiguration,
-        /// <summary>Evolvable enumeration sentinel value. Do not use</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

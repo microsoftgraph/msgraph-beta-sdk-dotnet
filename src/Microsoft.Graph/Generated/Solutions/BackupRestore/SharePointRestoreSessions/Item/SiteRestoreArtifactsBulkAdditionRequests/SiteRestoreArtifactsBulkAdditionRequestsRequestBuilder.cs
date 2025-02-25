@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return requestInfo;
         }
         /// <summary>
-        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

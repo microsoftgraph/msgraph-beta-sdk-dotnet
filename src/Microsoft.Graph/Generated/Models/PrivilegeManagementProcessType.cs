@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The elevated process is a child process</summary>
         [EnumMember(Value = "child")]
         Child,
-        /// <summary>Evolvable emuneration sentinel value. Do not use</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -22,13 +22,13 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
     public partial class IdentityProvidersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
         public global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
-        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
         public global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref.RefRequestBuilder Ref
         {
             get => new global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityProviderCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder.IdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder.IdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
         public global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder(rawUrl, RequestAdapter);

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class EdiscoveryCaseMember : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the eDiscovery case member. Allowed only for case members of type roleGroup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The recipientType property</summary>
+        /// <summary>Specifies the recipient type of the eDiscovery case member. The possible values are: user, roleGroup, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.RecipientType? RecipientType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.RecipientType?>("recipientType"); }
             set { BackingStore?.Set("recipientType", value); }
         }
-        /// <summary>The smtpAddress property</summary>
+        /// <summary>The smtp address of the eDiscovery case member. Allowed only for case members of type user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SmtpAddress

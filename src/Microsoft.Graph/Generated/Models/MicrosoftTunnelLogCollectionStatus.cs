@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the log collection has failed</summary>
         [EnumMember(Value = "failed")]
         Failed,
-        /// <summary>Placeholder value for future expansion enums</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

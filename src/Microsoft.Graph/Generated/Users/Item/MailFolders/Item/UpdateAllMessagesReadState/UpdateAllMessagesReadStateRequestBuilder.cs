@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesRead
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI")]
+        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesRead
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI")]
+        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesRead
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI")]
+        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder(rawUrl, RequestAdapter);

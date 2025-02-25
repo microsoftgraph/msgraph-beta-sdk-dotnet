@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
     public partial class MessageTraceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.</summary>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
         public global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.RecipientsRequestBuilder Recipients
         {
             get => new global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.Recipients.RecipientsRequestBuilder(PathParameters, RequestAdapter);
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MessageTrace?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.MessageTraceItemRequestBuilder.MessageTraceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MessageTrace?> PatchAsync(global::Microsoft.Graph.Beta.Models.MessageTrace body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.MessageTraceItemRequestBuilder.MessageTraceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MessageTrace body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.MessageTraceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport")]
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
         public global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.MessageTraceItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.Item.MessageTraceItemRequestBuilder(rawUrl, RequestAdapter);

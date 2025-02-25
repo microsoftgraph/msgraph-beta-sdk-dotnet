@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Pre-grant certificate access for specific apps (require user approval for other apps).</summary>
         [EnumMember(Value = "specificApps")]
         SpecificApps,
-        /// <summary>Unknown future value for evolvable enum patterns.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

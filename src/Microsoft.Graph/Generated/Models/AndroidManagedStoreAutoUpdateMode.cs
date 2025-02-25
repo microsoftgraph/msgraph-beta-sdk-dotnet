@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The app is updated as soon as possible by the developer. If device is online, it will be updated within minutes.</summary>
         [EnumMember(Value = "priority")]
         Priority,
-        /// <summary>Unknown future mode (reserved, not used right now).</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

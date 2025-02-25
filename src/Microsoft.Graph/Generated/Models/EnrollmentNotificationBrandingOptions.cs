@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the DeviceDetails is included in the notification.</summary>
         [EnumMember(Value = "includeDeviceDetails")]
         IncludeDeviceDetails = 32,
-        /// <summary>unknownFutureValue for evolvable enums pattern.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 64,
     }

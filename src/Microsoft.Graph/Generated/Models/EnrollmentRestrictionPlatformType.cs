@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the enrollment configuration applies only to Linux devices</summary>
         [EnumMember(Value = "linux")]
         Linux,
-        /// <summary>Evolvable enumeration sentinel value. Do not use</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

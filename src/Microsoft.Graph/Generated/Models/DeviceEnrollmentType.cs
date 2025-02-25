@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the device is enrolled via Apple Account Driven User Enrollment, a form of enrollment where the user enrolls via iOS Settings without using the iOS Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities.</summary>
         [EnumMember(Value = "appleAccountDrivenUserEnrollment")]
         AppleAccountDrivenUserEnrollment,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc")]
+        [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcBulkRemoteActionResult?> PostAsync(global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc")]
+        [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc")]
+        [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24")]
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcRequestBuilder(rawUrl, RequestAdapter);

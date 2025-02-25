@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the devices whose property value is greater than the configured input in Assignment Filters.</summary>
         [EnumMember(Value = "greaterThan")]
         GreaterThan,
-        /// <summary>Indicates the devices whose property value is greater than or equal to the configured input in Assignment Filters.</summary>
+        /// <summary>`Indicates the devices whose property value is greater than or equal to the configured input in Assignment Filters.</summary>
         [EnumMember(Value = "greaterThanOrEquals")]
         GreaterThanOrEquals,
         /// <summary>Indicates the devices whose property value is less than the configured input in Assignment Filters.</summary>

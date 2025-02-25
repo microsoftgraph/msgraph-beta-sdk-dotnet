@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the device scope action was successfully triggered.</summary>
         [EnumMember(Value = "succeeded")]
         Succeeded,
-        /// <summary>Placeholder value for future expansion.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }
