@@ -1197,6 +1197,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.muteParticipantsOperation" => new global::Microsoft.Graph.Beta.Models.MuteParticipantsOperation(),
                 "#microsoft.graph.mutualTlsOauthConfiguration" => new global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration(),
                 "#microsoft.graph.namedLocation" => new global::Microsoft.Graph.Beta.Models.NamedLocation(),
+                "#microsoft.graph.namePronunciationSettings" => new global::Microsoft.Graph.Beta.Models.NamePronunciationSettings(),
                 "#microsoft.graph.ndesConnector" => new global::Microsoft.Graph.Beta.Models.NdesConnector(),
                 "#microsoft.graph.networkaccess.alert" => new global::Microsoft.Graph.Beta.Models.Networkaccess.Alert(),
                 "#microsoft.graph.networkaccess.branchSite" => new global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite(),

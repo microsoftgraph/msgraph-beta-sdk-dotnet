@@ -11,8 +11,8 @@ using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetD
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime;
-using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentId;
-using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentId;
+using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId;
+using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -208,28 +208,28 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <summary>
         /// Provides operations to call the usageProfiling method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder"/></returns>
         /// <param name="aggregatedBy">Usage: aggregatedBy=&apos;{aggregatedBy}&apos;</param>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilder MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentId(string aggregatedBy, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId(string aggregatedBy, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             if(string.IsNullOrEmpty(aggregatedBy)) throw new ArgumentNullException(nameof(aggregatedBy));
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilder(PathParameters, RequestAdapter, aggregatedBy, endDateTime, startDateTime);
+            return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder(PathParameters, RequestAdapter, aggregatedBy, endDateTime, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the userReport method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilder MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentId(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the webCategoryReport method.

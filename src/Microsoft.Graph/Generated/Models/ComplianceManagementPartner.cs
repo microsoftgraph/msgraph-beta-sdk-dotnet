@@ -79,6 +79,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastHeartbeatDateTime"); }
             set { BackingStore?.Set("lastHeartbeatDateTime", value); }
         }
+        /// <summary>User groups which enroll Linux devices through partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>? LinuxEnrollmentAssignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>?>("linuxEnrollmentAssignments"); }
+            set { BackingStore?.Set("linuxEnrollmentAssignments", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment> LinuxEnrollmentAssignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>>("linuxEnrollmentAssignments"); }
+            set { BackingStore?.Set("linuxEnrollmentAssignments", value); }
+        }
+#endif
+        /// <summary>Partner onboarded for Linux devices.</summary>
+        public bool? LinuxOnboarded
+        {
+            get { return BackingStore?.Get<bool?>("linuxOnboarded"); }
+            set { BackingStore?.Set("linuxOnboarded", value); }
+        }
         /// <summary>User groups which enroll Mac devices through partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +153,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "iosEnrollmentAssignments", n => { IosEnrollmentAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>(global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "iosOnboarded", n => { IosOnboarded = n.GetBoolValue(); } },
                 { "lastHeartbeatDateTime", n => { LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
+                { "linuxEnrollmentAssignments", n => { LinuxEnrollmentAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>(global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "linuxOnboarded", n => { LinuxOnboarded = n.GetBoolValue(); } },
                 { "macOsEnrollmentAssignments", n => { MacOsEnrollmentAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>(global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "macOsOnboarded", n => { MacOsOnboarded = n.GetBoolValue(); } },
                 { "partnerState", n => { PartnerState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementPartnerTenantState>(); } },
@@ -150,6 +174,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>("iosEnrollmentAssignments", IosEnrollmentAssignments);
             writer.WriteBoolValue("iosOnboarded", IosOnboarded);
             writer.WriteDateTimeOffsetValue("lastHeartbeatDateTime", LastHeartbeatDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>("linuxEnrollmentAssignments", LinuxEnrollmentAssignments);
+            writer.WriteBoolValue("linuxOnboarded", LinuxOnboarded);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComplianceManagementPartnerAssignment>("macOsEnrollmentAssignments", MacOsEnrollmentAssignments);
             writer.WriteBoolValue("macOsOnboarded", MacOsOnboarded);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementPartnerTenantState>("partnerState", PartnerState);

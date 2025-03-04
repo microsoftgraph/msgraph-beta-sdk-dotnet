@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
+        /// <summary>The videoOnDemandWebUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string?>("videoOnDemandWebUrl"); }
+            set { BackingStore?.Set("videoOnDemandWebUrl", value); }
+        }
+#nullable restore
+#else
+        public string VideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string>("videoOnDemandWebUrl"); }
+            set { BackingStore?.Set("videoOnDemandWebUrl", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventSession"/> and sets the default values.
         /// </summary>
@@ -105,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>(global::Microsoft.Graph.Beta.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>(global::Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "videoOnDemandWebUrl", n => { VideoOnDemandWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -119,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>("presenters", Presenters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>("registrations", Registrations);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteStringValue("videoOnDemandWebUrl", VideoOnDemandWebUrl);
         }
     }
 }
