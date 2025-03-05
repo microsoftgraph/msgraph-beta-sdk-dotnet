@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastSignInRequestId", value); }
         }
 #endif
-        /// <summary>The date and time of the user&apos;s most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The date and time of the user&apos;s most recent successful interactive or non-interactive sign-in. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSuccessfulSignInDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSuccessfulSignInDateTime"); }

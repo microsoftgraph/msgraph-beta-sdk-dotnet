@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
         {
         }
         /// <summary>
-        /// Delete navigation property siteSources for security
+        /// Delete a siteSource object associated with an ediscoveryCustodian.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-delete-sitesources?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.SiteSource>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.SiteSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property siteSources for security
+        /// Delete a siteSource object associated with an ediscoveryCustodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

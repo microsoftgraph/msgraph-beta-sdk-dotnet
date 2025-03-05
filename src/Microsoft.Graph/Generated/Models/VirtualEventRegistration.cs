@@ -114,6 +114,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("preferredTimezone", value); }
         }
 #endif
+        /// <summary>The registrantVideoOnDemandWebUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrantVideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string?>("registrantVideoOnDemandWebUrl"); }
+            set { BackingStore?.Set("registrantVideoOnDemandWebUrl", value); }
+        }
+#nullable restore
+#else
+        public string RegistrantVideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string>("registrantVideoOnDemandWebUrl"); }
+            set { BackingStore?.Set("registrantVideoOnDemandWebUrl", value); }
+        }
+#endif
         /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RegistrationDateTime
         {
@@ -199,6 +215,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "preferredTimezone", n => { PreferredTimezone = n.GetStringValue(); } },
+                { "registrantVideoOnDemandWebUrl", n => { RegistrantVideoOnDemandWebUrl = n.GetStringValue(); } },
                 { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventSession>(global::Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -221,6 +238,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("preferredTimezone", PreferredTimezone);
+            writer.WriteStringValue("registrantVideoOnDemandWebUrl", RegistrantVideoOnDemandWebUrl);
             writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>("registrationQuestionAnswers", RegistrationQuestionAnswers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventSession>("sessions", Sessions);
