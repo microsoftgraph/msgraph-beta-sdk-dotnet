@@ -4,7 +4,9 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Count;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Delta;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ForwardToChat;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ReplyWithQuote;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -30,6 +32,16 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the forwardToChat method.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ForwardToChat.ForwardToChatRequestBuilder ForwardToChat
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ForwardToChat.ForwardToChatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>
@@ -84,8 +96,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ChatMessageCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-beta" />
+        /// Send a new chatMessage in the specified channel or a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +141,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel.
+        /// Send a new chatMessage in the specified channel or a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
