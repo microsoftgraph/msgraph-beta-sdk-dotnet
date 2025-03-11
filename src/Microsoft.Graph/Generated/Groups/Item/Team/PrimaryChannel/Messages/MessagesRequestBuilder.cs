@@ -2,7 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Count;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Delta;
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.ForwardToChat;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Item;
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.ReplyWithQuote;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +32,16 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages
         public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the forwardToChat method.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.ForwardToChat.ForwardToChatRequestBuilder ForwardToChat
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.ForwardToChat.ForwardToChatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>

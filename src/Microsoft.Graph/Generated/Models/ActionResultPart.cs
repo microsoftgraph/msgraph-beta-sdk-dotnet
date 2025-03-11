@@ -73,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.aadUserConversationMemberResult" => new global::Microsoft.Graph.Beta.Models.AadUserConversationMemberResult(),
+                "#microsoft.graph.forwardToChatResult" => new global::Microsoft.Graph.Beta.Models.ForwardToChatResult(),
                 _ => new global::Microsoft.Graph.Beta.Models.ActionResultPart(),
             };
         }

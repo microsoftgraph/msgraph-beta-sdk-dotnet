@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.CaseMembers;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.MicrosoftGraphSecurityClose;
@@ -28,6 +29,11 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EdiscoveryCaseItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the caseMembers property of the microsoft.graph.security.ediscoveryCase entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.CaseMembers.CaseMembersRequestBuilder CaseMembers
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.CaseMembers.CaseMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         public global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.CustodiansRequestBuilder Custodians
         {

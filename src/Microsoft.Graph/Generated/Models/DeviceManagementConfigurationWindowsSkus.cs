@@ -8,65 +8,50 @@ namespace Microsoft.Graph.Beta.Models
     public enum DeviceManagementConfigurationWindowsSkus
     #pragma warning restore CS1591
     {
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;unknown&apos; </summary>
         [EnumMember(Value = "unknown")]
-        #pragma warning disable CS1591
         Unknown,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsHome&apos; </summary>
         [EnumMember(Value = "windowsHome")]
-        #pragma warning disable CS1591
         WindowsHome,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsProfessional&apos; </summary>
         [EnumMember(Value = "windowsProfessional")]
-        #pragma warning disable CS1591
         WindowsProfessional,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsEnterprise&apos; </summary>
         [EnumMember(Value = "windowsEnterprise")]
-        #pragma warning disable CS1591
         WindowsEnterprise,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsEducation&apos; </summary>
         [EnumMember(Value = "windowsEducation")]
-        #pragma warning disable CS1591
         WindowsEducation,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsMobile&apos; </summary>
         [EnumMember(Value = "windowsMobile")]
-        #pragma warning disable CS1591
         WindowsMobile,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsMobileEnterprise&apos; </summary>
         [EnumMember(Value = "windowsMobileEnterprise")]
-        #pragma warning disable CS1591
         WindowsMobileEnterprise,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsTeamSurface&apos; </summary>
         [EnumMember(Value = "windowsTeamSurface")]
-        #pragma warning disable CS1591
         WindowsTeamSurface,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;iot&apos; </summary>
         [EnumMember(Value = "iot")]
-        #pragma warning disable CS1591
         Iot,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;iotEnterprise&apos; </summary>
         [EnumMember(Value = "iotEnterprise")]
-        #pragma warning disable CS1591
         IotEnterprise,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;holoLens&apos; </summary>
         [EnumMember(Value = "holoLens")]
-        #pragma warning disable CS1591
         HoloLens,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;holoLensEnterprise&apos; </summary>
         [EnumMember(Value = "holoLensEnterprise")]
-        #pragma warning disable CS1591
         HoloLensEnterprise,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;holographicForBusiness&apos; </summary>
         [EnumMember(Value = "holographicForBusiness")]
-        #pragma warning disable CS1591
         HolographicForBusiness,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;windowsMultiSession&apos; </summary>
         [EnumMember(Value = "windowsMultiSession")]
-        #pragma warning disable CS1591
         WindowsMultiSession,
-        #pragma warning restore CS1591
+        /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;surfaceHub&apos; </summary>
         [EnumMember(Value = "surfaceHub")]
-        #pragma warning disable CS1591
         SurfaceHub,
-        #pragma warning restore CS1591
     }
 }

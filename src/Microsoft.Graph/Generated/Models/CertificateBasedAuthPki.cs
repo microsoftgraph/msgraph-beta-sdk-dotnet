@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateAuthorities", value); }
         }
 #endif
-        /// <summary>The name of the object.</summary>
+        /// <summary>The name of the object. Maximum length is 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
