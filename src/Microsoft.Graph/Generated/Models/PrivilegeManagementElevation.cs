@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PrivilegeManagementElevation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The certificate payload of the application. This is computed by hashing the certificate information on the client. Example: `32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a50`</summary>
+        /// <summary>The certificate payload of the application. This is computed by hashing the certificate information on the client. Example: 32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a50</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CertificatePayload
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificatePayload", value); }
         }
 #endif
-        /// <summary>The company name of the application. This value is set by the creator of the application. Example: `Microsoft Corporation`</summary>
+        /// <summary>The company name of the application. This value is set by the creator of the application. Example: Microsoft Corporation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyName
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("companyName", value); }
         }
 #endif
-        /// <summary>The Intune deviceId. Unique identifier for the managed device. Example: `92ce5047-9553-4731-817f-9b401a999a1b`</summary>
+        /// <summary>The Intune deviceId. Unique identifier for the managed device. Example: 92ce5047-9553-4731-817f-9b401a999a1b</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The name associated with the device in the intune database. Example: `JOHNDOE-LAPTOP`.</summary>
+        /// <summary>The name associated with the device in the intune database. Example: JOHNDOE-LAPTOP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName
@@ -83,13 +83,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegeManagementElevationType?>("elevationType"); }
             set { BackingStore?.Set("elevationType", value); }
         }
-        /// <summary>The date and time when the application was elevated. Example:`2014-01-01T00:00:00Z`</summary>
+        /// <summary>The date and time when the application was elevated. Example:2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EventDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The file description of the application. This value is set by the creator of the application. Example: `Editor of multiple coding languages.`</summary>
+        /// <summary>The file description of the application. This value is set by the creator of the application. Example: Editor of multiple coding languages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileDescription
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileDescription", value); }
         }
 #endif
-        /// <summary>The full file path of the application including the filename and file extension. Example: `C:\Program Files\vscode.exe`</summary>
+        /// <summary>The full file path of the application including the filename and file extension. Example: C:/Program Files/vscode.exe</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilePath
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("filePath", value); }
         }
 #endif
-        /// <summary>The version of the application. This value is set by the creator of the application. Example: `6.2211.1035.1000`</summary>
+        /// <summary>The version of the application. This value is set by the creator of the application. Example: 6.2211.1035.1000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileVersion
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileVersion", value); }
         }
 #endif
-        /// <summary>The sha256 hash of the application. Example: `32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a57`</summary>
+        /// <summary>The sha256 hash of the application. Example: 32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a57</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hash
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("hash", value); }
         }
 #endif
-        /// <summary>The internal name of the application. This value is set by the creator of the application. Example: `VS code`</summary>
+        /// <summary>The internal name of the application. This value is set by the creator of the application. Example: VS code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternalName
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("internalName", value); }
         }
 #endif
-        /// <summary>The justification to elevate the application. This is an input by the user when the privilegeManagementElevationType is of type userConfirmedElevation or support approved elevation. This will be null in all other scenarios. The length is capped at 256 char, enforced on the client side. Example: `To install debug tool.`.</summary>
+        /// <summary>The justification to elevate the application. This is an input by the user when the privilegeManagementElevationType is of type userConfirmedElevation or support approved elevation. This will be null in all other scenarios. The length is capped at 256 char, enforced on the client side. Example: To install debug tool..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Justification
@@ -239,7 +239,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegeManagementProcessType?>("processType"); }
             set { BackingStore?.Set("processType", value); }
         }
-        /// <summary>The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`</summary>
+        /// <summary>The product name of the application. This value is set by the creator of the application. Example: Visual Studio</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductName
@@ -255,7 +255,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("productName", value); }
         }
 #endif
-        /// <summary>The result of the elevation action with 0 being success, and everything else being exit code if the elevation was unsuccessful. The value will always be 0 on all unmanaged elevation. Example: `0`. Valid values 0 to 2147483647</summary>
+        /// <summary>The result of the elevation action with 0 being success, and everything else being exit code if the elevation was unsuccessful. The value will always be 0 on all unmanaged elevation. Example: 0. Valid values 0 to 2147483647</summary>
         public int? Result
         {
             get { return BackingStore?.Get<int?>("result"); }
@@ -283,7 +283,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("systemInitiatedElevation"); }
             set { BackingStore?.Set("systemInitiatedElevation", value); }
         }
-        /// <summary>The User Principal Name of the user who performed the elevation. Example: `john@domain.com`</summary>
+        /// <summary>The User Principal Name of the user who performed the elevation. Example: john@domain.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Upn

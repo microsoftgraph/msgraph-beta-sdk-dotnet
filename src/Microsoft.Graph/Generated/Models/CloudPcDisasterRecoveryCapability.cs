@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapabilityType?>("capabilityType"); }
             set { BackingStore?.Set("capabilityType", value); }
         }
-        /// <summary>The licenseType property</summary>
+        /// <summary>The disaster recovery license type that provides the capability.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType? LicenseType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType?>("licenseType"); }

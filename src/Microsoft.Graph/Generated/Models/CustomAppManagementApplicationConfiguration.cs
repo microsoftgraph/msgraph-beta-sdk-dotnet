@@ -19,9 +19,25 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>Property to restrict creation or update of apps based on their target signInAudience types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AudiencesConfiguration? Audiences
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration?>("audiences"); }
+            set { BackingStore?.Set("audiences", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AudiencesConfiguration Audiences
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>("audiences"); }
+            set { BackingStore?.Set("audiences", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Configuration for identifierUris restrictions</summary>
+        /// <summary>Configuration for identifierUris restrictions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration? IdentifierUris
@@ -79,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "audiences", n => { Audiences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>(global::Microsoft.Graph.Beta.Models.AudiencesConfiguration.CreateFromDiscriminatorValue); } },
                 { "identifierUris", n => { IdentifierUris = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>(global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -90,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>("audiences", Audiences);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>("identifierUris", IdentifierUris);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

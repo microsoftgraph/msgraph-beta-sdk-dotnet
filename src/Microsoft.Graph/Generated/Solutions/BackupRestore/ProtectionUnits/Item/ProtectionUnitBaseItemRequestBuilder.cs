@@ -2,6 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphDriveProtectionUnit;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphMailboxProtectionUnit;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphSiteProtectionUnit;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +21,21 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectionUnitBaseItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Casts the previous resource to driveProtectionUnit.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphDriveProtectionUnit.GraphDriveProtectionUnitRequestBuilder GraphDriveProtectionUnit
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphDriveProtectionUnit.GraphDriveProtectionUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to mailboxProtectionUnit.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphMailboxProtectionUnit.GraphMailboxProtectionUnitRequestBuilder GraphMailboxProtectionUnit
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphMailboxProtectionUnit.GraphMailboxProtectionUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to siteProtectionUnit.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphSiteProtectionUnit.GraphSiteProtectionUnitRequestBuilder GraphSiteProtectionUnit
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphSiteProtectionUnit.GraphSiteProtectionUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.ProtectionUnitBaseItemRequestBuilder"/> and sets the default values.
         /// </summary>

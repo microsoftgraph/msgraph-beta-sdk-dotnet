@@ -19,13 +19,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
-        /// <summary>Flag indicating if update qualifies for expedite</summary>
+        /// <summary>When TRUE, indicates that the quality updates qualify for expedition. When FALSE, indicates the quality updates do not quality for expedition. Default value is FALSE. Read-only</summary>
         public bool? IsExpeditable
         {
             get { return BackingStore?.Get<bool?>("isExpeditable"); }
             set { BackingStore?.Set("isExpeditable", value); }
         }
-        /// <summary>Knowledge base article id</summary>
+        /// <summary>Identifies the knowledge base article associated with the Windows quality update catalog item. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KbArticleId

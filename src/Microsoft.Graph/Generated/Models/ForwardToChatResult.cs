@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ForwardToChatResult : global::Microsoft.Graph.Beta.Models.ActionResultPart, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The forwardedMessageId property</summary>
+        /// <summary>The chatMessage ID generated after a message is successfully forwarded to the target chat ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ForwardedMessageId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("forwardedMessageId", value); }
         }
 #endif
-        /// <summary>The targetChatId property</summary>
+        /// <summary>The target chat ID where the message was forwarded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetChatId

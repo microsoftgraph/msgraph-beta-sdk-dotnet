@@ -91,25 +91,25 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The size of the file prior to encryption. To be deprecated, please use sizeInBytes property instead.</summary>
+        /// <summary>Indicates the original size of the file, in bytes.</summary>
         public long? Size
         {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>The size of the file after encryption. To be deprecated, please use sizeEncryptedInBytes property instead.</summary>
+        /// <summary>Indicates the size of the file after encryption, in bytes.</summary>
         public long? SizeEncrypted
         {
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }
             set { BackingStore?.Set("sizeEncrypted", value); }
         }
-        /// <summary>Indicates the size of the file after encryption, in bytes. Valid values 0 to 9.22337203685478E+18</summary>
+        /// <summary>Indicates the size of the file after encryption, in bytes. To be deprecated in February 2025, please use SizeEncrypted property instead. Valid values 0 to 9.22337203685478E+18</summary>
         public long? SizeEncryptedInBytes
         {
             get { return BackingStore?.Get<long?>("sizeEncryptedInBytes"); }
             set { BackingStore?.Set("sizeEncryptedInBytes", value); }
         }
-        /// <summary>Indicates the original size of the file, in bytes. Valid values 0 to 9.22337203685478E+18</summary>
+        /// <summary>Indicates the original size of the file, in bytes. To be deprecated in February 2025, please use Size property instead. Valid values 0 to 9.22337203685478E+18</summary>
         public long? SizeInBytes
         {
             get { return BackingStore?.Get<long?>("sizeInBytes"); }

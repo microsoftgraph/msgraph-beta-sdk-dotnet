@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.ReplyWithQuote
         {
         }
         /// <summary>
-        /// Invoke action replyWithQuote
+        /// Reply with quote to a single chat message or multiple chat messages in a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-replywithquote?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.ReplyWithQuote
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ChatMessage>(requestInfo, global::Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action replyWithQuote
+        /// Reply with quote to a single chat message or multiple chat messages in a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
