@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat
         {
         }
         /// <summary>
-        /// Invoke action forwardToChat
+        /// Forward a chat message, a channel message, or a channel message reply to a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat.ForwardToChatPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat.ForwardToChatPostResponse>(requestInfo, global::Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat.ForwardToChatPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action forwardToChat
+        /// Forward a chat message, a channel message, or a channel message reply to a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat.ForwardToChatResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat.ForwardToChatResponse>(requestInfo, global::Microsoft.Graph.Beta.Me.Chats.Item.Messages.ForwardToChat.ForwardToChatResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action forwardToChat
+        /// Forward a chat message, a channel message, or a channel message reply to a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

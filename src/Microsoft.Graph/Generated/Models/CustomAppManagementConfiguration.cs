@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomAppManagementConfiguration : global::Microsoft.Graph.Beta.Models.AppManagementConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Restrictions applicable only to application objects that the policy applies to.</summary>
+        /// <summary>Restrictions that are applicable only to application objects to which the policy is attached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration? ApplicationRestrictions

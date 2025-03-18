@@ -136,8 +136,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailFolder>(requestInfo, global::Microsoft.Graph.Beta.Models.MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of mailFolder object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-beta" />
+        /// Update the writable properties of a mailSearchFolder object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of mailFolder object.
+        /// Update the writable properties of a mailSearchFolder object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

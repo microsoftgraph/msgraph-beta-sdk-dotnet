@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
-        /// <summary>The isEndToEndEncryptionEnabled property</summary>
+        /// <summary>Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.</summary>
         public bool? IsEndToEndEncryptionEnabled
         {
             get { return BackingStore?.Get<bool?>("isEndToEndEncryptionEnabled"); }
