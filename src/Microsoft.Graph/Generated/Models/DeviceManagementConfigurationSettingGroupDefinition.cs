@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DeviceManagementConfigurationSettingGroupDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Dependent child settings to this group of settings.</summary>
+        /// <summary>Dependent child settings to this group of settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ChildIds

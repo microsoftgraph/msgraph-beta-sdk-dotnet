@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.</summary>
+        /// <summary>Extended Key Usage Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The object identifier (OID) of an extended key usage of a certificate. For example, &apos;1.3.6.1.5.5.7.3.2&apos; for client authentication.</summary>
+        /// <summary>Extended Key Usage Object Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectIdentifier
