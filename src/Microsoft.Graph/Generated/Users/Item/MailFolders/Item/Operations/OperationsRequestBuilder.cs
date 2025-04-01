@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations
         {
         }
         /// <summary>
-        /// Get operations from users
+        /// The collection of long-running operations in the mailFolder.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailFolderOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailFolderOperationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MailFolderOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get operations from users
+        /// The collection of long-running operations in the mailFolder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations
             return new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations.OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get operations from users
+        /// The collection of long-running operations in the mailFolder.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OperationsRequestBuilderGetQueryParameters 

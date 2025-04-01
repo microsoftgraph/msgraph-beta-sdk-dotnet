@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.UpdateAllMessagesReadState
         {
         }
         /// <summary>
-        /// Invoke action updateAllMessagesReadState
+        /// Update the read state of all messages in a mailFolder object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-updateallmessagesreadstate?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.UpdateAllMessagesReadState
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action updateAllMessagesReadState
+        /// Update the read state of all messages in a mailFolder object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

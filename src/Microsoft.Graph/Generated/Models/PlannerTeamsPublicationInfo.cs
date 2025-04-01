@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publicationId", value); }
         }
 #endif
+        /// <summary>The name of the published task list. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublicationName
+        {
+            get { return BackingStore?.Get<string?>("publicationName"); }
+            set { BackingStore?.Set("publicationName", value); }
+        }
+#nullable restore
+#else
+        public string PublicationName
+        {
+            get { return BackingStore?.Get<string>("publicationName"); }
+            set { BackingStore?.Set("publicationName", value); }
+        }
+#endif
         /// <summary>The identifier of the plannerPlan this task was originally placed in. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "publicationId", n => { PublicationId = n.GetStringValue(); } },
+                { "publicationName", n => { PublicationName = n.GetStringValue(); } },
                 { "publishedToPlanId", n => { PublishedToPlanId = n.GetStringValue(); } },
                 { "publishingTeamId", n => { PublishingTeamId = n.GetStringValue(); } },
                 { "publishingTeamName", n => { PublishingTeamName = n.GetStringValue(); } },
@@ -142,6 +159,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("publicationId", PublicationId);
+            writer.WriteStringValue("publicationName", PublicationName);
             writer.WriteStringValue("publishedToPlanId", PublishedToPlanId);
             writer.WriteStringValue("publishingTeamId", PublishingTeamId);
             writer.WriteStringValue("publishingTeamName", PublishingTeamName);

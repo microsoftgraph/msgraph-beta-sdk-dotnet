@@ -60,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.multiTenantOrganizationMember" => new global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationMember(),
                 "#microsoft.graph.mutualTlsOauthConfiguration" => new global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration(),
                 "#microsoft.graph.organization" => new global::Microsoft.Graph.Beta.Models.Organization(),
+                "#microsoft.graph.organizationalUnit" => new global::Microsoft.Graph.Beta.Models.OrganizationalUnit(),
                 "#microsoft.graph.orgContact" => new global::Microsoft.Graph.Beta.Models.OrgContact(),
                 "#microsoft.graph.pendingExternalUserProfile" => new global::Microsoft.Graph.Beta.Models.PendingExternalUserProfile(),
                 "#microsoft.graph.permissionGrantPolicy" => new global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy(),

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CallSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The delegates property</summary>
+        /// <summary>Represents the delegate settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DelegationSettings>? Delegates
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("delegates", value); }
         }
 #endif
-        /// <summary>The delegators property</summary>
+        /// <summary>Represents the delegator settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DelegationSettings>? Delegators
