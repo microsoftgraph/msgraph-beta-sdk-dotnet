@@ -21,19 +21,19 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The joinActiveCalls property</summary>
+        /// <summary>Indicates whether the delegator or delegate allows participation in active calls.</summary>
         public bool? JoinActiveCalls
         {
             get { return BackingStore?.Get<bool?>("joinActiveCalls"); }
             set { BackingStore?.Set("joinActiveCalls", value); }
         }
-        /// <summary>The makeCalls property</summary>
+        /// <summary>Indicates whether the delegator or delegate allows calls to be made on their behalf.</summary>
         public bool? MakeCalls
         {
             get { return BackingStore?.Get<bool?>("makeCalls"); }
             set { BackingStore?.Set("makeCalls", value); }
         }
-        /// <summary>The manageCallAndDelegateSettings property</summary>
+        /// <summary>Indicates whether the delegator or delegate allows the management of call and delegation settings.</summary>
         public bool? ManageCallAndDelegateSettings
         {
             get { return BackingStore?.Get<bool?>("manageCallAndDelegateSettings"); }
@@ -55,13 +55,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The pickUpHeldCalls property</summary>
+        /// <summary>Indicates whether the delegator or delegate allows held calls to be picked up.</summary>
         public bool? PickUpHeldCalls
         {
             get { return BackingStore?.Get<bool?>("pickUpHeldCalls"); }
             set { BackingStore?.Set("pickUpHeldCalls", value); }
         }
-        /// <summary>The receiveCalls property</summary>
+        /// <summary>Indicates whether the delegator or delegate allows calls to be received on their behalf.</summary>
         public bool? ReceiveCalls
         {
             get { return BackingStore?.Get<bool?>("receiveCalls"); }

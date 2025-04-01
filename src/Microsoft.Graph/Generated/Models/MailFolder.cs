@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The operations property</summary>
+        /// <summary>The collection of long-running operations in the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MailFolderOperation>? Operations

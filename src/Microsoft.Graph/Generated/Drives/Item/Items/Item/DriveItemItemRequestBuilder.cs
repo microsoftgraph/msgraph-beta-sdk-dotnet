@@ -15,6 +15,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.CreatedByUser;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Delta;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.DeltaWithToken;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.DiscardCheckout;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.ExtractSensitivityLabels;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Follow;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
@@ -120,6 +121,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.DiscardCheckout.DiscardCheckoutRequestBuilder DiscardCheckout
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.DiscardCheckout.DiscardCheckoutRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.driveItem entity.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions.ExtensionsRequestBuilder Extensions
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractSensitivityLabels method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.ExtractSensitivityLabels.ExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels

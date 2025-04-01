@@ -54,6 +54,8 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.compliantNetworkNamedLocation" => new global::Microsoft.Graph.Beta.Models.CompliantNetworkNamedLocation(),
                 "#microsoft.graph.countryNamedLocation" => new global::Microsoft.Graph.Beta.Models.CountryNamedLocation(),
                 "#microsoft.graph.ipNamedLocation" => new global::Microsoft.Graph.Beta.Models.IpNamedLocation(),
+                "#microsoft.graph.privateLinkNamedLocation" => new global::Microsoft.Graph.Beta.Models.PrivateLinkNamedLocation(),
+                "#microsoft.graph.serviceTagNamedLocation" => new global::Microsoft.Graph.Beta.Models.ServiceTagNamedLocation(),
                 _ => new global::Microsoft.Graph.Beta.Models.NamedLocation(),
             };
         }

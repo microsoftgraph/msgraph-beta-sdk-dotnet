@@ -46,12 +46,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AppInfoDataRetentionPolicy?>("dataRetentionPolicy"); }
             set { BackingStore?.Set("dataRetentionPolicy", value); }
         }
-        /// <summary>The dataTypes property</summary>
-        public global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes? DataTypes
+        /// <summary>Indicates the data types that an end user can upload to the app. The possible values are: documents, mediaFiles, codingFiles, creditCards, databaseFiles, none, unknown, unknownFutureValue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes?>? DataTypes
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes?>("dataTypes"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes?>?>("dataTypes"); }
             set { BackingStore?.Set("dataTypes", value); }
         }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes?> DataTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes?>>("dataTypes"); }
+            set { BackingStore?.Set("dataTypes", value); }
+        }
+#endif
         /// <summary>Indicates the date when the app domain was registered.</summary>
         public DateTimeOffset? DomainRegistrationDateTime
         {
@@ -535,16 +545,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Indicates the URL that users can use to sign into the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogonUrls
+        public List<string>? LogonUrls
         {
-            get { return BackingStore?.Get<string?>("logonUrls"); }
+            get { return BackingStore?.Get<List<string>?>("logonUrls"); }
             set { BackingStore?.Set("logonUrls", value); }
         }
 #nullable restore
 #else
-        public string LogonUrls
+        public List<string> LogonUrls
         {
-            get { return BackingStore?.Get<string>("logonUrls"); }
+            get { return BackingStore?.Get<List<string>>("logonUrls"); }
             set { BackingStore?.Set("logonUrls", value); }
         }
 #endif
@@ -592,7 +602,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "dataAtRestEncryptionMethod", n => { DataAtRestEncryptionMethod = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoDataAtRestEncryptionMethod>(); } },
                 { "dataCenter", n => { DataCenter = n.GetStringValue(); } },
                 { "dataRetentionPolicy", n => { DataRetentionPolicy = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoDataRetentionPolicy>(); } },
-                { "dataTypes", n => { DataTypes = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes>(); } },
+                { "dataTypes", n => { DataTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes>()?.AsList(); } },
                 { "domainRegistrationDateTime", n => { DomainRegistrationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "encryptionProtocol", n => { EncryptionProtocol = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoEncryptionProtocol>(); } },
                 { "fedRampLevel", n => { FedRampLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoFedRampLevel>(); } },
@@ -668,7 +678,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "isUserRolesSupport", n => { IsUserRolesSupport = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.CloudAppInfoState>(); } },
                 { "isValidCertificateName", n => { IsValidCertificateName = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.CloudAppInfoState>(); } },
                 { "latestBreachDateTime", n => { LatestBreachDateTime = n.GetDateTimeOffsetValue(); } },
-                { "logonUrls", n => { LogonUrls = n.GetStringValue(); } },
+                { "logonUrls", n => { LogonUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pciDssVersion", n => { PciDssVersion = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoPciDssVersion>(); } },
                 { "vendor", n => { Vendor = n.GetStringValue(); } },
             };
@@ -685,7 +695,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoDataAtRestEncryptionMethod>("dataAtRestEncryptionMethod", DataAtRestEncryptionMethod);
             writer.WriteStringValue("dataCenter", DataCenter);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoDataRetentionPolicy>("dataRetentionPolicy", DataRetentionPolicy);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes>("dataTypes", DataTypes);
+            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.AppInfoUploadedDataTypes>("dataTypes", DataTypes);
             writer.WriteDateTimeOffsetValue("domainRegistrationDateTime", DomainRegistrationDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoEncryptionProtocol>("encryptionProtocol", EncryptionProtocol);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoFedRampLevel>("fedRampLevel", FedRampLevel);
@@ -761,7 +771,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.CloudAppInfoState>("isUserRolesSupport", IsUserRolesSupport);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.CloudAppInfoState>("isValidCertificateName", IsValidCertificateName);
             writer.WriteDateTimeOffsetValue("latestBreachDateTime", LatestBreachDateTime);
-            writer.WriteStringValue("logonUrls", LogonUrls);
+            writer.WriteCollectionOfPrimitiveValues<string>("logonUrls", LogonUrls);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AppInfoPciDssVersion>("pciDssVersion", PciDssVersion);
             writer.WriteStringValue("vendor", Vendor);
         }

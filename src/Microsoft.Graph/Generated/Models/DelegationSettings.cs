@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DelegationSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The allowedActions property</summary>
+        /// <summary>The allowed actions for the delegator or delegate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DelegateAllowedActions? AllowedActions
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allowedActions", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time when the delegator or delegate entry was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The isActive property</summary>
+        /// <summary>Indicates whether the delegator or delegate relationship is currently active.</summary>
         public bool? IsActive
         {
             get { return BackingStore?.Get<bool?>("isActive"); }
