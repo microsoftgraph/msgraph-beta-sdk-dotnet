@@ -75,6 +75,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("disableResilienceDefaults"); }
             set { BackingStore?.Set("disableResilienceDefaults", value); }
         }
+        /// <summary>Session control to link to Global Secure Access security profiles or filtering profiles.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl? GlobalSecureAccessFilteringProfile
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl?>("globalSecureAccessFilteringProfile"); }
+            set { BackingStore?.Set("globalSecureAccessFilteringProfile", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl GlobalSecureAccessFilteringProfile
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl>("globalSecureAccessFilteringProfile"); }
+            set { BackingStore?.Set("globalSecureAccessFilteringProfile", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +185,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cloudAppSecurity", n => { CloudAppSecurity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl>(global::Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl.CreateFromDiscriminatorValue); } },
                 { "continuousAccessEvaluation", n => { ContinuousAccessEvaluation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl>(global::Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl.CreateFromDiscriminatorValue); } },
                 { "disableResilienceDefaults", n => { DisableResilienceDefaults = n.GetBoolValue(); } },
+                { "globalSecureAccessFilteringProfile", n => { GlobalSecureAccessFilteringProfile = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl>(global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "persistentBrowser", n => { PersistentBrowser = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl>(global::Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl.CreateFromDiscriminatorValue); } },
                 { "secureSignInSession", n => { SecureSignInSession = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SecureSignInSessionControl>(global::Microsoft.Graph.Beta.Models.SecureSignInSessionControl.CreateFromDiscriminatorValue); } },
@@ -186,6 +203,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl>("cloudAppSecurity", CloudAppSecurity);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl>("continuousAccessEvaluation", ContinuousAccessEvaluation);
             writer.WriteBoolValue("disableResilienceDefaults", DisableResilienceDefaults);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl>("globalSecureAccessFilteringProfile", GlobalSecureAccessFilteringProfile);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl>("persistentBrowser", PersistentBrowser);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SecureSignInSessionControl>("secureSignInSession", SecureSignInSession);

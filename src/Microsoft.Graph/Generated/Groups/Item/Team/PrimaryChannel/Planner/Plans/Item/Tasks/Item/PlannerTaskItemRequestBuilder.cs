@@ -144,7 +144,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner.Plans.Ite
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

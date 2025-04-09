@@ -6,11 +6,11 @@ using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Microsoft.Graph.Beta.Organization.Item.Restore
+namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RestorePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
+    public partial class TokenDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -21,26 +21,48 @@ namespace Microsoft.Graph.Beta.Organization.Item.Restore
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The newUserPrincipalName property</summary>
+        /// <summary>Represents when the authentication for this token occurred.</summary>
+        public DateTimeOffset? IssuedAtDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("issuedAtDateTime"); }
+            set { BackingStore?.Set("issuedAtDateTime", value); }
+        }
+        /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewUserPrincipalName
+        public string? OdataType
         {
-            get { return BackingStore?.Get<string?>("newUserPrincipalName"); }
-            set { BackingStore?.Set("newUserPrincipalName", value); }
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string NewUserPrincipalName
+        public string OdataType
         {
-            get { return BackingStore?.Get<string>("newUserPrincipalName"); }
-            set { BackingStore?.Set("newUserPrincipalName", value); }
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#endif
+        /// <summary>Represents the token identifier claim. This ID is a unique per-token identifier that is case-sensitive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UniqueTokenIdentifier
+        {
+            get { return BackingStore?.Get<string?>("uniqueTokenIdentifier"); }
+            set { BackingStore?.Set("uniqueTokenIdentifier", value); }
+        }
+#nullable restore
+#else
+        public string UniqueTokenIdentifier
+        {
+            get { return BackingStore?.Get<string>("uniqueTokenIdentifier"); }
+            set { BackingStore?.Set("uniqueTokenIdentifier", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Organization.Item.Restore.RestorePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.TokenDetails"/> and sets the default values.
         /// </summary>
-        public RestorePostRequestBody()
+        public TokenDetails()
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
@@ -48,12 +70,12 @@ namespace Microsoft.Graph.Beta.Organization.Item.Restore
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Organization.Item.Restore.RestorePostRequestBody"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TokenDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.Beta.Organization.Item.Restore.RestorePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.Beta.Models.TokenDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Organization.Item.Restore.RestorePostRequestBody();
+            return new global::Microsoft.Graph.Beta.Models.TokenDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +85,9 @@ namespace Microsoft.Graph.Beta.Organization.Item.Restore
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newUserPrincipalName", n => { NewUserPrincipalName = n.GetStringValue(); } },
+                { "issuedAtDateTime", n => { IssuedAtDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "uniqueTokenIdentifier", n => { UniqueTokenIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,7 +97,9 @@ namespace Microsoft.Graph.Beta.Organization.Item.Restore
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newUserPrincipalName", NewUserPrincipalName);
+            writer.WriteDateTimeOffsetValue("issuedAtDateTime", IssuedAtDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("uniqueTokenIdentifier", UniqueTokenIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

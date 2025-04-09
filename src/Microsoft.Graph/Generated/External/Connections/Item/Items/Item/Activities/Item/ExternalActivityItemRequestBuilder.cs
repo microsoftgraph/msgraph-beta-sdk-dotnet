@@ -126,7 +126,6 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities.I
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

@@ -64,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new global::Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl(),
                 "#microsoft.graph.cloudAppSecuritySessionControl" => new global::Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl(),
+                "#microsoft.graph.globalSecureAccessFilteringProfileSessionControl" => new global::Microsoft.Graph.Beta.Models.GlobalSecureAccessFilteringProfileSessionControl(),
                 "#microsoft.graph.persistentBrowserSessionControl" => new global::Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl(),
                 "#microsoft.graph.secureSignInSessionControl" => new global::Microsoft.Graph.Beta.Models.SecureSignInSessionControl(),
                 "#microsoft.graph.signInFrequencySessionControl" => new global::Microsoft.Graph.Beta.Models.SignInFrequencySessionControl(),
