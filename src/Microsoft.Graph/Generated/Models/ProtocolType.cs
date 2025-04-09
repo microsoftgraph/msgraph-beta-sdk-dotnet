@@ -45,5 +45,73 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         NativeAuth = 256,
         #pragma warning restore CS1591
+        [EnumMember(Value = "implicitAccessTokenAndGetResponseMode")]
+        #pragma warning disable CS1591
+        ImplicitAccessTokenAndGetResponseMode = 512,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "implicitIdTokenAndGetResponseMode")]
+        #pragma warning disable CS1591
+        ImplicitIdTokenAndGetResponseMode = 1024,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "implicitAccessTokenAndPostResponseMode")]
+        #pragma warning disable CS1591
+        ImplicitAccessTokenAndPostResponseMode = 2048,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "implicitIdTokenAndPostResponseMode")]
+        #pragma warning disable CS1591
+        ImplicitIdTokenAndPostResponseMode = 4096,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "authorizationCodeWithoutPkce")]
+        #pragma warning disable CS1591
+        AuthorizationCodeWithoutPkce = 8192,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "authorizationCodeWithPkce")]
+        #pragma warning disable CS1591
+        AuthorizationCodeWithPkce = 16384,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clientCredentials")]
+        #pragma warning disable CS1591
+        ClientCredentials = 32768,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "refreshTokenGrant")]
+        #pragma warning disable CS1591
+        RefreshTokenGrant = 65536,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "encryptedAuthorizeResponse")]
+        #pragma warning disable CS1591
+        EncryptedAuthorizeResponse = 131072,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "directUserGrant")]
+        #pragma warning disable CS1591
+        DirectUserGrant = 262144,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kerberos")]
+        #pragma warning disable CS1591
+        Kerberos = 524288,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "prtGrant")]
+        #pragma warning disable CS1591
+        PrtGrant = 1048576,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "seamlessSso")]
+        #pragma warning disable CS1591
+        SeamlessSso = 2097152,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "prtBrokerBased")]
+        #pragma warning disable CS1591
+        PrtBrokerBased = 4194304,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "prtNonBrokerBased")]
+        #pragma warning disable CS1591
+        PrtNonBrokerBased = 8388608,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "onBehalfOf")]
+        #pragma warning disable CS1591
+        OnBehalfOf = 16777216,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "samlOnBehalfOf")]
+        #pragma warning disable CS1591
+        SamlOnBehalfOf = 33554432,
+        #pragma warning restore CS1591
     }
 }

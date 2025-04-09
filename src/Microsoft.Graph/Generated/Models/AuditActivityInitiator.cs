@@ -37,6 +37,22 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>A set of linkable claims to link together all the authentication artifacts issued from a single interactive root authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.LinkableIdentifiers? LinkableIdentifiers
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LinkableIdentifiers?>("linkableIdentifiers"); }
+            set { BackingStore?.Set("linkableIdentifiers", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.LinkableIdentifiers LinkableIdentifiers
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LinkableIdentifiers>("linkableIdentifiers"); }
+            set { BackingStore?.Set("linkableIdentifiers", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +112,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "app", n => { App = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AppIdentity>(global::Microsoft.Graph.Beta.Models.AppIdentity.CreateFromDiscriminatorValue); } },
+                { "linkableIdentifiers", n => { LinkableIdentifiers = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LinkableIdentifiers>(global::Microsoft.Graph.Beta.Models.LinkableIdentifiers.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuditUserIdentity>(global::Microsoft.Graph.Beta.Models.AuditUserIdentity.CreateFromDiscriminatorValue); } },
             };
@@ -108,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AppIdentity>("app", App);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LinkableIdentifiers>("linkableIdentifiers", LinkableIdentifiers);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuditUserIdentity>("user", User);
             writer.WriteAdditionalData(AdditionalData);

@@ -230,6 +230,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("settings", value); }
         }
 #endif
+        /// <summary>The collection of sharePointGroup objects local to the container. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SharePointGroup>? SharePointGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharePointGroup>?>("sharePointGroups"); }
+            set { BackingStore?.Set("sharePointGroups", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SharePointGroup> SharePointGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharePointGroup>>("sharePointGroups"); }
+            set { BackingStore?.Set("sharePointGroups", value); }
+        }
+#endif
         /// <summary>Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.FileStorageContainerStatus? Status
         {
@@ -294,6 +310,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>(global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recycleBin", n => { RecycleBin = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>(global::Microsoft.Graph.Beta.Models.RecycleBin.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings>(global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings.CreateFromDiscriminatorValue); } },
+                { "sharePointGroups", n => { SharePointGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointGroup>(global::Microsoft.Graph.Beta.Models.SharePointGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerStatus>(); } },
                 { "storageUsedInBytes", n => { StorageUsedInBytes = n.GetLongValue(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerViewpoint>(global::Microsoft.Graph.Beta.Models.FileStorageContainerViewpoint.CreateFromDiscriminatorValue); } },
@@ -325,6 +342,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointGroup>("sharePointGroups", SharePointGroups);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerStatus>("status", Status);
             writer.WriteLongValue("storageUsedInBytes", StorageUsedInBytes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerViewpoint>("viewpoint", Viewpoint);

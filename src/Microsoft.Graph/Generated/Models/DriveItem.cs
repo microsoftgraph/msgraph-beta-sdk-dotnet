@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deleted", value); }
         }
 #endif
-        /// <summary>The extensions property</summary>
+        /// <summary>The collection of open extensions defined for this item. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Extension>? Extensions

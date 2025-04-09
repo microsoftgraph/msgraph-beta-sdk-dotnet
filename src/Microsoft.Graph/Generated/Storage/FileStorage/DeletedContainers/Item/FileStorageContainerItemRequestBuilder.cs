@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.PermanentD
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Permissions;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -66,6 +67,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder SharePointGroups
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unlock method.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock.UnlockRequestBuilder Unlock
@@ -174,7 +180,6 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
