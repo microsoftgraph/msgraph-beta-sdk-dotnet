@@ -72,7 +72,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

@@ -29,7 +29,6 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonCo
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicySettingsSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport;
@@ -239,11 +238,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder GetDeviceConfigurationPolicyStatusSummary
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getDeviceInstallStatusReport method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder GetDeviceInstallStatusReport
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles.GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles
@@ -582,7 +576,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

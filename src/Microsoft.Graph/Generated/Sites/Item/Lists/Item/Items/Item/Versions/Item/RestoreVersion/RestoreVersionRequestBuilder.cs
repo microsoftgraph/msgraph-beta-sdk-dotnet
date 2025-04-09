@@ -71,7 +71,6 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Versions.Item.Re
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

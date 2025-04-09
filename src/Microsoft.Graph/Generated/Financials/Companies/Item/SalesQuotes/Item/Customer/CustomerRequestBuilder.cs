@@ -150,7 +150,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Custom
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

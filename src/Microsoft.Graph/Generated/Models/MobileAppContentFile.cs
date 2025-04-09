@@ -103,18 +103,6 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }
             set { BackingStore?.Set("sizeEncrypted", value); }
         }
-        /// <summary>Indicates the size of the file after encryption, in bytes. To be deprecated in February 2025, please use SizeEncrypted property instead. Valid values 0 to 9.22337203685478E+18</summary>
-        public long? SizeEncryptedInBytes
-        {
-            get { return BackingStore?.Get<long?>("sizeEncryptedInBytes"); }
-            set { BackingStore?.Set("sizeEncryptedInBytes", value); }
-        }
-        /// <summary>Indicates the original size of the file, in bytes. To be deprecated in February 2025, please use Size property instead. Valid values 0 to 9.22337203685478E+18</summary>
-        public long? SizeInBytes
-        {
-            get { return BackingStore?.Get<long?>("sizeInBytes"); }
-            set { BackingStore?.Set("sizeInBytes", value); }
-        }
         /// <summary>Contains properties for upload request states.</summary>
         public global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState? UploadState
         {
@@ -149,8 +137,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
                 { "sizeEncrypted", n => { SizeEncrypted = n.GetLongValue(); } },
-                { "sizeEncryptedInBytes", n => { SizeEncryptedInBytes = n.GetLongValue(); } },
-                { "sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
                 { "uploadState", n => { UploadState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState>(); } },
             };
         }
@@ -168,8 +154,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("size", Size);
             writer.WriteLongValue("sizeEncrypted", SizeEncrypted);
-            writer.WriteLongValue("sizeEncryptedInBytes", SizeEncryptedInBytes);
-            writer.WriteLongValue("sizeInBytes", SizeInBytes);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState>("uploadState", UploadState);
         }
     }

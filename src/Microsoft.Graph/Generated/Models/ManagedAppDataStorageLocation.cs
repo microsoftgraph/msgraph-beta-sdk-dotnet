@@ -3,24 +3,33 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    /// <summary>Storage locations where managed apps can potentially store their data</summary>
+    /// <summary>The storage locations where managed apps can potentially store their data.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagedAppDataStorageLocation
     {
-        /// <summary>OneDrive for business</summary>
+        /// <summary>Indicates allowed storage location for the managed app to save files is &apos;OneDrive for Business&apos;.</summary>
         [EnumMember(Value = "oneDriveForBusiness")]
         OneDriveForBusiness,
-        /// <summary>SharePoint</summary>
+        /// <summary>Indicates allowed storage location for the managed app to save files is &apos;Sharepoint&apos;.</summary>
         [EnumMember(Value = "sharePoint")]
         SharePoint,
-        /// <summary>Box</summary>
+        /// <summary>Indicates that the allowed storage location for a managed app to save files is to &apos;Box&apos;. Box is a non-Microsoft solution that enables cloud-based file storage capabilities.</summary>
         [EnumMember(Value = "box")]
         Box,
-        /// <summary>Local storage on the device</summary>
+        /// <summary>Indicates allowed storage location for the managed app to save files is local storage on the device.</summary>
         [EnumMember(Value = "localStorage")]
         LocalStorage,
-        /// <summary>The device&apos;s photo library</summary>
+        /// <summary>Indicates allowed storage location for the managed app to save files is the device&apos;s photo library.</summary>
         [EnumMember(Value = "photoLibrary")]
         PhotoLibrary,
+        /// <summary>Indicates that the allowed storage location for a managed app is to save files to &apos;iManage&apos;. iManage is a non-Microsoft solution that enables cloud-based file storage capabilities.</summary>
+        [EnumMember(Value = "iManage")]
+        IManage,
+        /// <summary>Indicates that the allowed storage location for a managed app is to save files to &apos;Egnyte&apos;. Egynte is a non-Microsoft solution that enables cloud-based file storage capabilities.</summary>
+        [EnumMember(Value = "egnyte")]
+        Egnyte,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

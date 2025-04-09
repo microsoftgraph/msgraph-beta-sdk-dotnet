@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions
         {
         }
         /// <summary>
-        /// Get extensions from drives
+        /// The collection of open extensions defined for this item. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Extension>(requestInfo, global::Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get extensions from drives
+        /// The collection of open extensions defined for this item. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions.ExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get extensions from drives
+        /// The collection of open extensions defined for this item. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExtensionsRequestBuilderGetQueryParameters 

@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("target", value); }
         }
 #endif
-        /// <summary>The ID of the subject with the assignment. Read-only.</summary>
+        /// <summary>This property should not be used as a dependency, as it may change without notice. Instead, expand the target relationship and use the objectId property. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetId
