@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The internetAccessTrafficCount property</summary>
+        /// <summary>The count of traffic requests directed to general internet destinations.</summary>
         public long? InternetAccessTrafficCount
         {
             get { return BackingStore?.Get<long?>("internetAccessTrafficCount"); }
             set { BackingStore?.Set("internetAccessTrafficCount", value); }
         }
-        /// <summary>The microsoft365AccessTrafficCount property</summary>
+        /// <summary>The count of traffic requests directed to Microsoft 365 services.</summary>
         public long? Microsoft365AccessTrafficCount
         {
             get { return BackingStore?.Get<long?>("microsoft365AccessTrafficCount"); }
@@ -49,19 +49,19 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The privateAccessTrafficCount property</summary>
+        /// <summary>The count of traffic requests directed to internal private network destinations.</summary>
         public long? PrivateAccessTrafficCount
         {
             get { return BackingStore?.Get<long?>("privateAccessTrafficCount"); }
             set { BackingStore?.Set("privateAccessTrafficCount", value); }
         }
-        /// <summary>The timeStampDateTime property</summary>
+        /// <summary>The date and time of this data point.</summary>
         public DateTimeOffset? TimeStampDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("timeStampDateTime"); }
             set { BackingStore?.Set("timeStampDateTime", value); }
         }
-        /// <summary>The totalTrafficCount property</summary>
+        /// <summary>The total count of all traffic requests across all access types.</summary>
         public long? TotalTrafficCount
         {
             get { return BackingStore?.Get<long?>("totalTrafficCount"); }

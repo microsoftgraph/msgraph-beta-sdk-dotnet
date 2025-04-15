@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.Device
         {
         }
         /// <summary>
-        /// Get device from networkAccess
+        /// Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Device"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.Device
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Device>(requestInfo, global::Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get device from networkAccess
+        /// Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.Device
             return new global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.Device.DeviceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get device from networkAccess
+        /// Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceRequestBuilderGetQueryParameters 

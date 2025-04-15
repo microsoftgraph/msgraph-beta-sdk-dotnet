@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         {
         }
         /// <summary>
-        /// Invoke action evaluate
+        /// Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse>(requestInfo, global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action evaluate
+        /// Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +88,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse>(requestInfo, global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action evaluate
+        /// Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

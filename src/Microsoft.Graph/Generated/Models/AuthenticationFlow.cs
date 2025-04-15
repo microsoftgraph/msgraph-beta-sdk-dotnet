@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The transferMethod property</summary>
+        /// <summary>Represents the transfer methods in scope for the policy. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.ConditionalAccessTransferMethods? TransferMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessTransferMethods?>("transferMethod"); }
