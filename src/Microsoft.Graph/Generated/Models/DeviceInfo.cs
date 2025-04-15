@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The deviceId property</summary>
+        /// <summary>Unique identifier set by Azure Device Registration Service at the time of registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The enrollmentProfileName property</summary>
+        /// <summary>Enrollment profile applied to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrollmentProfileName
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
 #endif
-        /// <summary>The extensionAttribute1 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute1
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute1", value); }
         }
 #endif
-        /// <summary>The extensionAttribute10 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute10
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute10", value); }
         }
 #endif
-        /// <summary>The extensionAttribute11 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute11
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute11", value); }
         }
 #endif
-        /// <summary>The extensionAttribute12 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute12
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute12", value); }
         }
 #endif
-        /// <summary>The extensionAttribute13 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute13
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute13", value); }
         }
 #endif
-        /// <summary>The extensionAttribute14 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute14
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute14", value); }
         }
 #endif
-        /// <summary>The extensionAttribute15 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute15
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute15", value); }
         }
 #endif
-        /// <summary>The extensionAttribute2 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute2
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute2", value); }
         }
 #endif
-        /// <summary>The extensionAttribute3 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute3
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute3", value); }
         }
 #endif
-        /// <summary>The extensionAttribute4 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute4
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute4", value); }
         }
 #endif
-        /// <summary>The extensionAttribute5 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute5
@@ -245,7 +245,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute5", value); }
         }
 #endif
-        /// <summary>The extensionAttribute6 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute6
@@ -261,7 +261,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute6", value); }
         }
 #endif
-        /// <summary>The extensionAttribute7 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute7
@@ -277,7 +277,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute7", value); }
         }
 #endif
-        /// <summary>The extensionAttribute8 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute8
@@ -293,7 +293,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute8", value); }
         }
 #endif
-        /// <summary>The extensionAttribute9 property</summary>
+        /// <summary>Extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtensionAttribute9
@@ -309,13 +309,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute9", value); }
         }
 #endif
-        /// <summary>The isCompliant property</summary>
+        /// <summary>Indicates the device compliance status with Mobile Management Device (MDM) policies.</summary>
         public bool? IsCompliant
         {
             get { return BackingStore?.Get<bool?>("isCompliant"); }
             set { BackingStore?.Set("isCompliant", value); }
         }
-        /// <summary>The manufacturer property</summary>
+        /// <summary>Manufacturer of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer
@@ -331,7 +331,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The mdmAppId property</summary>
+        /// <summary>Application identifier used to register device into MDM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MdmAppId
@@ -347,7 +347,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mdmAppId", value); }
         }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>Model of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model
@@ -379,7 +379,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The operatingSystem property</summary>
+        /// <summary>The type of operating system on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem
@@ -395,7 +395,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #endif
-        /// <summary>The operatingSystemVersion property</summary>
+        /// <summary>The version of the operating system on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystemVersion
@@ -411,7 +411,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
 #endif
-        /// <summary>The ownership property</summary>
+        /// <summary>Ownership of the device. This property is set by Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ownership
@@ -427,7 +427,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ownership", value); }
         }
 #endif
-        /// <summary>The physicalIds property</summary>
+        /// <summary>A collection of physical identifiers for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PhysicalIds
@@ -443,7 +443,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("physicalIds", value); }
         }
 #endif
-        /// <summary>The profileType property</summary>
+        /// <summary>The profile type of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileType
@@ -459,7 +459,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("profileType", value); }
         }
 #endif
-        /// <summary>The systemLabels property</summary>
+        /// <summary>List of labels applied to the device by the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SystemLabels
@@ -475,7 +475,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("systemLabels", value); }
         }
 #endif
-        /// <summary>The trustType property</summary>
+        /// <summary>Type of trust for the joined device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrustType

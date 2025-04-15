@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class PrivateAccessDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessType property</summary>
+        /// <summary>Type of accessed application. Access type options: QuickAccess, PrivateAccess.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.AccessType? AccessType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.AccessType?>("accessType"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The appSegmentId property</summary>
+        /// <summary>The unique identifier for Application segment ID from Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppSegmentId
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The connectionStatus property</summary>
+        /// <summary>Status of a connection. Status options: Open, Active, Closed.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus? ConnectionStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus?>("connectionStatus"); }
             set { BackingStore?.Set("connectionStatus", value); }
         }
-        /// <summary>The connectorId property</summary>
+        /// <summary>Private access connector ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectorId
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("connectorId", value); }
         }
 #endif
-        /// <summary>The connectorIp property</summary>
+        /// <summary>Private access connector IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectorIp
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("connectorIp", value); }
         }
 #endif
-        /// <summary>The connectorName property</summary>
+        /// <summary>Private access connector name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectorName
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The processingRegion property</summary>
+        /// <summary>Region where the request was processed by the backend service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingRegion
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("processingRegion", value); }
         }
 #endif
-        /// <summary>The thirdPartyTokenDetails property</summary>
+        /// <summary>Details about third-party tokens used in the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails? ThirdPartyTokenDetails

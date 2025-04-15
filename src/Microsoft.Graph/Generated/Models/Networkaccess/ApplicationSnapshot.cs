@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The appId property</summary>
+        /// <summary>The unique identifier of the application accessed during the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId

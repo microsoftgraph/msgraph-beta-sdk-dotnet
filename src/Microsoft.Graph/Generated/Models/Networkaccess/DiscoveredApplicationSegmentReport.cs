@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class DiscoveredApplicationSegmentReport : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessType property</summary>
+        /// <summary>The type of access used to connect to this application segment. The possible values are: quickAccess, privateAccess, unknownFutureValue, appAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: appAccess.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.AccessType? AccessType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.AccessType?>("accessType"); }
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The deviceCount property</summary>
+        /// <summary>The number of unique devices that have accessed this application segment.</summary>
         public int? DeviceCount
         {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
-        /// <summary>The discoveredApplicationSegmentId property</summary>
+        /// <summary>The unique identifier for this discovered application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DiscoveredApplicationSegmentId
@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("discoveredApplicationSegmentId", value); }
         }
 #endif
-        /// <summary>The firstAccessDateTime property</summary>
+        /// <summary>The date and time when this application segment was first accessed.</summary>
         public DateTimeOffset? FirstAccessDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("firstAccessDateTime"); }
             set { BackingStore?.Set("firstAccessDateTime", value); }
         }
-        /// <summary>The fqdn property</summary>
+        /// <summary>The fully qualified domain name associated with this application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fqdn
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("fqdn", value); }
         }
 #endif
-        /// <summary>The ip property</summary>
+        /// <summary>The IP address associated with this application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ip
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("ip", value); }
         }
 #endif
-        /// <summary>The lastAccessDateTime property</summary>
+        /// <summary>The date and time when this application segment was last accessed.</summary>
         public DateTimeOffset? LastAccessDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
@@ -109,25 +109,25 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The port property</summary>
+        /// <summary>The port number used to access this application segment.</summary>
         public int? Port
         {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
-        /// <summary>The totalBytesReceived property</summary>
+        /// <summary>The total number of bytes received from this application segment.</summary>
         public long? TotalBytesReceived
         {
             get { return BackingStore?.Get<long?>("totalBytesReceived"); }
             set { BackingStore?.Set("totalBytesReceived", value); }
         }
-        /// <summary>The totalBytesSent property</summary>
+        /// <summary>The total number of bytes sent to this application segment.</summary>
         public long? TotalBytesSent
         {
             get { return BackingStore?.Get<long?>("totalBytesSent"); }
             set { BackingStore?.Set("totalBytesSent", value); }
         }
-        /// <summary>The transactionCount property</summary>
+        /// <summary>The number of transactions recorded for this application segment.</summary>
         public int? TransactionCount
         {
             get { return BackingStore?.Get<int?>("transactionCount"); }
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
-        /// <summary>The userCount property</summary>
+        /// <summary>The number of unique users who have accessed this application segment.</summary>
         public int? UserCount
         {
             get { return BackingStore?.Get<int?>("userCount"); }

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks
         {
         }
         /// <summary>
-        /// A collection of remote network health events.
+        /// Get a list of the remoteNetworkHealthEvent objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-logs-list-remotenetworks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of remote network health events.
+        /// Get a list of the remoteNetworkHealthEvent objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks
             return new global::Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks.RemoteNetworksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of remote network health events.
+        /// Get a list of the remoteNetworkHealthEvent objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RemoteNetworksRequestBuilderGetQueryParameters 
