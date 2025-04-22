@@ -124,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.educationLinkResource" => new global::Microsoft.Graph.Beta.Models.EducationLinkResource(),
                 "#microsoft.graph.educationMediaResource" => new global::Microsoft.Graph.Beta.Models.EducationMediaResource(),
                 "#microsoft.graph.educationPowerPointResource" => new global::Microsoft.Graph.Beta.Models.EducationPowerPointResource(),
+                "#microsoft.graph.educationSpeakerProgressResource" => new global::Microsoft.Graph.Beta.Models.EducationSpeakerProgressResource(),
                 "#microsoft.graph.educationTeamsAppResource" => new global::Microsoft.Graph.Beta.Models.EducationTeamsAppResource(),
                 "#microsoft.graph.educationWordResource" => new global::Microsoft.Graph.Beta.Models.EducationWordResource(),
                 _ => new global::Microsoft.Graph.Beta.Models.EducationResource(),

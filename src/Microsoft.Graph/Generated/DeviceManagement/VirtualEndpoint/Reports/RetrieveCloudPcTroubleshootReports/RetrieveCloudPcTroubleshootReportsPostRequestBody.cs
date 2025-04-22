@@ -38,6 +38,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
             set { BackingStore?.Set("filter", value); }
         }
 #endif
+        /// <summary>The groupBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? GroupBy
+        {
+            get { return BackingStore?.Get<List<string>?>("groupBy"); }
+            set { BackingStore?.Set("groupBy", value); }
+        }
+#nullable restore
+#else
+        public List<string> GroupBy
+        {
+            get { return BackingStore?.Get<List<string>>("groupBy"); }
+            set { BackingStore?.Set("groupBy", value); }
+        }
+#endif
         /// <summary>The orderBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +147,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filter", n => { Filter = n.GetStringValue(); } },
+                { "groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "reportName", n => { ReportName = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPCTroubleshootReportType>(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
@@ -147,6 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("filter", Filter);
+            writer.WriteCollectionOfPrimitiveValues<string>("groupBy", GroupBy);
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPCTroubleshootReportType>("reportName", ReportName);
             writer.WriteStringValue("search", Search);

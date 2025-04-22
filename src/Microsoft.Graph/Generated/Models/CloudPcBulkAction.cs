@@ -106,12 +106,14 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.cloudPcBulkCreateSnapshot" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkCreateSnapshot(),
+                "#microsoft.graph.cloudPcBulkDisasterRecovery" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecovery(),
                 "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailback(),
                 "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailover(),
                 "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkModifyDiskEncryptionType(),
                 "#microsoft.graph.cloudPcBulkMove" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkMove(),
                 "#microsoft.graph.cloudPcBulkPowerOff" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkPowerOff(),
                 "#microsoft.graph.cloudPcBulkPowerOn" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkPowerOn(),
+                "#microsoft.graph.cloudPcBulkReinstallAgent" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkReinstallAgent(),
                 "#microsoft.graph.cloudPcBulkReprovision" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkReprovision(),
                 "#microsoft.graph.cloudPcBulkResize" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkResize(),
                 "#microsoft.graph.cloudPcBulkRestart" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkRestart(),

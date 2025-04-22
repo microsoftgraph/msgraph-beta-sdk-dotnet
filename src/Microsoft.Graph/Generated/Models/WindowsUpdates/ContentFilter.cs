@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             {
                 "#microsoft.graph.windowsUpdates.driverUpdateFilter" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateFilter(),
                 "#microsoft.graph.windowsUpdates.qualityUpdateFilter" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter(),
+                "#microsoft.graph.windowsUpdates.remediationUpdateFilter" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationUpdateFilter(),
                 "#microsoft.graph.windowsUpdates.softwareUpdateFilter" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateFilter(),
                 "#microsoft.graph.windowsUpdates.windowsUpdateFilter" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsUpdateFilter(),
                 _ => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter(),

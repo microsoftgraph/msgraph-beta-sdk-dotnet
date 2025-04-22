@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethodConfiguration(),
                 "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
+                "#microsoft.graph.qrCodePinAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethodConfiguration(),
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SmsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethodConfiguration(),

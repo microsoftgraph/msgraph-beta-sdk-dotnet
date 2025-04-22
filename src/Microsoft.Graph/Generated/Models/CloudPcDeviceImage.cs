@@ -117,6 +117,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
+        /// <summary>The sizeInGB property</summary>
+        public int? SizeInGB
+        {
+            get { return BackingStore?.Get<int?>("sizeInGB"); }
+            set { BackingStore?.Set("sizeInGB", value); }
+        }
         /// <summary>The unique identifier (ID) of the source image resource on Azure. The required ID format is: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +194,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "osStatus", n => { OsStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>(); } },
                 { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
                 { "sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus>(); } },
                 { "statusDetails", n => { StatusDetails = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatusDetails>(); } },
@@ -211,6 +218,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>("osStatus", OsStatus);
             writer.WriteStringValue("osVersionNumber", OsVersionNumber);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
+            writer.WriteIntValue("sizeInGB", SizeInGB);
             writer.WriteStringValue("sourceImageResourceId", SourceImageResourceId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus>("status", Status);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatusDetails>("statusDetails", StatusDetails);

@@ -9,41 +9,34 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ServicePrincipalSubject : global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject, IParsable
+    public partial class DelegationSettingsCollectionResponse : global::Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The servicePrincipalId property</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalId
+        public List<global::Microsoft.Graph.Beta.Models.DelegationSettings>? Value
         {
-            get { return BackingStore?.Get<string?>("servicePrincipalId"); }
-            set { BackingStore?.Set("servicePrincipalId", value); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DelegationSettings>?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalId
+        public List<global::Microsoft.Graph.Beta.Models.DelegationSettings> Value
         {
-            get { return BackingStore?.Get<string>("servicePrincipalId"); }
-            set { BackingStore?.Set("servicePrincipalId", value); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DelegationSettings>>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ServicePrincipalSubject"/> and sets the default values.
-        /// </summary>
-        public ServicePrincipalSubject() : base()
-        {
-            OdataType = "#microsoft.graph.servicePrincipalSubject";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServicePrincipalSubject"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DelegationSettingsCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.ServicePrincipalSubject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.DelegationSettingsCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ServicePrincipalSubject();
+            return new global::Microsoft.Graph.Beta.Models.DelegationSettingsCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DelegationSettings>(global::Microsoft.Graph.Beta.Models.DelegationSettings.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -64,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("servicePrincipalId", ServicePrincipalId);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DelegationSettings>("value", Value);
         }
     }
 }
