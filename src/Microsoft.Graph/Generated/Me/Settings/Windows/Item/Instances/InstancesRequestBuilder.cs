@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.Windows.Item.Instances
         {
         }
         /// <summary>
-        /// Get a list of windowsSettingInstance objects and their properties for the signed-in user.
+        /// Get a list of windowsSettingInstance objects and their properties for a user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowssetting-list-instances?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsSettingInstanceCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.Windows.Item.Instances
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsSettingInstance>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsSettingInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of windowsSettingInstance objects and their properties for the signed-in user.
+        /// Get a list of windowsSettingInstance objects and their properties for a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.Windows.Item.Instances
             return new global::Microsoft.Graph.Beta.Me.Settings.Windows.Item.Instances.InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of windowsSettingInstance objects and their properties for the signed-in user.
+        /// Get a list of windowsSettingInstance objects and their properties for a user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InstancesRequestBuilderGetQueryParameters 

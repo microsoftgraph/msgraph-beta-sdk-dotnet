@@ -160,8 +160,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-beta" />
+        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -184,8 +184,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Message>(requestInfo, global::Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a message object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-beta" />
+        /// Update the properties of an eventMessage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="body">The request body</param>
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
+        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a message object.
+        /// Update the properties of an eventMessage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -286,7 +286,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
+        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessageItemRequestBuilderGetQueryParameters 

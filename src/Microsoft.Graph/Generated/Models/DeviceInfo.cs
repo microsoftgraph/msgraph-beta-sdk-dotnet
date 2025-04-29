@@ -309,7 +309,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensionAttribute9", value); }
         }
 #endif
-        /// <summary>Indicates the device compliance status with Mobile Management Device (MDM) policies.</summary>
+        /// <summary>Indicates the device compliance status with Mobile Management Device (MDM) policies. Default is false.</summary>
         public bool? IsCompliant
         {
             get { return BackingStore?.Get<bool?>("isCompliant"); }

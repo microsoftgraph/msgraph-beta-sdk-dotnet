@@ -20,6 +20,7 @@ using Microsoft.Graph.Beta.Me.CheckMemberGroups;
 using Microsoft.Graph.Beta.Me.CheckMemberObjects;
 using Microsoft.Graph.Beta.Me.CloudClipboard;
 using Microsoft.Graph.Beta.Me.CloudPCs;
+using Microsoft.Graph.Beta.Me.Communications;
 using Microsoft.Graph.Beta.Me.ContactFolders;
 using Microsoft.Graph.Beta.Me.Contacts;
 using Microsoft.Graph.Beta.Me.ConvertExternalToInternalMemberUser;
@@ -228,6 +229,11 @@ namespace Microsoft.Graph.Beta.Me
         public global::Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder CloudPCs
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the communications property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Communications.CommunicationsRequestBuilder Communications
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Communications.CommunicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Me.ContactFolders.ContactFoldersRequestBuilder ContactFolders
@@ -743,8 +749,8 @@ namespace Microsoft.Graph.Beta.Me
             return new global::Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get?view=graph-rest-beta" />
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -815,7 +821,7 @@ namespace Microsoft.Graph.Beta.Me
             return new global::Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -865,7 +871,7 @@ namespace Microsoft.Graph.Beta.Me
             return new global::Microsoft.Graph.Beta.Me.MeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeRequestBuilderGetQueryParameters 

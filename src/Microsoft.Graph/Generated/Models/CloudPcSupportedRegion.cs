@@ -34,6 +34,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
+        /// <summary>When the region isn&apos;t available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail? RegionRestrictionDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail?>("regionRestrictionDetail"); }
+            set { BackingStore?.Set("regionRestrictionDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail RegionRestrictionDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>("regionRestrictionDetail"); }
+            set { BackingStore?.Set("regionRestrictionDetail", value); }
+        }
+#endif
         /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus? RegionStatus
         {
@@ -66,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "regionGroup", n => { RegionGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
+                { "regionRestrictionDetail", n => { RegionRestrictionDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>(global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail.CreateFromDiscriminatorValue); } },
                 { "regionStatus", n => { RegionStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>(); } },
                 { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>(); } },
             };
@@ -80,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>("regionRestrictionDetail", RegionRestrictionDetail);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>("supportedSolution", SupportedSolution);
         }

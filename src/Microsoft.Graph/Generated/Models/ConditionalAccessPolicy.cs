@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.conditionalAccessWhatIfPolicy" => new global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfPolicy(),
+                "#microsoft.graph.whatIfAnalysisResult" => new global::Microsoft.Graph.Beta.Models.WhatIfAnalysisResult(),
                 _ => new global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy(),
             };
         }

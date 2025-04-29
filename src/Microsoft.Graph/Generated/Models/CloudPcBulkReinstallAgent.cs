@@ -9,41 +9,25 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WhatIfAuthenticationContext : global::Microsoft.Graph.Beta.Models.ConditionalAccessContext, IParsable
+    public partial class CloudPcBulkReinstallAgent : global::Microsoft.Graph.Beta.Models.CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The authenticationContext property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AuthenticationContext
-        {
-            get { return BackingStore?.Get<string?>("authenticationContext"); }
-            set { BackingStore?.Set("authenticationContext", value); }
-        }
-#nullable restore
-#else
-        public string AuthenticationContext
-        {
-            get { return BackingStore?.Get<string>("authenticationContext"); }
-            set { BackingStore?.Set("authenticationContext", value); }
-        }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.WhatIfAuthenticationContext"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CloudPcBulkReinstallAgent"/> and sets the default values.
         /// </summary>
-        public WhatIfAuthenticationContext() : base()
+        public CloudPcBulkReinstallAgent() : base()
         {
-            OdataType = "#microsoft.graph.whatIfAuthenticationContext";
+            OdataType = "#microsoft.graph.cloudPcBulkReinstallAgent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WhatIfAuthenticationContext"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcBulkReinstallAgent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.WhatIfAuthenticationContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.CloudPcBulkReinstallAgent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.WhatIfAuthenticationContext();
+            return new global::Microsoft.Graph.Beta.Models.CloudPcBulkReinstallAgent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +37,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationContext", n => { AuthenticationContext = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,7 +47,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("authenticationContext", AuthenticationContext);
         }
     }
 }

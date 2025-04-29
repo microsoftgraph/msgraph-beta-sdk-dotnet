@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier?>("accessTier"); }
             set { BackingStore?.Set("accessTier", value); }
         }
-        /// <summary>The unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can&apos;t be modified after it&apos;s created. For example, &apos;/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125&apos;. Read-Only.</summary>
+        /// <summary>Indicates the unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can&apos;t be modified after it&apos;s created. For example, &apos;/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125&apos;. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageAccountId

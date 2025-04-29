@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WhatIfApplicationContext : global::Microsoft.Graph.Beta.Models.ConditionalAccessContext, IParsable
+    public partial class ApplicationContext : global::Microsoft.Graph.Beta.Models.SignInContext, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The includeApplications property</summary>
+        /// <summary>Collection of appId values for the applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IncludeApplications
@@ -29,21 +29,21 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.WhatIfApplicationContext"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ApplicationContext"/> and sets the default values.
         /// </summary>
-        public WhatIfApplicationContext() : base()
+        public ApplicationContext() : base()
         {
-            OdataType = "#microsoft.graph.whatIfApplicationContext";
+            OdataType = "#microsoft.graph.applicationContext";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WhatIfApplicationContext"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ApplicationContext"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.WhatIfApplicationContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.ApplicationContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.WhatIfApplicationContext();
+            return new global::Microsoft.Graph.Beta.Models.ApplicationContext();
         }
         /// <summary>
         /// The deserialization information for the current model

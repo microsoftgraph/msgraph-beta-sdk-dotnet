@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("phoneMethods", value); }
         }
 #endif
-        /// <summary>The platformCredentialMethods property</summary>
+        /// <summary>Represents a platform credential instance registered to a user on Mac OS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>? PlatformCredentialMethods
@@ -170,6 +170,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>>("platformCredentialMethods"); }
             set { BackingStore?.Set("platformCredentialMethods", value); }
+        }
+#endif
+        /// <summary>Represents a QR code authentication method registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod? QrCodePinMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod?>("qrCodePinMethod"); }
+            set { BackingStore?.Set("qrCodePinMethod", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod QrCodePinMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>("qrCodePinMethod"); }
+            set { BackingStore?.Set("qrCodePinMethod", value); }
         }
 #endif
         /// <summary>The settings and preferences for per-user Microsoft Entra multifactor authentication.</summary>
@@ -280,6 +296,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordlessMicrosoftAuthenticatorMethods", n => { PasswordlessMicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phoneMethods", n => { PhoneMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platformCredentialMethods", n => { PlatformCredentialMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "qrCodePinMethod", n => { QrCodePinMethod = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod.CreateFromDiscriminatorValue); } },
                 { "requirements", n => { Requirements = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements>(global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements.CreateFromDiscriminatorValue); } },
                 { "signInPreferences", n => { SignInPreferences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInPreferences>(global::Microsoft.Graph.Beta.Models.SignInPreferences.CreateFromDiscriminatorValue); } },
                 { "softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -305,6 +322,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>("passwordMethods", PasswordMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>("phoneMethods", PhoneMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>("platformCredentialMethods", PlatformCredentialMethods);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>("qrCodePinMethod", QrCodePinMethod);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements>("requirements", Requirements);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInPreferences>("signInPreferences", SignInPreferences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);

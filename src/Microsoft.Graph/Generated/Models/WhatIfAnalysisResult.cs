@@ -9,40 +9,30 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ConditionalAccessWhatIfPolicy : global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy, IParsable
+    public partial class WhatIfAnalysisResult : global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The policyApplies property</summary>
+        /// <summary>The analysisReasons property</summary>
+        public global::Microsoft.Graph.Beta.Models.WhatIfAnalysisReasons? AnalysisReasons
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WhatIfAnalysisReasons?>("analysisReasons"); }
+            set { BackingStore?.Set("analysisReasons", value); }
+        }
+        /// <summary>Specifies whether the policy applies to the sign-in properties provided in the request body. If policyApplies is true, the policy applies to the sign-in based on the sign-in properties provided. If policyApplies is false, the policy doesn&apos;t apply to the sign-in based on the sign-in properties provided and the analysisReasons property is populated to show the reason for the policy not applying.</summary>
         public bool? PolicyApplies
         {
             get { return BackingStore?.Get<bool?>("policyApplies"); }
             set { BackingStore?.Set("policyApplies", value); }
         }
-        /// <summary>The reasons property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?>? Reasons
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?>?>("reasons"); }
-            set { BackingStore?.Set("reasons", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?> Reasons
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?>>("reasons"); }
-            set { BackingStore?.Set("reasons", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WhatIfAnalysisResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.WhatIfAnalysisResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfPolicy();
+            return new global::Microsoft.Graph.Beta.Models.WhatIfAnalysisResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,8 +42,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "analysisReasons", n => { AnalysisReasons = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WhatIfAnalysisReasons>(); } },
                 { "policyApplies", n => { PolicyApplies = n.GetBoolValue(); } },
-                { "reasons", n => { Reasons = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -64,8 +54,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WhatIfAnalysisReasons>("analysisReasons", AnalysisReasons);
             writer.WriteBoolValue("policyApplies", PolicyApplies);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons>("reasons", Reasons);
         }
     }
 }

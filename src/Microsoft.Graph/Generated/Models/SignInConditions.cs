@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ConditionalAccessWhatIfConditions : IAdditionalDataHolder, IBackedModel, IParsable
+    public partial class SignInConditions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The authenticationFlow property</summary>
+        /// <summary>Type of authentication flow. The possible value is: deviceCodeFlow or authenticationTransfer. Default value is none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AuthenticationFlow? AuthenticationFlow
@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The clientAppType property</summary>
+        /// <summary>Client application type. The possible value is: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other, unknownFutureValue. Default value is all.</summary>
         public global::Microsoft.Graph.Beta.Models.ConditionalAccessClientApp? ClientAppType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessClientApp?>("clientAppType"); }
             set { BackingStore?.Set("clientAppType", value); }
         }
-        /// <summary>The country property</summary>
+        /// <summary>Country from where the identity is authenticating.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("country", value); }
         }
 #endif
-        /// <summary>The deviceInfo property</summary>
+        /// <summary>Information about the device used for the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceInfo? DeviceInfo
@@ -75,19 +75,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceInfo", value); }
         }
 #endif
-        /// <summary>The devicePlatform property</summary>
+        /// <summary>Device platform. The possible value is: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux. Default value is all.</summary>
         public global::Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform? DevicePlatform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform?>("devicePlatform"); }
             set { BackingStore?.Set("devicePlatform", value); }
         }
-        /// <summary>The insiderRiskLevel property</summary>
+        /// <summary>Insider risk associated with the authenticating user. The possible value is: none, minor, moderate, elevated, unknownFutureValue. Default value is none.</summary>
         public global::Microsoft.Graph.Beta.Models.InsiderRiskLevel? InsiderRiskLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InsiderRiskLevel?>("insiderRiskLevel"); }
             set { BackingStore?.Set("insiderRiskLevel", value); }
         }
-        /// <summary>The ipAddress property</summary>
+        /// <summary>Ip address of the authenticating identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddress
@@ -119,28 +119,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The servicePrincipalRiskLevel property</summary>
+        /// <summary>Risk associated with the service principal. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskLevel? ServicePrincipalRiskLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskLevel?>("servicePrincipalRiskLevel"); }
             set { BackingStore?.Set("servicePrincipalRiskLevel", value); }
         }
-        /// <summary>The signInRiskLevel property</summary>
+        /// <summary>Sign-in risk associated with the user. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskLevel? SignInRiskLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskLevel?>("signInRiskLevel"); }
             set { BackingStore?.Set("signInRiskLevel", value); }
         }
-        /// <summary>The userRiskLevel property</summary>
+        /// <summary>The authenticating user&apos;s risk level. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskLevel? UserRiskLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskLevel?>("userRiskLevel"); }
             set { BackingStore?.Set("userRiskLevel", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.SignInConditions"/> and sets the default values.
         /// </summary>
-        public ConditionalAccessWhatIfConditions()
+        public SignInConditions()
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
@@ -148,12 +148,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SignInConditions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.Beta.Models.SignInConditions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions();
+            return new global::Microsoft.Graph.Beta.Models.SignInConditions();
         }
         /// <summary>
         /// The deserialization information for the current model

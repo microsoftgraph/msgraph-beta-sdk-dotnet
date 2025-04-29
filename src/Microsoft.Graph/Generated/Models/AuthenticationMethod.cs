@@ -37,6 +37,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.phoneAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod(),
                 "#microsoft.graph.platformCredentialAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod(),
+                "#microsoft.graph.qrCodePinAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod(),
                 "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod(),

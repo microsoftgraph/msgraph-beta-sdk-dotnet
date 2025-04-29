@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("hasPassword"); }
             set { BackingStore?.Set("hasPassword", value); }
         }
-        /// <summary>Provides a reference to the ancestor of the current permission, if it&apos;s inherited from an ancestor. Read-only.</summary>
+        /// <summary>Provides a reference to the ancestor of the current permission, if inherited from an ancestor. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ItemReference? InheritedFrom

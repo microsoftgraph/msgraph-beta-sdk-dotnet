@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapabilityType?>("capabilityType"); }
             set { BackingStore?.Set("capabilityType", value); }
         }
-        /// <summary>The disaster recovery license type that provides the capability.</summary>
+        /// <summary>The disaster recovery license type that provides the capability. The possible values are: none, standard, unknownFutureValue, plus. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: plus.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType? LicenseType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryLicenseType?>("licenseType"); }

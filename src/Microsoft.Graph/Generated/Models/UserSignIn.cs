@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UserSubject : global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject, IParsable
+    public partial class UserSignIn : global::Microsoft.Graph.Beta.Models.SignInIdentity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The externalTenantId property</summary>
+        /// <summary>TenantId of the guest user as applies to Microsoft Entra B2B scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalTenantId
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessGuestOrExternalUserTypes?>("externalUserType"); }
             set { BackingStore?.Set("externalUserType", value); }
         }
-        /// <summary>The userId property</summary>
+        /// <summary>Object ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId
@@ -51,21 +51,21 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.UserSubject"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.UserSignIn"/> and sets the default values.
         /// </summary>
-        public UserSubject() : base()
+        public UserSignIn() : base()
         {
-            OdataType = "#microsoft.graph.userSubject";
+            OdataType = "#microsoft.graph.userSignIn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserSubject"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserSignIn"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.UserSubject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.UserSignIn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.UserSubject();
+            return new global::Microsoft.Graph.Beta.Models.UserSignIn();
         }
         /// <summary>
         /// The deserialization information for the current model

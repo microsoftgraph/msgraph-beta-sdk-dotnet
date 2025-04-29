@@ -410,6 +410,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudRealtimeCommunicationInfo", value); }
         }
 #endif
+        /// <summary>The user&apos;s communications settings on Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.UserCloudCommunication? Communications
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserCloudCommunication?>("communications"); }
+            set { BackingStore?.Set("communications", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.UserCloudCommunication Communications
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserCloudCommunication>("communications"); }
+            set { BackingStore?.Set("communications", value); }
+        }
+#endif
         /// <summary>The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2417,6 +2433,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cloudLicensing", n => { CloudLicensing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing>(global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing.CreateFromDiscriminatorValue); } },
                 { "cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>(global::Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudRealtimeCommunicationInfo", n => { CloudRealtimeCommunicationInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>(global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo.CreateFromDiscriminatorValue); } },
+                { "communications", n => { Communications = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserCloudCommunication>(global::Microsoft.Graph.Beta.Models.UserCloudCommunication.CreateFromDiscriminatorValue); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "consentProvidedForMinor", n => { ConsentProvidedForMinor = n.GetStringValue(); } },
                 { "contactFolders", n => { ContactFolders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ContactFolder>(global::Microsoft.Graph.Beta.Models.ContactFolder.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -2584,6 +2601,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing>("cloudLicensing", CloudLicensing);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>("cloudRealtimeCommunicationInfo", CloudRealtimeCommunicationInfo);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserCloudCommunication>("communications", Communications);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("consentProvidedForMinor", ConsentProvidedForMinor);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ContactFolder>("contactFolders", ContactFolders);

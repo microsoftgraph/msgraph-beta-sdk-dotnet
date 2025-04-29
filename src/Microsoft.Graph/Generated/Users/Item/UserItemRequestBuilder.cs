@@ -22,6 +22,7 @@ using Microsoft.Graph.Beta.Users.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.Users.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Users.Item.CloudClipboard;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs;
+using Microsoft.Graph.Beta.Users.Item.Communications;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders;
 using Microsoft.Graph.Beta.Users.Item.Contacts;
 using Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser;
@@ -228,6 +229,11 @@ namespace Microsoft.Graph.Beta.Users.Item
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.CloudPCsRequestBuilder CloudPCs
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.CloudPCsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the communications property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Communications.CommunicationsRequestBuilder Communications
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Communications.CommunicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.ContactFolders.ContactFoldersRequestBuilder ContactFolders

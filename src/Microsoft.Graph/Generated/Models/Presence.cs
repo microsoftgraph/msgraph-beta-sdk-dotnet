@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("outOfOfficeSettings", value); }
         }
 #endif
-        /// <summary>The sequenceNumber property</summary>
+        /// <summary>The lexicographically sortable String stamp that represents the version of a presence object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SequenceNumber
