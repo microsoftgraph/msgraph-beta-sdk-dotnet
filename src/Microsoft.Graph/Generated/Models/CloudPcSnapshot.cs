@@ -34,11 +34,17 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The date and time when the snapshot expires. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
+        }
+        /// <summary>Indicates the health check status of the Cloud PC snapshot. Possible values are, unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus? HealthCheckStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus?>("healthCheckStatus"); }
+            set { BackingStore?.Set("healthCheckStatus", value); }
         }
         /// <summary>The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastRestoredDateTime
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus>(); } },
                 { "lastRestoredDateTime", n => { LastRestoredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "snapshotType", n => { SnapshotType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotStatus>(); } },
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("cloudPcId", CloudPcId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteDateTimeOffsetValue("lastRestoredDateTime", LastRestoredDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType>("snapshotType", SnapshotType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotStatus>("status", Status);

@@ -28,52 +28,52 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The conditionalAccessContext property</summary>
+        /// <summary>The signInConditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.ConditionalAccessContext? ConditionalAccessContext
+        public global::Microsoft.Graph.Beta.Models.SignInConditions? SignInConditions
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessContext?>("conditionalAccessContext"); }
-            set { BackingStore?.Set("conditionalAccessContext", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInConditions?>("signInConditions"); }
+            set { BackingStore?.Set("signInConditions", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.ConditionalAccessContext ConditionalAccessContext
+        public global::Microsoft.Graph.Beta.Models.SignInConditions SignInConditions
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessContext>("conditionalAccessContext"); }
-            set { BackingStore?.Set("conditionalAccessContext", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInConditions>("signInConditions"); }
+            set { BackingStore?.Set("signInConditions", value); }
         }
 #endif
-        /// <summary>The conditionalAccessWhatIfConditions property</summary>
+        /// <summary>The signInContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions? ConditionalAccessWhatIfConditions
+        public global::Microsoft.Graph.Beta.Models.SignInContext? SignInContext
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions?>("conditionalAccessWhatIfConditions"); }
-            set { BackingStore?.Set("conditionalAccessWhatIfConditions", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInContext?>("signInContext"); }
+            set { BackingStore?.Set("signInContext", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions ConditionalAccessWhatIfConditions
+        public global::Microsoft.Graph.Beta.Models.SignInContext SignInContext
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions>("conditionalAccessWhatIfConditions"); }
-            set { BackingStore?.Set("conditionalAccessWhatIfConditions", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInContext>("signInContext"); }
+            set { BackingStore?.Set("signInContext", value); }
         }
 #endif
-        /// <summary>The conditionalAccessWhatIfSubject property</summary>
+        /// <summary>The signInIdentity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject? ConditionalAccessWhatIfSubject
+        public global::Microsoft.Graph.Beta.Models.SignInIdentity? SignInIdentity
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject?>("conditionalAccessWhatIfSubject"); }
-            set { BackingStore?.Set("conditionalAccessWhatIfSubject", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInIdentity?>("signInIdentity"); }
+            set { BackingStore?.Set("signInIdentity", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject ConditionalAccessWhatIfSubject
+        public global::Microsoft.Graph.Beta.Models.SignInIdentity SignInIdentity
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject>("conditionalAccessWhatIfSubject"); }
-            set { BackingStore?.Set("conditionalAccessWhatIfSubject", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInIdentity>("signInIdentity"); }
+            set { BackingStore?.Set("signInIdentity", value); }
         }
 #endif
         /// <summary>
@@ -103,9 +103,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "appliedPoliciesOnly", n => { AppliedPoliciesOnly = n.GetBoolValue(); } },
-                { "conditionalAccessContext", n => { ConditionalAccessContext = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessContext>(global::Microsoft.Graph.Beta.Models.ConditionalAccessContext.CreateFromDiscriminatorValue); } },
-                { "conditionalAccessWhatIfConditions", n => { ConditionalAccessWhatIfConditions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions>(global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions.CreateFromDiscriminatorValue); } },
-                { "conditionalAccessWhatIfSubject", n => { ConditionalAccessWhatIfSubject = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject>(global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject.CreateFromDiscriminatorValue); } },
+                { "signInConditions", n => { SignInConditions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInConditions>(global::Microsoft.Graph.Beta.Models.SignInConditions.CreateFromDiscriminatorValue); } },
+                { "signInContext", n => { SignInContext = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInContext>(global::Microsoft.Graph.Beta.Models.SignInContext.CreateFromDiscriminatorValue); } },
+                { "signInIdentity", n => { SignInIdentity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInIdentity>(global::Microsoft.Graph.Beta.Models.SignInIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("appliedPoliciesOnly", AppliedPoliciesOnly);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessContext>("conditionalAccessContext", ConditionalAccessContext);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions>("conditionalAccessWhatIfConditions", ConditionalAccessWhatIfConditions);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject>("conditionalAccessWhatIfSubject", ConditionalAccessWhatIfSubject);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInConditions>("signInConditions", SignInConditions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInContext>("signInContext", SignInContext);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInIdentity>("signInIdentity", SignInIdentity);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

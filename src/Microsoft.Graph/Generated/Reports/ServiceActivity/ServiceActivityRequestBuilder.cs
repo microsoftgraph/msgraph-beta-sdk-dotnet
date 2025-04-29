@@ -19,6 +19,7 @@ using Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamsOverUdpMetrics
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
@@ -306,6 +307,18 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
             _ = exclusiveIntervalEndDateTime ?? throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
             _ = inclusiveIntervalStartDateTime ?? throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForConditionalAccessBlockedSignIn method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            _ = exclusiveIntervalEndDateTime ?? throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            _ = inclusiveIntervalStartDateTime ?? throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
         /// Provides operations to call the getMetricsForConditionalAccessCompliantDevicesSignInSuccess method.

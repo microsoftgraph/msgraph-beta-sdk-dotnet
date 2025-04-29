@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcBulkRestore : global::Microsoft.Graph.Beta.Models.CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>True indicates that snapshots of unhealthy Cloud PCs are ignored. If no healthy snapshot exists within the selected timeRange, the healthy snapshot closest to the restorePointDateTime is used. False indicates that the snapshot within the selected timeRange and closest to the restorePointDateTime is used. The default value is false.</summary>
+        public bool? IgnoreUnhealthySnapshots
+        {
+            get { return BackingStore?.Get<bool?>("ignoreUnhealthySnapshots"); }
+            set { BackingStore?.Set("ignoreUnhealthySnapshots", value); }
+        }
         /// <summary>The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RestorePointDateTime
         {
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "ignoreUnhealthySnapshots", n => { IgnoreUnhealthySnapshots = n.GetBoolValue(); } },
                 { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
                 { "timeRange", n => { TimeRange = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestoreTimeRange>(); } },
             };
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteBoolValue("ignoreUnhealthySnapshots", IgnoreUnhealthySnapshots);
             writer.WriteDateTimeOffsetValue("restorePointDateTime", RestorePointDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestoreTimeRange>("timeRange", TimeRange);
         }

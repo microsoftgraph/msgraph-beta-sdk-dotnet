@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcForensicStorageAccount : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The access tier of the storage account. Possible values are hot, cool, premium, cold, and unknownFutureValue. Default value is hot. Read-only.</summary>
+        /// <summary>Indicates the access tier of the storage account. Possible values are hot, cool, premium, cold, and unknownFutureValue. Default value is hot. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcStorageAccountAccessTier? AccessTier
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcStorageAccountAccessTier?>("accessTier"); }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("immutableStorage"); }
             set { BackingStore?.Set("immutableStorage", value); }
         }
-        /// <summary>The ID of the storage account. Read-only.</summary>
+        /// <summary>Indicates the ID of the storage account. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageAccountId
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("storageAccountId", value); }
         }
 #endif
-        /// <summary>The name of the storage account. Read-only.</summary>
+        /// <summary>Indicates the name of the storage account. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageAccountName

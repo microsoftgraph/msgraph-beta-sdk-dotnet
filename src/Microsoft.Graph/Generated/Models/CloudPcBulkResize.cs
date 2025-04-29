@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcBulkResize : global::Microsoft.Graph.Beta.Models.CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The target service plan ID of the resize configuration with new vCPU and storage size.</summary>
+        /// <summary>Indicates the target service plan ID of the resize configuration with new vCPU and storage size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetServicePlanId

@@ -5,35 +5,35 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Microsoft.Graph.Beta.Models
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WhatIfUserActionContext : global::Microsoft.Graph.Beta.Models.ConditionalAccessContext, IParsable
+    public partial class RemediationUpdateFilter : global::Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsUpdateFilter, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The userAction property</summary>
-        public global::Microsoft.Graph.Beta.Models.UserAction? UserAction
+        /// <summary>The remediationType property</summary>
+        public global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationType? RemediationType
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserAction?>("userAction"); }
-            set { BackingStore?.Set("userAction", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationType?>("remediationType"); }
+            set { BackingStore?.Set("remediationType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.WhatIfUserActionContext"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationUpdateFilter"/> and sets the default values.
         /// </summary>
-        public WhatIfUserActionContext() : base()
+        public RemediationUpdateFilter() : base()
         {
-            OdataType = "#microsoft.graph.whatIfUserActionContext";
+            OdataType = "#microsoft.graph.windowsUpdates.remediationUpdateFilter";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WhatIfUserActionContext"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationUpdateFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.WhatIfUserActionContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationUpdateFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.WhatIfUserActionContext();
+            return new global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationUpdateFilter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "userAction", n => { UserAction = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.UserAction>(); } },
+                { "remediationType", n => { RemediationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationType>(); } },
             };
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.UserAction>("userAction", UserAction);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.RemediationType>("remediationType", RemediationType);
         }
     }
 }

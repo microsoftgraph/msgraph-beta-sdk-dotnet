@@ -4,93 +4,94 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    [Flags]
     #pragma warning disable CS1591
-    public enum ConditionalAccessWhatIfReasons
+    public enum WhatIfAnalysisReasons
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "notSet")]
         #pragma warning disable CS1591
-        NotSet,
+        NotSet = 1,
         #pragma warning restore CS1591
         [EnumMember(Value = "notEnoughInformation")]
         #pragma warning disable CS1591
-        NotEnoughInformation,
+        NotEnoughInformation = 2,
         #pragma warning restore CS1591
         [EnumMember(Value = "invalidCondition")]
         #pragma warning disable CS1591
-        InvalidCondition,
+        InvalidCondition = 4,
         #pragma warning restore CS1591
         [EnumMember(Value = "users")]
         #pragma warning disable CS1591
-        Users,
+        Users = 8,
         #pragma warning restore CS1591
         [EnumMember(Value = "workloadIdentities")]
         #pragma warning disable CS1591
-        WorkloadIdentities,
+        WorkloadIdentities = 16,
         #pragma warning restore CS1591
         [EnumMember(Value = "application")]
         #pragma warning disable CS1591
-        Application,
+        Application = 32,
         #pragma warning restore CS1591
         [EnumMember(Value = "userActions")]
         #pragma warning disable CS1591
-        UserActions,
+        UserActions = 64,
         #pragma warning restore CS1591
         [EnumMember(Value = "authenticationContext")]
         #pragma warning disable CS1591
-        AuthenticationContext,
+        AuthenticationContext = 128,
         #pragma warning restore CS1591
         [EnumMember(Value = "devicePlatform")]
         #pragma warning disable CS1591
-        DevicePlatform,
+        DevicePlatform = 256,
         #pragma warning restore CS1591
         [EnumMember(Value = "devices")]
         #pragma warning disable CS1591
-        Devices,
+        Devices = 512,
         #pragma warning restore CS1591
         [EnumMember(Value = "clientApps")]
         #pragma warning disable CS1591
-        ClientApps,
+        ClientApps = 1024,
         #pragma warning restore CS1591
         [EnumMember(Value = "location")]
         #pragma warning disable CS1591
-        Location,
+        Location = 2048,
         #pragma warning restore CS1591
         [EnumMember(Value = "signInRisk")]
         #pragma warning disable CS1591
-        SignInRisk,
+        SignInRisk = 4096,
         #pragma warning restore CS1591
         [EnumMember(Value = "emptyPolicy")]
         #pragma warning disable CS1591
-        EmptyPolicy,
+        EmptyPolicy = 8192,
         #pragma warning restore CS1591
         [EnumMember(Value = "invalidPolicy")]
         #pragma warning disable CS1591
-        InvalidPolicy,
+        InvalidPolicy = 16384,
         #pragma warning restore CS1591
         [EnumMember(Value = "policyNotEnabled")]
         #pragma warning disable CS1591
-        PolicyNotEnabled,
+        PolicyNotEnabled = 32768,
         #pragma warning restore CS1591
         [EnumMember(Value = "userRisk")]
         #pragma warning disable CS1591
-        UserRisk,
+        UserRisk = 65536,
         #pragma warning restore CS1591
         [EnumMember(Value = "time")]
         #pragma warning disable CS1591
-        Time,
+        Time = 131072,
         #pragma warning restore CS1591
         [EnumMember(Value = "insiderRisk")]
         #pragma warning disable CS1591
-        InsiderRisk,
+        InsiderRisk = 262144,
         #pragma warning restore CS1591
         [EnumMember(Value = "authenticationFlow")]
         #pragma warning disable CS1591
-        AuthenticationFlow,
+        AuthenticationFlow = 524288,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
-        UnknownFutureValue,
+        UnknownFutureValue = 1048576,
         #pragma warning restore CS1591
     }
 }

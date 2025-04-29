@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ConditionalAccessContext : IAdditionalDataHolder, IBackedModel, IParsable
+    public partial class EducationSpeakerCoachDeliverySettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -19,8 +19,32 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The areFillerWordsEnabled property</summary>
+        public bool? AreFillerWordsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("areFillerWordsEnabled"); }
+            set { BackingStore?.Set("areFillerWordsEnabled", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The isPaceEnabled property</summary>
+        public bool? IsPaceEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isPaceEnabled"); }
+            set { BackingStore?.Set("isPaceEnabled", value); }
+        }
+        /// <summary>The isPitchEnabled property</summary>
+        public bool? IsPitchEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isPitchEnabled"); }
+            set { BackingStore?.Set("isPitchEnabled", value); }
+        }
+        /// <summary>The isPronunciationEnabled property</summary>
+        public bool? IsPronunciationEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isPronunciationEnabled"); }
+            set { BackingStore?.Set("isPronunciationEnabled", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,9 +62,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ConditionalAccessContext"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachDeliverySettings"/> and sets the default values.
         /// </summary>
-        public ConditionalAccessContext()
+        public EducationSpeakerCoachDeliverySettings()
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
@@ -48,19 +72,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConditionalAccessContext"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachDeliverySettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.Beta.Models.ConditionalAccessContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachDeliverySettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch
-            {
-                "#microsoft.graph.whatIfApplicationContext" => new global::Microsoft.Graph.Beta.Models.WhatIfApplicationContext(),
-                "#microsoft.graph.whatIfAuthenticationContext" => new global::Microsoft.Graph.Beta.Models.WhatIfAuthenticationContext(),
-                "#microsoft.graph.whatIfUserActionContext" => new global::Microsoft.Graph.Beta.Models.WhatIfUserActionContext(),
-                _ => new global::Microsoft.Graph.Beta.Models.ConditionalAccessContext(),
-            };
+            return new global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachDeliverySettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +87,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "areFillerWordsEnabled", n => { AreFillerWordsEnabled = n.GetBoolValue(); } },
+                { "isPaceEnabled", n => { IsPaceEnabled = n.GetBoolValue(); } },
+                { "isPitchEnabled", n => { IsPitchEnabled = n.GetBoolValue(); } },
+                { "isPronunciationEnabled", n => { IsPronunciationEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -80,6 +101,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("areFillerWordsEnabled", AreFillerWordsEnabled);
+            writer.WriteBoolValue("isPaceEnabled", IsPaceEnabled);
+            writer.WriteBoolValue("isPitchEnabled", IsPitchEnabled);
+            writer.WriteBoolValue("isPronunciationEnabled", IsPronunciationEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

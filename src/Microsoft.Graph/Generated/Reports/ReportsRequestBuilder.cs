@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByPrinter;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser;
 using Microsoft.Graph.Beta.Reports.DeviceConfigurationDeviceActivity;
 using Microsoft.Graph.Beta.Reports.DeviceConfigurationUserActivity;
+using Microsoft.Graph.Beta.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage;
@@ -221,6 +222,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder DeviceConfigurationUserActivity
         {
             get => new global::Microsoft.Graph.Beta.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getApiUsage method.</summary>
+        public global::Microsoft.Graph.Beta.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAttackSimulationRepeatOffenders method.</summary>
         public global::Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders

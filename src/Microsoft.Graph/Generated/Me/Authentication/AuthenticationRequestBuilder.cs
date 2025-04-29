@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.Me.Authentication.PasswordMethods;
 using Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthenticatorMethods;
 using Microsoft.Graph.Beta.Me.Authentication.PhoneMethods;
 using Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods;
+using Microsoft.Graph.Beta.Me.Authentication.QrCodePinMethod;
 using Microsoft.Graph.Beta.Me.Authentication.Requirements;
 using Microsoft.Graph.Beta.Me.Authentication.SignInPreferences;
 using Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods;
@@ -82,6 +83,11 @@ namespace Microsoft.Graph.Beta.Me.Authentication
         public global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder PlatformCredentialMethods
         {
             get => new global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the qrCodePinMethod property of the microsoft.graph.authentication entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Authentication.QrCodePinMethod.QrCodePinMethodRequestBuilder QrCodePinMethod
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Authentication.QrCodePinMethod.QrCodePinMethodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The requirements property</summary>
         public global::Microsoft.Graph.Beta.Me.Authentication.Requirements.RequirementsRequestBuilder Requirements
