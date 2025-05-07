@@ -53,6 +53,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeApplications", value); }
         }
 #endif
+        /// <summary>Represents traffic profile for Global Secure Access. This property is deprecated and will stop returning data on June 1, 2025. Use new Global Secure Access applications instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessGlobalSecureAccess? GlobalSecureAccess
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessGlobalSecureAccess?>("globalSecureAccess"); }
+            set { BackingStore?.Set("globalSecureAccess", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessGlobalSecureAccess GlobalSecureAccess
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessGlobalSecureAccess>("globalSecureAccess"); }
+            set { BackingStore?.Set("globalSecureAccess", value); }
+        }
+#endif
         /// <summary>Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +117,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("includeUserActions", value); }
         }
 #endif
+        /// <summary>Represents traffic profile for Global Secure Access. This property is deprecated and will stop returning data on June 1, 2025. Use new Global Secure Access applications instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessNetworkAccess? NetworkAccess
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessNetworkAccess?>("networkAccess"); }
+            set { BackingStore?.Set("networkAccess", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessNetworkAccess NetworkAccess
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessNetworkAccess>("networkAccess"); }
+            set { BackingStore?.Set("networkAccess", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,9 +177,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "applicationFilter", n => { ApplicationFilter = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter>(global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
                 { "excludeApplications", n => { ExcludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "globalSecureAccess", n => { GlobalSecureAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessGlobalSecureAccess>(global::Microsoft.Graph.Beta.Models.ConditionalAccessGlobalSecureAccess.CreateFromDiscriminatorValue); } },
                 { "includeApplications", n => { IncludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "includeAuthenticationContextClassReferences", n => { IncludeAuthenticationContextClassReferences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "includeUserActions", n => { IncludeUserActions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "networkAccess", n => { NetworkAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessNetworkAccess>(global::Microsoft.Graph.Beta.Models.ConditionalAccessNetworkAccess.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -160,9 +194,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter>("applicationFilter", ApplicationFilter);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeApplications", ExcludeApplications);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessGlobalSecureAccess>("globalSecureAccess", GlobalSecureAccess);
             writer.WriteCollectionOfPrimitiveValues<string>("includeApplications", IncludeApplications);
             writer.WriteCollectionOfPrimitiveValues<string>("includeAuthenticationContextClassReferences", IncludeAuthenticationContextClassReferences);
             writer.WriteCollectionOfPrimitiveValues<string>("includeUserActions", IncludeUserActions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessNetworkAccess>("networkAccess", NetworkAccess);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.customAppScopeAttributesDictionary" => new global::Microsoft.Graph.Beta.Models.CustomAppScopeAttributesDictionary(),
+                "#microsoft.graph.customMetadataDictionary" => new global::Microsoft.Graph.Beta.Models.CustomMetadataDictionary(),
                 "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new global::Microsoft.Graph.Beta.Models.FileStorageContainerCustomPropertyDictionary(),
                 "#microsoft.graph.partner.security.additionalDataDictionary" => new global::Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary(),
                 "#microsoft.graph.plannerFormsDictionary" => new global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary(),

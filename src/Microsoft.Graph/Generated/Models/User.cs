@@ -560,6 +560,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customSecurityAttributes", value); }
         }
 #endif
+        /// <summary>The dataSecurityAndGovernance property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance? DataSecurityAndGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance?>("dataSecurityAndGovernance"); }
+            set { BackingStore?.Set("dataSecurityAndGovernance", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance DataSecurityAndGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance>("dataSecurityAndGovernance"); }
+            set { BackingStore?.Set("dataSecurityAndGovernance", value); }
+        }
+#endif
         /// <summary>The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2443,6 +2459,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "creationType", n => { CreationType = n.GetStringValue(); } },
                 { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue>(global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
+                { "dataSecurityAndGovernance", n => { DataSecurityAndGovernance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance>(global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance.CreateFromDiscriminatorValue); } },
                 { "department", n => { Department = n.GetStringValue(); } },
                 { "deviceEnrollmentConfigurations", n => { DeviceEnrollmentConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceEnrollmentLimit", n => { DeviceEnrollmentLimit = n.GetIntValue(); } },
@@ -2611,6 +2628,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteStringValue("creationType", CreationType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance>("dataSecurityAndGovernance", DataSecurityAndGovernance);
             writer.WriteStringValue("department", Department);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>("deviceEnrollmentConfigurations", DeviceEnrollmentConfigurations);
             writer.WriteIntValue("deviceEnrollmentLimit", DeviceEnrollmentLimit);

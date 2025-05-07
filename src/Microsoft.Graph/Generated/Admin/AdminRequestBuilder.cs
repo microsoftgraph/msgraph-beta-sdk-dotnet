@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Admin.People;
 using Microsoft.Graph.Beta.Admin.ReportSettings;
 using Microsoft.Graph.Beta.Admin.ServiceAnnouncement;
 using Microsoft.Graph.Beta.Admin.Sharepoint;
+using Microsoft.Graph.Beta.Admin.Teams;
 using Microsoft.Graph.Beta.Admin.Todo;
 using Microsoft.Graph.Beta.Admin.Windows;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -85,6 +86,11 @@ namespace Microsoft.Graph.Beta.Admin
         public global::Microsoft.Graph.Beta.Admin.Sharepoint.SharepointRequestBuilder Sharepoint
         {
             get => new global::Microsoft.Graph.Beta.Admin.Sharepoint.SharepointRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the teams property of the microsoft.graph.admin entity.</summary>
+        public global::Microsoft.Graph.Beta.Admin.Teams.TeamsRequestBuilder Teams
+        {
+            get => new global::Microsoft.Graph.Beta.Admin.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the todo property of the microsoft.graph.admin entity.</summary>
         public global::Microsoft.Graph.Beta.Admin.Todo.TodoRequestBuilder Todo

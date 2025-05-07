@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestorePointPreference?>("restorePointPreference"); }
             set { BackingStore?.Set("restorePointPreference", value); }
         }
-        /// <summary>Determines the status of the long-running operation. The possible values area: unknown, active, completed, completedWithErrors, unknownFutureValue.</summary>
+        /// <summary>The status property</summary>
         public global::Microsoft.Graph.Beta.Models.RestoreArtifactsBulkRequestStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreArtifactsBulkRequestStatus?>("status"); }

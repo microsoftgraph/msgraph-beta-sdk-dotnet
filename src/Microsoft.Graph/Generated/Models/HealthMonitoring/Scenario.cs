@@ -24,5 +24,9 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "conditionalAccess")]
+        #pragma warning disable CS1591
+        ConditionalAccess,
+        #pragma warning restore CS1591
     }
 }

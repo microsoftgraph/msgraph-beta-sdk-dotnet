@@ -56,6 +56,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("autoLabeling", value); }
         }
 #endif
+        /// <summary>The color property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Color
+        {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#nullable restore
+#else
+        public string Color
+        {
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +109,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
+        }
+        /// <summary>The isEnabled property</summary>
+        public bool? IsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The isEndpointProtectionEnabled property</summary>
         public bool? IsEndpointProtectionEnabled
@@ -192,9 +214,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "applicationMode", n => { ApplicationMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ApplicationMode>(); } },
                 { "assignedPolicies", n => { AssignedPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelPolicy>(global::Microsoft.Graph.Beta.Models.LabelPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "autoLabeling", n => { AutoLabeling = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AutoLabeling>(global::Microsoft.Graph.Beta.Models.AutoLabeling.CreateFromDiscriminatorValue); } },
+                { "color", n => { Color = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
                 { "labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelActionBase>(global::Microsoft.Graph.Beta.Models.LabelActionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -215,9 +239,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ApplicationMode>("applicationMode", ApplicationMode);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelPolicy>("assignedPolicies", AssignedPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AutoLabeling>("autoLabeling", AutoLabeling);
+            writer.WriteStringValue("color", Color);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isDefault", IsDefault);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isEndpointProtectionEnabled", IsEndpointProtectionEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelActionBase>("labelActions", LabelActions);
             writer.WriteStringValue("name", Name);

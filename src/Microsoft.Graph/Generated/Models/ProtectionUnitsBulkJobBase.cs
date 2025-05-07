@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The status of the job. The possible values are: unknown, active, completed, completedWithErrors, and unknownFutureValue.</summary>
+        /// <summary>The status property</summary>
         public global::Microsoft.Graph.Beta.Models.ProtectionUnitsBulkJobStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionUnitsBulkJobStatus?>("status"); }

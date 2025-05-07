@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The excludeActors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions? ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions?>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#endif
         /// <summary>String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.</summary>
         public TimeSpan? MaxLifetime
         {
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "excludeActors", n => { ExcludeActors = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>(global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions.CreateFromDiscriminatorValue); } },
                 { "maxLifetime", n => { MaxLifetime = n.GetTimeSpanValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
@@ -101,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>("excludeActors", ExcludeActors);
             writer.WriteTimeSpanValue("maxLifetime", MaxLifetime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restrictForAppsCreatedAfterDateTime", RestrictForAppsCreatedAfterDateTime);

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CopilotPeopleAdminSetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The enhancedPersonalization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.EnhancedPersonalizationSetting? EnhancedPersonalization
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EnhancedPersonalizationSetting?>("enhancedPersonalization"); }
+            set { BackingStore?.Set("enhancedPersonalization", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.EnhancedPersonalizationSetting EnhancedPersonalization
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EnhancedPersonalizationSetting>("enhancedPersonalization"); }
+            set { BackingStore?.Set("enhancedPersonalization", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "enhancedPersonalization", n => { EnhancedPersonalization = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EnhancedPersonalizationSetting>(global::Microsoft.Graph.Beta.Models.EnhancedPersonalizationSetting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -40,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EnhancedPersonalizationSetting>("enhancedPersonalization", EnhancedPersonalization);
         }
     }
 }

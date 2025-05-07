@@ -36,7 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.ClassificationError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ClassificationError();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.processingError" => new global::Microsoft.Graph.Beta.Models.ProcessingError(),
+                _ => new global::Microsoft.Graph.Beta.Models.ClassificationError(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
