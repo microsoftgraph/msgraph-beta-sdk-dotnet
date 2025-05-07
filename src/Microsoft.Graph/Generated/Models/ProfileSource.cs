@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The kind property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Kind
+        {
+            get { return BackingStore?.Get<string?>("kind"); }
+            set { BackingStore?.Set("kind", value); }
+        }
+#nullable restore
+#else
+        public string Kind
+        {
+            get { return BackingStore?.Get<string>("kind"); }
+            set { BackingStore?.Set("kind", value); }
+        }
+#endif
+        /// <summary>The sourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceId
+        {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#nullable restore
+#else
+        public string SourceId
+        {
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#endif
         /// <summary>The webUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +95,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetStringValue(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -75,6 +109,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("kind", Kind);
+            writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("webUrl", WebUrl);
         }
     }

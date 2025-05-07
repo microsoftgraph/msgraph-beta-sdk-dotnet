@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.Security.Cases;
 using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Collaboration;
 using Microsoft.Graph.Beta.Security.DataDiscovery;
+using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
 using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
 using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
@@ -87,6 +88,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.DataDiscovery.DataDiscoveryRequestBuilder DataDiscovery
         {
             get => new global::Microsoft.Graph.Beta.Security.DataDiscovery.DataDiscoveryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder DataSecurityAndGovernance
+        {
+            get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder DomainSecurityProfiles

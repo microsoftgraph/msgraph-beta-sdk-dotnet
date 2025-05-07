@@ -60,38 +60,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationStrengths", value); }
         }
 #endif
-        /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.NamedLocation>? NamedLocations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.NamedLocation>?>("namedLocations"); }
-            set { BackingStore?.Set("namedLocations", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.NamedLocation> NamedLocations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.NamedLocation>>("namedLocations"); }
-            set { BackingStore?.Set("namedLocations", value); }
-        }
-#endif
-        /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access policies.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>? Policies
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>?>("policies"); }
-            set { BackingStore?.Set("policies", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy> Policies
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>>("policies"); }
-            set { BackingStore?.Set("policies", value); }
-        }
-#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,8 +97,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>(global::Microsoft.Graph.Beta.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>(global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
                 { "authenticationStrengths", n => { AuthenticationStrengths = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>(global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
-                { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NamedLocation>(global::Microsoft.Graph.Beta.Models.NamedLocation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templates", n => { Templates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>(global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -145,8 +111,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrengths", AuthenticationStrengths);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NamedLocation>("namedLocations", NamedLocations);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("policies", Policies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>("templates", Templates);
         }
     }

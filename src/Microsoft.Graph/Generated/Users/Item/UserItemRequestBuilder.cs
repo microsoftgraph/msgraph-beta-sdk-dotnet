@@ -27,6 +27,7 @@ using Microsoft.Graph.Beta.Users.Item.ContactFolders;
 using Microsoft.Graph.Beta.Users.Item.Contacts;
 using Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser;
 using Microsoft.Graph.Beta.Users.Item.CreatedObjects;
+using Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance;
 using Microsoft.Graph.Beta.Users.Item.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations;
 using Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents;
@@ -254,6 +255,11 @@ namespace Microsoft.Graph.Beta.Users.Item
         public global::Microsoft.Graph.Beta.Users.Item.CreatedObjects.CreatedObjectsRequestBuilder CreatedObjects
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CreatedObjects.CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder DataSecurityAndGovernance
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials

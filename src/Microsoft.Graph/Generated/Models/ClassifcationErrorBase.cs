@@ -121,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.classificationError" => new global::Microsoft.Graph.Beta.Models.ClassificationError(),
+                "#microsoft.graph.processingError" => new global::Microsoft.Graph.Beta.Models.ProcessingError(),
                 _ => new global::Microsoft.Graph.Beta.Models.ClassifcationErrorBase(),
             };
         }

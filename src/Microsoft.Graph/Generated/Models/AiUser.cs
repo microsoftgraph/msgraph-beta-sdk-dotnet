@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("interactionHistory", value); }
         }
 #endif
+        /// <summary>The onlineMeetings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting>? OnlineMeetings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting>?>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting> OnlineMeetings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting>>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "interactionHistory", n => { InteractionHistory = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AiInteractionHistory>(global::Microsoft.Graph.Beta.Models.AiInteractionHistory.CreateFromDiscriminatorValue); } },
+                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting>(global::Microsoft.Graph.Beta.Models.AiOnlineMeeting.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AiInteractionHistory>("interactionHistory", InteractionHistory);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting>("onlineMeetings", OnlineMeetings);
         }
     }
 }

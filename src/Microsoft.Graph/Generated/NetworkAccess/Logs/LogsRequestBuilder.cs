@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.NetworkAccess.Logs.Connections;
 using Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks;
 using Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the connections property of the microsoft.graph.networkaccess.logs entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.Logs.Connections.ConnectionsRequestBuilder Connections
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.Logs.Connections.ConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks.RemoteNetworksRequestBuilder RemoteNetworks
         {

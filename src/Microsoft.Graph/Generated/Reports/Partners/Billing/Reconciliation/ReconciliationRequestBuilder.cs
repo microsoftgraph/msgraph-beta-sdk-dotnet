@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Billed;
+using Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Unbilled;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
         public global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Billed.BilledRequestBuilder Billed
         {
             get => new global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Billed.BilledRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the unbilled property of the microsoft.graph.partners.billing.billingReconciliation entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Unbilled.UnbilledRequestBuilder Unbilled
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Unbilled.UnbilledRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.ReconciliationRequestBuilder"/> and sets the default values.

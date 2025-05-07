@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
             set { BackingStore?.Set("policy", value); }
         }
 #endif
+        /// <summary>Represents the configuration information of users who have accounts hosted on Microsoft Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration>? UserConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration>?>("userConfigurations"); }
+            set { BackingStore?.Set("userConfigurations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration> UserConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration>>("userConfigurations"); }
+            set { BackingStore?.Set("userConfigurations", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "policy", n => { Policy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment>(global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment.CreateFromDiscriminatorValue); } },
+                { "userConfigurations", n => { UserConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration>(global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment>("policy", Policy);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration>("userConfigurations", UserConfigurations);
         }
     }
 }
