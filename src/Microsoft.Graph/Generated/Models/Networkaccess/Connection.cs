@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class Connection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The agentVersion property</summary>
+        /// <summary>The version of the client that initiated the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentVersion
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("agentVersion", value); }
         }
 #endif
-        /// <summary>The applicationSnapshot property</summary>
+        /// <summary>appId (or client ID) of the destination Microsoft Entra application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot? ApplicationSnapshot
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("applicationSnapshot", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The time the connection was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The destinationFqdn property</summary>
+        /// <summary>The destination FQDN of the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationFqdn
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("destinationFqdn", value); }
         }
 #endif
-        /// <summary>The destinationIp property</summary>
+        /// <summary>The destination IP of the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationIp
@@ -82,19 +82,19 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("destinationIp", value); }
         }
 #endif
-        /// <summary>The destinationPort property</summary>
+        /// <summary>The destination port of the connection.</summary>
         public int? DestinationPort
         {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
-        /// <summary>The deviceCategory property</summary>
+        /// <summary>The category of the device. The possible values are: client, branch, unknownFutureValue, remoteNetwork. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: remoteNetwork.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory? DeviceCategory
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory?>("deviceCategory"); }
             set { BackingStore?.Set("deviceCategory", value); }
         }
-        /// <summary>The deviceId property</summary>
+        /// <summary>The DeviceID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The deviceOperatingSystem property</summary>
+        /// <summary>The device operating system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceOperatingSystem
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("deviceOperatingSystem", value); }
         }
 #endif
-        /// <summary>The deviceOperatingSystemVersion property</summary>
+        /// <summary>The device operating system version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceOperatingSystemVersion
@@ -142,13 +142,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("deviceOperatingSystemVersion", value); }
         }
 #endif
-        /// <summary>The endDateTime property</summary>
+        /// <summary>The time the connection was terminated.</summary>
         public DateTimeOffset? EndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The initiatingProcessName property</summary>
+        /// <summary>The process initiating the traffic connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InitiatingProcessName
@@ -164,19 +164,19 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("initiatingProcessName", value); }
         }
 #endif
-        /// <summary>The lastUpdateDateTime property</summary>
+        /// <summary>When the connection was last updated.</summary>
         public DateTimeOffset? LastUpdateDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
-        /// <summary>The networkProtocol property</summary>
+        /// <summary>The network protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? NetworkProtocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("networkProtocol"); }
             set { BackingStore?.Set("networkProtocol", value); }
         }
-        /// <summary>The popProcessingRegion property</summary>
+        /// <summary>The Point-of-Presence processing region of the traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PopProcessingRegion
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("popProcessingRegion", value); }
         }
 #endif
-        /// <summary>The privateAccessDetails property</summary>
+        /// <summary>Private access details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails? PrivateAccessDetails
@@ -208,19 +208,19 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("privateAccessDetails", value); }
         }
 #endif
-        /// <summary>The receivedBytes property</summary>
+        /// <summary>Accumulative bytes received.</summary>
         public long? ReceivedBytes
         {
             get { return BackingStore?.Get<long?>("receivedBytes"); }
             set { BackingStore?.Set("receivedBytes", value); }
         }
-        /// <summary>The sentBytes property</summary>
+        /// <summary>Accumulative bytes sent.</summary>
         public long? SentBytes
         {
             get { return BackingStore?.Get<long?>("sentBytes"); }
             set { BackingStore?.Set("sentBytes", value); }
         }
-        /// <summary>The sourceIp property</summary>
+        /// <summary>The source IP of the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceIp
@@ -236,19 +236,19 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("sourceIp", value); }
         }
 #endif
-        /// <summary>The sourcePort property</summary>
+        /// <summary>The source port of the connection.</summary>
         public int? SourcePort
         {
             get { return BackingStore?.Get<int?>("sourcePort"); }
             set { BackingStore?.Set("sourcePort", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>Status of the connection. The possible values are: open, active, closed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The ID of the tenant where the connection was initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId
@@ -270,25 +270,25 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
-        /// <summary>The transactionBlockCount property</summary>
+        /// <summary>The number of blocked transactions belonging to the connection.</summary>
         public int? TransactionBlockCount
         {
             get { return BackingStore?.Get<int?>("transactionBlockCount"); }
             set { BackingStore?.Set("transactionBlockCount", value); }
         }
-        /// <summary>The transactionCount property</summary>
+        /// <summary>The number of transactions belonging to the connection.</summary>
         public int? TransactionCount
         {
             get { return BackingStore?.Get<int?>("transactionCount"); }
             set { BackingStore?.Set("transactionCount", value); }
         }
-        /// <summary>The transportProtocol property</summary>
+        /// <summary>The transport protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? TransportProtocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
-        /// <summary>The userId property</summary>
+        /// <summary>The user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId
@@ -304,7 +304,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The userPrincipalName property</summary>
+        /// <summary>The principal name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName

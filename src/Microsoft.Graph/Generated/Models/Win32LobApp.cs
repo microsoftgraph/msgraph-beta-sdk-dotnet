@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowAvailableUninstall"); }
             set { BackingStore?.Set("allowAvailableUninstall", value); }
         }
+        /// <summary>Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral, arm64.</summary>
+        public global::Microsoft.Graph.Beta.Models.WindowsArchitecture? AllowedArchitectures
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsArchitecture?>("allowedArchitectures"); }
+            set { BackingStore?.Set("allowedArchitectures", value); }
+        }
         /// <summary>Contains properties for Windows architecture.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsArchitecture? ApplicableArchitectures
         {
@@ -272,6 +278,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowAvailableUninstall", n => { AllowAvailableUninstall = n.GetBoolValue(); } },
+                { "allowedArchitectures", n => { AllowedArchitectures = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
                 { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
                 { "detectionRules", n => { DetectionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Win32LobAppDetection>(global::Microsoft.Graph.Beta.Models.Win32LobAppDetection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
@@ -300,6 +307,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowAvailableUninstall", AllowAvailableUninstall);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>("allowedArchitectures", AllowedArchitectures);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Win32LobAppDetection>("detectionRules", DetectionRules);
             writer.WriteStringValue("displayVersion", DisplayVersion);

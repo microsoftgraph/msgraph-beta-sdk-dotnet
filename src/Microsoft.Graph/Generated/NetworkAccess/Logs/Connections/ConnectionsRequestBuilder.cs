@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Connections
         {
         }
         /// <summary>
-        /// Get connections from networkAccess
+        /// Get a list of connection objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-logs-list-connections?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Connections
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.Connection>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.Connection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get connections from networkAccess
+        /// Get a list of connection objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Connections
             return new global::Microsoft.Graph.Beta.NetworkAccess.Logs.Connections.ConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get connections from networkAccess
+        /// Get a list of connection objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConnectionsRequestBuilderGetQueryParameters 

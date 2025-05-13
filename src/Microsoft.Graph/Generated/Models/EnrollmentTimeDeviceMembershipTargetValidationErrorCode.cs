@@ -7,9 +7,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EnrollmentTimeDeviceMembershipTargetValidationErrorCode
     {
-        /// <summary>Default. Indicates the status of device membership target is not specified. Do not use.</summary>
-        [EnumMember(Value = "unknown")]
-        Unknown,
         /// <summary>Indicates device membership target cannot be found.</summary>
         [EnumMember(Value = "securityGroupNotFound")]
         SecurityGroupNotFound,

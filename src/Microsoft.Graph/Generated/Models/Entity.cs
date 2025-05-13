@@ -2061,6 +2061,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.windowsQualityUpdatePolicyAssignment" => new global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicyAssignment(),
                 "#microsoft.graph.windowsQualityUpdateProfile" => new global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile(),
                 "#microsoft.graph.windowsQualityUpdateProfileAssignment" => new global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment(),
+                "#microsoft.graph.windowsRestoreDeviceEnrollmentConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsRestoreDeviceEnrollmentConfiguration(),
                 "#microsoft.graph.windowsSetting" => new global::Microsoft.Graph.Beta.Models.WindowsSetting(),
                 "#microsoft.graph.windowsSettingInstance" => new global::Microsoft.Graph.Beta.Models.WindowsSettingInstance(),
                 "#microsoft.graph.windowsStoreApp" => new global::Microsoft.Graph.Beta.Models.WindowsStoreApp(),

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The totalCount property</summary>
+        /// <summary>Total number of connections for the specified traffic type.</summary>
         public int? TotalCount
         {
             get { return BackingStore?.Get<int?>("totalCount"); }

@@ -19,11 +19,23 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSApplicationMetadata"); }
             set { BackingStore?.Set("allowPartnerToCollectIOSApplicationMetadata", value); }
         }
+        /// <summary>When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, indicates that metadata about installed certificates will not be collected. Default value is FALSE.</summary>
+        public bool? AllowPartnerToCollectIosCertificateMetadata
+        {
+            get { return BackingStore?.Get<bool?>("allowPartnerToCollectIosCertificateMetadata"); }
+            set { BackingStore?.Set("allowPartnerToCollectIosCertificateMetadata", value); }
+        }
         /// <summary>When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.</summary>
         public bool? AllowPartnerToCollectIOSPersonalApplicationMetadata
         {
             get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSPersonalApplicationMetadata"); }
             set { BackingStore?.Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value); }
+        }
+        /// <summary>When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on personally owned iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled personally owned iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, no metadata for installed certificates is sent for personally owned iOS/iPadOS devices. Default value is FALSE.</summary>
+        public bool? AllowPartnerToCollectIosPersonalCertificateMetadata
+        {
+            get { return BackingStore?.Get<bool?>("allowPartnerToCollectIosPersonalCertificateMetadata"); }
+            set { BackingStore?.Set("allowPartnerToCollectIosPersonalCertificateMetadata", value); }
         }
         /// <summary>When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking an Android device compliant. When FALSE, indicates that Intune may mark an Android device compliant before receiving data from the Mobile Threat Defense partner.</summary>
         public bool? AndroidDeviceBlockedOnMissingPartnerData
@@ -141,6 +153,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "allowPartnerToCollectIOSApplicationMetadata", n => { AllowPartnerToCollectIOSApplicationMetadata = n.GetBoolValue(); } },
                 { "allowPartnerToCollectIOSPersonalApplicationMetadata", n => { AllowPartnerToCollectIOSPersonalApplicationMetadata = n.GetBoolValue(); } },
+                { "allowPartnerToCollectIosCertificateMetadata", n => { AllowPartnerToCollectIosCertificateMetadata = n.GetBoolValue(); } },
+                { "allowPartnerToCollectIosPersonalCertificateMetadata", n => { AllowPartnerToCollectIosPersonalCertificateMetadata = n.GetBoolValue(); } },
                 { "androidDeviceBlockedOnMissingPartnerData", n => { AndroidDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
                 { "androidEnabled", n => { AndroidEnabled = n.GetBoolValue(); } },
                 { "androidMobileApplicationManagementEnabled", n => { AndroidMobileApplicationManagementEnabled = n.GetBoolValue(); } },
@@ -168,7 +182,9 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowPartnerToCollectIOSApplicationMetadata", AllowPartnerToCollectIOSApplicationMetadata);
+            writer.WriteBoolValue("allowPartnerToCollectIosCertificateMetadata", AllowPartnerToCollectIosCertificateMetadata);
             writer.WriteBoolValue("allowPartnerToCollectIOSPersonalApplicationMetadata", AllowPartnerToCollectIOSPersonalApplicationMetadata);
+            writer.WriteBoolValue("allowPartnerToCollectIosPersonalCertificateMetadata", AllowPartnerToCollectIosPersonalCertificateMetadata);
             writer.WriteBoolValue("androidDeviceBlockedOnMissingPartnerData", AndroidDeviceBlockedOnMissingPartnerData);
             writer.WriteBoolValue("androidEnabled", AndroidEnabled);
             writer.WriteBoolValue("androidMobileApplicationManagementEnabled", AndroidMobileApplicationManagementEnabled);

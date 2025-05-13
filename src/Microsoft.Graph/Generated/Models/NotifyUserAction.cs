@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class NotifyUserAction : global::Microsoft.Graph.Beta.Models.DlpActionInfo, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionLastModifiedDateTime property</summary>
+        /// <summary>Timestamp when the notification action configuration was last modified.</summary>
         public DateTimeOffset? ActionLastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("actionLastModifiedDateTime"); }
             set { BackingStore?.Set("actionLastModifiedDateTime", value); }
         }
-        /// <summary>The emailText property</summary>
+        /// <summary>The body text of the email notification sent to users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailText
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailText", value); }
         }
 #endif
-        /// <summary>The policyTip property</summary>
+        /// <summary>The text of the policy tip displayed to the user within the application (For example, Outlook, Word).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyTip
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyTip", value); }
         }
 #endif
-        /// <summary>The recipients property</summary>
+        /// <summary>List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Recipients

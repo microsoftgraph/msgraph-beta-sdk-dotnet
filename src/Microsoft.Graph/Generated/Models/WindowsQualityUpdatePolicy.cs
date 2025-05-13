@@ -13,6 +13,22 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsQualityUpdatePolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
+        /// <summary>The list of approval settings for this policy. The maximun number of approval settings supported for one policy is 6. The expected number of approval settings for one policy from UX is 4.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalSetting>? ApprovalSettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalSetting>?>("approvalSettings"); }
+            set { BackingStore?.Set("approvalSettings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalSetting> ApprovalSettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalSetting>>("approvalSettings"); }
+            set { BackingStore?.Set("approvalSettings", value); }
+        }
+#endif
         /// <summary>List of the groups this profile is assgined to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "approvalSettings", n => { ApprovalSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalSetting>(global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalSetting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicyAssignment>(global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicyAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -130,6 +147,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalSetting>("approvalSettings", ApprovalSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicyAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);

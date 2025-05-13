@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get contentActivities from me
+        /// Collection of activity logs related to content processing.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentActivity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
             return requestInfo;
         }
         /// <summary>
-        /// Get contentActivities from me
+        /// Collection of activity logs related to content processing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
         {
         }
         /// <summary>
-        /// Get contentActivities from me
+        /// Collection of activity logs related to content processing.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContentActivityItemRequestBuilderGetQueryParameters 

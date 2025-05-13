@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ClassificationInnerError : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activityId property</summary>
+        /// <summary>The activity ID associated with the request that generated the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivityId
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The clientRequestId property</summary>
+        /// <summary>The client request ID, if provided by the caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientRequestId
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientRequestId", value); }
         }
 #endif
-        /// <summary>The code property</summary>
+        /// <summary>A more specific, potentially internal, error code string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("code", value); }
         }
 #endif
-        /// <summary>The errorDateTime property</summary>
+        /// <summary>The date and time the inner error occurred.</summary>
         public DateTimeOffset? ErrorDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("errorDateTime"); }

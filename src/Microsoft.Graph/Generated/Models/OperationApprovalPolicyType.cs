@@ -13,9 +13,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.</summary>
         [EnumMember(Value = "app")]
         App,
-        /// <summary>Indicates that the configured policy type is a script type, such as Powershell scripts or remediation scripts.</summary>
+        /// <summary>Indicates that the configured policy type is a script type, such as PowerShell scripts or remediation scripts.</summary>
         [EnumMember(Value = "script")]
         Script,
+        /// <summary>Indicates that the configured policy type type is for Intune roles, such as application administrator or a custom role.</summary>
+        [EnumMember(Value = "role")]
+        Role,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,

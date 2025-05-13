@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
             set { BackingStore?.Set("requiredPasswordComplexity", value); }
         }
-        /// <summary>Devices must not be jailbroken or rooted.</summary>
+        /// <summary>Indicates the device should not be rooted. When TRUE, if the device is detected as rooted it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device rooted state. Default is FALSE.</summary>
         public bool? SecurityBlockJailbrokenDevices
         {
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }

@@ -13,25 +13,25 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidDeviceOwnerCompliancePolicy : global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
-        /// <summary>MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
+        /// <summary>Indicates the Microsoft Defender for Endpoint (also referred to Microsoft Defender Advanced Threat Protection (MDATP)) minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("advancedThreatProtectionRequiredSecurityLevel", value); }
         }
-        /// <summary>Require that devices have enabled device threat protection.</summary>
+        /// <summary>Indicates whether the policy requires devices have device threat protection enabled.  When TRUE, threat protection is enabled.  When FALSE, threat protection is not enabled.  Default is FALSE.</summary>
         public bool? DeviceThreatProtectionEnabled
         {
             get { return BackingStore?.Get<bool?>("deviceThreatProtectionEnabled"); }
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
-        /// <summary>Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
+        /// <summary>Indicates the minimum mobile threat protection risk level to that results in Intune reporting device noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
-        /// <summary>Minimum Android security patch level.</summary>
+        /// <summary>Indicates the minimum Android security patch level required to mark the device as compliant.  For example: &apos;February 1, 2025&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MinAndroidSecurityPatchLevel
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
         }
 #endif
-        /// <summary>Maximum Android version.</summary>
+        /// <summary>Indicates the maximum Android version required to mark the device as compliant.  For example: &apos;15&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsMaximumVersion
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
 #endif
-        /// <summary>Minimum Android version.</summary>
+        /// <summary>Indicates the minimum Android version required to mark the device as compliant. For example: &apos;14&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsMinimumVersion
@@ -79,109 +79,115 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #endif
-        /// <summary>Number of days before the password expires. Valid values 1 to 365</summary>
+        /// <summary>Indicates the number of days before the password expires. Valid values 1 to 365.</summary>
         public int? PasswordExpirationDays
         {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
             set { BackingStore?.Set("passwordExpirationDays", value); }
         }
-        /// <summary>Minimum password length. Valid values 4 to 16</summary>
+        /// <summary>Indicates the minimum password length required to mark the device as compliant. Valid values are 4 to 16, inclusive. Valid values 4 to 16</summary>
         public int? PasswordMinimumLength
         {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
-        /// <summary>Indicates the minimum number of letter characters required for device password. Valid values 1 to 16</summary>
+        /// <summary>Indicates the minimum number of letter characters required for device password for the device to be marked compliant. Valid values 1 to 16.</summary>
         public int? PasswordMinimumLetterCharacters
         {
             get { return BackingStore?.Get<int?>("passwordMinimumLetterCharacters"); }
             set { BackingStore?.Set("passwordMinimumLetterCharacters", value); }
         }
-        /// <summary>Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16</summary>
+        /// <summary>Indicates the minimum number of lower case characters required for device password for the device to be marked compliant. Valid values 1 to 16.</summary>
         public int? PasswordMinimumLowerCaseCharacters
         {
             get { return BackingStore?.Get<int?>("passwordMinimumLowerCaseCharacters"); }
             set { BackingStore?.Set("passwordMinimumLowerCaseCharacters", value); }
         }
-        /// <summary>Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16</summary>
+        /// <summary>Indicates the minimum number of non-letter characters required for device password for the device to be marked compliant. Valid values 1 to 16.</summary>
         public int? PasswordMinimumNonLetterCharacters
         {
             get { return BackingStore?.Get<int?>("passwordMinimumNonLetterCharacters"); }
             set { BackingStore?.Set("passwordMinimumNonLetterCharacters", value); }
         }
-        /// <summary>Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16</summary>
+        /// <summary>Indicates the minimum number of numeric characters required for device password for the device to be marked compliant. Valid values 1 to 16.</summary>
         public int? PasswordMinimumNumericCharacters
         {
             get { return BackingStore?.Get<int?>("passwordMinimumNumericCharacters"); }
             set { BackingStore?.Set("passwordMinimumNumericCharacters", value); }
         }
-        /// <summary>Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16</summary>
+        /// <summary>Indicates the minimum number of symbol characters required for device password for the device to be marked compliant. Valid values 1 to 16.</summary>
         public int? PasswordMinimumSymbolCharacters
         {
             get { return BackingStore?.Get<int?>("passwordMinimumSymbolCharacters"); }
             set { BackingStore?.Set("passwordMinimumSymbolCharacters", value); }
         }
-        /// <summary>Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16</summary>
+        /// <summary>Indicates the minimum number of upper case letter characters required for device password for the device to be marked compliant. Valid values 1 to 16.</summary>
         public int? PasswordMinimumUpperCaseCharacters
         {
             get { return BackingStore?.Get<int?>("passwordMinimumUpperCaseCharacters"); }
             set { BackingStore?.Set("passwordMinimumUpperCaseCharacters", value); }
         }
-        /// <summary>Minutes of inactivity before a password is required.</summary>
+        /// <summary>Indicates the number of minutes of inactivity before a password is required.</summary>
         public int? PasswordMinutesOfInactivityBeforeLock
         {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
-        /// <summary>Number of previous passwords to block. Valid values 1 to 24</summary>
+        /// <summary>Indicates the number of previous passwords to block. Valid values 1 to 24.</summary>
         public int? PasswordPreviousPasswordCountToBlock
         {
             get { return BackingStore?.Get<int?>("passwordPreviousPasswordCountToBlock"); }
             set { BackingStore?.Set("passwordPreviousPasswordCountToBlock", value); }
         }
-        /// <summary>Require a password to unlock device.</summary>
+        /// <summary>Indicates whether a password is required to unlock the device. When TRUE, there must be a password set that unlocks the device for the device to be marked as compliant.  When FALSE, a device is marked as compliant whether or not a password is set as required to unlock the device.  Default is FALSE.</summary>
         public bool? PasswordRequired
         {
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
-        /// <summary>Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
+        /// <summary>Indicates the password complexity requirement for the device to be marked compliant. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
-        /// <summary>Require device to have no pending Android system updates.</summary>
+        /// <summary>Indicates whether the device has pending security or OS updates and sets the compliance state accordingly.  When TRUE, checks if there are any pending system updates on each check in and if there are any pending security or OS version updates (System Updates), the device will be reported as non-compliant. If set to FALSE, then checks for any pending security or OS version updates (System Updates) are done without impact to device compliance state. Default is FALSE.</summary>
         public bool? RequireNoPendingSystemUpdates
         {
             get { return BackingStore?.Get<bool?>("requireNoPendingSystemUpdates"); }
             set { BackingStore?.Set("requireNoPendingSystemUpdates", value); }
         }
-        /// <summary>Require a specific Play Integrity evaluation type for compliance. Possible values are: basic, hardwareBacked.</summary>
+        /// <summary>Indicates the device should not be rooted. When TRUE, if the device is detected as rooted it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device rooted state. Default is FALSE.</summary>
+        public bool? SecurityBlockJailbrokenDevices
+        {
+            get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }
+            set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
+        }
+        /// <summary>Indicates the types of measurements and reference data used to evaluate the device SafetyNet evaluation. Evaluation is completed on the device to assess device integrity based on checks defined by Android and built into the device hardware, for example, compromised OS version or root detection. Possible values are: basic, hardwareBacked, with default value of basic. Possible values are: basic, hardwareBacked.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType?>("securityRequiredAndroidSafetyNetEvaluationType"); }
             set { BackingStore?.Set("securityRequiredAndroidSafetyNetEvaluationType", value); }
         }
-        /// <summary>If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.</summary>
+        /// <summary>Indicates whether Intune application integrity is required to mark the device as compliant.  When TRUE, Intune checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Play store. If the check fails, the device will be reported as non-compliant. Default is FALSE.</summary>
         public bool? SecurityRequireIntuneAppIntegrity
         {
             get { return BackingStore?.Get<bool?>("securityRequireIntuneAppIntegrity"); }
             set { BackingStore?.Set("securityRequireIntuneAppIntegrity", value); }
         }
-        /// <summary>Require the device to pass the Play Integrity basic integrity check.</summary>
+        /// <summary>Indicates whether the compliance check will validate the Google Play Integrity check. When TRUE, the Google Play integrity basic check must pass to consider the device compliant.  When FALSE, the Google Play integrity basic check can pass or fail and the device will be considered compliant.  Default is FALSE.</summary>
         public bool? SecurityRequireSafetyNetAttestationBasicIntegrity
         {
             get { return BackingStore?.Get<bool?>("securityRequireSafetyNetAttestationBasicIntegrity"); }
             set { BackingStore?.Set("securityRequireSafetyNetAttestationBasicIntegrity", value); }
         }
-        /// <summary>Require the device to pass the Play Integrity device integrity check.</summary>
+        /// <summary>Indicates whether the compliance check will validate the Google Play Integrity check. When TRUE, the Google Play integrity device check must pass to consider the device compliant.  When FALSE, the Google Play integrity device check can pass or fail and the device will be considered compliant.  Default is FALSE.</summary>
         public bool? SecurityRequireSafetyNetAttestationCertifiedDevice
         {
             get { return BackingStore?.Get<bool?>("securityRequireSafetyNetAttestationCertifiedDevice"); }
             set { BackingStore?.Set("securityRequireSafetyNetAttestationCertifiedDevice", value); }
         }
-        /// <summary>Require encryption on Android devices.</summary>
+        /// <summary>Indicates whether encryption on Android devices is required to mark the device as compliant.</summary>
         public bool? StorageRequireEncryption
         {
             get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
@@ -231,6 +237,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
                 { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>(); } },
                 { "requireNoPendingSystemUpdates", n => { RequireNoPendingSystemUpdates = n.GetBoolValue(); } },
+                { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
                 { "securityRequireIntuneAppIntegrity", n => { SecurityRequireIntuneAppIntegrity = n.GetBoolValue(); } },
                 { "securityRequireSafetyNetAttestationBasicIntegrity", n => { SecurityRequireSafetyNetAttestationBasicIntegrity = n.GetBoolValue(); } },
                 { "securityRequireSafetyNetAttestationCertifiedDevice", n => { SecurityRequireSafetyNetAttestationCertifiedDevice = n.GetBoolValue(); } },
@@ -265,6 +272,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteBoolValue("requireNoPendingSystemUpdates", RequireNoPendingSystemUpdates);
+            writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType>("securityRequiredAndroidSafetyNetEvaluationType", SecurityRequiredAndroidSafetyNetEvaluationType);
             writer.WriteBoolValue("securityRequireIntuneAppIntegrity", SecurityRequireIntuneAppIntegrity);
             writer.WriteBoolValue("securityRequireSafetyNetAttestationBasicIntegrity", SecurityRequireSafetyNetAttestationBasicIntegrity);

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentMetadata", value); }
         }
 #endif
-        /// <summary>The scopeIdentifier property</summary>
+        /// <summary>The scope identified from computed protection scopes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeIdentifier
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIdentifier", value); }
         }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId

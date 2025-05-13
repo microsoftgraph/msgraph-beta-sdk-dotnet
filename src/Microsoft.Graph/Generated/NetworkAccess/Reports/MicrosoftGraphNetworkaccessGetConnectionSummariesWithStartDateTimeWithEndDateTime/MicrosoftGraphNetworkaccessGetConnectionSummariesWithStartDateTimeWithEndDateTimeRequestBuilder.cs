@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
         }
         /// <summary>
-        /// Invoke function getConnectionSummaries
+        /// An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-reports-getconnectionsummaries?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +62,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getConnectionSummaries
+        /// An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-reports-getconnectionsummaries?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.GetConnectionSummariesWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.GetConnectionSummariesWithStartDateTimeWithEndDateTimeResponse>(requestInfo, global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.GetConnectionSummariesWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getConnectionSummaries
+        /// An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +115,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getConnectionSummaries
+        /// An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 

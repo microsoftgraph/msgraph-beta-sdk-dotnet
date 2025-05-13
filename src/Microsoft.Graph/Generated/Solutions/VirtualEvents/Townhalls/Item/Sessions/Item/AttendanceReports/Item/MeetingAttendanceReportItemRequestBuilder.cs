@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Sessions.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,7 +130,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Sessions.I
             return requestInfo;
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,7 +188,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Sessions.I
         {
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeetingAttendanceReportItemRequestBuilderGetQueryParameters 

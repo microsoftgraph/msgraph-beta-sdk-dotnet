@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The content property</summary>
+        /// <summary>Represents the actual content, either as text (textContent) or binary data (binaryContent). Optional if metadata alone is sufficient for policy evaluation. Do not use for contentActivities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ContentBase? Content
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The correlationId property</summary>
+        /// <summary>An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CorrelationId
@@ -53,13 +53,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("correlationId", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The identifier property</summary>
+        /// <summary>Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identifier
@@ -75,25 +75,25 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identifier", value); }
         }
 #endif
-        /// <summary>The isTruncated property</summary>
+        /// <summary>Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).</summary>
         public bool? IsTruncated
         {
             get { return BackingStore?.Get<bool?>("isTruncated"); }
             set { BackingStore?.Set("isTruncated", value); }
         }
-        /// <summary>The length property</summary>
+        /// <summary>The length of the original content in bytes.</summary>
         public long? Length
         {
             get { return BackingStore?.Get<long?>("length"); }
             set { BackingStore?.Set("length", value); }
         }
-        /// <summary>The modifiedDateTime property</summary>
+        /// <summary>Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.</summary>
         public DateTimeOffset? ModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>Required. A descriptive name for the content (for example, file name, web page title, &apos;Chat Message&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sequenceNumber property</summary>
+        /// <summary>A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.</summary>
         public long? SequenceNumber
         {
             get { return BackingStore?.Get<long?>("sequenceNumber"); }

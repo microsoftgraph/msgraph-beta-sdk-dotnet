@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.BulkAction;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +31,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
         public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the bulkAction method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.BulkAction.BulkActionRequestBuilder BulkAction
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.BulkAction.BulkActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.WindowsQualityUpdatePolicyItemRequestBuilder"/> and sets the default values.
@@ -115,6 +122,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the retrieveWindowsQualityUpdateCatalogItemDetails method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder"/></returns>
+        /// <param name="ids">Usage: ids={ids}</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds(string ids)
+        {
+            if(string.IsNullOrEmpty(ids)) throw new ArgumentNullException(nameof(ids));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder(PathParameters, RequestAdapter, ids);
         }
         /// <summary>
         /// Delete navigation property windowsQualityUpdatePolicies for deviceManagement

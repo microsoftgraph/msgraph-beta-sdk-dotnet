@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The actual value representing the location (for example, &apos;contoso.com&apos;, &apos;https://partner.contoso.com/upload&apos;, &apos;83ef198a-0396-4893-9d4f-d36efbffcaaa&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

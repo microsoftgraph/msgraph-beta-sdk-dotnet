@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProcessConversationMetadata : global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessedResources property</summary>
+        /// <summary>List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AccessedResources
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessedResources", value); }
         }
 #endif
-        /// <summary>The parentMessageId property</summary>
+        /// <summary>Identifier of the parent message in a threaded conversation, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentMessageId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("parentMessageId", value); }
         }
 #endif
-        /// <summary>The plugins property</summary>
+        /// <summary>List of plugins used during the generation of this message (relevant for AI/bot interactions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AiInteractionPlugin>? Plugins

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
         {
         }
         /// <summary>
-        /// Get contentActivities from me
+        /// Collection of activity logs related to content processing.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentActivityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ContentActivityCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ContentActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to contentActivities for me
+        /// Create a content activity for the signed-in user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/activitiescontainer-post-contentactivities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentActivity"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ContentActivity>(requestInfo, global::Microsoft.Graph.Beta.Models.ContentActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get contentActivities from me
+        /// Collection of activity logs related to content processing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to contentActivities for me
+        /// Create a content activity for the signed-in user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentAc
             return new global::Microsoft.Graph.Beta.Me.DataSecurityAndGovernance.Activities.ContentActivities.ContentActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get contentActivities from me
+        /// Collection of activity logs related to content processing.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContentActivitiesRequestBuilderGetQueryParameters 

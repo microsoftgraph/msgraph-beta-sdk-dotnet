@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get protectionScopes from security
+        /// Container for actions related to computing tenant-wide data protection scopes.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
             return requestInfo;
         }
         /// <summary>
-        /// Get protectionScopes from security
+        /// Container for actions related to computing tenant-wide data protection scopes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
         {
         }
         /// <summary>
-        /// Get protectionScopes from security
+        /// Container for actions related to computing tenant-wide data protection scopes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProtectionScopesRequestBuilderGetQueryParameters 
