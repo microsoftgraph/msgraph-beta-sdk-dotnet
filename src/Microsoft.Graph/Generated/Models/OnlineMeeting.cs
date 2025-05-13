@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnlineMeeting : global::Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The aiInsights property</summary>
+        /// <summary>The AI insights generated for an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CallAiInsight>? AiInsights

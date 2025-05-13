@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("interactionHistory", value); }
         }
 #endif
-        /// <summary>The onlineMeetings property</summary>
+        /// <summary>Information about an online meeting, including AI insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting>? OnlineMeetings

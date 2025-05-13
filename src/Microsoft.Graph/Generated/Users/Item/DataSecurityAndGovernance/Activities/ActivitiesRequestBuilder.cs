@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.Activities
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get activities from users
+        /// Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ActivitiesContainer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.Activities
             return requestInfo;
         }
         /// <summary>
-        /// Get activities from users
+        /// Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.Activities
         {
         }
         /// <summary>
-        /// Get activities from users
+        /// Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivitiesRequestBuilderGetQueryParameters 

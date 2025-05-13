@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The policyActions property</summary>
+        /// <summary>A collection of policy actions (like DLP actions) triggered by the processed content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DlpActionInfo>? PolicyActions
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyActions", value); }
         }
 #endif
-        /// <summary>The processingErrors property</summary>
+        /// <summary>A collection of errors encountered during the content processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ProcessingError>? ProcessingErrors

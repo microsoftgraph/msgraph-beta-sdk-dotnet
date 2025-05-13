@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProtectedApplicationMetadata : global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The applicationLocation property</summary>
+        /// <summary>For internal use only. Don&apos;t use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PolicyLocation? ApplicationLocation

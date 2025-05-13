@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateBasedApplicationConfigurationIds", value); }
         }
 #endif
-        /// <summary>The excludeActors property</summary>
+        /// <summary>Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they&apos;re exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions? ExcludeActors

@@ -7,9 +7,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EnrollmentTimeDeviceMembershipTargetType
     {
-        /// <summary>Default value. Do not use.</summary>
-        [EnumMember(Value = "unknown")]
-        Unknown,
         /// <summary>Indicates the device membership target specified refer to static Entra Security Groups.</summary>
         [EnumMember(Value = "staticSecurityGroup")]
         StaticSecurityGroup,

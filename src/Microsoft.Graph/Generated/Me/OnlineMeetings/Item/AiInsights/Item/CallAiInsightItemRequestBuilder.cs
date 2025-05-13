@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AiInsights.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get aiInsights from me
+        /// The AI insights generated for an online meeting. Read-only.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CallAiInsight"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AiInsights.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get aiInsights from me
+        /// The AI insights generated for an online meeting. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AiInsights.Item
         {
         }
         /// <summary>
-        /// Get aiInsights from me
+        /// The AI insights generated for an online meeting. Read-only.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CallAiInsightItemRequestBuilderGetQueryParameters 

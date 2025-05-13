@@ -560,7 +560,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customSecurityAttributes", value); }
         }
 #endif
-        /// <summary>The dataSecurityAndGovernance property</summary>
+        /// <summary>The data security and governance settings for the user. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.UserDataSecurityAndGovernance? DataSecurityAndGovernance

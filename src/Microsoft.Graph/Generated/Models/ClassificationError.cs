@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ClassificationError : global::Microsoft.Graph.Beta.Models.ClassifcationErrorBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The details property</summary>
+        /// <summary>A collection of more specific errors that contribute to the overall error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ClassifcationErrorBase>? Details

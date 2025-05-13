@@ -42,6 +42,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.Im
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace?> PostAsync(global::Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,6 +66,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.Im
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -86,6 +88,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.Im
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsRequestBuilder(rawUrl, RequestAdapter);

@@ -125,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration" => new global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionsConfiguration(),
                 "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration" => new global::Microsoft.Graph.Beta.Models.DeviceEnrollmentWindowsHelloForBusinessConfiguration(),
                 "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration" => new global::Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfiguration(),
+                "#microsoft.graph.windowsRestoreDeviceEnrollmentConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsRestoreDeviceEnrollmentConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration(),
             };
         }

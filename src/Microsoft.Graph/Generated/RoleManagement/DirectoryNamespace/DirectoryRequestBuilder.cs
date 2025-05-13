@@ -32,66 +32,79 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
     public partial class DirectoryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespaces.ResourceNamespacesRequestBuilder ResourceNamespaces
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespaces.ResourceNamespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentApprovals property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentApprovals.RoleAssignmentApprovalsRequestBuilder RoleAssignmentApprovals
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentApprovals.RoleAssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder RoleAssignmentScheduleInstances
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder RoleAssignmentScheduleRequests
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder RoleAssignmentSchedules
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder RoleEligibilityScheduleInstances
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder RoleEligibilityScheduleRequests
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roleScheduleInstances method.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roleSchedules method.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.TransitiveRoleAssignments.TransitiveRoleAssignmentsRequestBuilder TransitiveRoleAssignments
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.TransitiveRoleAssignments.TransitiveRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -118,6 +131,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -141,6 +155,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.RbacApplication?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.DirectoryRequestBuilder.DirectoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -165,6 +180,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.RbacApplication?> PatchAsync(global::Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -187,6 +203,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -205,6 +222,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.DirectoryRequestBuilder.DirectoryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -225,6 +243,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -246,6 +265,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.DirectoryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.DirectoryRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.DirectoryRequestBuilder(rawUrl, RequestAdapter);

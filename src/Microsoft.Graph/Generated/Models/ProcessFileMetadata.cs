@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProcessFileMetadata : global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The customProperties property</summary>
+        /// <summary>A dictionary containing custom metadata associated with the file, potentially extracted by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CustomMetadataDictionary? CustomProperties
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customProperties", value); }
         }
 #endif
-        /// <summary>The ownerId property</summary>
+        /// <summary>The unique identifier (for example, Object ID or UPN) of the owner of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId

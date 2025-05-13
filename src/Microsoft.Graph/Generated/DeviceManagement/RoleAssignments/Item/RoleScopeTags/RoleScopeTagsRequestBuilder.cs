@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
         {
         }
         /// <summary>
-        /// The set of Role Scope Tags defined on the Role Assignment.
+        /// Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RoleScopeTagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RoleScopeTagCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.RoleScopeTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of Role Scope Tags defined on the Role Assignment.
+        /// Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
             return new global::Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTags.RoleScopeTagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The set of Role Scope Tags defined on the Role Assignment.
+        /// Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleScopeTagsRequestBuilderGetQueryParameters 
