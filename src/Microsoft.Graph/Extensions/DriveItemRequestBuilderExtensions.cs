@@ -21,7 +21,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Subscriptions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook;
-using Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Versions;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions;
 using Microsoft.Kiota.Abstractions;
 
 namespace Microsoft.Graph.Beta;
