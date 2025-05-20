@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The audienceEngagementSettings property</summary>
+        /// <summary>The audience engagement related feedback types that students should receive from the Speaker Coach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachAudienceEngagementSettings? AudienceEngagementSettings
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The contentSettings property</summary>
+        /// <summary>The content related feedback types that students should receive from the Speaker Coach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachContentSettings? ContentSettings
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentSettings", value); }
         }
 #endif
-        /// <summary>The deliverySettings property</summary>
+        /// <summary>The delivery related feedback types that students should receive from the Speaker Coach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachDeliverySettings? DeliverySettings

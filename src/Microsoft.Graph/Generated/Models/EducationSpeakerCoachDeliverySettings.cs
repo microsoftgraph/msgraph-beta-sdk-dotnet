@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The areFillerWordsEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their filler words from the Speaker Coach.</summary>
         public bool? AreFillerWordsEnabled
         {
             get { return BackingStore?.Get<bool?>("areFillerWordsEnabled"); }
@@ -27,19 +27,19 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isPaceEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their pace from the Speaker Coach.</summary>
         public bool? IsPaceEnabled
         {
             get { return BackingStore?.Get<bool?>("isPaceEnabled"); }
             set { BackingStore?.Set("isPaceEnabled", value); }
         }
-        /// <summary>The isPitchEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their pitch from the Speaker Coach.</summary>
         public bool? IsPitchEnabled
         {
             get { return BackingStore?.Get<bool?>("isPitchEnabled"); }
             set { BackingStore?.Set("isPitchEnabled", value); }
         }
-        /// <summary>The isPronunciationEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their pronunciation from the Speaker Coach. This is automatically enabled if isAiFeedbackEnabled is set to true on the educationSpeakerProgressResource, or if spokenLanguageLocale is set to a value besides en-US on the educationSpeakerProgressResource.</summary>
         public bool? IsPronunciationEnabled
         {
             get { return BackingStore?.Get<bool?>("isPronunciationEnabled"); }

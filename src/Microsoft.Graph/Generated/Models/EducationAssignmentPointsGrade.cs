@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationAssignmentPointsGrade : global::Microsoft.Graph.Beta.Models.EducationAssignmentGrade, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Number of points a teacher is giving this submission object.</summary>
+        /// <summary>Number of points a teacher gives to this submission object.</summary>
         public float? Points
         {
             get { return BackingStore?.Get<float?>("points"); }

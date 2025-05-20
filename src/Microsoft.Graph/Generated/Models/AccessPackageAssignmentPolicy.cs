@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessPackageId", value); }
         }
 #endif
-        /// <summary>The accessPackageNotificationSettings property</summary>
+        /// <summary>Represents the settings for email notifications for requests to an access package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AccessPackageNotificationSettings? AccessPackageNotificationSettings

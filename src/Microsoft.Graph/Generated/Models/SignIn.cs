@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SignIn : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The agent property</summary>
+        /// <summary>Represents details about the agentic sign-in. Includes the type of agent as well as parentAppID in some cases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Agentic.AgentSignIn? Agent

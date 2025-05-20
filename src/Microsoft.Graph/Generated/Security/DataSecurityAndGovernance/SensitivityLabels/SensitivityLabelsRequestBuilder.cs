@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.ComputeInheritanceWithLabelIdsWithLocaleWithContentFormats;
+using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.ComputeRightsAndInheritance;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Count;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Evaluate;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Item;
@@ -21,6 +23,11 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SensitivityLabelsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the computeRightsAndInheritance method.</summary>
+        public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.ComputeRightsAndInheritance.ComputeRightsAndInheritanceRequestBuilder ComputeRightsAndInheritance
+        {
+            get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.ComputeRightsAndInheritance.ComputeRightsAndInheritanceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Count.CountRequestBuilder Count
         {
@@ -44,6 +51,20 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
             }
         }
         /// <summary>
+        /// Provides operations to call the computeInheritance method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.ComputeInheritanceWithLabelIdsWithLocaleWithContentFormats.ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder"/></returns>
+        /// <param name="contentFormats">Usage: contentFormats={contentFormats}</param>
+        /// <param name="labelIds">Usage: labelIds={labelIds}</param>
+        /// <param name="locale">Usage: locale=&apos;{locale}&apos;</param>
+        public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.ComputeInheritanceWithLabelIdsWithLocaleWithContentFormats.ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder ComputeInheritanceWithLabelIdsWithLocaleWithContentFormats(string contentFormats, string labelIds, string locale)
+        {
+            if(string.IsNullOrEmpty(contentFormats)) throw new ArgumentNullException(nameof(contentFormats));
+            if(string.IsNullOrEmpty(labelIds)) throw new ArgumentNullException(nameof(labelIds));
+            if(string.IsNullOrEmpty(locale)) throw new ArgumentNullException(nameof(locale));
+            return new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.ComputeInheritanceWithLabelIdsWithLocaleWithContentFormats.ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder(PathParameters, RequestAdapter, contentFormats, labelIds, locale);
+        }
+        /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.SensitivityLabelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -60,7 +81,8 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
         {
         }
         /// <summary>
-        /// Get sensitivityLabels from security
+        /// List the sensitivity labels available to a specific user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SensitivityLabelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +130,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SensitivityLabel>(requestInfo, global::Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensitivityLabels from security
+        /// List the sensitivity labels available to a specific user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +180,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
             return new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.SensitivityLabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sensitivityLabels from security
+        /// List the sensitivity labels available to a specific user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelsRequestBuilderGetQueryParameters 

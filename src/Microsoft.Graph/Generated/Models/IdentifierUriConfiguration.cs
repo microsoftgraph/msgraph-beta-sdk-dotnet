@@ -53,6 +53,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenatId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction? UriAdditionWithoutUniqueTenantIdentifier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction?>("uriAdditionWithoutUniqueTenantIdentifier"); }
+            set { BackingStore?.Set("uriAdditionWithoutUniqueTenantIdentifier", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction UriAdditionWithoutUniqueTenantIdentifier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>("uriAdditionWithoutUniqueTenantIdentifier"); }
+            set { BackingStore?.Set("uriAdditionWithoutUniqueTenantIdentifier", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration"/> and sets the default values.
         /// </summary>
@@ -81,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "nonDefaultUriAddition", n => { NonDefaultUriAddition = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>(global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "uriAdditionWithoutUniqueTenantIdentifier", n => { UriAdditionWithoutUniqueTenantIdentifier = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>(global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -92,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>("nonDefaultUriAddition", NonDefaultUriAddition);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>("uriAdditionWithoutUniqueTenantIdentifier", UriAdditionWithoutUniqueTenantIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

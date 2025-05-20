@@ -57,8 +57,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a fileValidateOperation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.LongRunningOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a fileValidateOperation object.
+        /// Read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations.Item
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a fileValidateOperation object.
+        /// Read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LongRunningOperationItemRequestBuilderGetQueryParameters 

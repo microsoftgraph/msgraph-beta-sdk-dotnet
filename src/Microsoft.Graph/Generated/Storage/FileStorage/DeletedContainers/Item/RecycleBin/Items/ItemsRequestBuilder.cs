@@ -3,7 +3,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Count;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Delete;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Item;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +26,16 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Recycl
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the delete method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Delete.DeleteRequestBuilder DeletePath
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Delete.DeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.Items.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.recycleBin entity.</summary>
         /// <param name="position">The unique identifier of recycleBinItem</param>

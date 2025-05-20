@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The areRhetoricalTechniquesEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their rhetorical techniques from the AI feedback.</summary>
         public bool? AreRhetoricalTechniquesEnabled
         {
             get { return BackingStore?.Get<bool?>("areRhetoricalTechniquesEnabled"); }
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isLanguageUseEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their language use from the AI feedback.</summary>
         public bool? IsLanguageUseEnabled
         {
             get { return BackingStore?.Get<bool?>("isLanguageUseEnabled"); }
             set { BackingStore?.Set("isLanguageUseEnabled", value); }
         }
-        /// <summary>The isStyleEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their style from the AI feedback.</summary>
         public bool? IsStyleEnabled
         {
             get { return BackingStore?.Get<bool?>("isStyleEnabled"); }

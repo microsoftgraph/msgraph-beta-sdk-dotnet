@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Admin.People.ItemInsights;
 using Microsoft.Graph.Beta.Admin.People.NamePronunciation;
 using Microsoft.Graph.Beta.Admin.People.ProfileCardProperties;
+using Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings;
 using Microsoft.Graph.Beta.Admin.People.Pronouns;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Beta.Admin.People
         public global::Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder ProfileCardProperties
         {
             get => new global::Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the profilePropertySettings property of the microsoft.graph.peopleAdminSettings entity.</summary>
+        public global::Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings.ProfilePropertySettingsRequestBuilder ProfilePropertySettings
+        {
+            get => new global::Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings.ProfilePropertySettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.</summary>
         public global::Microsoft.Graph.Beta.Admin.People.Pronouns.PronounsRequestBuilder Pronouns

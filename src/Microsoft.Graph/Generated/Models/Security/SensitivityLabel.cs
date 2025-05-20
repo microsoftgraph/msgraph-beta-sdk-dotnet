@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The parent label associated with a child label. Null if the label has no parent.</summary>
+        /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.SensitivityLabel? Parent

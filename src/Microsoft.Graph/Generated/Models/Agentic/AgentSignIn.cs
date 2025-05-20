@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Agentic
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The parentAppId property</summary>
+        /// <summary>The ID of the parent application for agentic instances.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentAppId
