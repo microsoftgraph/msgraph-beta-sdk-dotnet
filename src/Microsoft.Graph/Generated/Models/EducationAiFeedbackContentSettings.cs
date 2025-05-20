@@ -21,19 +21,19 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isMessageClarityEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their message clarity from the AI feedback.</summary>
         public bool? IsMessageClarityEnabled
         {
             get { return BackingStore?.Get<bool?>("isMessageClarityEnabled"); }
             set { BackingStore?.Set("isMessageClarityEnabled", value); }
         }
-        /// <summary>The isQualityOfInformationEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their quality of information from the AI feedback.</summary>
         public bool? IsQualityOfInformationEnabled
         {
             get { return BackingStore?.Get<bool?>("isQualityOfInformationEnabled"); }
             set { BackingStore?.Set("isQualityOfInformationEnabled", value); }
         }
-        /// <summary>The isSpeechOrganizationEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their speech organization from the AI feedback.</summary>
         public bool? IsSpeechOrganizationEnabled
         {
             get { return BackingStore?.Get<bool?>("isSpeechOrganizationEnabled"); }

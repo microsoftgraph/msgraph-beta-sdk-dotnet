@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isInclusivenessEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their inclusiveness from the Speaker Coach.</summary>
         public bool? IsInclusivenessEnabled
         {
             get { return BackingStore?.Get<bool?>("isInclusivenessEnabled"); }
             set { BackingStore?.Set("isInclusivenessEnabled", value); }
         }
-        /// <summary>The isRepetitiveLanguageEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their repetitive language from the Speaker Coach.</summary>
         public bool? IsRepetitiveLanguageEnabled
         {
             get { return BackingStore?.Get<bool?>("isRepetitiveLanguageEnabled"); }

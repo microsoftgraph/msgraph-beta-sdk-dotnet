@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Item.Rights;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Item.Sublabels;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SensitivityLabelItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Item.Rights.RightsRequestBuilder Rights
+        {
+            get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Item.Rights.RightsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.</summary>
         public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.Item.Sublabels.SublabelsRequestBuilder Sublabels
         {
@@ -63,7 +69,8 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensitivityLabels from security
+        /// Get a sensitivity label available for the entire tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sensitivitylabel-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SensitivityLabel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,7 +136,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
             return requestInfo;
         }
         /// <summary>
-        /// Get sensitivityLabels from security
+        /// Get a sensitivity label available for the entire tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,7 +194,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
         {
         }
         /// <summary>
-        /// Get sensitivityLabels from security
+        /// Get a sensitivity label available for the entire tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelItemRequestBuilderGetQueryParameters 

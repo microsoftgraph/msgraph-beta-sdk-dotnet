@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The areEngagementStrategiesEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their engagement strategies from the AI feedback.</summary>
         public bool? AreEngagementStrategiesEnabled
         {
             get { return BackingStore?.Get<bool?>("areEngagementStrategiesEnabled"); }
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isCallToActionEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their call to action from the AI feedback.</summary>
         public bool? IsCallToActionEnabled
         {
             get { return BackingStore?.Get<bool?>("isCallToActionEnabled"); }
             set { BackingStore?.Set("isCallToActionEnabled", value); }
         }
-        /// <summary>The isEmotionalAndIntellectualAppealEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their emotional and intellectual appeal from the AI feedback.</summary>
         public bool? IsEmotionalAndIntellectualAppealEnabled
         {
             get { return BackingStore?.Get<bool?>("isEmotionalAndIntellectualAppealEnabled"); }

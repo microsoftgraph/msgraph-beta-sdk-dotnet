@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isBodyLanguageEnabled property</summary>
+        /// <summary>Indicates whether the student should receive feedback on their body language from the Speaker Coach.</summary>
         public bool? IsBodyLanguageEnabled
         {
             get { return BackingStore?.Get<bool?>("isBodyLanguageEnabled"); }

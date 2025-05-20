@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Sites.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item.Rights;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.SensitivityLabel
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SensitivityLabelItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item.Rights.RightsRequestBuilder Rights
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item.Rights.RightsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Sites.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationSpeakerProgressResource : global::Microsoft.Graph.Beta.Models.EducationResource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The aiFeedbackCriteria property</summary>
+        /// <summary>The feedback types that students should receive from AI feedback. This property should only be provided if isAiFeedbackEnabled is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationAiFeedbackCriteria? AiFeedbackCriteria
@@ -28,25 +28,25 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("aiFeedbackCriteria", value); }
         }
 #endif
-        /// <summary>The isAiFeedbackEnabled property</summary>
+        /// <summary>Indicates whether AI feedback is enabled for the student submissions.</summary>
         public bool? IsAiFeedbackEnabled
         {
             get { return BackingStore?.Get<bool?>("isAiFeedbackEnabled"); }
             set { BackingStore?.Set("isAiFeedbackEnabled", value); }
         }
-        /// <summary>The isVideoRequired property</summary>
+        /// <summary>Indicates whether video is required for the student recording.</summary>
         public bool? IsVideoRequired
         {
             get { return BackingStore?.Get<bool?>("isVideoRequired"); }
             set { BackingStore?.Set("isVideoRequired", value); }
         }
-        /// <summary>The maxRecordingAttempts property</summary>
+        /// <summary>The maximum number of recording attempts available to the student. Specify 0 to set unlimited recording attempts.</summary>
         public int? MaxRecordingAttempts
         {
             get { return BackingStore?.Get<int?>("maxRecordingAttempts"); }
             set { BackingStore?.Set("maxRecordingAttempts", value); }
         }
-        /// <summary>The presentationTitle property</summary>
+        /// <summary>The title of the speaker progress resource visible to students.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PresentationTitle
@@ -62,19 +62,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("presentationTitle", value); }
         }
 #endif
-        /// <summary>The recordingTimeLimitInMinutes property</summary>
+        /// <summary>The time limit is in minutes for the student recording.</summary>
         public int? RecordingTimeLimitInMinutes
         {
             get { return BackingStore?.Get<int?>("recordingTimeLimitInMinutes"); }
             set { BackingStore?.Set("recordingTimeLimitInMinutes", value); }
         }
-        /// <summary>The showRehearsalReportToStudentBeforeMediaUpload property</summary>
+        /// <summary>Allows students to view their rehearsal report before the assignment is graded.</summary>
         public bool? ShowRehearsalReportToStudentBeforeMediaUpload
         {
             get { return BackingStore?.Get<bool?>("showRehearsalReportToStudentBeforeMediaUpload"); }
             set { BackingStore?.Set("showRehearsalReportToStudentBeforeMediaUpload", value); }
         }
-        /// <summary>The speakerCoachSettings property</summary>
+        /// <summary>The feedback types that students should receive from the Speaker Coach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationSpeakerCoachSettings? SpeakerCoachSettings
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("speakerCoachSettings", value); }
         }
 #endif
-        /// <summary>The spokenLanguageLocale property</summary>
+        /// <summary>The spoken language for the student recording. For example, en-US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SpokenLanguageLocale
