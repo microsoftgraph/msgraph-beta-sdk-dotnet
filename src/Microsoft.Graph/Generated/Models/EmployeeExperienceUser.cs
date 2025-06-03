@@ -13,6 +13,22 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmployeeExperienceUser : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
+        /// <summary>Represents the collection of Viva Engage roles assigned to a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.EngagementRole>? AssignedRoles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EngagementRole>?>("assignedRoles"); }
+            set { BackingStore?.Set("assignedRoles", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.EngagementRole> AssignedRoles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EngagementRole>>("assignedRoles"); }
+            set { BackingStore?.Set("assignedRoles", value); }
+        }
+#endif
         /// <summary>The learningCourseActivities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "assignedRoles", n => { AssignedRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EngagementRole>(global::Microsoft.Graph.Beta.Models.EngagementRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LearningCourseActivity>(global::Microsoft.Graph.Beta.Models.LearningCourseActivity.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EngagementRole>("assignedRoles", AssignedRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
         }
     }

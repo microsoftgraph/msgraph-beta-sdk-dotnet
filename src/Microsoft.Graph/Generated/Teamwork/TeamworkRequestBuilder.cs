@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.DeletedChats;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams;
+using Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed;
 using Microsoft.Graph.Beta.Teamwork.Devices;
 using Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates;
@@ -34,6 +35,11 @@ namespace Microsoft.Graph.Beta.Teamwork
         public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder DeletedTeams
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.DeletedTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the determineIfInteractionIsAllowed method.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed.DetermineIfInteractionIsAllowedRequestBuilder DetermineIfInteractionIsAllowed
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed.DetermineIfInteractionIsAllowedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the devices property of the microsoft.graph.teamwork entity.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.Devices.DevicesRequestBuilder Devices

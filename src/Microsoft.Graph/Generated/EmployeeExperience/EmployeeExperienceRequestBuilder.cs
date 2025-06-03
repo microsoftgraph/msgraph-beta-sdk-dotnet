@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.EmployeeExperience.Goals;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivities;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivitiesWithExternalcourseActivityId;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningProviders;
+using Microsoft.Graph.Beta.EmployeeExperience.Roles;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         public global::Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.LearningProvidersRequestBuilder LearningProviders
         {
             get => new global::Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.LearningProvidersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the roles property of the microsoft.graph.employeeExperience entity.</summary>
+        public global::Microsoft.Graph.Beta.EmployeeExperience.Roles.RolesRequestBuilder Roles
+        {
+            get => new global::Microsoft.Graph.Beta.EmployeeExperience.Roles.RolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.EmployeeExperience.EmployeeExperienceRequestBuilder"/> and sets the default values.
@@ -102,7 +108,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         /// Update employeeExperience
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EmployeeExperience"/></returns>
-        /// <param name="body">Represents a container that exposes navigation properties for employee experience resources.</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
@@ -146,7 +152,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         /// Update employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents a container that exposes navigation properties for employee experience resources.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

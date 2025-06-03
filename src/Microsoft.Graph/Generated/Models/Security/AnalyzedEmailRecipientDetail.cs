@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The ccRecipients property</summary>
+        /// <summary>Recipient address in the cc field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CcRecipients
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #endif
-        /// <summary>The domainName property</summary>
+        /// <summary>Domain name of the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName

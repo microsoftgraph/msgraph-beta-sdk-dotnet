@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut;
 using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.Confirm;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ConfirmForUser;
 using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.EndBreak;
 using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.StartBreak;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -31,6 +32,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.Confirm.ConfirmRequestBuilder Confirm
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.Confirm.ConfirmRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the confirmForUser method.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ConfirmForUser.ConfirmForUserRequestBuilder ConfirmForUser
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ConfirmForUser.ConfirmForUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the endBreak method.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.EndBreak.EndBreakRequestBuilder EndBreak

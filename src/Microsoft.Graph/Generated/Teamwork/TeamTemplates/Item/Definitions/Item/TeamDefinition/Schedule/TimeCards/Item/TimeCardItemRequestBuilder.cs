@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.ClockOut;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.Confirm;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.ConfirmForUser;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.EndBreak;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.StartBreak;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -31,6 +32,11 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.Confirm.ConfirmRequestBuilder Confirm
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.Confirm.ConfirmRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the confirmForUser method.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.ConfirmForUser.ConfirmForUserRequestBuilder ConfirmForUser
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.ConfirmForUser.ConfirmForUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the endBreak method.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards.Item.EndBreak.EndBreakRequestBuilder EndBreak

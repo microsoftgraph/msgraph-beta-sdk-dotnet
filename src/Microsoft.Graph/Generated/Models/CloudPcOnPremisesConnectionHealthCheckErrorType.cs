@@ -200,6 +200,10 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         ResourceAvailabilityCheckDeploymentQuotaLimitReached,
         #pragma warning restore CS1591
+        [EnumMember(Value = "resourceAvailabilityCheckMissingRegistrationForLocation")]
+        #pragma warning disable CS1591
+        ResourceAvailabilityCheckMissingRegistrationForLocation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resourceAvailabilityCheckTransientServiceError")]
         #pragma warning disable CS1591
         ResourceAvailabilityCheckTransientServiceError,

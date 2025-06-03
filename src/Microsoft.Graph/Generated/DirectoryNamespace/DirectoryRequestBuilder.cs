@@ -16,6 +16,7 @@ using Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure;
+using Microsoft.Graph.Beta.DirectoryNamespace.RecommendationConfiguration;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations;
 using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
 using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
@@ -119,6 +120,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public global::Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.PublicKeyInfrastructureRequestBuilder PublicKeyInfrastructure
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.PublicKeyInfrastructureRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the recommendationConfiguration property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.RecommendationConfiguration.RecommendationConfigurationRequestBuilder RecommendationConfiguration
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.RecommendationConfiguration.RecommendationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recommendations property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.RecommendationsRequestBuilder Recommendations

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProfileSource : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the profile source intended to inform users about the profile source name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>Type of the profile source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Kind
@@ -44,7 +44,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kind", value); }
         }
 #endif
-        /// <summary>The sourceId property</summary>
+        /// <summary>Alternative localized labels specified by an administrator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ProfileSourceLocalization>? Localizations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfileSourceLocalization>?>("localizations"); }
+            set { BackingStore?.Set("localizations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ProfileSourceLocalization> Localizations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfileSourceLocalization>>("localizations"); }
+            set { BackingStore?.Set("localizations", value); }
+        }
+#endif
+        /// <summary>Profile source identifier used as an alternate key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId
@@ -60,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceId", value); }
         }
 #endif
-        /// <summary>The webUrl property</summary>
+        /// <summary>Web URL of the profile source that directs users to the page view of profile data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl
@@ -96,6 +112,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSourceLocalization>(global::Microsoft.Graph.Beta.Models.ProfileSourceLocalization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
@@ -110,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("kind", Kind);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSourceLocalization>("localizations", Localizations);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("webUrl", WebUrl);
         }

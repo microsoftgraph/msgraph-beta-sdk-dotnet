@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkUserIdentityType?>("userIdentityType"); }
             set { BackingStore?.Set("userIdentityType", value); }
         }
+        /// <summary>User principal name (UPN) of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserPrincipalName
+        {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#nullable restore
+#else
+        public string UserPrincipalName
+        {
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.TeamworkUserIdentity"/> and sets the default values.
         /// </summary>
@@ -44,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "userIdentityType", n => { UserIdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TeamworkUserIdentityType>(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TeamworkUserIdentityType>("userIdentityType", UserIdentityType);
+            writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }
 }

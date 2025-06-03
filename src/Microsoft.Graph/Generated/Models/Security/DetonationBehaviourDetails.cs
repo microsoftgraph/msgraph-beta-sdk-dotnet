@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class DetonationBehaviourDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionStatus property</summary>
+        /// <summary>The status of the action performed during detonation (e.g., &apos;Successful&apos;, &apos;Failed&apos;, &apos;Blocked&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionStatus
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The behaviourCapability property</summary>
+        /// <summary>Categorizes the capability or type of behavior observed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BehaviourCapability
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("behaviourCapability", value); }
         }
 #endif
-        /// <summary>The behaviourGroup property</summary>
+        /// <summary>Groups related behaviors together for classification purposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BehaviourGroup
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("behaviourGroup", value); }
         }
 #endif
-        /// <summary>The details property</summary>
+        /// <summary>More contextual information about the observed behavior or action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Details
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The eventDateTime property</summary>
+        /// <summary>The date and time when the behavior or action was observed during detonation.</summary>
         public DateTimeOffset? EventDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The operation property</summary>
+        /// <summary>The specific operation or action that was performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operation
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("operation", value); }
         }
 #endif
-        /// <summary>The processId property</summary>
+        /// <summary>The unique identifier of the process involved in the behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessId
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("processId", value); }
         }
 #endif
-        /// <summary>The processName property</summary>
+        /// <summary>The name of the process that performed or was involved in the behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessName
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("processName", value); }
         }
 #endif
-        /// <summary>The target property</summary>
+        /// <summary>The target of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Target

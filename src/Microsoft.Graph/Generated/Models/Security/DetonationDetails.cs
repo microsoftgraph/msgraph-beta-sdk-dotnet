@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The compromiseIndicators property</summary>
+        /// <summary>Represents indicators and its associated verdict that suggests whether an email is compromised.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>? CompromiseIndicators
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("compromiseIndicators", value); }
         }
 #endif
-        /// <summary>The detonationBehaviourDetails property</summary>
+        /// <summary>Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails? DetonationBehaviourDetails
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("detonationObservables", value); }
         }
 #endif
-        /// <summary>The detonationScreenshotUri property</summary>
+        /// <summary>Show any screenshots that were captured during detonation. No screenshots are captured if the URL opens into a link that directly downloads a file. However, you see the downloaded file in the detonation chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DetonationScreenshotUri

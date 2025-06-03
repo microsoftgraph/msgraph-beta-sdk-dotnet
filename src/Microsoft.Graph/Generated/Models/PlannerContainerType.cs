@@ -36,6 +36,10 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         TeamsChannel,
         #pragma warning restore CS1591
+        [EnumMember(Value = "onlineMeeting")]
+        #pragma warning disable CS1591
+        OnlineMeeting,
+        #pragma warning restore CS1591
         [EnumMember(Value = "plannerTask")]
         #pragma warning disable CS1591
         PlannerTask,

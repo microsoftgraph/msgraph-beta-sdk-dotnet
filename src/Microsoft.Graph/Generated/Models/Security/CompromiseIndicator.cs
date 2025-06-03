@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Indicator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("value", value); }
         }
 #endif
-        /// <summary>The verdict property</summary>
+        /// <summary>.The possible values are: none, malware, phish, siteUnavailable, spam, decryptionFailed, unsupportedUriScheme, unsupportedFileType, undefined, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.VerdictCategory? Verdict
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.VerdictCategory?>("verdict"); }

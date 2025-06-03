@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Count;
+using Microsoft.Graph.Beta.Users.Item.Calendars.Delta;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars
         public global::Microsoft.Graph.Beta.Users.Item.Calendars.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Calendars.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Calendars.Delta.DeltaRequestBuilder Delta
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Calendars.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendars property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of calendar</param>

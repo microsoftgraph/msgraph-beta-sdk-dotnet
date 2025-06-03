@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DriveRestoreArtifactsBulkAdditionRequest : global::Microsoft.Graph.Beta.Models.RestoreArtifactsBulkRequestBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation. This property isn&apos;t implemented yet. Future value; don&apos;t use.</summary>
+        /// <summary>The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DirectoryObjectIds

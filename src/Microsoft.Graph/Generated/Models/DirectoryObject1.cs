@@ -268,6 +268,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publicKeyInfrastructure", value); }
         }
 #endif
+        /// <summary>The recommendationConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RecommendationConfiguration? RecommendationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecommendationConfiguration?>("recommendationConfiguration"); }
+            set { BackingStore?.Set("recommendationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RecommendationConfiguration RecommendationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecommendationConfiguration>("recommendationConfiguration"); }
+            set { BackingStore?.Set("recommendationConfiguration", value); }
+        }
+#endif
         /// <summary>List of recommended improvements to improve tenant posture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -366,6 +382,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "outboundSharedUserProfiles", n => { OutboundSharedUserProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>(global::Microsoft.Graph.Beta.Models.OutboundSharedUserProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pendingExternalUserProfiles", n => { PendingExternalUserProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PendingExternalUserProfile>(global::Microsoft.Graph.Beta.Models.PendingExternalUserProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "publicKeyInfrastructure", n => { PublicKeyInfrastructure = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PublicKeyInfrastructureRoot>(global::Microsoft.Graph.Beta.Models.PublicKeyInfrastructureRoot.CreateFromDiscriminatorValue); } },
+                { "recommendationConfiguration", n => { RecommendationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecommendationConfiguration>(global::Microsoft.Graph.Beta.Models.RecommendationConfiguration.CreateFromDiscriminatorValue); } },
                 { "recommendations", n => { Recommendations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Recommendation>(global::Microsoft.Graph.Beta.Models.Recommendation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sharedEmailDomains", n => { SharedEmailDomains = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedEmailDomain>(global::Microsoft.Graph.Beta.Models.SharedEmailDomain.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CompanySubscription>(global::Microsoft.Graph.Beta.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -396,6 +413,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>("outboundSharedUserProfiles", OutboundSharedUserProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PendingExternalUserProfile>("pendingExternalUserProfiles", PendingExternalUserProfiles);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicKeyInfrastructureRoot>("publicKeyInfrastructure", PublicKeyInfrastructure);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecommendationConfiguration>("recommendationConfiguration", RecommendationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Recommendation>("recommendations", Recommendations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedEmailDomain>("sharedEmailDomains", SharedEmailDomains);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CompanySubscription>("subscriptions", Subscriptions);

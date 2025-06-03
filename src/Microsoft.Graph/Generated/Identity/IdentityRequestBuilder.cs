@@ -9,7 +9,6 @@ using Microsoft.Graph.Beta.Identity.ConditionalAccess;
 using Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy;
 using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions;
 using Microsoft.Graph.Beta.Identity.IdentityProviders;
-using Microsoft.Graph.Beta.Identity.ProductChanges;
 using Microsoft.Graph.Beta.Identity.UserFlowAttributes;
 using Microsoft.Graph.Beta.Identity.UserFlows;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -74,11 +73,6 @@ namespace Microsoft.Graph.Beta.Identity
         public global::Microsoft.Graph.Beta.Identity.IdentityProviders.IdentityProvidersRequestBuilder IdentityProviders
         {
             get => new global::Microsoft.Graph.Beta.Identity.IdentityProviders.IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the productChanges property of the microsoft.graph.identityContainer entity.</summary>
-        public global::Microsoft.Graph.Beta.Identity.ProductChanges.ProductChangesRequestBuilder ProductChanges
-        {
-            get => new global::Microsoft.Graph.Beta.Identity.ProductChanges.ProductChangesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Identity.UserFlowAttributes.UserFlowAttributesRequestBuilder UserFlowAttributes
