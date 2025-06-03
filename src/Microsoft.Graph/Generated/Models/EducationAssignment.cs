@@ -226,6 +226,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("instructions", value); }
         }
 #endif
+        /// <summary>Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn&apos;t provided, the default language is en-US. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LanguageTag
+        {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#nullable restore
+#else
+        public string LanguageTag
+        {
+            get { return BackingStore?.Get<string>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#endif
         /// <summary>Who last modified the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -403,6 +419,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "gradingCategory", n => { GradingCategory = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>(global::Microsoft.Graph.Beta.Models.EducationGradingCategory.CreateFromDiscriminatorValue); } },
                 { "gradingScheme", n => { GradingScheme = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>(global::Microsoft.Graph.Beta.Models.EducationGradingScheme.CreateFromDiscriminatorValue); } },
                 { "instructions", n => { Instructions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EducationItemBody>(global::Microsoft.Graph.Beta.Models.EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "moduleUrl", n => { ModuleUrl = n.GetStringValue(); } },
@@ -437,6 +454,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>("gradingCategory", GradingCategory);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>("gradingScheme", GradingScheme);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EducationItemBody>("instructions", Instructions);
+            writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteStringValue("moduleUrl", ModuleUrl);
             writer.WriteStringValue("notificationChannelUrl", NotificationChannelUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationAssignmentResource>("resources", Resources);

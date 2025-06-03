@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("detonationDetails", value); }
         }
 #endif
-        /// <summary>The fileExtension property</summary>
+        /// <summary>Extension of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileExtension
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
-        /// <summary>The fileSize property</summary>
+        /// <summary>Size of the file.</summary>
         public int? FileSize
         {
             get { return BackingStore?.Get<int?>("fileSize"); }
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("fileType", value); }
         }
 #endif
-        /// <summary>The malwareFamily property</summary>
+        /// <summary>The threat name associated with the threat type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MalwareFamily
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sha256", value); }
         }
 #endif
-        /// <summary>The tenantAllowBlockListDetailInfo property</summary>
+        /// <summary>Details of entries in tenant allow/block list configured by tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantAllowBlockListDetailInfo

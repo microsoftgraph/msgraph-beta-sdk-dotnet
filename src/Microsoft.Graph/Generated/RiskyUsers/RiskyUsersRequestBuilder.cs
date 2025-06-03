@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.RiskyUsers.ConfirmCompromised;
+using Microsoft.Graph.Beta.RiskyUsers.ConfirmSafe;
 using Microsoft.Graph.Beta.RiskyUsers.Count;
 using Microsoft.Graph.Beta.RiskyUsers.Dismiss;
 using Microsoft.Graph.Beta.RiskyUsers.Item;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Beta.RiskyUsers
         public global::Microsoft.Graph.Beta.RiskyUsers.ConfirmCompromised.ConfirmCompromisedRequestBuilder ConfirmCompromised
         {
             get => new global::Microsoft.Graph.Beta.RiskyUsers.ConfirmCompromised.ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the confirmSafe method.</summary>
+        public global::Microsoft.Graph.Beta.RiskyUsers.ConfirmSafe.ConfirmSafeRequestBuilder ConfirmSafe
+        {
+            get => new global::Microsoft.Graph.Beta.RiskyUsers.ConfirmSafe.ConfirmSafeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public global::Microsoft.Graph.Beta.RiskyUsers.Count.CountRequestBuilder Count

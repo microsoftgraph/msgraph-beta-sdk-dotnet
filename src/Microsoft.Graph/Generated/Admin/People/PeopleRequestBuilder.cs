@@ -4,6 +4,8 @@ using Microsoft.Graph.Beta.Admin.People.ItemInsights;
 using Microsoft.Graph.Beta.Admin.People.NamePronunciation;
 using Microsoft.Graph.Beta.Admin.People.ProfileCardProperties;
 using Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings;
+using Microsoft.Graph.Beta.Admin.People.ProfileSources;
+using Microsoft.Graph.Beta.Admin.People.ProfileSourcesWithSourceId;
 using Microsoft.Graph.Beta.Admin.People.Pronouns;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -42,6 +44,11 @@ namespace Microsoft.Graph.Beta.Admin.People
         public global::Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings.ProfilePropertySettingsRequestBuilder ProfilePropertySettings
         {
             get => new global::Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings.ProfilePropertySettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.</summary>
+        public global::Microsoft.Graph.Beta.Admin.People.ProfileSources.ProfileSourcesRequestBuilder ProfileSources
+        {
+            get => new global::Microsoft.Graph.Beta.Admin.People.ProfileSources.ProfileSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.</summary>
         public global::Microsoft.Graph.Beta.Admin.People.Pronouns.PronounsRequestBuilder Pronouns
@@ -134,6 +141,16 @@ namespace Microsoft.Graph.Beta.Admin.People
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PeopleAdminSettings>(requestInfo, global::Microsoft.Graph.Beta.Models.PeopleAdminSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.People.ProfileSourcesWithSourceId.ProfileSourcesWithSourceIdRequestBuilder"/></returns>
+        /// <param name="sourceId">Alternate key of profileSource</param>
+        public global::Microsoft.Graph.Beta.Admin.People.ProfileSourcesWithSourceId.ProfileSourcesWithSourceIdRequestBuilder ProfileSourcesWithSourceId(string sourceId)
+        {
+            if(string.IsNullOrEmpty(sourceId)) throw new ArgumentNullException(nameof(sourceId));
+            return new global::Microsoft.Graph.Beta.Admin.People.ProfileSourcesWithSourceId.ProfileSourcesWithSourceIdRequestBuilder(PathParameters, RequestAdapter, sourceId);
         }
         /// <summary>
         /// Delete navigation property people for admin

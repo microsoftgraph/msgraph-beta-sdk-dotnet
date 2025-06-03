@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The type of error that occurred during this health check.</summary>
+        /// <summary>The type of error that occurred during this health check. For the list of possible values, see cloudPcOnPremisesConnectionHealthCheckErrorType.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionHealthCheckErrorType?>("errorType"); }

@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("bulkComplaintLevel", value); }
         }
 #endif
-        /// <summary>The clientType property</summary>
+        /// <summary>Shows the type of client that sent the message (for example, REST).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientType
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("distributionList", value); }
         }
 #endif
-        /// <summary>The dlpRules property</summary>
+        /// <summary>Data loss prevention rules configured in purview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDlpRuleInfo>? DlpRules
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("exchangeTransportRules", value); }
         }
 #endif
-        /// <summary>The forwardingDetail property</summary>
+        /// <summary>Email smtp forwarding details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ForwardingDetail
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("forwardingDetail", value); }
         }
 #endif
-        /// <summary>The inboundConnectorFormattedName property</summary>
+        /// <summary>Custom instructions name that defines organizational mail flow and how the email was routed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InboundConnectorFormattedName
@@ -376,7 +376,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("policyAction", value); }
         }
 #endif
-        /// <summary>The policyType property</summary>
+        /// <summary>Type of policy configured that defines the delivery action on email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyType
@@ -392,7 +392,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("policyType", value); }
         }
 #endif
-        /// <summary>The primaryOverrideSource property</summary>
+        /// <summary>Shows the organization or user setting that altered the intended delivery location of the message (allowed instead of blocked, or blocked instead of allowed).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryOverrideSource
@@ -408,7 +408,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("primaryOverrideSource", value); }
         }
 #endif
-        /// <summary>The recipientDetail property</summary>
+        /// <summary>Details of the recipients.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailRecipientDetail? RecipientDetail
@@ -510,7 +510,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The threatDetectionDetails property</summary>
+        /// <summary>Information about threats detected in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>? ThreatDetectionDetails
@@ -542,7 +542,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("threatTypes", value); }
         }
 #endif
-        /// <summary>The timelineEvents property</summary>
+        /// <summary>Delivery and post-delivery events that happened to the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>? TimelineEvents

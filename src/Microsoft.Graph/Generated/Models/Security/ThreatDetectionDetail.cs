@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The confidenceLevel property</summary>
+        /// <summary>Indicates the confidence level in the threat detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfidenceLevel
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The priorityAccountProtection property</summary>
+        /// <summary>Indicates if the account has priority protection enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PriorityAccountProtection
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("priorityAccountProtection", value); }
         }
 #endif
-        /// <summary>The threats property</summary>
+        /// <summary>Lists the detected threats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Threats

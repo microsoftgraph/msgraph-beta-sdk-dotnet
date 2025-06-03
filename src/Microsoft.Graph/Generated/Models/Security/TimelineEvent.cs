@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The eventDateTime property</summary>
+        /// <summary>The date and time when the event occurred.</summary>
         public DateTimeOffset? EventDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The eventDetails property</summary>
+        /// <summary>Additional details or context about the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventDetails
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("eventDetails", value); }
         }
 #endif
-        /// <summary>The eventResult property</summary>
+        /// <summary>The outcome or result of the event, such as delivery location or action taken.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventResult
@@ -59,13 +59,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("eventResult", value); }
         }
 #endif
-        /// <summary>The eventSource property</summary>
+        /// <summary>The origin or actor that triggered the event. The possible values are: system, admin, user, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.EventSource? EventSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.EventSource?>("eventSource"); }
             set { BackingStore?.Set("eventSource", value); }
         }
-        /// <summary>The eventThreats property</summary>
+        /// <summary>Collection of threats identified or associated with this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EventThreats
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("eventThreats", value); }
         }
 #endif
-        /// <summary>The eventType property</summary>
+        /// <summary>The type of event that occurred. The possible values are: originalDelivery, systemTimeTravel, dynamicDelivery, userUrlClick, reprocessed, zap, quarantineRelease, air, unknown, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.TimelineEventType? EventType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.TimelineEventType?>("eventType"); }

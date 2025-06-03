@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary
         {
         }
         /// <summary>
-        /// Summary of all usage insights on apps registered in the tenant for a specified period.
+        /// Get a list of monthly  insightSummary objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-summary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.InsightSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.InsightSummaryCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.InsightSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Summary of all usage insights on apps registered in the tenant for a specified period.
+        /// Get a list of monthly  insightSummary objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary
             return new global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary.SummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Summary of all usage insights on apps registered in the tenant for a specified period.
+        /// Get a list of monthly  insightSummary objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SummaryRequestBuilderGetQueryParameters 

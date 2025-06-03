@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("profilePropertySettings", value); }
         }
 #endif
+        /// <summary>A collection of profile source settings configured by an administrator in an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ProfileSource>? ProfileSources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfileSource>?>("profileSources"); }
+            set { BackingStore?.Set("profileSources", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ProfileSource> ProfileSources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfileSource>>("profileSources"); }
+            set { BackingStore?.Set("profileSources", value); }
+        }
+#endif
         /// <summary>Administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +130,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "namePronunciation", n => { NamePronunciation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings>(global::Microsoft.Graph.Beta.Models.NamePronunciationSettings.CreateFromDiscriminatorValue); } },
                 { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>(global::Microsoft.Graph.Beta.Models.ProfileCardProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profilePropertySettings", n => { ProfilePropertySettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>(global::Microsoft.Graph.Beta.Models.ProfilePropertySetting.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "profileSources", n => { ProfileSources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSource>(global::Microsoft.Graph.Beta.Models.ProfileSource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pronouns", n => { Pronouns = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PronounsSettings>(global::Microsoft.Graph.Beta.Models.PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -129,6 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings>("namePronunciation", NamePronunciation);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>("profilePropertySettings", ProfilePropertySettings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSource>("profileSources", ProfileSources);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PronounsSettings>("pronouns", Pronouns);
         }
     }

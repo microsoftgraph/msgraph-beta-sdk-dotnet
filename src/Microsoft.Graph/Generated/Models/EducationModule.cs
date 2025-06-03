@@ -66,12 +66,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Indicates whether the module is pinned or not.</summary>
+        /// <summary>Indicates whether the module is pinned.</summary>
         public bool? IsPinned
         {
             get { return BackingStore?.Get<bool?>("isPinned"); }
             set { BackingStore?.Set("isPinned", value); }
         }
+        /// <summary>Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn&apos;t provided, the default language is en-US. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LanguageTag
+        {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#nullable restore
+#else
+        public string LanguageTag
+        {
+            get { return BackingStore?.Get<string>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#endif
         /// <summary>The last user that modified the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isPinned", n => { IsPinned = n.GetBoolValue(); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationModuleResource>(global::Microsoft.Graph.Beta.Models.EducationModuleResource.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -173,6 +190,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isPinned", IsPinned);
+            writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationModuleResource>("resources", Resources);
         }
     }

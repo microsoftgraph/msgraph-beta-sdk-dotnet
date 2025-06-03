@@ -907,7 +907,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tokenProtectionStatusDetails", value); }
         }
 #endif
-        /// <summary>A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they&apos;re redeemed at resource providers.</summary>
+        /// <summary>A unique base64-encoded request identifier used to track tokens issued by Microsoft Entra ID as they&apos;re redeemed at resource providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UniqueTokenIdentifier

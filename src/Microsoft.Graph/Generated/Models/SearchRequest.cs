@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("collapseProperties", value); }
         }
 #endif
-        /// <summary>Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.</summary>
+        /// <summary>Contains the connection to be targeted. Respects the following format: /external/connections/connectionid where connectionid is the ConnectionId defined in the connectors administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ContentSources
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("entityTypes", value); }
         }
 #endif
-        /// <summary>Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.</summary>
+        /// <summary>Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax : label_title.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Fields
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resultTemplateOptions", value); }
         }
 #endif
-        /// <summary>Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.</summary>
+        /// <summary>Indicates the kind of content to be searched when a search is performed using application permissions. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SharePointOneDriveOptions? SharePointOneDriveOptions
@@ -263,7 +263,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("stored_fields", value); }
         }
 #endif
-        /// <summary>Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.</summary>
+        /// <summary>Indicates whether to trim away the duplicate SharePoint files from search results. The default value is false. Optional.</summary>
         public bool? TrimDuplicates
         {
             get { return BackingStore?.Get<bool?>("trimDuplicates"); }

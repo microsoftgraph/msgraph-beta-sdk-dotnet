@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of sender from address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The domainCreationDateTime property</summary>
+        /// <summary>Date and time of creation of the sender domain.</summary>
         public DateTimeOffset? DomainCreationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("domainCreationDateTime"); }
             set { BackingStore?.Set("domainCreationDateTime", value); }
         }
-        /// <summary>The domainName property</summary>
+        /// <summary>Registered name of the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>The domainOwner property</summary>
+        /// <summary>Owner of the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainOwner
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("ipv4", value); }
         }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>Location of the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("mailFromAddress", value); }
         }
 #endif
-        /// <summary>The mailFromDomainName property</summary>
+        /// <summary>Domain name of sender mail from address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MailFromDomainName
