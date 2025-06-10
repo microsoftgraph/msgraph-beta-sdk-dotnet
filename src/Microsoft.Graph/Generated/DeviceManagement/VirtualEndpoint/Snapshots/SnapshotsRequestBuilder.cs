@@ -61,8 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         {
         }
         /// <summary>
-        /// Get a list of cloudPcSnapshot objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta" />
+        /// Cloud PC snapshots.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcSnapshot>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcSnapshot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of cloudPcSnapshot objects and their properties.
+        /// Cloud PC snapshots.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +169,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of cloudPcSnapshot objects and their properties.
+        /// Cloud PC snapshots.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SnapshotsRequestBuilderGetQueryParameters 

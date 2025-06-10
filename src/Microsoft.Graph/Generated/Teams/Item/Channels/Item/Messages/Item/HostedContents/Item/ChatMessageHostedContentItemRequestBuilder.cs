@@ -126,6 +126,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.HostedCont
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

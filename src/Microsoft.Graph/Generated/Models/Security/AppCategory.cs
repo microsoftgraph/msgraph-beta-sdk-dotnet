@@ -184,5 +184,17 @@ namespace Microsoft.Graph.Beta.Models.Security
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "aiModelProvider")]
+        #pragma warning disable CS1591
+        AiModelProvider,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "mcpServer")]
+        #pragma warning disable CS1591
+        McpServer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clientAiApp")]
+        #pragma warning disable CS1591
+        ClientAiApp,
+        #pragma warning restore CS1591
     }
 }

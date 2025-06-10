@@ -3,9 +3,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.AppDiagnosticsWithUpn;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Count;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadAppDiagnostics;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadPowerliftAppDiagnostic;
@@ -29,21 +26,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDevicesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the bulkRestoreCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the bulkSetCloudPcReviewStatus method.</summary>
-        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus.BulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus.BulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Count.CountRequestBuilder Count
         {
