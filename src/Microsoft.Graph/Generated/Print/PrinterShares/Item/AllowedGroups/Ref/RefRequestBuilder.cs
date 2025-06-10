@@ -123,6 +123,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedGroups/$ref?@id={%40id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -164,6 +165,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedGroups/$ref", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

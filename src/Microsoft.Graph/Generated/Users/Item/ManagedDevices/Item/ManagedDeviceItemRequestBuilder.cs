@@ -19,8 +19,6 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Disable;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DisableLostMode;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnrollNowAction;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetFileVaultKey;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateDeviceAttestation;
@@ -47,7 +45,6 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateFileVaultKey;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateLocalAdminPassword;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineStates;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ShutDown;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SyncDevice;
@@ -158,16 +155,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnrollNowAction.EnrollNowActionRequestBuilder EnrollNowAction
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnrollNowAction.EnrollNowActionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getCloudPcRemoteActionResults method.</summary>
-        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResultsRequestBuilder GetCloudPcRemoteActionResults
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getCloudPcReviewStatus method.</summary>
-        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus.GetCloudPcReviewStatusRequestBuilder GetCloudPcReviewStatus
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus.GetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFileVaultKey method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyRequestBuilder GetFileVaultKey
@@ -298,11 +285,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setCloudPcReviewStatus method.</summary>
-        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewStatus.SetCloudPcReviewStatusRequestBuilder SetCloudPcReviewStatus
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewStatus.SetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setDeviceName method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName.SetDeviceNameRequestBuilder SetDeviceName
@@ -456,6 +438,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

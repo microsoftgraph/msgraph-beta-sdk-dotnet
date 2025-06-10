@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
-using Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Count;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item;
@@ -23,11 +22,6 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudPCsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Provides operations to call the bulkResize method.</summary>
-        public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize.BulkResizeRequestBuilder BulkResize
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize.BulkResizeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Count.CountRequestBuilder Count
         {

@@ -74,6 +74,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

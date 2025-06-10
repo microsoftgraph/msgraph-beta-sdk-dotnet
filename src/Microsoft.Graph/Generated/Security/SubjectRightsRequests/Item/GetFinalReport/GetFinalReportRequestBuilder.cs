@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalRepor
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/octet-stream");
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json");
             return requestInfo;
         }
         /// <summary>

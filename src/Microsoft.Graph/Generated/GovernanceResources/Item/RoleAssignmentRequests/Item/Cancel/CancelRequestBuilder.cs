@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

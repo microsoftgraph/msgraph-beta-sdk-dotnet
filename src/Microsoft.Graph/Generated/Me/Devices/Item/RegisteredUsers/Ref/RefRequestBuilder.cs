@@ -119,6 +119,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Ref
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/devices/{device%2Did}/registeredUsers/$ref?@id={%40id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -158,6 +159,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Ref
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/me/devices/{device%2Did}/registeredUsers/$ref", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

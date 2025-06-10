@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.ExceptionOccu
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
