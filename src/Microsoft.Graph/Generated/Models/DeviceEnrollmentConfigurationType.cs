@@ -46,5 +46,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.</summary>
         [EnumMember(Value = "enrollmentNotificationsConfiguration")]
         EnrollmentNotificationsConfiguration,
+        /// <summary>Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment</summary>
+        [EnumMember(Value = "windowsRestore")]
+        WindowsRestore,
     }
 }

@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
             set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }
         }
-        /// <summary>The customAppSettings property</summary>
+        /// <summary>The settings for all custom apps in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CustomAppSettings? CustomAppSettings

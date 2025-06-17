@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.androidManagedStoreAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAppAssignmentSettings(),
+                "#microsoft.graph.iosDdmLobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosDdmLobAppAssignmentSettings(),
                 "#microsoft.graph.iosLobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosLobAppAssignmentSettings(),
                 "#microsoft.graph.iosStoreAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosStoreAppAssignmentSettings(),
                 "#microsoft.graph.iosVppAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosVppAppAssignmentSettings(),

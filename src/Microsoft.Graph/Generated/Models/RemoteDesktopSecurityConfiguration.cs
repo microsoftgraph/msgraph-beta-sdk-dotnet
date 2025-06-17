@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RemoteDesktopSecurityConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The approvedClientApps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>? ApprovedClientApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>?>("approvedClientApps"); }
+            set { BackingStore?.Set("approvedClientApps", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp> ApprovedClientApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>>("approvedClientApps"); }
+            set { BackingStore?.Set("approvedClientApps", value); }
+        }
+#endif
         /// <summary>Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.</summary>
         public bool? IsRemoteDesktopProtocolEnabled
         {
@@ -52,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "approvedClientApps", n => { ApprovedClientApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>(global::Microsoft.Graph.Beta.Models.ApprovedClientApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isRemoteDesktopProtocolEnabled", n => { IsRemoteDesktopProtocolEnabled = n.GetBoolValue(); } },
                 { "targetDeviceGroups", n => { TargetDeviceGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetDeviceGroup>(global::Microsoft.Graph.Beta.Models.TargetDeviceGroup.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -64,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>("approvedClientApps", ApprovedClientApps);
             writer.WriteBoolValue("isRemoteDesktopProtocolEnabled", IsRemoteDesktopProtocolEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetDeviceGroup>("targetDeviceGroups", TargetDeviceGroups);
         }

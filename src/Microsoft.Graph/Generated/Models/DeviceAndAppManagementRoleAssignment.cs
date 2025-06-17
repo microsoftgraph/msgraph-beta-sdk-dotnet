@@ -29,6 +29,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
+        /// <summary>Indicates the set of role scope tag IDs for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RoleScopeTagIds
+        {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> RoleScopeTagIds
+        {
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#endif
         /// <summary>Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleScopeTag>(global::Microsoft.Graph.Beta.Models.RoleScopeTag.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);
+            writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleScopeTag>("roleScopeTags", RoleScopeTags);
         }
     }

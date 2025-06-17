@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaApps;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments;
+using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.RetrieveZebraFotaDeviceModels;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -41,6 +42,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
         public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsRequestBuilder HasActiveDeployments
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveZebraFotaDeviceModels method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.RetrieveZebraFotaDeviceModels.RetrieveZebraFotaDeviceModelsRequestBuilder RetrieveZebraFotaDeviceModels
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.RetrieveZebraFotaDeviceModels.RetrieveZebraFotaDeviceModelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder"/> and sets the default values.
