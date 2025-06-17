@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
         {
         }
         /// <summary>
-        /// List the sensitivity labels available to a specific user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta" />
+        /// List the sensitivity labels available for the entire tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SensitivityLabelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SensitivityLabel>(requestInfo, global::Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the sensitivity labels available to a specific user.
+        /// List the sensitivity labels available for the entire tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLab
             return new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels.SensitivityLabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the sensitivity labels available to a specific user.
+        /// List the sensitivity labels available for the entire tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelsRequestBuilderGetQueryParameters 

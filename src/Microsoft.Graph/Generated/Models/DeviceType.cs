@@ -76,6 +76,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Linux device.</summary>
         [EnumMember(Value = "linux")]
         Linux,
+        /// <summary>Indicates managed device is running on visionOS operating system.</summary>
+        [EnumMember(Value = "visionOS")]
+        VisionOS,
+        /// <summary>Indicates managed device is running on tvOS operating system.</summary>
+        [EnumMember(Value = "tvOS")]
+        TvOS,
         /// <summary>Blackberry.</summary>
         [EnumMember(Value = "blackberry")]
         Blackberry,

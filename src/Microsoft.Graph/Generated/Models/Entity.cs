@@ -254,6 +254,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.approvalSolution" => new global::Microsoft.Graph.Beta.Models.ApprovalSolution(),
                 "#microsoft.graph.approvalStep" => new global::Microsoft.Graph.Beta.Models.ApprovalStep(),
                 "#microsoft.graph.approvalWorkflowProvider" => new global::Microsoft.Graph.Beta.Models.ApprovalWorkflowProvider(),
+                "#microsoft.graph.approvedClientApp" => new global::Microsoft.Graph.Beta.Models.ApprovedClientApp(),
                 "#microsoft.graph.appScope" => new global::Microsoft.Graph.Beta.Models.AppScope(),
                 "#microsoft.graph.appVulnerabilityManagedDevice" => new global::Microsoft.Graph.Beta.Models.AppVulnerabilityManagedDevice(),
                 "#microsoft.graph.appVulnerabilityMobileApp" => new global::Microsoft.Graph.Beta.Models.AppVulnerabilityMobileApp(),

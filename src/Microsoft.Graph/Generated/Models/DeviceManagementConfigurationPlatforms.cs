@@ -38,5 +38,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the settings contained in associated configuration applies to the android open source operating system.</summary>
         [EnumMember(Value = "aosp")]
         Aosp = 512,
+        /// <summary>Indicates that the settings contained in associated configuration applies to visionOS platform.</summary>
+        [EnumMember(Value = "visionOS")]
+        VisionOS = 1024,
+        /// <summary>Indicates that the settings contained in associated configuration applies to the tvOS platform.</summary>
+        [EnumMember(Value = "tvOS")]
+        TvOS = 2048,
     }
 }
