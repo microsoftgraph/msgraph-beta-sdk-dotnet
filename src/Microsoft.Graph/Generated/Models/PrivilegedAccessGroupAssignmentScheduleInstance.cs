@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupRelationships?>("accessId"); }
             set { BackingStore?.Set("accessId", value); }
         }
-        /// <summary>When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.</summary>
+        /// <summary>When the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstance? ActivatedUsing
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupAssignmentType?>("assignmentType"); }
             set { BackingStore?.Set("assignmentType", value); }
         }
-        /// <summary>References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.</summary>
+        /// <summary>References the group that is the scope of the membership or ownership assignment through PIM for Groups. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Group? Group
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional. Supports $filter (eq).</summary>
+        /// <summary>The identifier of the group representing the scope of the membership or ownership assignment through PIM for Groups. Optional. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("principal", value); }
         }
 #endif
-        /// <summary>The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required. Supports $filter (eq).</summary>
+        /// <summary>The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for Groups. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalId

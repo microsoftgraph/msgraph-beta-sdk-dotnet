@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignUps
         {
         }
         /// <summary>
-        /// Get signUps from auditLogs
+        /// Retrieve the Microsoft Entra External ID user selfServiceSignUps events for your tenant.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ups are returned first. Only sign-up events that occurred within the Microsoft Entra ID default retention period are available.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/auditlogroot-list-signups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SelfServiceSignUpCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignUps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>(requestInfo, global::Microsoft.Graph.Beta.Models.SelfServiceSignUp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get signUps from auditLogs
+        /// Retrieve the Microsoft Entra External ID user selfServiceSignUps events for your tenant.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ups are returned first. Only sign-up events that occurred within the Microsoft Entra ID default retention period are available.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignUps
             return new global::Microsoft.Graph.Beta.AuditLogs.SignUps.SignUpsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get signUps from auditLogs
+        /// Retrieve the Microsoft Entra External ID user selfServiceSignUps events for your tenant.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ups are returned first. Only sign-up events that occurred within the Microsoft Entra ID default retention period are available.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SignUpsRequestBuilderGetQueryParameters 

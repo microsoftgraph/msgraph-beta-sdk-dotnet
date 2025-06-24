@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.ProtectionScopes.Compute;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.ProtectionSc
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectionScopesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the compute method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputeRequestBuilder Compute
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.ProtectionScopes.ProtectionScopesRequestBuilder"/> and sets the default values.
         /// </summary>

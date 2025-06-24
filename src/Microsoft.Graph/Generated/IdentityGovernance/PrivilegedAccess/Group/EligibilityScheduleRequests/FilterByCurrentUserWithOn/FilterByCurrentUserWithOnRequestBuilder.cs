@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         {
         }
         /// <summary>
-        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse>(requestInfo, global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse"/></returns>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse>(requestInfo, global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FilterByCurrentUserWithOnRequestBuilderGetQueryParameters 

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
         {
         }
         /// <summary>
-        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
+        /// When the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstance>(requestInfo, global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
+        /// When the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.Item.ActivatedUsing.ActivatedUsingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
+        /// When the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivatedUsingRequestBuilderGetQueryParameters 

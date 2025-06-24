@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applicationId", value); }
         }
 #endif
-        /// <summary>The collection property of AppLogUploadRequest.</summary>
+        /// <summary>Indicates collection of App Log Upload Request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AppLogCollectionRequest>? AppLogCollectionRequests
