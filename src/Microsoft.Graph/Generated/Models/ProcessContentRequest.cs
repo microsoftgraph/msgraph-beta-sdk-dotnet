@@ -53,6 +53,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentEntries", value); }
         }
 #endif
+        /// <summary>The deviceMetadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DeviceMetadata? DeviceMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceMetadata?>("deviceMetadata"); }
+            set { BackingStore?.Set("deviceMetadata", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DeviceMetadata DeviceMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceMetadata>("deviceMetadata"); }
+            set { BackingStore?.Set("deviceMetadata", value); }
+        }
+#endif
         /// <summary>The integratedAppMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +145,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "activityMetadata", n => { ActivityMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ActivityMetadata>(global::Microsoft.Graph.Beta.Models.ActivityMetadata.CreateFromDiscriminatorValue); } },
                 { "contentEntries", n => { ContentEntries = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase>(global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deviceMetadata", n => { DeviceMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceMetadata>(global::Microsoft.Graph.Beta.Models.DeviceMetadata.CreateFromDiscriminatorValue); } },
                 { "integratedAppMetadata", n => { IntegratedAppMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata>(global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "protectedAppMetadata", n => { ProtectedAppMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ProtectedApplicationMetadata>(global::Microsoft.Graph.Beta.Models.ProtectedApplicationMetadata.CreateFromDiscriminatorValue); } },
@@ -143,6 +160,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ActivityMetadata>("activityMetadata", ActivityMetadata);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase>("contentEntries", ContentEntries);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceMetadata>("deviceMetadata", DeviceMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata>("integratedAppMetadata", IntegratedAppMetadata);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ProtectedApplicationMetadata>("protectedAppMetadata", ProtectedAppMetadata);

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignUps.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get signUps from auditLogs
+        /// Retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/selfservicesignup-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SelfServiceSignUp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignUps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get signUps from auditLogs
+        /// Retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +183,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignUps.Item
         {
         }
         /// <summary>
-        /// Get signUps from auditLogs
+        /// Retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SelfServiceSignUpItemRequestBuilderGetQueryParameters 

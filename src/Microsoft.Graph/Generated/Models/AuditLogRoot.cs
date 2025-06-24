@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisioning", value); }
         }
 #endif
-        /// <summary>The signIns property</summary>
+        /// <summary>Represents Microsoft Entra sign-in events. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SignIn>? SignIns
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signIns", value); }
         }
 #endif
-        /// <summary>The signUps property</summary>
+        /// <summary>Represents sign up events in Microsoft Entra External ID. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>? SignUps

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The signUpIdentifier property</summary>
+        /// <summary>The identification that the user is trying to utilize to sign up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignUpIdentifier
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signUpIdentifier", value); }
         }
 #endif
-        /// <summary>The signUpIdentifierType property</summary>
+        /// <summary>The type of sign-up the user initiated. Possible values include:  emailAddress, unknownFutureValue. Supports $filter (eq) on the emailAddress.</summary>
         public global::Microsoft.Graph.Beta.Models.SignUpIdentifierType? SignUpIdentifierType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignUpIdentifierType?>("signUpIdentifierType"); }

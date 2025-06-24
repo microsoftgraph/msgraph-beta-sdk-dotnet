@@ -38,6 +38,22 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The configurationManagement property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ConfigurationManagement? ConfigurationManagement
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConfigurationManagement?>("configurationManagement"); }
+            set { BackingStore?.Set("configurationManagement", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ConfigurationManagement ConfigurationManagement
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConfigurationManagement>("configurationManagement"); }
+            set { BackingStore?.Set("configurationManagement", value); }
+        }
+#endif
         /// <summary>The dynamics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -289,6 +305,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "appsAndServices", n => { AppsAndServices = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminAppsAndServices>(global::Microsoft.Graph.Beta.Models.AdminAppsAndServices.CreateFromDiscriminatorValue); } },
+                { "configurationManagement", n => { ConfigurationManagement = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConfigurationManagement>(global::Microsoft.Graph.Beta.Models.ConfigurationManagement.CreateFromDiscriminatorValue); } },
                 { "dynamics", n => { Dynamics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminDynamics>(global::Microsoft.Graph.Beta.Models.AdminDynamics.CreateFromDiscriminatorValue); } },
                 { "edge", n => { Edge = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Edge>(global::Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue); } },
                 { "entra", n => { Entra = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Entra>(global::Microsoft.Graph.Beta.Models.Entra.CreateFromDiscriminatorValue); } },
@@ -313,6 +330,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminAppsAndServices>("appsAndServices", AppsAndServices);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConfigurationManagement>("configurationManagement", ConfigurationManagement);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminDynamics>("dynamics", Dynamics);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Edge>("edge", Edge);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Entra>("entra", Entra);
