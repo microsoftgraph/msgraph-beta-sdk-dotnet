@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reflectCheckInResponses", value); }
         }
 #endif
+        /// <summary>Details of submitted speaker assignments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission>? SpeakerAssignmentSubmissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission>?>("speakerAssignmentSubmissions"); }
+            set { BackingStore?.Set("speakerAssignmentSubmissions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission> SpeakerAssignmentSubmissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission>>("speakerAssignmentSubmissions"); }
+            set { BackingStore?.Set("speakerAssignmentSubmissions", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "readingAssignmentSubmissions", n => { ReadingAssignmentSubmissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission>(global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reflectCheckInResponses", n => { ReflectCheckInResponses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReflectCheckInResponse>(global::Microsoft.Graph.Beta.Models.ReflectCheckInResponse.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "speakerAssignmentSubmissions", n => { SpeakerAssignmentSubmissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission>(global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission>("readingAssignmentSubmissions", ReadingAssignmentSubmissions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReflectCheckInResponse>("reflectCheckInResponses", ReflectCheckInResponses);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission>("speakerAssignmentSubmissions", SpeakerAssignmentSubmissions);
         }
     }
 }

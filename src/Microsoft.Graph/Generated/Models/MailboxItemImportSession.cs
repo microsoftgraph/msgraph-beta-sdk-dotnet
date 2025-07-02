@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The URL endpoint that accepts POST requests for FastTransfer stream format of the item.</summary>
+        /// <summary>The URL endpoint that accepts POST requests for uploading a mailbox item exported using exportItems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImportUrl

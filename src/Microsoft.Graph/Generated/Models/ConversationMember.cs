@@ -65,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.anonymousGuestConversationMember" => new global::Microsoft.Graph.Beta.Models.AnonymousGuestConversationMember(),
                 "#microsoft.graph.azureCommunicationServicesUserConversationMember" => new global::Microsoft.Graph.Beta.Models.AzureCommunicationServicesUserConversationMember(),
                 "#microsoft.graph.microsoftAccountUserConversationMember" => new global::Microsoft.Graph.Beta.Models.MicrosoftAccountUserConversationMember(),
+                "#microsoft.graph.phoneUserConversationMember" => new global::Microsoft.Graph.Beta.Models.PhoneUserConversationMember(),
                 "#microsoft.graph.skypeForBusinessUserConversationMember" => new global::Microsoft.Graph.Beta.Models.SkypeForBusinessUserConversationMember(),
                 "#microsoft.graph.skypeUserConversationMember" => new global::Microsoft.Graph.Beta.Models.SkypeUserConversationMember(),
                 _ => new global::Microsoft.Graph.Beta.Models.ConversationMember(),

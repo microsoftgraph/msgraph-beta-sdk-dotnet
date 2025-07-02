@@ -24,5 +24,21 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         RosterUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "transcriptionStarted")]
+        #pragma warning disable CS1591
+        TranscriptionStarted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "transcriptionStopped")]
+        #pragma warning disable CS1591
+        TranscriptionStopped,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "recordingStarted")]
+        #pragma warning disable CS1591
+        RecordingStarted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "recordingStopped")]
+        #pragma warning disable CS1591
+        RecordingStopped,
+        #pragma warning restore CS1591
     }
 }

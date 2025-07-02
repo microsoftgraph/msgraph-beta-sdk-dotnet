@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).</summary>
+        /// <summary>An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CorrelationId
