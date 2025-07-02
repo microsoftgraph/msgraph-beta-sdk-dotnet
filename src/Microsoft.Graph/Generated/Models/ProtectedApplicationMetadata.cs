@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProtectedApplicationMetadata : global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Entra client (application) ID. Required.</summary>
+        /// <summary>The client (application) ID of the Microsoft Entra application. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PolicyLocation? ApplicationLocation

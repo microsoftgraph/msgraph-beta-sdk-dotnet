@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customProperties", value); }
         }
 #endif
-        /// <summary>The unique identifier (for example, Object ID or UPN) of the owner of the file.</summary>
+        /// <summary>The unique identifier (for example, Entra User ID or UPN) of the owner of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("changeKey", value); }
         }
 #endif
-        /// <summary>Data that represents an item in a base64 encoded FastTransfer stream format.</summary>
+        /// <summary>Data that represents an item in a base64 encoded opaque stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Data

@@ -69,6 +69,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Details about the operating system platform and version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications? OperatingSystemSpecifications
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications?>("operatingSystemSpecifications"); }
+            set { BackingStore?.Set("operatingSystemSpecifications", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications OperatingSystemSpecifications
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications>("operatingSystemSpecifications"); }
+            set { BackingStore?.Set("operatingSystemSpecifications", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.DeviceMetadata"/> and sets the default values.
         /// </summary>
@@ -98,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceType", n => { DeviceType = n.GetStringValue(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatingSystemSpecifications", n => { OperatingSystemSpecifications = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications>(global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -110,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceType", DeviceType);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications>("operatingSystemSpecifications", OperatingSystemSpecifications);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

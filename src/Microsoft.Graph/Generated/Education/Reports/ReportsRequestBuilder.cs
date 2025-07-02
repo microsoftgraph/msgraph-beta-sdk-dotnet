@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Education.Reports.ReadingAssignmentSubmissions;
 using Microsoft.Graph.Beta.Education.Reports.ReflectCheckInResponses;
+using Microsoft.Graph.Beta.Education.Reports.SpeakerAssignmentSubmissions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Beta.Education.Reports
         public global::Microsoft.Graph.Beta.Education.Reports.ReflectCheckInResponses.ReflectCheckInResponsesRequestBuilder ReflectCheckInResponses
         {
             get => new global::Microsoft.Graph.Beta.Education.Reports.ReflectCheckInResponses.ReflectCheckInResponsesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the speakerAssignmentSubmissions property of the microsoft.graph.reportsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Education.Reports.SpeakerAssignmentSubmissions.SpeakerAssignmentSubmissionsRequestBuilder SpeakerAssignmentSubmissions
+        {
+            get => new global::Microsoft.Graph.Beta.Education.Reports.SpeakerAssignmentSubmissions.SpeakerAssignmentSubmissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Education.Reports.ReportsRequestBuilder"/> and sets the default values.

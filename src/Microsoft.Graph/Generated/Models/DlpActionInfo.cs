@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DlpActionInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The type of DLP action. Possible value is restrictAccessAction.</summary>
+        public global::Microsoft.Graph.Beta.Models.DlpAction? Action
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DlpAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
         {
@@ -58,6 +64,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.blockAccessAction" => new global::Microsoft.Graph.Beta.Models.BlockAccessAction(),
                 "#microsoft.graph.notifyUserAction" => new global::Microsoft.Graph.Beta.Models.NotifyUserAction(),
+                "#microsoft.graph.restrictAccessAction" => new global::Microsoft.Graph.Beta.Models.RestrictAccessAction(),
+                "#microsoft.graph.restrictAccessActionBase" => new global::Microsoft.Graph.Beta.Models.RestrictAccessActionBase(),
                 _ => new global::Microsoft.Graph.Beta.Models.DlpActionInfo(),
             };
         }
@@ -69,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DlpAction>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -79,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DlpAction>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

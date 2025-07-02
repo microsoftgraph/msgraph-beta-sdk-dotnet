@@ -136,20 +136,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("status", value); }
         }
 #endif
-        /// <summary>The userSnapshot property</summary>
+        /// <summary>The identifier of the user object created during the sign-up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.CiamUserSnapshot? UserSnapshot
+        public string? UserId
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CiamUserSnapshot?>("userSnapshot"); }
-            set { BackingStore?.Set("userSnapshot", value); }
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.CiamUserSnapshot UserSnapshot
+        public string UserId
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CiamUserSnapshot>("userSnapshot"); }
-            set { BackingStore?.Set("userSnapshot", value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
 #endif
         /// <summary>
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "signUpIdentityProvider", n => { SignUpIdentityProvider = n.GetStringValue(); } },
                 { "signUpStage", n => { SignUpStage = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SignUpStage>(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignUpStatus>(global::Microsoft.Graph.Beta.Models.SignUpStatus.CreateFromDiscriminatorValue); } },
-                { "userSnapshot", n => { UserSnapshot = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CiamUserSnapshot>(global::Microsoft.Graph.Beta.Models.CiamUserSnapshot.CreateFromDiscriminatorValue); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("signUpIdentityProvider", SignUpIdentityProvider);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SignUpStage>("signUpStage", SignUpStage);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignUpStatus>("status", Status);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CiamUserSnapshot>("userSnapshot", UserSnapshot);
+            writer.WriteStringValue("userId", UserId);
         }
     }
 }

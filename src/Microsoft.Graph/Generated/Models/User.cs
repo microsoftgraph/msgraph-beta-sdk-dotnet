@@ -1054,7 +1054,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isLicenseReconciliationNeeded"); }
             set { BackingStore?.Set("isLicenseReconciliationNeeded", value); }
         }
-        /// <summary>true if the user is a member of a restricted management administrative unit. Default value is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.</summary>
+        /// <summary>true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.</summary>
         public bool? IsManagementRestricted
         {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }

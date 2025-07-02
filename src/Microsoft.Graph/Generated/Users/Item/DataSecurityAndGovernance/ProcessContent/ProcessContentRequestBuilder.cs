@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.ProcessConte
         {
         }
         /// <summary>
-        /// Process content against data protection policies in the context of the current user. 
+        /// Process content against data protection policies in the context of the current, or specified, user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-processcontent?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ProcessContentResponse"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DataSecurityAndGovernance.ProcessConte
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ProcessContentResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ProcessContentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Process content against data protection policies in the context of the current user. 
+        /// Process content against data protection policies in the context of the current, or specified, user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

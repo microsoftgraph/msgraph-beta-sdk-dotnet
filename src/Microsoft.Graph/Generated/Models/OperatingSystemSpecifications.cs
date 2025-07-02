@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CiamUserSnapshot : IAdditionalDataHolder, IBackedModel, IParsable
+    public partial class OperatingSystemSpecifications : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,26 +37,42 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>The platform of the operating system (for example, &apos;Windows&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId
+        public string? OperatingSystemPlatform
         {
-            get { return BackingStore?.Get<string?>("userId"); }
-            set { BackingStore?.Set("userId", value); }
+            get { return BackingStore?.Get<string?>("operatingSystemPlatform"); }
+            set { BackingStore?.Set("operatingSystemPlatform", value); }
         }
 #nullable restore
 #else
-        public string UserId
+        public string OperatingSystemPlatform
         {
-            get { return BackingStore?.Get<string>("userId"); }
-            set { BackingStore?.Set("userId", value); }
+            get { return BackingStore?.Get<string>("operatingSystemPlatform"); }
+            set { BackingStore?.Set("operatingSystemPlatform", value); }
+        }
+#endif
+        /// <summary>The version string of the operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OperatingSystemVersion
+        {
+            get { return BackingStore?.Get<string?>("operatingSystemVersion"); }
+            set { BackingStore?.Set("operatingSystemVersion", value); }
+        }
+#nullable restore
+#else
+        public string OperatingSystemVersion
+        {
+            get { return BackingStore?.Get<string>("operatingSystemVersion"); }
+            set { BackingStore?.Set("operatingSystemVersion", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CiamUserSnapshot"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications"/> and sets the default values.
         /// </summary>
-        public CiamUserSnapshot()
+        public OperatingSystemSpecifications()
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
@@ -64,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CiamUserSnapshot"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.Beta.Models.CiamUserSnapshot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.CiamUserSnapshot();
+            return new global::Microsoft.Graph.Beta.Models.OperatingSystemSpecifications();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +96,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "operatingSystemPlatform", n => { OperatingSystemPlatform = n.GetStringValue(); } },
+                { "operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -91,7 +108,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("userId", UserId);
+            writer.WriteStringValue("operatingSystemPlatform", OperatingSystemPlatform);
+            writer.WriteStringValue("operatingSystemVersion", OperatingSystemVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

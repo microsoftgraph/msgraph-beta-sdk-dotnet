@@ -72,6 +72,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The time when protection unit offboard was requested.</summary>
+        public DateTimeOffset? OffboardRequestedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
+            set { BackingStore?.Set("offboardRequestedDateTime", value); }
+        }
         /// <summary>The unique identifier of the protection policy based on which protection unit was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>(global::Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "offboardRequestedDateTime", n => { OffboardRequestedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "protectionSources", n => { ProtectionSources = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus>(); } },
@@ -148,6 +155,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>("error", Error);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("offboardRequestedDateTime", OffboardRequestedDateTime);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionSource>("protectionSources", ProtectionSources);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus>("status", Status);

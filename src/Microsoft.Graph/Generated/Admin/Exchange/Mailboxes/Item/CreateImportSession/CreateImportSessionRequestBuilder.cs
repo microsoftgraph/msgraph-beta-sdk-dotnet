@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Mailboxes.Item.CreateImportSession
         {
         }
         /// <summary>
-        /// Create a session to import an Exchange mailbox item using its FastTransfer stream (FTS) format.
+        /// Create a session to import an Exchange mailbox item that was exported using the exportItems API.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailbox-createimportsession?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxItemImportSession"/></returns>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Mailboxes.Item.CreateImportSession
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxItemImportSession>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxItemImportSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a session to import an Exchange mailbox item using its FastTransfer stream (FTS) format.
+        /// Create a session to import an Exchange mailbox item that was exported using the exportItems API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

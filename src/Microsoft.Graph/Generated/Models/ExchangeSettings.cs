@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ExchangeSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The unique identifier for the user&apos;s in-place archive mailbox.</summary>
+        /// <summary>The inPlaceArchiveMailboxId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InPlaceArchiveMailboxId

@@ -32,5 +32,9 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         #pragma warning disable CS1591
         ConditionalAccessBlockedSignIn,
         #pragma warning restore CS1591
+        [EnumMember(Value = "samlSignInFailure")]
+        #pragma warning disable CS1591
+        SamlSignInFailure,
+        #pragma warning restore CS1591
     }
 }

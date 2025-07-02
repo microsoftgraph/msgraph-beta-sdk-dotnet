@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>A list of users or groups that receive notifications.</summary>
+        /// <summary>A list of users or groups that receive notifications. Only specify this property when role is set to custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.EmailIdentity>? CustomRecipients
