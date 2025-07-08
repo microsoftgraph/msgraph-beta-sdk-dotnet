@@ -172,6 +172,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("tenantStatus", value); }
         }
 #endif
+        /// <summary>The threatIntelligencePolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>? ThreatIntelligencePolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>?>("threatIntelligencePolicies"); }
+            set { BackingStore?.Set("threatIntelligencePolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy> ThreatIntelligencePolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>>("threatIntelligencePolicies"); }
+            set { BackingStore?.Set("threatIntelligencePolicies", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -200,6 +216,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "reports", n => { Reports = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Reports>(global::Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Settings>(global::Microsoft.Graph.Beta.Models.Networkaccess.Settings.CreateFromDiscriminatorValue); } },
                 { "tenantStatus", n => { TenantStatus = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus>(global::Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus.CreateFromDiscriminatorValue); } },
+                { "threatIntelligencePolicies", n => { ThreatIntelligencePolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -220,6 +237,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Reports>("reports", Reports);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Settings>("settings", Settings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus>("tenantStatus", TenantStatus);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>("threatIntelligencePolicies", ThreatIntelligencePolicies);
         }
     }
 }

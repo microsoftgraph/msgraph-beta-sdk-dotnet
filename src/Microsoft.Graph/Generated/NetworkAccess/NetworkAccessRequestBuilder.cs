@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard;
 using Microsoft.Graph.Beta.NetworkAccess.Reports;
 using Microsoft.Graph.Beta.NetworkAccess.Settings;
 using Microsoft.Graph.Beta.NetworkAccess.TenantStatus;
+using Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -83,6 +84,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         public global::Microsoft.Graph.Beta.NetworkAccess.TenantStatus.TenantStatusRequestBuilder TenantStatus
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.TenantStatus.TenantStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the threatIntelligencePolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.ThreatIntelligencePoliciesRequestBuilder ThreatIntelligencePolicies
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.ThreatIntelligencePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder"/> and sets the default values.

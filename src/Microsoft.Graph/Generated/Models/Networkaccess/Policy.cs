@@ -89,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 "#microsoft.graph.networkaccess.filteringPolicy" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy(),
                 "#microsoft.graph.networkaccess.forwardingPolicy" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy(),
+                "#microsoft.graph.networkaccess.threatIntelligencePolicy" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.Policy(),
             };
         }

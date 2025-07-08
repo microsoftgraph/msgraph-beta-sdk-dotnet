@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class EnrichedAuditLogs : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Exchange Online enriched audit logs settings.</summary>
+        /// <summary>The exchange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings? Exchange
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("exchange", value); }
         }
 #endif
-        /// <summary>SharePoint Online enriched audit logs settings.</summary>
+        /// <summary>The sharepoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings? Sharepoint
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
-        /// <summary>Teams enriched audit logs settings.</summary>
+        /// <summary>The teams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings? Teams

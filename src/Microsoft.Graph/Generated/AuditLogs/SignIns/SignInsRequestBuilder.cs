@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmCompromised;
 using Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe;
 using Microsoft.Graph.Beta.AuditLogs.SignIns.Count;
+using Microsoft.Graph.Beta.AuditLogs.SignIns.Dismiss;
 using Microsoft.Graph.Beta.AuditLogs.SignIns.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns
         public global::Microsoft.Graph.Beta.AuditLogs.SignIns.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.AuditLogs.SignIns.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the dismiss method.</summary>
+        public global::Microsoft.Graph.Beta.AuditLogs.SignIns.Dismiss.DismissRequestBuilder Dismiss
+        {
+            get => new global::Microsoft.Graph.Beta.AuditLogs.SignIns.Dismiss.DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.</summary>
         /// <param name="position">The unique identifier of signIn</param>

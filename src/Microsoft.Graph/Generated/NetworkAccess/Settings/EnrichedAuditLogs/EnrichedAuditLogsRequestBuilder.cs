@@ -80,8 +80,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-beta" />
+        /// Update the navigation property enrichedAuditLogs in networkAccess
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs"/></returns>
         /// <param name="body">The request body</param>
@@ -144,7 +143,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs
             return requestInfo;
         }
         /// <summary>
-        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
+        /// Update the navigation property enrichedAuditLogs in networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
