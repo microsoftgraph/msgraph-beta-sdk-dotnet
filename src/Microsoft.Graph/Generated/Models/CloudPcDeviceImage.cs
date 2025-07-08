@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
-        /// <summary>The sizeInGB property</summary>
+        /// <summary>The size of the image in GB. For example, 64. Read-only.</summary>
         public int? SizeInGB
         {
             get { return BackingStore?.Get<int?>("sizeInGB"); }

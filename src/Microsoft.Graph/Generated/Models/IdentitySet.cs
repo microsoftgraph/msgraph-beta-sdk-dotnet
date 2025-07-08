@@ -110,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.chatMessageMentionedIdentitySet" => new global::Microsoft.Graph.Beta.Models.ChatMessageMentionedIdentitySet(),
                 "#microsoft.graph.chatMessageReactionIdentitySet" => new global::Microsoft.Graph.Beta.Models.ChatMessageReactionIdentitySet(),
                 "#microsoft.graph.communicationsIdentitySet" => new global::Microsoft.Graph.Beta.Models.CommunicationsIdentitySet(),
+                "#microsoft.graph.engagementIdentitySet" => new global::Microsoft.Graph.Beta.Models.EngagementIdentitySet(),
                 "#microsoft.graph.sharePointIdentitySet" => new global::Microsoft.Graph.Beta.Models.SharePointIdentitySet(),
                 _ => new global::Microsoft.Graph.Beta.Models.IdentitySet(),
             };

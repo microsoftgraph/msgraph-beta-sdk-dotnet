@@ -9,10 +9,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    /// <summary>
+    /// Represents a container that exposes navigation properties for cloud communications resources.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CloudCommunications : IAdditionalDataHolder, IBackedModel, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
@@ -68,6 +69,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
+        }
+#endif
+        /// <summary>A collection of structured question-and-answer (Q&amp;A) thread in Teams directly associated with online meetings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>? OnlineMeetingConversations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>?>("onlineMeetingConversations"); }
+            set { BackingStore?.Set("onlineMeetingConversations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation> OnlineMeetingConversations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>>("onlineMeetingConversations"); }
+            set { BackingStore?.Set("onlineMeetingConversations", value); }
         }
 #endif
         /// <summary>The onlineMeetings property</summary>
@@ -131,6 +148,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord>(global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "calls", n => { Calls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Call>(global::Microsoft.Graph.Beta.Models.Call.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "onlineMeetingConversations", n => { OnlineMeetingConversations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>(global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeeting>(global::Microsoft.Graph.Beta.Models.OnlineMeeting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "presences", n => { Presences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Presence>(global::Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -145,6 +163,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord>("callRecords", CallRecords);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Call>("calls", Calls);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>("onlineMeetingConversations", OnlineMeetingConversations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeeting>("onlineMeetings", OnlineMeetings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Presence>("presences", Presences);
             writer.WriteAdditionalData(AdditionalData);

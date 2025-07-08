@@ -2,7 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Communications.CallRecords;
 using Microsoft.Graph.Beta.Communications.Calls;
+using Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages;
 using Microsoft.Graph.Beta.Communications.GetPresencesByUserId;
+using Microsoft.Graph.Beta.Communications.OnlineMeetingConversations;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings;
 using Microsoft.Graph.Beta.Communications.OnlineMeetingsWithJoinWebUrl;
 using Microsoft.Graph.Beta.Communications.Presences;
@@ -34,10 +36,20 @@ namespace Microsoft.Graph.Beta.Communications
         {
             get => new global::Microsoft.Graph.Beta.Communications.Calls.CallsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getAllOnlineMeetingMessages method.</summary>
+        public global::Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages.GetAllOnlineMeetingMessagesRequestBuilder GetAllOnlineMeetingMessages
+        {
+            get => new global::Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages.GetAllOnlineMeetingMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
         public global::Microsoft.Graph.Beta.Communications.GetPresencesByUserId.GetPresencesByUserIdRequestBuilder GetPresencesByUserId
         {
             get => new global::Microsoft.Graph.Beta.Communications.GetPresencesByUserId.GetPresencesByUserIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the onlineMeetingConversations property of the microsoft.graph.cloudCommunications entity.</summary>
+        public global::Microsoft.Graph.Beta.Communications.OnlineMeetingConversations.OnlineMeetingConversationsRequestBuilder OnlineMeetingConversations
+        {
+            get => new global::Microsoft.Graph.Beta.Communications.OnlineMeetingConversations.OnlineMeetingConversationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.</summary>
         public global::Microsoft.Graph.Beta.Communications.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
@@ -102,7 +114,7 @@ namespace Microsoft.Graph.Beta.Communications
         /// Update communications
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudCommunications"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a container that exposes navigation properties for cloud communications resources.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
@@ -146,7 +158,7 @@ namespace Microsoft.Graph.Beta.Communications
         /// Update communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a container that exposes navigation properties for cloud communications resources.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

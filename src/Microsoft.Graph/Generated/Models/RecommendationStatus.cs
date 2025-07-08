@@ -32,5 +32,21 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "riskAccepted")]
+        #pragma warning disable CS1591
+        RiskAccepted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "thirdParty")]
+        #pragma warning disable CS1591
+        ThirdParty,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "planned")]
+        #pragma warning disable CS1591
+        Planned,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alternateMitigation")]
+        #pragma warning disable CS1591
+        AlternateMitigation,
+        #pragma warning restore CS1591
     }
 }

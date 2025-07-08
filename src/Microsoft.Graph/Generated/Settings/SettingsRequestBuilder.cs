@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Settings
         {
         }
         /// <summary>
-        /// Retrieve a list of tenant-level or group-specific group settings objects.
+        /// Retrieve a list of tenant-level or group-specific directory settings objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectorySettingCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Settings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectorySettingCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectorySettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectorySetting"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Settings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectorySetting>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectorySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tenant-level or group-specific group settings objects.
+        /// Retrieve a list of tenant-level or group-specific directory settings objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Settings
             return new global::Microsoft.Graph.Beta.Settings.SettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tenant-level or group-specific group settings objects.
+        /// Retrieve a list of tenant-level or group-specific directory settings objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetQueryParameters 

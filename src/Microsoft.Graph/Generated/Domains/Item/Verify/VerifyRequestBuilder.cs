@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify
         {
         }
         /// <summary>
-        /// Validate the ownership of a domain.
+        /// Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Domain"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Domain>(requestInfo, global::Microsoft.Graph.Beta.Models.Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate the ownership of a domain.
+        /// Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

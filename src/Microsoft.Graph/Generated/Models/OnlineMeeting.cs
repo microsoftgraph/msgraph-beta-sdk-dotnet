@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    /// <summary>
+    /// Represents a Microsoft online meeting.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class OnlineMeeting : global::Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The AI insights generated for an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
