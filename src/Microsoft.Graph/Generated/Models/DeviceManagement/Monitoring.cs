@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
     public partial class Monitoring : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The collection of records of alert events.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>? AlertRecords
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>?>("alertRecords"); }
-            set { BackingStore?.Set("alertRecords", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord> AlertRecords
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>>("alertRecords"); }
-            set { BackingStore?.Set("alertRecords", value); }
-        }
-#endif
-        /// <summary>The collection of alert rules.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>? AlertRules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>?>("alertRules"); }
-            set { BackingStore?.Set("alertRules", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule> AlertRules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>>("alertRules"); }
-            set { BackingStore?.Set("alertRules", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alertRecords", n => { AlertRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>(global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "alertRules", n => { AlertRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>(global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>("alertRecords", AlertRecords);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>("alertRules", AlertRules);
         }
     }
 }

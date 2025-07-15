@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Reactivat
         }
         /// <summary>
         /// Reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-reactivate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Recommendation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

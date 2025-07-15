@@ -12,50 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomClaimsPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>If specified, it overrides the content of the audience claim for WS-Federation and SAML2 protocols. A custom signing key must be used for audienceOverride to be applied, otherwise, the audienceOverride value is ignored. The value provided must be in the format of an absolute URI.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AudienceOverride
-        {
-            get { return BackingStore?.Get<string?>("audienceOverride"); }
-            set { BackingStore?.Set("audienceOverride", value); }
-        }
-#nullable restore
-#else
-        public string AudienceOverride
-        {
-            get { return BackingStore?.Get<string>("audienceOverride"); }
-            set { BackingStore?.Set("audienceOverride", value); }
-        }
-#endif
-        /// <summary>Defines which claims are present in the tokens affected by the policy, in addition to the basic claim and the core claim set. Inherited from customclaimbase.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.CustomClaimBase>? Claims
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomClaimBase>?>("claims"); }
-            set { BackingStore?.Set("claims", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.CustomClaimBase> Claims
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomClaimBase>>("claims"); }
-            set { BackingStore?.Set("claims", value); }
-        }
-#endif
-        /// <summary>Indicates whether the application ID is added to the claim. It is relevant only for SAML2.0 and if a custom signing key is used. the default value is true. Optional.</summary>
-        public bool? IncludeApplicationIdInIssuer
-        {
-            get { return BackingStore?.Get<bool?>("includeApplicationIdInIssuer"); }
-            set { BackingStore?.Set("includeApplicationIdInIssuer", value); }
-        }
-        /// <summary>Determines whether the basic claim set is included in tokens affected by this policy. If set to true, all claims in the basic claim set are emitted in tokens affected by the policy. By default the basic claim set isn&apos;t in the tokens unless they&apos;re explicitly configured in this policy.</summary>
-        public bool? IncludeBasicClaimSet
-        {
-            get { return BackingStore?.Get<bool?>("includeBasicClaimSet"); }
-            set { BackingStore?.Set("includeBasicClaimSet", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "audienceOverride", n => { AudienceOverride = n.GetStringValue(); } },
-                { "claims", n => { Claims = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomClaimBase>(global::Microsoft.Graph.Beta.Models.CustomClaimBase.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "includeApplicationIdInIssuer", n => { IncludeApplicationIdInIssuer = n.GetBoolValue(); } },
-                { "includeBasicClaimSet", n => { IncludeBasicClaimSet = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -88,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("audienceOverride", AudienceOverride);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomClaimBase>("claims", Claims);
-            writer.WriteBoolValue("includeApplicationIdInIssuer", IncludeApplicationIdInIssuer);
-            writer.WriteBoolValue("includeBasicClaimSet", IncludeBasicClaimSet);
         }
     }
 }

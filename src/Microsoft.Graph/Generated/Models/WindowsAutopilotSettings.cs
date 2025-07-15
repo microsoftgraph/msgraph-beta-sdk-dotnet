@@ -13,24 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsAutopilotSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Last data sync date time with DDS service.</summary>
-        public DateTimeOffset? LastManualSyncTriggerDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastManualSyncTriggerDateTime"); }
-            set { BackingStore?.Set("lastManualSyncTriggerDateTime", value); }
-        }
-        /// <summary>Last data sync date time with DDS service.</summary>
-        public DateTimeOffset? LastSyncDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
-            set { BackingStore?.Set("lastSyncDateTime", value); }
-        }
-        /// <summary>The syncStatus property</summary>
-        public global::Microsoft.Graph.Beta.Models.WindowsAutopilotSyncStatus? SyncStatus
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsAutopilotSyncStatus?>("syncStatus"); }
-            set { BackingStore?.Set("syncStatus", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,9 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "lastManualSyncTriggerDateTime", n => { LastManualSyncTriggerDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "syncStatus", n => { SyncStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsAutopilotSyncStatus>(); } },
             };
         }
         /// <summary>
@@ -62,9 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("lastManualSyncTriggerDateTime", LastManualSyncTriggerDateTime);
-            writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsAutopilotSyncStatus>("syncStatus", SyncStatus);
         }
     }
 }

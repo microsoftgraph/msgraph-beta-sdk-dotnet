@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         }
         /// <summary>
         /// Retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appconsentrequest-filterByCurrentUser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         }
         /// <summary>
         /// Retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appconsentrequest-filterByCurrentUser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -173,10 +171,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

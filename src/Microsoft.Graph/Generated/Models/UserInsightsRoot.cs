@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UserInsightsRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Summaries of daily user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot? Daily
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot?>("daily"); }
-            set { BackingStore?.Set("daily", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot Daily
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot>("daily"); }
-            set { BackingStore?.Set("daily", value); }
-        }
-#endif
-        /// <summary>Summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot? Monthly
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot?>("monthly"); }
-            set { BackingStore?.Set("monthly", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot Monthly
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot>("monthly"); }
-            set { BackingStore?.Set("monthly", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "daily", n => { Daily = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot>(global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot.CreateFromDiscriminatorValue); } },
-                { "monthly", n => { Monthly = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot>(global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot>("daily", Daily);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot>("monthly", Monthly);
         }
     }
 }

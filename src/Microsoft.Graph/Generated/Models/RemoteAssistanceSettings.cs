@@ -13,24 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemoteAssistanceSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.</summary>
-        public bool? AllowSessionsToUnenrolledDevices
-        {
-            get { return BackingStore?.Get<bool?>("allowSessionsToUnenrolledDevices"); }
-            set { BackingStore?.Set("allowSessionsToUnenrolledDevices", value); }
-        }
-        /// <summary>Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.</summary>
-        public bool? BlockChat
-        {
-            get { return BackingStore?.Get<bool?>("blockChat"); }
-            set { BackingStore?.Set("blockChat", value); }
-        }
-        /// <summary>State of remote assistance for the account</summary>
-        public global::Microsoft.Graph.Beta.Models.RemoteAssistanceState? RemoteAssistanceState
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RemoteAssistanceState?>("remoteAssistanceState"); }
-            set { BackingStore?.Set("remoteAssistanceState", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,9 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowSessionsToUnenrolledDevices", n => { AllowSessionsToUnenrolledDevices = n.GetBoolValue(); } },
-                { "blockChat", n => { BlockChat = n.GetBoolValue(); } },
-                { "remoteAssistanceState", n => { RemoteAssistanceState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RemoteAssistanceState>(); } },
             };
         }
         /// <summary>
@@ -62,9 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("allowSessionsToUnenrolledDevices", AllowSessionsToUnenrolledDevices);
-            writer.WriteBoolValue("blockChat", BlockChat);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RemoteAssistanceState>("remoteAssistanceState", RemoteAssistanceState);
         }
     }
 }

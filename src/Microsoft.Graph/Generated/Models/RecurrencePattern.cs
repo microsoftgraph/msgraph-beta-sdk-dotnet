@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DayOfWeekObject?>? DaysOfWeek
+        public List<string>? DaysOfWeek
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DayOfWeekObject?>?>("daysOfWeek"); }
+            get { return BackingStore?.Get<List<string>?>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.DayOfWeekObject?> DaysOfWeek
+        public List<string> DaysOfWeek
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DayOfWeekObject?>>("daysOfWeek"); }
+            get { return BackingStore?.Get<List<string>>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dayOfMonth", n => { DayOfMonth = n.GetIntValue(); } },
-                { "daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.DayOfWeekObject>()?.AsList(); } },
+                { "daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "firstDayOfWeek", n => { FirstDayOfWeek = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DayOfWeekObject>(); } },
                 { "index", n => { Index = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WeekIndex>(); } },
                 { "interval", n => { Interval = n.GetIntValue(); } },
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dayOfMonth", DayOfMonth);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.DayOfWeekObject>("daysOfWeek", DaysOfWeek);
+            writer.WriteCollectionOfPrimitiveValues<string>("daysOfWeek", DaysOfWeek);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DayOfWeekObject>("firstDayOfWeek", FirstDayOfWeek);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WeekIndex>("index", Index);
             writer.WriteIntValue("interval", Interval);

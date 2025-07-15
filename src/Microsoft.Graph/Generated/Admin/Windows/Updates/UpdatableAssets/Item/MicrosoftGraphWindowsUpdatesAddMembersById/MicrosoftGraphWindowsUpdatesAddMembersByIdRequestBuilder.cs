@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.Micros
         }
         /// <summary>
         /// Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

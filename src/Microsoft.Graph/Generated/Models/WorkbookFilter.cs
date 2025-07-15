@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WorkbookFilter : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The criteria property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookFilterCriteria? Criteria
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookFilterCriteria?>("criteria"); }
-            set { BackingStore?.Set("criteria", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookFilterCriteria Criteria
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookFilterCriteria>("criteria"); }
-            set { BackingStore?.Set("criteria", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookFilterCriteria>(global::Microsoft.Graph.Beta.Models.WorkbookFilterCriteria.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookFilterCriteria>("criteria", Criteria);
         }
     }
 }

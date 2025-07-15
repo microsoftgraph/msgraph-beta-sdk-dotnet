@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         }
         /// <summary>
         /// Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ImpactedResource"/></returns>
         /// <param name="body">The request body</param>

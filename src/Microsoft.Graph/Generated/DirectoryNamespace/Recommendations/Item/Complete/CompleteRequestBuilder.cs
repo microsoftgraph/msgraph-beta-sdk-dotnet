@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Complete
         }
         /// <summary>
         /// Complete a recommendation object and update its status to completedByUser.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-complete?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Recommendation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

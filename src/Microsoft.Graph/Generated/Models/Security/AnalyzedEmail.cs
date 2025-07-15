@@ -529,16 +529,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Security.ThreatType?>? ThreatTypes
+        public List<string>? ThreatTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ThreatType?>?>("threatTypes"); }
+            get { return BackingStore?.Get<List<string>?>("threatTypes"); }
             set { BackingStore?.Set("threatTypes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.Security.ThreatType?> ThreatTypes
+        public List<string> ThreatTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ThreatType?>>("threatTypes"); }
+            get { return BackingStore?.Get<List<string>>("threatTypes"); }
             set { BackingStore?.Set("threatTypes", value); }
         }
 #endif
@@ -626,7 +626,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "spamConfidenceLevel", n => { SpamConfidenceLevel = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "threatDetectionDetails", n => { ThreatDetectionDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>(global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "threatTypes", n => { ThreatTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.ThreatType>()?.AsList(); } },
+                { "threatTypes", n => { ThreatTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "timelineEvents", n => { TimelineEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>(global::Microsoft.Graph.Beta.Models.Security.TimelineEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "urls", n => { Urls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>(global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -673,7 +673,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("spamConfidenceLevel", SpamConfidenceLevel);
             writer.WriteStringValue("subject", Subject);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ThreatDetectionDetail>("threatDetectionDetails", ThreatDetectionDetails);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.ThreatType>("threatTypes", ThreatTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("threatTypes", ThreatTypes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.TimelineEvent>("timelineEvents", TimelineEvents);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>("urls", Urls);
         }

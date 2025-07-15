@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         }
         /// <summary>
         /// Set a scheduled auto-reprovision task to do automatic regular apply. Frontline shared only. Administrators only.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-schedulepolicyapplytask?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

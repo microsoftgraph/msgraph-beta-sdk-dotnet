@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.Publish
         }
         /// <summary>
         /// Invoke action publish
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

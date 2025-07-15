@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
         }
         /// <summary>
         /// Get a report related to the performance of Cloud PCs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-retrievecloudpctenantmetricsreport?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

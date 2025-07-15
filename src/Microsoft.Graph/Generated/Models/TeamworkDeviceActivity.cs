@@ -12,66 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TeamworkDeviceActivity : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The active peripheral devices attached to the device.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.TeamworkActivePeripherals? ActivePeripherals
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkActivePeripherals?>("activePeripherals"); }
-            set { BackingStore?.Set("activePeripherals", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.TeamworkActivePeripherals ActivePeripherals
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkActivePeripherals>("activePeripherals"); }
-            set { BackingStore?.Set("activePeripherals", value); }
-        }
-#endif
-        /// <summary>Identity of the user who created the device activity document.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
-            set { BackingStore?.Set("createdBy", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
-            set { BackingStore?.Set("createdBy", value); }
-        }
-#endif
-        /// <summary>The UTC date and time when the device activity document was created.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>Identity of the user who last modified the device activity details.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
-            set { BackingStore?.Set("lastModifiedBy", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
-            set { BackingStore?.Set("lastModifiedBy", value); }
-        }
-#endif
-        /// <summary>The UTC date and time when the device activity detail was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
-            set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,11 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activePeripherals", n => { ActivePeripherals = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamworkActivePeripherals>(global::Microsoft.Graph.Beta.Models.TeamworkActivePeripherals.CreateFromDiscriminatorValue); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -105,11 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamworkActivePeripherals>("activePeripherals", ActivePeripherals);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
         }
     }
 }

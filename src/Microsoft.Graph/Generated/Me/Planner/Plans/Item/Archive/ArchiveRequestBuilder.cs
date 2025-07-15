@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Archive
         }
         /// <summary>
         /// Archive a plannerPlan object. Archiving a plan, also archives the plannerTasks and plannerBuckets in the plan.  An archived entity is read-only. Archived entities cannot be updated. An archived plan can be unarchived.  All archived entities can be deleted. Archived tasks are not included in the response for list of tasks assigned to a user. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-archive?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

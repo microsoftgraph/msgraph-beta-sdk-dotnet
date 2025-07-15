@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Mailboxes.Item.ExportItems
         }
         /// <summary>
         /// Export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn&apos;t intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see: Overview of the mailbox import and export APIs in Microsoft Graph (preview) You can export up to 20 items in a single export request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailbox-exportitems?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.Mailboxes.Item.ExportItems.ExportItemsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -62,7 +61,6 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Mailboxes.Item.ExportItems
         }
         /// <summary>
         /// Export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn&apos;t intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see: Overview of the mailbox import and export APIs in Microsoft Graph (preview) You can export up to 20 items in a single export request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailbox-exportitems?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.Mailboxes.Item.ExportItems.ExportItemsResponse"/></returns>
         /// <param name="body">The request body</param>

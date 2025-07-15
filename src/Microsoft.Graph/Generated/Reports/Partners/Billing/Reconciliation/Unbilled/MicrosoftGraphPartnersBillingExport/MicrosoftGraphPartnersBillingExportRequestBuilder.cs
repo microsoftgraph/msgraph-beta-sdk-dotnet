@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Unbilled.
         }
         /// <summary>
         /// Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Partners.Billing.Operation"/></returns>
         /// <param name="body">The request body</param>

@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSu
         }
         /// <summary>
         /// Get the number of SAML 2.0 authentications successfully processed by the Microsoft Entra cloud service for the tenant during a specified time period. This health signal currently doesn&apos;t include WS-FED/SAML 1.1 apps that are integrated with Microsoft Entra.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getmetricsforsamlsigninsuccess?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +62,6 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSu
         }
         /// <summary>
         /// Get the number of SAML 2.0 authentications successfully processed by the Microsoft Entra cloud service for the tenant during a specified time period. This health signal currently doesn&apos;t include WS-FED/SAML 1.1 apps that are integrated with Microsoft Entra.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getmetricsforsamlsigninsuccess?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -148,10 +146,10 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSu
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

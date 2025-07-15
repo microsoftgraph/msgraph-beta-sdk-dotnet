@@ -12,82 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcPolicyScheduledApplyActionDetail : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>An expression that specifies the cron schedule. (For example, &apos;0 0 0 20  &apos; means schedules a job to run at midnight on the 20th of every month) Administrators can set a cron expression to define the scheduling rules for automatic regular application. When auto provision is disabled, cronScheduleExpression is set to null, stopping the automatic task scheduling. Read-Only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CronScheduleExpression
-        {
-            get { return BackingStore?.Get<string?>("cronScheduleExpression"); }
-            set { BackingStore?.Set("cronScheduleExpression", value); }
-        }
-#nullable restore
-#else
-        public string CronScheduleExpression
-        {
-            get { return BackingStore?.Get<string>("cronScheduleExpression"); }
-            set { BackingStore?.Set("cronScheduleExpression", value); }
-        }
-#endif
-        /// <summary>Indicates IT Admins can set an end date to define the last scheduler run before this time. If not set, the scheduler runs continuously. There is no time zone information at this time; it needs to be coordinated with timezone, for example, &apos;2025-02-01 00:00:00&apos; with &apos;China Standard Time&apos; means the scheduling rule takes effect before Feb 01 2025 00:00:00 GMT+0800 (China Standard Time).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EndDateTime
-        {
-            get { return BackingStore?.Get<string?>("endDateTime"); }
-            set { BackingStore?.Set("endDateTime", value); }
-        }
-#nullable restore
-#else
-        public string EndDateTime
-        {
-            get { return BackingStore?.Get<string>("endDateTime"); }
-            set { BackingStore?.Set("endDateTime", value); }
-        }
-#endif
-        /// <summary>Indicates IT Admins can see when the next automatic regular apply is executed. It needs to be coordinated with timezone, for example, &apos;2025-01-01 00:00:00&apos; with &apos;China Standard Time&apos; means the next task executes at Jan 01 2025 00:00:00 GMT+0800 (China Standard Time). Read-Only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NextRunDateTime
-        {
-            get { return BackingStore?.Get<string?>("nextRunDateTime"); }
-            set { BackingStore?.Set("nextRunDateTime", value); }
-        }
-#nullable restore
-#else
-        public string NextRunDateTime
-        {
-            get { return BackingStore?.Get<string>("nextRunDateTime"); }
-            set { BackingStore?.Set("nextRunDateTime", value); }
-        }
-#endif
-        /// <summary>The percentage of Cloud PCs to keep available. Administrators can set this property to a value from 0 to 99. Cloud PCs are reprovisioned only when there are no active and connected Cloud PC users. Frontline shared only.</summary>
-        public int? ReservePercentage
-        {
-            get { return BackingStore?.Get<int?>("reservePercentage"); }
-            set { BackingStore?.Set("reservePercentage", value); }
-        }
-        /// <summary>Indicates IT Admins can set a start date to define the first scheduler run after this time. If not set, the default is the current time. There is no time zone information at this time, it needs to be coordinated with timezone, for example, &apos;2025-01-01 00:00:00&apos; with &apos;China Standard Time&apos; means the scheduling rule takes effect after Jan 01 2025 00:00:00 GMT+0800 (China Standard Time).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StartDateTime
-        {
-            get { return BackingStore?.Get<string?>("startDateTime"); }
-            set { BackingStore?.Set("startDateTime", value); }
-        }
-#nullable restore
-#else
-        public string StartDateTime
-        {
-            get { return BackingStore?.Get<string>("startDateTime"); }
-            set { BackingStore?.Set("startDateTime", value); }
-        }
-#endif
-        /// <summary>The timezone property</summary>
-        public global::Microsoft.Graph.Beta.Models.CloudPcPolicyTimezone? Timezone
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPolicyTimezone?>("timezone"); }
-            set { BackingStore?.Set("timezone", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -106,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "cronScheduleExpression", n => { CronScheduleExpression = n.GetStringValue(); } },
-                { "endDateTime", n => { EndDateTime = n.GetStringValue(); } },
-                { "nextRunDateTime", n => { NextRunDateTime = n.GetStringValue(); } },
-                { "reservePercentage", n => { ReservePercentage = n.GetIntValue(); } },
-                { "startDateTime", n => { StartDateTime = n.GetStringValue(); } },
-                { "timezone", n => { Timezone = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicyTimezone>(); } },
             };
         }
         /// <summary>
@@ -122,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("cronScheduleExpression", CronScheduleExpression);
-            writer.WriteStringValue("endDateTime", EndDateTime);
-            writer.WriteStringValue("nextRunDateTime", NextRunDateTime);
-            writer.WriteIntValue("reservePercentage", ReservePercentage);
-            writer.WriteStringValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicyTimezone>("timezone", Timezone);
         }
     }
 }

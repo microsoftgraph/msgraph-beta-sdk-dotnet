@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsF
         }
         /// <summary>
         /// Get metrics based on the percentage of audio streams for which quality of experience (QoE) telemetry was received by the Teams service.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getaudiostreamqoemetricsforteams?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +62,6 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsF
         }
         /// <summary>
         /// Get metrics based on the percentage of audio streams for which quality of experience (QoE) telemetry was received by the Teams service.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getaudiostreamqoemetricsforteams?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -148,10 +146,10 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsF
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

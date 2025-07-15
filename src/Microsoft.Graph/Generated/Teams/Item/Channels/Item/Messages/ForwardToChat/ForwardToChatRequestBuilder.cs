@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ForwardToChat
         }
         /// <summary>
         /// Forward a chat message, a channel message, or a channel message reply to a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ForwardToChat.ForwardToChatPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ForwardToChat
         }
         /// <summary>
         /// Forward a chat message, a channel message, or a channel message reply to a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.ForwardToChat.ForwardToChatResponse"/></returns>
         /// <param name="body">The request body</param>

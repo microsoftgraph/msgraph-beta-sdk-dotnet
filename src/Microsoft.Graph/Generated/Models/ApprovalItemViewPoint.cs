@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of roles associated with the requesting user for the approval item. If the owner of the approval item is making the request, the collection of roles includes the role owner. If the requesting user was assigned as an approver, the collection includes the role approver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ApproverRole?>? Roles
+        public List<string>? Roles
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApproverRole?>?>("roles"); }
+            get { return BackingStore?.Get<List<string>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.ApproverRole?> Roles
+        public List<string> Roles
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApproverRole?>>("roles"); }
+            get { return BackingStore?.Get<List<string>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #endif
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "roles", n => { Roles = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.ApproverRole>()?.AsList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.ApproverRole>("roles", Roles);
+            writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

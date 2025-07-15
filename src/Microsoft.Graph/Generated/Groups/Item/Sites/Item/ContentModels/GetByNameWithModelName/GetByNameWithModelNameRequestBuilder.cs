@@ -56,7 +56,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentModels.GetByNameWit
         }
         /// <summary>
         /// Read the properties and relationships of a contentModel object by its model name. The name should be the full model filename, including the file extension; for example, exampleModel.classifier.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contentmodel-getbyname?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -12,140 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WorkbookWorksheet : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of charts that are part of the worksheet. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookChart>? Charts
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookChart>?>("charts"); }
-            set { BackingStore?.Set("charts", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookChart> Charts
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookChart>>("charts"); }
-            set { BackingStore?.Set("charts", value); }
-        }
-#endif
-        /// <summary>The display name of the worksheet.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>The list of names that are associated with the worksheet. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookNamedItem>? Names
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookNamedItem>?>("names"); }
-            set { BackingStore?.Set("names", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookNamedItem> Names
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookNamedItem>>("names"); }
-            set { BackingStore?.Set("names", value); }
-        }
-#endif
-        /// <summary>The list of piot tables that are part of the worksheet.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookPivotTable>? PivotTables
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookPivotTable>?>("pivotTables"); }
-            set { BackingStore?.Set("pivotTables", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookPivotTable> PivotTables
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookPivotTable>>("pivotTables"); }
-            set { BackingStore?.Set("pivotTables", value); }
-        }
-#endif
-        /// <summary>The zero-based position of the worksheet within the workbook.</summary>
-        public int? Position
-        {
-            get { return BackingStore?.Get<int?>("position"); }
-            set { BackingStore?.Set("position", value); }
-        }
-        /// <summary>The sheet protection object for a worksheet. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookWorksheetProtection? Protection
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookWorksheetProtection?>("protection"); }
-            set { BackingStore?.Set("protection", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookWorksheetProtection Protection
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookWorksheetProtection>("protection"); }
-            set { BackingStore?.Set("protection", value); }
-        }
-#endif
-        /// <summary>The list of tables that are part of the worksheet. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookTable>? Tables
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookTable>?>("tables"); }
-            set { BackingStore?.Set("tables", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookTable> Tables
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookTable>>("tables"); }
-            set { BackingStore?.Set("tables", value); }
-        }
-#endif
-        /// <summary>Collection of document tasks on this worksheet. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>? Tasks
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>?>("tasks"); }
-            set { BackingStore?.Set("tasks", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask> Tasks
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>>("tasks"); }
-            set { BackingStore?.Set("tasks", value); }
-        }
-#endif
-        /// <summary>The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Visibility
-        {
-            get { return BackingStore?.Get<string?>("visibility"); }
-            set { BackingStore?.Set("visibility", value); }
-        }
-#nullable restore
-#else
-        public string Visibility
-        {
-            get { return BackingStore?.Get<string>("visibility"); }
-            set { BackingStore?.Set("visibility", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -164,15 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "charts", n => { Charts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookChart>(global::Microsoft.Graph.Beta.Models.WorkbookChart.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "names", n => { Names = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookNamedItem>(global::Microsoft.Graph.Beta.Models.WorkbookNamedItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pivotTables", n => { PivotTables = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookPivotTable>(global::Microsoft.Graph.Beta.Models.WorkbookPivotTable.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "position", n => { Position = n.GetIntValue(); } },
-                { "protection", n => { Protection = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookWorksheetProtection>(global::Microsoft.Graph.Beta.Models.WorkbookWorksheetProtection.CreateFromDiscriminatorValue); } },
-                { "tables", n => { Tables = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookTable>(global::Microsoft.Graph.Beta.Models.WorkbookTable.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>(global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -183,15 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookChart>("charts", Charts);
-            writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookNamedItem>("names", Names);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookPivotTable>("pivotTables", PivotTables);
-            writer.WriteIntValue("position", Position);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookWorksheetProtection>("protection", Protection);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookTable>("tables", Tables);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("tasks", Tasks);
-            writer.WriteStringValue("visibility", Visibility);
         }
     }
 }

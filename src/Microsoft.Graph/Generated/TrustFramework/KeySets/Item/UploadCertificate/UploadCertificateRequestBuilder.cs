@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate
         }
         /// <summary>
         /// Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadcertificate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TrustFrameworkKey"/></returns>
         /// <param name="body">The request body</param>

@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecen
         }
         /// <summary>
         /// Get a list of recentNotebook instances that have been accessed by the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecen
         }
         /// <summary>
         /// Get a list of recentNotebook instances that have been accessed by the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -143,10 +141,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecen
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

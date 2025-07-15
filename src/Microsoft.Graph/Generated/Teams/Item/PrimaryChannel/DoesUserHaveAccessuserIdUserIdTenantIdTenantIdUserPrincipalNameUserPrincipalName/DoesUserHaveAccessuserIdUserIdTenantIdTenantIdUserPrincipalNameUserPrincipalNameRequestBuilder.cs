@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserI
         }
         /// <summary>
         /// Determine whether a user has access to a shared channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserI
         }
         /// <summary>
         /// Determine whether a user has access to a shared channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

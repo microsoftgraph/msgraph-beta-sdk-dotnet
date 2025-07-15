@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         }
         /// <summary>
         /// Creates a new chart.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartcollection-add?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WorkbookChart"/></returns>
         /// <param name="body">The request body</param>

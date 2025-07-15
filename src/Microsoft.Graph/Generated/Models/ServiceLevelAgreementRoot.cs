@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ServiceLevelAgreementRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Collects the monthly Microsoft Entra Health SLA attainment metrics for a Microsoft Entra tenant.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.AzureADAuthentication? AzureADAuthentication
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AzureADAuthentication?>("azureADAuthentication"); }
-            set { BackingStore?.Set("azureADAuthentication", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.AzureADAuthentication AzureADAuthentication
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AzureADAuthentication>("azureADAuthentication"); }
-            set { BackingStore?.Set("azureADAuthentication", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "azureADAuthentication", n => { AzureADAuthentication = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AzureADAuthentication>(global::Microsoft.Graph.Beta.Models.AzureADAuthentication.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AzureADAuthentication>("azureADAuthentication", AzureADAuthentication);
         }
     }
 }

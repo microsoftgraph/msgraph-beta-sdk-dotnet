@@ -12,70 +12,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class Settings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The conditionalAccess property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings? ConditionalAccess
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings?>("conditionalAccess"); }
-            set { BackingStore?.Set("conditionalAccess", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings ConditionalAccess
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>("conditionalAccess"); }
-            set { BackingStore?.Set("conditionalAccess", value); }
-        }
-#endif
-        /// <summary>The crossTenantAccess property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings? CrossTenantAccess
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings?>("crossTenantAccess"); }
-            set { BackingStore?.Set("crossTenantAccess", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings CrossTenantAccess
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>("crossTenantAccess"); }
-            set { BackingStore?.Set("crossTenantAccess", value); }
-        }
-#endif
-        /// <summary>The enrichedAuditLogs property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs? EnrichedAuditLogs
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs?>("enrichedAuditLogs"); }
-            set { BackingStore?.Set("enrichedAuditLogs", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs EnrichedAuditLogs
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>("enrichedAuditLogs"); }
-            set { BackingStore?.Set("enrichedAuditLogs", value); }
-        }
-#endif
-        /// <summary>The forwardingOptions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions? ForwardingOptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions?>("forwardingOptions"); }
-            set { BackingStore?.Set("forwardingOptions", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions ForwardingOptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>("forwardingOptions"); }
-            set { BackingStore?.Set("forwardingOptions", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>(global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings.CreateFromDiscriminatorValue); } },
-                { "crossTenantAccess", n => { CrossTenantAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>(global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings.CreateFromDiscriminatorValue); } },
-                { "enrichedAuditLogs", n => { EnrichedAuditLogs = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>(global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs.CreateFromDiscriminatorValue); } },
-                { "forwardingOptions", n => { ForwardingOptions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -108,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>("conditionalAccess", ConditionalAccess);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>("crossTenantAccess", CrossTenantAccess);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>("enrichedAuditLogs", EnrichedAuditLogs);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>("forwardingOptions", ForwardingOptions);
         }
     }
 }

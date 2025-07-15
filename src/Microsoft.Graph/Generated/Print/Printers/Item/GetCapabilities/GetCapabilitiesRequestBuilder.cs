@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities
         }
         /// <summary>
         /// Get a list of capabilities for the printer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-getcapabilities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PrinterCapabilities"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

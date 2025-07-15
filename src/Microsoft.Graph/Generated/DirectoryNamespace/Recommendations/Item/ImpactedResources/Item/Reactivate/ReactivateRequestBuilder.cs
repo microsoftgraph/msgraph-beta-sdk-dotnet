@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         }
         /// <summary>
         /// Reactivate an accidentally dismissed, completed, or postponed impactedResource object. This action updates the status of the resource to active. This method is relevant only if the status of the impactedResource object is dismissed, postponed, or completedByUser. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ImpactedResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

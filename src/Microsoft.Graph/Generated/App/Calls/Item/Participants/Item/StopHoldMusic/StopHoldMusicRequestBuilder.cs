@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StopHoldMusic
         }
         /// <summary>
         /// Reincorporate a participant previously put on hold to the call.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.StopHoldMusicOperation"/></returns>
         /// <param name="body">The request body</param>

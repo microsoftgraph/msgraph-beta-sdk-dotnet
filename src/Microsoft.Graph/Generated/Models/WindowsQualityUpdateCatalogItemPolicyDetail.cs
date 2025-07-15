@@ -29,11 +29,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Catalog item id for this approval intend</summary>
-        public Guid? CatalogItemId
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CatalogItemId
         {
-            get { return BackingStore?.Get<Guid?>("catalogItemId"); }
+            get { return BackingStore?.Get<string?>("catalogItemId"); }
             set { BackingStore?.Set("catalogItemId", value); }
         }
+#nullable restore
+#else
+        public string CatalogItemId
+        {
+            get { return BackingStore?.Get<string>("catalogItemId"); }
+            set { BackingStore?.Set("catalogItemId", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approvalStatus", n => { ApprovalStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalStatus>(); } },
-                { "catalogItemId", n => { CatalogItemId = n.GetGuidValue(); } },
+                { "catalogItemId", n => { CatalogItemId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyId", n => { PolicyId = n.GetGuidValue(); } },
             };
@@ -96,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateApprovalStatus>("approvalStatus", ApprovalStatus);
-            writer.WriteGuidValue("catalogItemId", CatalogItemId);
+            writer.WriteStringValue("catalogItemId", CatalogItemId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteGuidValue("policyId", PolicyId);
             writer.WriteAdditionalData(AdditionalData);

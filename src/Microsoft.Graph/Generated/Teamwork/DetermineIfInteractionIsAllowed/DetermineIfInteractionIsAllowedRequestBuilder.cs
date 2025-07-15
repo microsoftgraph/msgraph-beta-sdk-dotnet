@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed
         }
         /// <summary>
         /// Determine if a specified Microsoft Teams interaction is allowed between the signed-in user and specified users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-determineifinteractionisallowed?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed.DetermineIfInteractionIsAllowedPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed
         }
         /// <summary>
         /// Determine if a specified Microsoft Teams interaction is allowed between the signed-in user and specified users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-determineifinteractionisallowed?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed.DetermineIfInteractionIsAllowedResponse"/></returns>
         /// <param name="body">The request body</param>

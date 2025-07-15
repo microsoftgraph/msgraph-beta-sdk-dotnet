@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo
         }
         /// <summary>
         /// Get the cloudPCLaunchInfo for a specific cloudPC.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcLaunchInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

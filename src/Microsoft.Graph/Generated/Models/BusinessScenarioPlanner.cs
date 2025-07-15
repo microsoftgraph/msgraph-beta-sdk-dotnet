@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class BusinessScenarioPlanner : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configuration of Planner plans that will be created for the scenario.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerPlanConfiguration? PlanConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPlanConfiguration?>("planConfiguration"); }
-            set { BackingStore?.Set("planConfiguration", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerPlanConfiguration PlanConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPlanConfiguration>("planConfiguration"); }
-            set { BackingStore?.Set("planConfiguration", value); }
-        }
-#endif
-        /// <summary>The configuration of Planner tasks that will be created for the scenario.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerTaskConfiguration? TaskConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskConfiguration?>("taskConfiguration"); }
-            set { BackingStore?.Set("taskConfiguration", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerTaskConfiguration TaskConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>("taskConfiguration"); }
-            set { BackingStore?.Set("taskConfiguration", value); }
-        }
-#endif
-        /// <summary>The Planner tasks for the scenario.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask>? Tasks
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask>?>("tasks"); }
-            set { BackingStore?.Set("tasks", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask> Tasks
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask>>("tasks"); }
-            set { BackingStore?.Set("tasks", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "planConfiguration", n => { PlanConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanConfiguration>(global::Microsoft.Graph.Beta.Models.PlannerPlanConfiguration.CreateFromDiscriminatorValue); } },
-                { "taskConfiguration", n => { TaskConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>(global::Microsoft.Graph.Beta.Models.PlannerTaskConfiguration.CreateFromDiscriminatorValue); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask>(global::Microsoft.Graph.Beta.Models.BusinessScenarioTask.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -91,9 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanConfiguration>("planConfiguration", PlanConfiguration);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>("taskConfiguration", TaskConfiguration);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask>("tasks", Tasks);
         }
     }
 }

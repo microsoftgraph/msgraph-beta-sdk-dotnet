@@ -13,43 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOSCertificateProfileBase : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
-        /// <summary>Certificate Validity Period Options.</summary>
-        public global::Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
-            set { BackingStore?.Set("certificateValidityPeriodScale", value); }
-        }
-        /// <summary>Value for the Certificate Validity Period.</summary>
-        public int? CertificateValidityPeriodValue
-        {
-            get { return BackingStore?.Get<int?>("certificateValidityPeriodValue"); }
-            set { BackingStore?.Set("certificateValidityPeriodValue", value); }
-        }
-        /// <summary>Certificate renewal threshold percentage.</summary>
-        public int? RenewalThresholdPercentage
-        {
-            get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
-            set { BackingStore?.Set("renewalThresholdPercentage", value); }
-        }
-        /// <summary>Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
-        public global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("subjectAlternativeNameType"); }
-            set { BackingStore?.Set("subjectAlternativeNameType", value); }
-        }
-        /// <summary>Subject Name Format Options for Apple devices.</summary>
-        public global::Microsoft.Graph.Beta.Models.AppleSubjectNameFormat? SubjectNameFormat
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleSubjectNameFormat?>("subjectNameFormat"); }
-            set { BackingStore?.Set("subjectNameFormat", value); }
-        }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase"/> and sets the default values.
-        /// </summary>
-        public MacOSCertificateProfileBase() : base()
-        {
-            OdataType = "#microsoft.graph.macOSCertificateProfileBase";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,11 +38,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>(); } },
-                { "certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
-                { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
-                { "subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>(); } },
-                { "subjectNameFormat", n => { SubjectNameFormat = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppleSubjectNameFormat>(); } },
             };
         }
         /// <summary>
@@ -90,11 +48,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
-            writer.WriteIntValue("certificateValidityPeriodValue", CertificateValidityPeriodValue);
-            writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>("subjectAlternativeNameType", SubjectAlternativeNameType);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AppleSubjectNameFormat>("subjectNameFormat", SubjectNameFormat);
         }
     }
 }

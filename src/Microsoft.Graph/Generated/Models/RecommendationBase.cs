@@ -81,16 +81,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The directory feature that the recommendation is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?>? FeatureAreas
+        public List<string>? FeatureAreas
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?>?>("featureAreas"); }
+            get { return BackingStore?.Get<List<string>?>("featureAreas"); }
             set { BackingStore?.Set("featureAreas", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?> FeatureAreas
+        public List<string> FeatureAreas
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?>>("featureAreas"); }
+            get { return BackingStore?.Get<List<string>>("featureAreas"); }
             set { BackingStore?.Set("featureAreas", value); }
         }
 #endif
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("remediationImpact", value); }
         }
 #endif
-        /// <summary>The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.</summary>
+        /// <summary>The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue, aatp. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: aatp.</summary>
         public global::Microsoft.Graph.Beta.Models.RequiredLicenses? RequiredLicenses
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RequiredLicenses?>("requiredLicenses"); }
@@ -273,7 +273,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "currentScore", n => { CurrentScore = n.GetDoubleValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "featureAreas", n => { FeatureAreas = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas>()?.AsList(); } },
+                { "featureAreas", n => { FeatureAreas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "impactStartDateTime", n => { ImpactStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "impactType", n => { ImpactType = n.GetStringValue(); } },
                 { "impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ImpactedResource>(global::Microsoft.Graph.Beta.Models.ImpactedResource.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -305,7 +305,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDoubleValue("currentScore", CurrentScore);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas>("featureAreas", FeatureAreas);
+            writer.WriteCollectionOfPrimitiveValues<string>("featureAreas", FeatureAreas);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ImpactedResource>("impactedResources", ImpactedResources);
             writer.WriteDateTimeOffsetValue("impactStartDateTime", ImpactStartDateTime);
             writer.WriteStringValue("impactType", ImpactType);

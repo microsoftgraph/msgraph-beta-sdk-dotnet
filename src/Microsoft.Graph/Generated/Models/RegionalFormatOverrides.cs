@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The calendar to use, e.g., Gregorian Calendar.Returned by default.</summary>
+        /// <summary>The calendar to use; for example, Gregorian Calendar.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Calendar
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("calendar", value); }
         }
 #endif
-        /// <summary>The first day of the week to use, e.g., Sunday.Returned by default.</summary>
+        /// <summary>The first day of the week to use; for example, Sunday.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstDayOfWeek

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.MicrosoftGrap
         }
         /// <summary>
         /// Close an eDiscovery case. For details, see Close a case.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

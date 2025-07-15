@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UserCloudCommunication : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The call settings assigned to the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.CallSettings? CallSettings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CallSettings?>("callSettings"); }
-            set { BackingStore?.Set("callSettings", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.CallSettings CallSettings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CallSettings>("callSettings"); }
-            set { BackingStore?.Set("callSettings", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "callSettings", n => { CallSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CallSettings>(global::Microsoft.Graph.Beta.Models.CallSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CallSettings>("callSettings", CallSettings);
         }
     }
 }

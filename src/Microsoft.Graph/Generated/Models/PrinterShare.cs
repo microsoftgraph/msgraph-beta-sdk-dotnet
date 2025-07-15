@@ -12,89 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PrinterShare : global::Microsoft.Graph.Beta.Models.PrinterBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>If true, all users and groups can access this printer share. This property supersedes the lists of allowed users and groups defined by the allowedUsers and allowedGroups navigation properties.</summary>
-        public bool? AllowAllUsers
-        {
-            get { return BackingStore?.Get<bool?>("allowAllUsers"); }
-            set { BackingStore?.Set("allowAllUsers", value); }
-        }
-        /// <summary>The groups whose users have access to print using the printer.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Group>? AllowedGroups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Group>?>("allowedGroups"); }
-            set { BackingStore?.Set("allowedGroups", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Group> AllowedGroups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Group>>("allowedGroups"); }
-            set { BackingStore?.Set("allowedGroups", value); }
-        }
-#endif
-        /// <summary>The users who have access to print using the printer.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.User>? AllowedUsers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.User>?>("allowedUsers"); }
-            set { BackingStore?.Set("allowedUsers", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.User> AllowedUsers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.User>>("allowedUsers"); }
-            set { BackingStore?.Set("allowedUsers", value); }
-        }
-#endif
-        /// <summary>The DateTimeOffset when the printer share was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>The printer that this printer share is related to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Printer? Printer
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Printer?>("printer"); }
-            set { BackingStore?.Set("printer", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Printer Printer
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Printer>("printer"); }
-            set { BackingStore?.Set("printer", value); }
-        }
-#endif
-        /// <summary>More data for a printer share as viewed by the signed-in user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PrinterShareViewpoint? ViewPoint
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrinterShareViewpoint?>("viewPoint"); }
-            set { BackingStore?.Set("viewPoint", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PrinterShareViewpoint ViewPoint
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrinterShareViewpoint>("viewPoint"); }
-            set { BackingStore?.Set("viewPoint", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.PrinterShare"/> and sets the default values.
-        /// </summary>
-        public PrinterShare() : base()
-        {
-            OdataType = "#microsoft.graph.printerShare";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -113,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowAllUsers", n => { AllowAllUsers = n.GetBoolValue(); } },
-                { "allowedGroups", n => { AllowedGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Group>(global::Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "allowedUsers", n => { AllowedUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "printer", n => { Printer = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Printer>(global::Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue); } },
-                { "viewPoint", n => { ViewPoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PrinterShareViewpoint>(global::Microsoft.Graph.Beta.Models.PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("allowAllUsers", AllowAllUsers);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Group>("allowedGroups", AllowedGroups);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.User>("allowedUsers", AllowedUsers);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Printer>("printer", Printer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PrinterShareViewpoint>("viewPoint", ViewPoint);
         }
     }
 }

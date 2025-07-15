@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this {evolvable enum}(/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): bypass , alert.</summary>
+        /// <summary>Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: bypass , alert.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction?>("action"); }

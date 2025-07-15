@@ -12,29 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AwsUser : global::Microsoft.Graph.Beta.Models.AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Roles assumed by the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.AwsRole>? AssumableRoles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AwsRole>?>("assumableRoles"); }
-            set { BackingStore?.Set("assumableRoles", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.AwsRole> AssumableRoles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AwsRole>>("assumableRoles"); }
-            set { BackingStore?.Set("assumableRoles", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AwsUser"/> and sets the default values.
-        /// </summary>
-        public AwsUser() : base()
-        {
-            OdataType = "#microsoft.graph.awsUser";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assumableRoles", n => { AssumableRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AwsRole>(global::Microsoft.Graph.Beta.Models.AwsRole.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -64,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AwsRole>("assumableRoles", AssumableRoles);
         }
     }
 }

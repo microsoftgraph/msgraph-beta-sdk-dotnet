@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         }
         /// <summary>
         /// Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId.DeleteTiIndicatorsByExternalIdPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -62,7 +61,6 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         }
         /// <summary>
         /// Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId.DeleteTiIndicatorsByExternalIdResponse"/></returns>
         /// <param name="body">The request body</param>

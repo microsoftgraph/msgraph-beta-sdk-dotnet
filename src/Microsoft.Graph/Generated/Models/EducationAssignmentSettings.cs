@@ -12,60 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationAssignmentSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The defaultGradingScheme property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.EducationGradingScheme? DefaultGradingScheme
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationGradingScheme?>("defaultGradingScheme"); }
-            set { BackingStore?.Set("defaultGradingScheme", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.EducationGradingScheme DefaultGradingScheme
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>("defaultGradingScheme"); }
-            set { BackingStore?.Set("defaultGradingScheme", value); }
-        }
-#endif
-        /// <summary>When set, enables users to weight assignments differently when computing a class average grade.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>? GradingCategories
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>?>("gradingCategories"); }
-            set { BackingStore?.Set("gradingCategories", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.EducationGradingCategory> GradingCategories
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>>("gradingCategories"); }
-            set { BackingStore?.Set("gradingCategories", value); }
-        }
-#endif
-        /// <summary>The gradingSchemes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>? GradingSchemes
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>?>("gradingSchemes"); }
-            set { BackingStore?.Set("gradingSchemes", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.EducationGradingScheme> GradingSchemes
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>>("gradingSchemes"); }
-            set { BackingStore?.Set("gradingSchemes", value); }
-        }
-#endif
-        /// <summary>Indicates whether turn-in celebration animation is shown. If true, the animation doesn&apos;t show. The default value is false.</summary>
-        public bool? SubmissionAnimationDisabled
-        {
-            get { return BackingStore?.Get<bool?>("submissionAnimationDisabled"); }
-            set { BackingStore?.Set("submissionAnimationDisabled", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultGradingScheme", n => { DefaultGradingScheme = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>(global::Microsoft.Graph.Beta.Models.EducationGradingScheme.CreateFromDiscriminatorValue); } },
-                { "gradingCategories", n => { GradingCategories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>(global::Microsoft.Graph.Beta.Models.EducationGradingCategory.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "gradingSchemes", n => { GradingSchemes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>(global::Microsoft.Graph.Beta.Models.EducationGradingScheme.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "submissionAnimationDisabled", n => { SubmissionAnimationDisabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -98,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>("defaultGradingScheme", DefaultGradingScheme);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>("gradingCategories", GradingCategories);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>("gradingSchemes", GradingSchemes);
-            writer.WriteBoolValue("submissionAnimationDisabled", SubmissionAnimationDisabled);
         }
     }
 }

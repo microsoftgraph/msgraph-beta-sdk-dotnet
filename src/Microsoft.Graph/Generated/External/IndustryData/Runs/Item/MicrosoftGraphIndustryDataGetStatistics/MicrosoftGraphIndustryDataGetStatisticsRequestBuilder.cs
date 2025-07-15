@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.MicrosoftGraphInd
         }
         /// <summary>
         /// Get statistics for an industryDataRun.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydatarun-getstatistics?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatistics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

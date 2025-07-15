@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
     public partial class Ediscoveryroot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The cases property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Ediscovery.Case>? Cases
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Ediscovery.Case>?>("cases"); }
-            set { BackingStore?.Set("cases", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Ediscovery.Case> Cases
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Ediscovery.Case>>("cases"); }
-            set { BackingStore?.Set("cases", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "cases", n => { Cases = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Ediscovery.Case>(global::Microsoft.Graph.Beta.Models.Ediscovery.Case.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Ediscovery.Case>("cases", Cases);
         }
     }
 }

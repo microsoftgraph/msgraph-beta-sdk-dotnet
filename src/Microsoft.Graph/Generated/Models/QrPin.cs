@@ -12,40 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class QrPin : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>PIN of the user. It is between 8-20 digits as configured in the QR code authentication method policy. The code is temporary when issued by admin but permanent after the user changes it at the first login attempt. This PIN can be reset by the admin but not the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Code
-        {
-            get { return BackingStore?.Get<string?>("code"); }
-            set { BackingStore?.Set("code", value); }
-        }
-#nullable restore
-#else
-        public string Code
-        {
-            get { return BackingStore?.Get<string>("code"); }
-            set { BackingStore?.Set("code", value); }
-        }
-#endif
-        /// <summary>The date and time when the PIN was created.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>Defaults to true for a temporary PIN.</summary>
-        public bool? ForceChangePinNextSignIn
-        {
-            get { return BackingStore?.Get<bool?>("forceChangePinNextSignIn"); }
-            set { BackingStore?.Set("forceChangePinNextSignIn", value); }
-        }
-        /// <summary>The date and time when the PIN was updated.</summary>
-        public DateTimeOffset? UpdatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }
-            set { BackingStore?.Set("updatedDateTime", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "code", n => { Code = n.GetStringValue(); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "forceChangePinNextSignIn", n => { ForceChangePinNextSignIn = n.GetBoolValue(); } },
-                { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -78,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("code", Code);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteBoolValue("forceChangePinNextSignIn", ForceChangePinNextSignIn);
-            writer.WriteDateTimeOffsetValue("updatedDateTime", UpdatedDateTime);
         }
     }
 }

@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PolicyTemplate : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Defines an optional cross-tenant access policy template with user synchronization settings for a multi-tenant organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate? MultiTenantOrganizationIdentitySynchronization
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate?>("multiTenantOrganizationIdentitySynchronization"); }
-            set { BackingStore?.Set("multiTenantOrganizationIdentitySynchronization", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate MultiTenantOrganizationIdentitySynchronization
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate>("multiTenantOrganizationIdentitySynchronization"); }
-            set { BackingStore?.Set("multiTenantOrganizationIdentitySynchronization", value); }
-        }
-#endif
-        /// <summary>Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationPartnerConfigurationTemplate? MultiTenantOrganizationPartnerConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationPartnerConfigurationTemplate?>("multiTenantOrganizationPartnerConfiguration"); }
-            set { BackingStore?.Set("multiTenantOrganizationPartnerConfiguration", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationPartnerConfigurationTemplate MultiTenantOrganizationPartnerConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationPartnerConfigurationTemplate>("multiTenantOrganizationPartnerConfiguration"); }
-            set { BackingStore?.Set("multiTenantOrganizationPartnerConfiguration", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "multiTenantOrganizationIdentitySynchronization", n => { MultiTenantOrganizationIdentitySynchronization = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate>(global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate.CreateFromDiscriminatorValue); } },
-                { "multiTenantOrganizationPartnerConfiguration", n => { MultiTenantOrganizationPartnerConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationPartnerConfigurationTemplate>(global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationPartnerConfigurationTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate>("multiTenantOrganizationIdentitySynchronization", MultiTenantOrganizationIdentitySynchronization);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationPartnerConfigurationTemplate>("multiTenantOrganizationPartnerConfiguration", MultiTenantOrganizationPartnerConfiguration);
         }
     }
 }

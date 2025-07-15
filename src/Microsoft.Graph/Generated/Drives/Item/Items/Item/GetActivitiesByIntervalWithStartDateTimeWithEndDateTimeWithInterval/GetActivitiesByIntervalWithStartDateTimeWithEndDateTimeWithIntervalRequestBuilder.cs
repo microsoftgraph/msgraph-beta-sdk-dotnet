@@ -41,7 +41,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWit
         }
         /// <summary>
         /// Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +64,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWit
         }
         /// <summary>
         /// Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -177,10 +175,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWit
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

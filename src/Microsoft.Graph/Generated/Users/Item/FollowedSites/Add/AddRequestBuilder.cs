@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Users.Item.FollowedSites.Add
         }
         /// <summary>
         /// Follow a user&apos;s site or multiple sites.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.FollowedSites.Add.AddPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Users.Item.FollowedSites.Add
         }
         /// <summary>
         /// Follow a user&apos;s site or multiple sites.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.FollowedSites.Add.AddResponse"/></returns>
         /// <param name="body">The request body</param>

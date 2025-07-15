@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Modality?>? ActiveModalities
+        public List<string>? ActiveModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Modality?>?>("activeModalities"); }
+            get { return BackingStore?.Get<List<string>?>("activeModalities"); }
             set { BackingStore?.Set("activeModalities", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.Modality?> ActiveModalities
+        public List<string> ActiveModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Modality?>>("activeModalities"); }
+            get { return BackingStore?.Get<List<string>>("activeModalities"); }
             set { BackingStore?.Set("activeModalities", value); }
         }
 #endif
@@ -293,16 +293,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Modality?>? RequestedModalities
+        public List<string>? RequestedModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Modality?>?>("requestedModalities"); }
+            get { return BackingStore?.Get<List<string>?>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.Modality?> RequestedModalities
+        public List<string> RequestedModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Modality?>>("requestedModalities"); }
+            get { return BackingStore?.Get<List<string>>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #endif
@@ -331,16 +331,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.RoutingPolicy?>? RoutingPolicies
+        public List<string>? RoutingPolicies
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RoutingPolicy?>?>("routingPolicies"); }
+            get { return BackingStore?.Get<List<string>?>("routingPolicies"); }
             set { BackingStore?.Set("routingPolicies", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.RoutingPolicy?> RoutingPolicies
+        public List<string> RoutingPolicies
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RoutingPolicy?>>("routingPolicies"); }
+            get { return BackingStore?.Get<List<string>>("routingPolicies"); }
             set { BackingStore?.Set("routingPolicies", value); }
         }
 #endif
@@ -480,7 +480,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activeModalities", n => { ActiveModalities = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Modality>()?.AsList(); } },
+                { "activeModalities", n => { ActiveModalities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "answeredBy", n => { AnsweredBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ParticipantInfo>(global::Microsoft.Graph.Beta.Models.ParticipantInfo.CreateFromDiscriminatorValue); } },
                 { "audioRoutingGroups", n => { AudioRoutingGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AudioRoutingGroup>(global::Microsoft.Graph.Beta.Models.AudioRoutingGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "callChainId", n => { CallChainId = n.GetStringValue(); } },
@@ -498,10 +498,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "myParticipantId", n => { MyParticipantId = n.GetStringValue(); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommsOperation>(global::Microsoft.Graph.Beta.Models.CommsOperation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>(global::Microsoft.Graph.Beta.Models.Participant.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "requestedModalities", n => { RequestedModalities = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Modality>()?.AsList(); } },
+                { "requestedModalities", n => { RequestedModalities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "resultInfo", n => { ResultInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ResultInfo>(global::Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
                 { "ringingTimeoutInSeconds", n => { RingingTimeoutInSeconds = n.GetIntValue(); } },
-                { "routingPolicies", n => { RoutingPolicies = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RoutingPolicy>()?.AsList(); } },
+                { "routingPolicies", n => { RoutingPolicies = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ParticipantInfo>(global::Microsoft.Graph.Beta.Models.ParticipantInfo.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CallState>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
@@ -520,7 +520,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Modality>("activeModalities", ActiveModalities);
+            writer.WriteCollectionOfPrimitiveValues<string>("activeModalities", ActiveModalities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ParticipantInfo>("answeredBy", AnsweredBy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AudioRoutingGroup>("audioRoutingGroups", AudioRoutingGroups);
             writer.WriteStringValue("callbackUri", CallbackUri);
@@ -538,10 +538,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("myParticipantId", MyParticipantId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommsOperation>("operations", Operations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>("participants", Participants);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Modality>("requestedModalities", RequestedModalities);
+            writer.WriteCollectionOfPrimitiveValues<string>("requestedModalities", RequestedModalities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ResultInfo>("resultInfo", ResultInfo);
             writer.WriteIntValue("ringingTimeoutInSeconds", RingingTimeoutInSeconds);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RoutingPolicy>("routingPolicies", RoutingPolicies);
+            writer.WriteCollectionOfPrimitiveValues<string>("routingPolicies", RoutingPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ParticipantInfo>("source", Source);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CallState>("state", State);
             writer.WriteStringValue("subject", Subject);

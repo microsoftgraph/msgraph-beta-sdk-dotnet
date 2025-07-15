@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Schema : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The baseType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BaseType
-        {
-            get { return BackingStore?.Get<string?>("baseType"); }
-            set { BackingStore?.Set("baseType", value); }
-        }
-#nullable restore
-#else
-        public string BaseType
-        {
-            get { return BackingStore?.Get<string>("baseType"); }
-            set { BackingStore?.Set("baseType", value); }
-        }
-#endif
-        /// <summary>The properties property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Property>? Properties
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Property>?>("properties"); }
-            set { BackingStore?.Set("properties", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Property> Properties
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Property>>("properties"); }
-            set { BackingStore?.Set("properties", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "baseType", n => { BaseType = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Property>(global::Microsoft.Graph.Beta.Models.Property.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("baseType", BaseType);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Property>("properties", Properties);
         }
     }
 }

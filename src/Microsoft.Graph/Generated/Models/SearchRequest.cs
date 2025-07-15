@@ -94,16 +94,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.EntityType?>? EntityTypes
+        public List<string>? EntityTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EntityType?>?>("entityTypes"); }
+            get { return BackingStore?.Get<List<string>?>("entityTypes"); }
             set { BackingStore?.Set("entityTypes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.EntityType?> EntityTypes
+        public List<string> EntityTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EntityType?>>("entityTypes"); }
+            get { return BackingStore?.Get<List<string>>("entityTypes"); }
             set { BackingStore?.Set("entityTypes", value); }
         }
 #endif
@@ -300,7 +300,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "collapseProperties", n => { CollapseProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CollapseProperty>(global::Microsoft.Graph.Beta.Models.CollapseProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contentSources", n => { ContentSources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enableTopResults", n => { EnableTopResults = n.GetBoolValue(); } },
-                { "entityTypes", n => { EntityTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.EntityType>()?.AsList(); } },
+                { "entityTypes", n => { EntityTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "from", n => { From = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -327,7 +327,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CollapseProperty>("collapseProperties", CollapseProperties);
             writer.WriteCollectionOfPrimitiveValues<string>("contentSources", ContentSources);
             writer.WriteBoolValue("enableTopResults", EnableTopResults);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.EntityType>("entityTypes", EntityTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("entityTypes", EntityTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteIntValue("from", From);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.ResetDecisions
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, reset the decisions of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  Previous decisions are no longer recorded, but reviewers can continue to update decisions.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-reset?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

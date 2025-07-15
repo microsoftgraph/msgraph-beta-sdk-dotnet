@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Activa
         }
         /// <summary>
         /// Activate a hardware OATH token that is already assigned to a user. A user can self-activate their token or an admin can activate for a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-activate?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

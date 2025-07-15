@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
     public partial class HealthMonitoringRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configuration of an alert type, which defines behavior that occurs when an alert is created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration>? AlertConfigurations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration>?>("alertConfigurations"); }
-            set { BackingStore?.Set("alertConfigurations", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration> AlertConfigurations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration>>("alertConfigurations"); }
-            set { BackingStore?.Set("alertConfigurations", value); }
-        }
-#endif
-        /// <summary>The collection of health monitoring system detected alerts for anomalous usage patterns found in a Microsoft Entra tenant.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert>? Alerts
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert>?>("alerts"); }
-            set { BackingStore?.Set("alerts", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert> Alerts
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert>>("alerts"); }
-            set { BackingStore?.Set("alerts", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alertConfigurations", n => { AlertConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration>(global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert>(global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration>("alertConfigurations", AlertConfigurations);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert>("alerts", Alerts);
         }
     }
 }

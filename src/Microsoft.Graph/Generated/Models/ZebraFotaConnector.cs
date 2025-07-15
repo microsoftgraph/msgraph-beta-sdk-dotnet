@@ -13,56 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZebraFotaConnector : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EnrollmentAuthorizationUrl
-        {
-            get { return BackingStore?.Get<string?>("enrollmentAuthorizationUrl"); }
-            set { BackingStore?.Set("enrollmentAuthorizationUrl", value); }
-        }
-#nullable restore
-#else
-        public string EnrollmentAuthorizationUrl
-        {
-            get { return BackingStore?.Get<string>("enrollmentAuthorizationUrl"); }
-            set { BackingStore?.Set("enrollmentAuthorizationUrl", value); }
-        }
-#endif
-        /// <summary>Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EnrollmentToken
-        {
-            get { return BackingStore?.Get<string?>("enrollmentToken"); }
-            set { BackingStore?.Set("enrollmentToken", value); }
-        }
-#nullable restore
-#else
-        public string EnrollmentToken
-        {
-            get { return BackingStore?.Get<string>("enrollmentToken"); }
-            set { BackingStore?.Set("enrollmentToken", value); }
-        }
-#endif
-        /// <summary>Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.</summary>
-        public bool? FotaAppsApproved
-        {
-            get { return BackingStore?.Get<bool?>("fotaAppsApproved"); }
-            set { BackingStore?.Set("fotaAppsApproved", value); }
-        }
-        /// <summary>Date and time when the account was last synched with Zebra</summary>
-        public DateTimeOffset? LastSyncDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
-            set { BackingStore?.Set("lastSyncDateTime", value); }
-        }
-        /// <summary>Represents various states for Zebra FOTA connector.</summary>
-        public global::Microsoft.Graph.Beta.Models.ZebraFotaConnectorState? State
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ZebraFotaConnectorState?>("state"); }
-            set { BackingStore?.Set("state", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,11 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "enrollmentAuthorizationUrl", n => { EnrollmentAuthorizationUrl = n.GetStringValue(); } },
-                { "enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
-                { "fotaAppsApproved", n => { FotaAppsApproved = n.GetBoolValue(); } },
-                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ZebraFotaConnectorState>(); } },
             };
         }
         /// <summary>
@@ -96,11 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("enrollmentAuthorizationUrl", EnrollmentAuthorizationUrl);
-            writer.WriteStringValue("enrollmentToken", EnrollmentToken);
-            writer.WriteBoolValue("fotaAppsApproved", FotaAppsApproved);
-            writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ZebraFotaConnectorState>("state", State);
         }
     }
 }

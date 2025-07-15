@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
         }
         /// <summary>
         /// Get all shift objects across all teams to which a user is a direct member.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
         }
         /// <summary>
         /// Get all shift objects across all teams to which a user is a direct member.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

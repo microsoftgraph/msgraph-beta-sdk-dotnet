@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators
         }
         /// <summary>
         /// Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators.DeleteTiIndicatorsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -62,7 +61,6 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators
         }
         /// <summary>
         /// Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators.DeleteTiIndicatorsResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -99,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can&apos;t be removed through a PATCH operation once added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole?>? AnonymizeIdentityForRoles
+        public List<string>? AnonymizeIdentityForRoles
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole?>?>("anonymizeIdentityForRoles"); }
+            get { return BackingStore?.Get<List<string>?>("anonymizeIdentityForRoles"); }
             set { BackingStore?.Set("anonymizeIdentityForRoles", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole?> AnonymizeIdentityForRoles
+        public List<string> AnonymizeIdentityForRoles
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole?>>("anonymizeIdentityForRoles"); }
+            get { return BackingStore?.Get<List<string>>("anonymizeIdentityForRoles"); }
             set { BackingStore?.Set("anonymizeIdentityForRoles", value); }
         }
 #endif
@@ -350,7 +350,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowWhiteboard", n => { AllowWhiteboard = n.GetBoolValue(); } },
                 { "allowedLobbyAdmitters", n => { AllowedLobbyAdmitters = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles>(); } },
                 { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters>(); } },
-                { "anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole>()?.AsList(); } },
+                { "anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>(global::Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>(global::Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
@@ -390,7 +390,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteBoolValue("allowTranscription", AllowTranscription);
             writer.WriteBoolValue("allowWhiteboard", AllowWhiteboard);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
+            writer.WriteCollectionOfPrimitiveValues<string>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);

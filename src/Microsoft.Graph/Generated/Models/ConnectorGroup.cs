@@ -12,72 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ConnectorGroup : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The applications property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Application>? Applications
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Application>?>("applications"); }
-            set { BackingStore?.Set("applications", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Application> Applications
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Application>>("applications"); }
-            set { BackingStore?.Set("applications", value); }
-        }
-#endif
-        /// <summary>The connectorGroupType property</summary>
-        public global::Microsoft.Graph.Beta.Models.ConnectorGroupType? ConnectorGroupType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectorGroupType?>("connectorGroupType"); }
-            set { BackingStore?.Set("connectorGroupType", value); }
-        }
-        /// <summary>Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.</summary>
-        public bool? IsDefault
-        {
-            get { return BackingStore?.Get<bool?>("isDefault"); }
-            set { BackingStore?.Set("isDefault", value); }
-        }
-        /// <summary>The members property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Connector>? Members
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Connector>?>("members"); }
-            set { BackingStore?.Set("members", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Connector> Members
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Connector>>("members"); }
-            set { BackingStore?.Set("members", value); }
-        }
-#endif
-        /// <summary>The name associated with the connectorGroup.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Beta.Models.ConnectorGroupRegion? Region
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectorGroupRegion?>("region"); }
-            set { BackingStore?.Set("region", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applications", n => { Applications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Application>(global::Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "connectorGroupType", n => { ConnectorGroupType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ConnectorGroupType>(); } },
-                { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Connector>(global::Microsoft.Graph.Beta.Models.Connector.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ConnectorGroupRegion>(); } },
             };
         }
         /// <summary>
@@ -112,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Application>("applications", Applications);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ConnectorGroupType>("connectorGroupType", ConnectorGroupType);
-            writer.WriteBoolValue("isDefault", IsDefault);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Connector>("members", Members);
-            writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ConnectorGroupRegion>("region", Region);
         }
     }
 }

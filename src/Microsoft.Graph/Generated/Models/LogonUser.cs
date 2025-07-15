@@ -90,16 +90,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.LogonType?>? LogonTypes
+        public List<string>? LogonTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.LogonType?>?>("logonTypes"); }
+            get { return BackingStore?.Get<List<string>?>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.LogonType?> LogonTypes
+        public List<string> LogonTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.LogonType?>>("logonTypes"); }
+            get { return BackingStore?.Get<List<string>>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
 #endif
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "logonId", n => { LogonId = n.GetStringValue(); } },
-                { "logonTypes", n => { LogonTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.LogonType>()?.AsList(); } },
+                { "logonTypes", n => { LogonTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("logonId", LogonId);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.LogonType>("logonTypes", LogonTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("logonTypes", LogonTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

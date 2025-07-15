@@ -14,13 +14,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class IosCertificateProfile : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IosCertificateProfile"/> and sets the default values.
-        /// </summary>
-        public IosCertificateProfile() : base()
-        {
-            OdataType = "#microsoft.graph.iosCertificateProfile";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IosCertificateProfile"/></returns>

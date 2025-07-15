@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class Security : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The informationProtection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Security.InformationProtection? InformationProtection
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.InformationProtection?>("informationProtection"); }
-            set { BackingStore?.Set("informationProtection", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Security.InformationProtection InformationProtection
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.InformationProtection>("informationProtection"); }
-            set { BackingStore?.Set("informationProtection", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "informationProtection", n => { InformationProtection = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.InformationProtection>(global::Microsoft.Graph.Beta.Models.Security.InformationProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.InformationProtection>("informationProtection", InformationProtection);
         }
     }
 }

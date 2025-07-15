@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Template : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Defines the templates that are common to a set of device objects, such as IoT devices.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>? DeviceTemplates
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>?>("deviceTemplates"); }
-            set { BackingStore?.Set("deviceTemplates", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate> DeviceTemplates
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>>("deviceTemplates"); }
-            set { BackingStore?.Set("deviceTemplates", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deviceTemplates", n => { DeviceTemplates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceTemplate>(global::Microsoft.Graph.Beta.Models.DeviceTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceTemplate>("deviceTemplates", DeviceTemplates);
         }
     }
 }

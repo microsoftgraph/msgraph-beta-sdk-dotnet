@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleIn
         }
         /// <summary>
         /// Retrieve both roleAssignmentScheduleInstances and roleEligibilityScheduleInstances.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-rolescheduleinstances?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +59,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleIn
         }
         /// <summary>
         /// Retrieve both roleAssignmentScheduleInstances and roleEligibilityScheduleInstances.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-rolescheduleinstances?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -214,10 +212,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleIn
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

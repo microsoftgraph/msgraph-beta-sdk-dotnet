@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey
         }
         /// <summary>
         /// Get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-getactivekey?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TrustFrameworkKey"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Permissions.Item.Gran
         }
         /// <summary>
         /// Grant users access to a link represented by a permission.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Permissions.Item.Grant.GrantPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Permissions.Item.Gran
         }
         /// <summary>
         /// Grant users access to a link represented by a permission.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Permissions.Item.Grant.GrantResponse"/></returns>
         /// <param name="body">The request body</param>

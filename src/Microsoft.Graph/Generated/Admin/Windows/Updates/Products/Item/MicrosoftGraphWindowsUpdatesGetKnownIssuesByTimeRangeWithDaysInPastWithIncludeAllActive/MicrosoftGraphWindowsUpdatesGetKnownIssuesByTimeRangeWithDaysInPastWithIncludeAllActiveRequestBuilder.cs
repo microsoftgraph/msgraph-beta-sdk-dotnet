@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
         }
         /// <summary>
         /// Get known issues related to a particular product based on a specified timeframe in the past.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-product-getknownissuesbytimerange?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive.GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
         }
         /// <summary>
         /// Get known issues related to a particular product based on a specified timeframe in the past.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-product-getknownissuesbytimerange?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive.GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -176,10 +174,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

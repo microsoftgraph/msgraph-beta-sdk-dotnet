@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Item.Permanen
         }
         /// <summary>
         /// Permanently delete a contact folder and remove its items from the user&apos;s mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-permanentdelete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.EndWorkingTime
         }
         /// <summary>
         /// Trigger the policies associated with the end of working hours for a specific user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workingtimeschedule-endworkingtime?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

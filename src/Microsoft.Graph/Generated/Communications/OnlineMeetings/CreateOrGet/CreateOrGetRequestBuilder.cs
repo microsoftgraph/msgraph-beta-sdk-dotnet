@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.CreateOrGet
         }
         /// <summary>
         /// Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.OnlineMeeting"/></returns>
         /// <param name="body">The request body</param>

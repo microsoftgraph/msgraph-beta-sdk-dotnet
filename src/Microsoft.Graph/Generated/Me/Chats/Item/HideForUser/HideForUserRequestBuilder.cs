@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.HideForUser
         }
         /// <summary>
         /// Hide a chat for a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

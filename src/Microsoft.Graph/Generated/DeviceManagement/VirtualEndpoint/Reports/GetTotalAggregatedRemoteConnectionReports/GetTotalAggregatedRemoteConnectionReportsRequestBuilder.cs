@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotal
         }
         /// <summary>
         /// Get the total aggregated remote connection usage of a Cloud PC during a given time span.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

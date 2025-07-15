@@ -13,78 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceOverview : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Distribution of Exchange Access State in Intune</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary? DeviceExchangeAccessStateSummary
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary?>("deviceExchangeAccessStateSummary"); }
-            set { BackingStore?.Set("deviceExchangeAccessStateSummary", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary DeviceExchangeAccessStateSummary
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary>("deviceExchangeAccessStateSummary"); }
-            set { BackingStore?.Set("deviceExchangeAccessStateSummary", value); }
-        }
-#endif
-        /// <summary>Device operating system summary.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary? DeviceOperatingSystemSummary
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary?>("deviceOperatingSystemSummary"); }
-            set { BackingStore?.Set("deviceOperatingSystemSummary", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary DeviceOperatingSystemSummary
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary>("deviceOperatingSystemSummary"); }
-            set { BackingStore?.Set("deviceOperatingSystemSummary", value); }
-        }
-#endif
-        /// <summary>The number of devices enrolled in both MDM and EAS</summary>
-        public int? DualEnrolledDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("dualEnrolledDeviceCount"); }
-            set { BackingStore?.Set("dualEnrolledDeviceCount", value); }
-        }
-        /// <summary>Total enrolled device count. Does not include PC devices managed via Intune PC Agent</summary>
-        public int? EnrolledDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("enrolledDeviceCount"); }
-            set { BackingStore?.Set("enrolledDeviceCount", value); }
-        }
-        /// <summary>Last modified date time of device overview</summary>
-        public DateTimeOffset? LastModifiedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
-            set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-        /// <summary>Models and Manufactures meatadata for managed devices in the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers? ManagedDeviceModelsAndManufacturers
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers?>("managedDeviceModelsAndManufacturers"); }
-            set { BackingStore?.Set("managedDeviceModelsAndManufacturers", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers ManagedDeviceModelsAndManufacturers
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers>("managedDeviceModelsAndManufacturers"); }
-            set { BackingStore?.Set("managedDeviceModelsAndManufacturers", value); }
-        }
-#endif
-        /// <summary>The number of devices enrolled in MDM</summary>
-        public int? MdmEnrolledCount
-        {
-            get { return BackingStore?.Get<int?>("mdmEnrolledCount"); }
-            set { BackingStore?.Set("mdmEnrolledCount", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -103,13 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deviceExchangeAccessStateSummary", n => { DeviceExchangeAccessStateSummary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary>(global::Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary.CreateFromDiscriminatorValue); } },
-                { "deviceOperatingSystemSummary", n => { DeviceOperatingSystemSummary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary>(global::Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary.CreateFromDiscriminatorValue); } },
-                { "dualEnrolledDeviceCount", n => { DualEnrolledDeviceCount = n.GetIntValue(); } },
-                { "enrolledDeviceCount", n => { EnrolledDeviceCount = n.GetIntValue(); } },
-                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "managedDeviceModelsAndManufacturers", n => { ManagedDeviceModelsAndManufacturers = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers>(global::Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers.CreateFromDiscriminatorValue); } },
-                { "mdmEnrolledCount", n => { MdmEnrolledCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -120,13 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary>("deviceExchangeAccessStateSummary", DeviceExchangeAccessStateSummary);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary>("deviceOperatingSystemSummary", DeviceOperatingSystemSummary);
-            writer.WriteIntValue("dualEnrolledDeviceCount", DualEnrolledDeviceCount);
-            writer.WriteIntValue("enrolledDeviceCount", EnrolledDeviceCount);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers>("managedDeviceModelsAndManufacturers", ManagedDeviceModelsAndManufacturers);
-            writer.WriteIntValue("mdmEnrolledCount", MdmEnrolledCount);
         }
     }
 }

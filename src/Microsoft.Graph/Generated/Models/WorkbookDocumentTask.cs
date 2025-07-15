@@ -12,142 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WorkbookDocumentTask : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of user identities the task is assigned to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>? Assignees
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>?>("assignees"); }
-            set { BackingStore?.Set("assignees", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity> Assignees
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>>("assignees"); }
-            set { BackingStore?.Set("assignees", value); }
-        }
-#endif
-        /// <summary>A collection of task change histories.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>? Changes
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>?>("changes"); }
-            set { BackingStore?.Set("changes", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange> Changes
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>>("changes"); }
-            set { BackingStore?.Set("changes", value); }
-        }
-#endif
-        /// <summary>The comment that the task is associated with.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookComment? Comment
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookComment?>("comment"); }
-            set { BackingStore?.Set("comment", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookComment Comment
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookComment>("comment"); }
-            set { BackingStore?.Set("comment", value); }
-        }
-#endif
-        /// <summary>The identity of the user who completed the task. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity? CompletedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity?>("completedBy"); }
-            set { BackingStore?.Set("completedBy", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity CompletedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("completedBy"); }
-            set { BackingStore?.Set("completedBy", value); }
-        }
-#endif
-        /// <summary>Date and time when the task was completed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CompletedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
-            set { BackingStore?.Set("completedDateTime", value); }
-        }
-        /// <summary>A user identity that creates the task. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity? CreatedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity?>("createdBy"); }
-            set { BackingStore?.Set("createdBy", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity CreatedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("createdBy"); }
-            set { BackingStore?.Set("createdBy", value); }
-        }
-#endif
-        /// <summary>Date and time when the task was created. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>An integer value from 0 to 100 that represents the percentage of the completion of the task. 100 means that the task is completed. Nullable.</summary>
-        public int? PercentComplete
-        {
-            get { return BackingStore?.Get<int?>("percentComplete"); }
-            set { BackingStore?.Set("percentComplete", value); }
-        }
-        /// <summary>An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. Nullable.</summary>
-        public int? Priority
-        {
-            get { return BackingStore?.Get<int?>("priority"); }
-            set { BackingStore?.Set("priority", value); }
-        }
-        /// <summary>Start and due date of the task. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule? StartAndDueDateTime
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule?>("startAndDueDateTime"); }
-            set { BackingStore?.Set("startAndDueDateTime", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule StartAndDueDateTime
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule>("startAndDueDateTime"); }
-            set { BackingStore?.Set("startAndDueDateTime", value); }
-        }
-#endif
-        /// <summary>The title of the task.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Title
-        {
-            get { return BackingStore?.Get<string?>("title"); }
-            set { BackingStore?.Set("title", value); }
-        }
-#nullable restore
-#else
-        public string Title
-        {
-            get { return BackingStore?.Get<string>("title"); }
-            set { BackingStore?.Set("title", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -166,17 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignees", n => { Assignees = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>(global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "changes", n => { Changes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>(global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "comment", n => { Comment = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookComment>(global::Microsoft.Graph.Beta.Models.WorkbookComment.CreateFromDiscriminatorValue); } },
-                { "completedBy", n => { CompletedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>(global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
-                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>(global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "percentComplete", n => { PercentComplete = n.GetIntValue(); } },
-                { "priority", n => { Priority = n.GetIntValue(); } },
-                { "startAndDueDateTime", n => { StartAndDueDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule>(global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -187,17 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("assignees", Assignees);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>("changes", Changes);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookComment>("comment", Comment);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("completedBy", CompletedBy);
-            writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("createdBy", CreatedBy);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteIntValue("percentComplete", PercentComplete);
-            writer.WriteIntValue("priority", Priority);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule>("startAndDueDateTime", StartAndDueDateTime);
-            writer.WriteStringValue("title", Title);
         }
     }
 }

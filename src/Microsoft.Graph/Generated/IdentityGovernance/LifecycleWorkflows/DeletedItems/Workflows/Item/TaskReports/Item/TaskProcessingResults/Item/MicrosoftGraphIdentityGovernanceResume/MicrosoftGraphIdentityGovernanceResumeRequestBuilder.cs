@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
         }
         /// <summary>
         /// Resume a task processing result that&apos;s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

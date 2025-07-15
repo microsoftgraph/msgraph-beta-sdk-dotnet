@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
         {
         }
         /// <summary>
-        /// The traffic forwarding policies associated with this profile.
+        /// Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to policies for networkAccess
+        /// Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The traffic forwarding policies associated with this profile.
+        /// Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to policies for networkAccess
+        /// Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return new global::Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The traffic forwarding policies associated with this profile.
+        /// Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetQueryParameters 
@@ -212,10 +214,10 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

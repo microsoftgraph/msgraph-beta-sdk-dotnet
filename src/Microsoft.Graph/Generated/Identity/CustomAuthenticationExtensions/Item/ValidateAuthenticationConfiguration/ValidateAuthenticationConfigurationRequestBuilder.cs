@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item.Vali
         }
         /// <summary>
         /// An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension object, which can represent one of the following derived types:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AuthenticationConfigurationValidation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

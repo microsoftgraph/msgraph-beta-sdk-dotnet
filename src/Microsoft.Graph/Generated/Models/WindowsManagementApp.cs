@@ -13,60 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsManagementApp : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Windows management app available version.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AvailableVersion
-        {
-            get { return BackingStore?.Get<string?>("availableVersion"); }
-            set { BackingStore?.Set("availableVersion", value); }
-        }
-#nullable restore
-#else
-        public string AvailableVersion
-        {
-            get { return BackingStore?.Get<string>("availableVersion"); }
-            set { BackingStore?.Set("availableVersion", value); }
-        }
-#endif
-        /// <summary>The list of health states for installed Windows management app.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState>? HealthStates
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState>?>("healthStates"); }
-            set { BackingStore?.Set("healthStates", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState> HealthStates
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState>>("healthStates"); }
-            set { BackingStore?.Set("healthStates", value); }
-        }
-#endif
-        /// <summary>ManagedInstallerStatus</summary>
-        public global::Microsoft.Graph.Beta.Models.ManagedInstallerStatus? ManagedInstaller
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedInstallerStatus?>("managedInstaller"); }
-            set { BackingStore?.Set("managedInstaller", value); }
-        }
-        /// <summary>Managed Installer Configured Date Time</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ManagedInstallerConfiguredDateTime
-        {
-            get { return BackingStore?.Get<string?>("managedInstallerConfiguredDateTime"); }
-            set { BackingStore?.Set("managedInstallerConfiguredDateTime", value); }
-        }
-#nullable restore
-#else
-        public string ManagedInstallerConfiguredDateTime
-        {
-            get { return BackingStore?.Get<string>("managedInstallerConfiguredDateTime"); }
-            set { BackingStore?.Set("managedInstallerConfiguredDateTime", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,10 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
-                { "healthStates", n => { HealthStates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState>(global::Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "managedInstaller", n => { ManagedInstaller = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedInstallerStatus>(); } },
-                { "managedInstallerConfiguredDateTime", n => { ManagedInstallerConfiguredDateTime = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -99,10 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("availableVersion", AvailableVersion);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState>("healthStates", HealthStates);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedInstallerStatus>("managedInstaller", ManagedInstaller);
-            writer.WriteStringValue("managedInstallerConfiguredDateTime", ManagedInstallerConfiguredDateTime);
         }
     }
 }

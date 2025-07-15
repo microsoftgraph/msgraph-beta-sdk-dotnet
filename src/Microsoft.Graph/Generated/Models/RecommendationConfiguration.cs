@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RecommendationConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether notifications for recommendations are enabled.</summary>
-        public bool? IsNotificationEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isNotificationEnabled"); }
-            set { BackingStore?.Set("isNotificationEnabled", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isNotificationEnabled", n => { IsNotificationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -47,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isNotificationEnabled", IsNotificationEnabled);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.HardwareOathMethods.Ass
         }
         /// <summary>
         /// Assign and activate a hardware token at the same time. This operation requires the device ID to activate it.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivate?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

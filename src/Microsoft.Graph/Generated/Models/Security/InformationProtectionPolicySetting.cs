@@ -12,50 +12,6 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class InformationProtectionPolicySetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The defaultLabelId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DefaultLabelId
-        {
-            get { return BackingStore?.Get<string?>("defaultLabelId"); }
-            set { BackingStore?.Set("defaultLabelId", value); }
-        }
-#nullable restore
-#else
-        public string DefaultLabelId
-        {
-            get { return BackingStore?.Get<string>("defaultLabelId"); }
-            set { BackingStore?.Set("defaultLabelId", value); }
-        }
-#endif
-        /// <summary>Exposes whether justification input is required on label downgrade.</summary>
-        public bool? IsDowngradeJustificationRequired
-        {
-            get { return BackingStore?.Get<bool?>("isDowngradeJustificationRequired"); }
-            set { BackingStore?.Set("isDowngradeJustificationRequired", value); }
-        }
-        /// <summary>Exposes whether mandatory labeling is enabled.</summary>
-        public bool? IsMandatory
-        {
-            get { return BackingStore?.Get<bool?>("isMandatory"); }
-            set { BackingStore?.Set("isMandatory", value); }
-        }
-        /// <summary>Exposes the more information URL that can be configured by the administrator.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MoreInfoUrl
-        {
-            get { return BackingStore?.Get<string?>("moreInfoUrl"); }
-            set { BackingStore?.Set("moreInfoUrl", value); }
-        }
-#nullable restore
-#else
-        public string MoreInfoUrl
-        {
-            get { return BackingStore?.Get<string>("moreInfoUrl"); }
-            set { BackingStore?.Set("moreInfoUrl", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultLabelId", n => { DefaultLabelId = n.GetStringValue(); } },
-                { "isDowngradeJustificationRequired", n => { IsDowngradeJustificationRequired = n.GetBoolValue(); } },
-                { "isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
-                { "moreInfoUrl", n => { MoreInfoUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("defaultLabelId", DefaultLabelId);
-            writer.WriteBoolValue("isDowngradeJustificationRequired", IsDowngradeJustificationRequired);
-            writer.WriteBoolValue("isMandatory", IsMandatory);
-            writer.WriteStringValue("moreInfoUrl", MoreInfoUrl);
         }
     }
 }

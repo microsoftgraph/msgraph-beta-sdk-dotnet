@@ -62,7 +62,6 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new global::Microsoft.Graph.Beta.Models.FileStorageContainerCustomPropertyDictionary(),
                 "#microsoft.graph.openComplexDictionaryType" => new global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType(),
                 "#microsoft.graph.partner.security.additionalDataDictionary" => new global::Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary(),
-                "#microsoft.graph.plannerFormsDictionary" => new global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary(),
                 "#microsoft.graph.resultTemplateDictionary" => new global::Microsoft.Graph.Beta.Models.ResultTemplateDictionary(),
                 "#microsoft.graph.wafAllowedHeadersDictionary" => new global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary(),
                 _ => new global::Microsoft.Graph.Beta.Models.Dictionary(),

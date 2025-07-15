@@ -214,7 +214,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
         }
         /// <summary>
         /// Gets the range object associated with header row of the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-headerrowrange?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

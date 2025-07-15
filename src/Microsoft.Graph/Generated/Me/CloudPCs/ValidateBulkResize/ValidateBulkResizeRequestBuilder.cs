@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize
         }
         /// <summary>
         /// Validate that a set of cloudPC devices meet the requirements to be bulk resized.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize.ValidateBulkResizePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize
         }
         /// <summary>
         /// Validate that a set of cloudPC devices meet the requirements to be bulk resized.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize.ValidateBulkResizeResponse"/></returns>
         /// <param name="body">The request body</param>

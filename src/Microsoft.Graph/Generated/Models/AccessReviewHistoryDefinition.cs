@@ -37,16 +37,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDecisionFilter?>? Decisions
+        public List<string>? Decisions
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDecisionFilter?>?>("decisions"); }
+            get { return BackingStore?.Get<List<string>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDecisionFilter?> Decisions
+        public List<string> Decisions
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDecisionFilter?>>("decisions"); }
+            get { return BackingStore?.Get<List<string>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #endif
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "decisions", n => { Decisions = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDecisionFilter>()?.AsList(); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "downloadUri", n => { DownloadUri = n.GetStringValue(); } },
                 { "fulfilledDateTime", n => { FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDecisionFilter>("decisions", Decisions);
+            writer.WriteCollectionOfPrimitiveValues<string>("decisions", Decisions);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("downloadUri", DownloadUri);
             writer.WriteDateTimeOffsetValue("fulfilledDateTime", FulfilledDateTime);

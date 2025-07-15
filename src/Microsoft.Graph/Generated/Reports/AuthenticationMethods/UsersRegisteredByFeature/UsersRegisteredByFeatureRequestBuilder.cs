@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByFe
         }
         /// <summary>
         /// Get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserRegistrationFeatureSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

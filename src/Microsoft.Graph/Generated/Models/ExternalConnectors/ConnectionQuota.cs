@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
     public partial class ConnectionQuota : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}). If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.</summary>
-        public long? ItemsRemaining
-        {
-            get { return BackingStore?.Get<long?>("itemsRemaining"); }
-            set { BackingStore?.Set("itemsRemaining", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "itemsRemaining", n => { ItemsRemaining = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -47,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("itemsRemaining", ItemsRemaining);
         }
     }
 }

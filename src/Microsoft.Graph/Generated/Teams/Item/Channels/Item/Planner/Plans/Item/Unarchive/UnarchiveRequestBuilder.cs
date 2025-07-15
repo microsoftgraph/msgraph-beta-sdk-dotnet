@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.Plans.Item.Unarc
         }
         /// <summary>
         /// Unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

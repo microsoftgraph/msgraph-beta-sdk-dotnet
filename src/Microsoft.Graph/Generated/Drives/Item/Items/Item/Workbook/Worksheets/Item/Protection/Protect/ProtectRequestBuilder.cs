@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.P
         }
         /// <summary>
         /// Protect a worksheet. It throws if the worksheet has been protected.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheetprotection-protect?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

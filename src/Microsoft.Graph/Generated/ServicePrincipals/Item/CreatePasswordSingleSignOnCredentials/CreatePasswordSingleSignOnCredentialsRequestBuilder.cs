@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatePasswordSingleSignOn
         }
         /// <summary>
         /// Create single sign-on credentials using a password for a user or group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PasswordSingleSignOnCredentialSet"/></returns>
         /// <param name="body">The request body</param>

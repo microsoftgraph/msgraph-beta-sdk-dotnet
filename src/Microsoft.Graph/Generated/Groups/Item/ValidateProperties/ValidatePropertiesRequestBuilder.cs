@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.ValidateProperties
         }
         /// <summary>
         /// Validate if a Microsoft 365 group&apos;s display name or mail nickname complies with naming policies. Clients can use the API to determine if a display name or mail nickname is valid before trying to update a Microsoft 365 group. For validating properties before creating a group, use the validateProperties function for directory objects. The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-validateproperties?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

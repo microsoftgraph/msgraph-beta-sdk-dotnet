@@ -12,50 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UnifiedRoleEligibilityScheduleInstance : global::Microsoft.Graph.Beta.Models.UnifiedRoleScheduleInstanceBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Time that the roleEligibilityScheduleInstance will expire.</summary>
-        public DateTimeOffset? EndDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
-            set { BackingStore?.Set("endDateTime", value); }
-        }
-        /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MemberType
-        {
-            get { return BackingStore?.Get<string?>("memberType"); }
-            set { BackingStore?.Set("memberType", value); }
-        }
-#nullable restore
-#else
-        public string MemberType
-        {
-            get { return BackingStore?.Get<string>("memberType"); }
-            set { BackingStore?.Set("memberType", value); }
-        }
-#endif
-        /// <summary>Identifier of the parent roleEligibilitySchedule for this instance.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RoleEligibilityScheduleId
-        {
-            get { return BackingStore?.Get<string?>("roleEligibilityScheduleId"); }
-            set { BackingStore?.Set("roleEligibilityScheduleId", value); }
-        }
-#nullable restore
-#else
-        public string RoleEligibilityScheduleId
-        {
-            get { return BackingStore?.Get<string>("roleEligibilityScheduleId"); }
-            set { BackingStore?.Set("roleEligibilityScheduleId", value); }
-        }
-#endif
-        /// <summary>Time that the roleEligibilityScheduleInstance will start.</summary>
-        public DateTimeOffset? StartDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
-            set { BackingStore?.Set("startDateTime", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                { "memberType", n => { MemberType = n.GetStringValue(); } },
-                { "roleEligibilityScheduleId", n => { RoleEligibilityScheduleId = n.GetStringValue(); } },
-                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -88,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
-            writer.WriteStringValue("memberType", MemberType);
-            writer.WriteStringValue("roleEligibilityScheduleId", RoleEligibilityScheduleId);
-            writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
         }
     }
 }

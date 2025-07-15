@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.AddCopy
         }
         /// <summary>
         /// Invoke action addCopy
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentType"/></returns>
         /// <param name="body">The request body</param>

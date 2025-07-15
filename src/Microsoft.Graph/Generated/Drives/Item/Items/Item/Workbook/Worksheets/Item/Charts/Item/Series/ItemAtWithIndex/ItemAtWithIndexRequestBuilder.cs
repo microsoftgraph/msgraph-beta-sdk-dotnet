@@ -50,7 +50,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         }
         /// <summary>
         /// Retrieves a series based on its position in the collection
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartseriescollection-itemat?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WorkbookChartSeries"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetPresence
         }
         /// <summary>
         /// Set the availability and activity status in a presence session of an application for a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

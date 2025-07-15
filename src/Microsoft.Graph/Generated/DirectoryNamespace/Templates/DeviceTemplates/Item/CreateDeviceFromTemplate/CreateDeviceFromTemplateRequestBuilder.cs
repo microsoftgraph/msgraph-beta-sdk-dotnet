@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
         }
         /// <summary>
         /// Create a new device from a deviceTemplate.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicetemplate-createdevicefromtemplate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Device"/></returns>
         /// <param name="body">The request body</param>

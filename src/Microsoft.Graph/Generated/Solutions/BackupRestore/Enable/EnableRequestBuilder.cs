@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.Enable
         }
         /// <summary>
         /// Enable the Microsoft 365 Backup Storage service for a tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServiceStatus"/></returns>
         /// <param name="body">The request body</param>

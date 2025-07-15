@@ -40,7 +40,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.Mi
         }
         /// <summary>
         /// Provide a summary of all workflows processed within a tenant for a specified period. Because the amount of results for listed workflows as returned by the List workflows does not tell you which workflows were processed from the list of created workflows, this summary gives you a quick overview of processed status based on counts.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedsummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowsInsightsSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions.Item.Re
         }
         /// <summary>
         /// Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission will be treated as a returned submission. This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively. If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status. For details, see the examples section.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationSubmission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

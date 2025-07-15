@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods.CreationOp
         }
         /// <summary>
         /// Retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. Self-service operations aren&apos;t supported.  
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-creationoptions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WebauthnCredentialCreationOptions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

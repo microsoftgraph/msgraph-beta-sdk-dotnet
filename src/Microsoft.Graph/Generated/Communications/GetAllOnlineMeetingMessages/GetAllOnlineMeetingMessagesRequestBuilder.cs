@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages
         }
         /// <summary>
         /// Get all Teams question and answer (Q&amp;A) conversation messages in a tenant. This function returns a snapshot of all Q&amp;A activity in JSON format. The export includes:- The original question or discussion text- The user who posted the message- All replies and responders- Vote counts- Moderation status (pending or dismissed)- Private replies- The meeting ID and organizer ID that are used for mapping to meeting metadata.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages.GetAllOnlineMeetingMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages
         }
         /// <summary>
         /// Get all Teams question and answer (Q&amp;A) conversation messages in a tenant. This function returns a snapshot of all Q&amp;A activity in JSON format. The export includes:- The original question or discussion text- The user who posted the message- All replies and responders- Vote counts- Moderation status (pending or dismissed)- Private replies- The meeting ID and organizer ID that are used for mapping to meeting metadata.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages.GetAllOnlineMeetingMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Beta.Communications.GetAllOnlineMeetingMessages
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

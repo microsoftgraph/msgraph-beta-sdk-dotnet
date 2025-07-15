@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemov
         }
         /// <summary>
         /// Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemoval.EvaluateRemovalPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -62,7 +61,6 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemov
         }
         /// <summary>
         /// Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemoval.EvaluateRemovalResponse"/></returns>
         /// <param name="body">The request body</param>

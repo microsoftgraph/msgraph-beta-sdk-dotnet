@@ -66,16 +66,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The finishings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.PrintFinishing?>? Finishings
+        public List<string>? Finishings
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrintFinishing?>?>("finishings"); }
+            get { return BackingStore?.Get<List<string>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.PrintFinishing?> Finishings
+        public List<string> Finishings
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrintFinishing?>>("finishings"); }
+            get { return BackingStore?.Get<List<string>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #endif
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "duplexMode", n => { DuplexMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrintDuplexMode>(); } },
                 { "feedDirection", n => { FeedDirection = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrinterFeedDirection>(); } },
                 { "feedOrientation", n => { FeedOrientation = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrinterFeedOrientation>(); } },
-                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.PrintFinishing>()?.AsList(); } },
+                { "finishings", n => { Finishings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
                 { "inputBin", n => { InputBin = n.GetStringValue(); } },
                 { "margin", n => { Margin = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PrintMargin>(global::Microsoft.Graph.Beta.Models.PrintMargin.CreateFromDiscriminatorValue); } },
@@ -290,7 +290,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrintDuplexMode>("duplexMode", DuplexMode);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrinterFeedDirection>("feedDirection", FeedDirection);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrinterFeedOrientation>("feedOrientation", FeedOrientation);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.PrintFinishing>("finishings", Finishings);
+            writer.WriteCollectionOfPrimitiveValues<string>("finishings", Finishings);
             writer.WriteBoolValue("fitPdfToPage", FitPdfToPage);
             writer.WriteStringValue("inputBin", InputBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PrintMargin>("margin", Margin);

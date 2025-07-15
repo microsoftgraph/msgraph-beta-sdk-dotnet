@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class InferenceClassification : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride>? Overrides
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride>?>("overrides"); }
-            set { BackingStore?.Set("overrides", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride> Overrides
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride>>("overrides"); }
-            set { BackingStore?.Set("overrides", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "overrides", n => { Overrides = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride>(global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride>("overrides", Overrides);
         }
     }
 }

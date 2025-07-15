@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod
         }
         /// <summary>
         /// Report the current state of how many users in your organization used the self-service password reset capabilities.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod.GetCredentialUsageSummaryWithPeriodGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod
         }
         /// <summary>
         /// Report the current state of how many users in your organization used the self-service password reset capabilities.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod.GetCredentialUsageSummaryWithPeriodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -173,10 +171,10 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

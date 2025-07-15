@@ -13,44 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupPolicyPresentation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The group policy definition associated with the presentation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.GroupPolicyDefinition? Definition
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GroupPolicyDefinition?>("definition"); }
-            set { BackingStore?.Set("definition", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.GroupPolicyDefinition Definition
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GroupPolicyDefinition>("definition"); }
-            set { BackingStore?.Set("definition", value); }
-        }
-#endif
-        /// <summary>Localized text label for any presentation entity. The default value is empty.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Label
-        {
-            get { return BackingStore?.Get<string?>("label"); }
-            set { BackingStore?.Set("label", value); }
-        }
-#nullable restore
-#else
-        public string Label
-        {
-            get { return BackingStore?.Get<string>("label"); }
-            set { BackingStore?.Set("label", value); }
-        }
-#endif
-        /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
-            set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,9 +45,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "definition", n => { Definition = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.GroupPolicyDefinition>(global::Microsoft.Graph.Beta.Models.GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
-                { "label", n => { Label = n.GetStringValue(); } },
-                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -96,9 +55,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.GroupPolicyDefinition>("definition", Definition);
-            writer.WriteStringValue("label", Label);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
         }
     }
 }

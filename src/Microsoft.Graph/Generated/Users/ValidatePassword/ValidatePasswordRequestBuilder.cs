@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Users.ValidatePassword
         }
         /// <summary>
         /// Check a user&apos;s password against the organization&apos;s password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-validatepassword?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PasswordValidationInformation"/></returns>
         /// <param name="body">The request body</param>

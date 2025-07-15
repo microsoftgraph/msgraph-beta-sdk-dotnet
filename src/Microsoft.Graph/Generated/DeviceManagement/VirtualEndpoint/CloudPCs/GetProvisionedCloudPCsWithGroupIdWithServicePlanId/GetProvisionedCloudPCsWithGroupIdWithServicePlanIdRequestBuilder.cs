@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
         }
         /// <summary>
         /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +62,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
         }
         /// <summary>
         /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -175,10 +173,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

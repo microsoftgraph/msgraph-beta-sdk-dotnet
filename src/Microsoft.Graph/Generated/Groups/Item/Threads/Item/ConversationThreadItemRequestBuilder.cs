@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item
         {
         }
         /// <summary>
-        /// Delete a thread object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-beta" />
+        /// Delete conversationThread.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,8 +70,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a thread object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-beta" />
+        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConversationThread"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConversationThread>(requestInfo, global::Microsoft.Graph.Beta.Models.ConversationThread.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a thread object.
+        /// Delete conversationThread.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a thread object.
+        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item
         {
         }
         /// <summary>
-        /// Get a thread object.
+        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConversationThreadItemRequestBuilderGetQueryParameters 

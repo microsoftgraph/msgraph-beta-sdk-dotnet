@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppoi
         }
         /// <summary>
         /// Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

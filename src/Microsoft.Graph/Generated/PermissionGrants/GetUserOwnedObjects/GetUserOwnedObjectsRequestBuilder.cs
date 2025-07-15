@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects
         }
         /// <summary>
         /// Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn&apos;t support pagination.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObject"/></returns>
         /// <param name="body">The request body</param>

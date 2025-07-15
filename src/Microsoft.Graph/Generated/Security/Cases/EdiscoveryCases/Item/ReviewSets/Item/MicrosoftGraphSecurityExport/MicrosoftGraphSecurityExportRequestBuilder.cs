@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         }
         /// <summary>
         /// Initiate an export from a reviewSet. For more information, see Export documents from a review set in eDiscovery (Premium).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-export?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

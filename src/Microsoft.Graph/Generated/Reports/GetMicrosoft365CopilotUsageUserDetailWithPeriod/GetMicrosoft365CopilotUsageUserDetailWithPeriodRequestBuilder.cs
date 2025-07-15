@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWith
         }
         /// <summary>
         /// Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

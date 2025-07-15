@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies
         {
         }
         /// <summary>
-        /// Get threatIntelligencePolicies from networkAccess
+        /// Get a list of the threatIntelligencePolicy objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-threatintelligencepolicies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to threatIntelligencePolicies for networkAccess
+        /// Create a new threatIntelligencePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-threatintelligencepolicies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get threatIntelligencePolicies from networkAccess
+        /// Get a list of the threatIntelligencePolicy objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to threatIntelligencePolicies for networkAccess
+        /// Create a new threatIntelligencePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies
             return new global::Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.ThreatIntelligencePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get threatIntelligencePolicies from networkAccess
+        /// Get a list of the threatIntelligencePolicy objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ThreatIntelligencePoliciesRequestBuilderGetQueryParameters 
@@ -212,10 +214,10 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

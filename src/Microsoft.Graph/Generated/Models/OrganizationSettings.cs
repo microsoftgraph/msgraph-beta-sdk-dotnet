@@ -12,70 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OrganizationSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user&apos;s contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.InsightsSettings? ContactInsights
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InsightsSettings?>("contactInsights"); }
-            set { BackingStore?.Set("contactInsights", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.InsightsSettings ContactInsights
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InsightsSettings>("contactInsights"); }
-            set { BackingStore?.Set("contactInsights", value); }
-        }
-#endif
-        /// <summary>Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.InsightsSettings? ItemInsights
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InsightsSettings?>("itemInsights"); }
-            set { BackingStore?.Set("itemInsights", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.InsightsSettings ItemInsights
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InsightsSettings>("itemInsights"); }
-            set { BackingStore?.Set("itemInsights", value); }
-        }
-#endif
-        /// <summary>The microsoftApplicationDataAccess property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.MicrosoftApplicationDataAccessSettings? MicrosoftApplicationDataAccess
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftApplicationDataAccessSettings?>("microsoftApplicationDataAccess"); }
-            set { BackingStore?.Set("microsoftApplicationDataAccess", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.MicrosoftApplicationDataAccessSettings MicrosoftApplicationDataAccess
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftApplicationDataAccessSettings>("microsoftApplicationDataAccess"); }
-            set { BackingStore?.Set("microsoftApplicationDataAccess", value); }
-        }
-#endif
-        /// <summary>Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.InsightsSettings? PeopleInsights
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InsightsSettings?>("peopleInsights"); }
-            set { BackingStore?.Set("peopleInsights", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.InsightsSettings PeopleInsights
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InsightsSettings>("peopleInsights"); }
-            set { BackingStore?.Set("peopleInsights", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "contactInsights", n => { ContactInsights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>(global::Microsoft.Graph.Beta.Models.InsightsSettings.CreateFromDiscriminatorValue); } },
-                { "itemInsights", n => { ItemInsights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>(global::Microsoft.Graph.Beta.Models.InsightsSettings.CreateFromDiscriminatorValue); } },
-                { "microsoftApplicationDataAccess", n => { MicrosoftApplicationDataAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftApplicationDataAccessSettings>(global::Microsoft.Graph.Beta.Models.MicrosoftApplicationDataAccessSettings.CreateFromDiscriminatorValue); } },
-                { "peopleInsights", n => { PeopleInsights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>(global::Microsoft.Graph.Beta.Models.InsightsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -108,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>("contactInsights", ContactInsights);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>("itemInsights", ItemInsights);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftApplicationDataAccessSettings>("microsoftApplicationDataAccess", MicrosoftApplicationDataAccess);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>("peopleInsights", PeopleInsights);
         }
     }
 }

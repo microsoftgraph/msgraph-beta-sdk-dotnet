@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         }
         /// <summary>
         /// Get the result of the latest apply operation of a provision policy. Frontline shared only. Administrators only.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-retrievepolicyapplyactionresult?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPolicyApplyActionResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

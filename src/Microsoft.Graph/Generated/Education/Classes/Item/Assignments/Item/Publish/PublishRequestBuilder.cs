@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Publish
         }
         /// <summary>
         /// Change the status of an educationAssignment from its original draft status to the published status.  You can change the status from draft to scheduled if the assignment is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student&apos;s list. The status of the assignment goes back to draft if there is any backend failure during publish process. To update the properties of a published assignment, see update an assignment. To update the properties of a published assignment, see update an assignment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

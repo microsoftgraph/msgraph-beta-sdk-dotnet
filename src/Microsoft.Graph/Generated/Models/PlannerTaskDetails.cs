@@ -12,124 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PlannerTaskDetails : global::Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Detailed information about the approval that is attached to the task.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerBaseApprovalAttachment? ApprovalAttachment
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerBaseApprovalAttachment?>("approvalAttachment"); }
-            set { BackingStore?.Set("approvalAttachment", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerBaseApprovalAttachment ApprovalAttachment
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerBaseApprovalAttachment>("approvalAttachment"); }
-            set { BackingStore?.Set("approvalAttachment", value); }
-        }
-#endif
-        /// <summary>The collection of checklist items on the task.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerChecklistItems? Checklist
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerChecklistItems?>("checklist"); }
-            set { BackingStore?.Set("checklist", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerChecklistItems Checklist
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerChecklistItems>("checklist"); }
-            set { BackingStore?.Set("checklist", value); }
-        }
-#endif
-        /// <summary>Contains detailed information about requirements on the task.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails? CompletionRequirements
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails?>("completionRequirements"); }
-            set { BackingStore?.Set("completionRequirements", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails CompletionRequirements
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails>("completionRequirements"); }
-            set { BackingStore?.Set("completionRequirements", value); }
-        }
-#endif
-        /// <summary>Description of the task.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description
-        {
-            get { return BackingStore?.Get<string?>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#nullable restore
-#else
-        public string Description
-        {
-            get { return BackingStore?.Get<string>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#endif
-        /// <summary>Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary? Forms
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary?>("forms"); }
-            set { BackingStore?.Set("forms", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary Forms
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary>("forms"); }
-            set { BackingStore?.Set("forms", value); }
-        }
-#endif
-        /// <summary>Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the &apos;description&apos; field. If this field hasn&apos;t previously been set but &apos;description&apos; has been, the existing description is synchronized to &apos;notes&apos; with minimal whitespace-preserving HTML markup. Setting both &apos;description&apos; and &apos;notes&apos; is an error and will result in an exception.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.ItemBody? Notes
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody?>("notes"); }
-            set { BackingStore?.Set("notes", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.ItemBody Notes
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody>("notes"); }
-            set { BackingStore?.Set("notes", value); }
-        }
-#endif
-        /// <summary>This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.</summary>
-        public global::Microsoft.Graph.Beta.Models.PlannerPreviewType? PreviewType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }
-            set { BackingStore?.Set("previewType", value); }
-        }
-        /// <summary>The collection of references on the task.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerExternalReferences? References
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerExternalReferences?>("references"); }
-            set { BackingStore?.Set("references", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerExternalReferences References
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerExternalReferences>("references"); }
-            set { BackingStore?.Set("references", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -148,14 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "approvalAttachment", n => { ApprovalAttachment = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerBaseApprovalAttachment>(global::Microsoft.Graph.Beta.Models.PlannerBaseApprovalAttachment.CreateFromDiscriminatorValue); } },
-                { "checklist", n => { Checklist = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerChecklistItems>(global::Microsoft.Graph.Beta.Models.PlannerChecklistItems.CreateFromDiscriminatorValue); } },
-                { "completionRequirements", n => { CompletionRequirements = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails>(global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "forms", n => { Forms = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary>(global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary.CreateFromDiscriminatorValue); } },
-                { "notes", n => { Notes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
-                { "previewType", n => { PreviewType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PlannerPreviewType>(); } },
-                { "references", n => { References = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerExternalReferences>(global::Microsoft.Graph.Beta.Models.PlannerExternalReferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -166,14 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerBaseApprovalAttachment>("approvalAttachment", ApprovalAttachment);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerChecklistItems>("checklist", Checklist);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails>("completionRequirements", CompletionRequirements);
-            writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary>("forms", Forms);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("notes", Notes);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PlannerPreviewType>("previewType", PreviewType);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerExternalReferences>("references", References);
         }
     }
 }

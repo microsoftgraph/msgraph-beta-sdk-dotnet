@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
         }
         /// <summary>
         /// In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentApprovals.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +61,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
         }
         /// <summary>
         /// In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentApprovals.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -176,10 +174,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -12,102 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Onenote : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Notebook>? Notebooks
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Notebook>?>("notebooks"); }
-            set { BackingStore?.Set("notebooks", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Notebook> Notebooks
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Notebook>>("notebooks"); }
-            set { BackingStore?.Set("notebooks", value); }
-        }
-#endif
-        /// <summary>The status of OneNote operations. Getting an operations collection isn&apos;t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.OnenoteOperation>? Operations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenoteOperation>?>("operations"); }
-            set { BackingStore?.Set("operations", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.OnenoteOperation> Operations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenoteOperation>>("operations"); }
-            set { BackingStore?.Set("operations", value); }
-        }
-#endif
-        /// <summary>The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.OnenotePage>? Pages
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenotePage>?>("pages"); }
-            set { BackingStore?.Set("pages", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.OnenotePage> Pages
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenotePage>>("pages"); }
-            set { BackingStore?.Set("pages", value); }
-        }
-#endif
-        /// <summary>The image and other file resources in OneNote pages. Getting a resources collection isn&apos;t supported, but you can get the binary content of a specific resource. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.OnenoteResource>? Resources
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenoteResource>?>("resources"); }
-            set { BackingStore?.Set("resources", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.OnenoteResource> Resources
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenoteResource>>("resources"); }
-            set { BackingStore?.Set("resources", value); }
-        }
-#endif
-        /// <summary>The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.SectionGroup>? SectionGroups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SectionGroup>?>("sectionGroups"); }
-            set { BackingStore?.Set("sectionGroups", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.SectionGroup> SectionGroups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SectionGroup>>("sectionGroups"); }
-            set { BackingStore?.Set("sectionGroups", value); }
-        }
-#endif
-        /// <summary>The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.OnenoteSection>? Sections
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenoteSection>?>("sections"); }
-            set { BackingStore?.Set("sections", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.OnenoteSection> Sections
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnenoteSection>>("sections"); }
-            set { BackingStore?.Set("sections", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -126,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "notebooks", n => { Notebooks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Notebook>(global::Microsoft.Graph.Beta.Models.Notebook.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenoteOperation>(global::Microsoft.Graph.Beta.Models.OnenoteOperation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenotePage>(global::Microsoft.Graph.Beta.Models.OnenotePage.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenoteResource>(global::Microsoft.Graph.Beta.Models.OnenoteResource.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SectionGroup>(global::Microsoft.Graph.Beta.Models.SectionGroup.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sections", n => { Sections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenoteSection>(global::Microsoft.Graph.Beta.Models.OnenoteSection.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -142,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Notebook>("notebooks", Notebooks);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenoteOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenotePage>("pages", Pages);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenoteResource>("resources", Resources);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SectionGroup>("sectionGroups", SectionGroups);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnenoteSection>("sections", Sections);
         }
     }
 }

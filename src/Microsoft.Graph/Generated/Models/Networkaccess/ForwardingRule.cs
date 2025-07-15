@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
+        /// <summary>The clientFallbackAction property</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction? ClientFallbackAction
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction?>("clientFallbackAction"); }
+            set { BackingStore?.Set("clientFallbackAction", value); }
+        }
         /// <summary>Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction>(); } },
+                { "clientFallbackAction", n => { ClientFallbackAction = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction>(); } },
                 { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>(global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ruleType", n => { RuleType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>(); } },
             };
@@ -86,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction>("action", Action);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction>("clientFallbackAction", ClientFallbackAction);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>("destinations", Destinations);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>("ruleType", RuleType);
         }

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Cr
         }
         /// <summary>
         /// Create a snapshot for a specific Cloud PC device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-createsnapshot?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

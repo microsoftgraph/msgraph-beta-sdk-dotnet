@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions.Item.Ex
         }
         /// <summary>
         /// Excuse a submission. Excused submissions aren&apos;t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status. Otherwise, the submission status changes to returned. For more information about how to use this header, see the Examples section.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationSubmission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

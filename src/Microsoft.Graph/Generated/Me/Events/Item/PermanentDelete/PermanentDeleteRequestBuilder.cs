@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.PermanentDelete
         }
         /// <summary>
         /// Permanently delete an event and place it in the Purges folder in the dumpster in the user&apos;s mailbox. Email clients such as Outlook or the Outlook on the web can&apos;t access permanently deleted items. Unless there&apos;s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

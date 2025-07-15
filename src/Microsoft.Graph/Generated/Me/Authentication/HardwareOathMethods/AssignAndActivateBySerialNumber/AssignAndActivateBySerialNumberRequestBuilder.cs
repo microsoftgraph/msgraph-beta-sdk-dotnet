@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.AssignAndAc
         }
         /// <summary>
         /// Assign and activate a hardware token at the same time by hardware token serial number.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivatebyserialnumber?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

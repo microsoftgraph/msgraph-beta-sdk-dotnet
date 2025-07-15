@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Todo : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The task lists in the users mailbox.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.TodoTaskList>? Lists
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TodoTaskList>?>("lists"); }
-            set { BackingStore?.Set("lists", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.TodoTaskList> Lists
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TodoTaskList>>("lists"); }
-            set { BackingStore?.Set("lists", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "lists", n => { Lists = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TodoTaskList>(global::Microsoft.Graph.Beta.Models.TodoTaskList.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TodoTaskList>("lists", Lists);
         }
     }
 }

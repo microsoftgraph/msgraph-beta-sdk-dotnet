@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of risk event types. Deprecated. Use riskEventType instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.RiskEventType?>? EventTypes
+        public List<string>? EventTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RiskEventType?>?>("eventTypes"); }
+            get { return BackingStore?.Get<List<string>?>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.RiskEventType?> EventTypes
+        public List<string> EventTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RiskEventType?>>("eventTypes"); }
+            get { return BackingStore?.Get<List<string>>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
 #endif
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "detail", n => { Detail = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>(); } },
-                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RiskEventType>()?.AsList(); } },
+                { "eventTypes", n => { EventTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>("detail", Detail);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RiskEventType>("eventTypes", EventTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("eventTypes", EventTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes", RiskEventTypes);
             writer.WriteAdditionalData(AdditionalData);

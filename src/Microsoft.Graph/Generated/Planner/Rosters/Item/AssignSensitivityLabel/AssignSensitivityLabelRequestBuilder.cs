@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.AssignSensitivityLabel
         }
         /// <summary>
         /// Assign a sensitivity label to a plannerRoster object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-assignsensitivitylabel?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlannerRoster"/></returns>
         /// <param name="body">The request body</param>

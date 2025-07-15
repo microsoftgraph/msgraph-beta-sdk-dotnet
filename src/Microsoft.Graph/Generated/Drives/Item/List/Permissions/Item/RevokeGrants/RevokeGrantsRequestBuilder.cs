@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Permissions.Item.RevokeGrants
         }
         /// <summary>
         /// Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="body">The request body</param>

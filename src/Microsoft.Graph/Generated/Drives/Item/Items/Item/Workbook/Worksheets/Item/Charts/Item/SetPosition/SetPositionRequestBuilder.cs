@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         }
         /// <summary>
         /// Positions the chart relative to cells on the worksheet.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-setposition?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

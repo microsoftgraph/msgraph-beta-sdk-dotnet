@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealT
         }
         /// <summary>
         /// Get the real-time connection latency information for a Cloud PC.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionlatency?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

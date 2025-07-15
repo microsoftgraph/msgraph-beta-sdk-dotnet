@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware
         }
         /// <summary>
         /// Update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdevice-updatesoftware?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

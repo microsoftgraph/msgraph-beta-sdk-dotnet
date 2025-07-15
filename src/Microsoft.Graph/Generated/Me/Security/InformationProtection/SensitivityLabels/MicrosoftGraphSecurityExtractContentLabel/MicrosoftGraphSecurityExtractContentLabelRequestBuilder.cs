@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         }
         /// <summary>
         /// Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.ContentLabel"/></returns>
         /// <param name="body">The request body</param>

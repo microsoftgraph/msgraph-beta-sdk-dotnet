@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey
         }
         /// <summary>
         /// Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset. The caller doesn&apos;t have to provide a secret.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-generatekey?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TrustFrameworkKey"/></returns>
         /// <param name="body">The request body</param>

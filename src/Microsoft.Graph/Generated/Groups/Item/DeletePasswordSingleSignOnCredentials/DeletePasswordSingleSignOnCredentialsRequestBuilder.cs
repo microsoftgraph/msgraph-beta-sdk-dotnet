@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.DeletePasswordSingleSignOnCredentials
         }
         /// <summary>
         /// Delete the password-based single sign-on credentials for a given group to a given service principal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-deletepasswordsinglesignoncredentials?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

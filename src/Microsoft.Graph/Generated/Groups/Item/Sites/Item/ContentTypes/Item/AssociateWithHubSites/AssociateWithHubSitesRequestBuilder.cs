@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.Associat
         }
         /// <summary>
         /// Invoke action associateWithHubSites
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

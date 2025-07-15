@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetFrontlineCloudPcAccessState
         }
         /// <summary>
         /// Get the frontlineCloudPcAccessState of a frontline Cloud PC.  This API only supports shared-use licenses. For more information, see cloudPcProvisioningPolicy. Shared-use licenses allow three users per license, with one user signed in at a time. Callers can get the latest frontline Cloud PC accessState and determine whether the frontline Cloud PC is accessible to a user.  If a web client needs to connect to a frontline Cloud PC, the sharedCloudPcAccessState validates the bookmark scenario. If sharedCloudPcAccessState isn&apos;t active/activating/standbyMode, the web client shows a bad bookmark.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getfrontlinecloudpcaccessstate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAccessState"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

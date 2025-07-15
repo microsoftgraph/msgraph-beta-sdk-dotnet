@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Follow
         }
         /// <summary>
         /// Follow a driveItem.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-follow?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

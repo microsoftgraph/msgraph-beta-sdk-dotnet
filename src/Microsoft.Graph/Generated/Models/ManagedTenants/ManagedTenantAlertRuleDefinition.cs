@@ -12,98 +12,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
     public partial class ManagedTenantAlertRuleDefinition : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The alertRules property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>? AlertRules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>?>("alertRules"); }
-            set { BackingStore?.Set("alertRules", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule> AlertRules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>>("alertRules"); }
-            set { BackingStore?.Set("alertRules", value); }
-        }
-#endif
-        /// <summary>The createdByUserId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedByUserId
-        {
-            get { return BackingStore?.Get<string?>("createdByUserId"); }
-            set { BackingStore?.Set("createdByUserId", value); }
-        }
-#nullable restore
-#else
-        public string CreatedByUserId
-        {
-            get { return BackingStore?.Get<string>("createdByUserId"); }
-            set { BackingStore?.Set("createdByUserId", value); }
-        }
-#endif
-        /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>The definitionTemplate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate? DefinitionTemplate
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate?>("definitionTemplate"); }
-            set { BackingStore?.Set("definitionTemplate", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate DefinitionTemplate
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate>("definitionTemplate"); }
-            set { BackingStore?.Set("definitionTemplate", value); }
-        }
-#endif
-        /// <summary>The displayName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The lastActionByUserId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastActionByUserId
-        {
-            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
-            set { BackingStore?.Set("lastActionByUserId", value); }
-        }
-#nullable restore
-#else
-        public string LastActionByUserId
-        {
-            get { return BackingStore?.Get<string>("lastActionByUserId"); }
-            set { BackingStore?.Set("lastActionByUserId", value); }
-        }
-#endif
-        /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
-            set { BackingStore?.Set("lastActionDateTime", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -122,13 +30,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alertRules", n => { AlertRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>(global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "definitionTemplate", n => { DefinitionTemplate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate>(global::Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate.CreateFromDiscriminatorValue); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
-                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -139,13 +40,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>("alertRules", AlertRules);
-            writer.WriteStringValue("createdByUserId", CreatedByUserId);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate>("definitionTemplate", DefinitionTemplate);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
-            writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
         }
     }
 }

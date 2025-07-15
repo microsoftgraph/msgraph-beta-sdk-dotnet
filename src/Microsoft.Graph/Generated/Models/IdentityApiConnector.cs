@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class IdentityApiConnector : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.ApiAuthenticationConfigurationBase? AuthenticationConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApiAuthenticationConfigurationBase?>("authenticationConfiguration"); }
-            set { BackingStore?.Set("authenticationConfiguration", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.ApiAuthenticationConfigurationBase AuthenticationConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApiAuthenticationConfigurationBase>("authenticationConfiguration"); }
-            set { BackingStore?.Set("authenticationConfiguration", value); }
-        }
-#endif
-        /// <summary>The name of the API connector.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The URL of the API endpoint to call.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetUrl
-        {
-            get { return BackingStore?.Get<string?>("targetUrl"); }
-            set { BackingStore?.Set("targetUrl", value); }
-        }
-#nullable restore
-#else
-        public string TargetUrl
-        {
-            get { return BackingStore?.Get<string>("targetUrl"); }
-            set { BackingStore?.Set("targetUrl", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ApiAuthenticationConfigurationBase>(global::Microsoft.Graph.Beta.Models.ApiAuthenticationConfigurationBase.CreateFromDiscriminatorValue); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "targetUrl", n => { TargetUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -91,9 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ApiAuthenticationConfigurationBase>("authenticationConfiguration", AuthenticationConfiguration);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("targetUrl", TargetUrl);
         }
     }
 }

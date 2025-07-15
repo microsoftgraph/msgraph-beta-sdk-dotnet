@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         }
         /// <summary>
         /// Get the scheduled apply rule set on the policy. Frontline shared only. Administrators only.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-retrievepolicyapplyschedule?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPolicyScheduledApplyActionDetail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

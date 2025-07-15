@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders
         }
         /// <summary>
         /// List the users of a tenant who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getattacksimulationrepeatoffenders?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +59,6 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders
         }
         /// <summary>
         /// List the users of a tenant who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getattacksimulationrepeatoffenders?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -144,10 +142,10 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

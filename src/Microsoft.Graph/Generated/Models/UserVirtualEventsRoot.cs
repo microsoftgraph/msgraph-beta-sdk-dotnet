@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UserVirtualEventsRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The webinars property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.VirtualEventWebinar>? Webinars
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventWebinar>?>("webinars"); }
-            set { BackingStore?.Set("webinars", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.VirtualEventWebinar> Webinars
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventWebinar>>("webinars"); }
-            set { BackingStore?.Set("webinars", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "webinars", n => { Webinars = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventWebinar>(global::Microsoft.Graph.Beta.Models.VirtualEventWebinar.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventWebinar>("webinars", Webinars);
         }
     }
 }

@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UserAnalytics : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ActivityStatistics>? ActivityStatistics
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ActivityStatistics>?>("activityStatistics"); }
-            set { BackingStore?.Set("activityStatistics", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ActivityStatistics>>("activityStatistics"); }
-            set { BackingStore?.Set("activityStatistics", value); }
-        }
-#endif
-        /// <summary>The current settings for a user to use the analytics API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Settings? Settings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Settings?>("settings"); }
-            set { BackingStore?.Set("settings", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Settings Settings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Settings>("settings"); }
-            set { BackingStore?.Set("settings", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ActivityStatistics>(global::Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Settings>(global::Microsoft.Graph.Beta.Models.Settings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ActivityStatistics>("activityStatistics", ActivityStatistics);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Settings>("settings", Settings);
         }
     }
 }

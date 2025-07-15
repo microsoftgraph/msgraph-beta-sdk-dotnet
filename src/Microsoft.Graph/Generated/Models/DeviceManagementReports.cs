@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DeviceManagementReports : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Entity representing the configuration of a cached report.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration>? CachedReportConfigurations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration>?>("cachedReportConfigurations"); }
-            set { BackingStore?.Set("cachedReportConfigurations", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration> CachedReportConfigurations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration>>("cachedReportConfigurations"); }
-            set { BackingStore?.Set("cachedReportConfigurations", value); }
-        }
-#endif
-        /// <summary>Entity representing a job to export a report.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagementExportJob>? ExportJobs
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagementExportJob>?>("exportJobs"); }
-            set { BackingStore?.Set("exportJobs", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagementExportJob> ExportJobs
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagementExportJob>>("exportJobs"); }
-            set { BackingStore?.Set("exportJobs", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "cachedReportConfigurations", n => { CachedReportConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration>(global::Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "exportJobs", n => { ExportJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementExportJob>(global::Microsoft.Graph.Beta.Models.DeviceManagementExportJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration>("cachedReportConfigurations", CachedReportConfigurations);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementExportJob>("exportJobs", ExportJobs);
         }
     }
 }

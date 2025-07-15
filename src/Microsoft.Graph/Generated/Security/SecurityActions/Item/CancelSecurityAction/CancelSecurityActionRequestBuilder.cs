@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityActio
         }
         /// <summary>
         /// Cancel a security operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityaction-cancelsecurityaction?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

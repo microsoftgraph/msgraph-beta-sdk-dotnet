@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WorkbookApplication : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CalculationMode
-        {
-            get { return BackingStore?.Get<string?>("calculationMode"); }
-            set { BackingStore?.Set("calculationMode", value); }
-        }
-#nullable restore
-#else
-        public string CalculationMode
-        {
-            get { return BackingStore?.Get<string>("calculationMode"); }
-            set { BackingStore?.Set("calculationMode", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "calculationMode", n => { CalculationMode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("calculationMode", CalculationMode);
         }
     }
 }

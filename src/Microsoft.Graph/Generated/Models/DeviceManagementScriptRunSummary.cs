@@ -13,30 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementScriptRunSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Error device count.</summary>
-        public int? ErrorDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("errorDeviceCount"); }
-            set { BackingStore?.Set("errorDeviceCount", value); }
-        }
-        /// <summary>Error user count.</summary>
-        public int? ErrorUserCount
-        {
-            get { return BackingStore?.Get<int?>("errorUserCount"); }
-            set { BackingStore?.Set("errorUserCount", value); }
-        }
-        /// <summary>Success device count.</summary>
-        public int? SuccessDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("successDeviceCount"); }
-            set { BackingStore?.Set("successDeviceCount", value); }
-        }
-        /// <summary>Success user count.</summary>
-        public int? SuccessUserCount
-        {
-            get { return BackingStore?.Get<int?>("successUserCount"); }
-            set { BackingStore?.Set("successUserCount", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,10 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
-                { "errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
-                { "successDeviceCount", n => { SuccessDeviceCount = n.GetIntValue(); } },
-                { "successUserCount", n => { SuccessUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -69,10 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("errorDeviceCount", ErrorDeviceCount);
-            writer.WriteIntValue("errorUserCount", ErrorUserCount);
-            writer.WriteIntValue("successDeviceCount", SuccessDeviceCount);
-            writer.WriteIntValue("successUserCount", SuccessUserCount);
         }
     }
 }

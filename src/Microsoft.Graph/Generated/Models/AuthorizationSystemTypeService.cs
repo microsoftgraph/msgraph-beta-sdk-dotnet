@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AuthorizationSystemTypeService : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>List of actions for the service in an authorization system that is onboarded to Permissions Management.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>? Actions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>?>("actions"); }
-            set { BackingStore?.Set("actions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction> Actions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>>("actions"); }
-            set { BackingStore?.Set("actions", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>(global::Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>("actions", Actions);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabe
         }
         /// <summary>
         /// Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ComputeRightsAndInheritanceResult"/></returns>
         /// <param name="body">The request body</param>

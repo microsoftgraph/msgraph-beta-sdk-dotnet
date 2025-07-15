@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials
         }
         /// <summary>
         /// Get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials
         }
         /// <summary>
         /// Get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
         }
         /// <summary>
         /// Publish the specified browserSiteList for devices to download.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.BrowserSiteList"/></returns>
         /// <param name="body">The request body</param>

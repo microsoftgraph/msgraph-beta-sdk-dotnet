@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentModels.Item.AddToDrive
         }
         /// <summary>
         /// Apply a contentModel to SharePoint document libraries. For an existing model that&apos;s already trained, this action automatically processes new documents that are added to the SharePoint libraries.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contentmodel-addtodrive?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentModelUsage"/></returns>
         /// <param name="body">The request body</param>

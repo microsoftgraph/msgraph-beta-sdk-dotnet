@@ -44,7 +44,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         }
         /// <summary>
         /// Retrieve a point based on its position within the series.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartpointscollection-itemat?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WorkbookChartPoint"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

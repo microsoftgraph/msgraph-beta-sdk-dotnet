@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEm
         }
         /// <summary>
         /// Get all the active usage based on the number of users who signed in with modern authentication across all email apps.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforemailbymodernauthentication?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +62,6 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEm
         }
         /// <summary>
         /// Get all the active usage based on the number of users who signed in with modern authentication across all email apps.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforemailbymodernauthentication?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -148,10 +146,10 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEm
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

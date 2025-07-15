@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup
         }
         /// <summary>
         /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup
         }
         /// <summary>
         /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupResponse"/></returns>
         /// <param name="body">The request body</param>

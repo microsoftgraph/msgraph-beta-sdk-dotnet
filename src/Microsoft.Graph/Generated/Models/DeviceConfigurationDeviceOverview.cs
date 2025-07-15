@@ -12,60 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DeviceConfigurationDeviceOverview : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Version of the policy for that overview</summary>
-        public int? ConfigurationVersion
-        {
-            get { return BackingStore?.Get<int?>("configurationVersion"); }
-            set { BackingStore?.Set("configurationVersion", value); }
-        }
-        /// <summary>Number of devices in conflict</summary>
-        public int? ConflictCount
-        {
-            get { return BackingStore?.Get<int?>("conflictCount"); }
-            set { BackingStore?.Set("conflictCount", value); }
-        }
-        /// <summary>Number of error devices</summary>
-        public int? ErrorCount
-        {
-            get { return BackingStore?.Get<int?>("errorCount"); }
-            set { BackingStore?.Set("errorCount", value); }
-        }
-        /// <summary>Number of failed devices</summary>
-        public int? FailedCount
-        {
-            get { return BackingStore?.Get<int?>("failedCount"); }
-            set { BackingStore?.Set("failedCount", value); }
-        }
-        /// <summary>Last update time</summary>
-        public DateTimeOffset? LastUpdateDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
-            set { BackingStore?.Set("lastUpdateDateTime", value); }
-        }
-        /// <summary>Number of not applicable devices</summary>
-        public int? NotApplicableCount
-        {
-            get { return BackingStore?.Get<int?>("notApplicableCount"); }
-            set { BackingStore?.Set("notApplicableCount", value); }
-        }
-        /// <summary>Number of not applicable devices due to mismatch platform and policy</summary>
-        public int? NotApplicablePlatformCount
-        {
-            get { return BackingStore?.Get<int?>("notApplicablePlatformCount"); }
-            set { BackingStore?.Set("notApplicablePlatformCount", value); }
-        }
-        /// <summary>Number of pending devices</summary>
-        public int? PendingCount
-        {
-            get { return BackingStore?.Get<int?>("pendingCount"); }
-            set { BackingStore?.Set("pendingCount", value); }
-        }
-        /// <summary>Number of succeeded devices</summary>
-        public int? SuccessCount
-        {
-            get { return BackingStore?.Get<int?>("successCount"); }
-            set { BackingStore?.Set("successCount", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,15 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "configurationVersion", n => { ConfigurationVersion = n.GetIntValue(); } },
-                { "conflictCount", n => { ConflictCount = n.GetIntValue(); } },
-                { "errorCount", n => { ErrorCount = n.GetIntValue(); } },
-                { "failedCount", n => { FailedCount = n.GetIntValue(); } },
-                { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                { "notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
-                { "notApplicablePlatformCount", n => { NotApplicablePlatformCount = n.GetIntValue(); } },
-                { "pendingCount", n => { PendingCount = n.GetIntValue(); } },
-                { "successCount", n => { SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -103,15 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("configurationVersion", ConfigurationVersion);
-            writer.WriteIntValue("conflictCount", ConflictCount);
-            writer.WriteIntValue("errorCount", ErrorCount);
-            writer.WriteIntValue("failedCount", FailedCount);
-            writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
-            writer.WriteIntValue("notApplicableCount", NotApplicableCount);
-            writer.WriteIntValue("notApplicablePlatformCount", NotApplicablePlatformCount);
-            writer.WriteIntValue("pendingCount", PendingCount);
-            writer.WriteIntValue("successCount", SuccessCount);
         }
     }
 }

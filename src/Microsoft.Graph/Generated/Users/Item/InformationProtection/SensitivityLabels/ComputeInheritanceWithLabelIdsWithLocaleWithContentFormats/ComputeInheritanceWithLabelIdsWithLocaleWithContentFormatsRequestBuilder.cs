@@ -42,7 +42,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         }
         /// <summary>
         /// Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SensitivityLabel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

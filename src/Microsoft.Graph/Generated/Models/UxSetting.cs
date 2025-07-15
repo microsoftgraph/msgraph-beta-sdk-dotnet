@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UxSetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The restrictNonAdminAccess property</summary>
-        public global::Microsoft.Graph.Beta.Models.NonAdminSetting? RestrictNonAdminAccess
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NonAdminSetting?>("restrictNonAdminAccess"); }
-            set { BackingStore?.Set("restrictNonAdminAccess", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "restrictNonAdminAccess", n => { RestrictNonAdminAccess = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NonAdminSetting>(); } },
             };
         }
         /// <summary>
@@ -47,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NonAdminSetting>("restrictNonAdminAccess", RestrictNonAdminAccess);
         }
     }
 }

@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TeamsChannelPlanner : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of plannerPlan objects owned by the Teams channel. Currently, only shared channels are supported. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.PlannerPlan>? Plans
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerPlan>?>("plans"); }
-            set { BackingStore?.Set("plans", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.PlannerPlan> Plans
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerPlan>>("plans"); }
-            set { BackingStore?.Set("plans", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("plans", Plans);
         }
     }
 }

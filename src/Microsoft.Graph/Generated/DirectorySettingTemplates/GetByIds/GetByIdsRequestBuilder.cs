@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.GetByIds
         }
         /// <summary>
         /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectorySettingTemplates.GetByIds.GetByIdsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.GetByIds
         }
         /// <summary>
         /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectorySettingTemplates.GetByIds.GetByIdsResponse"/></returns>
         /// <param name="body">The request body</param>

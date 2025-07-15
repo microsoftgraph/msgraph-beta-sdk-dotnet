@@ -37,6 +37,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoveDeviceFi
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteAssistance;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateFileVaultKey;
@@ -255,6 +256,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire.RetireRequestBuilder Retire
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire.RetireRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveMacOSManagedDeviceLocalAdminAccountDetail method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail.RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder RetrieveMacOSManagedDeviceLocalAdminAccountDetail
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail.RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeAppleVppLicenses method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses.RevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses

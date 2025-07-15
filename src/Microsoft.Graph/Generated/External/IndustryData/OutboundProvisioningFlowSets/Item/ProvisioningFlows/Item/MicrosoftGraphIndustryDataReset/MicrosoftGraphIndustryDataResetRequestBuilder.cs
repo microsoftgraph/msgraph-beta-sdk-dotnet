@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
         }
         /// <summary>
         /// Reset a provisioningFlow. This action reprovisions all current data as if it were the initial run, and clears out the existing errors associated with the flow.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-provisioningflow-reset?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithP
         }
         /// <summary>
         /// Get the trend in the daily number of active and enabled users of Microsoft 365 Copilot for a specified time period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercounttrend?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

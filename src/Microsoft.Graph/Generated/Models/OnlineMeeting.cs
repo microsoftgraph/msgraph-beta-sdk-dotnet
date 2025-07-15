@@ -96,16 +96,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.MeetingCapabilities?>? Capabilities
+        public List<string>? Capabilities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingCapabilities?>?>("capabilities"); }
+            get { return BackingStore?.Get<List<string>?>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.MeetingCapabilities?> Capabilities
+        public List<string> Capabilities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingCapabilities?>>("capabilities"); }
+            get { return BackingStore?.Get<List<string>>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
 #endif
@@ -307,7 +307,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 { "broadcastRecording", n => { BroadcastRecording = n.GetByteArrayValue(); } },
                 { "broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.BroadcastMeetingSettings>(global::Microsoft.Graph.Beta.Models.BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
-                { "capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.MeetingCapabilities>()?.AsList(); } },
+                { "capabilities", n => { Capabilities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
@@ -336,7 +336,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteByteArrayValue("broadcastRecording", BroadcastRecording);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.MeetingCapabilities>("capabilities", Capabilities);
+            writer.WriteCollectionOfPrimitiveValues<string>("capabilities", Capabilities);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         }
         /// <summary>
         /// Update multiple alerts in one request instead of multiple requests.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -62,7 +61,6 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         }
         /// <summary>
         /// Update multiple alerts in one request instead of multiple requests.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsResponse"/></returns>
         /// <param name="body">The request body</param>

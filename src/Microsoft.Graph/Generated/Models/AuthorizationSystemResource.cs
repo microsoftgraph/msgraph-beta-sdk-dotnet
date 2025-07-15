@@ -12,70 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AuthorizationSystemResource : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The authorization system that the resource exists in.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.AuthorizationSystem? AuthorizationSystem
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthorizationSystem?>("authorizationSystem"); }
-            set { BackingStore?.Set("authorizationSystem", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.AuthorizationSystem AuthorizationSystem
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystem"); }
-            set { BackingStore?.Set("authorizationSystem", value); }
-        }
-#endif
-        /// <summary>The name of the resource. Read-only. Supports $filter (eq,contains).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The ID of the resource as defined by the authorization system provider. Read-only. Supports $filter (eq).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalId
-        {
-            get { return BackingStore?.Get<string?>("externalId"); }
-            set { BackingStore?.Set("externalId", value); }
-        }
-#nullable restore
-#else
-        public string ExternalId
-        {
-            get { return BackingStore?.Get<string>("externalId"); }
-            set { BackingStore?.Set("externalId", value); }
-        }
-#endif
-        /// <summary>The type of the resource. Read-only. Supports $filter (eq).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceType
-        {
-            get { return BackingStore?.Get<string?>("resourceType"); }
-            set { BackingStore?.Set("resourceType", value); }
-        }
-#nullable restore
-#else
-        public string ResourceType
-        {
-            get { return BackingStore?.Get<string>("resourceType"); }
-            set { BackingStore?.Set("resourceType", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -101,10 +37,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authorizationSystem", n => { AuthorizationSystem = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthorizationSystem>(global::Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -115,10 +47,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystem", AuthorizationSystem);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteStringValue("resourceType", ResourceType);
         }
     }
 }

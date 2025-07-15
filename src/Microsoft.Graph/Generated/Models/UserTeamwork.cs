@@ -12,70 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UserTeamwork : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of associatedTeamInfo objects that a user is associated with.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo>? AssociatedTeams
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo>?>("associatedTeams"); }
-            set { BackingStore?.Set("associatedTeams", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo> AssociatedTeams
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo>>("associatedTeams"); }
-            set { BackingStore?.Set("associatedTeams", value); }
-        }
-#endif
-        /// <summary>The apps installed in the personal scope of this user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation>? InstalledApps
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation>?>("installedApps"); }
-            set { BackingStore?.Set("installedApps", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation> InstalledApps
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation>>("installedApps"); }
-            set { BackingStore?.Set("installedApps", value); }
-        }
-#endif
-        /// <summary>Represents the location that a user selected in Microsoft Teams and doesn&apos;t follow the Office&apos;s locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Locale
-        {
-            get { return BackingStore?.Get<string?>("locale"); }
-            set { BackingStore?.Set("locale", value); }
-        }
-#nullable restore
-#else
-        public string Locale
-        {
-            get { return BackingStore?.Get<string>("locale"); }
-            set { BackingStore?.Set("locale", value); }
-        }
-#endif
-        /// <summary>Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user&apos;s region (if available). For users without multigeo licenses, the property contains the organization&apos;s region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region
-        {
-            get { return BackingStore?.Get<string?>("region"); }
-            set { BackingStore?.Set("region", value); }
-        }
-#nullable restore
-#else
-        public string Region
-        {
-            get { return BackingStore?.Get<string>("region"); }
-            set { BackingStore?.Set("region", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "associatedTeams", n => { AssociatedTeams = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo>(global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation>(global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "locale", n => { Locale = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -108,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo>("associatedTeams", AssociatedTeams);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation>("installedApps", InstalledApps);
-            writer.WriteStringValue("locale", Locale);
-            writer.WriteStringValue("region", Region);
         }
     }
 }

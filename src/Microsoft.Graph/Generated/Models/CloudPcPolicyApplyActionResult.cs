@@ -12,24 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcPolicyApplyActionResult : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time when the operation finished.</summary>
-        public DateTimeOffset? FinishDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("finishDateTime"); }
-            set { BackingStore?.Set("finishDateTime", value); }
-        }
-        /// <summary>The date and time when the operation was applied.</summary>
-        public DateTimeOffset? StartDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
-            set { BackingStore?.Set("startDateTime", value); }
-        }
-        /// <summary>The status property</summary>
-        public global::Microsoft.Graph.Beta.Models.CloudPcPolicyApplyActionStatus? Status
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPolicyApplyActionStatus?>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,9 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "finishDateTime", n => { FinishDateTime = n.GetDateTimeOffsetValue(); } },
-                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicyApplyActionStatus>(); } },
             };
         }
         /// <summary>
@@ -61,9 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("finishDateTime", FinishDateTime);
-            writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicyApplyActionStatus>("status", Status);
         }
     }
 }

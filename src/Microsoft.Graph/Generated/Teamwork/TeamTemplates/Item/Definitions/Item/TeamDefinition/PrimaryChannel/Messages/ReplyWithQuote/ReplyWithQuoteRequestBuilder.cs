@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         }
         /// <summary>
         /// Reply with quote to a single chat message or multiple chat messages in a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-replywithquote?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>

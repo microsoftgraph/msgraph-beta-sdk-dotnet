@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe
         }
         /// <summary>
         /// Allow admins to mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

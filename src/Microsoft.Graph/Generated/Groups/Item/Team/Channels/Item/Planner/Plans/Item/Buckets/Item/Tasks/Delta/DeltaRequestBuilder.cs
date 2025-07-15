@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner.Plans.Item
         }
         /// <summary>
         /// Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner.Plans.Item.Buckets.Item.Tasks.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner.Plans.Item
         }
         /// <summary>
         /// Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner.Plans.Item.Buckets.Item.Tasks.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner.Plans.Item
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

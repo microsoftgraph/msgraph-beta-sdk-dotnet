@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AuthenticationMethodDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Optional name given to the hardware OATH device.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>Exposes the hardware OATH method in the directory.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>? HardwareOathDevices
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>?>("hardwareOathDevices"); }
-            set { BackingStore?.Set("hardwareOathDevices", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice> HardwareOathDevices
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>>("hardwareOathDevices"); }
-            set { BackingStore?.Set("hardwareOathDevices", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,8 +35,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "hardwareOathDevices", n => { HardwareOathDevices = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>(global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -79,8 +45,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>("hardwareOathDevices", HardwareOathDevices);
         }
     }
 }

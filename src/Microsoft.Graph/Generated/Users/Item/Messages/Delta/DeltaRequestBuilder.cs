@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Delta
         }
         /// <summary>
         /// Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user&apos;s messages.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Messages.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Delta
         }
         /// <summary>
         /// Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user&apos;s messages.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Messages.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -181,10 +179,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Delta
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

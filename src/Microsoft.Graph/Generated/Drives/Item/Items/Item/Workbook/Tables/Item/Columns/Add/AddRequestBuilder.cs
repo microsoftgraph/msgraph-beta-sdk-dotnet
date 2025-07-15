@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         }
         /// <summary>
         /// Adds a new column to the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumncollection-add?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WorkbookTableColumn"/></returns>
         /// <param name="body">The request body</param>

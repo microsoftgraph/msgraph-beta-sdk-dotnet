@@ -12,34 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EmailNotificationsSetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additionalEvents property</summary>
-        public global::Microsoft.Graph.Beta.Models.NotificationEventsType? AdditionalEvents
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NotificationEventsType?>("additionalEvents"); }
-            set { BackingStore?.Set("additionalEvents", value); }
-        }
-        /// <summary>Indicates whether notifications are enabled.</summary>
-        public bool? IsEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isEnabled"); }
-            set { BackingStore?.Set("isEnabled", value); }
-        }
-        /// <summary>The recipients property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.NotificationRecipients? Recipients
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NotificationRecipients?>("recipients"); }
-            set { BackingStore?.Set("recipients", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.NotificationRecipients Recipients
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NotificationRecipients>("recipients"); }
-            set { BackingStore?.Set("recipients", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,9 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "additionalEvents", n => { AdditionalEvents = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NotificationEventsType>(); } },
-                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "recipients", n => { Recipients = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.NotificationRecipients>(global::Microsoft.Graph.Beta.Models.NotificationRecipients.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,9 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NotificationEventsType>("additionalEvents", AdditionalEvents);
-            writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.NotificationRecipients>("recipients", Recipients);
         }
     }
 }

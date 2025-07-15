@@ -16,16 +16,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The different attributes to sync for the class groups. The possible values are: courseTitle, courseCode, courseSubject, courseGradeLevel, courseExternalId, academicSessionTitle, academicSessionExternalId, classCode, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?>? AdditionalAttributes
+        public List<string>? AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?>?>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<string>?>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?> AdditionalAttributes
+        public List<string> AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?>>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<string>>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #endif
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes>()?.AsList(); } },
+                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "additionalOptions", n => { AdditionalOptions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions>(global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions.CreateFromDiscriminatorValue); } },
                 { "enrollmentMappings", n => { EnrollmentMappings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings>(global::Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes>("additionalAttributes", AdditionalAttributes);
+            writer.WriteCollectionOfPrimitiveValues<string>("additionalAttributes", AdditionalAttributes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions>("additionalOptions", AdditionalOptions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings>("enrollmentMappings", EnrollmentMappings);
             writer.WriteStringValue("@odata.type", OdataType);

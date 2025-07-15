@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.AddCopyFromContentT
         }
         /// <summary>
         /// Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a &apos;push everywhere&apos; to &apos;pull as needed&apos; approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentType"/></returns>
         /// <param name="body">The request body</param>

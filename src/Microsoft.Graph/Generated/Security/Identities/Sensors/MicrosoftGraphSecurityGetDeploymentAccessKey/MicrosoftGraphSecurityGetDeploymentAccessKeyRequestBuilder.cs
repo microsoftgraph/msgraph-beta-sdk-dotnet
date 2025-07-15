@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.MicrosoftGraphSecurit
         }
         /// <summary>
         /// Get the deployment access key associated with a Microsoft Defender for Identity, needed to install sensors associated with the workspace.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-getdeploymentaccesskey?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.DeploymentAccessKeyType"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

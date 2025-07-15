@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize
         }
         /// <summary>
         /// Upgrade or downgrade an existing Cloud PC to a configuration with a new virtual CPU (vCPU) and storage size.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-resize?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

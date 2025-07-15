@@ -13,18 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.</summary>
-        public int? DeployedDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("deployedDeviceCount"); }
-            set { BackingStore?.Set("deployedDeviceCount", value); }
-        }
-        /// <summary>Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.</summary>
-        public int? FailedDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
-            set { BackingStore?.Set("failedDeviceCount", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,8 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deployedDeviceCount", n => { DeployedDeviceCount = n.GetIntValue(); } },
-                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("deployedDeviceCount", DeployedDeviceCount);
-            writer.WriteIntValue("failedDeviceCount", FailedDeviceCount);
         }
     }
 }

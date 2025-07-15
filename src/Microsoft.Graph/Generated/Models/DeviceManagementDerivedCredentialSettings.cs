@@ -13,56 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementDerivedCredentialSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The display name for the profile.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? HelpUrl
-        {
-            get { return BackingStore?.Get<string?>("helpUrl"); }
-            set { BackingStore?.Set("helpUrl", value); }
-        }
-#nullable restore
-#else
-        public string HelpUrl
-        {
-            get { return BackingStore?.Get<string>("helpUrl"); }
-            set { BackingStore?.Set("helpUrl", value); }
-        }
-#endif
-        /// <summary>Supported values for the derived credential issuer.</summary>
-        public global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer? Issuer
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer?>("issuer"); }
-            set { BackingStore?.Set("issuer", value); }
-        }
-        /// <summary>Supported values for the notification type to use.</summary>
-        public global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType? NotificationType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType?>("notificationType"); }
-            set { BackingStore?.Set("notificationType", value); }
-        }
-        /// <summary>The nominal percentage of time before certificate renewal is initiated by the client.</summary>
-        public int? RenewalThresholdPercentage
-        {
-            get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
-            set { BackingStore?.Set("renewalThresholdPercentage", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,11 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "helpUrl", n => { HelpUrl = n.GetStringValue(); } },
-                { "issuer", n => { Issuer = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer>(); } },
-                { "notificationType", n => { NotificationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType>(); } },
-                { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -96,11 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("helpUrl", HelpUrl);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer>("issuer", Issuer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType>("notificationType", NotificationType);
-            writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
         }
     }
 }

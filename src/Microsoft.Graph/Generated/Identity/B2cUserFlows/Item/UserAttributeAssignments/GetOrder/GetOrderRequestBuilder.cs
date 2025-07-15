@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
         }
         /// <summary>
         /// Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-getorder?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AssignmentOrder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

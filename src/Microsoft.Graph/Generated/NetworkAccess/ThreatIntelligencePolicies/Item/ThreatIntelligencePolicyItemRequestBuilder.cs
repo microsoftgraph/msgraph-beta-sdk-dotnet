@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.Item
         {
         }
         /// <summary>
-        /// Delete navigation property threatIntelligencePolicies for networkAccess
+        /// Delete a threatIntelligencePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-delete-threatintelligencepolicies?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get threatIntelligencePolicies from networkAccess
+        /// Read the properties and relationships of a threatIntelligencePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property threatIntelligencePolicies in networkAccess
+        /// Update the properties of a threatIntelligencePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property threatIntelligencePolicies for networkAccess
+        /// Delete a threatIntelligencePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get threatIntelligencePolicies from networkAccess
+        /// Read the properties and relationships of a threatIntelligencePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property threatIntelligencePolicies in networkAccess
+        /// Update the properties of a threatIntelligencePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +191,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.Item
         {
         }
         /// <summary>
-        /// Get threatIntelligencePolicies from networkAccess
+        /// Read the properties and relationships of a threatIntelligencePolicy object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ThreatIntelligencePolicyItemRequestBuilderGetQueryParameters 

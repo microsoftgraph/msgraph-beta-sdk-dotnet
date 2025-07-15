@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
         }
         /// <summary>
         /// Get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn&apos;t have access to.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions.GetEffectivePermissionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
         }
         /// <summary>
         /// Get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn&apos;t have access to.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions.GetEffectivePermissionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -141,10 +139,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

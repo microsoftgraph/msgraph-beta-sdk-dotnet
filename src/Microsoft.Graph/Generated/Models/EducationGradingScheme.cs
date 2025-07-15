@@ -12,44 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationGradingScheme : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the grading scheme.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The grades that make up the scheme.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>? Grades
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>?>("grades"); }
-            set { BackingStore?.Set("grades", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade> Grades
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>>("grades"); }
-            set { BackingStore?.Set("grades", value); }
-        }
-#endif
-        /// <summary>The display setting for the UI. Indicates whether teachers can grade with points in addition to letter grades.</summary>
-        public bool? HidePointsDuringGrading
-        {
-            get { return BackingStore?.Get<bool?>("hidePointsDuringGrading"); }
-            set { BackingStore?.Set("hidePointsDuringGrading", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,9 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "grades", n => { Grades = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>(global::Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "hidePointsDuringGrading", n => { HidePointsDuringGrading = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -81,9 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>("grades", Grades);
-            writer.WriteBoolValue("hidePointsDuringGrading", HidePointsDuringGrading);
         }
     }
 }

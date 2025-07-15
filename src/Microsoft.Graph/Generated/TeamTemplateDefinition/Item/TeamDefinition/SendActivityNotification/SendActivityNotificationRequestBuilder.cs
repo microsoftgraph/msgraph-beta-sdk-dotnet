@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.SendAc
         }
         /// <summary>
         /// Send an activity feed notification in the scope of a team. For more information, see sending Teams activity notifications.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus
         }
         /// <summary>
         /// Get the review status of a Cloud PC.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-retrievereviewstatus?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcReviewStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

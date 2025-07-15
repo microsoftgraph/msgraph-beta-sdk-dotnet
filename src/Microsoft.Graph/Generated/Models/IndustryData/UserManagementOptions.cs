@@ -16,16 +16,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The different attribute choices for the users to be provisioned. The possible values are: userGradeLevel, userNumber, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?>? AdditionalAttributes
+        public List<string>? AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?>?>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<string>?>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?> AdditionalAttributes
+        public List<string> AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?>>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<string>>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #endif
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes>()?.AsList(); } },
+                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "additionalOptions", n => { AdditionalOptions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions>(global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes>("additionalAttributes", AdditionalAttributes);
+            writer.WriteCollectionOfPrimitiveValues<string>("additionalAttributes", AdditionalAttributes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions>("additionalOptions", AdditionalOptions);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

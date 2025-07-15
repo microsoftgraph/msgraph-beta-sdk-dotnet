@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         }
         /// <summary>
         /// Create a request to remove the personal data for an inboundSharedUserProfile. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/inboundshareduserprofile-removepersonaldata?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

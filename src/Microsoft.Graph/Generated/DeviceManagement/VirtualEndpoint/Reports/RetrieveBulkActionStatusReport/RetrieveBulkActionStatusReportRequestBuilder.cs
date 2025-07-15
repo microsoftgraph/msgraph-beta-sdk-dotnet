@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
         }
         /// <summary>
         /// Get the bulk remote action status report, including data such as the bulk action ID, bulk action display name, initiating user&apos;s principal name, action type, and action state.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-retrievebulkactionstatusreport?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

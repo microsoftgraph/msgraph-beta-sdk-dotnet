@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.DismissReminder
         }
         /// <summary>
         /// Dismiss a reminder that has been triggered for an event in a user calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

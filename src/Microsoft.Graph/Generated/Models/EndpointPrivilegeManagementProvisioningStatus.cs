@@ -13,18 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EndpointPrivilegeManagementProvisioningStatus : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Indicates whether tenant has a valid Intune Endpoint Privilege Management license. Possible value are : 0 - notPaid, 1 - paid, 2 - trial. See LicenseType enum for more details. Default notPaid .</summary>
-        public global::Microsoft.Graph.Beta.Models.LicenseType? LicenseType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LicenseType?>("licenseType"); }
-            set { BackingStore?.Set("licenseType", value); }
-        }
-        /// <summary>Indicates whether tenant is onboarded to Microsoft Managed Platform - Cloud (MMPC). When set to true, implies tenant is onboarded and when set to false, implies tenant is not onboarded. Default set to false.</summary>
-        public bool? OnboardedToMicrosoftManagedPlatform
-        {
-            get { return BackingStore?.Get<bool?>("onboardedToMicrosoftManagedPlatform"); }
-            set { BackingStore?.Set("onboardedToMicrosoftManagedPlatform", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,8 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "licenseType", n => { LicenseType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.LicenseType>(); } },
-                { "onboardedToMicrosoftManagedPlatform", n => { OnboardedToMicrosoftManagedPlatform = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.LicenseType>("licenseType", LicenseType);
-            writer.WriteBoolValue("onboardedToMicrosoftManagedPlatform", OnboardedToMicrosoftManagedPlatform);
         }
     }
 }

@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
     public partial class Identity : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.</summary>
-        public global::Microsoft.Graph.Beta.Models.ExternalConnectors.IdentityType? Type
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalConnectors.IdentityType?>("type"); }
-            set { BackingStore?.Set("type", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.IdentityType>(); } },
             };
         }
         /// <summary>
@@ -47,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.IdentityType>("type", Type);
         }
     }
 }

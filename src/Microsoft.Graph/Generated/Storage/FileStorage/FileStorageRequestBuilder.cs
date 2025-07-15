@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations;
+using Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -24,6 +26,16 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage
         public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.ContainersRequestBuilder Containers
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.ContainersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the containerTypeRegistrations property of the microsoft.graph.fileStorage entity.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.ContainerTypeRegistrationsRequestBuilder ContainerTypeRegistrations
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.ContainerTypeRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the containerTypes property of the microsoft.graph.fileStorage entity.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.ContainerTypesRequestBuilder ContainerTypes
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.ContainerTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedContainers property of the microsoft.graph.fileStorage entity.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.DeletedContainersRequestBuilder DeletedContainers

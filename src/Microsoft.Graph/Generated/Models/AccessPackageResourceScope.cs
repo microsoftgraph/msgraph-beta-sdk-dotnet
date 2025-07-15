@@ -12,124 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AccessPackageResourceScope : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessPackageResource property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.AccessPackageResource? AccessPackageResource
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessPackageResource?>("accessPackageResource"); }
-            set { BackingStore?.Set("accessPackageResource", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
-            set { BackingStore?.Set("accessPackageResource", value); }
-        }
-#endif
-        /// <summary>The description of the scope.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description
-        {
-            get { return BackingStore?.Get<string?>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#nullable restore
-#else
-        public string Description
-        {
-            get { return BackingStore?.Get<string>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#endif
-        /// <summary>The display name of the scope.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.</summary>
-        public bool? IsRootScope
-        {
-            get { return BackingStore?.Get<bool?>("isRootScope"); }
-            set { BackingStore?.Set("isRootScope", value); }
-        }
-        /// <summary>The unique identifier for the scope in the resource as defined in the origin system.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginId
-        {
-            get { return BackingStore?.Get<string?>("originId"); }
-            set { BackingStore?.Set("originId", value); }
-        }
-#nullable restore
-#else
-        public string OriginId
-        {
-            get { return BackingStore?.Get<string>("originId"); }
-            set { BackingStore?.Set("originId", value); }
-        }
-#endif
-        /// <summary>The origin system for the scope.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginSystem
-        {
-            get { return BackingStore?.Get<string?>("originSystem"); }
-            set { BackingStore?.Set("originSystem", value); }
-        }
-#nullable restore
-#else
-        public string OriginSystem
-        {
-            get { return BackingStore?.Get<string>("originSystem"); }
-            set { BackingStore?.Set("originSystem", value); }
-        }
-#endif
-        /// <summary>The origin system for the role, if different.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RoleOriginId
-        {
-            get { return BackingStore?.Get<string?>("roleOriginId"); }
-            set { BackingStore?.Set("roleOriginId", value); }
-        }
-#nullable restore
-#else
-        public string RoleOriginId
-        {
-            get { return BackingStore?.Get<string>("roleOriginId"); }
-            set { BackingStore?.Set("roleOriginId", value); }
-        }
-#endif
-        /// <summary>A resource locator for the scope.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url
-        {
-            get { return BackingStore?.Get<string?>("url"); }
-            set { BackingStore?.Set("url", value); }
-        }
-#nullable restore
-#else
-        public string Url
-        {
-            get { return BackingStore?.Get<string>("url"); }
-            set { BackingStore?.Set("url", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -148,14 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessPackageResource", n => { AccessPackageResource = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessPackageResource>(global::Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "isRootScope", n => { IsRootScope = n.GetBoolValue(); } },
-                { "originId", n => { OriginId = n.GetStringValue(); } },
-                { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
-                { "roleOriginId", n => { RoleOriginId = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -166,14 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource", AccessPackageResource);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isRootScope", IsRootScope);
-            writer.WriteStringValue("originId", OriginId);
-            writer.WriteStringValue("originSystem", OriginSystem);
-            writer.WriteStringValue("roleOriginId", RoleOriginId);
-            writer.WriteStringValue("url", Url);
         }
     }
 }

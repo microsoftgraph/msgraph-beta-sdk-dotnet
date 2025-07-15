@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         }
         /// <summary>
         /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. No user or group will be provisioned on-demand that would not have been provisioned through the regular provisioning cycles.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.StringKeyStringValuePair"/></returns>
         /// <param name="body">The request body</param>

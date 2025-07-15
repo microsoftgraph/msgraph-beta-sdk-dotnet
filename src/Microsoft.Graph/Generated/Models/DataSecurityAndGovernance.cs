@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DataSecurityAndGovernance : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The sensitivityLabels property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.SensitivityLabel>? SensitivityLabels
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SensitivityLabel>?>("sensitivityLabels"); }
-            set { BackingStore?.Set("sensitivityLabels", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.SensitivityLabel> SensitivityLabels
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SensitivityLabel>>("sensitivityLabels"); }
-            set { BackingStore?.Set("sensitivityLabels", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,7 +36,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SensitivityLabel>(global::Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -63,7 +46,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SensitivityLabel>("sensitivityLabels", SensitivityLabels);
         }
     }
 }

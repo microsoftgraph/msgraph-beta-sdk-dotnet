@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestoreSessions.Item.Acti
         }
         /// <summary>
         /// Activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RestoreSessionBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

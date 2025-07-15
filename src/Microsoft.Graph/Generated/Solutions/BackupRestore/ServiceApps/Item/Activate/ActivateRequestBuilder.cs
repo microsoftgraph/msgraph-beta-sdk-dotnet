@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Activate
         }
         /// <summary>
         /// Activate a serviceApp.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServiceApp"/></returns>
         /// <param name="body">The request body</param>

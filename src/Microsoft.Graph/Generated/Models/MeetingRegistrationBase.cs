@@ -12,28 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class MeetingRegistrationBase : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies who can register for the meeting.</summary>
-        public global::Microsoft.Graph.Beta.Models.MeetingAudience? AllowedRegistrant
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingAudience?>("allowedRegistrant"); }
-            set { BackingStore?.Set("allowedRegistrant", value); }
-        }
-        /// <summary>Registrants of the online meeting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase>? Registrants
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase>?>("registrants"); }
-            set { BackingStore?.Set("registrants", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase> Registrants
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase>>("registrants"); }
-            set { BackingStore?.Set("registrants", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,8 +36,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedRegistrant", n => { AllowedRegistrant = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingAudience>(); } },
-                { "registrants", n => { Registrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase>(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -70,8 +46,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingAudience>("allowedRegistrant", AllowedRegistrant);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase>("registrants", Registrants);
         }
     }
 }

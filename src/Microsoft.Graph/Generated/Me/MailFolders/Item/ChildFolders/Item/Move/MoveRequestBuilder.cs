@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Move
         }
         /// <summary>
         /// Move a mail folder and its contents to another mail folder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>

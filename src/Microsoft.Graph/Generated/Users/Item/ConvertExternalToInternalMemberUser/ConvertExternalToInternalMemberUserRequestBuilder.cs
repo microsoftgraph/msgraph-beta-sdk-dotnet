@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser
         }
         /// <summary>
         /// Convert an externally authenticated user into an internal user. The user is able to sign into the host tenant as an internal user and access resources as a member. For more information about this conversion, see Convert external users to internal users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-convertexternaltointernalmemberuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConversionUserDetails"/></returns>
         /// <param name="body">The request body</param>

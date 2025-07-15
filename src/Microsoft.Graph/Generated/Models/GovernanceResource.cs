@@ -12,172 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class GovernanceResource : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The display name of the resource.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The external id of the resource, representing its original id in the external system. For example, a subscription resource&apos;s external id can be &apos;/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalId
-        {
-            get { return BackingStore?.Get<string?>("externalId"); }
-            set { BackingStore?.Set("externalId", value); }
-        }
-#nullable restore
-#else
-        public string ExternalId
-        {
-            get { return BackingStore?.Get<string>("externalId"); }
-            set { BackingStore?.Set("externalId", value); }
-        }
-#endif
-        /// <summary>Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.GovernanceResource? Parent
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GovernanceResource?>("parent"); }
-            set { BackingStore?.Set("parent", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.GovernanceResource Parent
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GovernanceResource>("parent"); }
-            set { BackingStore?.Set("parent", value); }
-        }
-#endif
-        /// <summary>Represents the date time when the resource is registered in PIM.</summary>
-        public DateTimeOffset? RegisteredDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("registeredDateTime"); }
-            set { BackingStore?.Set("registeredDateTime", value); }
-        }
-        /// <summary>The externalId of the resource&apos;s root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RegisteredRoot
-        {
-            get { return BackingStore?.Get<string?>("registeredRoot"); }
-            set { BackingStore?.Set("registeredRoot", value); }
-        }
-#nullable restore
-#else
-        public string RegisteredRoot
-        {
-            get { return BackingStore?.Get<string>("registeredRoot"); }
-            set { BackingStore?.Set("registeredRoot", value); }
-        }
-#endif
-        /// <summary>The collection of role assignment requests for the resource.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest>? RoleAssignmentRequests
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest>?>("roleAssignmentRequests"); }
-            set { BackingStore?.Set("roleAssignmentRequests", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest> RoleAssignmentRequests
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest>>("roleAssignmentRequests"); }
-            set { BackingStore?.Set("roleAssignmentRequests", value); }
-        }
-#endif
-        /// <summary>The collection of role assignments for the resource.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>? RoleAssignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>?>("roleAssignments"); }
-            set { BackingStore?.Set("roleAssignments", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignment> RoleAssignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>>("roleAssignments"); }
-            set { BackingStore?.Set("roleAssignments", value); }
-        }
-#endif
-        /// <summary>The collection of role definitions for the resource.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>? RoleDefinitions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>?>("roleDefinitions"); }
-            set { BackingStore?.Set("roleDefinitions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleDefinition> RoleDefinitions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>>("roleDefinitions"); }
-            set { BackingStore?.Set("roleDefinitions", value); }
-        }
-#endif
-        /// <summary>The collection of role settings for the resource.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting>? RoleSettings
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting>?>("roleSettings"); }
-            set { BackingStore?.Set("roleSettings", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting> RoleSettings
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting>>("roleSettings"); }
-            set { BackingStore?.Set("roleSettings", value); }
-        }
-#endif
-        /// <summary>The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status
-        {
-            get { return BackingStore?.Get<string?>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
-#nullable restore
-#else
-        public string Status
-        {
-            get { return BackingStore?.Get<string>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
-#endif
-        /// <summary>Required. Resource type. For example, for Azure resources, the type could be &apos;Subscription&apos;, &apos;ResourceGroup&apos;, &apos;Microsoft.Sql/server&apos;, etc.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type
-        {
-            get { return BackingStore?.Get<string?>("type"); }
-            set { BackingStore?.Set("type", value); }
-        }
-#nullable restore
-#else
-        public string Type
-        {
-            get { return BackingStore?.Get<string>("type"); }
-            set { BackingStore?.Set("type", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -196,17 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "parent", n => { Parent = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.GovernanceResource>(global::Microsoft.Graph.Beta.Models.GovernanceResource.CreateFromDiscriminatorValue); } },
-                { "registeredDateTime", n => { RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                { "registeredRoot", n => { RegisteredRoot = n.GetStringValue(); } },
-                { "roleAssignmentRequests", n => { RoleAssignmentRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest>(global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>(global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>(global::Microsoft.Graph.Beta.Models.GovernanceRoleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "roleSettings", n => { RoleSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting>(global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -217,17 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.GovernanceResource>("parent", Parent);
-            writer.WriteDateTimeOffsetValue("registeredDateTime", RegisteredDateTime);
-            writer.WriteStringValue("registeredRoot", RegisteredRoot);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest>("roleAssignmentRequests", RoleAssignmentRequests);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>("roleAssignments", RoleAssignments);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>("roleDefinitions", RoleDefinitions);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting>("roleSettings", RoleSettings);
-            writer.WriteStringValue("status", Status);
-            writer.WriteStringValue("type", Type);
         }
     }
 }

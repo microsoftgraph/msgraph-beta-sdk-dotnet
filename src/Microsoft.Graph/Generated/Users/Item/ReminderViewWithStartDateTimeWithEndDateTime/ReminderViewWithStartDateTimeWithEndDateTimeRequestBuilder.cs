@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDa
         }
         /// <summary>
         /// Return a list of event reminders in a user calendar within the specified start and end times.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +62,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDa
         }
         /// <summary>
         /// Return a list of event reminders in a user calendar within the specified start and end times.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -145,10 +143,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDa
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

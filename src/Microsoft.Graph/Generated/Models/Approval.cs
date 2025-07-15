@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Approval : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Used to represent the decision associated with a single step in the approval process configured in approvalStage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ApprovalStep>? Steps
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApprovalStep>?>("steps"); }
-            set { BackingStore?.Set("steps", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.ApprovalStep> Steps
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApprovalStep>>("steps"); }
-            set { BackingStore?.Set("steps", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApprovalStep>(global::Microsoft.Graph.Beta.Models.ApprovalStep.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApprovalStep>("steps", Steps);
         }
     }
 }

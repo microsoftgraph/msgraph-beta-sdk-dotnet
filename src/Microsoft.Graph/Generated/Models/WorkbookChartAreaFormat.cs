@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WorkbookChartAreaFormat : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the fill format of an object, which includes background formatting information. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookChartFill? Fill
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookChartFill?>("fill"); }
-            set { BackingStore?.Set("fill", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookChartFill Fill
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookChartFill>("fill"); }
-            set { BackingStore?.Set("fill", value); }
-        }
-#endif
-        /// <summary>Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.WorkbookChartFont? Font
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookChartFont?>("font"); }
-            set { BackingStore?.Set("font", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.WorkbookChartFont Font
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkbookChartFont>("font"); }
-            set { BackingStore?.Set("font", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fill", n => { Fill = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookChartFill>(global::Microsoft.Graph.Beta.Models.WorkbookChartFill.CreateFromDiscriminatorValue); } },
-                { "font", n => { Font = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookChartFont>(global::Microsoft.Graph.Beta.Models.WorkbookChartFont.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookChartFill>("fill", Fill);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookChartFont>("font", Font);
         }
     }
 }

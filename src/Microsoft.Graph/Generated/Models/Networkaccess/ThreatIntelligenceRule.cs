@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligenceAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>A description of the threat intelligence rule. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("matchingConditions", value); }
         }
 #endif
-        /// <summary>The priority property</summary>
+        /// <summary>The priority of the rule which determines the order of rule evaluation. Lower values indicate higher priority. Supports $filter (eq).</summary>
         public long? Priority
         {
             get { return BackingStore?.Get<long?>("priority"); }

@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class InternetExplorerMode : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of site lists to support Internet Explorer mode.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.BrowserSiteList>? SiteLists
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.BrowserSiteList>?>("siteLists"); }
-            set { BackingStore?.Set("siteLists", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.BrowserSiteList> SiteLists
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.BrowserSiteList>>("siteLists"); }
-            set { BackingStore?.Set("siteLists", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "siteLists", n => { SiteLists = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BrowserSiteList>(global::Microsoft.Graph.Beta.Models.BrowserSiteList.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BrowserSiteList>("siteLists", SiteLists);
         }
     }
 }

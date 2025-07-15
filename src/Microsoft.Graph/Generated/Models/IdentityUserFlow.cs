@@ -12,18 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class IdentityUserFlow : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The userFlowType property</summary>
-        public global::Microsoft.Graph.Beta.Models.UserFlowType? UserFlowType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserFlowType?>("userFlowType"); }
-            set { BackingStore?.Set("userFlowType", value); }
-        }
-        /// <summary>The userFlowTypeVersion property</summary>
-        public float? UserFlowTypeVersion
-        {
-            get { return BackingStore?.Get<float?>("userFlowTypeVersion"); }
-            set { BackingStore?.Set("userFlowTypeVersion", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,8 +36,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "userFlowType", n => { UserFlowType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.UserFlowType>(); } },
-                { "userFlowTypeVersion", n => { UserFlowTypeVersion = n.GetFloatValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +46,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.UserFlowType>("userFlowType", UserFlowType);
-            writer.WriteFloatValue("userFlowTypeVersion", UserFlowTypeVersion);
         }
     }
 }

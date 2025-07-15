@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWit
         }
         /// <summary>
         /// Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

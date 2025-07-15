@@ -86,16 +86,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The default set of finishings to apply to print jobs. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.PrintFinishing?>? Finishings
+        public List<string>? Finishings
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrintFinishing?>?>("finishings"); }
+            get { return BackingStore?.Get<List<string>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.PrintFinishing?> Finishings
+        public List<string> Finishings
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrintFinishing?>>("finishings"); }
+            get { return BackingStore?.Get<List<string>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #endif
@@ -288,7 +288,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "dpi", n => { Dpi = n.GetIntValue(); } },
                 { "duplexConfiguration", n => { DuplexConfiguration = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrintDuplexConfiguration>(); } },
                 { "duplexMode", n => { DuplexMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrintDuplexMode>(); } },
-                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.PrintFinishing>()?.AsList(); } },
+                { "finishings", n => { Finishings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
                 { "inputBin", n => { InputBin = n.GetStringValue(); } },
                 { "mediaColor", n => { MediaColor = n.GetStringValue(); } },
@@ -321,7 +321,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("dpi", Dpi);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrintDuplexConfiguration>("duplexConfiguration", DuplexConfiguration);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrintDuplexMode>("duplexMode", DuplexMode);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.PrintFinishing>("finishings", Finishings);
+            writer.WriteCollectionOfPrimitiveValues<string>("finishings", Finishings);
             writer.WriteBoolValue("fitPdfToPage", FitPdfToPage);
             writer.WriteStringValue("inputBin", InputBin);
             writer.WriteStringValue("mediaColor", MediaColor);

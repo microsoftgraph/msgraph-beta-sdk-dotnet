@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         }
         /// <summary>
         /// Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="body">The request body</param>

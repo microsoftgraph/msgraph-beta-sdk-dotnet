@@ -12,70 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PrivilegedRole : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The assignments property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>? Assignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>?>("assignments"); }
-            set { BackingStore?.Set("assignments", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment> Assignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>>("assignments"); }
-            set { BackingStore?.Set("assignments", value); }
-        }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>The settings property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PrivilegedRoleSettings? Settings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSettings?>("settings"); }
-            set { BackingStore?.Set("settings", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PrivilegedRoleSettings Settings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>("settings"); }
-            set { BackingStore?.Set("settings", value); }
-        }
-#endif
-        /// <summary>The summary property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PrivilegedRoleSummary? Summary
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSummary?>("summary"); }
-            set { BackingStore?.Set("summary", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PrivilegedRoleSummary Summary
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSummary>("summary"); }
-            set { BackingStore?.Set("summary", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,10 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>(global::Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>(global::Microsoft.Graph.Beta.Models.PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSummary>(global::Microsoft.Graph.Beta.Models.PrivilegedRoleSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -108,10 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>("assignments", Assignments);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>("settings", Settings);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PrivilegedRoleSummary>("summary", Summary);
         }
     }
 }

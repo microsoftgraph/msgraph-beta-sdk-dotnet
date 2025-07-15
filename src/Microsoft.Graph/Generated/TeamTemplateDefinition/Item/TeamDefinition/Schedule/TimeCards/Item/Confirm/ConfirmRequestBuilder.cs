@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         }
         /// <summary>
         /// Confirm a specific timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TimeCard"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

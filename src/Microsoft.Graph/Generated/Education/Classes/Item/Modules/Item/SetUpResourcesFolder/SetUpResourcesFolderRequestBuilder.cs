@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.SetUpResource
         }
         /// <summary>
         /// Create a SharePoint folder to upload files for a given educationModule. Only teachers can perform this operation. The teacher determines what resources to upload to the SharePoint folder for the module.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-setupresourcesfolder?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationModule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

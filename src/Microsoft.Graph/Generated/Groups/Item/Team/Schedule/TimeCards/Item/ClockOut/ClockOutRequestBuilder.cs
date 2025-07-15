@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut
         }
         /// <summary>
         /// Clock out to end an open timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-clockout?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TimeCard"/></returns>
         /// <param name="body">The request body</param>

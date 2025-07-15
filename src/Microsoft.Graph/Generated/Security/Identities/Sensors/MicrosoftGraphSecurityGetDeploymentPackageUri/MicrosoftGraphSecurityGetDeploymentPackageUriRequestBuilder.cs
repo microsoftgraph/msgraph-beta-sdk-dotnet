@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.MicrosoftGraphSecurit
         }
         /// <summary>
         /// Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

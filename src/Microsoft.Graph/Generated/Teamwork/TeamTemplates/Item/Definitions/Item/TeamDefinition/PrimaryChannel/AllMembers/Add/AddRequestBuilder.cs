@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         }
         /// <summary>
         /// Add multiple members in a single request to a team. The response provides details about which memberships could and couldn&apos;t be created.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.AllMembers.Add.AddPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         }
         /// <summary>
         /// Add multiple members in a single request to a team. The response provides details about which memberships could and couldn&apos;t be created.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.AllMembers.Add.AddResponse"/></returns>
         /// <param name="body">The request body</param>

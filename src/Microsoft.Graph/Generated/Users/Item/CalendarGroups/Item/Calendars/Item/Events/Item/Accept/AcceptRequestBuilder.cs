@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Eve
         }
         /// <summary>
         /// Accept the specified event in a user calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -12,28 +12,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class TenantStatus : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Reflects a message to the user if there&apos;s an error.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OnboardingErrorMessage
-        {
-            get { return BackingStore?.Get<string?>("onboardingErrorMessage"); }
-            set { BackingStore?.Set("onboardingErrorMessage", value); }
-        }
-#nullable restore
-#else
-        public string OnboardingErrorMessage
-        {
-            get { return BackingStore?.Get<string>("onboardingErrorMessage"); }
-            set { BackingStore?.Set("onboardingErrorMessage", value); }
-        }
-#endif
-        /// <summary>The onboardingStatus property</summary>
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus? OnboardingStatus
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus?>("onboardingStatus"); }
-            set { BackingStore?.Set("onboardingStatus", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "onboardingErrorMessage", n => { OnboardingErrorMessage = n.GetStringValue(); } },
-                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus>(); } },
             };
         }
         /// <summary>
@@ -64,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("onboardingErrorMessage", OnboardingErrorMessage);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus>("onboardingStatus", OnboardingStatus);
         }
     }
 }

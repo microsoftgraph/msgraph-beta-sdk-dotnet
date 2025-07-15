@@ -12,46 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class QrCode : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time when the QR code was created.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>Temporary QR code lifetime is between 1-12 hours. Standard QR code lifetime is in days and max. is 395 days (13 months) and default value is 365 days (12 months).</summary>
-        public DateTimeOffset? ExpireDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("expireDateTime"); }
-            set { BackingStore?.Set("expireDateTime", value); }
-        }
-        /// <summary>The QR code image&apos;s raw data that is returned when a standard or temporary QR code is created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.QrCodeImageDetails? Image
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.QrCodeImageDetails?>("image"); }
-            set { BackingStore?.Set("image", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.QrCodeImageDetails Image
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.QrCodeImageDetails>("image"); }
-            set { BackingStore?.Set("image", value); }
-        }
-#endif
-        /// <summary>The date and time when the QR code was last used for a successful sign-in.</summary>
-        public DateTimeOffset? LastUsedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastUsedDateTime"); }
-            set { BackingStore?.Set("lastUsedDateTime", value); }
-        }
-        /// <summary>The date and time when the QR code becomes active and available to use.</summary>
-        public DateTimeOffset? StartDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
-            set { BackingStore?.Set("startDateTime", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,11 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "expireDateTime", n => { ExpireDateTime = n.GetDateTimeOffsetValue(); } },
-                { "image", n => { Image = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.QrCodeImageDetails>(global::Microsoft.Graph.Beta.Models.QrCodeImageDetails.CreateFromDiscriminatorValue); } },
-                { "lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -85,11 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteDateTimeOffsetValue("expireDateTime", ExpireDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.QrCodeImageDetails>("image", Image);
-            writer.WriteDateTimeOffsetValue("lastUsedDateTime", LastUsedDateTime);
-            writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
         }
     }
 }

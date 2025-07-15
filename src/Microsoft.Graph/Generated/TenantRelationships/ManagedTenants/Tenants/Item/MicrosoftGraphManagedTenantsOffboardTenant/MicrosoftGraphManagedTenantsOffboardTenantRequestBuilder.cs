@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.M
         }
         /// <summary>
         /// Carries out the appropriate procedures to remove a managed tenant from the multitenant management platform. No relationships, such as commerce and delegate administrative privileges, will be impacted. The only change made by invoking this action is the tenant will be deprovisioned from the multitenant management platform.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenant-offboardtenant?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ManagedTenants.Tenant"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

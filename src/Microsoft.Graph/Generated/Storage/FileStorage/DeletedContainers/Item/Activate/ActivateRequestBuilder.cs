@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Activa
         }
         /// <summary>
         /// Activate a fileStorageContainer object. A fileStorageContainer object is created in an inactive state, as indicated by the status property. A container that isn&apos;t activated within 24 hours after creation is automatically deleted. Upon activation, the value of the status property changes from inactive to active. A file storage container can be activated by calling this API or any API that updates or modifies it or its content. For example, uploading a file to a file storage container activates it. It&apos;s also activated when you add permissions to it or update them, or create a custom property on it.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-activate?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

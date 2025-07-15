@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.HardwareOathMethods.Ite
         }
         /// <summary>
         /// Deactive a hardware OATH token. It remains assigned to a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-deactivate?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

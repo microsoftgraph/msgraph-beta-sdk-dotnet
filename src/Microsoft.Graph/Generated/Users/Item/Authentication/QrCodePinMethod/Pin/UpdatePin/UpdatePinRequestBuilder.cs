@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.QrCodePinMethod.Pin.Upd
         }
         /// <summary>
         /// Invoke action updatePin
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/qrpin-updatepin?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

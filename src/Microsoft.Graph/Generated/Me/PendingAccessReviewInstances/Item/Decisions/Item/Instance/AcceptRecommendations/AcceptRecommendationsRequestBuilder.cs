@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         }
         /// <summary>
         /// Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven&apos;t been reviewed for an accessReviewInstance object for which the calling user is a reviewer. Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object. If there isn&apos;t a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-acceptrecommendations?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
         }
         /// <summary>
         /// Send a reminder to the reviewers of a currently active accessReviewInstance.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

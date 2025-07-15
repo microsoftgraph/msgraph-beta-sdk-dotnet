@@ -8,11 +8,61 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// Contains properties used to assign an iOS Store mobile app to a group.
+    /// Contains properties used to assign an iOS iOS Declarative Device Management (DDM) Line Of Business (LOB) mobile app to a group.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosDdmLobAppAssignmentSettings : global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
+        /// <summary>Domain names to associate with the app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AssociatedDomains
+        {
+            get { return BackingStore?.Get<List<string>?>("associatedDomains"); }
+            set { BackingStore?.Set("associatedDomains", value); }
+        }
+#nullable restore
+#else
+        public List<string> AssociatedDomains
+        {
+            get { return BackingStore?.Get<List<string>>("associatedDomains"); }
+            set { BackingStore?.Set("associatedDomains", value); }
+        }
+#endif
+        /// <summary>When true, the system allows direct downloads for the AssociatedDomains. When false, the system will not allow direct downloads for the AssociatedDomains. Default is false.</summary>
+        public bool? AssociatedDomainsDirectDownloadAllowed
+        {
+            get { return BackingStore?.Get<bool?>("associatedDomainsDirectDownloadAllowed"); }
+            set { BackingStore?.Set("associatedDomainsDirectDownloadAllowed", value); }
+        }
+        /// <summary>When true, indicates that the app should not be backed up to iCloud. When false, indicates that the app may be backed up to iCloud. Default is false.</summary>
+        public bool? PreventManagedAppBackup
+        {
+            get { return BackingStore?.Get<bool?>("preventManagedAppBackup"); }
+            set { BackingStore?.Set("preventManagedAppBackup", value); }
+        }
+        /// <summary>When true, the device locks its screen after every transaction that requires a customer’s card PIN. When false, the user can choose the behavior. Default value is false.</summary>
+        public bool? TapToPayScreenLockEnabled
+        {
+            get { return BackingStore?.Get<bool?>("tapToPayScreenLockEnabled"); }
+            set { BackingStore?.Set("tapToPayScreenLockEnabled", value); }
+        }
+        /// <summary>The unique identifier of the relay to associate with the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VpnConfigurationId
+        {
+            get { return BackingStore?.Get<string?>("vpnConfigurationId"); }
+            set { BackingStore?.Set("vpnConfigurationId", value); }
+        }
+#nullable restore
+#else
+        public string VpnConfigurationId
+        {
+            get { return BackingStore?.Get<string>("vpnConfigurationId"); }
+            set { BackingStore?.Set("vpnConfigurationId", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IosDdmLobAppAssignmentSettings"/> and sets the default values.
         /// </summary>
@@ -38,6 +88,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "associatedDomains", n => { AssociatedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "associatedDomainsDirectDownloadAllowed", n => { AssociatedDomainsDirectDownloadAllowed = n.GetBoolValue(); } },
+                { "preventManagedAppBackup", n => { PreventManagedAppBackup = n.GetBoolValue(); } },
+                { "tapToPayScreenLockEnabled", n => { TapToPayScreenLockEnabled = n.GetBoolValue(); } },
+                { "vpnConfigurationId", n => { VpnConfigurationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +103,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfPrimitiveValues<string>("associatedDomains", AssociatedDomains);
+            writer.WriteBoolValue("associatedDomainsDirectDownloadAllowed", AssociatedDomainsDirectDownloadAllowed);
+            writer.WriteBoolValue("preventManagedAppBackup", PreventManagedAppBackup);
+            writer.WriteBoolValue("tapToPayScreenLockEnabled", TapToPayScreenLockEnabled);
+            writer.WriteStringValue("vpnConfigurationId", VpnConfigurationId);
         }
     }
 }

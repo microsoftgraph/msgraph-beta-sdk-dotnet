@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
         }
         /// <summary>
         /// Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

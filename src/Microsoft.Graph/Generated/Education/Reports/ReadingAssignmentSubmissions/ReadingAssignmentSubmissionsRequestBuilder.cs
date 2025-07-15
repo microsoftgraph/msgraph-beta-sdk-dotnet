@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Education.Reports.ReadingAssignmentSubmissions
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a readingAssignmentSubmission object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/readingassignmentsubmission-get?view=graph-rest-beta" />
+        /// Get a list of reading assignments that were submitted by a student.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportsroot-list-readingassignmentsubmissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Education.Reports.ReadingAssignmentSubmissions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission>(requestInfo, global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a readingAssignmentSubmission object.
+        /// Get a list of reading assignments that were submitted by a student.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Education.Reports.ReadingAssignmentSubmissions
             return new global::Microsoft.Graph.Beta.Education.Reports.ReadingAssignmentSubmissions.ReadingAssignmentSubmissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a readingAssignmentSubmission object.
+        /// Get a list of reading assignments that were submitted by a student.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadingAssignmentSubmissionsRequestBuilderGetQueryParameters 
@@ -213,10 +213,10 @@ namespace Microsoft.Graph.Beta.Education.Reports.ReadingAssignmentSubmissions
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.SetUpResourcesFolde
         }
         /// <summary>
         /// Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment&apos;s folder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

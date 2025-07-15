@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByMe
         }
         /// <summary>
         /// Get the number of users registered for each authentication method.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbymethod?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserRegistrationMethodSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

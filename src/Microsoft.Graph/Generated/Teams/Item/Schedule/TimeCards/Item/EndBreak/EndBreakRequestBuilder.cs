@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak
         }
         /// <summary>
         /// End the open break in a specific timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-endbreak?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TimeCard"/></returns>
         /// <param name="body">The request body</param>

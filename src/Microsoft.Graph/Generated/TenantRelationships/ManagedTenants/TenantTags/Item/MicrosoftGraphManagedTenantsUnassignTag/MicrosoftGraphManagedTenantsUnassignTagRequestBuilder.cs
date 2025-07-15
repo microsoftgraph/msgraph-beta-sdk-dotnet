@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         }
         /// <summary>
         /// Un-assigns the tenant tag from the specified managed tenants.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenanttag-unassigntag?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantTag"/></returns>
         /// <param name="body">The request body</param>

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ReplyWithQuote
         }
         /// <summary>
         /// Reply with quote to a single chat message or multiple chat messages in a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-replywithquote?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>

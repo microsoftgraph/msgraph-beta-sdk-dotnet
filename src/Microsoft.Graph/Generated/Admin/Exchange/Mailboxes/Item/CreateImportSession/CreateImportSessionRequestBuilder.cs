@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Mailboxes.Item.CreateImportSession
         }
         /// <summary>
         /// Create a session to import an Exchange mailbox item that was exported using the exportItems API.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailbox-createimportsession?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxItemImportSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

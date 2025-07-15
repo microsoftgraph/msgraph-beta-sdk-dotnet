@@ -213,8 +213,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item.RangeN
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of range object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/range-get?view=graph-rest-beta" />
+        /// Returns the range object that is associated with the name. Throws an exception if the named item&apos;s type is not a range.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -301,7 +300,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item.RangeN
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item.RangeNamespace.RowWithRow.RowWithRowRequestBuilder(PathParameters, RequestAdapter, row);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of range object.
+        /// Returns the range object that is associated with the name. Throws an exception if the named item&apos;s type is not a range.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

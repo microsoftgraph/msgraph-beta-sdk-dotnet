@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OfficeGraphInsights : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Access this property from the derived type itemInsights.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.SharedInsight>? Shared
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharedInsight>?>("shared"); }
-            set { BackingStore?.Set("shared", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.SharedInsight> Shared
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharedInsight>>("shared"); }
-            set { BackingStore?.Set("shared", value); }
-        }
-#endif
-        /// <summary>Access this property from the derived type itemInsights.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Trending>? Trending
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Trending>?>("trending"); }
-            set { BackingStore?.Set("trending", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Trending> Trending
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Trending>>("trending"); }
-            set { BackingStore?.Set("trending", value); }
-        }
-#endif
-        /// <summary>Access this property from the derived type itemInsights.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.UsedInsight>? Used
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UsedInsight>?>("used"); }
-            set { BackingStore?.Set("used", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.UsedInsight> Used
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UsedInsight>>("used"); }
-            set { BackingStore?.Set("used", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,9 +35,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "shared", n => { Shared = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedInsight>(global::Microsoft.Graph.Beta.Models.SharedInsight.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "trending", n => { Trending = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Trending>(global::Microsoft.Graph.Beta.Models.Trending.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "used", n => { Used = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UsedInsight>(global::Microsoft.Graph.Beta.Models.UsedInsight.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,9 +45,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedInsight>("shared", Shared);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Trending>("trending", Trending);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UsedInsight>("used", Used);
         }
     }
 }

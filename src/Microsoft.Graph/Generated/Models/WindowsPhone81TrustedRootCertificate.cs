@@ -13,45 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsPhone81TrustedRootCertificate : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
-        /// <summary>File name to display in UI.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CertFileName
-        {
-            get { return BackingStore?.Get<string?>("certFileName"); }
-            set { BackingStore?.Set("certFileName", value); }
-        }
-#nullable restore
-#else
-        public string CertFileName
-        {
-            get { return BackingStore?.Get<string>("certFileName"); }
-            set { BackingStore?.Set("certFileName", value); }
-        }
-#endif
-        /// <summary>Trusted Root Certificate</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public byte[]? TrustedRootCertificate
-        {
-            get { return BackingStore?.Get<byte[]?>("trustedRootCertificate"); }
-            set { BackingStore?.Set("trustedRootCertificate", value); }
-        }
-#nullable restore
-#else
-        public byte[] TrustedRootCertificate
-        {
-            get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }
-            set { BackingStore?.Set("trustedRootCertificate", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate"/> and sets the default values.
-        /// </summary>
-        public WindowsPhone81TrustedRootCertificate() : base()
-        {
-            OdataType = "#microsoft.graph.windowsPhone81TrustedRootCertificate";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,8 +31,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certFileName", n => { CertFileName = n.GetStringValue(); } },
-                { "trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +41,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("certFileName", CertFileName);
-            writer.WriteByteArrayValue("trustedRootCertificate", TrustedRootCertificate);
         }
     }
 }

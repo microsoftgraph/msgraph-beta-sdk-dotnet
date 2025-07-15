@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Unarchive
         }
         /// <summary>
         /// Restore an archived team and restores users&apos; ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

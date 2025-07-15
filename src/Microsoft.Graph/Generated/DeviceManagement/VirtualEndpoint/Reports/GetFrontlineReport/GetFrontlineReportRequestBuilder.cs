@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFront
         }
         /// <summary>
         /// Get the Windows 365 Frontline reports, such as real-time or historical data reports.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

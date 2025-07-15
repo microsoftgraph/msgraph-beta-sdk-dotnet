@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.RetryServiceProvisioning
         }
         /// <summary>
         /// Retry the group service provisioning.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-retryserviceprovisioning?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

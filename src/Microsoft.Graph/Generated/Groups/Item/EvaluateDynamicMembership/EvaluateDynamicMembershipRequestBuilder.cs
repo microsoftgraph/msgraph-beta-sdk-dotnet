@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership
         }
         /// <summary>
         /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EvaluateDynamicMembershipResult"/></returns>
         /// <param name="body">The request body</param>

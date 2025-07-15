@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PlannerPlanDetails : global::Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerCategoryDescriptions? CategoryDescriptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerCategoryDescriptions?>("categoryDescriptions"); }
-            set { BackingStore?.Set("categoryDescriptions", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerCategoryDescriptions CategoryDescriptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerCategoryDescriptions>("categoryDescriptions"); }
-            set { BackingStore?.Set("categoryDescriptions", value); }
-        }
-#endif
-        /// <summary>A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerPlanContextDetailsCollection? ContextDetails
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPlanContextDetailsCollection?>("contextDetails"); }
-            set { BackingStore?.Set("contextDetails", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerPlanContextDetailsCollection ContextDetails
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPlanContextDetailsCollection>("contextDetails"); }
-            set { BackingStore?.Set("contextDetails", value); }
-        }
-#endif
-        /// <summary>The set of user IDs that this plan is shared with. If you&apos;re using Microsoft 365 groups, use the groups API to manage group membership to share the group&apos;s plan. You can also add existing members of the group to this collection, although it isn&apos;t required in order for them to access the plan owned by the group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.PlannerUserIds? SharedWith
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerUserIds?>("sharedWith"); }
-            set { BackingStore?.Set("sharedWith", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.PlannerUserIds SharedWith
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerUserIds>("sharedWith"); }
-            set { BackingStore?.Set("sharedWith", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "categoryDescriptions", n => { CategoryDescriptions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerCategoryDescriptions>(global::Microsoft.Graph.Beta.Models.PlannerCategoryDescriptions.CreateFromDiscriminatorValue); } },
-                { "contextDetails", n => { ContextDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanContextDetailsCollection>(global::Microsoft.Graph.Beta.Models.PlannerPlanContextDetailsCollection.CreateFromDiscriminatorValue); } },
-                { "sharedWith", n => { SharedWith = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerUserIds>(global::Microsoft.Graph.Beta.Models.PlannerUserIds.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,9 +40,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerCategoryDescriptions>("categoryDescriptions", CategoryDescriptions);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanContextDetailsCollection>("contextDetails", ContextDetails);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerUserIds>("sharedWith", SharedWith);
         }
     }
 }

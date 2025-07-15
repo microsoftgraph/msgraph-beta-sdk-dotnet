@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +61,6 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -176,10 +174,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

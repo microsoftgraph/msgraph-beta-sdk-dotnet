@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
         }
         /// <summary>
         /// Create a copy of a driveItem asynchronously. You can optionally copy exclusively the child items, specify a new parent folder, or provide a new name. Once the request is accepted, the operation is queued and processed asynchronously. Use the monitor URL to track progress until the operation completes.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="body">The request body</param>
