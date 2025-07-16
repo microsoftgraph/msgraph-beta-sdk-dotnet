@@ -15,6 +15,7 @@ using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
 using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
 using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Identities;
+using Microsoft.Graph.Beta.Security.IncidentTasks;
 using Microsoft.Graph.Beta.Security.Incidents;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
@@ -118,6 +119,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.Incidents.IncidentsRequestBuilder Incidents
         {
             get => new global::Microsoft.Graph.Beta.Security.Incidents.IncidentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the incidentTasks property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.IncidentTasks.IncidentTasksRequestBuilder IncidentTasks
+        {
+            get => new global::Microsoft.Graph.Beta.Security.IncidentTasks.IncidentTasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the informationProtection property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.InformationProtection.InformationProtectionRequestBuilder InformationProtection

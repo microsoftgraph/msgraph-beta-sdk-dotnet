@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("label", value); }
         }
 #endif
+        /// <summary>The rights property</summary>
+        public global::Microsoft.Graph.Beta.Models.UsageRights? Rights
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UsageRights?>("rights"); }
+            set { BackingStore?.Set("rights", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cid", n => { Cid = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SensitivityLabel>(global::Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue); } },
+                { "rights", n => { Rights = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.UsageRights>(); } },
             };
         }
         /// <summary>
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("cid", Cid);
             writer.WriteStringValue("format", Format);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SensitivityLabel>("label", Label);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.UsageRights>("rights", Rights);
         }
     }
 }

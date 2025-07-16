@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.PolicyFiles;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContentAsync;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels;
@@ -21,6 +22,11 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DataSecurityAndGovernanceRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the policyFiles property of the microsoft.graph.tenantDataSecurityAndGovernance entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.PolicyFiles.PolicyFilesRequestBuilder PolicyFiles
+        {
+            get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.PolicyFiles.PolicyFilesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the processContentAsync method.</summary>
         public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContentAsync.ProcessContentAsyncRequestBuilder ProcessContentAsync
         {

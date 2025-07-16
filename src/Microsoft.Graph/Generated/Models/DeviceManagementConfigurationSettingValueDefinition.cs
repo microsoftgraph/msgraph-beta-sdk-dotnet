@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.deviceManagementConfigurationFloatSettingValueDefinition" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationFloatSettingValueDefinition(),
                 "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinition(),
                 "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefinition(),
                 _ => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition(),

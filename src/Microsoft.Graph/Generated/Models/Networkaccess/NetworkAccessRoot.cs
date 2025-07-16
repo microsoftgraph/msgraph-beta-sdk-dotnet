@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("filteringProfiles", value); }
         }
 #endif
-        /// <summary>A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.</summary>
+        /// <summary>The forwardingPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy>? ForwardingPolicies
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("forwardingPolicies", value); }
         }
 #endif
-        /// <summary>A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.</summary>
+        /// <summary>The forwardingProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>? ForwardingProfiles
@@ -188,6 +188,38 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("threatIntelligencePolicies", value); }
         }
 #endif
+        /// <summary>A container for tenant-level TLS inspection settings for Global Secure Access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.TlsTermination? Tls
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsTermination?>("tls"); }
+            set { BackingStore?.Set("tls", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.TlsTermination Tls
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsTermination>("tls"); }
+            set { BackingStore?.Set("tls", value); }
+        }
+#endif
+        /// <summary>Allows you to configure TLS termination for your organization&apos;s network traffic through Global Secure Access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicy>? TlsInspectionPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicy>?>("tlsInspectionPolicies"); }
+            set { BackingStore?.Set("tlsInspectionPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicy> TlsInspectionPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicy>>("tlsInspectionPolicies"); }
+            set { BackingStore?.Set("tlsInspectionPolicies", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -217,6 +249,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Settings>(global::Microsoft.Graph.Beta.Models.Networkaccess.Settings.CreateFromDiscriminatorValue); } },
                 { "tenantStatus", n => { TenantStatus = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus>(global::Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus.CreateFromDiscriminatorValue); } },
                 { "threatIntelligencePolicies", n => { ThreatIntelligencePolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tls", n => { Tls = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsTermination>(global::Microsoft.Graph.Beta.Models.Networkaccess.TlsTermination.CreateFromDiscriminatorValue); } },
+                { "tlsInspectionPolicies", n => { TlsInspectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -238,6 +272,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Settings>("settings", Settings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus>("tenantStatus", TenantStatus);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicy>("threatIntelligencePolicies", ThreatIntelligencePolicies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsTermination>("tls", Tls);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicy>("tlsInspectionPolicies", TlsInspectionPolicies);
         }
     }
 }

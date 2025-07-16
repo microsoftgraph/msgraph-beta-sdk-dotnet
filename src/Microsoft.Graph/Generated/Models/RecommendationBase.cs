@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("remediationImpact", value); }
         }
 #endif
-        /// <summary>The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.</summary>
+        /// <summary>The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue, aatp. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: aatp.</summary>
         public global::Microsoft.Graph.Beta.Models.RequiredLicenses? RequiredLicenses
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RequiredLicenses?>("requiredLicenses"); }
