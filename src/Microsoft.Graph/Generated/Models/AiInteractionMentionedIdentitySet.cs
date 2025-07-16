@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AiInteractionMentionedIdentitySet : global::Microsoft.Graph.Beta.Models.IdentitySet, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The conversation details.</summary>
+        /// <summary>The conversation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.TeamworkConversationIdentity? Conversation

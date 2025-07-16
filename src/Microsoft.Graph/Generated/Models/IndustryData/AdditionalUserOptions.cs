@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether all students should be marked as minors.</summary>
+        /// <summary>Indicates whether all students should be marked as minors. The markAllStudentsAsMinors property is deprecated and will stop returning data on October 15, 2025. Going forward, use the studentAgeGroup property.</summary>
         public bool? MarkAllStudentsAsMinors
         {
             get { return BackingStore?.Get<bool?>("markAllStudentsAsMinors"); }

@@ -4,7 +4,6 @@ using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Settings.ConditionalAccess;
 using Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess;
-using Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs;
 using Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -31,11 +30,6 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings
         public global::Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess.CrossTenantAccessRequestBuilder CrossTenantAccess
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess.CrossTenantAccessRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the enrichedAuditLogs property of the microsoft.graph.networkaccess.settings entity.</summary>
-        public global::Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs.EnrichedAuditLogsRequestBuilder EnrichedAuditLogs
-        {
-            get => new global::Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs.EnrichedAuditLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingOptions property of the microsoft.graph.networkaccess.settings entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions.ForwardingOptionsRequestBuilder ForwardingOptions

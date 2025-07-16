@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #endif
-        /// <summary>The sessions property</summary>
+        /// <summary>Sessions for a registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.VirtualEventSession>? Sessions

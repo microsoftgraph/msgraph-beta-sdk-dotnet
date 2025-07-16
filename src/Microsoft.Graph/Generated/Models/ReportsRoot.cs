@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ReportsRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The readingAssignmentSubmissions property</summary>
+        /// <summary>Details of submitted reading assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission>? ReadingAssignmentSubmissions
@@ -28,7 +28,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("readingAssignmentSubmissions", value); }
         }
 #endif
-        /// <summary>The reflectCheckInResponses property</summary>
+        /// <summary>Details of practiced Reading Coach passages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ReadingCoachPassage>? ReadingCoachPassages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ReadingCoachPassage>?>("readingCoachPassages"); }
+            set { BackingStore?.Set("readingCoachPassages", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ReadingCoachPassage> ReadingCoachPassages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ReadingCoachPassage>>("readingCoachPassages"); }
+            set { BackingStore?.Set("readingCoachPassages", value); }
+        }
+#endif
+        /// <summary>Details of check-in responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ReflectCheckInResponse>? ReflectCheckInResponses
@@ -79,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "readingAssignmentSubmissions", n => { ReadingAssignmentSubmissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission>(global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "readingCoachPassages", n => { ReadingCoachPassages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReadingCoachPassage>(global::Microsoft.Graph.Beta.Models.ReadingCoachPassage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reflectCheckInResponses", n => { ReflectCheckInResponses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReflectCheckInResponse>(global::Microsoft.Graph.Beta.Models.ReflectCheckInResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "speakerAssignmentSubmissions", n => { SpeakerAssignmentSubmissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission>(global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -92,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission>("readingAssignmentSubmissions", ReadingAssignmentSubmissions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReadingCoachPassage>("readingCoachPassages", ReadingCoachPassages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ReflectCheckInResponse>("reflectCheckInResponses", ReflectCheckInResponses);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SpeakerAssignmentSubmission>("speakerAssignmentSubmissions", SpeakerAssignmentSubmissions);
         }

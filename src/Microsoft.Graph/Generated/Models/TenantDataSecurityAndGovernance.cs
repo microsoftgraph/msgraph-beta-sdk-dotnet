@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TenantDataSecurityAndGovernance : global::Microsoft.Graph.Beta.Models.DataSecurityAndGovernance, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The policyFiles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PolicyFile>? PolicyFiles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PolicyFile>?>("policyFiles"); }
+            set { BackingStore?.Set("policyFiles", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PolicyFile> PolicyFiles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PolicyFile>>("policyFiles"); }
+            set { BackingStore?.Set("policyFiles", value); }
+        }
+#endif
         /// <summary>The protectionScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "policyFiles", n => { PolicyFiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyFile>(global::Microsoft.Graph.Beta.Models.PolicyFile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "protectionScopes", n => { ProtectionScopes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer>(global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer.CreateFromDiscriminatorValue); } },
             };
         }
@@ -64,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyFile>("policyFiles", PolicyFiles);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer>("protectionScopes", ProtectionScopes);
         }
     }

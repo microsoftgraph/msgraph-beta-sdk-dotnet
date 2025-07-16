@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         {
         }
         /// <summary>
-        /// Get sessions from solutions
+        /// Sessions for a registration.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventSession>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sessions from solutions
+        /// Sessions for a registration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sessions from solutions
+        /// Sessions for a registration.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEventSessionItemRequestBuilderGetQueryParameters 

@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("containers", value); }
         }
 #endif
+        /// <summary>The containerTypeRegistrations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>? ContainerTypeRegistrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>?>("containerTypeRegistrations"); }
+            set { BackingStore?.Set("containerTypeRegistrations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration> ContainerTypeRegistrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>>("containerTypeRegistrations"); }
+            set { BackingStore?.Set("containerTypeRegistrations", value); }
+        }
+#endif
+        /// <summary>The containerTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>? ContainerTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>?>("containerTypes"); }
+            set { BackingStore?.Set("containerTypes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType> ContainerTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>>("containerTypes"); }
+            set { BackingStore?.Set("containerTypes", value); }
+        }
+#endif
         /// <summary>The deletedContainers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +94,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "containerTypeRegistrations", n => { ContainerTypeRegistrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>(global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "containerTypes", n => { ContainerTypes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>(global::Microsoft.Graph.Beta.Models.FileStorageContainerType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>(global::Microsoft.Graph.Beta.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deletedContainers", n => { DeletedContainers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>(global::Microsoft.Graph.Beta.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -75,6 +109,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>("containers", Containers);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>("containerTypeRegistrations", ContainerTypeRegistrations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>("containerTypes", ContainerTypes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>("deletedContainers", DeletedContainers);
         }
     }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class ThreatIntelligencePolicy : global::Microsoft.Graph.Beta.Models.Networkaccess.Policy, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the policy was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

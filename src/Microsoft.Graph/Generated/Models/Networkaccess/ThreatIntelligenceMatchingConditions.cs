@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The destinations property</summary>
+        /// <summary>A collection of destinations that are considered potential threats for network access evaluation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligenceDestination>? Destinations
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The severity property</summary>
+        /// <summary>The severity level of the threat associated with the destinations. Higher severity levels typically result in stricter security controls. The possible values are: low, medium, high, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligenceSeverity? Severity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligenceSeverity?>("severity"); }

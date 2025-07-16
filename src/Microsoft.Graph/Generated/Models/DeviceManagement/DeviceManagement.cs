@@ -1240,7 +1240,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("intents", value); }
         }
 #endif
-        /// <summary>Intune Account ID for given tenant</summary>
+        /// <summary>Intune Account Id for given tenant</summary>
         public Guid? IntuneAccountId
         {
             get { return BackingStore?.Get<Guid?>("intuneAccountId"); }
@@ -1418,7 +1418,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("managedDeviceWindowsOSImages", value); }
         }
 #endif
-        /// <summary>Maximum number of DEP tokens allowed per-tenant.</summary>
+        /// <summary>Maximum number of dep tokens allowed per-tenant.</summary>
         public int? MaximumDepTokens
         {
             get { return BackingStore?.Get<int?>("maximumDepTokens"); }

@@ -224,6 +224,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #endif
+        /// <summary>The singleValueExtendedProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>? SingleValueExtendedProperties
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty> SingleValueExtendedProperties
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#endif
         /// <summary>The date and time in the specified time zone at which the task is scheduled to start.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -297,6 +313,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "linkedResources", n => { LinkedResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LinkedResource>(global::Microsoft.Graph.Beta.Models.LinkedResource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recurrence", n => { Recurrence = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PatternedRecurrence>(global::Microsoft.Graph.Beta.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 { "reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>(global::Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>(global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>(global::Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TaskStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -327,6 +344,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LinkedResource>("linkedResources", LinkedResources);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence", Recurrence);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>("reminderDateTime", ReminderDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TaskStatus>("status", Status);
             writer.WriteStringValue("title", Title);

@@ -90,8 +90,12 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.deviceManagementConfigurationAndroidSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationAndroidSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationApplicationSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationApplicationSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationEdgeSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationEdgeSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationExchangeOnlineSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationIosSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIosSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationLinuxSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationLinuxSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSettingApplicability(),
                 _ => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability(),
             };

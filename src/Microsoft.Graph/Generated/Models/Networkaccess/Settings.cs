@@ -44,22 +44,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("crossTenantAccess", value); }
         }
 #endif
-        /// <summary>The enrichedAuditLogs property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs? EnrichedAuditLogs
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs?>("enrichedAuditLogs"); }
-            set { BackingStore?.Set("enrichedAuditLogs", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs EnrichedAuditLogs
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>("enrichedAuditLogs"); }
-            set { BackingStore?.Set("enrichedAuditLogs", value); }
-        }
-#endif
         /// <summary>The forwardingOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +80,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>(global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings.CreateFromDiscriminatorValue); } },
                 { "crossTenantAccess", n => { CrossTenantAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>(global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings.CreateFromDiscriminatorValue); } },
-                { "enrichedAuditLogs", n => { EnrichedAuditLogs = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>(global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs.CreateFromDiscriminatorValue); } },
                 { "forwardingOptions", n => { ForwardingOptions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions.CreateFromDiscriminatorValue); } },
             };
         }
@@ -110,7 +93,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>("conditionalAccess", ConditionalAccess);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>("crossTenantAccess", CrossTenantAccess);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>("enrichedAuditLogs", EnrichedAuditLogs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>("forwardingOptions", ForwardingOptions);
         }
     }

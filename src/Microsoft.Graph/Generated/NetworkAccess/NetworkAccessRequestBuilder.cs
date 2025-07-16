@@ -14,6 +14,8 @@ using Microsoft.Graph.Beta.NetworkAccess.Reports;
 using Microsoft.Graph.Beta.NetworkAccess.Settings;
 using Microsoft.Graph.Beta.NetworkAccess.TenantStatus;
 using Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies;
+using Microsoft.Graph.Beta.NetworkAccess.Tls;
+using Microsoft.Graph.Beta.NetworkAccess.TlsInspectionPolicies;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -89,6 +91,16 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         public global::Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.ThreatIntelligencePoliciesRequestBuilder ThreatIntelligencePolicies
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.ThreatIntelligencePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tls property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.Tls.TlsRequestBuilder Tls
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.Tls.TlsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tlsInspectionPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.TlsInspectionPolicies.TlsInspectionPoliciesRequestBuilder TlsInspectionPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.TlsInspectionPolicies.TlsInspectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder"/> and sets the default values.

@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item
         {
         }
         /// <summary>
-        /// Delete a thread object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-beta" />
+        /// Delete conversationThread.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConversationThread>(requestInfo, global::Microsoft.Graph.Beta.Models.ConversationThread.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a thread object.
+        /// Delete conversationThread.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

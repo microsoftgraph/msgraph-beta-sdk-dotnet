@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class ThreatIntelligenceFqdnDestination : global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligenceDestination, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The values property</summary>
+        /// <summary>A collection of fully qualified domain names (FQDNs) associated with potential security threats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Values

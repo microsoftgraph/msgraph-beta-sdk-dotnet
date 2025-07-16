@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.I
         {
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// The collection property of AppLogUploadRequest.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AppLogCollectionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AppLogCollectionRequest>(requestInfo, global::Microsoft.Graph.Beta.Models.AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// The collection property of AppLogUploadRequest.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.I
             return new global::Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// The collection property of AppLogUploadRequest.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AppLogCollectionRequestsRequestBuilderGetQueryParameters 
