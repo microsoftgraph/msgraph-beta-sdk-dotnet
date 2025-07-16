@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
+        /// <summary>The identityAccounts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>? IdentityAccounts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>?>("identityAccounts"); }
+            set { BackingStore?.Set("identityAccounts", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts> IdentityAccounts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>>("identityAccounts"); }
+            set { BackingStore?.Set("identityAccounts", value); }
+        }
+#endif
         /// <summary>Represents a customer&apos;s Microsoft Defender for Identity sensors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>(global::Microsoft.Graph.Beta.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "identityAccounts", n => { IdentityAccounts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>(global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>(global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -75,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>("healthIssues", HealthIssues);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>("identityAccounts", IdentityAccounts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>("sensors", Sensors);
         }
     }

@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 "#microsoft.graph.networkaccess.m365ForwardingRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.M365ForwardingRule(),
                 "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessForwardingRule(),
                 "#microsoft.graph.networkaccess.threatIntelligenceRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligenceRule(),
+                "#microsoft.graph.networkaccess.tlsInspectionRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionRule(),
                 "#microsoft.graph.networkaccess.webCategoryFilteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategoryFilteringRule(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule(),
             };
