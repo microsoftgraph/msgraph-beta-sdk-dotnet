@@ -56,7 +56,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender.RoleDefinitions
         {
         }
         /// <summary>
-        /// Get roleDefinitions from roleManagement
+        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR)- directory (Microsoft Entra ID) - entitlement management (Microsoft Entra ID)- Exchange Online
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender.RoleDefinitions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to roleDefinitions for roleManagement
+        /// Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR)- directory (Microsoft Entra ID)
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender.RoleDefinitions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>(requestInfo, global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get roleDefinitions from roleManagement
+        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR)- directory (Microsoft Entra ID) - entitlement management (Microsoft Entra ID)- Exchange Online
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +128,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender.RoleDefinitions
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to roleDefinitions for roleManagement
+        /// Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR)- directory (Microsoft Entra ID)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +161,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender.RoleDefinitions
             return new global::Microsoft.Graph.Beta.RoleManagement.Defender.RoleDefinitions.RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get roleDefinitions from roleManagement
+        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR)- directory (Microsoft Entra ID) - entitlement management (Microsoft Entra ID)- Exchange Online
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleDefinitionsRequestBuilderGetQueryParameters 
