@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class StopAndQuarantineFileIncidentTaskResponseAction : global::Microsoft.Graph.Beta.Models.Security.IncidentTaskResponseAction, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The deviceId property</summary>
+        /// <summary>Optional. The identifier of the device where the file is located. This property allows targeting the action to a specific device when the same file exists on multiple devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId

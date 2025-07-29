@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("countryCode", value); }
         }
 #endif
-        /// <summary>The preferredLanguageTag property</summary>
+        /// <summary>Contains the language the user has associated as preferred for the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.LocaleInfo? PreferredLanguageTag

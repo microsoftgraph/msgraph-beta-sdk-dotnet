@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Security.IncidentTasks.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get incidentTasks from security
+        /// A collection of tasks associated with security incidents.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.IncidentTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Security.IncidentTasks.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get incidentTasks from security
+        /// A collection of tasks associated with security incidents.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Security.IncidentTasks.Item
         {
         }
         /// <summary>
-        /// Get incidentTasks from security
+        /// A collection of tasks associated with security incidents.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IncidentTaskItemRequestBuilderGetQueryParameters 

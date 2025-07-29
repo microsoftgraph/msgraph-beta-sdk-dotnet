@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods
         {
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// Retrieve a list of a user&apos;s FIDO2 security key authentication method objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethodCollectionResponse"/></returns>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethodCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// Retrieve a list of a user&apos;s FIDO2 security key authentication method objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods
             return new global::Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Fido2MethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// Retrieve a list of a user&apos;s FIDO2 security key authentication method objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Fido2MethodsRequestBuilderGetQueryParameters 

@@ -81,7 +81,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestCallbackData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestCallbackData();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.assignmentRequestApprovalStageCallbackData" => new global::Microsoft.Graph.Beta.Models.AssignmentRequestApprovalStageCallbackData(),
+                _ => new global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestCallbackData(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

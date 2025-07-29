@@ -76,13 +76,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize.</summary>
+        /// <summary>The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
-        /// <summary>The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg.</summary>
+        /// <summary>The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg. The directory member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ExportFileStructure? ExportStructure
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ExportFileStructure?>("exportStructure"); }

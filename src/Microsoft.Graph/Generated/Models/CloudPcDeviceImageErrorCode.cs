@@ -56,5 +56,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         SourceImageWithDiskEncryptionSetNotSupported,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sourceImageWithAzureDiskEncryptionNotSupported")]
+        #pragma warning disable CS1591
+        SourceImageWithAzureDiskEncryptionNotSupported,
+        #pragma warning restore CS1591
     }
 }

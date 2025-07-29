@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("endMonthYear"); }
             set { BackingStore?.Set("endMonthYear", value); }
         }
-        /// <summary>The institution property</summary>
+        /// <summary>Contains details of the institution studied at.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.InstitutionData? Institution
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("institution", value); }
         }
 #endif
-        /// <summary>The program property</summary>
+        /// <summary>Contains extended information about the program or course.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationalActivityDetail? Program

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.RoleManagement.Defender.CustomAppScopes;
 using Microsoft.Graph.Beta.RoleManagement.Defender.ResourceNamespaces;
 using Microsoft.Graph.Beta.RoleManagement.Defender.RoleAssignments;
 using Microsoft.Graph.Beta.RoleManagement.Defender.RoleDefinitions;
@@ -21,6 +22,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DefenderRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the customAppScopes property of the microsoft.graph.unifiedRbacApplicationMultiple entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
+        public global::Microsoft.Graph.Beta.RoleManagement.Defender.CustomAppScopes.CustomAppScopesRequestBuilder CustomAppScopes
+        {
+            get => new global::Microsoft.Graph.Beta.RoleManagement.Defender.CustomAppScopes.CustomAppScopesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.</summary>
         [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.Defender.ResourceNamespaces.ResourceNamespacesRequestBuilder ResourceNamespaces
@@ -81,18 +88,18 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender
         /// <summary>
         /// Get defender from roleManagement
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder.DefenderRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder.DefenderRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder.DefenderRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder.DefenderRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -100,12 +107,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>(requestInfo, global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple>(requestInfo, global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property defender in roleManagement
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,11 +120,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender
         [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple?> PatchAsync(global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple?> PatchAsync(global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple> PatchAsync(global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple> PatchAsync(global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -126,7 +133,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>(requestInfo, global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple>(requestInfo, global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property defender for roleManagement
@@ -177,11 +184,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.Defender
         [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

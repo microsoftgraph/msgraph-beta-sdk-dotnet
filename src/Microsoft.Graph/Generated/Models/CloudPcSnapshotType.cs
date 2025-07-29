@@ -20,5 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "retention")]
+        #pragma warning disable CS1591
+        Retention,
+        #pragma warning restore CS1591
     }
 }

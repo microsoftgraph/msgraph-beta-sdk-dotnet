@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class EdiscoverySearchExportOperation : global::Microsoft.Graph.Beta.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport.</summary>
+        /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.AdditionalOptions? AdditionalOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AdditionalOptions?>("additionalOptions"); }
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.</summary>
+        /// <summary>Format of the emails of the export. The possible values are: pst, msg, eml (deprecated), unknownFutureValue. The eml member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ExportFormat? ExportFormat
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ExportFormat?>("exportFormat"); }

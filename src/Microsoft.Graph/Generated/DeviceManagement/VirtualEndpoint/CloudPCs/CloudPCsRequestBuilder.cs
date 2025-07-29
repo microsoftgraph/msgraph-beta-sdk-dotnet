@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Count;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.RetrieveCloudPcCountByStatus;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.ValidateBulkResize;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcCountByStatus method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.RetrieveCloudPcCountByStatus.RetrieveCloudPcCountByStatusRequestBuilder RetrieveCloudPcCountByStatus
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.RetrieveCloudPcCountByStatus.RetrieveCloudPcCountByStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateBulkResize method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.ValidateBulkResize.ValidateBulkResizeRequestBuilder ValidateBulkResize

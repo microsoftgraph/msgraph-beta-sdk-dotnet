@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Count;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Item;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Ref;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -25,7 +26,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.</summary>
+        /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
+        public global::Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Ref.RefRequestBuilder Ref
+        {
+            get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.tokenIssuancePolicies.item collection</summary>
         /// <param name="position">The unique identifier of tokenIssuancePolicy</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Item.TokenIssuancePolicyItemRequestBuilder"/></returns>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Item.TokenIssuancePolicyItemRequestBuilder this[string position]

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods;
+using Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.HardwareOathMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Methods;
@@ -38,6 +39,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication
         public global::Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods.EmailMethodsRequestBuilder EmailMethods
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods.EmailMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the externalAuthenticationMethods property of the microsoft.graph.authentication entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationMethods.ExternalAuthenticationMethodsRequestBuilder ExternalAuthenticationMethods
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationMethods.ExternalAuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods.Fido2MethodsRequestBuilder Fido2Methods
