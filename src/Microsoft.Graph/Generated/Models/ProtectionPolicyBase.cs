@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProtectionPolicyBase : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The billingPolicyId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingPolicyId
+        {
+            get { return BackingStore?.Get<string?>("billingPolicyId"); }
+            set { BackingStore?.Set("billingPolicyId", value); }
+        }
+#nullable restore
+#else
+        public string BillingPolicyId
+        {
+            get { return BackingStore?.Get<string>("billingPolicyId"); }
+            set { BackingStore?.Set("billingPolicyId", value); }
+        }
+#endif
         /// <summary>The identity of person who created the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "billingPolicyId", n => { BillingPolicyId = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -136,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("billingPolicyId", BillingPolicyId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);

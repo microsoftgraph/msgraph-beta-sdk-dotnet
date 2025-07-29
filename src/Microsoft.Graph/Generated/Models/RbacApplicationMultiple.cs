@@ -68,7 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.unifiedRbacApplicationMultiple" => new global::Microsoft.Graph.Beta.Models.UnifiedRbacApplicationMultiple(),
+                _ => new global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

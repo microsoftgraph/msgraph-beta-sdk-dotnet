@@ -680,6 +680,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
 #endif
+        /// <summary>Indicates the state of synchronization for a group between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities. For example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&amp;$count=true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior? OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior?>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#endif
         /// <summary>true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled
         {
@@ -1175,6 +1191,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesSamAccountName", n => { OnPremisesSamAccountName = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
+                { "onPremisesSyncBehavior", n => { OnPremisesSyncBehavior = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>(global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior.CreateFromDiscriminatorValue); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>(global::Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
@@ -1267,6 +1284,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
             writer.WriteStringValue("onPremisesSamAccountName", OnPremisesSamAccountName);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior", OnPremisesSyncBehavior);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("owners", Owners);

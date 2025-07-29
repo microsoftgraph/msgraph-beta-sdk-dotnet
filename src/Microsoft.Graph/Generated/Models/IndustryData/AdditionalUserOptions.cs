@@ -49,6 +49,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.</summary>
+        public global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup? StudentAgeGroup
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup?>("studentAgeGroup"); }
+            set { BackingStore?.Set("studentAgeGroup", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions"/> and sets the default values.
         /// </summary>
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
                 { "allowStudentContactAssociation", n => { AllowStudentContactAssociation = n.GetBoolValue(); } },
                 { "markAllStudentsAsMinors", n => { MarkAllStudentsAsMinors = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "studentAgeGroup", n => { StudentAgeGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup>(); } },
             };
         }
         /// <summary>
@@ -90,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             writer.WriteBoolValue("allowStudentContactAssociation", AllowStudentContactAssociation);
             writer.WriteBoolValue("markAllStudentsAsMinors", MarkAllStudentsAsMinors);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup>("studentAgeGroup", StudentAgeGroup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

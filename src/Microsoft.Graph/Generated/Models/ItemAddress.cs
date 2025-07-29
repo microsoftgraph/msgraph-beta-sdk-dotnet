@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ItemAddress : global::Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The detail property</summary>
+        /// <summary>Details about the address itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PhysicalAddress? Detail

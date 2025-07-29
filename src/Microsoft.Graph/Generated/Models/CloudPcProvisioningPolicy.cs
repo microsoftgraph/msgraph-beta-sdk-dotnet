@@ -108,6 +108,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudPcNamingTemplate", value); }
         }
 #endif
+        /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy
+        {
+            get { return BackingStore?.Get<string?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#nullable restore
+#else
+        public string CreatedBy
+        {
+            get { return BackingStore?.Get<string>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#endif
+        /// <summary>The createdDateTime property</summary>
+        public DateTimeOffset? CreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>The provisioning policy description. Supports $filter, $select, and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -205,6 +227,28 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyImageType?>("imageType"); }
             set { BackingStore?.Set("imageType", value); }
+        }
+        /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastModifiedBy
+        {
+            get { return BackingStore?.Get<string?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public string LastModifiedBy
+        {
+            get { return BackingStore?.Get<string>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>The lastModifiedDateTime property</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>When true, the local admin is enabled for Cloud PCs; false indicates that the local admin isn&apos;t enabled for Cloud PCs. The default value is false. Supports $filter, $select, and $orderBy.</summary>
         public bool? LocalAdminEnabled
@@ -312,6 +356,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "autopilotConfiguration", n => { AutopilotConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration.CreateFromDiscriminatorValue); } },
                 { "cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
                 { "cloudPcNamingTemplate", n => { CloudPcNamingTemplate = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "domainJoinConfigurations", n => { DomainJoinConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -320,6 +366,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 { "imageId", n => { ImageId = n.GetStringValue(); } },
                 { "imageType", n => { ImageType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyImageType>(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
                 { "managedBy", n => { ManagedBy = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>(); } },
                 { "microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
@@ -343,6 +391,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration>("autopilotConfiguration", AutopilotConfiguration);
             writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
             writer.WriteStringValue("cloudPcNamingTemplate", CloudPcNamingTemplate);
+            writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration>("domainJoinConfigurations", DomainJoinConfigurations);
@@ -351,6 +401,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteStringValue("imageId", ImageId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyImageType>("imageType", ImageType);
+            writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);

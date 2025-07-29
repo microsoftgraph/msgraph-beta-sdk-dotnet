@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.Me.Messages.Item.Move;
 using Microsoft.Graph.Beta.Me.Messages.Item.PermanentDelete;
 using Microsoft.Graph.Beta.Me.Messages.Item.Reply;
 using Microsoft.Graph.Beta.Me.Messages.Item.ReplyAll;
+using Microsoft.Graph.Beta.Me.Messages.Item.ReportMessage;
 using Microsoft.Graph.Beta.Me.Messages.Item.Send;
 using Microsoft.Graph.Beta.Me.Messages.Item.Unsubscribe;
 using Microsoft.Graph.Beta.Me.Messages.Item.Value;
@@ -110,6 +111,11 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
             get => new global::Microsoft.Graph.Beta.Me.Messages.Item.ReplyAll.ReplyAllRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the reportMessage method.</summary>
+        public global::Microsoft.Graph.Beta.Me.Messages.Item.ReportMessage.ReportMessageRequestBuilder ReportMessage
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Messages.Item.ReportMessage.ReportMessageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the send method.</summary>
         public global::Microsoft.Graph.Beta.Me.Messages.Item.Send.SendRequestBuilder Send
         {
@@ -137,8 +143,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-beta" />
+        /// Delete eventMessage.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,8 +166,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-beta" />
+        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -210,7 +216,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Message>(requestInfo, global::Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
+        /// Delete eventMessage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -229,7 +235,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -287,7 +293,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessageItemRequestBuilderGetQueryParameters 

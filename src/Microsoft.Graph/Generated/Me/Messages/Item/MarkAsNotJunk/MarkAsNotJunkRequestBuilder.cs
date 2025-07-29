@@ -43,6 +43,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The MarkAsNotJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Not_Junk on 2025-04-25 and will be removed 2025-12-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Message?> PostAsync(global::Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk.MarkAsNotJunkPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,6 +67,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The MarkAsNotJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Not_Junk on 2025-04-25 and will be removed 2025-12-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk.MarkAsNotJunkPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -87,6 +89,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk.MarkAsNotJunkRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The MarkAsNotJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Not_Junk on 2025-04-25 and will be removed 2025-12-30")]
         public global::Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk.MarkAsNotJunkRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk.MarkAsNotJunkRequestBuilder(rawUrl, RequestAdapter);

@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Count;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.RetrieveCloudPcCountByStatus;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.ValidateBulkResize;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcCountByStatus method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.RetrieveCloudPcCountByStatus.RetrieveCloudPcCountByStatusRequestBuilder RetrieveCloudPcCountByStatus
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.RetrieveCloudPcCountByStatus.RetrieveCloudPcCountByStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateBulkResize method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.ValidateBulkResize.ValidateBulkResizeRequestBuilder ValidateBulkResize

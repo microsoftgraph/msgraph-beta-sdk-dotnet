@@ -294,6 +294,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProductType?>("productType"); }
             set { BackingStore?.Set("productType", value); }
         }
+        /// <summary>The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? ProvisionedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("provisionedDateTime"); }
+            set { BackingStore?.Set("provisionedDateTime", value); }
+        }
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -386,6 +392,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType?>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
+        /// <summary>Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail? SharedDeviceDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail?>("sharedDeviceDetail"); }
+            set { BackingStore?.Set("sharedDeviceDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail SharedDeviceDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail>("sharedDeviceDetail"); }
+            set { BackingStore?.Set("sharedDeviceDetail", value); }
+        }
+#endif
         /// <summary>The status property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcStatus? Status
         {
@@ -486,6 +508,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>(global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "powerState", n => { PowerState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>(); } },
                 { "productType", n => { ProductType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>(); } },
+                { "provisionedDateTime", n => { ProvisionedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 { "provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
@@ -493,6 +516,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
                 { "servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
                 { "servicePlanType", n => { ServicePlanType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType>(); } },
+                { "sharedDeviceDetail", n => { SharedDeviceDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail>(global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcStatus>(); } },
                 { "statusDetail", n => { StatusDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail.CreateFromDiscriminatorValue); } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
@@ -530,6 +554,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>("partnerAgentInstallResults", PartnerAgentInstallResults);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>("powerState", PowerState);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>("productType", ProductType);
+            writer.WriteDateTimeOffsetValue("provisionedDateTime", ProvisionedDateTime);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
@@ -537,6 +562,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("servicePlanId", ServicePlanId);
             writer.WriteStringValue("servicePlanName", ServicePlanName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType>("servicePlanType", ServicePlanType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail>("sharedDeviceDetail", SharedDeviceDetail);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcStatus>("status", Status);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>("statusDetail", StatusDetail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails", StatusDetails);

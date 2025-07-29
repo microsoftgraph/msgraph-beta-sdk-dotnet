@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AllowedAudiences?>("allowedAudiences"); }
             set { BackingStore?.Set("allowedAudiences", value); }
         }
-        /// <summary>The createdBy property</summary>
+        /// <summary>Provides the identifier of the user and/or application that created the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Provides the identifier of the user and/or application that last modified the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy

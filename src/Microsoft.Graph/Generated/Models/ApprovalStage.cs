@@ -109,7 +109,12 @@ namespace Microsoft.Graph.Beta.Models
         public static global::Microsoft.Graph.Beta.Models.ApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ApprovalStage();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.accessPackageDynamicApprovalStage" => new global::Microsoft.Graph.Beta.Models.AccessPackageDynamicApprovalStage(),
+                _ => new global::Microsoft.Graph.Beta.Models.ApprovalStage(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -25,6 +25,7 @@ using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies;
 using Microsoft.Graph.Beta.Groups.Item.MemberOf;
 using Microsoft.Graph.Beta.Groups.Item.Members;
 using Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors;
+using Microsoft.Graph.Beta.Groups.Item.OnPremisesSyncBehavior;
 using Microsoft.Graph.Beta.Groups.Item.Onenote;
 using Microsoft.Graph.Beta.Groups.Item.Owners;
 using Microsoft.Graph.Beta.Groups.Item.PermissionGrants;
@@ -194,6 +195,11 @@ namespace Microsoft.Graph.Beta.Groups.Item
         public global::Microsoft.Graph.Beta.Groups.Item.Onenote.OnenoteRequestBuilder Onenote
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.group entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder OnPremisesSyncBehavior
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.group entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Owners.OwnersRequestBuilder Owners

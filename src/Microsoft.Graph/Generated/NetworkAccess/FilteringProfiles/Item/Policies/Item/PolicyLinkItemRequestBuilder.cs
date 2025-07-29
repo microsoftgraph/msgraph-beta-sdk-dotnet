@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a tlsInspectionPolicyLink object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-update?view=graph-rest-beta" />
+        /// Update the properties of a threatIntelligencePolicyLink object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a tlsInspectionPolicyLink object.
+        /// Update the properties of a threatIntelligencePolicyLink object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

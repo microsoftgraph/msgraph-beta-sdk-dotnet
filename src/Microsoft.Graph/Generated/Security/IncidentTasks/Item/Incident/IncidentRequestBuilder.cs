@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Security.IncidentTasks.Item.Incident
         {
         }
         /// <summary>
-        /// Get incident from security
+        /// Required. The incident that contains this task. Must contain a valid incident ID.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Incident"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.IncidentTasks.Item.Incident
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.Incident>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.Incident.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get incident from security
+        /// Required. The incident that contains this task. Must contain a valid incident ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Security.IncidentTasks.Item.Incident
             return new global::Microsoft.Graph.Beta.Security.IncidentTasks.Item.Incident.IncidentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get incident from security
+        /// Required. The incident that contains this task. Must contain a valid incident ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IncidentRequestBuilderGetQueryParameters 

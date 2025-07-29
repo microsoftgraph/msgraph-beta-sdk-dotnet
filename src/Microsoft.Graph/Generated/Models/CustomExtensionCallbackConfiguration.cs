@@ -63,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.accessPackageRequestApprovalStageCallbackConfiguration" => new global::Microsoft.Graph.Beta.Models.AccessPackageRequestApprovalStageCallbackConfiguration(),
                 "#microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCallbackConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration(),
             };

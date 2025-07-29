@@ -30,6 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.emailAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod(),
+                "#microsoft.graph.externalAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod(),
                 "#microsoft.graph.fido2AuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod(),
                 "#microsoft.graph.hardwareOathAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod(),

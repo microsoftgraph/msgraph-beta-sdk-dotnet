@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.IncidentTaskActionType?>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
-        /// <summary>The createdByDisplayName property</summary>
+        /// <summary>Name of the entity that created the task. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedByDisplayName
@@ -40,13 +40,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("createdByDisplayName", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Creation time of the task. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the remediation action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Title of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The incident property</summary>
+        /// <summary>Required. The incident that contains this task. Must contain a valid incident ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.Incident? Incident
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("incident", value); }
         }
 #endif
-        /// <summary>The lastModifiedByDisplayName property</summary>
+        /// <summary>Name of the entity that last updated the task. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastModifiedByDisplayName
@@ -110,13 +110,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("lastModifiedByDisplayName", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Last update time of the task. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The responseAction property</summary>
+        /// <summary>The reponse action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.IncidentTaskResponseAction? ResponseAction

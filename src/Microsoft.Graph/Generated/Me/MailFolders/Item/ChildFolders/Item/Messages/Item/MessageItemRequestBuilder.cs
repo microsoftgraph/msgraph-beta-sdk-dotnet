@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.M
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.PermanentDelete;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Reply;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReportMessage;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Send;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Unsubscribe;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Value;
@@ -109,6 +110,11 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll.ReplyAllRequestBuilder ReplyAll
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll.ReplyAllRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reportMessage method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReportMessage.ReportMessageRequestBuilder ReportMessage
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReportMessage.ReportMessageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the send method.</summary>
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Send.SendRequestBuilder Send

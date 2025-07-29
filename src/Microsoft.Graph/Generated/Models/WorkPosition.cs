@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("colleagues", value); }
         }
 #endif
-        /// <summary>The detail property</summary>
+        /// <summary>Contains detailed information about the position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PositionDetail? Detail

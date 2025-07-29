@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailMethods", value); }
         }
 #endif
+        /// <summary>The externalAuthenticationMethods property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>? ExternalAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>?>("externalAuthenticationMethods"); }
+            set { BackingStore?.Set("externalAuthenticationMethods", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod> ExternalAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>>("externalAuthenticationMethods"); }
+            set { BackingStore?.Set("externalAuthenticationMethods", value); }
+        }
+#endif
         /// <summary>Represents the FIDO2 security keys registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -287,6 +303,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "emailMethods", n => { EmailMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalAuthenticationMethods", n => { ExternalAuthenticationMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fido2Methods", n => { Fido2Methods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>(global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hardwareOathMethods", n => { HardwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "methods", n => { Methods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethod>(global::Microsoft.Graph.Beta.Models.AuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -313,6 +330,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>("emailMethods", EmailMethods);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>("externalAuthenticationMethods", ExternalAuthenticationMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>("fido2Methods", Fido2Methods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>("hardwareOathMethods", HardwareOathMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethod>("methods", Methods);

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The service property</summary>
+        /// <summary>Contains basic detail about the service that is being associated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ServiceInformation? Service

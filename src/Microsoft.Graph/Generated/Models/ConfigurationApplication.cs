@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
+        /// <summary>The appOwnerOrganizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppOwnerOrganizationId
+        {
+            get { return BackingStore?.Get<string?>("appOwnerOrganizationId"); }
+            set { BackingStore?.Set("appOwnerOrganizationId", value); }
+        }
+#nullable restore
+#else
+        public string AppOwnerOrganizationId
+        {
+            get { return BackingStore?.Get<string>("appOwnerOrganizationId"); }
+            set { BackingStore?.Set("appOwnerOrganizationId", value); }
+        }
+#endif
         /// <summary>The clientCredentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appOwnerOrganizationId", n => { AppOwnerOrganizationId = n.GetStringValue(); } },
                 { "clientCredentials", n => { ClientCredentials = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ClientCredentials>(global::Microsoft.Graph.Beta.Models.ClientCredentials.CreateFromDiscriminatorValue); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -174,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appId", AppId);
+            writer.WriteStringValue("appOwnerOrganizationId", AppOwnerOrganizationId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ClientCredentials>("clientCredentials", ClientCredentials);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);

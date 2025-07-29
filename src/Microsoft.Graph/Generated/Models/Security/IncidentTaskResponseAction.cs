@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class IncidentTaskResponseAction : global::Microsoft.Graph.Beta.Models.Security.ResponseAction, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identifierValue property</summary>
+        /// <summary>Required. The identifier value for the response action. This value is specific to the type of action being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentifierValue
