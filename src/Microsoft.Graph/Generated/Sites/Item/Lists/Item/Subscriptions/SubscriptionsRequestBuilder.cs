@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions.Count;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions.GetVapidPublicKey;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions
         public global::Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getVapidPublicKey method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder GetVapidPublicKey
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
         /// <param name="position">The unique identifier of subscription</param>

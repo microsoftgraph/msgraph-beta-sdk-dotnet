@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ExternalAuthenticationMethod : global::Microsoft.Graph.Beta.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configurationId property</summary>
+        /// <summary>A unique identifier used to manage the external auth method within Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfigurationId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("configurationId", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Custom name given to the registered external authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

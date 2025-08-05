@@ -34,6 +34,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
+        /// <summary>The lastModifiedDateTime property</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +152,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "classificationMethod", n => { ClassificationMethod = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ClassificationMethod>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "publisherName", n => { PublisherName = n.GetStringValue(); } },
                 { "rulePackageId", n => { RulePackageId = n.GetStringValue(); } },
@@ -165,6 +172,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ClassificationMethod>("classificationMethod", ClassificationMethod);
             writer.WriteStringValue("description", Description);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("publisherName", PublisherName);
             writer.WriteStringValue("rulePackageId", RulePackageId);

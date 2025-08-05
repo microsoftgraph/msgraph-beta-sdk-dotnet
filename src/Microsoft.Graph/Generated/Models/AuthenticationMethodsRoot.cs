@@ -12,6 +12,54 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AuthenticationMethodsRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Represents a specific user MFA/SSPR registration or reset event, including whether the event was successful, which authentication method was targeted, and failure reason if any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.UserEventsSummary>? UserEventsSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserEventsSummary>?>("userEventsSummary"); }
+            set { BackingStore?.Set("userEventsSummary", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.UserEventsSummary> UserEventsSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserEventsSummary>>("userEventsSummary"); }
+            set { BackingStore?.Set("userEventsSummary", value); }
+        }
+#endif
+        /// <summary>Represents the total count of MFA vs non-MFA sign-in counts for a specified period.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.UserMfaSignInSummary>? UserMfaSignInSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserMfaSignInSummary>?>("userMfaSignInSummary"); }
+            set { BackingStore?.Set("userMfaSignInSummary", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.UserMfaSignInSummary> UserMfaSignInSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserMfaSignInSummary>>("userMfaSignInSummary"); }
+            set { BackingStore?.Set("userMfaSignInSummary", value); }
+        }
+#endif
+        /// <summary>Represents the summary of password resets and changes for a specific day. This includes the number of password resets that were self-service and those triggered by an administrator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.UserPasswordResetsAndChangesSummary>? UserPasswordResetsAndChangesSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserPasswordResetsAndChangesSummary>?>("userPasswordResetsAndChangesSummary"); }
+            set { BackingStore?.Set("userPasswordResetsAndChangesSummary", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.UserPasswordResetsAndChangesSummary> UserPasswordResetsAndChangesSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserPasswordResetsAndChangesSummary>>("userPasswordResetsAndChangesSummary"); }
+            set { BackingStore?.Set("userPasswordResetsAndChangesSummary", value); }
+        }
+#endif
         /// <summary>Represents the state of a user&apos;s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +94,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "userEventsSummary", n => { UserEventsSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserEventsSummary>(global::Microsoft.Graph.Beta.Models.UserEventsSummary.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "userMfaSignInSummary", n => { UserMfaSignInSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserMfaSignInSummary>(global::Microsoft.Graph.Beta.Models.UserMfaSignInSummary.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "userPasswordResetsAndChangesSummary", n => { UserPasswordResetsAndChangesSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserPasswordResetsAndChangesSummary>(global::Microsoft.Graph.Beta.Models.UserPasswordResetsAndChangesSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userRegistrationDetails", n => { UserRegistrationDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserRegistrationDetails>(global::Microsoft.Graph.Beta.Models.UserRegistrationDetails.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +108,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserEventsSummary>("userEventsSummary", UserEventsSummary);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserMfaSignInSummary>("userMfaSignInSummary", UserMfaSignInSummary);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserPasswordResetsAndChangesSummary>("userPasswordResetsAndChangesSummary", UserPasswordResetsAndChangesSummary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserRegistrationDetails>("userRegistrationDetails", UserRegistrationDetails);
         }
     }

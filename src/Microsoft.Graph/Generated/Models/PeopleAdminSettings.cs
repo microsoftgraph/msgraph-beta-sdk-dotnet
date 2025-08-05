@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("namePronunciation", value); }
         }
 #endif
+        /// <summary>Administrator settings that manage the support for item photo updates in an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings? PhotoUpdateSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings?>("photoUpdateSettings"); }
+            set { BackingStore?.Set("photoUpdateSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings PhotoUpdateSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings>("photoUpdateSettings"); }
+            set { BackingStore?.Set("photoUpdateSettings", value); }
+        }
+#endif
         /// <summary>A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +144,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "itemInsights", n => { ItemInsights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>(global::Microsoft.Graph.Beta.Models.InsightsSettings.CreateFromDiscriminatorValue); } },
                 { "namePronunciation", n => { NamePronunciation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings>(global::Microsoft.Graph.Beta.Models.NamePronunciationSettings.CreateFromDiscriminatorValue); } },
+                { "photoUpdateSettings", n => { PhotoUpdateSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings>(global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings.CreateFromDiscriminatorValue); } },
                 { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>(global::Microsoft.Graph.Beta.Models.ProfileCardProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profilePropertySettings", n => { ProfilePropertySettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>(global::Microsoft.Graph.Beta.Models.ProfilePropertySetting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profileSources", n => { ProfileSources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSource>(global::Microsoft.Graph.Beta.Models.ProfileSource.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -144,6 +161,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>("itemInsights", ItemInsights);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings>("namePronunciation", NamePronunciation);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings>("photoUpdateSettings", PhotoUpdateSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>("profilePropertySettings", ProfilePropertySettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSource>("profileSources", ProfileSources);

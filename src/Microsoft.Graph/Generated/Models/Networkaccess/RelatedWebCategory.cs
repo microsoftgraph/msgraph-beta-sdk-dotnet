@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class RelatedWebCategory : global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The webCategoryName property</summary>
+        /// <summary>Name of the web category. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebCategoryName

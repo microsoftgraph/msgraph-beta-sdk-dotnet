@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.</summary>
+        /// <summary>Specifies whether approval is required to complete the plannerTask. If set to true, the task can only be marked as complete if an approval is created for the task and approved.</summary>
         public bool? IsApprovalRequired
         {
             get { return BackingStore?.Get<bool?>("isApprovalRequired"); }

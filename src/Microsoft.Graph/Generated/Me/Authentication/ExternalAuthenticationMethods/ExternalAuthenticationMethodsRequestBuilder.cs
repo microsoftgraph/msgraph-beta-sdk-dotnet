@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.ExternalAuthenticationMethods
         {
         }
         /// <summary>
-        /// Get externalAuthenticationMethods from me
+        /// Get a list of the externalAuthenticationMethod objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-externalauthenticationmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.ExternalAuthenticationMethods
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get externalAuthenticationMethods from me
+        /// Get a list of the externalAuthenticationMethod objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.ExternalAuthenticationMethods
             return new global::Microsoft.Graph.Beta.Me.Authentication.ExternalAuthenticationMethods.ExternalAuthenticationMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get externalAuthenticationMethods from me
+        /// Get a list of the externalAuthenticationMethod objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExternalAuthenticationMethodsRequestBuilderGetQueryParameters 

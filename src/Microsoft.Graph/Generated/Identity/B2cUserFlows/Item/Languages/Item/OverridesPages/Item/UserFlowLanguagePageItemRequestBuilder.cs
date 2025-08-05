@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Overrid
         {
         }
         /// <summary>
-        /// Deletes the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
+        /// Delete the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userflowlanguagepage-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Overrid
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UserFlowLanguagePage>(requestInfo, global::Microsoft.Graph.Beta.Models.UserFlowLanguagePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
+        /// Delete the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -9,6 +9,7 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Item.CreatedByUser;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.DocumentProcessingJobs;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Drive;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Drives;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Extensions;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ExternalColumns;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId;
@@ -88,6 +89,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.Drives.DrivesRequestBuilder Drives
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.site entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.Extensions.ExtensionsRequestBuilder Extensions
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.ExternalColumns.ExternalColumnsRequestBuilder ExternalColumns

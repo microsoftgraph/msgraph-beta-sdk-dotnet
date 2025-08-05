@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.It
         {
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
+        /// Delete a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>(requestInfo, global::Microsoft.Graph.Beta.Models.PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
+        /// Delete a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

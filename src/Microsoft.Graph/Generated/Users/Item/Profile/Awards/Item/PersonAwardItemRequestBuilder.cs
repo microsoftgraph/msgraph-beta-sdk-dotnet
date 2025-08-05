@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item
         {
         }
         /// <summary>
-        /// Deletes a personAward object from a user&apos;s profile.
+        /// Delete a personAward object from a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PersonAward>(requestInfo, global::Microsoft.Graph.Beta.Models.PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a personAward object from a user&apos;s profile.
+        /// Delete a personAward object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

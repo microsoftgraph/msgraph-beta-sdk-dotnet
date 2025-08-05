@@ -21,25 +21,25 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The highSeverityCount property</summary>
+        /// <summary>Total number of high alert severity. Required.</summary>
         public long? HighSeverityCount
         {
             get { return BackingStore?.Get<long?>("highSeverityCount"); }
             set { BackingStore?.Set("highSeverityCount", value); }
         }
-        /// <summary>The informationalSeverityCount property</summary>
+        /// <summary>Total number of informational alert severity. Required.</summary>
         public long? InformationalSeverityCount
         {
             get { return BackingStore?.Get<long?>("informationalSeverityCount"); }
             set { BackingStore?.Set("informationalSeverityCount", value); }
         }
-        /// <summary>The lowSeverityCount property</summary>
+        /// <summary>Total number of low alert severity. Required.</summary>
         public long? LowSeverityCount
         {
             get { return BackingStore?.Get<long?>("lowSeverityCount"); }
             set { BackingStore?.Set("lowSeverityCount", value); }
         }
-        /// <summary>The mediumSeverityCount property</summary>
+        /// <summary>Total number of medium alert severity. Required.</summary>
         public long? MediumSeverityCount
         {
             get { return BackingStore?.Get<long?>("mediumSeverityCount"); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The timeStampDateTime property</summary>
+        /// <summary>The time bucket for counting the alert severities. Required.</summary>
         public DateTimeOffset? TimeStampDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("timeStampDateTime"); }

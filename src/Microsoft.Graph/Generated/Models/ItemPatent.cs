@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("issuedDate"); }
             set { BackingStore?.Set("issuedDate", value); }
         }
-        /// <summary>Authority which granted the patent.</summary>
+        /// <summary>Authority that granted the patent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuingAuthority

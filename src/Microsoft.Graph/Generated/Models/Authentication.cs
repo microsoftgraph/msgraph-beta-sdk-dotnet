@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailMethods", value); }
         }
 #endif
-        /// <summary>The externalAuthenticationMethods property</summary>
+        /// <summary>Represents the external methods registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>? ExternalAuthenticationMethods

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class Alert : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actions property</summary>
+        /// <summary>List of possible action items to take based on the alert (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>? Actions
@@ -34,13 +34,45 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertType?>("alertType"); }
             set { BackingStore?.Set("alertType", value); }
         }
-        /// <summary>The creationDateTime property</summary>
+        /// <summary>Categories associated with the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.IntentCategory?>? Categories
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.IntentCategory?>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.IntentCategory?> Categories
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.IntentCategory?>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#endif
+        /// <summary>Component name related to the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComponentName
+        {
+            get { return BackingStore?.Get<string?>("componentName"); }
+            set { BackingStore?.Set("componentName", value); }
+        }
+#nullable restore
+#else
+        public string ComponentName
+        {
+            get { return BackingStore?.Get<string>("componentName"); }
+            set { BackingStore?.Set("componentName", value); }
+        }
+#endif
+        /// <summary>The time the alert was created in the system. Required.</summary>
         public DateTimeOffset? CreationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Text description explaining the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -56,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The detectionTechnology property</summary>
+        /// <summary>Alert detection technology.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DetectionTechnology
@@ -72,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("detectionTechnology", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the alert. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -88,7 +120,41 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The policy property</summary>
+        /// <summary>Extended properties for the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.ExtendedProperties? ExtendedProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ExtendedProperties?>("extendedProperties"); }
+            set { BackingStore?.Set("extendedProperties", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.ExtendedProperties ExtendedProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ExtendedProperties>("extendedProperties"); }
+            set { BackingStore?.Set("extendedProperties", value); }
+        }
+#endif
+        /// <summary>The time of the first activity related to the alert.</summary>
+        public DateTimeOffset? FirstActivityDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("firstActivityDateTime"); }
+            set { BackingStore?.Set("firstActivityDateTime", value); }
+        }
+        /// <summary>Indicates if the alert is a preview.</summary>
+        public bool? IsPreview
+        {
+            get { return BackingStore?.Get<bool?>("isPreview"); }
+            set { BackingStore?.Set("isPreview", value); }
+        }
+        /// <summary>The time of the last activity related to the alert.</summary>
+        public DateTimeOffset? LastActivityDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastActivityDateTime"); }
+            set { BackingStore?.Set("lastActivityDateTime", value); }
+        }
+        /// <summary>The filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy? Policy
@@ -104,7 +170,23 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("policy", value); }
         }
 #endif
-        /// <summary>The relatedResources property</summary>
+        /// <summary>The name of the product that raised the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProductName
+        {
+            get { return BackingStore?.Get<string?>("productName"); }
+            set { BackingStore?.Set("productName", value); }
+        }
+#nullable restore
+#else
+        public string ProductName
+        {
+            get { return BackingStore?.Get<string>("productName"); }
+            set { BackingStore?.Set("productName", value); }
+        }
+#endif
+        /// <summary>List of related resources to the alert (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>? RelatedResources
@@ -126,7 +208,39 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>The vendorName property</summary>
+        /// <summary>Sub-techniques associated with the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SubTechniques
+        {
+            get { return BackingStore?.Get<List<string>?>("subTechniques"); }
+            set { BackingStore?.Set("subTechniques", value); }
+        }
+#nullable restore
+#else
+        public List<string> SubTechniques
+        {
+            get { return BackingStore?.Get<List<string>>("subTechniques"); }
+            set { BackingStore?.Set("subTechniques", value); }
+        }
+#endif
+        /// <summary>Techniques associated with the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Techniques
+        {
+            get { return BackingStore?.Get<List<string>?>("techniques"); }
+            set { BackingStore?.Set("techniques", value); }
+        }
+#nullable restore
+#else
+        public List<string> Techniques
+        {
+            get { return BackingStore?.Get<List<string>>("techniques"); }
+            set { BackingStore?.Set("techniques", value); }
+        }
+#endif
+        /// <summary>The name of the vendor that raised the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VendorName
@@ -162,13 +276,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>(global::Microsoft.Graph.Beta.Models.Networkaccess.AlertAction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "alertType", n => { AlertType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertType>(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Networkaccess.IntentCategory>()?.AsList(); } },
+                { "componentName", n => { ComponentName = n.GetStringValue(); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "detectionTechnology", n => { DetectionTechnology = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "extendedProperties", n => { ExtendedProperties = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ExtendedProperties>(global::Microsoft.Graph.Beta.Models.Networkaccess.ExtendedProperties.CreateFromDiscriminatorValue); } },
+                { "firstActivityDateTime", n => { FirstActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isPreview", n => { IsPreview = n.GetBoolValue(); } },
+                { "lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy.CreateFromDiscriminatorValue); } },
+                { "productName", n => { ProductName = n.GetStringValue(); } },
                 { "relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>(global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "severity", n => { Severity = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertSeverity>(); } },
+                { "subTechniques", n => { SubTechniques = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "techniques", n => { Techniques = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "vendorName", n => { VendorName = n.GetStringValue(); } },
             };
         }
@@ -182,13 +305,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>("actions", Actions);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertType>("alertType", AlertType);
+            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Networkaccess.IntentCategory>("categories", Categories);
+            writer.WriteStringValue("componentName", ComponentName);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("detectionTechnology", DetectionTechnology);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ExtendedProperties>("extendedProperties", ExtendedProperties);
+            writer.WriteDateTimeOffsetValue("firstActivityDateTime", FirstActivityDateTime);
+            writer.WriteBoolValue("isPreview", IsPreview);
+            writer.WriteDateTimeOffsetValue("lastActivityDateTime", LastActivityDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>("policy", Policy);
+            writer.WriteStringValue("productName", ProductName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>("relatedResources", RelatedResources);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertSeverity>("severity", Severity);
+            writer.WriteCollectionOfPrimitiveValues<string>("subTechniques", SubTechniques);
+            writer.WriteCollectionOfPrimitiveValues<string>("techniques", Techniques);
             writer.WriteStringValue("vendorName", VendorName);
         }
     }

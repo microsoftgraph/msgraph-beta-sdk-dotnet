@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item
         {
         }
         /// <summary>
-        /// Delete an existing trustFrameworkPolicy.
+        /// Delete an existing trustFrameworkPolicy object from an Microsoft Entra B2C tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkpolicy-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TrustFrameworkPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.TrustFrameworkPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing trustFrameworkPolicy.
+        /// Delete an existing trustFrameworkPolicy object from an Microsoft Entra B2C tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

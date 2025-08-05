@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class RelatedFile : global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The directory property</summary>
+        /// <summary>Directory path of the file. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Directory
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("directory", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the file. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The sizeInBytes property</summary>
+        /// <summary>Size of the file in bytes. Required.</summary>
         public long? SizeInBytes
         {
             get { return BackingStore?.Get<long?>("sizeInBytes"); }
