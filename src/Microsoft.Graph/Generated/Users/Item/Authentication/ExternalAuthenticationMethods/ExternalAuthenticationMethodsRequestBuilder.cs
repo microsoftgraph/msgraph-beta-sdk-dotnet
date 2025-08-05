@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationM
         {
         }
         /// <summary>
-        /// Get externalAuthenticationMethods from users
+        /// Represents the external methods registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationM
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethodCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to externalAuthenticationMethods for users
+        /// Create a new externalAuthenticationMethod object. This API doesn&apos;t support self-service operations.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-post-externalauthenticationmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationM
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get externalAuthenticationMethods from users
+        /// Represents the external methods registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationM
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to externalAuthenticationMethods for users
+        /// Create a new externalAuthenticationMethod object. This API doesn&apos;t support self-service operations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationM
             return new global::Microsoft.Graph.Beta.Users.Item.Authentication.ExternalAuthenticationMethods.ExternalAuthenticationMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get externalAuthenticationMethods from users
+        /// Represents the external methods registered to a user for authentication.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExternalAuthenticationMethodsRequestBuilderGetQueryParameters 

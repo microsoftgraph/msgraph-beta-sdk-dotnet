@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Alerts.Item.Policy
         {
         }
         /// <summary>
-        /// Get policy from networkAccess
+        /// The filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Alerts.Item.Policy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get policy from networkAccess
+        /// The filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Alerts.Item.Policy
             return new global::Microsoft.Graph.Beta.NetworkAccess.Alerts.Item.Policy.PolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get policy from networkAccess
+        /// The filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PolicyRequestBuilderGetQueryParameters 

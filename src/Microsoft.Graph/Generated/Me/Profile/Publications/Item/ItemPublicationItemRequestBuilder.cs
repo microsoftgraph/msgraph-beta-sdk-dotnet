@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item
         {
         }
         /// <summary>
-        /// Deletes an itemPublication object.
+        /// Delete an itemPublication object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempublication-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ItemPublication>(requestInfo, global::Microsoft.Graph.Beta.Models.ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an itemPublication object.
+        /// Delete an itemPublication object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

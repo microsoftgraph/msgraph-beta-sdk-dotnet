@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("threads", value); }
         }
 #endif
-        /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.</summary>
+        /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it can&apos;t be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Topic

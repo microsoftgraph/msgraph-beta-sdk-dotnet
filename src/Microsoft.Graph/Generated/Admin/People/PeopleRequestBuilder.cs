@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Admin.People.ItemInsights;
 using Microsoft.Graph.Beta.Admin.People.NamePronunciation;
+using Microsoft.Graph.Beta.Admin.People.PhotoUpdateSettings;
 using Microsoft.Graph.Beta.Admin.People.ProfileCardProperties;
 using Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings;
 using Microsoft.Graph.Beta.Admin.People.ProfileSources;
@@ -34,6 +35,11 @@ namespace Microsoft.Graph.Beta.Admin.People
         public global::Microsoft.Graph.Beta.Admin.People.NamePronunciation.NamePronunciationRequestBuilder NamePronunciation
         {
             get => new global::Microsoft.Graph.Beta.Admin.People.NamePronunciation.NamePronunciationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the photoUpdateSettings property of the microsoft.graph.peopleAdminSettings entity.</summary>
+        public global::Microsoft.Graph.Beta.Admin.People.PhotoUpdateSettings.PhotoUpdateSettingsRequestBuilder PhotoUpdateSettings
+        {
+            get => new global::Microsoft.Graph.Beta.Admin.People.PhotoUpdateSettings.PhotoUpdateSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.</summary>
         public global::Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder ProfileCardProperties

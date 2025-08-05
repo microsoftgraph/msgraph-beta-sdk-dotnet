@@ -9,6 +9,7 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.CreatedByUse
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.DocumentProcessingJobs;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Drive;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Drives;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Extensions;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.ExternalColumns;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId;
@@ -87,6 +88,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Drives.DrivesRequestBuilder Drives
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.site entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Extensions.ExtensionsRequestBuilder Extensions
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.ExternalColumns.ExternalColumnsRequestBuilder ExternalColumns

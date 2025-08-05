@@ -2,7 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserEventsSummary;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserMfaSignInSummary;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserPasswordResetsAndChangesSummary;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationActivityWithPeriod;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDetails;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserSignInsByAuthMethodSummaryWithPeriod;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByFeature;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByMethod;
@@ -23,6 +28,21 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthenticationMethodsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the userEventsSummary property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserEventsSummary.UserEventsSummaryRequestBuilder UserEventsSummary
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserEventsSummary.UserEventsSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the userMfaSignInSummary property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserMfaSignInSummary.UserMfaSignInSummaryRequestBuilder UserMfaSignInSummary
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserMfaSignInSummary.UserMfaSignInSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the userPasswordResetsAndChangesSummary property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserPasswordResetsAndChangesSummary.UserPasswordResetsAndChangesSummaryRequestBuilder UserPasswordResetsAndChangesSummary
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserPasswordResetsAndChangesSummary.UserPasswordResetsAndChangesSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDetails.UserRegistrationDetailsRequestBuilder UserRegistrationDetails
         {
@@ -183,6 +203,26 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the userRegistrationActivity method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationActivityWithPeriod.UserRegistrationActivityWithPeriodRequestBuilder"/></returns>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationActivityWithPeriod.UserRegistrationActivityWithPeriodRequestBuilder UserRegistrationActivityWithPeriod(string period)
+        {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationActivityWithPeriod.UserRegistrationActivityWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the userSignInsByAuthMethodSummary method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserSignInsByAuthMethodSummaryWithPeriod.UserSignInsByAuthMethodSummaryWithPeriodRequestBuilder"/></returns>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserSignInsByAuthMethodSummaryWithPeriod.UserSignInsByAuthMethodSummaryWithPeriodRequestBuilder UserSignInsByAuthMethodSummaryWithPeriod(string period)
+        {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserSignInsByAuthMethodSummaryWithPeriod.UserSignInsByAuthMethodSummaryWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Provides operations to call the usersRegisteredByFeature method.

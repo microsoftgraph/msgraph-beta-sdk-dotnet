@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class AlertAction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionLink property</summary>
+        /// <summary>A link to more information or to perform the action (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionLink
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("actionLink", value); }
         }
 #endif
-        /// <summary>The actionText property</summary>
+        /// <summary>Text describing the action. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionText

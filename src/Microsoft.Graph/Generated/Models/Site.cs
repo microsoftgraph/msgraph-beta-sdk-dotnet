@@ -157,6 +157,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("drives", value); }
         }
 #endif
+        /// <summary>The collection of open extensions defined for this site. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Extension>? Extensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Extension> Extensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#endif
         /// <summary>The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -453,6 +469,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "documentProcessingJobs", n => { DocumentProcessingJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DocumentProcessingJob>(global::Microsoft.Graph.Beta.Models.DocumentProcessingJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>(global::Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalColumns", n => { ExternalColumns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>(global::Microsoft.Graph.Beta.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "informationProtection", n => { InformationProtection = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationProtection>(global::Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue); } },
                 { "isPersonalSite", n => { IsPersonalSite = n.GetBoolValue(); } },
@@ -489,6 +506,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DocumentProcessingJob>("documentProcessingJobs", DocumentProcessingJobs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>("drives", Drives);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>("externalColumns", ExternalColumns);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationProtection>("informationProtection", InformationProtection);
             writer.WriteBoolValue("isPersonalSite", IsPersonalSite);

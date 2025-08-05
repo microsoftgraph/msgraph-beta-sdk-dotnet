@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The count property</summary>
+        /// <summary>Total number of alerts with this specific severity and type. Required.</summary>
         public long? Count
         {
             get { return BackingStore?.Get<long?>("count"); }

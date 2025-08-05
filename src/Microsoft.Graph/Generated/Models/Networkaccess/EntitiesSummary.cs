@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The number of unique devices that were seen.</summary>
+        /// <summary>The number of devices in the summary. Required.</summary>
         public long? DeviceCount
         {
             get { return BackingStore?.Get<long?>("deviceCount"); }
@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
-        /// <summary>The number of unique Microsoft Entra ID users that were seen.</summary>
+        /// <summary>The number of users in the summary. Required.</summary>
         public long? UserCount
         {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
-        /// <summary>The number of unique target workloads/hosts that were seen.</summary>
+        /// <summary>The number of workloads in the summary. Required.</summary>
         public long? WorkloadCount
         {
             get { return BackingStore?.Get<long?>("workloadCount"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class RelatedThreatIntelligence : global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The threatCount property</summary>
+        /// <summary>Number of threats detected by threat intelligence. Required.</summary>
         public long? ThreatCount
         {
             get { return BackingStore?.Get<long?>("threatCount"); }
