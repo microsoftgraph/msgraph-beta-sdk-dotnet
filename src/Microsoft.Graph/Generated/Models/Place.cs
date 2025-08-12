@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Place : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The street address of the place.</summary>
+        /// <summary>The physical address of the place, including the street, city, state, country or region, and postal code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PhysicalAddress? Address
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("address", value); }
         }
 #endif
-        /// <summary>The name associated with the place.</summary>
+        /// <summary>The name that is associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -60,6 +60,44 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #endif
+        /// <summary>Indicates whether the place is wheelchair accessible.</summary>
+        public bool? IsWheelChairAccessible
+        {
+            get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
+            set { BackingStore?.Set("isWheelChairAccessible", value); }
+        }
+        /// <summary>User-defined description of the place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Label
+        {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#nullable restore
+#else
+        public string Label
+        {
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#endif
+        /// <summary>The ID of a parent place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId
+        {
+            get { return BackingStore?.Get<string?>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#nullable restore
+#else
+        public string ParentId
+        {
+            get { return BackingStore?.Get<string>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#endif
         /// <summary>The phone number of the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("phone", value); }
         }
 #endif
-        /// <summary>A unique, immutable identifier for the place. Read-only. The value of this identifier is equal to the ExternalDirectoryObjectId returned from the Get-Mailbox cmdlet.</summary>
+        /// <summary>An alternate immutable unique identifier of the place. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceId
@@ -92,6 +130,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("placeId", value); }
         }
 #endif
+        /// <summary>Custom tags that are associated with the place for categorization or filtering.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags
+        {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#nullable restore
+#else
+        public List<string> Tags
+        {
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -103,8 +157,12 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.building" => new global::Microsoft.Graph.Beta.Models.Building(),
+                "#microsoft.graph.desk" => new global::Microsoft.Graph.Beta.Models.Desk(),
+                "#microsoft.graph.floor" => new global::Microsoft.Graph.Beta.Models.Floor(),
                 "#microsoft.graph.room" => new global::Microsoft.Graph.Beta.Models.Room(),
                 "#microsoft.graph.roomList" => new global::Microsoft.Graph.Beta.Models.RoomList(),
+                "#microsoft.graph.section" => new global::Microsoft.Graph.Beta.Models.Section(),
                 "#microsoft.graph.workspace" => new global::Microsoft.Graph.Beta.Models.Workspace(),
                 _ => new global::Microsoft.Graph.Beta.Models.Place(),
             };
@@ -120,8 +178,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "address", n => { Address = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>(global::Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>(global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "placeId", n => { PlaceId = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -135,8 +197,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>("address", Address);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
+            writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);
+            writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("placeId", PlaceId);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
         }
     }
 }

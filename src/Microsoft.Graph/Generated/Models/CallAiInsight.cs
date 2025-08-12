@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CallAiInsight : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The collection of AI-generated action items. Read-only.</summary>
+        /// <summary>The actionItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ActionItem>? ActionItems
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("actionItems", value); }
         }
 #endif
-        /// <summary>The ID for the online meeting call for which the callAiInsight was generated. Read-only.</summary>
+        /// <summary>The callId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("callId", value); }
         }
 #endif
-        /// <summary>The unique ID that correlates the transcript from which the insights were generated. Read-only.</summary>
+        /// <summary>The contentCorrelationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentCorrelationId
@@ -60,19 +60,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentCorrelationId", value); }
         }
 #endif
-        /// <summary>Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
+        /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The collection of AI-generated meeting notes. Read-only.</summary>
+        /// <summary>The meetingNotes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MeetingNote>? MeetingNotes
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("meetingNotes", value); }
         }
 #endif
-        /// <summary>The caller-specific properties of the callAiInsight entity. Read-only.</summary>
+        /// <summary>The viewpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CallAiInsightViewPoint? Viewpoint

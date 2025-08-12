@@ -40,6 +40,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("participants", value); }
         }
 #endif
+        /// <summary>The recordingState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RecordingState? RecordingState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecordingState?>("recordingState"); }
+            set { BackingStore?.Set("recordingState", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RecordingState RecordingState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecordingState>("recordingState"); }
+            set { BackingStore?.Set("recordingState", value); }
+        }
+#endif
+        /// <summary>The transcriptionState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TranscriptionState? TranscriptionState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TranscriptionState?>("transcriptionState"); }
+            set { BackingStore?.Set("transcriptionState", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TranscriptionState TranscriptionState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TranscriptionState>("transcriptionState"); }
+            set { BackingStore?.Set("transcriptionState", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,6 +98,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "callEventType", n => { CallEventType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CallEventType>(); } },
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>(global::Microsoft.Graph.Beta.Models.Participant.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recordingState", n => { RecordingState = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecordingState>(global::Microsoft.Graph.Beta.Models.RecordingState.CreateFromDiscriminatorValue); } },
+                { "transcriptionState", n => { TranscriptionState = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TranscriptionState>(global::Microsoft.Graph.Beta.Models.TranscriptionState.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,6 +113,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CallEventType>("callEventType", CallEventType);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>("participants", Participants);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecordingState>("recordingState", RecordingState);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TranscriptionState>("transcriptionState", TranscriptionState);
         }
     }
 }

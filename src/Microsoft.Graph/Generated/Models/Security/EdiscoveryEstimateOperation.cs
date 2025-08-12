@@ -30,6 +30,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<int?>("mailboxCount"); }
             set { BackingStore?.Set("mailboxCount", value); }
         }
+        /// <summary>Contains the properties for report file metadata, including downloadUrl, fileName, and size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>? ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>?>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata> ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#endif
         /// <summary>eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "indexedItemCount", n => { IndexedItemCount = n.GetLongValue(); } },
                 { "indexedItemsSize", n => { IndexedItemsSize = n.GetLongValue(); } },
                 { "mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
+                { "reportFileMetadata", n => { ReportFileMetadata = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>(global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "search", n => { Search = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearch>(global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
                 { "siteCount", n => { SiteCount = n.GetIntValue(); } },
                 { "statisticsOptions", n => { StatisticsOptions = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.StatisticsOptions>(); } },
@@ -109,6 +126,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteLongValue("indexedItemCount", IndexedItemCount);
             writer.WriteLongValue("indexedItemsSize", IndexedItemsSize);
             writer.WriteIntValue("mailboxCount", MailboxCount);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>("reportFileMetadata", ReportFileMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearch>("search", Search);
             writer.WriteIntValue("siteCount", SiteCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.StatisticsOptions>("statisticsOptions", StatisticsOptions);

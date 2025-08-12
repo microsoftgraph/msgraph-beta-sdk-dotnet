@@ -54,6 +54,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
+        /// <summary>The identifier assigned to the employee.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmployeeId
+        {
+            get { return BackingStore?.Get<string?>("employeeId"); }
+            set { BackingStore?.Set("employeeId", value); }
+        }
+#nullable restore
+#else
+        public string EmployeeId
+        {
+            get { return BackingStore?.Get<string>("employeeId"); }
+            set { BackingStore?.Set("employeeId", value); }
+        }
+#endif
+        /// <summary>The type of employment for the position.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmployeeType
+        {
+            get { return BackingStore?.Get<string?>("employeeType"); }
+            set { BackingStore?.Set("employeeType", value); }
+        }
+#nullable restore
+#else
+        public string EmployeeType
+        {
+            get { return BackingStore?.Get<string>("employeeType"); }
+            set { BackingStore?.Set("employeeType", value); }
+        }
+#endif
         /// <summary>The date when the position ended.</summary>
         public Date? EndMonthYear
         {
@@ -212,6 +244,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "company", n => { Company = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CompanyDetail>(global::Microsoft.Graph.Beta.Models.CompanyDetail.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "employeeId", n => { EmployeeId = n.GetStringValue(); } },
+                { "employeeType", n => { EmployeeType = n.GetStringValue(); } },
                 { "endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
                 { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
                 { "layer", n => { Layer = n.GetIntValue(); } },
@@ -233,6 +267,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CompanyDetail>("company", Company);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("employeeId", EmployeeId);
+            writer.WriteStringValue("employeeType", EmployeeType);
             writer.WriteDateValue("endMonthYear", EndMonthYear);
             writer.WriteStringValue("jobTitle", JobTitle);
             writer.WriteIntValue("layer", Layer);

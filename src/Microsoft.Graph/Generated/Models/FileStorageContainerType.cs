@@ -24,13 +24,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FileStorageContainerBillingStatus?>("billingStatus"); }
             set { BackingStore?.Set("billingStatus", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The creation date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The etag property</summary>
+        /// <summary>Used in update scenarios for optimistic concurrency control. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Etag
@@ -46,13 +46,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("etag", value); }
         }
 #endif
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The expiration date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the fileStorageContainerType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The owningAppId property</summary>
+        /// <summary>ID of the application that owns the fileStorageContainerType.</summary>
         public Guid? OwningAppId
         {
             get { return BackingStore?.Get<Guid?>("owningAppId"); }

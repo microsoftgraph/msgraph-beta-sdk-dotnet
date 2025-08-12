@@ -21,37 +21,37 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isDiscoverabilityEnabled property</summary>
+        /// <summary>Indicates whether items from containers are surfaced in experiences such as My Activity or Microsoft 365.</summary>
         public bool? IsDiscoverabilityEnabled
         {
             get { return BackingStore?.Get<bool?>("isDiscoverabilityEnabled"); }
             set { BackingStore?.Set("isDiscoverabilityEnabled", value); }
         }
-        /// <summary>The isItemVersioningEnabled property</summary>
+        /// <summary>Indicates whether item versioning is enabled.</summary>
         public bool? IsItemVersioningEnabled
         {
             get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
             set { BackingStore?.Set("isItemVersioningEnabled", value); }
         }
-        /// <summary>The isSearchEnabled property</summary>
+        /// <summary>Indicates whether search is enabled.</summary>
         public bool? IsSearchEnabled
         {
             get { return BackingStore?.Get<bool?>("isSearchEnabled"); }
             set { BackingStore?.Set("isSearchEnabled", value); }
         }
-        /// <summary>The isSharingRestricted property</summary>
+        /// <summary>Only the manager and owner can share files in the container if restricted sharing is enabled.</summary>
         public bool? IsSharingRestricted
         {
             get { return BackingStore?.Get<bool?>("isSharingRestricted"); }
             set { BackingStore?.Set("isSharingRestricted", value); }
         }
-        /// <summary>The itemMajorVersionLimit property</summary>
+        /// <summary>Maximum number of versions. Versioning must be enabled (&apos;isItemVersioningEnabled&apos;=true).</summary>
         public long? ItemMajorVersionLimit
         {
             get { return BackingStore?.Get<long?>("itemMajorVersionLimit"); }
             set { BackingStore?.Set("itemMajorVersionLimit", value); }
         }
-        /// <summary>The maxStoragePerContainerInBytes property</summary>
+        /// <summary>Controls maximum storage in bytes.</summary>
         public long? MaxStoragePerContainerInBytes
         {
             get { return BackingStore?.Get<long?>("maxStoragePerContainerInBytes"); }
@@ -73,13 +73,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sharingCapability property</summary>
+        /// <summary>Sharing capabilities permitted for containers. The possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly, unknownFutureValue. Can always be updated.</summary>
         public global::Microsoft.Graph.Beta.Models.SharingCapabilities? SharingCapability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharingCapabilities?>("sharingCapability"); }
             set { BackingStore?.Set("sharingCapability", value); }
         }
-        /// <summary>The urlTemplate property</summary>
+        /// <summary>Pattern used to redirect files.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UrlTemplate

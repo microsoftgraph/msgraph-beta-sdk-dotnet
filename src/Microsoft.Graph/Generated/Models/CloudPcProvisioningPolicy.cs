@@ -300,6 +300,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
+        /// <summary>The userExperienceType property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType?>("userExperienceType"); }
+            set { BackingStore?.Set("userExperienceType", value); }
+        }
         /// <summary>Indicates a specific Windows setting to configure during the creation of Cloud PCs for this provisioning policy. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -373,6 +379,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "userExperienceType", n => { UserExperienceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>(); } },
                 { "windowsSetting", n => { WindowsSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>(global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
                 { "windowsSettings", n => { WindowsSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings>(global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
@@ -408,6 +415,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>("userExperienceType", UserExperienceType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>("windowsSetting", WindowsSetting);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }

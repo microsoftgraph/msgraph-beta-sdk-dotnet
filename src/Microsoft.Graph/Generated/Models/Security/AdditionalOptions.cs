@@ -65,13 +65,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         #pragma warning disable CS1591
         SplitSource = 8192,
         #pragma warning restore CS1591
-        [EnumMember(Value = "optimizedPartitionSize")]
-        #pragma warning disable CS1591
-        OptimizedPartitionSize = 16384,
-        #pragma warning restore CS1591
         [EnumMember(Value = "includeReport")]
         #pragma warning disable CS1591
-        IncludeReport = 32768,
+        IncludeReport = 16384,
         #pragma warning restore CS1591
     }
 }

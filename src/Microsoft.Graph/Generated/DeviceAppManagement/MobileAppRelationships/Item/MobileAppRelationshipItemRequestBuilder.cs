@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppRelationships.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List mobileAppRelationship objects for mobile applications.
+        /// The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileAppRelationship"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppRelationships.Item
             return requestInfo;
         }
         /// <summary>
-        /// List mobileAppRelationship objects for mobile applications.
+        /// The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppRelationships.Item
         {
         }
         /// <summary>
-        /// List mobileAppRelationship objects for mobile applications.
+        /// The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppRelationshipItemRequestBuilderGetQueryParameters 

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes
         {
         }
         /// <summary>
-        /// Get containerTypes from storage
+        /// Get a list of the fileStorageContainerType objects and their properties for the current tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestorage-list-containertypes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to containerTypes for storage
+        /// Create a new fileStorageContainerType in the owning tenant. The number of container types in a tenant is limited.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestorage-post-containertypes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerType"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get containerTypes from storage
+        /// Get a list of the fileStorageContainerType objects and their properties for the current tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to containerTypes for storage
+        /// Create a new fileStorageContainerType in the owning tenant. The number of container types in a tenant is limited.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes
             return new global::Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.ContainerTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get containerTypes from storage
+        /// Get a list of the fileStorageContainerType objects and their properties for the current tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContainerTypesRequestBuilderGetQueryParameters 
