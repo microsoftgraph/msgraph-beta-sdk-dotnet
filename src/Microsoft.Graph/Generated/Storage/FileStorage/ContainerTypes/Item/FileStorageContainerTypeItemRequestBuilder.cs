@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item
         {
         }
         /// <summary>
-        /// Delete navigation property containerTypes for storage
+        /// Delete a fileStorageContainerType object from the tenant. A fileStorageContainerType can only be deleted if no registrations are associated with it in any tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestorage-delete-containertypes?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get containerTypes from storage
+        /// Get a fileStorageContainerType using its ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertype-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerType"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property containerTypes in storage
+        /// Update the properties of a fileStorageContainerType object. The properties updated are reflected in each registered fileStorageContainerTypeRegistration in a maximum of 24 hours. Settings overridden in a tenant aren&apos;t updated. ETag is used for optimistic concurrency control. It must match the value from Create, Get or the previous Update.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertype-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerType"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +108,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property containerTypes for storage
+        /// Delete a fileStorageContainerType object from the tenant. A fileStorageContainerType can only be deleted if no registrations are associated with it in any tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get containerTypes from storage
+        /// Get a fileStorageContainerType using its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property containerTypes in storage
+        /// Update the properties of a fileStorageContainerType object. The properties updated are reflected in each registered fileStorageContainerTypeRegistration in a maximum of 24 hours. Settings overridden in a tenant aren&apos;t updated. ETag is used for optimistic concurrency control. It must match the value from Create, Get or the previous Update.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +185,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item
         {
         }
         /// <summary>
-        /// Get containerTypes from storage
+        /// Get a fileStorageContainerType using its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerTypeItemRequestBuilderGetQueryParameters 

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Workspace : global::Microsoft.Graph.Beta.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies the building name or building number that the workspace is in.</summary>
+        /// <summary>The name or identifier of the building where the workspace is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Building
@@ -28,13 +28,29 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("building", value); }
         }
 #endif
-        /// <summary>Specifies the capacity of the workspace.</summary>
+        /// <summary>The maximum number of individual desks within a workspace.</summary>
         public int? Capacity
         {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
-        /// <summary>Email address of the workspace.</summary>
+        /// <summary>The name of the display device (for example, monitor or projector) that is available in the workspace.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayDeviceName
+        {
+            get { return BackingStore?.Get<string?>("displayDeviceName"); }
+            set { BackingStore?.Set("displayDeviceName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayDeviceName
+        {
+            get { return BackingStore?.Get<string>("displayDeviceName"); }
+            set { BackingStore?.Set("displayDeviceName", value); }
+        }
+#endif
+        /// <summary>The email address that is associated with the workspace. This email address is used for booking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailAddress
@@ -50,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>Specifies a descriptive label for the floor, for example, P.</summary>
+        /// <summary>A human-readable label for the floor; for example, Ground Floor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FloorLabel
@@ -66,35 +82,29 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("floorLabel", value); }
         }
 #endif
-        /// <summary>Specifies the floor number that the workspace is on.</summary>
+        /// <summary>The numeric floor level within the building. For example, 1 for first floor, 2 for second floor, and so on.</summary>
         public int? FloorNumber
         {
             get { return BackingStore?.Get<int?>("floorNumber"); }
             set { BackingStore?.Set("floorNumber", value); }
         }
-        /// <summary>Specifies whether the workspace is wheelchair accessible.</summary>
-        public bool? IsWheelChairAccessible
-        {
-            get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
-            set { BackingStore?.Set("isWheelChairAccessible", value); }
-        }
-        /// <summary>Specifies a descriptive label for the workspace, for example, a number or name.</summary>
+        /// <summary>The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.offlinePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label
+        public global::Microsoft.Graph.Beta.Models.PlaceMode? Mode
         {
-            get { return BackingStore?.Get<string?>("label"); }
-            set { BackingStore?.Set("label", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlaceMode?>("mode"); }
+            set { BackingStore?.Set("mode", value); }
         }
 #nullable restore
 #else
-        public string Label
+        public global::Microsoft.Graph.Beta.Models.PlaceMode Mode
         {
-            get { return BackingStore?.Get<string>("label"); }
-            set { BackingStore?.Set("label", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlaceMode>("mode"); }
+            set { BackingStore?.Set("mode", value); }
         }
 #endif
-        /// <summary>Specifies a nickname for the workspace, for example, &apos;quiet workspace&apos;.</summary>
+        /// <summary>A short, friendly name for the workspace, often used for easier identification or display in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Nickname
@@ -108,22 +118,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
-        }
-#endif
-        /// <summary>Specifies other features of the workspace; for example, the type of view or furniture type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Tags
-        {
-            get { return BackingStore?.Get<List<string>?>("tags"); }
-            set { BackingStore?.Set("tags", value); }
-        }
-#nullable restore
-#else
-        public List<string> Tags
-        {
-            get { return BackingStore?.Get<List<string>>("tags"); }
-            set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>
@@ -153,13 +147,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "building", n => { Building = n.GetStringValue(); } },
                 { "capacity", n => { Capacity = n.GetIntValue(); } },
+                { "displayDeviceName", n => { DisplayDeviceName = n.GetStringValue(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "floorLabel", n => { FloorLabel = n.GetStringValue(); } },
                 { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
-                { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>(global::Microsoft.Graph.Beta.Models.PlaceMode.CreateFromDiscriminatorValue); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -172,13 +165,12 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("building", Building);
             writer.WriteIntValue("capacity", Capacity);
+            writer.WriteStringValue("displayDeviceName", DisplayDeviceName);
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteStringValue("floorLabel", FloorLabel);
             writer.WriteIntValue("floorNumber", FloorNumber);
-            writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);
-            writer.WriteStringValue("label", Label);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>("mode", Mode);
             writer.WriteStringValue("nickname", Nickname);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
         }
     }
 }

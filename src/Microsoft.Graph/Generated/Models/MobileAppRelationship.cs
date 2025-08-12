@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// Describes a relationship between two mobile apps.
+    /// The MobileAppRelationship describes the relationship between two mobile applications by providing information that tells if an application is dependent on or superseded by another application.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppRelationship : global::Microsoft.Graph.Beta.Models.Entity, IParsable

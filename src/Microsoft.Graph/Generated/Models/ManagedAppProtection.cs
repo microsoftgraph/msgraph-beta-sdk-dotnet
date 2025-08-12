@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
             set { BackingStore?.Set("allowedInboundDataTransferSources", value); }
         }
-        /// <summary>Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of &apos;0&apos; means no exception is allowed.</summary>
+        /// <summary>Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of &apos;0&apos; means no exception is allowed. Valid values 0 to 65535</summary>
         public int? AllowedOutboundClipboardSharingExceptionLength
         {
             get { return BackingStore?.Get<int?>("allowedOutboundClipboardSharingExceptionLength"); }
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppDeviceThreatLevel?>("maximumAllowedDeviceThreatLevel"); }
             set { BackingStore?.Set("maximumAllowedDeviceThreatLevel", value); }
         }
-        /// <summary>Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.</summary>
+        /// <summary>Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped. Valid values 1 to 65535</summary>
         public int? MaximumPinRetries
         {
             get { return BackingStore?.Get<int?>("maximumPinRetries"); }
@@ -375,7 +375,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<TimeSpan?>("pinRequiredInsteadOfBiometricTimeout"); }
             set { BackingStore?.Set("pinRequiredInsteadOfBiometricTimeout", value); }
         }
-        /// <summary>Requires a pin to be unique from the number specified in this property.</summary>
+        /// <summary>Requires a pin to be unique from the number specified in this property. Valid values 0 to 24</summary>
         public int? PreviousPinBlockCount
         {
             get { return BackingStore?.Get<int?>("previousPinBlockCount"); }

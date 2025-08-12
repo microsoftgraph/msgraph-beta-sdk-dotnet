@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Room : global::Microsoft.Graph.Beta.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies the name of the audio device in the room.</summary>
+        /// <summary>The name of the audio device that is available in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AudioDeviceName
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("audioDeviceName", value); }
         }
 #endif
-        /// <summary>Type of room. Possible values are standard, and reserved.</summary>
+        /// <summary>Specifies how the room can be booked. Possible values are:unknown - Unspecified booking behavior. We don&apos;t recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.</summary>
         public global::Microsoft.Graph.Beta.Models.BookingType? BookingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BookingType?>("bookingType"); }
             set { BackingStore?.Set("bookingType", value); }
         }
-        /// <summary>Specifies the building name or building number that the room is in.</summary>
+        /// <summary>The name or identifier of the building where the room is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Building
@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("building", value); }
         }
 #endif
-        /// <summary>Specifies the capacity of the room.</summary>
+        /// <summary>The maximum number of people the room can accommodate.</summary>
         public int? Capacity
         {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
-        /// <summary>Specifies the name of the display device in the room.</summary>
+        /// <summary>The name of the display device (for example, monitor or projector) that is available in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayDeviceName
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayDeviceName", value); }
         }
 #endif
-        /// <summary>Email address of the room.</summary>
+        /// <summary>The email address associated with the room. This email address is used for booking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailAddress
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>Specifies a descriptive label for the floor, for example, P.</summary>
+        /// <summary>A human-readable label for the floor; for example, Ground Floor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FloorLabel
@@ -104,35 +104,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("floorLabel", value); }
         }
 #endif
-        /// <summary>Specifies the floor number that the room is on.</summary>
+        /// <summary>The numeric floor level within the building. For example, 1 for first floor, 2 for second floor, and so on.</summary>
         public int? FloorNumber
         {
             get { return BackingStore?.Get<int?>("floorNumber"); }
             set { BackingStore?.Set("floorNumber", value); }
         }
-        /// <summary>Specifies whether the room is wheelchair accessible.</summary>
-        public bool? IsWheelChairAccessible
+        /// <summary>Indicates whether the room is configured with the Microsoft Teams Rooms system.</summary>
+        public bool? IsTeamsEnabled
         {
-            get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
-            set { BackingStore?.Set("isWheelChairAccessible", value); }
+            get { return BackingStore?.Get<bool?>("isTeamsEnabled"); }
+            set { BackingStore?.Set("isTeamsEnabled", value); }
         }
-        /// <summary>Specifies a descriptive label for the room, for example, a number or name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Label
-        {
-            get { return BackingStore?.Get<string?>("label"); }
-            set { BackingStore?.Set("label", value); }
-        }
-#nullable restore
-#else
-        public string Label
-        {
-            get { return BackingStore?.Get<string>("label"); }
-            set { BackingStore?.Set("label", value); }
-        }
-#endif
-        /// <summary>Specifies a nickname for the room, for example, &apos;conf room&apos;.</summary>
+        /// <summary>A short, friendly name for the room, often used for easier identification or display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Nickname
@@ -148,23 +132,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("nickname", value); }
         }
 #endif
-        /// <summary>Specifies other features of the room; for example, the type of view or furniture type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Tags
-        {
-            get { return BackingStore?.Get<List<string>?>("tags"); }
-            set { BackingStore?.Set("tags", value); }
-        }
-#nullable restore
-#else
-        public List<string> Tags
-        {
-            get { return BackingStore?.Get<List<string>>("tags"); }
-            set { BackingStore?.Set("tags", value); }
-        }
-#endif
-        /// <summary>Specifies the name of the video device in the room.</summary>
+        /// <summary>The name of the video device that is available in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VideoDeviceName
@@ -213,10 +181,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "floorLabel", n => { FloorLabel = n.GetStringValue(); } },
                 { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
-                { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
+                { "isTeamsEnabled", n => { IsTeamsEnabled = n.GetBoolValue(); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "videoDeviceName", n => { VideoDeviceName = n.GetStringValue(); } },
             };
         }
@@ -236,10 +202,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteStringValue("floorLabel", FloorLabel);
             writer.WriteIntValue("floorNumber", FloorNumber);
-            writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);
-            writer.WriteStringValue("label", Label);
+            writer.WriteBoolValue("isTeamsEnabled", IsTeamsEnabled);
             writer.WriteStringValue("nickname", Nickname);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("videoDeviceName", VideoDeviceName);
         }
     }

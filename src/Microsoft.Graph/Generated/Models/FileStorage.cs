@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class FileStorage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The containers property</summary>
+        /// <summary>The collection of active fileStorageContainer resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.FileStorageContainer>? Containers
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("containers", value); }
         }
 #endif
-        /// <summary>The containerTypeRegistrations property</summary>
+        /// <summary>The collection of fileStorageContainerTypeRegistration resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>? ContainerTypeRegistrations
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("containerTypeRegistrations", value); }
         }
 #endif
-        /// <summary>The containerTypes property</summary>
+        /// <summary>The collection of fileStorageContainerType resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>? ContainerTypes
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("containerTypes", value); }
         }
 #endif
-        /// <summary>The deletedContainers property</summary>
+        /// <summary>The collection of deleted fileStorageContainer resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.FileStorageContainer>? DeletedContainers

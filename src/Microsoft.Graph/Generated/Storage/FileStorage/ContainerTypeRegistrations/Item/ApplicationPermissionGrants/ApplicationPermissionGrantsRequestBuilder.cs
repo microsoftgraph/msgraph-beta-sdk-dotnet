@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
         {
         }
         /// <summary>
-        /// Get applicationPermissionGrants from storage
+        /// List all app permission grants in a fileStorageContainerTypeRegistration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertyperegistration-list-applicationpermissiongrants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get applicationPermissionGrants from storage
+        /// List all app permission grants in a fileStorageContainerTypeRegistration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return new global::Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.Item.ApplicationPermissionGrants.ApplicationPermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get applicationPermissionGrants from storage
+        /// List all app permission grants in a fileStorageContainerTypeRegistration.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationPermissionGrantsRequestBuilderGetQueryParameters 

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AiUser : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The history of interactions between AI agents and users.</summary>
+        /// <summary>The interactionHistory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AiInteractionHistory? InteractionHistory
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("interactionHistory", value); }
         }
 #endif
-        /// <summary>Information about an online meeting, including AI insights.</summary>
+        /// <summary>The onlineMeetings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AiOnlineMeeting>? OnlineMeetings

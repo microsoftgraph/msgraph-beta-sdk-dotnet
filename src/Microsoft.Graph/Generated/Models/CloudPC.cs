@@ -452,6 +452,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
+        /// <summary>The userExperienceType property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType?>("userExperienceType"); }
+            set { BackingStore?.Set("userExperienceType", value); }
+        }
         /// <summary>The user principal name (UPN) of the user assigned to the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -521,6 +527,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "statusDetail", n => { StatusDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail.CreateFromDiscriminatorValue); } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
                 { "userAccountType", n => { UserAccountType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType>(); } },
+                { "userExperienceType", n => { UserExperienceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -567,6 +574,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>("statusDetail", StatusDetail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails", StatusDetails);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType>("userAccountType", UserAccountType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>("userExperienceType", UserExperienceType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }

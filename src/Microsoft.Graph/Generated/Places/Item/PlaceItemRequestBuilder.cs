@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Places.Item.Descendants;
 using Microsoft.Graph.Beta.Places.Item.GraphRoom;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.Places.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlaceItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the descendants method.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.Descendants.DescendantsRequestBuilder Descendants
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.Descendants.DescendantsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to room.</summary>
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoom.GraphRoomRequestBuilder GraphRoom
         {
@@ -47,7 +53,8 @@ namespace Microsoft.Graph.Beta.Places.Item
         {
         }
         /// <summary>
-        /// Delete entity from places
+        /// Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +76,7 @@ namespace Microsoft.Graph.Beta.Places.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+        /// Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Place"/></returns>
@@ -95,7 +102,7 @@ namespace Microsoft.Graph.Beta.Places.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Place>(requestInfo, global::Microsoft.Graph.Beta.Models.Place.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete entity from places
+        /// Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +121,7 @@ namespace Microsoft.Graph.Beta.Places.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+        /// Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

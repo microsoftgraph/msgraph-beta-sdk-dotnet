@@ -67,22 +67,6 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }
             set { BackingStore?.Set("isBuiltIn", value); }
         }
-        /// <summary>Permissions associated with the Role Scope Tag. This property is read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Permissions
-        {
-            get { return BackingStore?.Get<List<string>?>("permissions"); }
-            set { BackingStore?.Set("permissions", value); }
-        }
-#nullable restore
-#else
-        public List<string> Permissions
-        {
-            get { return BackingStore?.Get<List<string>>("permissions"); }
-            set { BackingStore?.Set("permissions", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,7 +89,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>

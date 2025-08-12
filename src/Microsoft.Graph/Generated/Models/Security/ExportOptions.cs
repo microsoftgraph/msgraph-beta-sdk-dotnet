@@ -49,9 +49,5 @@ namespace Microsoft.Graph.Beta.Models.Security
         #pragma warning disable CS1591
         CondensePaths = 512,
         #pragma warning restore CS1591
-        [EnumMember(Value = "optimizedPartitionSize")]
-        #pragma warning disable CS1591
-        OptimizedPartitionSize = 1024,
-        #pragma warning restore CS1591
     }
 }

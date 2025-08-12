@@ -77,6 +77,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("instanceDurationInDays"); }
             set { BackingStore?.Set("instanceDurationInDays", value); }
         }
+        /// <summary>The isAgenticExperienceEnabled property</summary>
+        public bool? IsAgenticExperienceEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isAgenticExperienceEnabled"); }
+            set { BackingStore?.Set("isAgenticExperienceEnabled", value); }
+        }
         /// <summary>Indicates whether reviewers are required to provide justification with their decision. Default value is false.</summary>
         public bool? JustificationRequiredOnApproval
         {
@@ -187,6 +193,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "defaultDecision", n => { DefaultDecision = n.GetStringValue(); } },
                 { "defaultDecisionEnabled", n => { DefaultDecisionEnabled = n.GetBoolValue(); } },
                 { "instanceDurationInDays", n => { InstanceDurationInDays = n.GetIntValue(); } },
+                { "isAgenticExperienceEnabled", n => { IsAgenticExperienceEnabled = n.GetBoolValue(); } },
                 { "justificationRequiredOnApproval", n => { JustificationRequiredOnApproval = n.GetBoolValue(); } },
                 { "mailNotificationsEnabled", n => { MailNotificationsEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -210,6 +217,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("defaultDecision", DefaultDecision);
             writer.WriteBoolValue("defaultDecisionEnabled", DefaultDecisionEnabled);
             writer.WriteIntValue("instanceDurationInDays", InstanceDurationInDays);
+            writer.WriteBoolValue("isAgenticExperienceEnabled", IsAgenticExperienceEnabled);
             writer.WriteBoolValue("justificationRequiredOnApproval", JustificationRequiredOnApproval);
             writer.WriteBoolValue("mailNotificationsEnabled", MailNotificationsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);

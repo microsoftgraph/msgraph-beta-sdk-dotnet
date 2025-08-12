@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The behaviorOnError property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError? BehaviorOnError
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError?>("behaviorOnError"); }
+            set { BackingStore?.Set("behaviorOnError", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError BehaviorOnError
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError>("behaviorOnError"); }
+            set { BackingStore?.Set("behaviorOnError", value); }
+        }
+#endif
         /// <summary>Optional. Configuration of calling external API, such as timeout, retryCount, retriableResponseCodes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "behaviorOnError", n => { BehaviorOnError = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError>(global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError.CreateFromDiscriminatorValue); } },
                 { "clientConfiguration", n => { ClientConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionClientConfiguration>(global::Microsoft.Graph.Beta.Models.CustomExtensionClientConfiguration.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -90,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionBehaviorOnError>("behaviorOnError", BehaviorOnError);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionClientConfiguration>("clientConfiguration", ClientConfiguration);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

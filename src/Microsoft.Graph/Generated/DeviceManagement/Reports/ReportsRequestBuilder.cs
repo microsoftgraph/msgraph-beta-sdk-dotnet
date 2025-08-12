@@ -72,6 +72,8 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummary
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleDeviceOSUpdateStatus;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailures;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport;
@@ -454,6 +456,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses.RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder RetrieveAndroidWorkProfileDeviceMigrationStatuses
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses.RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveAppleDeviceOSUpdateStatus method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleDeviceOSUpdateStatus.RetrieveAppleDeviceOSUpdateStatusRequestBuilder RetrieveAppleDeviceOSUpdateStatus
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleDeviceOSUpdateStatus.RetrieveAppleDeviceOSUpdateStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveAppleOSUpdateFailures method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailures.RetrieveAppleOSUpdateFailuresRequestBuilder RetrieveAppleOSUpdateFailures
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailures.RetrieveAppleOSUpdateFailuresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCloudPkiLeafCertificateReport method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateReport.RetrieveCloudPkiLeafCertificateReportRequestBuilder RetrieveCloudPkiLeafCertificateReport

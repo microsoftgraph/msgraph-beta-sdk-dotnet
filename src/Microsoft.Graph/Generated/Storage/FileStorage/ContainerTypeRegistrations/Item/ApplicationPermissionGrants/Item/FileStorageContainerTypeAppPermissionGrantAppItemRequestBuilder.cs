@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
         {
         }
         /// <summary>
-        /// Delete navigation property applicationPermissionGrants for storage
+        /// Delete a fileStorageContainerTypeAppPermissionGrant object in a fileStorageContainerTypeRegistration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertyperegistration-delete-applicationpermissiongrants?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get applicationPermissionGrants from storage
+        /// Read a specific app permission grant in a fileStorageContainerTypeRegistration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertypeapppermissiongrant-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property applicationPermissionGrants in storage
+        /// Create a new fileStorageContainerTypeAppPermissionGrant object in a fileStorageContainerTypeRegistration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertyperegistration-post-applicationpermissiongrants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +108,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property applicationPermissionGrants for storage
+        /// Delete a fileStorageContainerTypeAppPermissionGrant object in a fileStorageContainerTypeRegistration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return requestInfo;
         }
         /// <summary>
-        /// Get applicationPermissionGrants from storage
+        /// Read a specific app permission grant in a fileStorageContainerTypeRegistration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property applicationPermissionGrants in storage
+        /// Create a new fileStorageContainerTypeAppPermissionGrant object in a fileStorageContainerTypeRegistration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +185,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
         {
         }
         /// <summary>
-        /// Get applicationPermissionGrants from storage
+        /// Read a specific app permission grant in a fileStorageContainerTypeRegistration.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerTypeAppPermissionGrantAppItemRequestBuilderGetQueryParameters 

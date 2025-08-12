@@ -293,7 +293,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #endif
-        /// <summary>List mobileAppRelationship objects for mobile applications.</summary>
+        /// <summary>The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>? MobileAppRelationships
