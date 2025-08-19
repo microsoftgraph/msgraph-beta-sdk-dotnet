@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Value
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta" />
+        /// Update the properties of a message object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Binary request body</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Value
         public async Task<Stream> PutAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Value
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
+        /// Update the properties of a message object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Value
         public RequestInformation ToPutRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

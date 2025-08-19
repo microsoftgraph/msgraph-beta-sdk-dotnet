@@ -452,7 +452,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
-        /// <summary>The userExperienceType property</summary>
+        /// <summary>Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. When set to cloudPc, it indicates that the end user can access the entire desktop. When set to cloudApp, it indicates that the end user can only access cloud apps published under the associated provisioning policy. Since the cloud app experience also creates Cloud PC devices that appear in the Cloud PC device list, this property helps differentiate them. The default value is cloudPc. This property is defined in the provisioning policy.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType?>("userExperienceType"); }
@@ -481,7 +481,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPC CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPC();
         }
         /// <summary>
@@ -537,7 +537,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("aadDeviceId", AadDeviceId);
             writer.WriteStringValue("allotmentDisplayName", AllotmentDisplayName);

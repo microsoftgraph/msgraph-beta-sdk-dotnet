@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosLobAppProvisioningConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.</summary>
+        /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>? Assignments
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default.</summary>
+        /// <summary>Optional profile expiration date and time.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration();
         }
         /// <summary>
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

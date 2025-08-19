@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGraphWindowsUpdatesUnenrollAssets.UnenrollAssetsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGraphWindowsUpdatesUnenrollAssets.UnenrollAssetsPostRequestBody();
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("assets", Assets);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory>("updateCategory", UpdateCategory);
             writer.WriteAdditionalData(AdditionalData);

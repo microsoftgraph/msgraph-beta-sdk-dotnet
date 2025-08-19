@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The commandLineArguments property</summary>
+        /// <summary>Specifies the command-line arguments for the cloud app. These parameters are passed to the cloud app when it&apos;s launched. The maximum allowed length for this property is 2,048 characters. For example, -fullscreen -loop.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommandLineArguments
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("commandLineArguments", value); }
         }
 #endif
-        /// <summary>The filePath property</summary>
+        /// <summary>Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilePath
@@ -53,13 +53,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("filePath", value); }
         }
 #endif
-        /// <summary>The iconIndex property</summary>
+        /// <summary>Specifies the index of the icon within the file specified by the iconPath property. For example, if iconPath is set to C:/Program Files/MyApp/myapp.ico and iconIndex is set to 0, the system uses the first icon in the myapp.ico file. The default value is 0.</summary>
         public int? IconIndex
         {
             get { return BackingStore?.Get<int?>("iconIndex"); }
             set { BackingStore?.Set("iconIndex", value); }
         }
-        /// <summary>The iconPath property</summary>
+        /// <summary>Specifies the path to the icon file for the application within the OS of the hosting Cloud PC. When an admin updates the path of a cloud app, the value should be a rooted absolute path. For example, C:/Windows/system32/WindowsPowerShell/v1.0/powershell_ise.exe. If this property isn&apos;t defined, a default icon is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IconPath
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CloudPcCloudAppDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcCloudAppDetail();
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("commandLineArguments", CommandLineArguments);
             writer.WriteStringValue("filePath", FilePath);
             writer.WriteIntValue("iconIndex", IconIndex);

@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new or update an existing schema for a Microsoft Search connection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta" />
+        /// Update the properties of a schema for an externalConnection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalConnectors.Schema"/></returns>
         /// <param name="body">The request body</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema
         public async Task<global::Microsoft.Graph.Beta.Models.ExternalConnectors.Schema> PatchAsync(global::Microsoft.Graph.Beta.Models.ExternalConnectors.Schema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema
             return requestInfo;
         }
         /// <summary>
-        /// Create a new or update an existing schema for a Microsoft Search connection.
+        /// Update the properties of a schema for an externalConnection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ExternalConnectors.Schema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

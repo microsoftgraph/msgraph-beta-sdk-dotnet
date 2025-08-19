@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.ProcessContentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ProcessContentRequest();
         }
         /// <summary>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ActivityMetadata>("activityMetadata", ActivityMetadata);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase>("contentEntries", ContentEntries);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceMetadata>("deviceMetadata", DeviceMetadata);

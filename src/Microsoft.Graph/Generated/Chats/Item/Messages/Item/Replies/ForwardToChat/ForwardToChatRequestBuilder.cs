@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat
         public async Task<global::Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat.ForwardToChatPostResponse> PostAsForwardToChatPostResponseAsync(global::Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat.ForwardToChatPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat
         public async Task<global::Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat.ForwardToChatResponse> PostAsync(global::Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat.ForwardToChatPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.ForwardToChat.ForwardToChatPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

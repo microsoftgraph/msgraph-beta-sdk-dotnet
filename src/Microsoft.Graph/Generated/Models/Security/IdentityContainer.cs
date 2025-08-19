@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
-        /// <summary>The identityAccounts property</summary>
+        /// <summary>Represents an identity&apos;s details in the context of Microsoft Defender for Identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>? IdentityAccounts
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.IdentityContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.IdentityContainer();
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>("healthIssues", HealthIssues);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>("identityAccounts", IdentityAccounts);

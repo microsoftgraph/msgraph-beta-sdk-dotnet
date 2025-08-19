@@ -73,7 +73,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps
         {
         }
         /// <summary>
-        /// Get cloudApps from deviceManagement
+        /// List all the cloudPcCloudApp objects filtered by a provision policy ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudapps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcCloudAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp> PostAsync(global::Microsoft.Graph.Beta.Models.CloudPcCloudApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -131,7 +132,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder(PathParameters, RequestAdapter, sourceId);
         }
         /// <summary>
-        /// Get cloudApps from deviceManagement
+        /// List all the cloudPcCloudApp objects filtered by a provision policy ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +165,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcCloudApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.CloudAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get cloudApps from deviceManagement
+        /// List all the cloudPcCloudApp objects filtered by a provision policy ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudAppsRequestBuilderGetQueryParameters 

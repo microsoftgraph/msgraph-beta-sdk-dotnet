@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Unpubl
         {
         }
         /// <summary>
-        /// Invoke action unpublish
+        /// Unpublish a cloudPcCloudApp to remove it from the end-user portal, for example, the Windows App. When a cloud app is unpublished, any changes made to its app details are reverted and reset to the values of the discovered app it&apos;s linked to.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccloudapp-unpublish?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Unpubl
         public async Task PostAsync(global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Unpublish.UnpublishPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Unpubl
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action unpublish
+        /// Unpublish a cloudPcCloudApp to remove it from the end-user portal, for example, the Windows App. When a cloud app is unpublished, any changes made to its app details are reverted and reset to the values of the discovered app it&apos;s linked to.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +73,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Unpubl
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Unpublish.UnpublishPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot();
         }
         /// <summary>
@@ -259,7 +259,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Alert>("alerts", Alerts);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>("connectivity", Connectivity);

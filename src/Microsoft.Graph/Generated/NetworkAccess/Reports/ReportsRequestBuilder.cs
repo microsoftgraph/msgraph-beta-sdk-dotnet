@@ -100,8 +100,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -112,8 +112,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -124,8 +124,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -136,8 +136,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -148,8 +148,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -161,9 +161,9 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime.MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime(DateTimeOffset? discoveryPivotDateTime, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = discoveryPivotDateTime ?? throw new ArgumentNullException(nameof(discoveryPivotDateTime));
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(discoveryPivotDateTime, null)) throw new ArgumentNullException(nameof(discoveryPivotDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime.MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder(PathParameters, RequestAdapter, discoveryPivotDateTime, endDateTime, startDateTime);
         }
         /// <summary>
@@ -176,8 +176,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy(string aggregatedBy, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             if(string.IsNullOrEmpty(aggregatedBy)) throw new ArgumentNullException(nameof(aggregatedBy));
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder(PathParameters, RequestAdapter, aggregatedBy, endDateTime, startDateTime);
         }
         /// <summary>
@@ -189,9 +189,9 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime.MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime(DateTimeOffset? activityPivotDateTime, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = activityPivotDateTime ?? throw new ArgumentNullException(nameof(activityPivotDateTime));
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(activityPivotDateTime, null)) throw new ArgumentNullException(nameof(activityPivotDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime.MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder(PathParameters, RequestAdapter, activityPivotDateTime, endDateTime, startDateTime);
         }
         /// <summary>
@@ -202,8 +202,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId.MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId.MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -214,8 +214,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -228,8 +228,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId(string aggregatedBy, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             if(string.IsNullOrEmpty(aggregatedBy)) throw new ArgumentNullException(nameof(aggregatedBy));
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBydiscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder(PathParameters, RequestAdapter, aggregatedBy, endDateTime, startDateTime);
         }
         /// <summary>
@@ -240,8 +240,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationId.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTimediscoveredApplicationSegmentIdDiscoveredApplicationSegmentIdApplicationIdApplicationIdRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -252,8 +252,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
@@ -273,7 +273,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         public async Task<global::Microsoft.Graph.Beta.Models.Networkaccess.Reports> PatchAsync(global::Microsoft.Graph.Beta.Models.Networkaccess.Reports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -334,7 +334,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Networkaccess.Reports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

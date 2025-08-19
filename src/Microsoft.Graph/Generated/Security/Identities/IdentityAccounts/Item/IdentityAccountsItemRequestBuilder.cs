@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get identityAccounts from security
+        /// Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-identityaccounts-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts> PatchAsync(global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get identityAccounts from security
+        /// Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +164,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -188,7 +189,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item
         {
         }
         /// <summary>
-        /// Get identityAccounts from security
+        /// Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentityAccountsItemRequestBuilderGetQueryParameters 

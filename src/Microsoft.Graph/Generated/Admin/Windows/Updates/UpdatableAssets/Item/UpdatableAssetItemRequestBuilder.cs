@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
         {
         }
         /// <summary>
-        /// Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta" />
+        /// Delete an updatableAsset object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAssetGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of an updatableAsset object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
         public async Task<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset> PatchAsync(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+        /// Delete an updatableAsset object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAssetGroup object.
+        /// Read the properties and relationships of an updatableAsset object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAssetGroup object.
+        /// Read the properties and relationships of an updatableAsset object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UpdatableAssetItemRequestBuilderGetQueryParameters 

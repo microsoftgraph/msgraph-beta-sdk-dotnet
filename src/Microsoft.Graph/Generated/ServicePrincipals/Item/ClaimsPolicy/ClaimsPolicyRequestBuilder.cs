@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a customClaimsPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta" />
+        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
         public async Task<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy> PatchAsync(global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a customClaimsPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta" />
+        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
         public async Task<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy> PutAsync(global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Update a customClaimsPolicy object.
+        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Update a customClaimsPolicy object.
+        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
         public RequestInformation ToPutRequestInformation(global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

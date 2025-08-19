@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products
         /// <param name="kbNumber">Usage: kbNumber={kbNumber}</param>
         public global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber(int? kbNumber)
         {
-            _ = kbNumber ?? throw new ArgumentNullException(nameof(kbNumber));
+            if(ReferenceEquals(kbNumber, null)) throw new ArgumentNullException(nameof(kbNumber));
             return new global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder(PathParameters, RequestAdapter, kbNumber);
         }
         /// <summary>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products
         public async Task<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product> PostAsync(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

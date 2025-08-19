@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosof
         {
         }
         /// <summary>
-        /// List of relationships for this mobile app.
+        /// The set of direct relationships for this app.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileAppRelationshipCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosof
         public async Task<global::Microsoft.Graph.Beta.Models.MobileAppRelationship> PostAsync(global::Microsoft.Graph.Beta.Models.MobileAppRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosof
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileAppRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of relationships for this mobile app.
+        /// The set of direct relationships for this app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosof
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobileAppRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosof
             return new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStoreForBusinessApp.Relationships.RelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of relationships for this mobile app.
+        /// The set of direct relationships for this app.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelationshipsRequestBuilderGetQueryParameters 
