@@ -90,8 +90,8 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         public global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime)
         {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            if(ReferenceEquals(fromDateTime, null)) throw new ArgumentNullException(nameof(fromDateTime));
+            if(ReferenceEquals(toDateTime, null)) throw new ArgumentNullException(nameof(toDateTime));
             return new global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
@@ -102,8 +102,8 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         public global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime)
         {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            if(ReferenceEquals(fromDateTime, null)) throw new ArgumentNullException(nameof(fromDateTime));
+            if(ReferenceEquals(toDateTime, null)) throw new ArgumentNullException(nameof(toDateTime));
             return new global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
@@ -114,8 +114,8 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         public global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime)
         {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            if(ReferenceEquals(fromDateTime, null)) throw new ArgumentNullException(nameof(fromDateTime));
+            if(ReferenceEquals(toDateTime, null)) throw new ArgumentNullException(nameof(toDateTime));
             return new global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
@@ -126,8 +126,8 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         public global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime)
         {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            if(ReferenceEquals(fromDateTime, null)) throw new ArgumentNullException(nameof(fromDateTime));
+            if(ReferenceEquals(toDateTime, null)) throw new ArgumentNullException(nameof(toDateTime));
             return new global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
@@ -138,8 +138,8 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         public global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime)
         {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            if(ReferenceEquals(fromDateTime, null)) throw new ArgumentNullException(nameof(fromDateTime));
+            if(ReferenceEquals(toDateTime, null)) throw new ArgumentNullException(nameof(toDateTime));
             return new global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords
         public async Task<global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord> PostAsync(global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

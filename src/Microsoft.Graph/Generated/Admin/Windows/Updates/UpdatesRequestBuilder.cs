@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates
         public async Task<global::Microsoft.Graph.Beta.Models.AdminWindowsUpdates> PatchAsync(global::Microsoft.Graph.Beta.Models.AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

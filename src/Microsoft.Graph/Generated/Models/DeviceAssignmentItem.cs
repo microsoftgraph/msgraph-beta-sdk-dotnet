@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.DeviceAssignmentItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceAssignmentItem();
         }
         /// <summary>
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceAssignmentItemIntent>("assignmentItemActionIntent", AssignmentItemActionIntent);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceAssignmentItemStatus>("assignmentItemActionStatus", AssignmentItemActionStatus);
             writer.WriteStringValue("itemId", ItemId);

@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite
         {
         }
         /// <summary>
-        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-beta" />
+        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.InviteParticipantsOperation"/></returns>
         /// <param name="body">The request body</param>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite
         public async Task<global::Microsoft.Graph.Beta.Models.InviteParticipantsOperation> PostAsync(global::Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite.InvitePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.InviteParticipantsOperation>(requestInfo, global::Microsoft.Graph.Beta.Models.InviteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
+        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite.InvitePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

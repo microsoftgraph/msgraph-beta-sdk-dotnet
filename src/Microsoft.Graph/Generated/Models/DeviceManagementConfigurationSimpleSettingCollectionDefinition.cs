@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DeviceManagementConfigurationSimpleSettingCollectionDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Maximum number of simple settings in the collection</summary>
+        /// <summary>Maximum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MaximumCount
         {
             get { return BackingStore?.Get<int?>("maximumCount"); }
             set { BackingStore?.Set("maximumCount", value); }
         }
-        /// <summary>Minimum number of simple settings in the collection</summary>
+        /// <summary>Minimum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MinimumCount
         {
             get { return BackingStore?.Get<int?>("minimumCount"); }
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingCollectionDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingCollectionDefinition();
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("maximumCount", MaximumCount);
             writer.WriteIntValue("minimumCount", MinimumCount);

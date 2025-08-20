@@ -57,8 +57,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta" />
+        /// Retrieve the properties of a collection of riskDetection objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RiskDetection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item
         public async Task<global::Microsoft.Graph.Beta.Models.RiskDetection> PatchAsync(global::Microsoft.Graph.Beta.Models.RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
+        /// Retrieve the properties of a collection of riskDetection objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
+        /// Retrieve the properties of a collection of riskDetection objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RiskDetectionItemRequestBuilderGetQueryParameters 

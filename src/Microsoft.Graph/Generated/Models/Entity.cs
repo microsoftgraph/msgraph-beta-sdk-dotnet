@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Entity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -475,6 +475,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.copilotAdmin" => new global::Microsoft.Graph.Beta.Models.CopilotAdmin(),
                 "#microsoft.graph.copilotAdminLimitedMode" => new global::Microsoft.Graph.Beta.Models.CopilotAdminLimitedMode(),
                 "#microsoft.graph.copilotAdminSetting" => new global::Microsoft.Graph.Beta.Models.CopilotAdminSetting(),
+                "#microsoft.graph.copilotCommunicationsRoot" => new global::Microsoft.Graph.Beta.Models.CopilotCommunicationsRoot(),
                 "#microsoft.graph.copilotPeopleAdminSetting" => new global::Microsoft.Graph.Beta.Models.CopilotPeopleAdminSetting(),
                 "#microsoft.graph.copilotSetting" => new global::Microsoft.Graph.Beta.Models.CopilotSetting(),
                 "#microsoft.graph.corsConfiguration_v2" => new global::Microsoft.Graph.Beta.Models.CorsConfiguration_v2(),
@@ -1214,6 +1215,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.monthlyInactiveUsersByApplicationMetric" => new global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersByApplicationMetric(),
                 "#microsoft.graph.monthlyInactiveUsersMetric" => new global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersMetric(),
                 "#microsoft.graph.monthlyUserInsightMetricsRoot" => new global::Microsoft.Graph.Beta.Models.MonthlyUserInsightMetricsRoot(),
+                "#microsoft.graph.multiActivitySubscription" => new global::Microsoft.Graph.Beta.Models.MultiActivitySubscription(),
                 "#microsoft.graph.multiTenantOrganization" => new global::Microsoft.Graph.Beta.Models.MultiTenantOrganization(),
                 "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate" => new global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationIdentitySyncPolicyTemplate(),
                 "#microsoft.graph.multiTenantOrganizationJoinRequestRecord" => new global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationJoinRequestRecord(),
@@ -1508,6 +1510,9 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.rbacApplicationMultiple" => new global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple(),
                 "#microsoft.graph.readingAssignmentSubmission" => new global::Microsoft.Graph.Beta.Models.ReadingAssignmentSubmission(),
                 "#microsoft.graph.readingCoachPassage" => new global::Microsoft.Graph.Beta.Models.ReadingCoachPassage(),
+                "#microsoft.graph.realtimeActivityFeedRoot" => new global::Microsoft.Graph.Beta.Models.RealtimeActivityFeedRoot(),
+                "#microsoft.graph.realtimeActivityMeeting" => new global::Microsoft.Graph.Beta.Models.RealtimeActivityMeeting(),
+                "#microsoft.graph.realTimeTranscript" => new global::Microsoft.Graph.Beta.Models.RealTimeTranscript(),
                 "#microsoft.graph.recommendation" => new global::Microsoft.Graph.Beta.Models.Recommendation(),
                 "#microsoft.graph.recommendationBase" => new global::Microsoft.Graph.Beta.Models.RecommendationBase(),
                 "#microsoft.graph.recommendationConfiguration" => new global::Microsoft.Graph.Beta.Models.RecommendationConfiguration(),
@@ -2234,7 +2239,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

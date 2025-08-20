@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.TermStore
         public async Task<global::Microsoft.Graph.Beta.Models.TermStore.Store> PatchAsync(global::Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.TermStore
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

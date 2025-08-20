@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item
         /// <param name="daysInPast">Usage: daysInPast={daysInPast}</param>
         public global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive(int? daysInPast)
         {
-            _ = daysInPast ?? throw new ArgumentNullException(nameof(daysInPast));
+            if(ReferenceEquals(daysInPast, null)) throw new ArgumentNullException(nameof(daysInPast));
             return new global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder(PathParameters, RequestAdapter, daysInPast);
         }
         /// <summary>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item
         public async Task<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product> PatchAsync(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

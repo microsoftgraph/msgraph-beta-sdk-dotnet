@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get cloudApps from deviceManagement
+        /// Read the properties of a specific cloudPcCloudApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccloudapp-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcCloudApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcCloudApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property cloudApps in deviceManagement
+        /// Update the properties of a cloudPcCloudApp object, such as the display name or icon path.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccloudapp-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcCloudApp"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +98,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPcCloudApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get cloudApps from deviceManagement
+        /// Read the properties of a specific cloudPcCloudApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property cloudApps in deviceManagement
+        /// Update the properties of a cloudPcCloudApp object, such as the display name or icon path.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcCloudApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
         {
         }
         /// <summary>
-        /// Get cloudApps from deviceManagement
+        /// Read the properties of a specific cloudPcCloudApp object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcCloudAppItemRequestBuilderGetQueryParameters 
