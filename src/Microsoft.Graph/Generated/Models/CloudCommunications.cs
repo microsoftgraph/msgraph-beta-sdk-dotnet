@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>A collection of structured question-and-answer (Q&amp;A) thread in Teams directly associated with online meetings.</summary>
+        /// <summary>A collection of structured question-and-answer (Q&amp;A) threads in Teams directly associated with online meetings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>? OnlineMeetingConversations

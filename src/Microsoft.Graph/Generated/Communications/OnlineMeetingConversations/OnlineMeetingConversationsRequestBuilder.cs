@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetingConversations
         {
         }
         /// <summary>
-        /// A collection of structured question-and-answer (Q&amp;A) thread in Teams directly associated with online meetings.
+        /// A collection of structured question-and-answer (Q&amp;A) threads in Teams directly associated with online meetings.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetingConversations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>(requestInfo, global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of structured question-and-answer (Q&amp;A) thread in Teams directly associated with online meetings.
+        /// A collection of structured question-and-answer (Q&amp;A) threads in Teams directly associated with online meetings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetingConversations
             return new global::Microsoft.Graph.Beta.Communications.OnlineMeetingConversations.OnlineMeetingConversationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of structured question-and-answer (Q&amp;A) thread in Teams directly associated with online meetings.
+        /// A collection of structured question-and-answer (Q&amp;A) threads in Teams directly associated with online meetings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OnlineMeetingConversationsRequestBuilderGetQueryParameters 

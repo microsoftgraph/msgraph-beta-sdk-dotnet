@@ -172,6 +172,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
 #endif
+        /// <summary>The custom rules that define an access scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>? ConditionalAccessPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>?>("conditionalAccessPolicies"); }
+            set { BackingStore?.Set("conditionalAccessPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy> ConditionalAccessPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>>("conditionalAccessPolicies"); }
+            set { BackingStore?.Set("conditionalAccessPolicies", value); }
+        }
+#endif
         /// <summary>The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,6 +218,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TenantAppManagementPolicy>("defaultAppManagementPolicy"); }
             set { BackingStore?.Set("defaultAppManagementPolicy", value); }
+        }
+#endif
+        /// <summary>Policies that support soft-delete functionality and can be restored within 30 days.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.PolicyDeletableRoot? DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PolicyDeletableRoot?>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.PolicyDeletableRoot DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PolicyDeletableRoot>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
         }
 #endif
         /// <summary>Represents the policy scope that controls quota restrictions, additional authentication, and authorization policies to register device identities to your organization.</summary>
@@ -319,32 +351,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>? MobileAppManagementPolicies
+        public List<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>? MobileAppManagementPolicies
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>?>("mobileAppManagementPolicies"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>?>("mobileAppManagementPolicies"); }
             set { BackingStore?.Set("mobileAppManagementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy> MobileAppManagementPolicies
+        public List<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy> MobileAppManagementPolicies
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>>("mobileAppManagementPolicies"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>>("mobileAppManagementPolicies"); }
             set { BackingStore?.Set("mobileAppManagementPolicies", value); }
         }
 #endif
         /// <summary>The mobileDeviceManagementPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>? MobileDeviceManagementPolicies
+        public List<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>? MobileDeviceManagementPolicies
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>?>("mobileDeviceManagementPolicies"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>?>("mobileDeviceManagementPolicies"); }
             set { BackingStore?.Set("mobileDeviceManagementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy> MobileDeviceManagementPolicies
+        public List<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy> MobileDeviceManagementPolicies
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>>("mobileDeviceManagementPolicies"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>>("mobileDeviceManagementPolicies"); }
             set { BackingStore?.Set("mobileDeviceManagementPolicies", value); }
         }
 #endif
@@ -488,8 +520,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "authorizationPolicy", n => { AuthorizationPolicy = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthorizationPolicy>(global::Microsoft.Graph.Beta.Models.AuthorizationPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "b2cAuthenticationMethodsPolicy", n => { B2cAuthenticationMethodsPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(global::Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue); } },
                 { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>(global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "crossTenantAccessPolicy", n => { CrossTenantAccessPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue); } },
                 { "defaultAppManagementPolicy", n => { DefaultAppManagementPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantAppManagementPolicy>(global::Microsoft.Graph.Beta.Models.TenantAppManagementPolicy.CreateFromDiscriminatorValue); } },
+                { "deletedItems", n => { DeletedItems = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PolicyDeletableRoot>(global::Microsoft.Graph.Beta.Models.PolicyDeletableRoot.CreateFromDiscriminatorValue); } },
                 { "deviceRegistrationPolicy", n => { DeviceRegistrationPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>(global::Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue); } },
                 { "directoryRoleAccessReviewPolicy", n => { DirectoryRoleAccessReviewPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy>(global::Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy.CreateFromDiscriminatorValue); } },
                 { "externalIdentitiesPolicy", n => { ExternalIdentitiesPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>(global::Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy.CreateFromDiscriminatorValue); } },
@@ -497,8 +531,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "federatedTokenValidationPolicy", n => { FederatedTokenValidationPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(global::Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue); } },
                 { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>(global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identitySecurityDefaultsEnforcementPolicy", n => { IdentitySecurityDefaultsEnforcementPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue); } },
-                { "mobileAppManagementPolicies", n => { MobileAppManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "mobileDeviceManagementPolicies", n => { MobileDeviceManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mobileAppManagementPolicies", n => { MobileAppManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>(global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mobileDeviceManagementPolicies", n => { MobileDeviceManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>(global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissionGrantPolicies", n => { PermissionGrantPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy>(global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissionGrantPreApprovalPolicies", n => { PermissionGrantPreApprovalPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>(global::Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleManagementPolicies", n => { RoleManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>(global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -526,8 +560,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthorizationPolicy>("authorizationPolicy", AuthorizationPolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>("b2cAuthenticationMethodsPolicy", B2cAuthenticationMethodsPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("conditionalAccessPolicies", ConditionalAccessPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy>("crossTenantAccessPolicy", CrossTenantAccessPolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TenantAppManagementPolicy>("defaultAppManagementPolicy", DefaultAppManagementPolicy);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PolicyDeletableRoot>("deletedItems", DeletedItems);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>("deviceRegistrationPolicy", DeviceRegistrationPolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy>("directoryRoleAccessReviewPolicy", DirectoryRoleAccessReviewPolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>("externalIdentitiesPolicy", ExternalIdentitiesPolicy);
@@ -535,8 +571,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>("federatedTokenValidationPolicy", FederatedTokenValidationPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>("identitySecurityDefaultsEnforcementPolicy", IdentitySecurityDefaultsEnforcementPolicy);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>("mobileAppManagementPolicies", MobileAppManagementPolicies);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>("mobileDeviceManagementPolicies", MobileDeviceManagementPolicies);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>("mobileAppManagementPolicies", MobileAppManagementPolicies);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>("mobileDeviceManagementPolicies", MobileDeviceManagementPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy>("permissionGrantPolicies", PermissionGrantPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>("permissionGrantPreApprovalPolicies", PermissionGrantPreApprovalPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>("roleManagementPolicies", RoleManagementPolicies);

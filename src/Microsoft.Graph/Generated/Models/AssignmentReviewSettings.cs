@@ -39,6 +39,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isAccessRecommendationEnabled"); }
             set { BackingStore?.Set("isAccessRecommendationEnabled", value); }
         }
+        /// <summary>The isAgenticExperienceEnabled property</summary>
+        public bool? IsAgenticExperienceEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isAgenticExperienceEnabled"); }
+            set { BackingStore?.Set("isAgenticExperienceEnabled", value); }
+        }
         /// <summary>Specifies whether the reviewer must provide justification for the approval. The default value is true.</summary>
         public bool? IsApprovalJustificationRequired
         {
@@ -150,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "accessReviewTimeoutBehavior", n => { AccessReviewTimeoutBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior>(); } },
                 { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
                 { "isAccessRecommendationEnabled", n => { IsAccessRecommendationEnabled = n.GetBoolValue(); } },
+                { "isAgenticExperienceEnabled", n => { IsAgenticExperienceEnabled = n.GetBoolValue(); } },
                 { "isApprovalJustificationRequired", n => { IsApprovalJustificationRequired = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -169,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior>("accessReviewTimeoutBehavior", AccessReviewTimeoutBehavior);
             writer.WriteIntValue("durationInDays", DurationInDays);
             writer.WriteBoolValue("isAccessRecommendationEnabled", IsAccessRecommendationEnabled);
+            writer.WriteBoolValue("isAgenticExperienceEnabled", IsAgenticExperienceEnabled);
             writer.WriteBoolValue("isApprovalJustificationRequired", IsApprovalJustificationRequired);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
