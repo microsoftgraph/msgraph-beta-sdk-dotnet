@@ -59,6 +59,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Contains metadata about the cloud application involved in the network transaction, such as application name, category, and risk level. Supports $filter (eq) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata? CloudApplicationMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata?>("cloudApplicationMetadata"); }
+            set { BackingStore?.Set("cloudApplicationMetadata", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata CloudApplicationMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata>("cloudApplicationMetadata"); }
+            set { BackingStore?.Set("cloudApplicationMetadata", value); }
+        }
+#endif
         /// <summary>Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -672,6 +688,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>(); } },
                 { "agentVersion", n => { AgentVersion = n.GetStringValue(); } },
                 { "applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
+                { "cloudApplicationMetadata", n => { CloudApplicationMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata>(global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata.CreateFromDiscriminatorValue); } },
                 { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -728,6 +745,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>("action", Action);
             writer.WriteStringValue("agentVersion", AgentVersion);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot", ApplicationSnapshot);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata>("cloudApplicationMetadata", CloudApplicationMetadata);
             writer.WriteStringValue("connectionId", ConnectionId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);

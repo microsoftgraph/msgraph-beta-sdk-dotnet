@@ -26,15 +26,15 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies
             get => new global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        /// <param name="position">The unique identifier of mobilityManagementPolicy</param>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.MobilityManagementPolicyItemRequestBuilder"/></returns>
-        public global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.MobilityManagementPolicyItemRequestBuilder this[string position]
+        /// <param name="position">The unique identifier of mobileAppManagementPolicy</param>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.MobileAppManagementPolicyItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.MobileAppManagementPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("mobilityManagementPolicy%2Did", position);
-                return new global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.MobilityManagementPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("mobileAppManagementPolicy%2Did", position);
+                return new global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.MobileAppManagementPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -57,17 +57,17 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies
         /// Get a list of the mobilityManagementPolicy objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.MobileAppManagementPoliciesRequestBuilder.MobileAppManagementPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.MobileAppManagementPoliciesRequestBuilder.MobileAppManagementPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.MobileAppManagementPoliciesRequestBuilder.MobileAppManagementPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.MobileAppManagementPoliciesRequestBuilder.MobileAppManagementPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -75,23 +75,23 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to mobileAppManagementPolicies for policies
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy?> PostAsync(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy?> PostAsync(global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy> PostAsync(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy> PostAsync(global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the mobilityManagementPolicy objects and their properties.
@@ -129,11 +129,11 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

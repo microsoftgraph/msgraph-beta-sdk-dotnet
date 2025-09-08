@@ -44,6 +44,38 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("identityAccounts", value); }
         }
 #endif
+        /// <summary>The sensorCandidateActivationConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration? SensorCandidateActivationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration?>("sensorCandidateActivationConfiguration"); }
+            set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration SensorCandidateActivationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration"); }
+            set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
+        }
+#endif
+        /// <summary>The sensorCandidates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>? SensorCandidates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>?>("sensorCandidates"); }
+            set { BackingStore?.Set("sensorCandidates", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate> SensorCandidates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>>("sensorCandidates"); }
+            set { BackingStore?.Set("sensorCandidates", value); }
+        }
+#endif
         /// <summary>Represents a customer&apos;s Microsoft Defender for Identity sensors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +112,8 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>(global::Microsoft.Graph.Beta.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identityAccounts", n => { IdentityAccounts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>(global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sensorCandidateActivationConfiguration", n => { SensorCandidateActivationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration.CreateFromDiscriminatorValue); } },
+                { "sensorCandidates", n => { SensorCandidates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>(global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -93,6 +127,8 @@ namespace Microsoft.Graph.Beta.Models.Security
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>("healthIssues", HealthIssues);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>("identityAccounts", IdentityAccounts);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", SensorCandidateActivationConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>("sensorCandidates", SensorCandidates);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>("sensors", Sensors);
         }
     }

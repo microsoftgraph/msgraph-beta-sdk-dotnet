@@ -13,5 +13,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Org users cannot cut, copy or paste data to or from external accounts, documents, locations or applications from or into the org context.</summary>
         [EnumMember(Value = "none")]
         None,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

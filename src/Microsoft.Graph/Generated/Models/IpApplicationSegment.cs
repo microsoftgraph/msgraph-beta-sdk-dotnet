@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Beta.Models
     public partial class IpApplicationSegment : global::Microsoft.Graph.Beta.Models.ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The action property</summary>
+        public global::Microsoft.Graph.Beta.Models.ActionType? Action
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActionType?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
         /// <summary>The on-premises nonweb application published through Microsoft Entra application proxy. Expanded by default and supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ActionType>(); } },
                 { "application", n => { Application = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Application>(global::Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue); } },
                 { "destinationHost", n => { DestinationHost = n.GetStringValue(); } },
                 { "destinationType", n => { DestinationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType>(); } },
@@ -119,6 +126,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ActionType>("action", Action);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Application>("application", Application);
             writer.WriteStringValue("destinationHost", DestinationHost);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType>("destinationType", DestinationType);

@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 "#microsoft.graph.identityGovernance.attributeChangeTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.AttributeChangeTrigger(),
                 "#microsoft.graph.identityGovernance.membershipChangeTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.MembershipChangeTrigger(),
                 "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.TimeBasedAttributeTrigger(),
+                "#microsoft.graph.identityGovernance.userInactivityTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserInactivityTrigger(),
                 _ => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger(),
             };
         }

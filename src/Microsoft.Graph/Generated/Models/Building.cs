@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("hasWiFi"); }
             set { BackingStore?.Set("hasWiFi", value); }
         }
+        /// <summary>The map property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.BuildingMap? Map
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BuildingMap?>("map"); }
+            set { BackingStore?.Set("map", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.BuildingMap Map
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BuildingMap>("map"); }
+            set { BackingStore?.Set("map", value); }
+        }
+#endif
         /// <summary>A set of links to external resources that are associated with the building. Inherited from place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "hasWiFi", n => { HasWiFi = n.GetBoolValue(); } },
+                { "map", n => { Map = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.BuildingMap>(global::Microsoft.Graph.Beta.Models.BuildingMap.CreateFromDiscriminatorValue); } },
                 { "resourceLinks", n => { ResourceLinks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceLink>(global::Microsoft.Graph.Beta.Models.ResourceLink.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -72,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("hasWiFi", HasWiFi);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.BuildingMap>("map", Map);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceLink>("resourceLinks", ResourceLinks);
         }
     }

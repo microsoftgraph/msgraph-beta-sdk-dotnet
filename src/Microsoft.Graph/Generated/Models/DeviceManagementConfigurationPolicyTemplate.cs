@@ -51,6 +51,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
+        /// <summary>Indicates whether assignments to Entra security groups is disabled</summary>
+        public bool? DisableEntraGroupPolicyAssignment
+        {
+            get { return BackingStore?.Get<bool?>("disableEntraGroupPolicyAssignment"); }
+            set { BackingStore?.Set("disableEntraGroupPolicyAssignment", value); }
+        }
         /// <summary>Template display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowUnmanagedSettings", n => { AllowUnmanagedSettings = n.GetBoolValue(); } },
                 { "baseId", n => { BaseId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "disableEntraGroupPolicyAssignment", n => { DisableEntraGroupPolicyAssignment = n.GetBoolValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
                 { "lifecycleState", n => { LifecycleState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementTemplateLifecycleState>(); } },
@@ -178,6 +185,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("allowUnmanagedSettings", AllowUnmanagedSettings);
             writer.WriteStringValue("baseId", BaseId);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("disableEntraGroupPolicyAssignment", DisableEntraGroupPolicyAssignment);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("displayVersion", DisplayVersion);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementTemplateLifecycleState>("lifecycleState", LifecycleState);

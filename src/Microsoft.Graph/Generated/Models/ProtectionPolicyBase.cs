@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The time of creation of the policy.</summary>
+        /// <summary>The date and time when the policy was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -66,6 +66,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Indicates whether the policy is enabled.</summary>
+        public bool? IsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
+        }
         /// <summary>The identity of the person who last modified the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,12 +88,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The timestamp of the last modification of the policy.</summary>
+        /// <summary>The date and time when the policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The count of artifacts in the protection policy by status. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount? ProtectionPolicyArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount?>("protectionPolicyArtifactCount"); }
+            set { BackingStore?.Set("protectionPolicyArtifactCount", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount ProtectionPolicyArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>("protectionPolicyArtifactCount"); }
+            set { BackingStore?.Set("protectionPolicyArtifactCount", value); }
+        }
+#endif
         /// <summary>Contains the retention setting details for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,8 +161,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "protectionPolicyArtifactCount", n => { ProtectionPolicyArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>(global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount.CreateFromDiscriminatorValue); } },
                 { "retentionSettings", n => { RetentionSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>(global::Microsoft.Graph.Beta.Models.RetentionSetting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus>(); } },
             };
@@ -157,8 +181,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>("protectionPolicyArtifactCount", ProtectionPolicyArtifactCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>("retentionSettings", RetentionSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus>("status", Status);
         }

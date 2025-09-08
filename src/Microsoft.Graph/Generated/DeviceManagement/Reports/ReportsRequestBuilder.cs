@@ -77,6 +77,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailure
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveEnrollmentTimeGroupingFailureReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveSecurityTaskAppsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveWin32CatalogAppsUpdateReport;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -481,6 +482,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder RetrieveDeviceAppInstallationStatusReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveEnrollmentTimeGroupingFailureReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveEnrollmentTimeGroupingFailureReport.RetrieveEnrollmentTimeGroupingFailureReportRequestBuilder RetrieveEnrollmentTimeGroupingFailureReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveEnrollmentTimeGroupingFailureReport.RetrieveEnrollmentTimeGroupingFailureReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveSecurityTaskAppsReport method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveSecurityTaskAppsReport.RetrieveSecurityTaskAppsReportRequestBuilder RetrieveSecurityTaskAppsReport

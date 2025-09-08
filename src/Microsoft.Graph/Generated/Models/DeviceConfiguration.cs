@@ -334,6 +334,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.iosUpdateConfiguration" => new global::Microsoft.Graph.Beta.Models.IosUpdateConfiguration(),
                 "#microsoft.graph.iosVpnConfiguration" => new global::Microsoft.Graph.Beta.Models.IosVpnConfiguration(),
                 "#microsoft.graph.iosWiFiConfiguration" => new global::Microsoft.Graph.Beta.Models.IosWiFiConfiguration(),
+                "#microsoft.graph.iosWiredNetworkConfiguration" => new global::Microsoft.Graph.Beta.Models.IosWiredNetworkConfiguration(),
                 "#microsoft.graph.macOSCertificateProfileBase" => new global::Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase(),
                 "#microsoft.graph.macOSCustomAppConfiguration" => new global::Microsoft.Graph.Beta.Models.MacOSCustomAppConfiguration(),
                 "#microsoft.graph.macOSCustomConfiguration" => new global::Microsoft.Graph.Beta.Models.MacOSCustomConfiguration(),

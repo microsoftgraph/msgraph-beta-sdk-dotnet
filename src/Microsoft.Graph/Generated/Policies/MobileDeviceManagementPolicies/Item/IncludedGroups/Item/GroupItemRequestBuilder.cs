@@ -11,7 +11,7 @@ using System;
 namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \policies\mobileDeviceManagementPolicies\{mobilityManagementPolicy-id}\includedGroups\{group-id}
+    /// Builds and executes requests for operations under \policies\mobileDeviceManagementPolicies\{mobileDeviceManagementPolicy-id}\includedGroups\{group-id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupItemRequestBuilder : BaseRequestBuilder
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}", pathParameters)
+        public GroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy%2Did}/includedGroups/{group%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}", rawUrl)
+        public GroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy%2Did}/includedGroups/{group%2Did}", rawUrl)
         {
         }
     }

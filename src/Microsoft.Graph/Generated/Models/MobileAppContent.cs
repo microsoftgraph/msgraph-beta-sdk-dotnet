@@ -45,6 +45,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("files", value); }
         }
 #endif
+        /// <summary>The list of scripts for this app content version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MobileAppContentScript>? Scripts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileAppContentScript>?>("scripts"); }
+            set { BackingStore?.Set("scripts", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MobileAppContentScript> Scripts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileAppContentScript>>("scripts"); }
+            set { BackingStore?.Set("scripts", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileContainedApp>(global::Microsoft.Graph.Beta.Models.MobileContainedApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppContentFile>(global::Microsoft.Graph.Beta.Models.MobileAppContentFile.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "scripts", n => { Scripts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppContentScript>(global::Microsoft.Graph.Beta.Models.MobileAppContentScript.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileContainedApp>("containedApps", ContainedApps);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppContentFile>("files", Files);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppContentScript>("scripts", Scripts);
         }
     }
 }

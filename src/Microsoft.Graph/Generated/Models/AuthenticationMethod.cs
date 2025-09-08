@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The lastUsedDateTime property</summary>
+        public DateTimeOffset? LastUsedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUsedDateTime"); }
+            set { BackingStore?.Set("lastUsedDateTime", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -65,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteDateTimeOffsetValue("lastUsedDateTime", LastUsedDateTime);
         }
     }
 }

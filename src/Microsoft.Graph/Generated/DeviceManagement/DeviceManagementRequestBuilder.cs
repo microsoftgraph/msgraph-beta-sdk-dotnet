@@ -123,7 +123,6 @@ using Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyPorta
 using Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections;
 using Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions;
 using Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary;
-using Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners;
 using Microsoft.Graph.Beta.DeviceManagement.TemplateInsights;
 using Microsoft.Graph.Beta.DeviceManagement.TemplateSettings;
 using Microsoft.Graph.Beta.DeviceManagement.Templates;
@@ -795,11 +794,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         public global::Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder SoftwareUpdateStatusSummary
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder TelecomExpenseManagementPartners
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.TemplateInsights.TemplateInsightsRequestBuilder TemplateInsights
