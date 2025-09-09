@@ -38,22 +38,6 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user principal name associated with the request for the managed application log collection. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedBy
-        {
-            get { return BackingStore?.Get<string?>("requestedBy"); }
-            set { BackingStore?.Set("requestedBy", value); }
-        }
-#nullable restore
-#else
-        public string RequestedBy
-        {
-            get { return BackingStore?.Get<string>("requestedBy"); }
-            set { BackingStore?.Set("requestedBy", value); }
-        }
-#endif
-        /// <summary>The user principal name associated with the request for the managed application log collection. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public string? RequestedByUserPrincipalName
         {
             get { return BackingStore?.Get<string?>("requestedByUserPrincipalName"); }
@@ -73,22 +57,6 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTime"); }
             set { BackingStore?.Set("requestedDateTime", value); }
         }
-        /// <summary>Indicates the status for the app log collection request - pending, completed or failed. Default is pending.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status
-        {
-            get { return BackingStore?.Get<string?>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
-#nullable restore
-#else
-        public string Status
-        {
-            get { return BackingStore?.Get<string>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
-#endif
         /// <summary>The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,10 +115,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managedAppRegistrationId", n => { ManagedAppRegistrationId = n.GetStringValue(); } },
-                { "requestedBy", n => { RequestedBy = n.GetStringValue(); } },
                 { "requestedByUserPrincipalName", n => { RequestedByUserPrincipalName = n.GetStringValue(); } },
                 { "requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
                 { "uploadedLogs", n => { UploadedLogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedAppLogUpload>(global::Microsoft.Graph.Beta.Models.ManagedAppLogUpload.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userLogUploadConsent", n => { UserLogUploadConsent = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppLogUploadConsent>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -166,10 +132,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteStringValue("managedAppRegistrationId", ManagedAppRegistrationId);
-            writer.WriteStringValue("requestedBy", RequestedBy);
             writer.WriteStringValue("requestedByUserPrincipalName", RequestedByUserPrincipalName);
             writer.WriteDateTimeOffsetValue("requestedDateTime", RequestedDateTime);
-            writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedAppLogUpload>("uploadedLogs", UploadedLogs);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppLogUploadConsent>("userLogUploadConsent", UserLogUploadConsent);
             writer.WriteStringValue("version", Version);

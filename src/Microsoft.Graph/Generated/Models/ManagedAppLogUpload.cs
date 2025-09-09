@@ -25,22 +25,6 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedAppComponent
-        {
-            get { return BackingStore?.Get<string?>("managedAppComponent"); }
-            set { BackingStore?.Set("managedAppComponent", value); }
-        }
-#nullable restore
-#else
-        public string ManagedAppComponent
-        {
-            get { return BackingStore?.Get<string>("managedAppComponent"); }
-            set { BackingStore?.Set("managedAppComponent", value); }
-        }
-#endif
-        /// <summary>The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public string? ManagedAppComponentDescription
         {
             get { return BackingStore?.Get<string?>("managedAppComponentDescription"); }
@@ -118,7 +102,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "managedAppComponent", n => { ManagedAppComponent = n.GetStringValue(); } },
                 { "managedAppComponentDescription", n => { ManagedAppComponentDescription = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "referenceId", n => { ReferenceId = n.GetStringValue(); } },
@@ -132,7 +115,6 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("managedAppComponent", ManagedAppComponent);
             writer.WriteStringValue("managedAppComponentDescription", ManagedAppComponentDescription);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("referenceId", ReferenceId);

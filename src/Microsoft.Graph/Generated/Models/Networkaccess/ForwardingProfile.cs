@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("associations", value); }
         }
 #endif
+        /// <summary>The isCustomProfile property</summary>
+        public bool? IsCustomProfile
+        {
+            get { return BackingStore?.Get<bool?>("isCustomProfile"); }
+            set { BackingStore?.Set("isCustomProfile", value); }
+        }
         /// <summary>Profile priority.</summary>
         public int? Priority
         {
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "associations", n => { Associations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Association>(global::Microsoft.Graph.Beta.Models.Networkaccess.Association.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isCustomProfile", n => { IsCustomProfile = n.GetBoolValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipal>(global::Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue); } },
                 { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>(); } },
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Association>("associations", Associations);
+            writer.WriteBoolValue("isCustomProfile", IsCustomProfile);
             writer.WriteIntValue("priority", Priority);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipal>("servicePrincipal", ServicePrincipal);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);

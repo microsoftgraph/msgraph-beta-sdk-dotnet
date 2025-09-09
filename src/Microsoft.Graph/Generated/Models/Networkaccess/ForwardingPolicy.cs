@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class ForwardingPolicy : global::Microsoft.Graph.Beta.Models.Networkaccess.Policy, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The privateAccessAppId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrivateAccessAppId
+        {
+            get { return BackingStore?.Get<string?>("privateAccessAppId"); }
+            set { BackingStore?.Set("privateAccessAppId", value); }
+        }
+#nullable restore
+#else
+        public string PrivateAccessAppId
+        {
+            get { return BackingStore?.Get<string>("privateAccessAppId"); }
+            set { BackingStore?.Set("privateAccessAppId", value); }
+        }
+#endif
         /// <summary>The trafficForwardingType property</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType? TrafficForwardingType
         {
@@ -43,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "privateAccessAppId", n => { PrivateAccessAppId = n.GetStringValue(); } },
                 { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>(); } },
             };
         }
@@ -54,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("privateAccessAppId", PrivateAccessAppId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);
         }
     }

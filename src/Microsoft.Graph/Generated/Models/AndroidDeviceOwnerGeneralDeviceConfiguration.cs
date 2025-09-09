@@ -377,6 +377,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskModeManagedFolders", value); }
         }
 #endif
+        /// <summary>Indicates the list of managed applications and associated settings, which will be applied when android device is run on kiosk mode with Managed Home Screen. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp>? KioskModeManagedHomeScreenAppSettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp>?>("kioskModeManagedHomeScreenAppSettings"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenAppSettings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp> KioskModeManagedHomeScreenAppSettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp>>("kioskModeManagedHomeScreenAppSettings"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenAppSettings", value); }
+        }
+#endif
         /// <summary>Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.</summary>
         public bool? KioskModeManagedHomeScreenAutoSignout
         {
@@ -1136,6 +1152,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "kioskModeIconSize", n => { KioskModeIconSize = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize>(); } },
                 { "kioskModeLockHomeScreen", n => { KioskModeLockHomeScreen = n.GetBoolValue(); } },
                 { "kioskModeManagedFolders", n => { KioskModeManagedFolders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "kioskModeManagedHomeScreenAppSettings", n => { KioskModeManagedHomeScreenAppSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "kioskModeManagedHomeScreenAutoSignout", n => { KioskModeManagedHomeScreenAutoSignout = n.GetBoolValue(); } },
                 { "kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds", n => { KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds = n.GetIntValue(); } },
                 { "kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds", n => { KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds = n.GetIntValue(); } },
@@ -1285,6 +1302,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize>("kioskModeIconSize", KioskModeIconSize);
             writer.WriteBoolValue("kioskModeLockHomeScreen", KioskModeLockHomeScreen);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder>("kioskModeManagedFolders", KioskModeManagedFolders);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp>("kioskModeManagedHomeScreenAppSettings", KioskModeManagedHomeScreenAppSettings);
             writer.WriteBoolValue("kioskModeManagedHomeScreenAutoSignout", KioskModeManagedHomeScreenAutoSignout);
             writer.WriteIntValue("kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds", KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds);
             writer.WriteIntValue("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds", KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds);

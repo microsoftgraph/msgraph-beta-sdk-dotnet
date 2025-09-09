@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches;
+using Microsoft.Graph.Beta.NetworkAccess.Connectivity.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -90,6 +91,16 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the getWebCategoryByUrl method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder"/></returns>
+        /// <param name="url">Usage: url=&apos;{url}&apos;</param>
+        public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl(string url)
+        {
+            if(string.IsNullOrEmpty(url)) throw new ArgumentNullException(nameof(url));
+            return new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder(PathParameters, RequestAdapter, url);
         }
         /// <summary>
         /// Update the navigation property connectivity in networkAccess

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Activities;
+using Microsoft.Graph.Beta.Users.Item.AdhocCalls;
 using Microsoft.Graph.Beta.Users.Item.AgreementAcceptances;
 using Microsoft.Graph.Beta.Users.Item.Analytics;
 using Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval;
@@ -140,6 +141,11 @@ namespace Microsoft.Graph.Beta.Users.Item
         public global::Microsoft.Graph.Beta.Users.Item.Activities.ActivitiesRequestBuilder Activities
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the adhocCalls property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.AdhocCalls.AdhocCallsRequestBuilder AdhocCalls
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.AdhocCalls.AdhocCallsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances

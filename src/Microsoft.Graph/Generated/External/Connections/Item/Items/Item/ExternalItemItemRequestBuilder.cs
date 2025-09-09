@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an externalitem.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta" />
+        /// Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an externalitem.
+        /// Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

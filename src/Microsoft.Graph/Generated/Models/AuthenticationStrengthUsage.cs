@@ -21,6 +21,38 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The mfa property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>? Mfa
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>?>("mfa"); }
+            set { BackingStore?.Set("mfa", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy> Mfa
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>>("mfa"); }
+            set { BackingStore?.Set("mfa", value); }
+        }
+#endif
+        /// <summary>The none property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>? None
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>?>("none"); }
+            set { BackingStore?.Set("none", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy> None
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>>("none"); }
+            set { BackingStore?.Set("none", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +95,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "mfa", n => { Mfa = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "none", n => { None = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -73,6 +107,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("mfa", Mfa);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("none", None);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

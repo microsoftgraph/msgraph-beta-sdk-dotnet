@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HardwareOathTokenHashFunction?>("hashFunction"); }
             set { BackingStore?.Set("hashFunction", value); }
         }
+        /// <summary>The lastUsedDateTime property</summary>
+        public DateTimeOffset? LastUsedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUsedDateTime"); }
+            set { BackingStore?.Set("lastUsedDateTime", value); }
+        }
         /// <summary>Manufacturer name of the hardware token. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +160,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "assignTo", n => { AssignTo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
                 { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "hashFunction", n => { HashFunction = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.HardwareOathTokenHashFunction>(); } },
+                { "lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "secretKey", n => { SecretKey = n.GetStringValue(); } },
@@ -173,6 +180,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("assignedTo", AssignedTo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("assignTo", AssignTo);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.HardwareOathTokenHashFunction>("hashFunction", HashFunction);
+            writer.WriteDateTimeOffsetValue("lastUsedDateTime", LastUsedDateTime);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("secretKey", SecretKey);

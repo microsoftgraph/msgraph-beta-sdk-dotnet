@@ -1868,22 +1868,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState?>("subscriptionState"); }
             set { BackingStore?.Set("subscriptionState", value); }
         }
-        /// <summary>The telecom expense management partners.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>? TelecomExpenseManagementPartners
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>?>("telecomExpenseManagementPartners"); }
-            set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner> TelecomExpenseManagementPartners
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>>("telecomExpenseManagementPartners"); }
-            set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
-        }
-#endif
         /// <summary>List of setting insights in a template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -3133,7 +3117,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "softwareUpdateStatusSummary", n => { SoftwareUpdateStatusSummary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>(global::Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue); } },
                 { "subscriptionState", n => { SubscriptionState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState>(); } },
                 { "subscriptions", n => { Subscriptions = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions>(); } },
-                { "telecomExpenseManagementPartners", n => { TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>(global::Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templateInsights", n => { TemplateInsights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>(global::Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templateSettings", n => { TemplateSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>(global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templates", n => { Templates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementTemplate>(global::Microsoft.Graph.Beta.Models.DeviceManagementTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -3332,7 +3315,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary", SoftwareUpdateStatusSummary);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions>("subscriptions", Subscriptions);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState>("subscriptionState", SubscriptionState);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>("telecomExpenseManagementPartners", TelecomExpenseManagementPartners);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>("templateInsights", TemplateInsights);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementTemplate>("templates", Templates);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>("templateSettings", TemplateSettings);

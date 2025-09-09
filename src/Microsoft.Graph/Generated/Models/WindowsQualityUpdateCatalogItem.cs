@@ -19,6 +19,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
+        /// <summary>CVE information for catalog items</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCveSeverityInformation? CveSeverityInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCveSeverityInformation?>("cveSeverityInformation"); }
+            set { BackingStore?.Set("cveSeverityInformation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCveSeverityInformation CveSeverityInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCveSeverityInformation>("cveSeverityInformation"); }
+            set { BackingStore?.Set("cveSeverityInformation", value); }
+        }
+#endif
         /// <summary>When TRUE, indicates that the quality updates qualify for expedition. When FALSE, indicates the quality updates do not quality for expedition. Default value is FALSE. Read-only</summary>
         public bool? IsExpeditable
         {
@@ -89,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "classification", n => { Classification = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory>(); } },
+                { "cveSeverityInformation", n => { CveSeverityInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCveSeverityInformation>(global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCveSeverityInformation.CreateFromDiscriminatorValue); } },
                 { "isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
                 { "kbArticleId", n => { KbArticleId = n.GetStringValue(); } },
                 { "productRevisions", n => { ProductRevisions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision>(global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -104,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCategory>("classification", Classification);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCveSeverityInformation>("cveSeverityInformation", CveSeverityInformation);
             writer.WriteBoolValue("isExpeditable", IsExpeditable);
             writer.WriteStringValue("kbArticleId", KbArticleId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogProductRevision>("productRevisions", ProductRevisions);
