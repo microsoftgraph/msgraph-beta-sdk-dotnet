@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorCandidates
         {
         }
         /// <summary>
-        /// Get sensorCandidates from security
+        /// Get a list of the sensorCandidate objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensorcandidates?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SensorCandidateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorCandidates
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.SensorCandidate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensorCandidates from security
+        /// Get a list of the sensorCandidate objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorCandidates
             return new global::Microsoft.Graph.Beta.Security.Identities.SensorCandidates.SensorCandidatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sensorCandidates from security
+        /// Get a list of the sensorCandidate objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorCandidatesRequestBuilderGetQueryParameters 

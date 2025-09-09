@@ -166,8 +166,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-beta" />
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -293,7 +293,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessageItemRequestBuilderGetQueryParameters 
