@@ -52,6 +52,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("activities", value); }
         }
 #endif
+        /// <summary>Ad hoc calls associated with the user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AdhocCall>? AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AdhocCall>?>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AdhocCall> AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AdhocCall>>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#endif
         /// <summary>Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2426,6 +2442,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "aboutMe", n => { AboutMe = n.GetStringValue(); } },
                 { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
                 { "activities", n => { Activities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserActivity>(global::Microsoft.Graph.Beta.Models.UserActivity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "adhocCalls", n => { AdhocCalls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdhocCall>(global::Microsoft.Graph.Beta.Models.AdhocCall.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ageGroup", n => { AgeGroup = n.GetStringValue(); } },
                 { "agreementAcceptances", n => { AgreementAcceptances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AgreementAcceptance>(global::Microsoft.Graph.Beta.Models.AgreementAcceptance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "analytics", n => { Analytics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserAnalytics>(global::Microsoft.Graph.Beta.Models.UserAnalytics.CreateFromDiscriminatorValue); } },
@@ -2595,6 +2612,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("aboutMe", AboutMe);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserActivity>("activities", Activities);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdhocCall>("adhocCalls", AdhocCalls);
             writer.WriteStringValue("ageGroup", AgeGroup);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AgreementAcceptance>("agreementAcceptances", AgreementAcceptances);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserAnalytics>("analytics", Analytics);

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Places.Item.GraphRoomList.CheckIns;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Rooms;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces;
@@ -22,6 +23,11 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GraphRoomListRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the checkIns property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.CheckIns.CheckInsRequestBuilder CheckIns
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the rooms property of the microsoft.graph.roomList entity.</summary>
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder Rooms
         {

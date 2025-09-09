@@ -12,8 +12,10 @@ using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies;
 using Microsoft.Graph.Beta.Policies.AuthorizationPolicy;
 using Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies;
+using Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies;
 using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy;
 using Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy;
+using Microsoft.Graph.Beta.Policies.DeletedItems;
 using Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy;
 using Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy;
 using Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy;
@@ -96,6 +98,11 @@ namespace Microsoft.Graph.Beta.Policies
         {
             get => new global::Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies.ClaimsMappingPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies.ConditionalAccessPoliciesRequestBuilder ConditionalAccessPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies.ConditionalAccessPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy
         {
@@ -105,6 +112,11 @@ namespace Microsoft.Graph.Beta.Policies
         public global::Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy.DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy
         {
             get => new global::Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy.DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.DeletedItems.DeletedItemsRequestBuilder DeletedItems
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.DeletedItems.DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy.DeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy

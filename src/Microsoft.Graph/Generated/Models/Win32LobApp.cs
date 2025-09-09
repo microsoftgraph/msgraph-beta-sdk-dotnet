@@ -13,6 +13,38 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32LobApp : global::Microsoft.Graph.Beta.Models.MobileLobApp, IParsable
     {
+        /// <summary>Contains the unique identifier of the associated install script for this Win32 app to be used instead of the install command line by the managed device during app installation. When null, the install command line is used instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.MobileAppScriptReference? ActiveInstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference?>("activeInstallScript"); }
+            set { BackingStore?.Set("activeInstallScript", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.MobileAppScriptReference ActiveInstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference>("activeInstallScript"); }
+            set { BackingStore?.Set("activeInstallScript", value); }
+        }
+#endif
+        /// <summary>Contains the unique identifier of the associated uninstall script for this Win32 app to be used instead of the uninstall command line by the managed device during app uninstallation. When null, the uninstall command line is used instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.MobileAppScriptReference? ActiveUninstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference?>("activeUninstallScript"); }
+            set { BackingStore?.Set("activeUninstallScript", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.MobileAppScriptReference ActiveUninstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference>("activeUninstallScript"); }
+            set { BackingStore?.Set("activeUninstallScript", value); }
+        }
+#endif
         /// <summary>Indicates whether the uninstall is supported from the company portal for the Win32 app with an available assignment. When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.</summary>
         public bool? AllowAvailableUninstall
         {
@@ -277,6 +309,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activeInstallScript", n => { ActiveInstallScript = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference>(global::Microsoft.Graph.Beta.Models.MobileAppScriptReference.CreateFromDiscriminatorValue); } },
+                { "activeUninstallScript", n => { ActiveUninstallScript = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference>(global::Microsoft.Graph.Beta.Models.MobileAppScriptReference.CreateFromDiscriminatorValue); } },
                 { "allowAvailableUninstall", n => { AllowAvailableUninstall = n.GetBoolValue(); } },
                 { "allowedArchitectures", n => { AllowedArchitectures = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
                 { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
@@ -306,6 +340,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference>("activeInstallScript", ActiveInstallScript);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppScriptReference>("activeUninstallScript", ActiveUninstallScript);
             writer.WriteBoolValue("allowAvailableUninstall", AllowAvailableUninstall);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>("allowedArchitectures", AllowedArchitectures);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);

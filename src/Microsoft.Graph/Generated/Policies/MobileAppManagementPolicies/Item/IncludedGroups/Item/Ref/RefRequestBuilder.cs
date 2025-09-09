@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref", pathParameters)
+        public RefRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref", rawUrl)
+        public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref", rawUrl)
         {
         }
         /// <summary>

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityRetryPolicy;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.SiteSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.UserSources;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EdiscoveryHoldPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the retryPolicy method.</summary>
+        public global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityRetryPolicy.MicrosoftGraphSecurityRetryPolicyRequestBuilder MicrosoftGraphSecurityRetryPolicy
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityRetryPolicy.MicrosoftGraphSecurityRetryPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.</summary>
         public global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.SiteSources.SiteSourcesRequestBuilder SiteSources
         {

@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>A collection of ad hoc calls in Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AdhocCall>? AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AdhocCall>?>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AdhocCall> AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AdhocCall>>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callRecords property</summary>
@@ -71,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>A collection of structured question-and-answer (Q&amp;A) thread in Teams directly associated with online meetings.</summary>
+        /// <summary>A collection of structured question-and-answer (Q&amp;A) threads in Teams directly associated with online meetings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>? OnlineMeetingConversations
@@ -145,6 +161,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "adhocCalls", n => { AdhocCalls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdhocCall>(global::Microsoft.Graph.Beta.Models.AdhocCall.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord>(global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "calls", n => { Calls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Call>(global::Microsoft.Graph.Beta.Models.Call.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -160,6 +177,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdhocCall>("adhocCalls", AdhocCalls);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord>("callRecords", CallRecords);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Call>("calls", Calls);
             writer.WriteStringValue("@odata.type", OdataType);

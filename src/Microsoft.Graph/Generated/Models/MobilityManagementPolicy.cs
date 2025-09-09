@@ -128,7 +128,13 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.mobileAppManagementPolicy" => new global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy(),
+                "#microsoft.graph.mobileDeviceManagementPolicy" => new global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy(),
+                _ => new global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
