@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ChatMessageCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-beta" />
+        /// Send a new chatMessage in the specified channel or a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
         public async Task<global::Microsoft.Graph.Beta.Models.ChatMessage> PostAsync(global::Microsoft.Graph.Beta.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel.
+        /// Send a new chatMessage in the specified channel or a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

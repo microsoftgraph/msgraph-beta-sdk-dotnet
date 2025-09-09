@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlowCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new inboundFileFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-beta" />
+        /// Create a new inboundApiFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
         public async Task<global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlow> PostAsync(global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return requestInfo;
         }
         /// <summary>
-        /// Create a new inboundFileFlow object.
+        /// Create a new inboundApiFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

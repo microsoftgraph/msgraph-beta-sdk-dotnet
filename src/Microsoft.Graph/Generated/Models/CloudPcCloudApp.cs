@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcCloudApp : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionFailedErrorCode property</summary>
+        /// <summary>The error code if publishing, unpublishing, or resetting a cloud app fails. Possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcCloudAppActionFailedErrorCode? ActionFailedErrorCode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcCloudAppActionFailedErrorCode?>("actionFailedErrorCode"); }
             set { BackingStore?.Set("actionFailedErrorCode", value); }
         }
-        /// <summary>The actionFailedErrorMessage property</summary>
+        /// <summary>The error message when the IT admin failed to publish, unpublish, update, or reset a cloud app. For example: &apos;Publish failed because it exceeds the 500 cloud apps limitation under the policy. You need to unpublish some cloud apps under this policy in order to publish this cloud app again.&apos; Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionFailedErrorMessage
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("actionFailedErrorMessage", value); }
         }
 #endif
-        /// <summary>The addedDateTime property</summary>
+        /// <summary>The date and time when the cloud app was added to this tenant and became visible in the admin portal. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can&apos;t set or modify it. Supports $filter, $select, and $orderBy. Read-only.</summary>
         public DateTimeOffset? AddedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("addedDateTime"); }
@@ -62,13 +62,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcCloudAppStatus?>("appStatus"); }
             set { BackingStore?.Set("appStatus", value); }
         }
-        /// <summary>The availableToUser property</summary>
+        /// <summary>Indicates whether this cloud app is available to end users through the end-user portal or the Windows App. The default value is false. It changes to true if the cloud app is successfully published, and reverts to false when the admin unpublishes the cloud app. Supports $filter, $select, and $orderBy.</summary>
         public bool? AvailableToUser
         {
             get { return BackingStore?.Get<bool?>("availableToUser"); }
             set { BackingStore?.Set("availableToUser", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description associated with the cloud app. The maximum allowed length for this property is 512 characters. Supports $filter, $select, and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The discoveredAppName property</summary>
+        /// <summary>Name of the discovered app associated with the cloud app. For example, Paint, Supports $filter, $select, and $orderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DiscoveredAppName
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("discoveredAppName", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name for the cloud app. The display name for the cloud app, which appears on the end-user portal and must be unique within a single provisioning policy. It uses the discovered app name as the default value. The maximum allowed length for this property is 64 characters. For example, Paint. Supports $filter, $select, and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -116,13 +116,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The lastPublishedDateTime property</summary>
+        /// <summary>The latest date time when the admin published the cloud app. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can&apos;t set or modify it. Supports $filter, $select, and $orderBy. Read-only.</summary>
         public DateTimeOffset? LastPublishedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastPublishedDateTime"); }
             set { BackingStore?.Set("lastPublishedDateTime", value); }
         }
-        /// <summary>The provisioningPolicyId property</summary>
+        /// <summary>The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProvisioningPolicyId
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
 #endif
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The list of scope tag IDs for this cloud app. Inherited from the provisioning policy when the app is created or updated. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcCloudApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcCloudApp();
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcCloudAppActionFailedErrorCode>("actionFailedErrorCode", ActionFailedErrorCode);
             writer.WriteStringValue("actionFailedErrorMessage", ActionFailedErrorMessage);

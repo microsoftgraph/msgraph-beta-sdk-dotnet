@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         {
         }
         /// <summary>
-        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-beta" />
+        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-beta" />
+        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MeetingRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistration> PatchAsync(global::Microsoft.Graph.Beta.Models.MeetingRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MeetingRegistration>(requestInfo, global::Microsoft.Graph.Beta.Models.MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
+        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
             return requestInfo;
         }
         /// <summary>
-        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         {
         }
         /// <summary>
-        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationRequestBuilderGetQueryParameters 

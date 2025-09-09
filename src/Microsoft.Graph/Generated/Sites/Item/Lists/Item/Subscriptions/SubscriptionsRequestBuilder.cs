@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions
         public async Task<global::Microsoft.Graph.Beta.Models.Subscription> PostAsync(global::Microsoft.Graph.Beta.Models.Subscription body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Subscription body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

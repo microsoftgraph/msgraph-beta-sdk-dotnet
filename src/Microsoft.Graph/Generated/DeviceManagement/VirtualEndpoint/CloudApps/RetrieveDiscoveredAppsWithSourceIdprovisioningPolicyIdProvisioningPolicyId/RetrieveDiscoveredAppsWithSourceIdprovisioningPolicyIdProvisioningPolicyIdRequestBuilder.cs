@@ -36,7 +36,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Retrie
         {
         }
         /// <summary>
-        /// Invoke function retrieveDiscoveredApps
+        /// Get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccloudapp-retrievediscoveredapps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Retrie
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse>(requestInfo, global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveDiscoveredApps
+        /// Get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccloudapp-retrievediscoveredapps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Retrie
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdResponse>(requestInfo, global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveDiscoveredApps
+        /// Get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Retrie
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId.RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function retrieveDiscoveredApps
+        /// Get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetQueryParameters 

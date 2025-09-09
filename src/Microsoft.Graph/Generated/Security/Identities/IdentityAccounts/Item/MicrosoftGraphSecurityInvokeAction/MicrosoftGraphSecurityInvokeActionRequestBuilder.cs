@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item.Microso
         {
         }
         /// <summary>
-        /// Invoke action invokeAction
+        /// Perform actions such as revoking accounts and forcing password reset for identity accounts that are observed in Microsoft Defender for Identity. This action allows reading and performing identity security actions on behalf of the signed-in identity.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-identityaccounts-invokeaction?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.InvokeActionResult"/></returns>
         /// <param name="body">The request body</param>
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item.Microso
         public async Task<global::Microsoft.Graph.Beta.Models.Security.InvokeActionResult> PostAsync(global::Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item.MicrosoftGraphSecurityInvokeAction.InvokeActionPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item.Microso
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.InvokeActionResult>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.InvokeActionResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action invokeAction
+        /// Perform actions such as revoking accounts and forcing password reset for identity accounts that are observed in Microsoft Defender for Identity. This action allows reading and performing identity security actions on behalf of the signed-in identity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item.Microso
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.Item.MicrosoftGraphSecurityInvokeAction.InvokeActionPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

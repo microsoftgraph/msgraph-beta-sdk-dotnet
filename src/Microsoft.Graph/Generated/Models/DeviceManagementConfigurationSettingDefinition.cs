@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingAccessTypes?>("accessTypes"); }
             set { BackingStore?.Set("accessTypes", value); }
         }
-        /// <summary>Details which device setting is applicable on</summary>
+        /// <summary>Details which device setting is applicable on. Supports: $filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability? Applicability
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("baseUri", value); }
         }
 #endif
-        /// <summary>Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)</summary>
+        /// <summary>Specify category in which the setting is under. Support $filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CategoryId
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("categoryId", value); }
         }
 #endif
-        /// <summary>Description of the item</summary>
+        /// <summary>Description of the setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Display name of the item</summary>
+        /// <summary>Name of the setting. For example: Allow Toast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Help text of the item</summary>
+        /// <summary>Help text of the setting. Give more details of the setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HelpText
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("helpText", value); }
         }
 #endif
-        /// <summary>List of links more info for the setting can be found at</summary>
+        /// <summary>List of links more info for the setting can be found at.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? InfoUrls
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingRiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
-        /// <summary>Root setting definition if the setting is a child setting.</summary>
+        /// <summary>Root setting definition id if the setting is a child setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RootDefinitionId
@@ -273,7 +273,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -322,7 +322,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingAccessTypes>("accessTypes", AccessTypes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability>("applicability", Applicability);

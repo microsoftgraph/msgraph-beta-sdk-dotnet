@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation
         public async Task<global::Microsoft.Graph.Beta.Models.AttackSimulationRoot> PatchAsync(global::Microsoft.Graph.Beta.Models.AttackSimulationRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.AttackSimulationRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
