@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class LevelMap : global::Microsoft.Graph.Beta.Models.BaseMapFeature, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The fixtures property</summary>
+        /// <summary>Collection of fixtures (such as furniture or equipment) on this level. Supports upsert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.FixtureMap>? Fixtures
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fixtures", value); }
         }
 #endif
-        /// <summary>The placeId property</summary>
+        /// <summary>Identifier of the floor to which this levelMap belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("placeId", value); }
         }
 #endif
-        /// <summary>The sections property</summary>
+        /// <summary>Collection of sections (such as zones or partitions) on this level. Supports upsert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SectionMap>? Sections
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sections", value); }
         }
 #endif
-        /// <summary>The units property</summary>
+        /// <summary>Collection of units (such as rooms or offices) on this level. Supports upsert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.UnitMap>? Units

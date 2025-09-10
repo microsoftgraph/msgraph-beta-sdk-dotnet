@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         {
         }
         /// <summary>
-        /// Get a list of the externalMeetingRegistrants of an onlineMeeting.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistrant-list?view=graph-rest-beta" />
+        /// Get a list of the meetingRegistrants of an onlineMeeting on behalf of the organizer. You can use this method to get the registration report for a Microsoft Teams webinar.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-list-registrants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase>(requestInfo, global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the externalMeetingRegistrants of an onlineMeeting.
+        /// Get a list of the meetingRegistrants of an onlineMeeting on behalf of the organizer. You can use this method to get the registration report for a Microsoft Teams webinar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
             return new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the externalMeetingRegistrants of an onlineMeeting.
+        /// Get a list of the meetingRegistrants of an onlineMeeting on behalf of the organizer. You can use this method to get the registration report for a Microsoft Teams webinar.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrantsRequestBuilderGetQueryParameters 

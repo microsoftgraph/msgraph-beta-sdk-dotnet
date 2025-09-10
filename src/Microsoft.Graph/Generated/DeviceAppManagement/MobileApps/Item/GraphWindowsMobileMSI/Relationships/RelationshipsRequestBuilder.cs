@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsM
         {
         }
         /// <summary>
-        /// The set of direct relationships for this app.
+        /// List of relationships for this mobile app.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileAppRelationshipCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsM
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileAppRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of direct relationships for this app.
+        /// List of relationships for this mobile app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsM
             return new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsMobileMSI.Relationships.RelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The set of direct relationships for this app.
+        /// List of relationships for this mobile app.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelationshipsRequestBuilderGetQueryParameters 
