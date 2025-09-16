@@ -25,5 +25,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         RpaBox = 8,
         #pragma warning restore CS1591
+        [EnumMember(Value = "microsoft365Opal")]
+        #pragma warning disable CS1591
+        Microsoft365Opal = 16,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "microsoft365BizChat")]
+        #pragma warning disable CS1591
+        Microsoft365BizChat = 32,
+        #pragma warning restore CS1591
     }
 }

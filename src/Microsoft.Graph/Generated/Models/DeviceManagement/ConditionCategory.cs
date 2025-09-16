@@ -52,5 +52,17 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         #pragma warning disable CS1591
         FrontlineBufferUsageThreshold,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcUserSettingsPersistenceUsageThreshold")]
+        #pragma warning disable CS1591
+        CloudPcUserSettingsPersistenceUsageThreshold,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcDeprovisionedThreshold")]
+        #pragma warning disable CS1591
+        CloudPcDeprovisionedThreshold,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcReserveDeprovisionFailedThreshold")]
+        #pragma warning disable CS1591
+        CloudPcReserveDeprovisionFailedThreshold,
+        #pragma warning restore CS1591
     }
 }

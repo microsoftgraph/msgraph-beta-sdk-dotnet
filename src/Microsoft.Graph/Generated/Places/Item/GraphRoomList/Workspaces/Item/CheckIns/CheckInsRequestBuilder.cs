@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.CheckIn
         {
         }
         /// <summary>
-        /// Get checkIns from places
+        /// A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CheckInClaimCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.CheckIn
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CheckInClaim>(requestInfo, global::Microsoft.Graph.Beta.Models.CheckInClaim.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get checkIns from places
+        /// A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.CheckIn
             return new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.CheckIns.CheckInsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get checkIns from places
+        /// A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CheckInsRequestBuilderGetQueryParameters 

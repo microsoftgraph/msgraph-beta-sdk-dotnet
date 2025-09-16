@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType?>("domainJoinType"); }
             set { BackingStore?.Set("domainJoinType", value); }
         }
+        /// <summary>The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType? GeographicLocationType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }
+            set { BackingStore?.Set("geographicLocationType", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domainJoinType", n => { DomainJoinType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>(); } },
+                { "geographicLocationType", n => { GeographicLocationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
                 { "regionGroup", n => { RegionGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
@@ -129,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>("domainJoinType", DomainJoinType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>("geographicLocationType", GeographicLocationType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);

@@ -56,5 +56,69 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         ExternalAuthMethod,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hardwareOneTimePasscode")]
+        #pragma warning disable CS1591
+        HardwareOneTimePasscode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "windowsHelloForBusiness")]
+        #pragma warning disable CS1591
+        WindowsHelloForBusiness,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftAuthenticatorPasswordless")]
+        #pragma warning disable CS1591
+        MicrosoftAuthenticatorPasswordless,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "temporaryAccessPass")]
+        #pragma warning disable CS1591
+        TemporaryAccessPass,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "macOsSecureEnclaveKey")]
+        #pragma warning disable CS1591
+        MacOsSecureEnclaveKey,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "passKeyDeviceBound")]
+        #pragma warning disable CS1591
+        PassKeyDeviceBound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "passKeyDeviceBoundAuthenticator")]
+        #pragma warning disable CS1591
+        PassKeyDeviceBoundAuthenticator,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "passKeyDeviceBoundWindowsHello")]
+        #pragma warning disable CS1591
+        PassKeyDeviceBoundWindowsHello,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "softwareOneTimePasscode")]
+        #pragma warning disable CS1591
+        SoftwareOneTimePasscode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftAuthenticatorPush")]
+        #pragma warning disable CS1591
+        MicrosoftAuthenticatorPush,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "mobilePhone")]
+        #pragma warning disable CS1591
+        MobilePhone,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sms")]
+        #pragma warning disable CS1591
+        Sms,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alternateMobilePhone")]
+        #pragma warning disable CS1591
+        AlternateMobilePhone,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "fido2SecurityKey")]
+        #pragma warning disable CS1591
+        Fido2SecurityKey,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "oneTimePasscode")]
+        #pragma warning disable CS1591
+        OneTimePasscode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "passKeySynced")]
+        #pragma warning disable CS1591
+        PassKeySynced,
+        #pragma warning restore CS1591
     }
 }

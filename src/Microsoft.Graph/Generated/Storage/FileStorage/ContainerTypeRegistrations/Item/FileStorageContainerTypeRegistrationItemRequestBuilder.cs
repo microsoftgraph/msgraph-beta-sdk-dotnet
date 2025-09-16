@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or replace a fileStorageContainerTypeRegistration object. This method registers a fileStorageContainerType in the tenant.  For standard containers, billing must be valid for the registration to complete successfully. Settings can&apos;t be modified during registration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestorage-post-containertyperegistrations?view=graph-rest-beta" />
+        /// Update the properties of a fileStorageContainerTypeRegistration object. ETag is used for optimistic concurrency control. It must match the value from Create, Get or the previous Update.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertyperegistration-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return requestInfo;
         }
         /// <summary>
-        /// Create or replace a fileStorageContainerTypeRegistration object. This method registers a fileStorageContainerType in the tenant.  For standard containers, billing must be valid for the registration to complete successfully. Settings can&apos;t be modified during registration.
+        /// Update the properties of a fileStorageContainerTypeRegistration object. ETag is used for optimistic concurrency control. It must match the value from Create, Get or the previous Update.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -40,5 +40,13 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         #pragma warning disable CS1591
         CloudPcFrontlineConcurrencyScenario,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcUserSettingsPersistenceScenario")]
+        #pragma warning disable CS1591
+        CloudPcUserSettingsPersistenceScenario,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcDeprovisionFailedScenario")]
+        #pragma warning disable CS1591
+        CloudPcDeprovisionFailedScenario,
+        #pragma warning restore CS1591
     }
 }

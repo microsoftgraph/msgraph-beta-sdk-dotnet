@@ -108,6 +108,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceImages", value); }
         }
 #endif
+        /// <summary>The externalPartners property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>? ExternalPartners
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>?>("externalPartners"); }
+            set { BackingStore?.Set("externalPartners", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner> ExternalPartners
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>>("externalPartners"); }
+            set { BackingStore?.Set("externalPartners", value); }
+        }
+#endif
         /// <summary>The external partner settings on a Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -309,6 +325,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "crossCloudGovernmentOrganizationMapping", n => { CrossCloudGovernmentOrganizationMapping = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping>(global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue); } },
                 { "deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>(global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalPartnerSettings", n => { ExternalPartnerSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting>(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalPartners", n => { ExternalPartners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "frontLineServicePlans", n => { FrontLineServicePlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcFrontLineServicePlan>(global::Microsoft.Graph.Beta.Models.CloudPcFrontLineServicePlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "galleryImages", n => { GalleryImages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage>(global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnection>(global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnection.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -335,6 +352,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping>("crossCloudGovernmentOrganizationMapping", CrossCloudGovernmentOrganizationMapping);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>("deviceImages", DeviceImages);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>("externalPartners", ExternalPartners);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting>("externalPartnerSettings", ExternalPartnerSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcFrontLineServicePlan>("frontLineServicePlans", FrontLineServicePlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage>("galleryImages", GalleryImages);

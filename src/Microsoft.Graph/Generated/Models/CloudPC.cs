@@ -158,6 +158,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("gracePeriodEndDateTime"); }
             set { BackingStore?.Set("gracePeriodEndDateTime", value); }
         }
+        /// <summary>The Microsoft Entra group details (for example, ID and display name) for the Entra ID group associated with the user&apos;s Reserve Cloud PC assignment. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail? GroupDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail?>("groupDetail"); }
+            set { BackingStore?.Set("groupDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail GroupDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>("groupDetail"); }
+            set { BackingStore?.Set("groupDetail", value); }
+        }
+#endif
         /// <summary>Name of the OS image that&apos;s on the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -452,6 +468,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
+        /// <summary>The user details (for example, ID and display name) for the user associated with a Reserve Cloud PC assignment. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail? UserDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail?>("userDetail"); }
+            set { BackingStore?.Set("userDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail UserDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail>("userDetail"); }
+            set { BackingStore?.Set("userDetail", value); }
+        }
+#endif
         /// <summary>Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. When set to cloudPc, it indicates that the end user can access the entire desktop. When set to cloudApp, it indicates that the end user can only access cloud apps published under the associated provisioning policy. Since the cloud app experience also creates Cloud PC devices that appear in the Cloud PC device list, this property helps differentiate them. The default value is cloudPc. This property is defined in the provisioning policy.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
         {
@@ -503,6 +535,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "frontlineCloudPcAvailability", n => { FrontlineCloudPcAvailability = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability>(); } },
                 { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "groupDetail", n => { GroupDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>(global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail.CreateFromDiscriminatorValue); } },
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>(global::Microsoft.Graph.Beta.Models.CloudPcLoginResult.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -527,6 +560,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "statusDetail", n => { StatusDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail.CreateFromDiscriminatorValue); } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
                 { "userAccountType", n => { UserAccountType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType>(); } },
+                { "userDetail", n => { UserDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail>(global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail.CreateFromDiscriminatorValue); } },
                 { "userExperienceType", n => { UserExperienceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -550,6 +584,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability>("frontlineCloudPcAvailability", FrontlineCloudPcAvailability);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>("groupDetail", GroupDetail);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>("lastLoginResult", LastLoginResult);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
@@ -574,6 +609,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>("statusDetail", StatusDetail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails", StatusDetails);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType>("userAccountType", UserAccountType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail>("userDetail", UserDetail);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>("userExperienceType", UserExperienceType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
