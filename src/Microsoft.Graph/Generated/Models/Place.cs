@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("address", value); }
         }
 #endif
-        /// <summary>The checkIns property</summary>
+        /// <summary>A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CheckInClaim>? CheckIns

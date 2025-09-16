@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplyActionResult;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Retry;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.SchedulePolicyApplyTask;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule.RetrievePolicyApplyScheduleRequestBuilder RetrievePolicyApplySchedule
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule.RetrievePolicyApplyScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retry method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Retry.RetryRequestBuilder Retry
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Retry.RetryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the schedulePolicyApplyTask method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.SchedulePolicyApplyTask.SchedulePolicyApplyTaskRequestBuilder SchedulePolicyApplyTask

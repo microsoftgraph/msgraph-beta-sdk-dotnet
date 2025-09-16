@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType? GeographicLocationType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }
+            set { BackingStore?.Set("geographicLocationType", value); }
+        }
         /// <summary>The regionGroup property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup? RegionGroup
         {
@@ -81,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "geographicLocationType", n => { GeographicLocationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>(); } },
                 { "regionGroup", n => { RegionGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
                 { "regionRestrictionDetail", n => { RegionRestrictionDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>(global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail.CreateFromDiscriminatorValue); } },
                 { "regionStatus", n => { RegionStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>(); } },
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>("geographicLocationType", GeographicLocationType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>("regionRestrictionDetail", RegionRestrictionDetail);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);

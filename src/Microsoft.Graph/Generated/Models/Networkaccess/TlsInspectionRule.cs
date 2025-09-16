@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The matchingConditions property</summary>
+        /// <summary>The conditions that determine when this rule should be applied to traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionMatchingConditions? MatchingConditions

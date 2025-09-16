@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernmentOrganizationMapping;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
@@ -67,6 +68,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.DeviceImagesRequestBuilder DeviceImages
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.DeviceImagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the externalPartners property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners.ExternalPartnersRequestBuilder ExternalPartners
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners.ExternalPartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.ExternalPartnerSettingsRequestBuilder ExternalPartnerSettings

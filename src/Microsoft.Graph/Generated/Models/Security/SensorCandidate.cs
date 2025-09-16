@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class SensorCandidate : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The computerDnsName property</summary>
+        /// <summary>The DNS name of the computer associated with the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComputerDnsName
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("computerDnsName", value); }
         }
 #endif
-        /// <summary>The lastSeenDateTime property</summary>
+        /// <summary>The date and time when the sensor was last seen.</summary>
         public DateTimeOffset? LastSeenDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The senseClientVersion property</summary>
+        /// <summary>The version of the Defender for Identity sensor client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenseClientVersion

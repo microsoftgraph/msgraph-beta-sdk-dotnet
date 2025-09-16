@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("redundancyDetection", value); }
         }
 #endif
-        /// <summary>The reviewSetSettings property</summary>
+        /// <summary>The settings of the review set for the case. Possible values are: none, disableGrouping, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ReviewSetSettings? ReviewSetSettings
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ReviewSetSettings?>("reviewSetSettings"); }

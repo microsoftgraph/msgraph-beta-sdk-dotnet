@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("hasWiFi"); }
             set { BackingStore?.Set("hasWiFi", value); }
         }
-        /// <summary>The map property</summary>
+        /// <summary>Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.BuildingMap? Map

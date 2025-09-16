@@ -429,6 +429,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping" => new global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping(),
                 "#microsoft.graph.cloudPcDeviceImage" => new global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage(),
                 "#microsoft.graph.cloudPcExportJob" => new global::Microsoft.Graph.Beta.Models.CloudPcExportJob(),
+                "#microsoft.graph.cloudPcExternalPartner" => new global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner(),
                 "#microsoft.graph.cloudPcExternalPartnerSetting" => new global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting(),
                 "#microsoft.graph.cloudPcFrontLineServicePlan" => new global::Microsoft.Graph.Beta.Models.CloudPcFrontLineServicePlan(),
                 "#microsoft.graph.cloudPcGalleryImage" => new global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage(),
