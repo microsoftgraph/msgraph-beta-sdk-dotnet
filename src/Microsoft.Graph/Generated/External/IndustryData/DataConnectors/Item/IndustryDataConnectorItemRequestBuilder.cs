@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector>(requestInfo, global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a oneRosterApiDataConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-update?view=graph-rest-beta" />
+        /// Update the properties of an azureDataLakeConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a oneRosterApiDataConnector object.
+        /// Update the properties of an azureDataLakeConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

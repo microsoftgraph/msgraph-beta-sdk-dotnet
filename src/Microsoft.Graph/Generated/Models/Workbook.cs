@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("application", value); }
         }
 #endif
-        /// <summary>The comments property</summary>
+        /// <summary>Represents a collection of comments in a workbook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WorkbookComment>? Comments

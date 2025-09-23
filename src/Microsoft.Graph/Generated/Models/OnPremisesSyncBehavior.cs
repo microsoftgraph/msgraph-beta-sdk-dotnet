@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnPremisesSyncBehavior : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the object can be taken over by on-premises Active Directory.</summary>
+        /// <summary>Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.</summary>
         public bool? IsCloudManaged
         {
             get { return BackingStore?.Get<bool?>("isCloudManaged"); }

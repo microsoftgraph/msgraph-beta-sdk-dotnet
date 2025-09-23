@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationAssignmentSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The defaultGradingScheme property</summary>
+        /// <summary>The default grading scheme for assignments created in this class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationGradingScheme? DefaultGradingScheme
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("gradingCategories", value); }
         }
 #endif
-        /// <summary>The gradingSchemes property</summary>
+        /// <summary>The grading schemes that can be attached to assignments created in this class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>? GradingSchemes
