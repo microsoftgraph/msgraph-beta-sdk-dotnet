@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The enableSingleSignOn property</summary>
+        /// <summary>Indicates whether single sign-on is enabled. The default value is false.</summary>
         public bool? EnableSingleSignOn
         {
             get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }

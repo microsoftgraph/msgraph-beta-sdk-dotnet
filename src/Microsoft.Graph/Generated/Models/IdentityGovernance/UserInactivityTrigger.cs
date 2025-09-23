@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
     public partial class UserInactivityTrigger : global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The inactivityPeriodInDays property</summary>
+        /// <summary>The number of days a user must be inactive before triggering workflow execution.</summary>
         public int? InactivityPeriodInDays
         {
             get { return BackingStore?.Get<int?>("inactivityPeriodInDays"); }

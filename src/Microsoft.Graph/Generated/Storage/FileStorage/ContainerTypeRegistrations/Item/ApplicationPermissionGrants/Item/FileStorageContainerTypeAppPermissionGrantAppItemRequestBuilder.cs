@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new fileStorageContainerTypeAppPermissionGrant object in a fileStorageContainerTypeRegistration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertyperegistration-post-applicationpermissiongrants?view=graph-rest-beta" />
+        /// Update the properties of a fileStorageContainerTypeAppPermissionGrant object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertypeapppermissiongrant-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAppPermissionGrant"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypeRegistrations.It
             return requestInfo;
         }
         /// <summary>
-        /// Create a new fileStorageContainerTypeAppPermissionGrant object in a fileStorageContainerTypeRegistration.
+        /// Update the properties of a fileStorageContainerTypeAppPermissionGrant object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EducationGradingSchemeCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.EducationGradingSchemeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new educationGradingScheme object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationgradingscheme-post?view=graph-rest-beta" />
+        /// Create a new educationGradingScheme on an educationClass. Only teachers can perform this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentsettings-post-gradingschemes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationGradingScheme"/></returns>
         /// <param name="body">The request body</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return requestInfo;
         }
         /// <summary>
-        /// Create a new educationGradingScheme object.
+        /// Create a new educationGradingScheme on an educationClass. Only teachers can perform this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

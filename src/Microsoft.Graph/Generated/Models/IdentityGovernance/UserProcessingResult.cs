@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("scheduledDateTime"); }
             set { BackingStore?.Set("scheduledDateTime", value); }
         }
-        /// <summary>The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
+        /// <summary>The date time that the workflow execution started. Value is null if the workflow execution hasn&apos;t started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? StartedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }

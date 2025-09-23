@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("gradingCategory", value); }
         }
 #endif
-        /// <summary>The gradingScheme property</summary>
+        /// <summary>When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationGradingScheme? GradingScheme

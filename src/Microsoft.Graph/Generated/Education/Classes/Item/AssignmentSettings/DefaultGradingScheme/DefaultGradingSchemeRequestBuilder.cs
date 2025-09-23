@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Default
         {
         }
         /// <summary>
-        /// Get defaultGradingScheme from education
+        /// The default grading scheme for assignments created in this class.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationGradingScheme"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Default
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>(requestInfo, global::Microsoft.Graph.Beta.Models.EducationGradingScheme.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get defaultGradingScheme from education
+        /// The default grading scheme for assignments created in this class.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Default
             return new global::Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.DefaultGradingScheme.DefaultGradingSchemeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get defaultGradingScheme from education
+        /// The default grading scheme for assignments created in this class.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DefaultGradingSchemeRequestBuilderGetQueryParameters 

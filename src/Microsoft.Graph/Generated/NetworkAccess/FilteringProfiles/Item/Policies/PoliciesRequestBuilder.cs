@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
         {
         }
         /// <summary>
-        /// Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-list?view=graph-rest-beta" />
+        /// Get a list of the threatIntelligencePolicyLink objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+        /// Get a list of the threatIntelligencePolicyLink objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return new global::Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+        /// Get a list of the threatIntelligencePolicyLink objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetQueryParameters 
