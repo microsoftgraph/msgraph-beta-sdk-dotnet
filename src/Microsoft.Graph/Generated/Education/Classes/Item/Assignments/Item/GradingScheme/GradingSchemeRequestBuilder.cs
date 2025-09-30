@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingSc
         {
         }
         /// <summary>
-        /// Get gradingScheme from education
+        /// When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationGradingScheme"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingSc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>(requestInfo, global::Microsoft.Graph.Beta.Models.EducationGradingScheme.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get gradingScheme from education
+        /// When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingSc
             return new global::Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingScheme.GradingSchemeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get gradingScheme from education
+        /// When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GradingSchemeRequestBuilderGetQueryParameters 

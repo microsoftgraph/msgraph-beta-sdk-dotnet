@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.Canc
         {
         }
         /// <summary>
-        /// Cancel offboard for a protectionUnitBase.
+        /// Cancel the offboarding of a protectionUnitBase.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/protectionunitbase-canceloffboard?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ProtectionUnitBase"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.Canc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ProtectionUnitBase>(requestInfo, global::Microsoft.Graph.Beta.Models.ProtectionUnitBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancel offboard for a protectionUnitBase.
+        /// Cancel the offboarding of a protectionUnitBase.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.MigrationJobs
         {
         }
         /// <summary>
-        /// Get progressEvents from storage
+        /// A collection of migration events that reflects the job status changes.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointMigrationEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.MigrationJobs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent>(requestInfo, global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get progressEvents from storage
+        /// A collection of migration events that reflects the job status changes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.MigrationJobs
             return new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.MigrationJobs.Item.ProgressEvents.ProgressEventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get progressEvents from storage
+        /// A collection of migration events that reflects the job status changes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProgressEventsRequestBuilderGetQueryParameters 

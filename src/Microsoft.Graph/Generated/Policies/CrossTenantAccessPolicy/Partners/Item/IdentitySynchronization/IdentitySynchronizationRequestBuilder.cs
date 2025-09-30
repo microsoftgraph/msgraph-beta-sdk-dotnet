@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the user synchronization policy of a partner-specific configuration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-beta" />
+        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return requestInfo;
         }
         /// <summary>
-        /// Update the user synchronization policy of a partner-specific configuration.
+        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Migrat
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get progressEvents from storage
+        /// A collection of migration events that reflects the job status changes.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Migrat
             return requestInfo;
         }
         /// <summary>
-        /// Get progressEvents from storage
+        /// A collection of migration events that reflects the job status changes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Migrat
         {
         }
         /// <summary>
-        /// Get progressEvents from storage
+        /// A collection of migration events that reflects the job status changes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointMigrationEventItemRequestBuilderGetQueryParameters 

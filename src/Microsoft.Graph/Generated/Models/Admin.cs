@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
-        /// <summary>A container for all Teams telephone number management functionalities and user configurations.</summary>
+        /// <summary>A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsAdminRoot? Teams

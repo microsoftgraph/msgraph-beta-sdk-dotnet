@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The dataContainerUri property</summary>
+        /// <summary>A valid URL with a SAS token for accessing the Azure blob storage container that contains the file content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataContainerUri
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dataContainerUri", value); }
         }
 #endif
-        /// <summary>The encryptionKey property</summary>
+        /// <summary>Provides the AES-256-CBC encryption key if files stored in Azure blob containers are encrypted. The key is Base64-encoded. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EncryptionKey
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("encryptionKey", value); }
         }
 #endif
-        /// <summary>The metadataContainerUri property</summary>
+        /// <summary>A valid URL with a SAS token for accessing the Azure blob storage container that contains the file metadata. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MetadataContainerUri

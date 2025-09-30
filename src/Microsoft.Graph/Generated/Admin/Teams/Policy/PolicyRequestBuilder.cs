@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams.Policy
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get policy from admin
+        /// Represents a navigation property to the Teams policy assignment object.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams.Policy
             return requestInfo;
         }
         /// <summary>
-        /// Get policy from admin
+        /// Represents a navigation property to the Teams policy assignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams.Policy
         {
         }
         /// <summary>
-        /// Get policy from admin
+        /// Represents a navigation property to the Teams policy assignment object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PolicyRequestBuilderGetQueryParameters 

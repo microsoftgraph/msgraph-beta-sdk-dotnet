@@ -12,43 +12,43 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointMigrationJobProgressEvent : global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The bytesProcessed property</summary>
+        /// <summary>The number of bytes processed. Read-only.</summary>
         public long? BytesProcessed
         {
             get { return BackingStore?.Get<long?>("bytesProcessed"); }
             set { BackingStore?.Set("bytesProcessed", value); }
         }
-        /// <summary>The bytesProcessedOnlyCurrentVersion property</summary>
+        /// <summary>The number of bytes processed with version history excluded. Read-only.</summary>
         public long? BytesProcessedOnlyCurrentVersion
         {
             get { return BackingStore?.Get<long?>("bytesProcessedOnlyCurrentVersion"); }
             set { BackingStore?.Set("bytesProcessedOnlyCurrentVersion", value); }
         }
-        /// <summary>The cpuDurationMs property</summary>
+        /// <summary>CPU duration in milliseconds. Read-only.</summary>
         public long? CpuDurationMs
         {
             get { return BackingStore?.Get<long?>("cpuDurationMs"); }
             set { BackingStore?.Set("cpuDurationMs", value); }
         }
-        /// <summary>The filesProcessed property</summary>
+        /// <summary>The number of files processed. Read-only.</summary>
         public long? FilesProcessed
         {
             get { return BackingStore?.Get<long?>("filesProcessed"); }
             set { BackingStore?.Set("filesProcessed", value); }
         }
-        /// <summary>The filesProcessedOnlyCurrentVersion property</summary>
+        /// <summary>The number of files processed with version history excluded. Read-only.</summary>
         public long? FilesProcessedOnlyCurrentVersion
         {
             get { return BackingStore?.Get<long?>("filesProcessedOnlyCurrentVersion"); }
             set { BackingStore?.Set("filesProcessedOnlyCurrentVersion", value); }
         }
-        /// <summary>The isCompleted property</summary>
+        /// <summary>True if the job status is End. False if the job is In progress. Read-only.</summary>
         public bool? IsCompleted
         {
             get { return BackingStore?.Get<bool?>("isCompleted"); }
             set { BackingStore?.Set("isCompleted", value); }
         }
-        /// <summary>The lastProcessedObjectId property</summary>
+        /// <summary>The unique identifier of the last object processed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastProcessedObjectId
@@ -64,61 +64,61 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastProcessedObjectId", value); }
         }
 #endif
-        /// <summary>The objectsProcessed property</summary>
+        /// <summary>The number of objects processed. Read-only.</summary>
         public long? ObjectsProcessed
         {
             get { return BackingStore?.Get<long?>("objectsProcessed"); }
             set { BackingStore?.Set("objectsProcessed", value); }
         }
-        /// <summary>The sqlDurationMs property</summary>
+        /// <summary>SQL duration in milliseconds. Read-only.</summary>
         public long? SqlDurationMs
         {
             get { return BackingStore?.Get<long?>("sqlDurationMs"); }
             set { BackingStore?.Set("sqlDurationMs", value); }
         }
-        /// <summary>The sqlQueryCount property</summary>
+        /// <summary>SQL query count. Read-only.</summary>
         public long? SqlQueryCount
         {
             get { return BackingStore?.Get<long?>("sqlQueryCount"); }
             set { BackingStore?.Set("sqlQueryCount", value); }
         }
-        /// <summary>The totalDurationMs property</summary>
+        /// <summary>Total duration time in milliseconds. Read-only.</summary>
         public long? TotalDurationMs
         {
             get { return BackingStore?.Get<long?>("totalDurationMs"); }
             set { BackingStore?.Set("totalDurationMs", value); }
         }
-        /// <summary>The totalErrors property</summary>
+        /// <summary>Total errors. Read-only.</summary>
         public long? TotalErrors
         {
             get { return BackingStore?.Get<long?>("totalErrors"); }
             set { BackingStore?.Set("totalErrors", value); }
         }
-        /// <summary>The totalExpectedBytes property</summary>
+        /// <summary>Total bytes to be processed. Read-only.</summary>
         public long? TotalExpectedBytes
         {
             get { return BackingStore?.Get<long?>("totalExpectedBytes"); }
             set { BackingStore?.Set("totalExpectedBytes", value); }
         }
-        /// <summary>The totalExpectedObjects property</summary>
+        /// <summary>The number of objects to process. Read-only.</summary>
         public long? TotalExpectedObjects
         {
             get { return BackingStore?.Get<long?>("totalExpectedObjects"); }
             set { BackingStore?.Set("totalExpectedObjects", value); }
         }
-        /// <summary>The totalRetryCount property</summary>
+        /// <summary>The current retry count of the job. Read-only.</summary>
         public int? TotalRetryCount
         {
             get { return BackingStore?.Get<int?>("totalRetryCount"); }
             set { BackingStore?.Set("totalRetryCount", value); }
         }
-        /// <summary>The totalWarnings property</summary>
+        /// <summary>Total warnings. Read-only.</summary>
         public long? TotalWarnings
         {
             get { return BackingStore?.Get<long?>("totalWarnings"); }
             set { BackingStore?.Set("totalWarnings", value); }
         }
-        /// <summary>The waitTimeOnSqlThrottlingMs property</summary>
+        /// <summary>Waiting time due to SQL throttling, in milliseconds. Read-only.</summary>
         public long? WaitTimeOnSqlThrottlingMs
         {
             get { return BackingStore?.Get<long?>("waitTimeOnSqlThrottlingMs"); }

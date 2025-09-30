@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointMigrationJobCancelledEvent : global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isCancelledByUser property</summary>
+        /// <summary>True when a user cancels the job; otherwise, false. Read-only.</summary>
         public bool? IsCancelledByUser
         {
             get { return BackingStore?.Get<bool?>("isCancelledByUser"); }
             set { BackingStore?.Set("isCancelledByUser", value); }
         }
-        /// <summary>The totalRetryCount property</summary>
+        /// <summary>The current retry count of the job. Read-only.</summary>
         public int? TotalRetryCount
         {
             get { return BackingStore?.Get<int?>("totalRetryCount"); }

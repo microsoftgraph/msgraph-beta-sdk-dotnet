@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.Policies.
         {
         }
         /// <summary>
-        /// Delete navigation property policies for identity
+        /// Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.Policies.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get policies from identity
+        /// Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/policydeletableitem-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.Policies.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property policies for identity
+        /// Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +132,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.Policies.
             return requestInfo;
         }
         /// <summary>
-        /// Get policies from identity
+        /// Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +190,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.Policies.
         {
         }
         /// <summary>
-        /// Get policies from identity
+        /// Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConditionalAccessPolicyItemRequestBuilderGetQueryParameters 

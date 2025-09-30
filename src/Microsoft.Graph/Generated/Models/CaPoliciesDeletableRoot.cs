@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CaPoliciesDeletableRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The namedLocations property</summary>
+        /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.NamedLocation>? NamedLocations
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("namedLocations", value); }
         }
 #endif
-        /// <summary>The policies property</summary>
+        /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>? Policies

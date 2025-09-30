@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteLockState?>("lockState"); }
             set { BackingStore?.Set("lockState", value); }
         }
-        /// <summary>The migrationJobs property</summary>
+        /// <summary>The collection of sharePointMigrationJob objects local to the container. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>? MigrationJobs

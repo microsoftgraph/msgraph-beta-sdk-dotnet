@@ -143,8 +143,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-beta" />
+        /// Delete eventMessage.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,8 +166,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-get?view=graph-rest-beta" />
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -190,8 +190,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Message>(requestInfo, global::Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta" />
+        /// Update the properties of a message object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="body">The request body</param>
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Message>(requestInfo, global::Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
+        /// Delete eventMessage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -254,7 +254,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
+        /// Update the properties of a message object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -293,7 +293,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessageItemRequestBuilderGetQueryParameters 

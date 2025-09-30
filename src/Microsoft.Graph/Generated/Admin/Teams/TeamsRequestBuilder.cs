@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A container for all Teams telephone number management functionalities and user configurations.
+        /// A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsAdminRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams
             return requestInfo;
         }
         /// <summary>
-        /// A container for all Teams telephone number management functionalities and user configurations.
+        /// A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams
         {
         }
         /// <summary>
-        /// A container for all Teams telephone number management functionalities and user configurations.
+        /// A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsRequestBuilderGetQueryParameters 

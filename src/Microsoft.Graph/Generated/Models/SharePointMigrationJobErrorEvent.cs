@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointMigrationJobErrorLevel?>("errorLevel"); }
             set { BackingStore?.Set("errorLevel", value); }
         }
-        /// <summary>The objectId property</summary>
+        /// <summary>The object ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointMigrationObjectType?>("objectType"); }
             set { BackingStore?.Set("objectType", value); }
         }
-        /// <summary>The objectUrl property</summary>
+        /// <summary>The object URL. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectUrl
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("objectUrl", value); }
         }
 #endif
-        /// <summary>The totalRetryCount property</summary>
+        /// <summary>The current retry count of the job. Read-only.</summary>
         public int? TotalRetryCount
         {
             get { return BackingStore?.Get<int?>("totalRetryCount"); }
