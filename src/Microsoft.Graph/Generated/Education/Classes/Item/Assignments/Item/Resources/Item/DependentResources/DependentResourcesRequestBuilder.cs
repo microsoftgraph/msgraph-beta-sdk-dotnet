@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
         {
         }
         /// <summary>
-        /// Get dependentResources from education
+        /// List the dependent education assignment resources for a given education assignment resource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentresource-list-dependentresources?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationAssignmentResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EducationAssignmentResource>(requestInfo, global::Microsoft.Graph.Beta.Models.EducationAssignmentResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get dependentResources from education
+        /// List the dependent education assignment resources for a given education assignment resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             return new global::Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get dependentResources from education
+        /// List the dependent education assignment resources for a given education assignment resource.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DependentResourcesRequestBuilderGetQueryParameters 
