@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointMigrationJobPostponedEvent : global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The jobsInQueue property</summary>
+        /// <summary>The number of migration jobs in the queue of the current database. Read-only.</summary>
         public long? JobsInQueue
         {
             get { return BackingStore?.Get<long?>("jobsInQueue"); }
             set { BackingStore?.Set("jobsInQueue", value); }
         }
-        /// <summary>The nextPickupDateTime property</summary>
+        /// <summary>The date and time that indicate when this job is picked up next. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? NextPickupDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("nextPickupDateTime"); }
             set { BackingStore?.Set("nextPickupDateTime", value); }
         }
-        /// <summary>The reason property</summary>
+        /// <summary>The reason for the postponement. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reason", value); }
         }
 #endif
-        /// <summary>The totalRetryCount property</summary>
+        /// <summary>The current retry count of the job. Read-only.</summary>
         public int? TotalRetryCount
         {
             get { return BackingStore?.Get<int?>("totalRetryCount"); }

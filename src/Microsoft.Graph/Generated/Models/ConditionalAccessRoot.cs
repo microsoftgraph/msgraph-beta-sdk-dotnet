@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationStrengths", value); }
         }
 #endif
-        /// <summary>The deletedItems property</summary>
+        /// <summary>Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot? DeletedItems

@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlowCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new inboundFileFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-beta" />
+        /// Create a new inboundApiFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IndustryData.InboundFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return requestInfo;
         }
         /// <summary>
-        /// Create a new inboundFileFlow object.
+        /// Create a new inboundApiFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

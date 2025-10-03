@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointMigrationJobStartEvent : global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isRestarted property</summary>
+        /// <summary>True if the job is restarted. False if it&apos;s the initial start. Read-only.</summary>
         public bool? IsRestarted
         {
             get { return BackingStore?.Get<bool?>("isRestarted"); }
             set { BackingStore?.Set("isRestarted", value); }
         }
-        /// <summary>The totalRetryCount property</summary>
+        /// <summary>The current retry count of the job. Read-only.</summary>
         public int? TotalRetryCount
         {
             get { return BackingStore?.Get<int?>("totalRetryCount"); }

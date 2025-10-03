@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WorkbookCommentReply : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The content of the reply.</summary>
+        /// <summary>The content of the reply that is the displayed to end-users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The content type for the reply.</summary>
+        /// <summary>The content type for the reply. Supported values are: plain, mention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType

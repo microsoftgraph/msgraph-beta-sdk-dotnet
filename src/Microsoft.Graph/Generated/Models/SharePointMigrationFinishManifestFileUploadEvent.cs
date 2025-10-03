@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointMigrationFinishManifestFileUploadEvent : global::Microsoft.Graph.Beta.Models.SharePointMigrationEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The manifestFileName property</summary>
+        /// <summary>The exported manifest file name. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManifestFileName

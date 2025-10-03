@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get deletedItems from identity
+        /// Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems
             return requestInfo;
         }
         /// <summary>
-        /// Get deletedItems from identity
+        /// Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems
         {
         }
         /// <summary>
-        /// Get deletedItems from identity
+        /// Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeletedItemsRequestBuilderGetQueryParameters 

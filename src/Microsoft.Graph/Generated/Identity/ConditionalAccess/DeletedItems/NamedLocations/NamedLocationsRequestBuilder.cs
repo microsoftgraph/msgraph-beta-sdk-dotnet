@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.NamedLoca
         {
         }
         /// <summary>
-        /// Get namedLocations from identity
+        /// Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/policydeletableitem-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.NamedLocationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.NamedLoca
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.NamedLocation>(requestInfo, global::Microsoft.Graph.Beta.Models.NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get namedLocations from identity
+        /// Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.NamedLoca
             return new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.NamedLocations.NamedLocationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get namedLocations from identity
+        /// Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NamedLocationsRequestBuilderGetQueryParameters 

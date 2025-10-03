@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Migrat
         {
         }
         /// <summary>
-        /// Get migrationJobs from storage
+        /// The collection of sharePointMigrationJob objects local to the container. Read-write.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointMigrationJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Migrat
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>(requestInfo, global::Microsoft.Graph.Beta.Models.SharePointMigrationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get migrationJobs from storage
+        /// The collection of sharePointMigrationJob objects local to the container. Read-write.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Migrat
             return new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.MigrationJobs.MigrationJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get migrationJobs from storage
+        /// The collection of sharePointMigrationJob objects local to the container. Read-write.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MigrationJobsRequestBuilderGetQueryParameters 
