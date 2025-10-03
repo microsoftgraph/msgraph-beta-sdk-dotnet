@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignmentResourceUrl", value); }
         }
 #endif
-        /// <summary>The dependentResources property</summary>
+        /// <summary>A collection of submission resources that depend on the parent educationSubmissionResource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.EducationSubmissionResource>? DependentResources
