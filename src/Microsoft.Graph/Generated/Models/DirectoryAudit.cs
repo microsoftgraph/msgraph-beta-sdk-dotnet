@@ -130,6 +130,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operationType", value); }
         }
 #endif
+        /// <summary>The performedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AuditActivityPerformer? PerformedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer?>("performedBy"); }
+            set { BackingStore?.Set("performedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AuditActivityPerformer PerformedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer>("performedBy"); }
+            set { BackingStore?.Set("performedBy", value); }
+        }
+#endif
         /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OperationResult? Result
         {
@@ -210,6 +226,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityInitiator>(global::Microsoft.Graph.Beta.Models.AuditActivityInitiator.CreateFromDiscriminatorValue); } },
                 { "loggedByService", n => { LoggedByService = n.GetStringValue(); } },
                 { "operationType", n => { OperationType = n.GetStringValue(); } },
+                { "performedBy", n => { PerformedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer>(global::Microsoft.Graph.Beta.Models.AuditActivityPerformer.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.OperationResult>(); } },
                 { "resultReason", n => { ResultReason = n.GetStringValue(); } },
                 { "targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetResource>(global::Microsoft.Graph.Beta.Models.TargetResource.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -232,6 +249,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityInitiator>("initiatedBy", InitiatedBy);
             writer.WriteStringValue("loggedByService", LoggedByService);
             writer.WriteStringValue("operationType", OperationType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer>("performedBy", PerformedBy);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OperationResult>("result", Result);
             writer.WriteStringValue("resultReason", ResultReason);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetResource>("targetResources", TargetResources);

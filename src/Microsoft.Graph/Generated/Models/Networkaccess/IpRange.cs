@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IpRange : global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination, IParsable
+    public partial class IpRange : global::Microsoft.Graph.Beta.Models.Networkaccess.IpDestination, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the starting IP address of the IP range.</summary>

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class WorkbookComment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CellAddress
+        {
+            get { return BackingStore?.Get<string?>("cellAddress"); }
+            set { BackingStore?.Set("cellAddress", value); }
+        }
+#nullable restore
+#else
+        public string CellAddress
+        {
+            get { return BackingStore?.Get<string>("cellAddress"); }
+            set { BackingStore?.Set("cellAddress", value); }
+        }
+#endif
         /// <summary>The content of the comment that is the String displayed to end-users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
+        /// <summary>A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>? Mentions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>?>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention> Mentions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#endif
         /// <summary>The list of replies to the comment. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +90,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookCommentReply>>("replies"); }
             set { BackingStore?.Set("replies", value); }
+        }
+#endif
+        /// <summary>The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RichContent
+        {
+            get { return BackingStore?.Get<string?>("richContent"); }
+            set { BackingStore?.Set("richContent", value); }
+        }
+#nullable restore
+#else
+        public string RichContent
+        {
+            get { return BackingStore?.Get<string>("richContent"); }
+            set { BackingStore?.Set("richContent", value); }
         }
 #endif
         /// <summary>The task associated with the comment. Read-only. Nullable.</summary>
@@ -94,9 +142,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "cellAddress", n => { CellAddress = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>(global::Microsoft.Graph.Beta.Models.WorkbookCommentMention.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "replies", n => { Replies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentReply>(global::Microsoft.Graph.Beta.Models.WorkbookCommentReply.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "richContent", n => { RichContent = n.GetStringValue(); } },
                 { "task", n => { Task = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>(global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask.CreateFromDiscriminatorValue); } },
             };
         }
@@ -108,9 +159,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("cellAddress", CellAddress);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("contentType", ContentType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>("mentions", Mentions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentReply>("replies", Replies);
+            writer.WriteStringValue("richContent", RichContent);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("task", Task);
         }
     }

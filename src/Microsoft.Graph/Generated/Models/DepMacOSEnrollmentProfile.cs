@@ -85,6 +85,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("chooseYourLockScreenDisabled"); }
             set { BackingStore?.Set("chooseYourLockScreenDisabled", value); }
         }
+        /// <summary>Settings for local admin account password automatic rotation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting? DepProfileAdminAccountPasswordRotationSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting?>("depProfileAdminAccountPasswordRotationSetting"); }
+            set { BackingStore?.Set("depProfileAdminAccountPasswordRotationSetting", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting DepProfileAdminAccountPasswordRotationSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting>("depProfileAdminAccountPasswordRotationSetting"); }
+            set { BackingStore?.Set("depProfileAdminAccountPasswordRotationSetting", value); }
+        }
+#endif
         /// <summary>Indicates whether Setup Assistant will auto populate the primary account information</summary>
         public bool? DontAutoPopulatePrimaryAccountInfo
         {
@@ -221,6 +237,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "autoAdvanceSetupEnabled", n => { AutoAdvanceSetupEnabled = n.GetBoolValue(); } },
                 { "autoUnlockWithWatchDisabled", n => { AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
                 { "chooseYourLockScreenDisabled", n => { ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
+                { "depProfileAdminAccountPasswordRotationSetting", n => { DepProfileAdminAccountPasswordRotationSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting>(global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting.CreateFromDiscriminatorValue); } },
                 { "dontAutoPopulatePrimaryAccountInfo", n => { DontAutoPopulatePrimaryAccountInfo = n.GetBoolValue(); } },
                 { "enableRestrictEditing", n => { EnableRestrictEditing = n.GetBoolValue(); } },
                 { "fileVaultDisabled", n => { FileVaultDisabled = n.GetBoolValue(); } },
@@ -252,6 +269,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("autoAdvanceSetupEnabled", AutoAdvanceSetupEnabled);
             writer.WriteBoolValue("autoUnlockWithWatchDisabled", AutoUnlockWithWatchDisabled);
             writer.WriteBoolValue("chooseYourLockScreenDisabled", ChooseYourLockScreenDisabled);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting>("depProfileAdminAccountPasswordRotationSetting", DepProfileAdminAccountPasswordRotationSetting);
             writer.WriteBoolValue("dontAutoPopulatePrimaryAccountInfo", DontAutoPopulatePrimaryAccountInfo);
             writer.WriteBoolValue("enableRestrictEditing", EnableRestrictEditing);
             writer.WriteBoolValue("fileVaultDisabled", FileVaultDisabled);

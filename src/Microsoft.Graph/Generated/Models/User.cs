@@ -1622,6 +1622,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesSipInfo", value); }
         }
 #endif
+        /// <summary>Indicates the state of synchronization for a user between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&amp;$count=true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior? OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior?>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#endif
         /// <summary>true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn&apos;t being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled
         {
@@ -2545,6 +2561,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "onPremisesSamAccountName", n => { OnPremisesSamAccountName = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 { "onPremisesSipInfo", n => { OnPremisesSipInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSipInfo>(global::Microsoft.Graph.Beta.Models.OnPremisesSipInfo.CreateFromDiscriminatorValue); } },
+                { "onPremisesSyncBehavior", n => { OnPremisesSyncBehavior = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>(global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior.CreateFromDiscriminatorValue); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "onPremisesUserPrincipalName", n => { OnPremisesUserPrincipalName = n.GetStringValue(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>(global::Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
@@ -2717,6 +2734,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("onPremisesSamAccountName", OnPremisesSamAccountName);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSipInfo>("onPremisesSipInfo", OnPremisesSipInfo);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior", OnPremisesSyncBehavior);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteStringValue("onPremisesUserPrincipalName", OnPremisesUserPrincipalName);
             writer.WriteCollectionOfPrimitiveValues<string>("otherMails", OtherMails);

@@ -79,6 +79,7 @@ using Microsoft.Graph.Beta.Users.Item.MobileAppIntentAndStates;
 using Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents;
 using Microsoft.Graph.Beta.Users.Item.Notifications;
 using Microsoft.Graph.Beta.Users.Item.Oauth2PermissionGrants;
+using Microsoft.Graph.Beta.Users.Item.OnPremisesSyncBehavior;
 using Microsoft.Graph.Beta.Users.Item.Onenote;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl;
@@ -511,6 +512,11 @@ namespace Microsoft.Graph.Beta.Users.Item
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder OnPremisesSyncBehavior
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder Outlook

@@ -44,6 +44,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
+        /// <summary>A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>? Mentions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>?>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention> Mentions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#endif
+        /// <summary>The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RichContent
+        {
+            get { return BackingStore?.Get<string?>("richContent"); }
+            set { BackingStore?.Set("richContent", value); }
+        }
+#nullable restore
+#else
+        public string RichContent
+        {
+            get { return BackingStore?.Get<string>("richContent"); }
+            set { BackingStore?.Set("richContent", value); }
+        }
+#endif
         /// <summary>The task associated with the comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +112,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>(global::Microsoft.Graph.Beta.Models.WorkbookCommentMention.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "richContent", n => { RichContent = n.GetStringValue(); } },
                 { "task", n => { Task = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>(global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,6 +127,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("contentType", ContentType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>("mentions", Mentions);
+            writer.WriteStringValue("richContent", RichContent);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("task", Task);
         }
     }

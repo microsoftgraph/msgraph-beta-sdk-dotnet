@@ -235,6 +235,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
+        /// <summary>The hasChat property</summary>
+        public bool? HasChat
+        {
+            get { return BackingStore?.Get<bool?>("hasChat"); }
+            set { BackingStore?.Set("hasChat", value); }
+        }
         /// <summary>Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.</summary>
         public bool? HasDescription
         {
@@ -437,6 +443,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "creationSource", n => { CreationSource = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCreation>(global::Microsoft.Graph.Beta.Models.PlannerTaskCreation.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskDetails>(global::Microsoft.Graph.Beta.Models.PlannerTaskDetails.CreateFromDiscriminatorValue); } },
                 { "dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                { "hasChat", n => { HasChat = n.GetBoolValue(); } },
                 { "hasDescription", n => { HasDescription = n.GetBoolValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isOnMyDay", n => { IsOnMyDay = n.GetBoolValue(); } },
@@ -481,6 +488,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCreation>("creationSource", CreationSource);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskDetails>("details", Details);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
+            writer.WriteBoolValue("hasChat", HasChat);
             writer.WriteBoolValue("hasDescription", HasDescription);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isOnMyDay", IsOnMyDay);

@@ -19,6 +19,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>Represents an audit activity type which includes the associated service and category for a specific activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AuditActivityType>? AuditActivityTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AuditActivityType>?>("auditActivityTypes"); }
+            set { BackingStore?.Set("auditActivityTypes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AuditActivityType> AuditActivityTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AuditActivityType>>("auditActivityTypes"); }
+            set { BackingStore?.Set("auditActivityTypes", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents a custom security attribute audit log.</summary>
@@ -101,6 +117,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisioning", value); }
         }
 #endif
+        /// <summary>Represents the number of sign-in events for a specific application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity>? SignInEventsAppSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity>?>("signInEventsAppSummary"); }
+            set { BackingStore?.Set("signInEventsAppSummary", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity> SignInEventsAppSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity>>("signInEventsAppSummary"); }
+            set { BackingStore?.Set("signInEventsAppSummary", value); }
+        }
+#endif
+        /// <summary>Represents the total number of sign-in events for a specific day.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SignInEventsActivity>? SignInEventsSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInEventsActivity>?>("signInEventsSummary"); }
+            set { BackingStore?.Set("signInEventsSummary", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SignInEventsActivity> SignInEventsSummary
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInEventsActivity>>("signInEventsSummary"); }
+            set { BackingStore?.Set("signInEventsSummary", value); }
+        }
+#endif
         /// <summary>Represents Microsoft Entra sign-in events. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -159,11 +207,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auditActivityTypes", n => { AuditActivityTypes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuditActivityType>(global::Microsoft.Graph.Beta.Models.AuditActivityType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customSecurityAttributeAudits", n => { CustomSecurityAttributeAudits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeAudit>(global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeAudit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryAudit>(global::Microsoft.Graph.Beta.Models.DirectoryAudit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "directoryProvisioning", n => { DirectoryProvisioning = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>(global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>(global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "signInEventsAppSummary", n => { SignInEventsAppSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity>(global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "signInEventsSummary", n => { SignInEventsSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsActivity>(global::Microsoft.Graph.Beta.Models.SignInEventsActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signIns", n => { SignIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignIn>(global::Microsoft.Graph.Beta.Models.SignIn.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signUps", n => { SignUps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>(global::Microsoft.Graph.Beta.Models.SelfServiceSignUp.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -175,11 +226,14 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuditActivityType>("auditActivityTypes", AuditActivityTypes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeAudit>("customSecurityAttributeAudits", CustomSecurityAttributeAudits);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryAudit>("directoryAudits", DirectoryAudits);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>("directoryProvisioning", DirectoryProvisioning);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>("provisioning", Provisioning);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity>("signInEventsAppSummary", SignInEventsAppSummary);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsActivity>("signInEventsSummary", SignInEventsSummary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignIn>("signIns", SignIns);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SelfServiceSignUp>("signUps", SignUps);
             writer.WriteAdditionalData(AdditionalData);

@@ -30,6 +30,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
+        /// <summary>The related reprocessed workflow run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>? ReprocessedRuns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>?>("reprocessedRuns"); }
+            set { BackingStore?.Set("reprocessedRuns", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run> ReprocessedRuns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>>("reprocessedRuns"); }
+            set { BackingStore?.Set("reprocessedRuns", value); }
+        }
+#endif
         /// <summary>The date time that the workflow is scheduled to be executed for a user.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? ScheduledDateTime
         {
@@ -119,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "failedTasksCount", n => { FailedTasksCount = n.GetIntValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>(); } },
+                { "reprocessedRuns", n => { ReprocessedRuns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
@@ -140,6 +157,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteIntValue("failedTasksCount", FailedTasksCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>("reprocessedRuns", ReprocessedRuns);
             writer.WriteDateTimeOffsetValue("scheduledDateTime", ScheduledDateTime);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("subject", Subject);

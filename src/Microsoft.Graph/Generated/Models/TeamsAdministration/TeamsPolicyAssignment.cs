@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
     public partial class TeamsPolicyAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Navigation property to the collection of user policy assignments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment>? UserAssignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment>?>("userAssignments"); }
+            set { BackingStore?.Set("userAssignments", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment> UserAssignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment>>("userAssignments"); }
+            set { BackingStore?.Set("userAssignments", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "userAssignments", n => { UserAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment>(global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -40,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment>("userAssignments", UserAssignments);
         }
     }
 }

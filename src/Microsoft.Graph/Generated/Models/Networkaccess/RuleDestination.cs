@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 "#microsoft.graph.networkaccess.fqdn" => new global::Microsoft.Graph.Beta.Models.Networkaccess.Fqdn(),
                 "#microsoft.graph.networkaccess.ipAddress" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpAddress(),
+                "#microsoft.graph.networkaccess.ipDestination" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpDestination(),
                 "#microsoft.graph.networkaccess.ipRange" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpRange(),
                 "#microsoft.graph.networkaccess.ipSubnet" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpSubnet(),
                 "#microsoft.graph.networkaccess.url" => new global::Microsoft.Graph.Beta.Models.Networkaccess.Url(),
