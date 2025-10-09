@@ -51,7 +51,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4.2.2
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
     - name: Restore dependencies
@@ -59,4 +59,4 @@ jobs:
     - name: Build for netstandard2.0
       run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release --no-incremental
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
