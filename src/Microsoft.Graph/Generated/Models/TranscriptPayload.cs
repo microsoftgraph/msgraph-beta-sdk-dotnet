@@ -43,12 +43,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sequenceId property</summary>
-        public int? SequenceId
-        {
-            get { return BackingStore?.Get<int?>("sequenceId"); }
-            set { BackingStore?.Set("sequenceId", value); }
-        }
         /// <summary>The speaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,7 +119,6 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "audioCaptureDateTime", n => { AudioCaptureDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sequenceId", n => { SequenceId = n.GetIntValue(); } },
                 { "speaker", n => { Speaker = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TranscriptSpeaker>(global::Microsoft.Graph.Beta.Models.TranscriptSpeaker.CreateFromDiscriminatorValue); } },
                 { "spokenLanguage", n => { SpokenLanguage = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
@@ -140,7 +133,6 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("audioCaptureDateTime", AudioCaptureDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteIntValue("sequenceId", SequenceId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TranscriptSpeaker>("speaker", Speaker);
             writer.WriteStringValue("spokenLanguage", SpokenLanguage);
             writer.WriteStringValue("text", Text);

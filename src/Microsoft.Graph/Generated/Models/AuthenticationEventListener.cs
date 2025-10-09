@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
         /// <summary>The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).</summary>
         public int? Priority
         {
@@ -66,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.onAttributeCollectionSubmitListener" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitListener(),
                 "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartListener(),
                 "#microsoft.graph.onEmailOtpSendListener" => new global::Microsoft.Graph.Beta.Models.OnEmailOtpSendListener(),
+                "#microsoft.graph.onFraudProtectionLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnFraudProtectionLoadStartListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new global::Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartListener(),
                 "#microsoft.graph.onPhoneMethodLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnPhoneMethodLoadStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartListener(),
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
                 { "conditions", n => { Conditions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationConditions>(global::Microsoft.Graph.Beta.Models.AuthenticationConditions.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
             };
         }
@@ -96,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("authenticationEventsFlowId", AuthenticationEventsFlowId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationConditions>("conditions", Conditions);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("priority", Priority);
         }
     }

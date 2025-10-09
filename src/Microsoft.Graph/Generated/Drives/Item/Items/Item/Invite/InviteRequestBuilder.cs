@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
         {
         }
         /// <summary>
-        /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+        /// Send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostResponse"/></returns>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostResponse>(requestInfo, global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+        /// Send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InviteResponse"/></returns>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InviteResponse>(requestInfo, global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InviteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+        /// Send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

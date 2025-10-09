@@ -122,6 +122,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("v15_0"); }
             set { BackingStore?.Set("v15_0", value); }
         }
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 26.0 or later is required to install the app. If &apos;False&apos;, OS X Version 26.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        public bool? V260
+        {
+            get { return BackingStore?.Get<bool?>("v26_0"); }
+            set { BackingStore?.Set("v26_0", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.MacOSMinimumOperatingSystem"/> and sets the default values.
         /// </summary>
@@ -163,6 +169,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "v13_0", n => { V130 = n.GetBoolValue(); } },
                 { "v14_0", n => { V140 = n.GetBoolValue(); } },
                 { "v15_0", n => { V150 = n.GetBoolValue(); } },
+                { "v26_0", n => { V260 = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -187,6 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("v13_0", V130);
             writer.WriteBoolValue("v14_0", V140);
             writer.WriteBoolValue("v15_0", V150);
+            writer.WriteBoolValue("v26_0", V260);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

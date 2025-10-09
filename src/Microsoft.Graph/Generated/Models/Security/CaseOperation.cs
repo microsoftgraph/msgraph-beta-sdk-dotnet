@@ -89,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.ediscoveryEstimateOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryEstimateOperation(),
                 "#microsoft.graph.security.ediscoveryExportOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryExportOperation(),
                 "#microsoft.graph.security.ediscoveryHoldOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldOperation(),
+                "#microsoft.graph.security.ediscoveryHoldPolicySyncOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicySyncOperation(),
                 "#microsoft.graph.security.ediscoveryIndexOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryIndexOperation(),
                 "#microsoft.graph.security.ediscoveryPurgeDataOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryPurgeDataOperation(),
                 "#microsoft.graph.security.ediscoverySearchExportOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearchExportOperation(),

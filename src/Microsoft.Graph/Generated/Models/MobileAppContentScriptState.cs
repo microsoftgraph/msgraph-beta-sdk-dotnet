@@ -7,8 +7,17 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MobileAppContentScriptState
     {
+        /// <summary>Indicates that the script content is in a pending state.</summary>
+        [EnumMember(Value = "commitPending")]
+        CommitPending,
         /// <summary>Indicates that the script content is ready.</summary>
         [EnumMember(Value = "commitSuccess")]
         CommitSuccess,
+        /// <summary>Indicates that the script is in an unusable state.</summary>
+        [EnumMember(Value = "commitFailed")]
+        CommitFailed,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

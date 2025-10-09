@@ -181,6 +181,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The riskPrevention property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RiskPreventionContainer? RiskPrevention
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer?>("riskPrevention"); }
+            set { BackingStore?.Set("riskPrevention", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RiskPreventionContainer RiskPrevention
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>("riskPrevention"); }
+            set { BackingStore?.Set("riskPrevention", value); }
+        }
+#endif
         /// <summary>Represents entry point for identity userflow attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -249,6 +265,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "customAuthenticationExtensions", n => { CustomAuthenticationExtensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension>(global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityProviderBase>(global::Microsoft.Graph.Beta.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "riskPrevention", n => { RiskPrevention = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>(global::Microsoft.Graph.Beta.Models.RiskPreventionContainer.CreateFromDiscriminatorValue); } },
                 { "userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>(global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userFlows", n => { UserFlows = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>(global::Microsoft.Graph.Beta.Models.IdentityUserFlow.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -270,6 +287,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension>("customAuthenticationExtensions", CustomAuthenticationExtensions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityProviderBase>("identityProviders", IdentityProviders);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>("riskPrevention", RiskPrevention);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>("userFlows", UserFlows);
             writer.WriteAdditionalData(AdditionalData);

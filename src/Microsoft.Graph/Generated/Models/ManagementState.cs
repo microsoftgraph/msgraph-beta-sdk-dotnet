@@ -43,5 +43,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The device is discovered but not fully enrolled.</summary>
         [EnumMember(Value = "discovered")]
         Discovered,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

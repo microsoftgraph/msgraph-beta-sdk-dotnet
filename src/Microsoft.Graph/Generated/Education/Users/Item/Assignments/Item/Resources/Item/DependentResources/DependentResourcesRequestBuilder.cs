@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
         {
         }
         /// <summary>
-        /// Get dependentResources from education
+        /// A collection of assignment resources that depend on the parent educationAssignmentResource.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EducationAssignmentResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EducationAssignmentResource>(requestInfo, global::Microsoft.Graph.Beta.Models.EducationAssignmentResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get dependentResources from education
+        /// A collection of assignment resources that depend on the parent educationAssignmentResource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
             return new global::Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get dependentResources from education
+        /// A collection of assignment resources that depend on the parent educationAssignmentResource.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DependentResourcesRequestBuilderGetQueryParameters 

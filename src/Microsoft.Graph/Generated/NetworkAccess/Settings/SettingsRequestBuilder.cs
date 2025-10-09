@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Settings.ConditionalAccess;
 using Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess;
+using Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage;
 using Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings
         public global::Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess.CrossTenantAccessRequestBuilder CrossTenantAccess
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess.CrossTenantAccessRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the customBlockPage property of the microsoft.graph.networkaccess.settings entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage.CustomBlockPageRequestBuilder CustomBlockPage
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage.CustomBlockPageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingOptions property of the microsoft.graph.networkaccess.settings entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions.ForwardingOptionsRequestBuilder ForwardingOptions

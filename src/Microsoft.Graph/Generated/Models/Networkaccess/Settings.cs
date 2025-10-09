@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("crossTenantAccess", value); }
         }
 #endif
+        /// <summary>The customBlockPage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage? CustomBlockPage
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage?>("customBlockPage"); }
+            set { BackingStore?.Set("customBlockPage", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage CustomBlockPage
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage>("customBlockPage"); }
+            set { BackingStore?.Set("customBlockPage", value); }
+        }
+#endif
         /// <summary>The forwardingOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>(global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings.CreateFromDiscriminatorValue); } },
                 { "crossTenantAccess", n => { CrossTenantAccess = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>(global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings.CreateFromDiscriminatorValue); } },
+                { "customBlockPage", n => { CustomBlockPage = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage>(global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage.CreateFromDiscriminatorValue); } },
                 { "forwardingOptions", n => { ForwardingOptions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>("conditionalAccess", ConditionalAccess);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>("crossTenantAccess", CrossTenantAccess);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage>("customBlockPage", CustomBlockPage);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>("forwardingOptions", ForwardingOptions);
         }
     }
