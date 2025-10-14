@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnFraudProtectionLoadStartExternalUsersAuthHandler : global::Microsoft.Graph.Beta.Models.OnFraudProtectionLoadStartHandler, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The signUp property</summary>
+        /// <summary>Specifies the configuration of the fraud protection configuration for sign-up events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.FraudProtectionConfiguration? SignUp

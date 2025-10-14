@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get fraudProtectionProviders from identity
+        /// Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FraudProtectionProvider"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders.
             return requestInfo;
         }
         /// <summary>
-        /// Get fraudProtectionProviders from identity
+        /// Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders.
         {
         }
         /// <summary>
-        /// Get fraudProtectionProviders from identity
+        /// Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FraudProtectionProviderItemRequestBuilderGetQueryParameters 

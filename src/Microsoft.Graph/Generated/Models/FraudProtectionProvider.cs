@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class FraudProtectionProvider : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the fraud protection provider configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

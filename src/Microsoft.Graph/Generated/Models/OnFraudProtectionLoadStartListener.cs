@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnFraudProtectionLoadStartListener : global::Microsoft.Graph.Beta.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The handler property</summary>
+        /// <summary>Configuration for what to invoke if the event resolves to this listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OnFraudProtectionLoadStartHandler? Handler

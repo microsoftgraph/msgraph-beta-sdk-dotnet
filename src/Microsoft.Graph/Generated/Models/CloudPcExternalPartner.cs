@@ -18,19 +18,19 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus?>("connectionStatus"); }
             set { BackingStore?.Set("connectionStatus", value); }
         }
-        /// <summary>The enableConnection property</summary>
+        /// <summary>Enable or disable the connection to an external partner. If true, an external partner API accepts incoming calls from external partners. Required. Supports $filter (eq).</summary>
         public bool? EnableConnection
         {
             get { return BackingStore?.Get<bool?>("enableConnection"); }
             set { BackingStore?.Set("enableConnection", value); }
         }
-        /// <summary>The lastSyncDateTime property</summary>
+        /// <summary>Last data sync time for this external partner. The timeStamp type represents date and time information in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastSyncDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
-        /// <summary>The partnerId property</summary>
+        /// <summary>The partner identifier used to identify the external partner. When the Cloud PC service is ready to integrate with a new external partner, it generates a GUID to represent this partner. The Cloud PC service provides this partner ID to the partner, which can then use it to call this Microsoft Graph API and external partner APIs. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PartnerId
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("partnerId", value); }
         }
 #endif
-        /// <summary>The statusDetails property</summary>
+        /// <summary>Status details message. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDetails

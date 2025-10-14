@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ArkoseFraudProtectionProvider : global::Microsoft.Graph.Beta.Models.FraudProtectionProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The clientSubDomain property</summary>
+        /// <summary>Used to invoke the Arkose service from the client application. Request from your Arkose Customer Success Manager or use the default client-api value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSubDomain
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientSubDomain", value); }
         }
 #endif
-        /// <summary>The privateKey property</summary>
+        /// <summary>The private key available on the Arkose Portal. Contact your Arkose Customer Success Manager for assistance with your keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivateKey
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("privateKey", value); }
         }
 #endif
-        /// <summary>The publicKey property</summary>
+        /// <summary>The public key available on the Arkose Portal. Contact your Arkose Customer Success Manager for assistance with your keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicKey
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publicKey", value); }
         }
 #endif
-        /// <summary>The verifySubDomain property</summary>
+        /// <summary>Used to invoke the Arkose service from the Microsoft authentication server. Request from your Arkose Customer Success Manager or use the default verify-api value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VerifySubDomain

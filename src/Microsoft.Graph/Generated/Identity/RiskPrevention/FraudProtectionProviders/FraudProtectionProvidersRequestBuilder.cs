@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders
         {
         }
         /// <summary>
-        /// Get fraudProtectionProviders from identity
+        /// Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FraudProtectionProviderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FraudProtectionProviderCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.FraudProtectionProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to fraudProtectionProviders for identity
+        /// Create a new fraudProtectionProvider object. You can create one of the following subtypes that are derived from fraudProtectionProvider.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskpreventioncontainer-post-fraudprotectionproviders?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FraudProtectionProvider"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FraudProtectionProvider>(requestInfo, global::Microsoft.Graph.Beta.Models.FraudProtectionProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get fraudProtectionProviders from identity
+        /// Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to fraudProtectionProviders for identity
+        /// Create a new fraudProtectionProvider object. You can create one of the following subtypes that are derived from fraudProtectionProvider.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders
             return new global::Microsoft.Graph.Beta.Identity.RiskPrevention.FraudProtectionProviders.FraudProtectionProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get fraudProtectionProviders from identity
+        /// Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FraudProtectionProvidersRequestBuilderGetQueryParameters 
