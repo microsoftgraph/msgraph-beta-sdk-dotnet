@@ -13,6 +13,13 @@ namespace Microsoft.Graph.Beta.Models
     #pragma warning restore CS1591
     {
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType"/> and sets the default values.
+        /// </summary>
+        public OpenComplexDictionaryType() : base()
+        {
+            OdataType = "#microsoft.graph.openComplexDictionaryType";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType"/></returns>

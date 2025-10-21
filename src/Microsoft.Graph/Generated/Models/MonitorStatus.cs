@@ -16,10 +16,6 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         Inactive,
         #pragma warning restore CS1591
-        [EnumMember(Value = "inactivatedBySystem")]
-        #pragma warning disable CS1591
-        InactivatedBySystem,
-        #pragma warning restore CS1591
         /// <summary>A marker value for members added after the release of this API.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,

@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The lastUsedDateTime property</summary>
+        /// <summary>The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn&apos;t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastUsedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUsedDateTime"); }

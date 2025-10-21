@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get cloudPCs from users
+        /// The user&apos;s Cloud PCs. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPC"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -256,7 +256,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get cloudPCs from users
+        /// The user&apos;s Cloud PCs. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -314,7 +314,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item
         {
         }
         /// <summary>
-        /// Get cloudPCs from users
+        /// The user&apos;s Cloud PCs. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderGetQueryParameters 

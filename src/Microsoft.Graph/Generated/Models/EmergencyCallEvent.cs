@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emergencyNumberDialed", value); }
         }
 #endif
-        /// <summary>The policy name for emergency call event.</summary>
+        /// <summary>The policy name for the emergency call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyName

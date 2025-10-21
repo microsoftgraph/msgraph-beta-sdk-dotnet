@@ -82,6 +82,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The inactivationReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InactivationReason
+        {
+            get { return BackingStore?.Get<string?>("inactivationReason"); }
+            set { BackingStore?.Set("inactivationReason", value); }
+        }
+#nullable restore
+#else
+        public string InactivationReason
+        {
+            get { return BackingStore?.Get<string>("inactivationReason"); }
+            set { BackingStore?.Set("inactivationReason", value); }
+        }
+#endif
+        /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
@@ -116,6 +148,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
+        /// <summary>The runAsUTCMServicePrincipal property</summary>
+        public bool? RunAsUTCMServicePrincipal
+        {
+            get { return BackingStore?.Get<bool?>("runAsUTCMServicePrincipal"); }
+            set { BackingStore?.Set("runAsUTCMServicePrincipal", value); }
+        }
         /// <summary>The runningOnBehalfOf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,10 +215,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "inactivationReason", n => { InactivationReason = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorMode>(); } },
                 { "monitorRunFrequencyInHours", n => { MonitorRunFrequencyInHours = n.GetIntValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType>(global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType.CreateFromDiscriminatorValue); } },
+                { "runAsUTCMServicePrincipal", n => { RunAsUTCMServicePrincipal = n.GetBoolValue(); } },
                 { "runningOnBehalfOf", n => { RunningOnBehalfOf = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorStatus>(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
@@ -198,8 +239,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorMode>("mode", Mode);
+            writer.WriteIntValue("monitorRunFrequencyInHours", MonitorRunFrequencyInHours);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType>("parameters", Parameters);
+            writer.WriteBoolValue("runAsUTCMServicePrincipal", RunAsUTCMServicePrincipal);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("runningOnBehalfOf", RunningOnBehalfOf);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorStatus>("status", Status);
         }

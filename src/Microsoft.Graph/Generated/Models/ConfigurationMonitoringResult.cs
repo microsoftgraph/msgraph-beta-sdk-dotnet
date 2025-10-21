@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("driftsCount"); }
             set { BackingStore?.Set("driftsCount", value); }
         }
+        /// <summary>The driftsFixed property</summary>
+        public int? DriftsFixed
+        {
+            get { return BackingStore?.Get<int?>("driftsFixed"); }
+            set { BackingStore?.Set("driftsFixed", value); }
+        }
         /// <summary>The errorDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +74,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorRunStatus?>("runStatus"); }
             set { BackingStore?.Set("runStatus", value); }
         }
+        /// <summary>The runType property</summary>
+        public global::Microsoft.Graph.Beta.Models.MonitorRunType? RunType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorRunType?>("runType"); }
+            set { BackingStore?.Set("runType", value); }
+        }
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,11 +115,13 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "driftsCount", n => { DriftsCount = n.GetIntValue(); } },
+                { "driftsFixed", n => { DriftsFixed = n.GetIntValue(); } },
                 { "errorDetails", n => { ErrorDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ErrorDetail>(global::Microsoft.Graph.Beta.Models.ErrorDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "monitorId", n => { MonitorId = n.GetStringValue(); } },
                 { "runCompletionDateTime", n => { RunCompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "runInitiationDateTime", n => { RunInitiationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "runStatus", n => { RunStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunStatus>(); } },
+                { "runType", n => { RunType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunType>(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -120,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunStatus>("runStatus", RunStatus);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunType>("runType", RunType);
         }
     }
 }

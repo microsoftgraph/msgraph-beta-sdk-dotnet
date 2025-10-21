@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new global::Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy(),
                 "#microsoft.graph.administrativeUnit" => new global::Microsoft.Graph.Beta.Models.AdministrativeUnit(),
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Beta.Models.AgentIdentity(),
                 "#microsoft.graph.application" => new global::Microsoft.Graph.Beta.Models.Application(),
                 "#microsoft.graph.appManagementPolicy" => new global::Microsoft.Graph.Beta.Models.AppManagementPolicy(),
                 "#microsoft.graph.appRoleAssignment" => new global::Microsoft.Graph.Beta.Models.AppRoleAssignment(),
