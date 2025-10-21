@@ -8,9 +8,25 @@ namespace Microsoft.Graph.Beta.Models
     public enum MonitorMode
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "monitorOnce")]
+        #pragma warning disable CS1591
+        MonitorOnce,
+        #pragma warning restore CS1591
         [EnumMember(Value = "monitorOnly")]
         #pragma warning disable CS1591
         MonitorOnly,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "applyOnceAndMonitorContinuous")]
+        #pragma warning disable CS1591
+        ApplyOnceAndMonitorContinuous,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "applyOnce")]
+        #pragma warning disable CS1591
+        ApplyOnce,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "applyContinuous")]
+        #pragma warning disable CS1591
+        ApplyContinuous,
         #pragma warning restore CS1591
         /// <summary>A marker value for members added after the release of this API.</summary>
         [EnumMember(Value = "unknownFutureValue")]

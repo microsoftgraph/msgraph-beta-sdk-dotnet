@@ -13,6 +13,13 @@ namespace Microsoft.Graph.Beta.Models
     #pragma warning restore CS1591
     {
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ResultTemplateDictionary"/> and sets the default values.
+        /// </summary>
+        public ResultTemplateDictionary() : base()
+        {
+            OdataType = "#microsoft.graph.resultTemplateDictionary";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ResultTemplateDictionary"/></returns>

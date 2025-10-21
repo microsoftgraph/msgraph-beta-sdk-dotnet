@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("allotmentLicensesCount"); }
             set { BackingStore?.Set("allotmentLicensesCount", value); }
         }
-        /// <summary>The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.</summary>
+        /// <summary>The display name of the frontline service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The total number of front-line service plans purchased by the customer.</summary>
+        /// <summary>The total number of frontline service plans purchased by the customer.</summary>
         public int? TotalCount
         {
             get { return BackingStore?.Get<int?>("totalCount"); }

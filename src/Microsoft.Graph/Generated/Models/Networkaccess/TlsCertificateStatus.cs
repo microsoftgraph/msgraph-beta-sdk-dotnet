@@ -32,5 +32,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         #pragma warning disable CS1591
         Expired,
         #pragma warning restore CS1591
+        [EnumMember(Value = "enabled")]
+        #pragma warning disable CS1591
+        Enabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "disabled")]
+        #pragma warning disable CS1591
+        Disabled,
+        #pragma warning restore CS1591
     }
 }

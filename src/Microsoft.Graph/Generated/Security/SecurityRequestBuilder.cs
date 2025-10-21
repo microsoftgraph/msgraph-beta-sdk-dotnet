@@ -27,6 +27,7 @@ using Microsoft.Graph.Beta.Security.Rules;
 using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Beta.Security.SecureScores;
 using Microsoft.Graph.Beta.Security.SecurityActions;
+using Microsoft.Graph.Beta.Security.SecurityCopilot;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence;
 using Microsoft.Graph.Beta.Security.ThreatSubmission;
@@ -174,6 +175,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.SecurityActions.SecurityActionsRequestBuilder SecurityActions
         {
             get => new global::Microsoft.Graph.Beta.Security.SecurityActions.SecurityActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the securityCopilot property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.SecurityCopilot.SecurityCopilotRequestBuilder SecurityCopilot
+        {
+            get => new global::Microsoft.Graph.Beta.Security.SecurityCopilot.SecurityCopilotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder SubjectRightsRequests

@@ -408,7 +408,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType?>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
-        /// <summary>Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.</summary>
+        /// <summary>Indicates the Cloud PC device details associated with the frontline shared service plan, including the user&apos;s UPN and the session start date and time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail? SharedDeviceDetail

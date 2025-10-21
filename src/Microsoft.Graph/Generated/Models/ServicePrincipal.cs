@@ -921,7 +921,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.ServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ServicePrincipal();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Beta.Models.AgentIdentity(),
+                _ => new global::Microsoft.Graph.Beta.Models.ServicePrincipal(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

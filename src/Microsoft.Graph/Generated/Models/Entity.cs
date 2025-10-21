@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.Models.Partner.Security;
 using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Models.Partners;
 using Microsoft.Graph.Beta.Models.Search;
+using Microsoft.Graph.Beta.Models.Security.SecurityCopilot;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Models.TeamsAdministration;
 using Microsoft.Graph.Beta.Models.TermStore;
@@ -137,6 +138,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.adminWindowsUpdates" => new global::Microsoft.Graph.Beta.Models.AdminWindowsUpdates(),
                 "#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState" => new global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState(),
                 "#microsoft.graph.advancedThreatProtectionOnboardingStateSummary" => new global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary(),
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Beta.Models.AgentIdentity(),
                 "#microsoft.graph.agreement" => new global::Microsoft.Graph.Beta.Models.Agreement(),
                 "#microsoft.graph.agreementAcceptance" => new global::Microsoft.Graph.Beta.Models.AgreementAcceptance(),
                 "#microsoft.graph.agreementFile" => new global::Microsoft.Graph.Beta.Models.AgreementFile(),
@@ -1610,6 +1612,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.security.auditLogQuery" => new global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery(),
                 "#microsoft.graph.security.auditLogRecord" => new global::Microsoft.Graph.Beta.Models.Security.AuditLogRecord(),
                 "#microsoft.graph.security.authorityTemplate" => new global::Microsoft.Graph.Beta.Models.Security.AuthorityTemplate(),
+                "#microsoft.graph.security.autoAuditingConfiguration" => new global::Microsoft.Graph.Beta.Models.Security.AutoAuditingConfiguration(),
                 "#microsoft.graph.security.case" => new global::Microsoft.Graph.Beta.Models.Security.Case(),
                 "#microsoft.graph.security.caseOperation" => new global::Microsoft.Graph.Beta.Models.Security.CaseOperation(),
                 "#microsoft.graph.security.casesRoot" => new global::Microsoft.Graph.Beta.Models.Security.CasesRoot(),
@@ -1690,10 +1693,15 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.security.rulesRoot" => new global::Microsoft.Graph.Beta.Models.Security.RulesRoot(),
                 "#microsoft.graph.security.search" => new global::Microsoft.Graph.Beta.Models.Security.Search(),
                 "#microsoft.graph.security.security" => new global::Microsoft.Graph.Beta.Models.Security.Security(),
+                "#microsoft.graph.security.securityCopilot.evaluation" => new global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Evaluation(),
+                "#microsoft.graph.security.securityCopilot.prompt" => new global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Prompt(),
+                "#microsoft.graph.security.securityCopilot.session" => new global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Session(),
+                "#microsoft.graph.security.securityCopilot.workspace" => new global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Workspace(),
                 "#microsoft.graph.security.sensitivityLabel" => new global::Microsoft.Graph.Beta.Models.Security.SensitivityLabel(),
                 "#microsoft.graph.security.sensor" => new global::Microsoft.Graph.Beta.Models.Security.Sensor(),
                 "#microsoft.graph.security.sensorCandidate" => new global::Microsoft.Graph.Beta.Models.Security.SensorCandidate(),
                 "#microsoft.graph.security.sensorCandidateActivationConfiguration" => new global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration(),
+                "#microsoft.graph.security.settingsContainer" => new global::Microsoft.Graph.Beta.Models.Security.SettingsContainer(),
                 "#microsoft.graph.security.siteSource" => new global::Microsoft.Graph.Beta.Models.Security.SiteSource(),
                 "#microsoft.graph.security.sslCertificate" => new global::Microsoft.Graph.Beta.Models.Security.SslCertificate(),
                 "#microsoft.graph.security.subcategoryTemplate" => new global::Microsoft.Graph.Beta.Models.Security.SubcategoryTemplate(),
@@ -1722,6 +1730,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.securityBaselineStateSummary" => new global::Microsoft.Graph.Beta.Models.SecurityBaselineStateSummary(),
                 "#microsoft.graph.securityBaselineTemplate" => new global::Microsoft.Graph.Beta.Models.SecurityBaselineTemplate(),
                 "#microsoft.graph.securityConfigurationTask" => new global::Microsoft.Graph.Beta.Models.SecurityConfigurationTask(),
+                "#microsoft.graph.securityCopilot" => new global::Microsoft.Graph.Beta.Models.SecurityCopilot(),
                 "#microsoft.graph.securityReportsRoot" => new global::Microsoft.Graph.Beta.Models.SecurityReportsRoot(),
                 "#microsoft.graph.securityToolAwsResourceAdministratorFinding" => new global::Microsoft.Graph.Beta.Models.SecurityToolAwsResourceAdministratorFinding(),
                 "#microsoft.graph.securityToolAwsRoleAdministratorFinding" => new global::Microsoft.Graph.Beta.Models.SecurityToolAwsRoleAdministratorFinding(),
@@ -1840,11 +1849,14 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.taxGroup" => new global::Microsoft.Graph.Beta.Models.TaxGroup(),
                 "#microsoft.graph.team" => new global::Microsoft.Graph.Beta.Models.Team(),
                 "#microsoft.graph.teamInfo" => new global::Microsoft.Graph.Beta.Models.TeamInfo(),
+                "#microsoft.graph.teamsAdministration.numberAssignment" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.NumberAssignment(),
                 "#microsoft.graph.teamsAdministration.policyIdentifierDetail" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.PolicyIdentifierDetail(),
                 "#microsoft.graph.teamsAdministration.teamsAdminRoot" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsAdminRoot(),
                 "#microsoft.graph.teamsAdministration.teamsPolicyAssignment" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyAssignment(),
                 "#microsoft.graph.teamsAdministration.teamsPolicyUserAssignment" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment(),
                 "#microsoft.graph.teamsAdministration.teamsUserConfiguration" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsUserConfiguration(),
+                "#microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.TelephoneNumberLongRunningOperation(),
+                "#microsoft.graph.teamsAdministration.telephoneNumberManagementRoot" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.TelephoneNumberManagementRoot(),
                 "#microsoft.graph.teamsApp" => new global::Microsoft.Graph.Beta.Models.TeamsApp(),
                 "#microsoft.graph.teamsAppDashboardCardDefinition" => new global::Microsoft.Graph.Beta.Models.TeamsAppDashboardCardDefinition(),
                 "#microsoft.graph.teamsAppDefinition" => new global::Microsoft.Graph.Beta.Models.TeamsAppDefinition(),

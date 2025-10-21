@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensors", value); }
         }
 #endif
+        /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.SettingsContainer? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.SettingsContainer Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -115,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "sensorCandidateActivationConfiguration", n => { SensorCandidateActivationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration.CreateFromDiscriminatorValue); } },
                 { "sensorCandidates", n => { SensorCandidates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>(global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>(global::Microsoft.Graph.Beta.Models.Security.SettingsContainer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,6 +147,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", SensorCandidateActivationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>("sensorCandidates", SensorCandidates);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>("sensors", Sensors);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>("settings", Settings);
         }
     }
 }

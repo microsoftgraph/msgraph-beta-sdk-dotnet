@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class HumanSecurityFraudProtectionProvider : global::Microsoft.Graph.Beta.Models.FraudProtectionProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appId property</summary>
+        /// <summary>Unique identifier for an individual application. You can retrieve this from the HUMAN Security admin console or request it from your HUMAN Security Customer Success Manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>The serverToken property</summary>
+        /// <summary>Unique identifier used to authenticate API calls between the Server side integration and the HUMAN platform. You can retrieve this from the HUMAN Security admin console or request it from your HUMAN Security Customer Success Manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServerToken

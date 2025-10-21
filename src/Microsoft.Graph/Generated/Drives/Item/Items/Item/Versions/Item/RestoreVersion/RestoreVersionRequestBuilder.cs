@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.RestoreVersi
         {
         }
         /// <summary>
-        /// Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-beta" />
+        /// Restore a previous version of a driveItem to be the current version. This operation creates a new version with the contents of the previous version, and it preserves all existing versions of the file.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitemversion-restoreversion?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.RestoreVersi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+        /// Restore a previous version of a driveItem to be the current version. This operation creates a new version with the contents of the previous version, and it preserves all existing versions of the file.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
