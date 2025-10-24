@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members
         {
         }
         /// <summary>
-        /// Get a list of the engagementRoleMember objects and their properties.
+        /// Get a list of users with assigned roles in Viva Engage.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/engagementrole-list-members?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EngagementRoleMemberCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EngagementRoleMemberCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.EngagementRoleMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a Viva Engage role to a user.
+        /// Create a new engagementRoleMember object that assigns a Viva Engage role to a user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/engagementrole-post-members?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EngagementRoleMember"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.EngagementRoleMember>(requestInfo, global::Microsoft.Graph.Beta.Models.EngagementRoleMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the engagementRoleMember objects and their properties.
+        /// Get a list of users with assigned roles in Viva Engage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members
             return requestInfo;
         }
         /// <summary>
-        /// Assign a Viva Engage role to a user.
+        /// Create a new engagementRoleMember object that assigns a Viva Engage role to a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members
             return new global::Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the engagementRoleMember objects and their properties.
+        /// Get a list of users with assigned roles in Viva Engage.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 

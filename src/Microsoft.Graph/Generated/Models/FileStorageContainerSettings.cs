@@ -33,6 +33,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isOcrEnabled"); }
             set { BackingStore?.Set("isOcrEnabled", value); }
         }
+        /// <summary>The itemDefaultSensitivityLabelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDefaultSensitivityLabelId
+        {
+            get { return BackingStore?.Get<string?>("itemDefaultSensitivityLabelId"); }
+            set { BackingStore?.Set("itemDefaultSensitivityLabelId", value); }
+        }
+#nullable restore
+#else
+        public string ItemDefaultSensitivityLabelId
+        {
+            get { return BackingStore?.Get<string>("itemDefaultSensitivityLabelId"); }
+            set { BackingStore?.Set("itemDefaultSensitivityLabelId", value); }
+        }
+#endif
         /// <summary>The maximum major versions allowed for items in the container. Optional. Read-write.</summary>
         public int? ItemMajorVersionLimit
         {
@@ -83,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
                 { "isOcrEnabled", n => { IsOcrEnabled = n.GetBoolValue(); } },
+                { "itemDefaultSensitivityLabelId", n => { ItemDefaultSensitivityLabelId = n.GetStringValue(); } },
                 { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -96,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
             writer.WriteBoolValue("isOcrEnabled", IsOcrEnabled);
+            writer.WriteStringValue("itemDefaultSensitivityLabelId", ItemDefaultSensitivityLabelId);
             writer.WriteIntValue("itemMajorVersionLimit", ItemMajorVersionLimit);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
