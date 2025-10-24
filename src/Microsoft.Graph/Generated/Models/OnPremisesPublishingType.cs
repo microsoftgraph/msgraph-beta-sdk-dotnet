@@ -36,5 +36,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "privateAccess")]
+        #pragma warning disable CS1591
+        PrivateAccess,
+        #pragma warning restore CS1591
     }
 }

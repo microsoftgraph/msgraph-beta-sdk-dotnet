@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.AllMembers;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Archive;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.EnabledApps;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages;
@@ -50,6 +51,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel
         public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder FilesFolder

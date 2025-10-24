@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.AllMembers;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Archive;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.EnabledApps;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.FilesFolder;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages;
@@ -50,6 +51,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder

@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
@@ -93,6 +94,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions.GetEffectivePermissionsRequestBuilder GetEffectivePermissions
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions.GetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the managedLicenses property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses.ManagedLicensesRequestBuilder ManagedLicenses
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses.ManagedLicensesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.OnPremisesConnectionsRequestBuilder OnPremisesConnections

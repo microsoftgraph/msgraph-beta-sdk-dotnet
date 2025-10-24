@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members.Item.User
         {
         }
         /// <summary>
-        /// User entity of the member who has been assigned the role.
+        /// The user who has this role assigned.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members.Item.User
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.User>(requestInfo, global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// User entity of the member who has been assigned the role.
+        /// The user who has this role assigned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members.Item.User
             return new global::Microsoft.Graph.Beta.EmployeeExperience.Roles.Item.Members.Item.User.UserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// User entity of the member who has been assigned the role.
+        /// The user who has this role assigned.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserRequestBuilderGetQueryParameters 
