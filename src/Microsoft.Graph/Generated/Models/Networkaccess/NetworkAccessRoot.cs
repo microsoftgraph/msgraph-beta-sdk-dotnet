@@ -60,22 +60,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("filteringPolicies", value); }
         }
 #endif
-        /// <summary>A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile>? FilteringProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile>?>("filteringProfiles"); }
-            set { BackingStore?.Set("filteringProfiles", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile> FilteringProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile>>("filteringProfiles"); }
-            set { BackingStore?.Set("filteringProfiles", value); }
-        }
-#endif
         /// <summary>The forwardingPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,22 +74,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy>>("forwardingPolicies"); }
             set { BackingStore?.Set("forwardingPolicies", value); }
-        }
-#endif
-        /// <summary>The forwardingProfiles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>? ForwardingProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>?>("forwardingProfiles"); }
-            set { BackingStore?.Set("forwardingProfiles", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile> ForwardingProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>>("forwardingProfiles"); }
-            set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #endif
         /// <summary>Represents network connections that are routed through Global Secure Access.</summary>
@@ -241,9 +209,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Alert>(global::Microsoft.Graph.Beta.Models.Networkaccess.Alert.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "connectivity", n => { Connectivity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>(global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity.CreateFromDiscriminatorValue); } },
                 { "filteringPolicies", n => { FilteringPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "filteringProfiles", n => { FilteringProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile>(global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "forwardingPolicies", n => { ForwardingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logs", n => { Logs = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Logs>(global::Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue); } },
                 { "reports", n => { Reports = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Reports>(global::Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Settings>(global::Microsoft.Graph.Beta.Models.Networkaccess.Settings.CreateFromDiscriminatorValue); } },
@@ -264,9 +230,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Alert>("alerts", Alerts);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>("connectivity", Connectivity);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>("filteringPolicies", FilteringPolicies);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile>("filteringProfiles", FilteringProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy>("forwardingPolicies", ForwardingPolicies);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>("forwardingProfiles", ForwardingProfiles);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Logs>("logs", Logs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Reports>("reports", Reports);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Settings>("settings", Settings);

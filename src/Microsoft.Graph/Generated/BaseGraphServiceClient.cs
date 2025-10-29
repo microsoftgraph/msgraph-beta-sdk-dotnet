@@ -525,7 +525,7 @@ namespace Microsoft.Graph.Beta
         {
             get => new global::Microsoft.Graph.Beta.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The places property</summary>
+        /// <summary>Provides operations to manage the collection of place entities.</summary>
         public global::Microsoft.Graph.Beta.Places.PlacesRequestBuilder Places
         {
             get => new global::Microsoft.Graph.Beta.Places.PlacesRequestBuilder(PathParameters, RequestAdapter);

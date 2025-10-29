@@ -3,7 +3,10 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.ImportSnapshot;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.PurgeImportedSnapshot;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.RetrieveSnapshotImportResultsWithSnapshotId;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -31,6 +34,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsRequestBuilder GetSubscriptions
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the importSnapshot method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.ImportSnapshot.ImportSnapshotRequestBuilder ImportSnapshot
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.ImportSnapshot.ImportSnapshotRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the purgeImportedSnapshot method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.PurgeImportedSnapshot.PurgeImportedSnapshotRequestBuilder PurgeImportedSnapshot
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.PurgeImportedSnapshot.PurgeImportedSnapshotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.</summary>
         /// <param name="position">The unique identifier of cloudPcSnapshot</param>
@@ -117,6 +130,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcSnapshot>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcSnapshot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the retrieveSnapshotImportResults method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.RetrieveSnapshotImportResultsWithSnapshotId.RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder"/></returns>
+        /// <param name="snapshotId">Usage: snapshotId=&apos;{snapshotId}&apos;</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.RetrieveSnapshotImportResultsWithSnapshotId.RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder RetrieveSnapshotImportResultsWithSnapshotId(string snapshotId)
+        {
+            if(string.IsNullOrEmpty(snapshotId)) throw new ArgumentNullException(nameof(snapshotId));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.RetrieveSnapshotImportResultsWithSnapshotId.RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder(PathParameters, RequestAdapter, snapshotId);
         }
         /// <summary>
         /// Cloud PC snapshots.

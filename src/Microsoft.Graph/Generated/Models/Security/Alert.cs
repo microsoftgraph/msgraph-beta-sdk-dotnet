@@ -250,6 +250,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
 #endif
+        /// <summary>The investigationState property</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.InvestigationState? InvestigationState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.InvestigationState?>("investigationState"); }
+            set { BackingStore?.Set("investigationState", value); }
+        }
         /// <summary>The oldest activity associated with the alert.</summary>
         public DateTimeOffset? LastActivityDateTime
         {
@@ -466,6 +472,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "firstActivityDateTime", n => { FirstActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "incidentId", n => { IncidentId = n.GetStringValue(); } },
                 { "incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
+                { "investigationState", n => { InvestigationState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.InvestigationState>(); } },
                 { "lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 { "mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -509,6 +516,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteDateTimeOffsetValue("firstActivityDateTime", FirstActivityDateTime);
             writer.WriteStringValue("incidentId", IncidentId);
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.InvestigationState>("investigationState", InvestigationState);
             writer.WriteDateTimeOffsetValue("lastActivityDateTime", LastActivityDateTime);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreTechniques", MitreTechniques);

@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.</summary>
+        /// <summary>The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available, notAvailable, and unknownFutureValue. Default value is notApplicable. Read-only. This property is deprecated and will stop returning data on October 30, 2025. Going forward use the retrieveFrontlineCloudPcDetail API.</summary>
         public global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability? FrontlineCloudPcAvailability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability?>("frontlineCloudPcAvailability"); }

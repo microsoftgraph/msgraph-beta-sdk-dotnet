@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("placeId", value); }
         }
 #endif
-        /// <summary>A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.</summary>
+        /// <summary>A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, Wi-Fi, and more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WorkplaceSensor>? Sensors
