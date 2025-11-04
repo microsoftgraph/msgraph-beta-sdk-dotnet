@@ -5,9 +5,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity;
 using Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies;
-using Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles;
 using Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies;
-using Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles;
 using Microsoft.Graph.Beta.NetworkAccess.Logs;
 using Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard;
 using Microsoft.Graph.Beta.NetworkAccess.Reports;
@@ -47,20 +45,10 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the filteringProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public global::Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.FilteringProfilesRequestBuilder FilteringProfiles
-        {
-            get => new global::Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.FilteringProfilesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder ForwardingPolicies
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public global::Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.ForwardingProfilesRequestBuilder ForwardingProfiles
-        {
-            get => new global::Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.ForwardingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the logs property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Logs.LogsRequestBuilder Logs

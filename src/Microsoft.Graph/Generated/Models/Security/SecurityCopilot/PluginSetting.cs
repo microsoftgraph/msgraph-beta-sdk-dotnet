@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
     public partial class PluginSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The acceptableValues property</summary>
+        /// <summary>Acceptable values for plugin type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AcceptableValues
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The defaultValue property</summary>
+        /// <summary>Default value available for the plugin if not configured</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Description of the value requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.PluginSettingDisplayType?>("displayType"); }
             set { BackingStore?.Set("displayType", value); }
         }
-        /// <summary>The hintText property</summary>
+        /// <summary>Hint for the plugin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HintText
@@ -91,13 +91,13 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("hintText", value); }
         }
 #endif
-        /// <summary>The isRequired property</summary>
+        /// <summary>Setting whether the value is required</summary>
         public bool? IsRequired
         {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
-        /// <summary>The label property</summary>
+        /// <summary>Label for the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("label", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.PluginSettingType?>("settingValue"); }
             set { BackingStore?.Set("settingValue", value); }
         }
-        /// <summary>The value property</summary>
+        /// <summary>Value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

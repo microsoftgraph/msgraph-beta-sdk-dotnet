@@ -394,6 +394,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.windowsWifiConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsWifiConfiguration(),
                 "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsWifiEnterpriseEAPConfiguration(),
                 "#microsoft.graph.windowsWiredNetworkConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsWiredNetworkConfiguration(),
+                "#microsoft.graph.windowsZtdnsConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsZtdnsConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.DeviceConfiguration(),
             };
         }

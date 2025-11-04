@@ -4,7 +4,6 @@ using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl;
-using Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -25,11 +24,6 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity
         public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.BranchesRequestBuilder Branches
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.BranchesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.</summary>
-        public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.RemoteNetworksRequestBuilder RemoteNetworks
-        {
-            get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.RemoteNetworksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.ConnectivityRequestBuilder"/> and sets the default values.

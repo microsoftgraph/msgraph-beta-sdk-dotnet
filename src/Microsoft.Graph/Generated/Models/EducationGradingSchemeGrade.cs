@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<float?>("defaultPercentage"); }
             set { BackingStore?.Set("defaultPercentage", value); }
         }
-        /// <summary>The name of the grading scheme.</summary>
+        /// <summary>The name of this individual grade.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

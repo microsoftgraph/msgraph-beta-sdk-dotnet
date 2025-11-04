@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosLobApp : global::Microsoft.Graph.Beta.Models.MobileLobApp, IParsable
     {
+        /// <summary>Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices</summary>
+        public global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol? AppleDeviceAppDeliveryProtocolType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol?>("appleDeviceAppDeliveryProtocolType"); }
+            set { BackingStore?.Set("appleDeviceAppDeliveryProtocolType", value); }
+        }
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +130,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "appleDeviceAppDeliveryProtocolType", n => { AppleDeviceAppDeliveryProtocolType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>(); } },
                 { "applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IosDeviceType>(global::Microsoft.Graph.Beta.Models.IosDeviceType.CreateFromDiscriminatorValue); } },
                 { "buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 { "bundleId", n => { BundleId = n.GetStringValue(); } },
@@ -140,6 +147,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>("appleDeviceAppDeliveryProtocolType", AppleDeviceAppDeliveryProtocolType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IosDeviceType>("applicableDeviceType", ApplicableDeviceType);
             writer.WriteStringValue("buildNumber", BuildNumber);
             writer.WriteStringValue("bundleId", BundleId);

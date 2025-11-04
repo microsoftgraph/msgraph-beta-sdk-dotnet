@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityCopilot.Workspaces.Item.Sessions
         {
         }
         /// <summary>
-        /// Get sessions from security
+        /// Represents sessions in Security Copilot.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.SessionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityCopilot.Workspaces.Item.Sessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Session>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Session.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sessions from security
+        /// Represents sessions in Security Copilot.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityCopilot.Workspaces.Item.Sessions
             return new global::Microsoft.Graph.Beta.Security.SecurityCopilot.Workspaces.Item.Sessions.SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sessions from security
+        /// Represents sessions in Security Copilot.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SessionsRequestBuilderGetQueryParameters 

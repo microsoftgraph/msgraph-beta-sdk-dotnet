@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Add;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Count;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Delta;
 using Microsoft.Graph.Beta.Groups.Item.Sites.GetAllSites;
+using Microsoft.Graph.Beta.Groups.Item.Sites.GetOperationStatusWithOperationId;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Remove;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -99,6 +100,16 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the getOperationStatus method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Sites.GetOperationStatusWithOperationId.GetOperationStatusWithOperationIdRequestBuilder"/></returns>
+        /// <param name="operationId">Usage: operationId=&apos;{operationId}&apos;</param>
+        public global::Microsoft.Graph.Beta.Groups.Item.Sites.GetOperationStatusWithOperationId.GetOperationStatusWithOperationIdRequestBuilder GetOperationStatusWithOperationId(string operationId)
+        {
+            if(string.IsNullOrEmpty(operationId)) throw new ArgumentNullException(nameof(operationId));
+            return new global::Microsoft.Graph.Beta.Groups.Item.Sites.GetOperationStatusWithOperationId.GetOperationStatusWithOperationIdRequestBuilder(PathParameters, RequestAdapter, operationId);
         }
         /// <summary>
         /// The list of SharePoint sites in this group. Access the default site with /sites/root.

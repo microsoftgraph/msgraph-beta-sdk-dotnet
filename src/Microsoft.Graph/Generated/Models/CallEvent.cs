@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CallEvent : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The callConversationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallConversationId
+        {
+            get { return BackingStore?.Get<string?>("callConversationId"); }
+            set { BackingStore?.Set("callConversationId", value); }
+        }
+#nullable restore
+#else
+        public string CallConversationId
+        {
+            get { return BackingStore?.Get<string>("callConversationId"); }
+            set { BackingStore?.Set("callConversationId", value); }
+        }
+#endif
         /// <summary>The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.</summary>
         public global::Microsoft.Graph.Beta.Models.CallEventType? CallEventType
         {
@@ -95,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "callConversationId", n => { CallConversationId = n.GetStringValue(); } },
                 { "callEventType", n => { CallEventType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CallEventType>(); } },
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>(global::Microsoft.Graph.Beta.Models.Participant.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -110,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("callConversationId", CallConversationId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CallEventType>("callEventType", CallEventType);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>("participants", Participants);
