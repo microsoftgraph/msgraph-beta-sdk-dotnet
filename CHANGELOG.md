@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does NOT adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and packages shipped from the beta service library will always be in `preview` as changes to the API are for non production use and commonly ship breaking changes.
 
 
+## [5.125.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.124.0-preview...5.125.0-preview) (2025-11-06)
+
+
+### Features
+
+* latest generation ([#1062](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1062)) ([ba12c47](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/ba12c4700baa22d677c7accc1b20691c6f3c7a6f))
+
 ## [5.124.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.123.0-preview...5.124.0-preview) (2025-10-21)
 
 
