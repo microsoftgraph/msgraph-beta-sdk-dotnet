@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
     public partial class Prompt : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The content property</summary>
+        /// <summary>Input content to the prompt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Created time.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The evaluations property</summary>
+        /// <summary>Collection of evaluations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Evaluation>? Evaluations
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("evaluations", value); }
         }
 #endif
-        /// <summary>The inputs property</summary>
+        /// <summary>Not implemented.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Dictionary? Inputs
@@ -66,13 +66,13 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("inputs", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Last modified time.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The skillInputDescriptors property</summary>
+        /// <summary>Skill Input descriptor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.SkillInputDescriptor>? SkillInputDescriptors
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("skillInputDescriptors", value); }
         }
 #endif
-        /// <summary>The skillName property</summary>
+        /// <summary>Skill name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkillName

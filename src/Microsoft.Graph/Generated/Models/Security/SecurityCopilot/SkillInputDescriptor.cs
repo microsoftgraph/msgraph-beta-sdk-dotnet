@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
     public partial class SkillInputDescriptor : global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.SkillVariableDescriptor, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The defaultValue property</summary>
+        /// <summary>Unsupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
-        /// <summary>The isRequired property</summary>
+        /// <summary>Unsupported.</summary>
         public bool? IsRequired
         {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
-        /// <summary>The placeholderValue property</summary>
+        /// <summary>Unsupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceholderValue

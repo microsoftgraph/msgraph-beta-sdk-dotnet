@@ -4,7 +4,6 @@ using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ConnectivityConfiguration;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks;
-using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -32,12 +31,6 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks.DeviceLinksRequestBuilder DeviceLinks
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks.DeviceLinksRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.</summary>
-        [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20")]
-        public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.ForwardingProfilesRequestBuilder ForwardingProfiles
-        {
-            get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.ForwardingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder"/> and sets the default values.

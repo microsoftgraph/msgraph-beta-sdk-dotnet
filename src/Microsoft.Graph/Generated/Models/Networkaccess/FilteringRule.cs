@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return mappingValue switch
             {
                 "#microsoft.graph.networkaccess.fqdnFilteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FqdnFilteringRule(),
+                "#microsoft.graph.networkaccess.urlDestinationFilteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.UrlDestinationFilteringRule(),
                 "#microsoft.graph.networkaccess.webCategoryFilteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategoryFilteringRule(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringRule(),
             };

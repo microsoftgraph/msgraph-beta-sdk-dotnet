@@ -19,9 +19,9 @@ jobs:
       solutionName: Microsoft.Graph.Beta.sln
       projectName: src/Microsoft.Graph/Microsoft.Graph.Beta.csproj
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v5
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4.3.1
+        uses: actions/setup-dotnet@v5.0.0
         with:
           dotnet-version: 8.x
       - name: Restore dependencies
@@ -49,9 +49,9 @@ jobs:
         language: [ 'csharp' ]
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4.2.2
+      uses: actions/checkout@v5
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
     - name: Restore dependencies
@@ -59,4 +59,4 @@ jobs:
     - name: Build for netstandard2.0
       run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release --no-incremental
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4

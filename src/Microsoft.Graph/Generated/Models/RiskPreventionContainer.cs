@@ -53,6 +53,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The webApplicationFirewallProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider>? WebApplicationFirewallProviders
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider>?>("webApplicationFirewallProviders"); }
+            set { BackingStore?.Set("webApplicationFirewallProviders", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider> WebApplicationFirewallProviders
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider>>("webApplicationFirewallProviders"); }
+            set { BackingStore?.Set("webApplicationFirewallProviders", value); }
+        }
+#endif
+        /// <summary>The webApplicationFirewallVerifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel>? WebApplicationFirewallVerifications
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel>?>("webApplicationFirewallVerifications"); }
+            set { BackingStore?.Set("webApplicationFirewallVerifications", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel> WebApplicationFirewallVerifications
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel>>("webApplicationFirewallVerifications"); }
+            set { BackingStore?.Set("webApplicationFirewallVerifications", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.RiskPreventionContainer"/> and sets the default values.
         /// </summary>
@@ -81,6 +113,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "fraudProtectionProviders", n => { FraudProtectionProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FraudProtectionProvider>(global::Microsoft.Graph.Beta.Models.FraudProtectionProvider.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "webApplicationFirewallProviders", n => { WebApplicationFirewallProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider>(global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "webApplicationFirewallVerifications", n => { WebApplicationFirewallVerifications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel>(global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -92,6 +126,8 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FraudProtectionProvider>("fraudProtectionProviders", FraudProtectionProviders);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider>("webApplicationFirewallProviders", WebApplicationFirewallProviders);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel>("webApplicationFirewallVerifications", WebApplicationFirewallVerifications);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

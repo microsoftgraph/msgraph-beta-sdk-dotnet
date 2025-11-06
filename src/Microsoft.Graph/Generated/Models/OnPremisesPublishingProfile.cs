@@ -136,6 +136,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publishedResources", value); }
         }
 #endif
+        /// <summary>The sensors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>? Sensors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>?>("sensors"); }
+            set { BackingStore?.Set("sensors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor> Sensors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>>("sensors"); }
+            set { BackingStore?.Set("sensors", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -163,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isDefaultAccessEnabled", n => { IsDefaultAccessEnabled = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "publishedResources", n => { PublishedResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PublishedResource>(global::Microsoft.Graph.Beta.Models.PublishedResource.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>(global::Microsoft.Graph.Beta.Models.PrivateAccessSensor.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -182,6 +199,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isDefaultAccessEnabled", IsDefaultAccessEnabled);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PublishedResource>("publishedResources", PublishedResources);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>("sensors", Sensors);
         }
     }
 }
