@@ -298,17 +298,3 @@ extends:
                     packagesToPush: '$(Pipeline.Workspace)\Microsoft.Graph.Beta.*.nupkg'
                     nuGetFeedType: external
                     publishFeedCredentials: 'microsoftgraph NuGet connection'
-                - task: GitHubRelease@1
-                  displayName: 'GitHub release (Upload Artifacts)'
-                  inputs:
-                    gitHubConnection: 'Kiota_Release'
-                    target: $(Build.SourceVersion)
-                    repositoryName: '$(Build.Repository.Name)'
-                    action: edit
-                    tag: $(VERSION_STRING)
-                    addChangeLog: false
-                    assetUploadMode: replace
-                    assets: |
-                      !**/**
-                      $(Pipeline.Workspace)/Microsoft.Graph.Beta.*.*nupkg
-
