@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("driveRestoreArtifactsBulkAdditionRequests", value); }
         }
 #endif
+        /// <summary>The granularDriveRestoreArtifacts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>? GranularDriveRestoreArtifacts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>?>("granularDriveRestoreArtifacts"); }
+            set { BackingStore?.Set("granularDriveRestoreArtifacts", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact> GranularDriveRestoreArtifacts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>>("granularDriveRestoreArtifacts"); }
+            set { BackingStore?.Set("granularDriveRestoreArtifacts", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "driveRestoreArtifacts", n => { DriveRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact>(global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveRestoreArtifactsBulkAdditionRequests", n => { DriveRestoreArtifactsBulkAdditionRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>(global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "granularDriveRestoreArtifacts", n => { GranularDriveRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>(global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact>("driveRestoreArtifacts", DriveRestoreArtifacts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>("driveRestoreArtifactsBulkAdditionRequests", DriveRestoreArtifactsBulkAdditionRequests);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>("granularDriveRestoreArtifacts", GranularDriveRestoreArtifacts);
         }
     }
 }

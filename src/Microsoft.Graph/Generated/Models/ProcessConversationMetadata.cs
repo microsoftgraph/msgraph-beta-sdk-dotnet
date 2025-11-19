@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessedResources", value); }
         }
 #endif
+        /// <summary>The accessedResources_v2 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ResourceAccessDetail>? AccessedResourcesV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourceAccessDetail>?>("accessedResources_v2"); }
+            set { BackingStore?.Set("accessedResources_v2", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ResourceAccessDetail> AccessedResourcesV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourceAccessDetail>>("accessedResources_v2"); }
+            set { BackingStore?.Set("accessedResources_v2", value); }
+        }
+#endif
+        /// <summary>The agents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AiAgentInfo>? Agents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AiAgentInfo>?>("agents"); }
+            set { BackingStore?.Set("agents", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AiAgentInfo> Agents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AiAgentInfo>>("agents"); }
+            set { BackingStore?.Set("agents", value); }
+        }
+#endif
         /// <summary>Identifier of the parent message in a threaded conversation, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +118,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accessedResources", n => { AccessedResources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "accessedResources_v2", n => { AccessedResourcesV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceAccessDetail>(global::Microsoft.Graph.Beta.Models.ResourceAccessDetail.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "agents", n => { Agents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiAgentInfo>(global::Microsoft.Graph.Beta.Models.AiAgentInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parentMessageId", n => { ParentMessageId = n.GetStringValue(); } },
                 { "plugins", n => { Plugins = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiInteractionPlugin>(global::Microsoft.Graph.Beta.Models.AiInteractionPlugin.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -99,6 +133,8 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("accessedResources", AccessedResources);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceAccessDetail>("accessedResources_v2", AccessedResourcesV2);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiAgentInfo>("agents", Agents);
             writer.WriteStringValue("parentMessageId", ParentMessageId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiInteractionPlugin>("plugins", Plugins);
         }

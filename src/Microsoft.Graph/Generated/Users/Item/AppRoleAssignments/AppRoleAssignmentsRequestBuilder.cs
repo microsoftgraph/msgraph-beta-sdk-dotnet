@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignments
         {
         }
         /// <summary>
-        /// Retrieve the list of appRoleAssignments that a user has been granted. This operation also returns app role assignments granted to groups that the user is a direct member of.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-beta" />
+        /// Retrieve the list of appRoleAssignments granted to an agentUser.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-approleassignments?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AppRoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AppRoleAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.AppRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to assign an app role to a user, creating an appRoleAssignment object. To grant an app role assignment to a user, you need three identifiers:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-beta" />
+        /// Grant an app role assignment to an agentUser.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-post-approleassignments?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AppRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>(requestInfo, global::Microsoft.Graph.Beta.Models.AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of appRoleAssignments that a user has been granted. This operation also returns app role assignments granted to groups that the user is a direct member of.
+        /// Retrieve the list of appRoleAssignments granted to an agentUser.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignments
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to assign an app role to a user, creating an appRoleAssignment object. To grant an app role assignment to a user, you need three identifiers:
+        /// Grant an app role assignment to an agentUser.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignments
             return new global::Microsoft.Graph.Beta.Users.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of appRoleAssignments that a user has been granted. This operation also returns app role assignments granted to groups that the user is a direct member of.
+        /// Retrieve the list of appRoleAssignments granted to an agentUser.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AppRoleAssignmentsRequestBuilderGetQueryParameters 

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Sensors
         {
         }
         /// <summary>
-        /// Get sensors from onPremisesPublishingProfiles
+        /// A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PrivateAccessSensorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Sensors
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>(requestInfo, global::Microsoft.Graph.Beta.Models.PrivateAccessSensor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensors from onPremisesPublishingProfiles
+        /// A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Sensors
             return new global::Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Sensors.SensorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sensors from onPremisesPublishingProfiles
+        /// A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorsRequestBuilderGetQueryParameters 

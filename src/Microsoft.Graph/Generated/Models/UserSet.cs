@@ -62,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.attributeRuleMembers" => new global::Microsoft.Graph.Beta.Models.AttributeRuleMembers(),
                 "#microsoft.graph.connectedOrganizationMembers" => new global::Microsoft.Graph.Beta.Models.ConnectedOrganizationMembers(),
                 "#microsoft.graph.externalSponsors" => new global::Microsoft.Graph.Beta.Models.ExternalSponsors(),
                 "#microsoft.graph.groupMembers" => new global::Microsoft.Graph.Beta.Models.GroupMembers(),

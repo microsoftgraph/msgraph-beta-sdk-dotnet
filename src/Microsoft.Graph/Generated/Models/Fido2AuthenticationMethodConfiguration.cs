@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Fido2AuthenticationMethodConfiguration : global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The non-deletable baseline passkey profile, within the passkey profile collection. It is automatically created when migrating to passkey profiles and initially mirrors the tenant&apos;s legacy global Passkey (FIDO2) authentication methods policy settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultPasskeyProfile
+        {
+            get { return BackingStore?.Get<string?>("defaultPasskeyProfile"); }
+            set { BackingStore?.Set("defaultPasskeyProfile", value); }
+        }
+#nullable restore
+#else
+        public string DefaultPasskeyProfile
+        {
+            get { return BackingStore?.Get<string>("defaultPasskeyProfile"); }
+            set { BackingStore?.Set("defaultPasskeyProfile", value); }
+        }
+#endif
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,19 +44,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
-        /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
+        /// <summary>Determines whether attestation must be enforced for FIDO2 passkey registration.</summary>
         public bool? IsAttestationEnforced
         {
             get { return BackingStore?.Get<bool?>("isAttestationEnforced"); }
             set { BackingStore?.Set("isAttestationEnforced", value); }
         }
-        /// <summary>Determines if users can register new FIDO2 security keys.</summary>
+        /// <summary>Determines if users can register new FIDO2 passkeys.</summary>
         public bool? IsSelfServiceRegistrationAllowed
         {
             get { return BackingStore?.Get<bool?>("isSelfServiceRegistrationAllowed"); }
             set { BackingStore?.Set("isSelfServiceRegistrationAllowed", value); }
         }
-        /// <summary>Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (for example, make and model) of the authenticator.</summary>
+        /// <summary>Controls whether key restrictions are enforced on FIDO2 passkeys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (for example, make and model) of the authenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Fido2KeyRestrictions? KeyRestrictions
@@ -54,6 +70,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Fido2KeyRestrictions>("keyRestrictions"); }
             set { BackingStore?.Set("keyRestrictions", value); }
+        }
+#endif
+        /// <summary>A collection of configuration profiles that control the registration of and authentication with Passkeys (FIDO2).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PasskeyProfile>? PasskeyProfiles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PasskeyProfile>?>("passkeyProfiles"); }
+            set { BackingStore?.Set("passkeyProfiles", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PasskeyProfile> PasskeyProfiles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PasskeyProfile>>("passkeyProfiles"); }
+            set { BackingStore?.Set("passkeyProfiles", value); }
         }
 #endif
         /// <summary>
@@ -81,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "defaultPasskeyProfile", n => { DefaultPasskeyProfile = n.GetStringValue(); } },
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasskeyAuthenticationMethodTarget>(global::Microsoft.Graph.Beta.Models.PasskeyAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isAttestationEnforced", n => { IsAttestationEnforced = n.GetBoolValue(); } },
                 { "isSelfServiceRegistrationAllowed", n => { IsSelfServiceRegistrationAllowed = n.GetBoolValue(); } },
                 { "keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Fido2KeyRestrictions>(global::Microsoft.Graph.Beta.Models.Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
+                { "passkeyProfiles", n => { PasskeyProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasskeyProfile>(global::Microsoft.Graph.Beta.Models.PasskeyProfile.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -95,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("defaultPasskeyProfile", DefaultPasskeyProfile);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasskeyAuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isAttestationEnforced", IsAttestationEnforced);
             writer.WriteBoolValue("isSelfServiceRegistrationAllowed", IsSelfServiceRegistrationAllowed);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Fido2KeyRestrictions>("keyRestrictions", KeyRestrictions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasskeyProfile>("passkeyProfiles", PasskeyProfiles);
         }
     }
 }

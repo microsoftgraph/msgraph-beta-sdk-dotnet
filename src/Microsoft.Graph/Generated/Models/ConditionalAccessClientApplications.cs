@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeServicePrincipals", value); }
         }
 #endif
-        /// <summary>Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.</summary>
+        /// <summary>Service principal IDs included in the policy scope or ServicePrincipalsInMyTenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IncludeServicePrincipals

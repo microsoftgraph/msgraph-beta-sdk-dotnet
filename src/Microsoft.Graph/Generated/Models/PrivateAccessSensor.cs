@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PrivateAccessSensor : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The externalIp property</summary>
+        /// <summary>External IP of sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalIp
@@ -28,19 +28,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("externalIp", value); }
         }
 #endif
-        /// <summary>The isAuditMode property</summary>
+        /// <summary>Not Implementated.</summary>
         public bool? IsAuditMode
         {
             get { return BackingStore?.Get<bool?>("isAuditMode"); }
             set { BackingStore?.Set("isAuditMode", value); }
         }
-        /// <summary>The isBreakglassEnabled property</summary>
+        /// <summary>Not Implemented.</summary>
         public bool? IsBreakglassEnabled
         {
             get { return BackingStore?.Get<bool?>("isBreakglassEnabled"); }
             set { BackingStore?.Set("isBreakglassEnabled", value); }
         }
-        /// <summary>The machineName property</summary>
+        /// <summary>Machine name of sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MachineName
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SensorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>Version of sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version

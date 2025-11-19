@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
         }
 #endif
-        /// <summary>The sensorCandidates property</summary>
+        /// <summary>Represents Microsoft Defender for Identity sensors that are ready to be activated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>? SensorCandidates

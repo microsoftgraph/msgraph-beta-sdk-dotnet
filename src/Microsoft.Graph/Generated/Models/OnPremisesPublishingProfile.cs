@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publishedResources", value); }
         }
 #endif
-        /// <summary>The sensors property</summary>
+        /// <summary>A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>? Sensors

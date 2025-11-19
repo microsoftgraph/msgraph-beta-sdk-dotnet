@@ -4,8 +4,13 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Places.Item.CheckIns;
 using Microsoft.Graph.Beta.Places.Item.Descendants;
+using Microsoft.Graph.Beta.Places.Item.GraphBuilding;
+using Microsoft.Graph.Beta.Places.Item.GraphDesk;
+using Microsoft.Graph.Beta.Places.Item.GraphFloor;
 using Microsoft.Graph.Beta.Places.Item.GraphRoom;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList;
+using Microsoft.Graph.Beta.Places.Item.GraphSection;
+using Microsoft.Graph.Beta.Places.Item.GraphWorkspace;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -32,6 +37,21 @@ namespace Microsoft.Graph.Beta.Places.Item
         {
             get => new global::Microsoft.Graph.Beta.Places.Item.Descendants.DescendantsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Casts the previous resource to building.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.GraphBuildingRequestBuilder GraphBuilding
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.GraphBuildingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to desk.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphDesk.GraphDeskRequestBuilder GraphDesk
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphDesk.GraphDeskRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to floor.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphFloor.GraphFloorRequestBuilder GraphFloor
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphFloor.GraphFloorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to room.</summary>
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoom.GraphRoomRequestBuilder GraphRoom
         {
@@ -41,6 +61,16 @@ namespace Microsoft.Graph.Beta.Places.Item
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder GraphRoomList
         {
             get => new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to section.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphSection.GraphSectionRequestBuilder GraphSection
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphSection.GraphSectionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to workspace.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphWorkspace.GraphWorkspaceRequestBuilder GraphWorkspace
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphWorkspace.GraphWorkspaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Places.Item.PlaceItemRequestBuilder"/> and sets the default values.

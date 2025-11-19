@@ -82,6 +82,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("model", value); }
         }
 #endif
+        /// <summary>The type of passkey allowed in the passkey profile. The possible values are: deviceBound, synced, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.PasskeyType? PasskeyType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PasskeyType?>("passkeyType"); }
+            set { BackingStore?.Set("passkeyType", value); }
+        }
         /// <summary>Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn&apos;t returned on read operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "attestationLevel", n => { AttestationLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AttestationLevel>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
+                { "passkeyType", n => { PasskeyType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PasskeyType>(); } },
                 { "publicKeyCredential", n => { PublicKeyCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WebauthnPublicKeyCredential>(global::Microsoft.Graph.Beta.Models.WebauthnPublicKeyCredential.CreateFromDiscriminatorValue); } },
             };
         }
@@ -144,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AttestationLevel>("attestationLevel", AttestationLevel);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("model", Model);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PasskeyType>("passkeyType", PasskeyType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WebauthnPublicKeyCredential>("publicKeyCredential", PublicKeyCredential);
         }
     }

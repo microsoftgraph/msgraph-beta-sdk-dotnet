@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AccessReviewDataUploadTriggerCallbackData : global::Microsoft.Graph.Beta.Models.CustomExtensionData, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The permissionDescription property</summary>
+        /// <summary>A description for the permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionDescription
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("permissionDescription", value); }
         }
 #endif
-        /// <summary>The permissionId property</summary>
+        /// <summary>The id of the permission assigned to this principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("permissionId", value); }
         }
 #endif
-        /// <summary>The permissionName property</summary>
+        /// <summary>The name of the permission assigned to this principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionName
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("permissionName", value); }
         }
 #endif
-        /// <summary>The permissionType property</summary>
+        /// <summary>The type of the permission assigned to this principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionType

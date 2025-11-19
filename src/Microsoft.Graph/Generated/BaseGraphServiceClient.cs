@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.AccessReviews;
 using Microsoft.Graph.Beta.Activitystatistics;
 using Microsoft.Graph.Beta.Admin;
 using Microsoft.Graph.Beta.AdministrativeUnits;
+using Microsoft.Graph.Beta.Agents;
 using Microsoft.Graph.Beta.AgreementAcceptances;
 using Microsoft.Graph.Beta.Agreements;
 using Microsoft.Graph.Beta.AllowedDataLocations;
@@ -169,6 +170,11 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder AdministrativeUnits
         {
             get => new global::Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collection of agent entities.</summary>
+        public global::Microsoft.Graph.Beta.Agents.AgentsRequestBuilder Agents
+        {
+            get => new global::Microsoft.Graph.Beta.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
         public global::Microsoft.Graph.Beta.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances

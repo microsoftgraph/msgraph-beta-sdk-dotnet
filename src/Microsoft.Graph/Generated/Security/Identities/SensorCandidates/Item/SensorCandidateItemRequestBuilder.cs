@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorCandidates.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensorCandidates from security
+        /// Represents Microsoft Defender for Identity sensors that are ready to be activated.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SensorCandidate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorCandidates.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get sensorCandidates from security
+        /// Represents Microsoft Defender for Identity sensors that are ready to be activated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorCandidates.Item
         {
         }
         /// <summary>
-        /// Get sensorCandidates from security
+        /// Represents Microsoft Defender for Identity sensors that are ready to be activated.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorCandidateItemRequestBuilderGetQueryParameters 

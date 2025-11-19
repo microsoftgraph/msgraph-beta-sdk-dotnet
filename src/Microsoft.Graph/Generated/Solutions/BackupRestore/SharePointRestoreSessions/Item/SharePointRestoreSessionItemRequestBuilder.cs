@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifactsBulkAdditionRequests;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SharePointRestoreSessionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the granularSiteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts.GranularSiteRestoreArtifactsRequestBuilder GranularSiteRestoreArtifacts
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts.GranularSiteRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the siteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder SiteRestoreArtifacts
         {

@@ -176,6 +176,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
+        /// <summary>The expiryDateTime property</summary>
+        public DateTimeOffset? ExpiryDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
+            set { BackingStore?.Set("expiryDateTime", value); }
+        }
         /// <summary>Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.</summary>
         public bool? IsEndToEndEncryptionEnabled
         {
@@ -355,6 +361,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>(global::Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>(global::Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatRestrictions>(global::Microsoft.Graph.Beta.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
                 { "joinInformation", n => { JoinInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
@@ -395,6 +402,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
+            writer.WriteDateTimeOffsetValue("expiryDateTime", ExpiryDateTime);
             writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("joinInformation", JoinInformation);

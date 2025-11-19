@@ -19,6 +19,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The administrationScopeTargets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? AdministrationScopeTargets
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>?>("administrationScopeTargets"); }
+            set { BackingStore?.Set("administrationScopeTargets", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject> AdministrationScopeTargets
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>>("administrationScopeTargets"); }
+            set { BackingStore?.Set("administrationScopeTargets", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The category property</summary>
@@ -195,6 +211,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "administrationScopeTargets", n => { AdministrationScopeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory>(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -216,6 +233,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("administrationScopeTargets", AdministrationScopeTargets);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory>("category", Category);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
