@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
     public partial class Run : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The scope for which users the workflow runs. The possible values are: allUsers, failedUsers, unknownFutureValue.</summary>
+        /// <summary>The scope for which the workflow runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentityGovernance.ActivationScope? ActivatedOnScope

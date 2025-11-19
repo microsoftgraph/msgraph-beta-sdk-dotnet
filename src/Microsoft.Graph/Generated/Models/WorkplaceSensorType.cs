@@ -26,5 +26,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The unknown feature value.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>The Wifi sensor type.</summary>
+        [EnumMember(Value = "wifi")]
+        Wifi,
     }
 }

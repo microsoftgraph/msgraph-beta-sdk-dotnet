@@ -15,6 +15,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Report;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveTenantEncryptionSetting;
@@ -114,6 +115,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder ProvisioningPolicies
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Report.ReportRequestBuilder Report
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Report.ReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder Reports

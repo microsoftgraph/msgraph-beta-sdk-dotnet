@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AccessReviewResourceDataUploadSessionContextData : global::Microsoft.Graph.Beta.Models.CustomExtensionData, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessReviewId property</summary>
+        /// <summary>The access review definition id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessReviewId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessReviewId", value); }
         }
 #endif
-        /// <summary>The accessReviewInstanceId property</summary>
+        /// <summary>The access review instance id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessReviewInstanceId

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentAppId", value); }
         }
 #endif
-        /// <summary>The agentIdentityBlueprintId property</summary>
+        /// <summary>The appId of the agent identity blueprint that defines the configuration for this agent identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentIdentityBlueprintId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentIdentityBlueprintId", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

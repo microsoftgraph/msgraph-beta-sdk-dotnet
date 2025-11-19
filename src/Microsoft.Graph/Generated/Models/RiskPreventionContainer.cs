@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The webApplicationFirewallProviders property</summary>
+        /// <summary>Collection of WAF provider configurations registered in the External ID tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallProvider>? WebApplicationFirewallProviders
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("webApplicationFirewallProviders", value); }
         }
 #endif
-        /// <summary>The webApplicationFirewallVerifications property</summary>
+        /// <summary>Collection of verification operations performed for domains or hosts with WAF providers registered in the External ID tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WebApplicationFirewallVerificationModel>? WebApplicationFirewallVerifications

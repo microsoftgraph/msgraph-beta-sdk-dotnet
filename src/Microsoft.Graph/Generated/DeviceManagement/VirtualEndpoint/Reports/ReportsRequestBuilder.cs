@@ -39,91 +39,109 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
     public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJobs.ExportJobsRequestBuilder ExportJobs
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJobs.ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActionStatusReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetActionStatusReports.GetActionStatusReportsRequestBuilder GetActionStatusReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetActionStatusReports.GetActionStatusReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcPerformanceReport method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportRequestBuilder GetCloudPcPerformanceReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcRecommendationReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcRecommendationReports.GetCloudPcRecommendationReportsRequestBuilder GetCloudPcRecommendationReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcRecommendationReports.GetCloudPcRecommendationReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConnectionQualityReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetConnectionQualityReports.GetConnectionQualityReportsRequestBuilder GetConnectionQualityReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetConnectionQualityReports.GetConnectionQualityReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDailyAggregatedRemoteConnectionReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDailyAggregatedRemoteConnectionReports.GetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDailyAggregatedRemoteConnectionReports.GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFrontlineReport method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFrontlineReport.GetFrontlineReportRequestBuilder GetFrontlineReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFrontlineReport.GetFrontlineReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getInaccessibleCloudPcReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports.GetInaccessibleCloudPcReportsRequestBuilder GetInaccessibleCloudPcReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports.GetInaccessibleCloudPcReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRawRemoteConnectionReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRawRemoteConnectionReports.GetRawRemoteConnectionReportsRequestBuilder GetRawRemoteConnectionReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRawRemoteConnectionReports.GetRawRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemoteConnectionHistoricalReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports.GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports.GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getTotalAggregatedRemoteConnectionReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports.GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports.GetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveBulkActionStatusReport method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder RetrieveBulkActionStatusReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCloudPcRecommendationReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcRecommendationReports.RetrieveCloudPcRecommendationReportsRequestBuilder RetrieveCloudPcRecommendationReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcRecommendationReports.RetrieveCloudPcRecommendationReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCloudPcTenantMetricsReport method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport.RetrieveCloudPcTenantMetricsReportRequestBuilder RetrieveCloudPcTenantMetricsReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport.RetrieveCloudPcTenantMetricsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCloudPcTroubleshootReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports.RetrieveCloudPcTroubleshootReportsRequestBuilder RetrieveCloudPcTroubleshootReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports.RetrieveCloudPcTroubleshootReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveConnectionQualityReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports.RetrieveConnectionQualityReportsRequestBuilder RetrieveConnectionQualityReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports.RetrieveConnectionQualityReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport.RetrieveCrossRegionDisasterRecoveryReportRequestBuilder RetrieveCrossRegionDisasterRecoveryReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport.RetrieveCrossRegionDisasterRecoveryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveFrontlineReports method.</summary>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports.RetrieveFrontlineReportsRequestBuilder RetrieveFrontlineReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports.RetrieveFrontlineReportsRequestBuilder(PathParameters, RequestAdapter);
@@ -150,6 +168,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -167,12 +186,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cloud PC related reports.
+        /// Cloud PC-related reports.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcReports"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcReports?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -194,6 +214,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId.GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder"/></returns>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId.GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionLatencyWithCloudPcId(string cloudPcId)
         {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
@@ -204,6 +225,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId.GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder"/></returns>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId.GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionStatusWithCloudPcId(string cloudPcId)
         {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
@@ -217,6 +239,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcReports?> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -239,6 +262,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -254,10 +278,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
             return requestInfo;
         }
         /// <summary>
-        /// Cloud PC related reports.
+        /// Cloud PC-related reports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -278,6 +303,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -299,6 +325,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder(rawUrl, RequestAdapter);
@@ -312,7 +339,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         {
         }
         /// <summary>
-        /// Cloud PC related reports.
+        /// Cloud PC-related reports.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 

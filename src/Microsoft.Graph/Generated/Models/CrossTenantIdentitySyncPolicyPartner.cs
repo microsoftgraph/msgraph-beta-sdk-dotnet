@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("externalCloudAuthorizedApplicationId", value); }
         }
 #endif
+        /// <summary>The groupSyncInbound property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound? GroupSyncInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound?>("groupSyncInbound"); }
+            set { BackingStore?.Set("groupSyncInbound", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound GroupSyncInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound>("groupSyncInbound"); }
+            set { BackingStore?.Set("groupSyncInbound", value); }
+        }
+#endif
         /// <summary>Tenant identifier for the partner Microsoft Entra organization. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalCloudAuthorizedApplicationId", n => { ExternalCloudAuthorizedApplicationId = n.GetStringValue(); } },
+                { "groupSyncInbound", n => { GroupSyncInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound>(global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound.CreateFromDiscriminatorValue); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound>(global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
             };
@@ -117,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalCloudAuthorizedApplicationId", ExternalCloudAuthorizedApplicationId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound>("groupSyncInbound", GroupSyncInbound);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);
         }

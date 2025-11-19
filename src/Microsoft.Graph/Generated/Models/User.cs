@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("aboutMe", value); }
         }
 #endif
-        /// <summary>true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).</summary>
+        /// <summary>true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).</summary>
         public bool? AccountEnabled
         {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }

@@ -80,5 +80,17 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         AdminConfirmedAccountSafe,
         #pragma warning restore CS1591
+        [EnumMember(Value = "adminConfirmedAgentSafe")]
+        #pragma warning disable CS1591
+        AdminConfirmedAgentSafe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "adminConfirmedAgentCompromised")]
+        #pragma warning disable CS1591
+        AdminConfirmedAgentCompromised,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "adminDismissedRiskForAgent")]
+        #pragma warning disable CS1591
+        AdminDismissedRiskForAgent,
+        #pragma warning restore CS1591
     }
 }

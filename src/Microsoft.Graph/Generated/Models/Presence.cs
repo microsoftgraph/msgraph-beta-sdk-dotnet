@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("statusMessage", value); }
         }
 #endif
+        /// <summary>The workLocation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.UserWorkLocation? WorkLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserWorkLocation?>("workLocation"); }
+            set { BackingStore?.Set("workLocation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.UserWorkLocation WorkLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserWorkLocation>("workLocation"); }
+            set { BackingStore?.Set("workLocation", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -115,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "outOfOfficeSettings", n => { OutOfOfficeSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(global::Microsoft.Graph.Beta.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
                 { "sequenceNumber", n => { SequenceNumber = n.GetStringValue(); } },
                 { "statusMessage", n => { StatusMessage = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PresenceStatusMessage>(global::Microsoft.Graph.Beta.Models.PresenceStatusMessage.CreateFromDiscriminatorValue); } },
+                { "workLocation", n => { WorkLocation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserWorkLocation>(global::Microsoft.Graph.Beta.Models.UserWorkLocation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,6 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("availability", Availability);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PresenceStatusMessage>("statusMessage", StatusMessage);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserWorkLocation>("workLocation", WorkLocation);
         }
     }
 }

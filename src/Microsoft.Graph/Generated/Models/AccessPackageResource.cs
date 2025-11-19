@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("originId", value); }
         }
 #endif
-        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).</summary>
+        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginSystem
@@ -182,22 +182,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
-        }
-#endif
-        /// <summary>The uploadSessions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>? UploadSessions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>?>("uploadSessions"); }
-            set { BackingStore?.Set("uploadSessions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession> UploadSessions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>>("uploadSessions"); }
-            set { BackingStore?.Set("uploadSessions", value); }
         }
 #endif
         /// <summary>A unique resource locator for the resource, such as the URL for signing a user into an application.</summary>
@@ -246,7 +230,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
                 { "resourceType", n => { ResourceType = n.GetStringValue(); } },
-                { "uploadSessions", n => { UploadSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>(global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -270,7 +253,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);
             writer.WriteStringValue("resourceType", ResourceType);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>("uploadSessions", UploadSessions);
             writer.WriteStringValue("url", Url);
         }
     }

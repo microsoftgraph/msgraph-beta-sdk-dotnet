@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SmsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethodConfiguration(),
+                "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.VerifiableCredentialsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.voiceAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodConfiguration(),
                 "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMethodConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration(),

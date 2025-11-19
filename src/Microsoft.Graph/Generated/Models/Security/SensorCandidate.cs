@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The version of the Defender for Identity sensor client.</summary>
+        /// <summary>The version of the Defender for Identity sensor client.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenseClientVersion

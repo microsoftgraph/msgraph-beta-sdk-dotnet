@@ -94,6 +94,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The protectionMode property</summary>
+        public global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode? ProtectionMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode?>("protectionMode"); }
+            set { BackingStore?.Set("protectionMode", value); }
+        }
         /// <summary>The count of artifacts in the protection policy by status. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +170,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "protectionMode", n => { ProtectionMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode>(); } },
                 { "protectionPolicyArtifactCount", n => { ProtectionPolicyArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>(global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount.CreateFromDiscriminatorValue); } },
                 { "retentionSettings", n => { RetentionSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>(global::Microsoft.Graph.Beta.Models.RetentionSetting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus>(); } },
@@ -184,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode>("protectionMode", ProtectionMode);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>("protectionPolicyArtifactCount", ProtectionPolicyArtifactCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>("retentionSettings", RetentionSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus>("status", Status);

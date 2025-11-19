@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>A collection of string URLs representing various domains that are used by this application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Endpoints
+        {
+            get { return BackingStore?.Get<List<string>?>("endpoints"); }
+            set { BackingStore?.Set("endpoints", value); }
+        }
+#nullable restore
+#else
+        public List<string> Endpoints
+        {
+            get { return BackingStore?.Get<List<string>>("endpoints"); }
+            set { BackingStore?.Set("endpoints", value); }
+        }
+#endif
         /// <summary>The home page URL of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +124,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("informationalUrls", value); }
         }
 #endif
+        /// <summary>The date and time when the data for the application was last updated, represented using ISO 8601 format and always in UTC time.</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
         /// <summary>The URL to get the logo for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +160,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
+        }
+#endif
+        /// <summary>General business and operational information about the application provider. Returned only when $select is used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ApplicationRiskFactors? RiskFactors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApplicationRiskFactors?>("riskFactors"); }
+            set { BackingStore?.Set("riskFactors", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ApplicationRiskFactors RiskFactors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApplicationRiskFactors>("riskFactors"); }
+            set { BackingStore?.Set("riskFactors", value); }
+        }
+#endif
+        /// <summary>Represents the Microsoft-generated numerical risk score assessment for the application. Supported $orderby on total (for example, $orderBy=riskScore/total desc). Returned only when $select is used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ApplicationRiskScore? RiskScore
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApplicationRiskScore?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ApplicationRiskScore RiskScore
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApplicationRiskScore>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
 #endif
         /// <summary>The supportedClaimConfiguration property</summary>
@@ -210,10 +264,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "configurationUris", n => { ConfigurationUris = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationUri>(global::Microsoft.Graph.Beta.Models.ConfigurationUri.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "endpoints", n => { Endpoints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
                 { "informationalUrls", n => { InformationalUrls = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrls>(global::Microsoft.Graph.Beta.Models.InformationalUrls.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "logoUrl", n => { LogoUrl = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "riskFactors", n => { RiskFactors = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ApplicationRiskFactors>(global::Microsoft.Graph.Beta.Models.ApplicationRiskFactors.CreateFromDiscriminatorValue); } },
+                { "riskScore", n => { RiskScore = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ApplicationRiskScore>(global::Microsoft.Graph.Beta.Models.ApplicationRiskScore.CreateFromDiscriminatorValue); } },
                 { "supportedClaimConfiguration", n => { SupportedClaimConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SupportedClaimConfiguration>(global::Microsoft.Graph.Beta.Models.SupportedClaimConfiguration.CreateFromDiscriminatorValue); } },
                 { "supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -231,10 +289,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationUri>("configurationUris", ConfigurationUris);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfPrimitiveValues<string>("endpoints", Endpoints);
             writer.WriteStringValue("homePageUrl", HomePageUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrls>("informationalUrls", InformationalUrls);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("logoUrl", LogoUrl);
             writer.WriteStringValue("publisher", Publisher);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ApplicationRiskFactors>("riskFactors", RiskFactors);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ApplicationRiskScore>("riskScore", RiskScore);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SupportedClaimConfiguration>("supportedClaimConfiguration", SupportedClaimConfiguration);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedProvisioningTypes", SupportedProvisioningTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSingleSignOnModes", SupportedSingleSignOnModes);
