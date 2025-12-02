@@ -140,6 +140,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authorizationPolicy", value); }
         }
 #endif
+        /// <summary>The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.B2bManagementPolicy>? B2bManagementPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.B2bManagementPolicy>?>("b2bManagementPolicies"); }
+            set { BackingStore?.Set("b2bManagementPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.B2bManagementPolicy> B2bManagementPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.B2bManagementPolicy>>("b2bManagementPolicies"); }
+            set { BackingStore?.Set("b2bManagementPolicies", value); }
+        }
+#endif
         /// <summary>The Azure AD B2C policies that define how end users register via local accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -380,6 +396,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobileDeviceManagementPolicies", value); }
         }
 #endif
+        /// <summary>The policy that controls how authentication requests from on-premises environments are managed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy>? OnPremAuthenticationPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy>?>("onPremAuthenticationPolicies"); }
+            set { BackingStore?.Set("onPremAuthenticationPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy> OnPremAuthenticationPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy>>("onPremAuthenticationPolicies"); }
+            set { BackingStore?.Set("onPremAuthenticationPolicies", value); }
+        }
+#endif
         /// <summary>The policy that specifies the conditions under which consent can be granted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -518,6 +550,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "authenticationMethodsPolicy", n => { AuthenticationMethodsPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy>(global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy.CreateFromDiscriminatorValue); } },
                 { "authenticationStrengthPolicies", n => { AuthenticationStrengthPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>(global::Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "authorizationPolicy", n => { AuthorizationPolicy = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthorizationPolicy>(global::Microsoft.Graph.Beta.Models.AuthorizationPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "b2bManagementPolicies", n => { B2bManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.B2bManagementPolicy>(global::Microsoft.Graph.Beta.Models.B2bManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "b2cAuthenticationMethodsPolicy", n => { B2cAuthenticationMethodsPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(global::Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue); } },
                 { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>(global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -533,6 +566,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "identitySecurityDefaultsEnforcementPolicy", n => { IdentitySecurityDefaultsEnforcementPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue); } },
                 { "mobileAppManagementPolicies", n => { MobileAppManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>(global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileDeviceManagementPolicies", n => { MobileDeviceManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>(global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "onPremAuthenticationPolicies", n => { OnPremAuthenticationPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy>(global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissionGrantPolicies", n => { PermissionGrantPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy>(global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissionGrantPreApprovalPolicies", n => { PermissionGrantPreApprovalPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>(global::Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleManagementPolicies", n => { RoleManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>(global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -558,6 +592,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy>("authenticationMethodsPolicy", AuthenticationMethodsPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>("authenticationStrengthPolicies", AuthenticationStrengthPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthorizationPolicy>("authorizationPolicy", AuthorizationPolicy);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.B2bManagementPolicy>("b2bManagementPolicies", B2bManagementPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>("b2cAuthenticationMethodsPolicy", B2cAuthenticationMethodsPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("conditionalAccessPolicies", ConditionalAccessPolicies);
@@ -573,6 +608,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>("identitySecurityDefaultsEnforcementPolicy", IdentitySecurityDefaultsEnforcementPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppManagementPolicy>("mobileAppManagementPolicies", MobileAppManagementPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>("mobileDeviceManagementPolicies", MobileDeviceManagementPolicies);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy>("onPremAuthenticationPolicies", OnPremAuthenticationPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy>("permissionGrantPolicies", PermissionGrantPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>("permissionGrantPreApprovalPolicies", PermissionGrantPreApprovalPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>("roleManagementPolicies", RoleManagementPolicies);

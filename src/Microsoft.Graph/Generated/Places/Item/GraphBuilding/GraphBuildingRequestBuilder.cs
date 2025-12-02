@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Places.Item.GraphBuilding.CheckIns;
+using Microsoft.Graph.Beta.Places.Item.GraphBuilding.Children;
 using Microsoft.Graph.Beta.Places.Item.GraphBuilding.Map;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphBuilding
         public global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.CheckIns.CheckInsRequestBuilder CheckIns
         {
             get => new global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.Children.ChildrenRequestBuilder Children
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.Children.ChildrenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the map property of the microsoft.graph.building entity.</summary>
         public global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.Map.MapRequestBuilder Map

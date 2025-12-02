@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Beta.Models
     public partial class MobileDeviceManagementPolicy : global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Controls the option if users in an automatic enrollment configuration on Microsoft Entra registered devices are prompted to MDM enroll their device in the Entra account registration flow.</summary>
+        public bool? IsMdmEnrollmentDuringRegistrationDisabled
+        {
+            get { return BackingStore?.Get<bool?>("isMdmEnrollmentDuringRegistrationDisabled"); }
+            set { BackingStore?.Set("isMdmEnrollmentDuringRegistrationDisabled", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "isMdmEnrollmentDuringRegistrationDisabled", n => { IsMdmEnrollmentDuringRegistrationDisabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -40,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteBoolValue("isMdmEnrollmentDuringRegistrationDisabled", IsMdmEnrollmentDuringRegistrationDisabled);
         }
     }
 }

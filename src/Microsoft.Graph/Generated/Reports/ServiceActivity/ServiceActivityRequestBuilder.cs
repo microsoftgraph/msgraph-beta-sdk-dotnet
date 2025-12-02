@@ -24,6 +24,19 @@ using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAcces
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
@@ -367,6 +380,162 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
             if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
             if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyAllowedApps method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyAllowedUsers method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyBlockedApps method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyBlockedUsers method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppsAllowedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppsBlockedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppUsersAllowedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppUsersBlockedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesAlive method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesBGPConnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
         /// Provides operations to call the getMetricsForSamlSignInSuccess method.

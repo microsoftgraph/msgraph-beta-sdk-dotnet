@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.ClearAutomaticLocation
         {
         }
         /// <summary>
-        /// Invoke action clearAutomaticLocation
+        /// Clear the automatic work location signal for a user. After clearing, the user’s final aggregated work location is recomputed according to the precedence rules: Use this operation when you need to remove the current autodetected signal without affecting manual or scheduled layers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-clearautomaticlocation?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.ClearAutomaticLocation
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action clearAutomaticLocation
+        /// Clear the automatic work location signal for a user. After clearing, the user’s final aggregated work location is recomputed according to the precedence rules: Use this operation when you need to remove the current autodetected signal without affecting manual or scheduled layers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

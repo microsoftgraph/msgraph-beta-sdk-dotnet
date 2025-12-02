@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("floorNumber"); }
             set { BackingStore?.Set("floorNumber", value); }
         }
-        /// <summary>The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.offlinePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.</summary>
+        /// <summary>The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlaceMode? Mode
@@ -118,6 +118,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
+        }
+#endif
+        /// <summary>An alternate immutable unique identifier of the workspace. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlaceId
+        {
+            get { return BackingStore?.Get<string?>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#nullable restore
+#else
+        public string PlaceId
+        {
+            get { return BackingStore?.Get<string>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
         }
 #endif
         /// <summary>
@@ -153,6 +169,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>(global::Microsoft.Graph.Beta.Models.PlaceMode.CreateFromDiscriminatorValue); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
+                { "placeId", n => { PlaceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -171,6 +188,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("floorNumber", FloorNumber);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>("mode", Mode);
             writer.WriteStringValue("nickname", Nickname);
+            writer.WriteStringValue("placeId", PlaceId);
         }
     }
 }

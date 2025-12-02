@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceLinks", value); }
         }
 #endif
+        /// <summary>The wifiState property</summary>
+        public global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement? WifiState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement?>("wifiState"); }
+            set { BackingStore?.Set("wifiState", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Building"/> and sets the default values.
         /// </summary>
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "hasWiFi", n => { HasWiFi = n.GetBoolValue(); } },
                 { "map", n => { Map = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.BuildingMap>(global::Microsoft.Graph.Beta.Models.BuildingMap.CreateFromDiscriminatorValue); } },
                 { "resourceLinks", n => { ResourceLinks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceLink>(global::Microsoft.Graph.Beta.Models.ResourceLink.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "wifiState", n => { WifiState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement>(); } },
             };
         }
         /// <summary>
@@ -91,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("hasWiFi", HasWiFi);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.BuildingMap>("map", Map);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceLink>("resourceLinks", ResourceLinks);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement>("wifiState", WifiState);
         }
     }
 }

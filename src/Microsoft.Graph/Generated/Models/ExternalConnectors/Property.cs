@@ -37,7 +37,23 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.</summary>
+        /// <summary>Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description
+        {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#nullable restore
+#else
+        public string Description
+        {
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#endif
+        /// <summary>Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for nonsearchable properties of type string or stringCollection. Optional.</summary>
         public bool? IsExactMatchRequired
         {
             get { return BackingStore?.Get<bool?>("isExactMatchRequired"); }
@@ -61,13 +77,13 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             get { return BackingStore?.Get<bool?>("isRetrievable"); }
             set { BackingStore?.Set("isRetrievable", value); }
         }
-        /// <summary>Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren&apos;t added to the search index. Optional.</summary>
+        /// <summary>Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Nonsearchable properties aren&apos;t added to the search index. Optional.</summary>
         public bool? IsSearchable
         {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
-        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.</summary>
+        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ExternalConnectors.Label?>? Labels
@@ -164,6 +180,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "isExactMatchRequired", n => { IsExactMatchRequired = n.GetBoolValue(); } },
                 { "isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
                 { "isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
@@ -184,6 +201,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
+            writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isExactMatchRequired", IsExactMatchRequired);
             writer.WriteBoolValue("isQueryable", IsQueryable);
             writer.WriteBoolValue("isRefinable", IsRefinable);

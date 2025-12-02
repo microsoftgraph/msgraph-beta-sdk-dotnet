@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("statusMessage", value); }
         }
 #endif
-        /// <summary>The workLocation property</summary>
+        /// <summary>Represents the user’s aggregated work location state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.UserWorkLocation? WorkLocation

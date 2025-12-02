@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProcessConversationMetadata : global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions).</summary>
+        /// <summary>List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions). The accessedResources property is deprecated and stopped returning data on August 20, 2025. Going forward, use the accessedResources_v2 property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AccessedResources
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessedResources", value); }
         }
 #endif
-        /// <summary>The accessedResources_v2 property</summary>
+        /// <summary>Indicates the details about resources accessed by AI agents, including identifiers, access type, and status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ResourceAccessDetail>? AccessedResourcesV2
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessedResources_v2", value); }
         }
 #endif
-        /// <summary>The agents property</summary>
+        /// <summary>Indicates the information about an AI agent that participated in the preparation of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AiAgentInfo>? Agents

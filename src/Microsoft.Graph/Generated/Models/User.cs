@@ -952,6 +952,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identities", value); }
         }
 #endif
+        /// <summary>The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityParentId
+        {
+            get { return BackingStore?.Get<string?>("identityParentId"); }
+            set { BackingStore?.Set("identityParentId", value); }
+        }
+#nullable restore
+#else
+        public string IdentityParentId
+        {
+            get { return BackingStore?.Get<string>("identityParentId"); }
+            set { BackingStore?.Set("identityParentId", value); }
+        }
+#endif
         /// <summary>The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2445,7 +2461,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.User CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.User();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentUser" => new global::Microsoft.Graph.Beta.Models.AgentUser(),
+                _ => new global::Microsoft.Graph.Beta.Models.User(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -2518,6 +2539,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
                 { "hireDate", n => { HireDate = n.GetDateTimeOffsetValue(); } },
                 { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>(global::Microsoft.Graph.Beta.Models.ObjectIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "identityParentId", n => { IdentityParentId = n.GetStringValue(); } },
                 { "imAddresses", n => { ImAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "inferenceClassification", n => { InferenceClassification = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>(global::Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue); } },
                 { "infoCatalogs", n => { InfoCatalogs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -2689,6 +2711,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("givenName", GivenName);
             writer.WriteDateTimeOffsetValue("hireDate", HireDate);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>("identities", Identities);
+            writer.WriteStringValue("identityParentId", IdentityParentId);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>("inferenceClassification", InferenceClassification);
             writer.WriteCollectionOfPrimitiveValues<string>("infoCatalogs", InfoCatalogs);

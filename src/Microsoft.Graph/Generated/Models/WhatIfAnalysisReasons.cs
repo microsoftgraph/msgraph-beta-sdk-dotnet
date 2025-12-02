@@ -93,5 +93,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue = 1048576,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agentIdRisk")]
+        #pragma warning disable CS1591
+        AgentIdRisk = 2097152,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentIdentities")]
+        #pragma warning disable CS1591
+        AgentIdentities = 4194304,
+        #pragma warning restore CS1591
     }
 }

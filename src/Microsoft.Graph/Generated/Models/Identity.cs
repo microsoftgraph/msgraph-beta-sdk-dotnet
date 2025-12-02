@@ -100,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.communicationsPhoneIdentity" => new global::Microsoft.Graph.Beta.Models.CommunicationsPhoneIdentity(),
                 "#microsoft.graph.communicationsUserIdentity" => new global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity(),
                 "#microsoft.graph.emailIdentity" => new global::Microsoft.Graph.Beta.Models.EmailIdentity(),
+                "#microsoft.graph.groupIdentity" => new global::Microsoft.Graph.Beta.Models.GroupIdentity(),
                 "#microsoft.graph.initiator" => new global::Microsoft.Graph.Beta.Models.Initiator(),
                 "#microsoft.graph.programResource" => new global::Microsoft.Graph.Beta.Models.ProgramResource(),
                 "#microsoft.graph.provisionedIdentity" => new global::Microsoft.Graph.Beta.Models.ProvisionedIdentity(),

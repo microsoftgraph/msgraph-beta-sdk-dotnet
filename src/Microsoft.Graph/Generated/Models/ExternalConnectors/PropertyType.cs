@@ -48,5 +48,9 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "principal")]
+        #pragma warning disable CS1591
+        Principal,
+        #pragma warning restore CS1591
     }
 }

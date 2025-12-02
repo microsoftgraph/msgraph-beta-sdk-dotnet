@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RiskyAgentIdentityBlueprintPrincipal : global::Microsoft.Graph.Beta.Models.RiskyAgent, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The agentIdentityBlueprintPrincipal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal? AgentIdentityBlueprintPrincipal
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal?>("agentIdentityBlueprintPrincipal"); }
+            set { BackingStore?.Set("agentIdentityBlueprintPrincipal", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal AgentIdentityBlueprintPrincipal
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal>("agentIdentityBlueprintPrincipal"); }
+            set { BackingStore?.Set("agentIdentityBlueprintPrincipal", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "agentIdentityBlueprintPrincipal", n => { AgentIdentityBlueprintPrincipal = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal>(global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -40,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal>("agentIdentityBlueprintPrincipal", AgentIdentityBlueprintPrincipal);
         }
     }
 }

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitions;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder HistoryDefinitions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the instances property of the microsoft.graph.accessReviewSet entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.InstancesRequestBuilder Instances
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policy property of the microsoft.graph.accessReviewSet entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy.PolicyRequestBuilder Policy

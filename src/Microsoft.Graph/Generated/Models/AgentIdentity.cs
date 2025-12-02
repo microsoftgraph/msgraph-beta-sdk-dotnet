@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AgentIdentity : global::Microsoft.Graph.Beta.Models.ServicePrincipal, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The agentAppId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AgentAppId
-        {
-            get { return BackingStore?.Get<string?>("agentAppId"); }
-            set { BackingStore?.Set("agentAppId", value); }
-        }
-#nullable restore
-#else
-        public string AgentAppId
-        {
-            get { return BackingStore?.Get<string>("agentAppId"); }
-            set { BackingStore?.Set("agentAppId", value); }
-        }
-#endif
         /// <summary>The appId of the agent identity blueprint that defines the configuration for this agent identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +34,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The sponsors for this agent identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? Sponsors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>?>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject> Sponsors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AgentIdentity"/> and sets the default values.
         /// </summary>
@@ -75,9 +75,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "agentAppId", n => { AgentAppId = n.GetStringValue(); } },
                 { "agentIdentityBlueprintId", n => { AgentIdentityBlueprintId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("agentAppId", AgentAppId);
             writer.WriteStringValue("agentIdentityBlueprintId", AgentIdentityBlueprintId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("sponsors", Sponsors);
         }
     }
 }

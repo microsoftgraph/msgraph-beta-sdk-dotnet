@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("localizations", value); }
         }
 #endif
+        /// <summary>Collection of branding themes for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingTheme>? Themes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingTheme>?>("themes"); }
+            set { BackingStore?.Set("themes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingTheme> Themes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingTheme>>("themes"); }
+            set { BackingStore?.Set("themes", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.OrganizationalBranding"/> and sets the default values.
         /// </summary>
@@ -54,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingLocalization>(global::Microsoft.Graph.Beta.Models.OrganizationalBrandingLocalization.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "themes", n => { Themes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingTheme>(global::Microsoft.Graph.Beta.Models.OrganizationalBrandingTheme.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -65,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingLocalization>("localizations", Localizations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OrganizationalBrandingTheme>("themes", Themes);
         }
     }
 }

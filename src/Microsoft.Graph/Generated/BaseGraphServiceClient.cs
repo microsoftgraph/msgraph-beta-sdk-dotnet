@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.AccessReviews;
 using Microsoft.Graph.Beta.Activitystatistics;
 using Microsoft.Graph.Beta.Admin;
 using Microsoft.Graph.Beta.AdministrativeUnits;
+using Microsoft.Graph.Beta.AgentRegistry;
 using Microsoft.Graph.Beta.Agents;
 using Microsoft.Graph.Beta.AgreementAcceptances;
 using Microsoft.Graph.Beta.Agreements;
@@ -83,7 +84,6 @@ using Microsoft.Graph.Beta.Organization;
 using Microsoft.Graph.Beta.PayloadResponse;
 using Microsoft.Graph.Beta.PermissionGrants;
 using Microsoft.Graph.Beta.Places;
-using Microsoft.Graph.Beta.PlacesWithPlaceId;
 using Microsoft.Graph.Beta.Planner;
 using Microsoft.Graph.Beta.Policies;
 using Microsoft.Graph.Beta.Print;
@@ -170,6 +170,11 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder AdministrativeUnits
         {
             get => new global::Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the agentRegistry singleton.</summary>
+        public global::Microsoft.Graph.Beta.AgentRegistry.AgentRegistryRequestBuilder AgentRegistry
+        {
+            get => new global::Microsoft.Graph.Beta.AgentRegistry.AgentRegistryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of agent entities.</summary>
         public global::Microsoft.Graph.Beta.Agents.AgentsRequestBuilder Agents
@@ -811,16 +816,6 @@ namespace Microsoft.Graph.Beta
         {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
             return new global::Microsoft.Graph.Beta.GroupsWithUniqueName.GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
-        }
-        /// <summary>
-        /// Provides operations to manage the collection of place entities.
-        /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder"/></returns>
-        /// <param name="placeId">Alternate key of place</param>
-        public global::Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder PlacesWithPlaceId(string placeId)
-        {
-            if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
-            return new global::Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
         }
         /// <summary>
         /// Provides operations to manage the collection of servicePrincipal entities.

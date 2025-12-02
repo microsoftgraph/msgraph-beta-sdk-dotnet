@@ -85,7 +85,12 @@ namespace Microsoft.Graph.Beta.Models
         public static global::Microsoft.Graph.Beta.Models.TimeSlot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.TimeSlot();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.timeSlotAvailability" => new global::Microsoft.Graph.Beta.Models.TimeSlotAvailability(),
+                _ => new global::Microsoft.Graph.Beta.Models.TimeSlot(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

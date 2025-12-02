@@ -12,10 +12,6 @@ namespace Microsoft.Graph.Beta.Models.Agentic
         #pragma warning disable CS1591
         NotAgentic,
         #pragma warning restore CS1591
-        [EnumMember(Value = "agenticAppBuilder")]
-        #pragma warning disable CS1591
-        AgenticAppBuilder,
-        #pragma warning restore CS1591
         [EnumMember(Value = "agenticApp")]
         #pragma warning disable CS1591
         AgenticApp,
@@ -23,6 +19,14 @@ namespace Microsoft.Graph.Beta.Models.Agentic
         [EnumMember(Value = "agenticAppInstance")]
         #pragma warning disable CS1591
         AgenticAppInstance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentIdentityBlueprintPrincipal")]
+        #pragma warning disable CS1591
+        AgentIdentityBlueprintPrincipal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentIDuser")]
+        #pragma warning disable CS1591
+        AgentIDuser,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591

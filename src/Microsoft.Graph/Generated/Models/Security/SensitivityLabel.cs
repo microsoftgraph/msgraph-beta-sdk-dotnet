@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Indicates whether the label has protection actions configured.</summary>
+        /// <summary>Indicates whether the label has protection actions (such as encryption or do not forward) configured.</summary>
         public bool? HasProtection
         {
             get { return BackingStore?.Get<bool?>("hasProtection"); }

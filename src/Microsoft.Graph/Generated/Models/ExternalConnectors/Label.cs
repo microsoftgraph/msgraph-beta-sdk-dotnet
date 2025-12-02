@@ -60,5 +60,73 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         #pragma warning disable CS1591
         IconUrl,
         #pragma warning restore CS1591
+        [EnumMember(Value = "assignedToPeople")]
+        #pragma warning disable CS1591
+        AssignedToPeople,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "closedBy")]
+        #pragma warning disable CS1591
+        ClosedBy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "closedDate")]
+        #pragma warning disable CS1591
+        ClosedDate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "priority")]
+        #pragma warning disable CS1591
+        Priority,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sprintName")]
+        #pragma warning disable CS1591
+        SprintName,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tags")]
+        #pragma warning disable CS1591
+        Tags,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "severity")]
+        #pragma warning disable CS1591
+        Severity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "state")]
+        #pragma warning disable CS1591
+        State,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dueDate")]
+        #pragma warning disable CS1591
+        DueDate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemParentId")]
+        #pragma warning disable CS1591
+        ItemParentId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemPath")]
+        #pragma warning disable CS1591
+        ItemPath,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemType")]
+        #pragma warning disable CS1591
+        ItemType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "numberOfReactions")]
+        #pragma warning disable CS1591
+        NumberOfReactions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "parentUrl")]
+        #pragma warning disable CS1591
+        ParentUrl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "priorityNormalized")]
+        #pragma warning disable CS1591
+        PriorityNormalized,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "reportedBy")]
+        #pragma warning disable CS1591
+        ReportedBy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "secondaryId")]
+        #pragma warning disable CS1591
+        SecondaryId,
+        #pragma warning restore CS1591
     }
 }

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("branches", value); }
         }
 #endif
+        /// <summary>The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork>? RemoteNetworks
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork>?>("remoteNetworks"); }
+            set { BackingStore?.Set("remoteNetworks", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork> RemoteNetworks
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork>>("remoteNetworks"); }
+            set { BackingStore?.Set("remoteNetworks", value); }
+        }
+#endif
         /// <summary>The URL category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "branches", n => { Branches = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>(global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork>(global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "webCategories", n => { WebCategories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>(global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -75,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>("branches", Branches);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork>("remoteNetworks", RemoteNetworks);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>("webCategories", WebCategories);
         }
     }

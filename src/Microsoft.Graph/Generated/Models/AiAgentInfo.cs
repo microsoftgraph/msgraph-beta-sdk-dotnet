@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AiAgentInfo : global::Microsoft.Graph.Beta.Models.AiInteractionEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The blueprintId property</summary>
+        /// <summary>Identifier of the parent agent blueprint that defines the identity and configuration of the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BlueprintId

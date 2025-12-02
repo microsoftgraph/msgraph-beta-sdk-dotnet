@@ -19,8 +19,40 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>Filter that defines rules based on custom security attribute tags to include/exclude agent identities in the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter? AgentIdServicePrincipalFilter
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter?>("agentIdServicePrincipalFilter"); }
+            set { BackingStore?.Set("agentIdServicePrincipalFilter", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter AgentIdServicePrincipalFilter
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter>("agentIdServicePrincipalFilter"); }
+            set { BackingStore?.Set("agentIdServicePrincipalFilter", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Agent identity object IDs excluded from the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludeAgentIdServicePrincipals
+        {
+            get { return BackingStore?.Get<List<string>?>("excludeAgentIdServicePrincipals"); }
+            set { BackingStore?.Set("excludeAgentIdServicePrincipals", value); }
+        }
+#nullable restore
+#else
+        public List<string> ExcludeAgentIdServicePrincipals
+        {
+            get { return BackingStore?.Get<List<string>>("excludeAgentIdServicePrincipals"); }
+            set { BackingStore?.Set("excludeAgentIdServicePrincipals", value); }
+        }
+#endif
         /// <summary>Service principal IDs excluded from the policy scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,6 +67,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<string>>("excludeServicePrincipals"); }
             set { BackingStore?.Set("excludeServicePrincipals", value); }
+        }
+#endif
+        /// <summary>Agent identity object IDs included in the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IncludeAgentIdServicePrincipals
+        {
+            get { return BackingStore?.Get<List<string>?>("includeAgentIdServicePrincipals"); }
+            set { BackingStore?.Set("includeAgentIdServicePrincipals", value); }
+        }
+#nullable restore
+#else
+        public List<string> IncludeAgentIdServicePrincipals
+        {
+            get { return BackingStore?.Get<List<string>>("includeAgentIdServicePrincipals"); }
+            set { BackingStore?.Set("includeAgentIdServicePrincipals", value); }
         }
 #endif
         /// <summary>Service principal IDs included in the policy scope or ServicePrincipalsInMyTenant.</summary>
@@ -111,7 +159,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "agentIdServicePrincipalFilter", n => { AgentIdServicePrincipalFilter = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter>(global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                { "excludeAgentIdServicePrincipals", n => { ExcludeAgentIdServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excludeServicePrincipals", n => { ExcludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "includeAgentIdServicePrincipals", n => { IncludeAgentIdServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "includeServicePrincipals", n => { IncludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "servicePrincipalFilter", n => { ServicePrincipalFilter = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter>(global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
@@ -124,7 +175,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter>("agentIdServicePrincipalFilter", AgentIdServicePrincipalFilter);
+            writer.WriteCollectionOfPrimitiveValues<string>("excludeAgentIdServicePrincipals", ExcludeAgentIdServicePrincipals);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeServicePrincipals", ExcludeServicePrincipals);
+            writer.WriteCollectionOfPrimitiveValues<string>("includeAgentIdServicePrincipals", IncludeAgentIdServicePrincipals);
             writer.WriteCollectionOfPrimitiveValues<string>("includeServicePrincipals", IncludeServicePrincipals);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessFilter>("servicePrincipalFilter", ServicePrincipalFilter);

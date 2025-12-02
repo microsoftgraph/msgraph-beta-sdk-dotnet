@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.agentSignIn" => new global::Microsoft.Graph.Beta.Models.AgentSignIn(),
                 "#microsoft.graph.servicePrincipalSignIn" => new global::Microsoft.Graph.Beta.Models.ServicePrincipalSignIn(),
                 "#microsoft.graph.userSignIn" => new global::Microsoft.Graph.Beta.Models.UserSignIn(),
                 _ => new global::Microsoft.Graph.Beta.Models.SignInIdentity(),

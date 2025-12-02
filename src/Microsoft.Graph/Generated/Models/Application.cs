@@ -124,6 +124,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("connectorGroup", value); }
         }
 #endif
+        /// <summary>The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#endif
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -745,7 +761,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.Application CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Application();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentityBlueprint" => new global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprint(),
+                _ => new global::Microsoft.Graph.Beta.Models.Application(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -762,6 +783,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "authenticationBehaviors", n => { AuthenticationBehaviors = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationBehaviors>(global::Microsoft.Graph.Beta.Models.AuthenticationBehaviors.CreateFromDiscriminatorValue); } },
                 { "certification", n => { Certification = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Certification>(global::Microsoft.Graph.Beta.Models.Certification.CreateFromDiscriminatorValue); } },
                 { "connectorGroup", n => { ConnectorGroup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConnectorGroup>(global::Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "defaultRedirectUri", n => { DefaultRedirectUri = n.GetStringValue(); } },
@@ -820,6 +842,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationBehaviors>("authenticationBehaviors", AuthenticationBehaviors);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Certification>("certification", Certification);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConnectorGroup>("connectorGroup", ConnectorGroup);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastRestoredDateTime"); }
             set { BackingStore?.Set("lastRestoredDateTime", value); }
         }
-        /// <summary>The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: retention. The default value is automatic.</summary>
+        /// <summary>The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: retention. The default value is automatic.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType? SnapshotType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType?>("snapshotType"); }

@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetAutomaticLocation
         {
         }
         /// <summary>
-        /// Invoke action setAutomaticLocation
+        /// Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn&apos;t clear manual or scheduled signals.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetAutomaticLocation
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action setAutomaticLocation
+        /// Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn&apos;t clear manual or scheduled signals.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
