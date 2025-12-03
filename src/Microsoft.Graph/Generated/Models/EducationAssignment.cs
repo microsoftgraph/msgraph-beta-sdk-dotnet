@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationAddedStudentAction?>("addedStudentAction"); }
             set { BackingStore?.Set("addedStudentAction", value); }
         }
-        /// <summary>Optional field to control the assignment behavior  for adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
+        /// <summary>Optional field to control the assignment behavior  for adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: studentsOnly. The default value is none.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationAddToCalendarOptions? AddToCalendarAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationAddToCalendarOptions?>("addToCalendarAction"); }
@@ -344,7 +344,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rubric", value); }
         }
 #endif
-        /// <summary>Status of the assignment. You can&apos;t PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.</summary>
+        /// <summary>Status of the assignment. You can&apos;t PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: inactive.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationAssignmentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationAssignmentStatus?>("status"); }

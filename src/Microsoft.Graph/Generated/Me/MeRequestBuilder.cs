@@ -41,6 +41,7 @@ using Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData;
 using Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop;
 using Microsoft.Graph.Beta.Me.ExportPersonalData;
 using Microsoft.Graph.Beta.Me.Extensions;
+using Microsoft.Graph.Beta.Me.FindMeetingLocations;
 using Microsoft.Graph.Beta.Me.FindMeetingTimes;
 using Microsoft.Graph.Beta.Me.FindRoomLists;
 using Microsoft.Graph.Beta.Me.FindRooms;
@@ -327,6 +328,11 @@ namespace Microsoft.Graph.Beta.Me
         public global::Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder Extensions
         {
             get => new global::Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the findMeetingLocations method.</summary>
+        public global::Microsoft.Graph.Beta.Me.FindMeetingLocations.FindMeetingLocationsRequestBuilder FindMeetingLocations
+        {
+            get => new global::Microsoft.Graph.Beta.Me.FindMeetingLocations.FindMeetingLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findMeetingTimes method.</summary>
         public global::Microsoft.Graph.Beta.Me.FindMeetingTimes.FindMeetingTimesRequestBuilder FindMeetingTimes

@@ -142,6 +142,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Guid?>("externalGroupId"); }
             set { BackingStore?.Set("externalGroupId", value); }
         }
+        /// <summary>Information barrier of a fileStorageContainer. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.InformationBarrier? InformationBarrier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InformationBarrier?>("informationBarrier"); }
+            set { BackingStore?.Set("informationBarrier", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.InformationBarrier InformationBarrier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InformationBarrier>("informationBarrier"); }
+            set { BackingStore?.Set("informationBarrier", value); }
+        }
+#endif
         /// <summary>The isItemVersioningEnabled property</summary>
         public bool? IsItemVersioningEnabled
         {
@@ -318,6 +334,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "externalGroupId", n => { ExternalGroupId = n.GetGuidValue(); } },
+                { "informationBarrier", n => { InformationBarrier = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>(global::Microsoft.Graph.Beta.Models.InformationBarrier.CreateFromDiscriminatorValue); } },
                 { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
                 { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetIntValue(); } },
                 { "lockState", n => { LockState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>(); } },
@@ -351,6 +368,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteGuidValue("externalGroupId", ExternalGroupId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>("informationBarrier", InformationBarrier);
             writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
             writer.WriteIntValue("itemMajorVersionLimit", ItemMajorVersionLimit);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>("lockState", LockState);

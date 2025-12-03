@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("checkIns", value); }
         }
 #endif
+        /// <summary>The children property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Place>? Children
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Place>?>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Place> Children
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Place>>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#endif
         /// <summary>The name that is associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,22 +146,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("phone", value); }
         }
 #endif
-        /// <summary>An alternate immutable unique identifier of the place. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlaceId
-        {
-            get { return BackingStore?.Get<string?>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
-        }
-#nullable restore
-#else
-        public string PlaceId
-        {
-            get { return BackingStore?.Get<string>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
-        }
-#endif
         /// <summary>Custom tags that are associated with the place for categorization or filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,13 +193,13 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "address", n => { Address = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>(global::Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "checkIns", n => { CheckIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CheckInClaim>(global::Microsoft.Graph.Beta.Models.CheckInClaim.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Place>(global::Microsoft.Graph.Beta.Models.Place.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>(global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "placeId", n => { PlaceId = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -213,13 +213,13 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>("address", Address);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CheckInClaim>("checkIns", CheckIns);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Place>("children", Children);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
             writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteStringValue("placeId", PlaceId);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
         }
     }

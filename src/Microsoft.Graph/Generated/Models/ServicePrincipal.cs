@@ -222,6 +222,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("claimsPolicy", value); }
         }
 #endif
+        /// <summary>The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#endif
         /// <summary>Directory objects created by this service principal. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -925,6 +941,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Beta.Models.AgentIdentity(),
+                "#microsoft.graph.agentIdentityBlueprintPrincipal" => new global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal(),
                 _ => new global::Microsoft.Graph.Beta.Models.ServicePrincipal(),
             };
         }
@@ -951,6 +968,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>(global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "claimsPolicy", n => { ClaimsPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy>(global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy.CreateFromDiscriminatorValue); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue>(global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
                 { "delegatedPermissionClassifications", n => { DelegatedPermissionClassifications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DelegatedPermissionClassification>(global::Microsoft.Graph.Beta.Models.DelegatedPermissionClassification.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1020,6 +1038,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRole>("appRoles", AppRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy>("claimsPolicy", ClaimsPolicy);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DelegatedPermissionClassification>("delegatedPermissionClassifications", DelegatedPermissionClassifications);

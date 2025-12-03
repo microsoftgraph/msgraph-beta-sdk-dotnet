@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Places.Item.CheckIns;
+using Microsoft.Graph.Beta.Places.Item.Children;
 using Microsoft.Graph.Beta.Places.Item.Descendants;
 using Microsoft.Graph.Beta.Places.Item.GraphBuilding;
 using Microsoft.Graph.Beta.Places.Item.GraphDesk;
@@ -31,6 +32,11 @@ namespace Microsoft.Graph.Beta.Places.Item
         public global::Microsoft.Graph.Beta.Places.Item.CheckIns.CheckInsRequestBuilder CheckIns
         {
             get => new global::Microsoft.Graph.Beta.Places.Item.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.Children.ChildrenRequestBuilder Children
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.Children.ChildrenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the descendants method.</summary>
         public global::Microsoft.Graph.Beta.Places.Item.Descendants.DescendantsRequestBuilder Descendants

@@ -72,6 +72,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("deviceLinks", value); }
         }
 #endif
+        /// <summary>Each forwarding profile associated with a branch site is specified. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>? ForwardingProfiles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>?>("forwardingProfiles"); }
+            set { BackingStore?.Set("forwardingProfiles", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile> ForwardingProfiles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>>("forwardingProfiles"); }
+            set { BackingStore?.Set("forwardingProfiles", value); }
+        }
+#endif
         /// <summary>last modified time.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
@@ -139,6 +155,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "connectivityState", n => { ConnectivityState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityState>(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>(global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Region>(); } },
@@ -158,6 +175,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityState>("connectivityState", ConnectivityState);
             writer.WriteStringValue("country", Country);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>("deviceLinks", DeviceLinks);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>("forwardingProfiles", ForwardingProfiles);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Region>("region", Region);

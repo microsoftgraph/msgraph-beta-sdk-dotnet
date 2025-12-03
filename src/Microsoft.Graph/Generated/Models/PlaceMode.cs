@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.assignedPlaceMode" => new global::Microsoft.Graph.Beta.Models.AssignedPlaceMode(),
                 "#microsoft.graph.dropInPlaceMode" => new global::Microsoft.Graph.Beta.Models.DropInPlaceMode(),
-                "#microsoft.graph.offlinePlaceMode" => new global::Microsoft.Graph.Beta.Models.OfflinePlaceMode(),
                 "#microsoft.graph.reservablePlaceMode" => new global::Microsoft.Graph.Beta.Models.ReservablePlaceMode(),
+                "#microsoft.graph.unavailablePlaceMode" => new global::Microsoft.Graph.Beta.Models.UnavailablePlaceMode(),
                 _ => new global::Microsoft.Graph.Beta.Models.PlaceMode(),
             };
         }

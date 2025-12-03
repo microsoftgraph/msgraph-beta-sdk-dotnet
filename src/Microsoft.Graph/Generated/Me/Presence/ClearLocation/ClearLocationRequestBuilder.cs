@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Me.Presence.ClearLocation
         {
         }
         /// <summary>
-        /// Invoke action clearLocation
+        /// Clear the work location signals for a user, including both the manual and automatic layers for the current date.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-clearlocation?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.ClearLocation
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action clearLocation
+        /// Clear the work location signals for a user, including both the manual and automatic layers for the current date.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -11,9 +11,11 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceRequests;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceRoleScopes;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageSuggestions;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackagesWithUniqueName;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects;
@@ -91,10 +93,20 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.AccessPackagesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageSuggestions.AccessPackageSuggestionsRequestBuilder AccessPackageSuggestions
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageSuggestions.AccessPackageSuggestionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests.AssignmentRequestsRequestBuilder AssignmentRequests
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests.AssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages.AvailableAccessPackagesRequestBuilder AvailableAccessPackages
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages.AvailableAccessPackagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.ConnectedOrganizationsRequestBuilder ConnectedOrganizations

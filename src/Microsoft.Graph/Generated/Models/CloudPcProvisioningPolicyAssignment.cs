@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("target", value); }
         }
 #endif
+        /// <summary>The assignment targeted user settings persistence for the provisioning policy. It allows user application data and Windows settings to be saved and applied between sessions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceDetail? UserSettingsPersistenceDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceDetail?>("userSettingsPersistenceDetail"); }
+            set { BackingStore?.Set("userSettingsPersistenceDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceDetail UserSettingsPersistenceDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceDetail>("userSettingsPersistenceDetail"); }
+            set { BackingStore?.Set("userSettingsPersistenceDetail", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "assignedUsers", n => { AssignedUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget>(global::Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "userSettingsPersistenceDetail", n => { UserSettingsPersistenceDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceDetail>(global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceDetail.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.User>("assignedUsers", AssignedUsers);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget>("target", Target);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceDetail>("userSettingsPersistenceDetail", UserSettingsPersistenceDetail);
         }
     }
 }

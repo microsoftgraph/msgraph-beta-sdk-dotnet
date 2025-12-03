@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class BaseSitePage : global::Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: newsLink.</summary>
+        /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: newsLink.</summary>
         public global::Microsoft.Graph.Beta.Models.PageLayoutType? PageLayout
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PageLayoutType?>("pageLayout"); }

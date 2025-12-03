@@ -101,6 +101,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("businessScenarios", value); }
         }
 #endif
+        /// <summary>The migrations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.MigrationsRoot? Migrations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MigrationsRoot?>("migrations"); }
+            set { BackingStore?.Set("migrations", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.MigrationsRoot Migrations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MigrationsRoot>("migrations"); }
+            set { BackingStore?.Set("migrations", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,6 +131,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
+        }
+#endif
+        /// <summary>Container for SharePoint resources that include cross-organization migration operations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SharePointRoot? SharePoint
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointRoot?>("sharePoint"); }
+            set { BackingStore?.Set("sharePoint", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SharePointRoot SharePoint
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointRoot>("sharePoint"); }
+            set { BackingStore?.Set("sharePoint", value); }
         }
 #endif
         /// <summary>A collection of virtual events.</summary>
@@ -164,7 +196,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BookingBusiness>(global::Microsoft.Graph.Beta.Models.BookingBusiness.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BookingCurrency>(global::Microsoft.Graph.Beta.Models.BookingCurrency.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BusinessScenario>(global::Microsoft.Graph.Beta.Models.BusinessScenario.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "migrations", n => { Migrations = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MigrationsRoot>(global::Microsoft.Graph.Beta.Models.MigrationsRoot.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sharePoint", n => { SharePoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SharePointRoot>(global::Microsoft.Graph.Beta.Models.SharePointRoot.CreateFromDiscriminatorValue); } },
                 { "virtualEvents", n => { VirtualEvents = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventsRoot>(global::Microsoft.Graph.Beta.Models.VirtualEventsRoot.CreateFromDiscriminatorValue); } },
             };
         }
@@ -180,7 +214,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BookingBusiness>("bookingBusinesses", BookingBusinesses);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BookingCurrency>("bookingCurrencies", BookingCurrencies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BusinessScenario>("businessScenarios", BusinessScenarios);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MigrationsRoot>("migrations", Migrations);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SharePointRoot>("sharePoint", SharePoint);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventsRoot>("virtualEvents", VirtualEvents);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>Agent identity risk levels included in the policy. Possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.</summary>
+        public global::Microsoft.Graph.Beta.Models.AgentIdRiskLevel? AgentIdRiskLevel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentIdRiskLevel?>("agentIdRiskLevel"); }
+            set { BackingStore?.Set("agentIdRiskLevel", value); }
+        }
         /// <summary>Type of authentication flow. The possible value is: deviceCodeFlow or authenticationTransfer. Default value is none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +169,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "agentIdRiskLevel", n => { AgentIdRiskLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdRiskLevel>(); } },
                 { "authenticationFlow", n => { AuthenticationFlow = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationFlow>(global::Microsoft.Graph.Beta.Models.AuthenticationFlow.CreateFromDiscriminatorValue); } },
                 { "clientAppType", n => { ClientAppType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessClientApp>(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
@@ -183,6 +190,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdRiskLevel>("agentIdRiskLevel", AgentIdRiskLevel);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationFlow>("authenticationFlow", AuthenticationFlow);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessClientApp>("clientAppType", ClientAppType);
             writer.WriteStringValue("country", Country);

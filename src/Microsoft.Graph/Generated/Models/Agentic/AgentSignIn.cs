@@ -19,6 +19,28 @@ namespace Microsoft.Graph.Beta.Models.Agentic
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The subject&apos;s parent object ID. This is either the id of the agentIdentity or agentIdentityBlueprint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgentSubjectParentId
+        {
+            get { return BackingStore?.Get<string?>("agentSubjectParentId"); }
+            set { BackingStore?.Set("agentSubjectParentId", value); }
+        }
+#nullable restore
+#else
+        public string AgentSubjectParentId
+        {
+            get { return BackingStore?.Get<string>("agentSubjectParentId"); }
+            set { BackingStore?.Set("agentSubjectParentId", value); }
+        }
+#endif
+        /// <summary>The agentSubjectType property</summary>
+        public global::Microsoft.Graph.Beta.Models.Agentic.AgentType? AgentSubjectType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Agentic.AgentType?>("agentSubjectType"); }
+            set { BackingStore?.Set("agentSubjectType", value); }
+        }
         /// <summary>The agentType property</summary>
         public global::Microsoft.Graph.Beta.Models.Agentic.AgentType? AgentType
         {
@@ -85,6 +107,8 @@ namespace Microsoft.Graph.Beta.Models.Agentic
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "agentSubjectParentId", n => { AgentSubjectParentId = n.GetStringValue(); } },
+                { "agentSubjectType", n => { AgentSubjectType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Agentic.AgentType>(); } },
                 { "agentType", n => { AgentType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Agentic.AgentType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "parentAppId", n => { ParentAppId = n.GetStringValue(); } },
@@ -97,6 +121,8 @@ namespace Microsoft.Graph.Beta.Models.Agentic
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("agentSubjectParentId", AgentSubjectParentId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Agentic.AgentType>("agentSubjectType", AgentSubjectType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Agentic.AgentType>("agentType", AgentType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("parentAppId", ParentAppId);

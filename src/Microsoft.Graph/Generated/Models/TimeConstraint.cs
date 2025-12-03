@@ -43,6 +43,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The recurrence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.PatternedRecurrence? Recurrence
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PatternedRecurrence?>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.PatternedRecurrence Recurrence
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
+        }
+#endif
         /// <summary>The timeSlots property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "activityDomain", n => { ActivityDomain = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ActivityDomain>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PatternedRecurrence>(global::Microsoft.Graph.Beta.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TimeSlot>(global::Microsoft.Graph.Beta.Models.TimeSlot.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -99,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ActivityDomain>("activityDomain", ActivityDomain);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence", Recurrence);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TimeSlot>("timeSlots", TimeSlots);
             writer.WriteAdditionalData(AdditionalData);
         }

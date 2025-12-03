@@ -76,102 +76,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("permissionType", value); }
         }
 #endif
-        /// <summary>The principalAADId property</summary>
+        /// <summary>The id of the principal who has permissions on the custom data provided resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrincipalAADId
+        public string? PrincipalId
         {
-            get { return BackingStore?.Get<string?>("principalAADId"); }
-            set { BackingStore?.Set("principalAADId", value); }
+            get { return BackingStore?.Get<string?>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
         }
 #nullable restore
 #else
-        public string PrincipalAADId
+        public string PrincipalId
         {
-            get { return BackingStore?.Get<string>("principalAADId"); }
-            set { BackingStore?.Set("principalAADId", value); }
+            get { return BackingStore?.Get<string>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
         }
 #endif
-        /// <summary>The resourceDescription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceDescription
+        /// <summary>The principalType property</summary>
+        public global::Microsoft.Graph.Beta.Models.PrincipalType? PrincipalType
         {
-            get { return BackingStore?.Get<string?>("resourceDescription"); }
-            set { BackingStore?.Set("resourceDescription", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrincipalType?>("principalType"); }
+            set { BackingStore?.Set("principalType", value); }
         }
-#nullable restore
-#else
-        public string ResourceDescription
-        {
-            get { return BackingStore?.Get<string>("resourceDescription"); }
-            set { BackingStore?.Set("resourceDescription", value); }
-        }
-#endif
-        /// <summary>The resourceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceId
-        {
-            get { return BackingStore?.Get<string?>("resourceId"); }
-            set { BackingStore?.Set("resourceId", value); }
-        }
-#nullable restore
-#else
-        public string ResourceId
-        {
-            get { return BackingStore?.Get<string>("resourceId"); }
-            set { BackingStore?.Set("resourceId", value); }
-        }
-#endif
-        /// <summary>The resourceName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceName
-        {
-            get { return BackingStore?.Get<string?>("resourceName"); }
-            set { BackingStore?.Set("resourceName", value); }
-        }
-#nullable restore
-#else
-        public string ResourceName
-        {
-            get { return BackingStore?.Get<string>("resourceName"); }
-            set { BackingStore?.Set("resourceName", value); }
-        }
-#endif
-        /// <summary>The resourceOwners property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ResourceOwners
-        {
-            get { return BackingStore?.Get<List<string>?>("resourceOwners"); }
-            set { BackingStore?.Set("resourceOwners", value); }
-        }
-#nullable restore
-#else
-        public List<string> ResourceOwners
-        {
-            get { return BackingStore?.Get<List<string>>("resourceOwners"); }
-            set { BackingStore?.Set("resourceOwners", value); }
-        }
-#endif
-        /// <summary>The resourceType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceType
-        {
-            get { return BackingStore?.Get<string?>("resourceType"); }
-            set { BackingStore?.Set("resourceType", value); }
-        }
-#nullable restore
-#else
-        public string ResourceType
-        {
-            get { return BackingStore?.Get<string>("resourceType"); }
-            set { BackingStore?.Set("resourceType", value); }
-        }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AccessReviewDataUploadTriggerCallbackData"/> and sets the default values.
         /// </summary>
@@ -201,12 +127,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "permissionId", n => { PermissionId = n.GetStringValue(); } },
                 { "permissionName", n => { PermissionName = n.GetStringValue(); } },
                 { "permissionType", n => { PermissionType = n.GetStringValue(); } },
-                { "principalAADId", n => { PrincipalAADId = n.GetStringValue(); } },
-                { "resourceDescription", n => { ResourceDescription = n.GetStringValue(); } },
-                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "resourceName", n => { ResourceName = n.GetStringValue(); } },
-                { "resourceOwners", n => { ResourceOwners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "principalId", n => { PrincipalId = n.GetStringValue(); } },
+                { "principalType", n => { PrincipalType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrincipalType>(); } },
             };
         }
         /// <summary>
@@ -221,12 +143,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("permissionId", PermissionId);
             writer.WriteStringValue("permissionName", PermissionName);
             writer.WriteStringValue("permissionType", PermissionType);
-            writer.WriteStringValue("principalAADId", PrincipalAADId);
-            writer.WriteStringValue("resourceDescription", ResourceDescription);
-            writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteStringValue("resourceName", ResourceName);
-            writer.WriteCollectionOfPrimitiveValues<string>("resourceOwners", ResourceOwners);
-            writer.WriteStringValue("resourceType", ResourceType);
+            writer.WriteStringValue("principalId", PrincipalId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrincipalType>("principalType", PrincipalType);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue, strictLocation. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: strictLocation.</summary>
+        /// <summary>Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue, strictLocation. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: strictLocation.</summary>
         public global::Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationMode? Mode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationMode?>("mode"); }

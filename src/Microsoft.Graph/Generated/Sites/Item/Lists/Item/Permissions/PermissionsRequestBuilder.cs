@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Permissions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PermissionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.PermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to permissions for sites
+        /// Create a new permission object on a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-post-permissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Permissions
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to permissions for sites
+        /// Create a new permission object on a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

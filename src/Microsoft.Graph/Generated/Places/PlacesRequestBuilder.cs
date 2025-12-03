@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Places.Count;
+using Microsoft.Graph.Beta.Places.GetOperationWithId;
 using Microsoft.Graph.Beta.Places.GraphBuilding;
 using Microsoft.Graph.Beta.Places.GraphDesk;
 using Microsoft.Graph.Beta.Places.GraphFloor;
@@ -11,6 +12,7 @@ using Microsoft.Graph.Beta.Places.GraphRoomList;
 using Microsoft.Graph.Beta.Places.GraphSection;
 using Microsoft.Graph.Beta.Places.GraphWorkspace;
 using Microsoft.Graph.Beta.Places.Item;
+using Microsoft.Graph.Beta.Places.ListOperations;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -67,6 +69,11 @@ namespace Microsoft.Graph.Beta.Places
         {
             get => new global::Microsoft.Graph.Beta.Places.GraphWorkspace.GraphWorkspaceRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the listOperations method.</summary>
+        public global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsRequestBuilder ListOperations
+        {
+            get => new global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of place entities.</summary>
         /// <param name="position">The unique identifier of place</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Places.Item.PlaceItemRequestBuilder"/></returns>
@@ -94,6 +101,16 @@ namespace Microsoft.Graph.Beta.Places
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PlacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/places", rawUrl)
         {
+        }
+        /// <summary>
+        /// Provides operations to call the getOperation method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Places.GetOperationWithId.GetOperationWithIdRequestBuilder"/></returns>
+        /// <param name="id">Usage: id=&apos;{id}&apos;</param>
+        public global::Microsoft.Graph.Beta.Places.GetOperationWithId.GetOperationWithIdRequestBuilder GetOperationWithId(string id)
+        {
+            if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
+            return new global::Microsoft.Graph.Beta.Places.GetOperationWithId.GetOperationWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// Create a new place object. You can also use this method to create the following child object types: building, floor, section, room, workspace, or desk.
