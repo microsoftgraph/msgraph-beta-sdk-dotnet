@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("states", value); }
         }
 #endif
-        /// <summary>Status of the action. Possible values are: NotStarted, Running, Completed, Failed.</summary>
+        /// <summary>Status of the action. The possible values are: NotStarted, Running, Completed, Failed.</summary>
         public global::Microsoft.Graph.Beta.Models.OperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OperationStatus?>("status"); }

@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.UserConfigurations.Item
         {
         }
         /// <summary>
-        /// Get userConfigurations from me
+        /// Read the properties and relationships of a userConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconfiguration-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.UserConfigurations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UserConfiguration>(requestInfo, global::Microsoft.Graph.Beta.Models.UserConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get userConfigurations from me
+        /// Read the properties and relationships of a userConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.UserConfigurations.Item
             return new global::Microsoft.Graph.Beta.Me.MailFolders.Item.UserConfigurations.Item.UserConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get userConfigurations from me
+        /// Read the properties and relationships of a userConfiguration object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserConfigurationItemRequestBuilderGetQueryParameters 

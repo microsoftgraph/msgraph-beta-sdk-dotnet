@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.</summary>
+        /// <summary>Status of the securityAction in this update. The possible values are: NotStarted, Running, Completed, Failed.</summary>
         public global::Microsoft.Graph.Beta.Models.OperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OperationStatus?>("status"); }

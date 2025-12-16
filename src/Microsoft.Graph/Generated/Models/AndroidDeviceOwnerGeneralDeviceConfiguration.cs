@@ -41,13 +41,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("appsAllowInstallFromUnknownSources"); }
             set { BackingStore?.Set("appsAllowInstallFromUnknownSources", value); }
         }
-        /// <summary>Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.</summary>
+        /// <summary>Indicates the value of the app auto update policy. The possible values are: notConfigured, userChoice, never, wiFiOnly, always.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerAppAutoUpdatePolicyType? AppsAutoUpdatePolicy
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerAppAutoUpdatePolicyType?>("appsAutoUpdatePolicy"); }
             set { BackingStore?.Set("appsAutoUpdatePolicy", value); }
         }
-        /// <summary>Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.</summary>
+        /// <summary>Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. The possible values are: deviceDefault, prompt, autoGrant, autoDeny.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDefaultAppPermissionPolicyType? AppsDefaultPermissionPolicy
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDefaultAppPermissionPolicyType?>("appsDefaultPermissionPolicy"); }
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("crossProfilePoliciesAllowCopyPaste"); }
             set { BackingStore?.Set("crossProfilePoliciesAllowCopyPaste", value); }
         }
-        /// <summary>Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.</summary>
+        /// <summary>Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. The possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCrossProfileDataSharing? CrossProfilePoliciesAllowDataSharing
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCrossProfileDataSharing?>("crossProfilePoliciesAllowDataSharing"); }
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("detailedHelpText", value); }
         }
 #endif
-        /// <summary>Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.</summary>
+        /// <summary>Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). The possible values are: notConfigured, disabled, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerLocationMode? DeviceLocationMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerLocationMode?>("deviceLocationMode"); }
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("kioskCustomizationPowerButtonActionsBlocked"); }
             set { BackingStore?.Set("kioskCustomizationPowerButtonActionsBlocked", value); }
         }
-        /// <summary>Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.</summary>
+        /// <summary>Indicates whether system info and notifications are disabled in Kiosk Mode. The possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar? KioskCustomizationStatusBar
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar?>("kioskCustomizationStatusBar"); }
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("kioskCustomizationSystemErrorWarnings"); }
             set { BackingStore?.Set("kioskCustomizationSystemErrorWarnings", value); }
         }
-        /// <summary>Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.</summary>
+        /// <summary>Indicates which navigation features are enabled in Kiosk Mode. The possible values are: notConfigured, navigationEnabled, homeButtonOnly.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationSystemNavigation? KioskCustomizationSystemNavigation
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationSystemNavigation?>("kioskCustomizationSystemNavigation"); }
@@ -331,7 +331,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("kioskModeFlashlightConfigurationEnabled"); }
             set { BackingStore?.Set("kioskModeFlashlightConfigurationEnabled", value); }
         }
-        /// <summary>Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.</summary>
+        /// <summary>Folder icon configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderIcon?>("kioskModeFolderIcon"); }
@@ -349,7 +349,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("kioskModeGridWidth"); }
             set { BackingStore?.Set("kioskModeGridWidth", value); }
         }
-        /// <summary>Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.</summary>
+        /// <summary>Icon size configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, smallest, small, regular, large, largest.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize?>("kioskModeIconSize"); }
@@ -411,7 +411,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds"); }
             set { BackingStore?.Set("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds", value); }
         }
-        /// <summary>Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.</summary>
+        /// <summary>Complexity of PIN for sign-in session for Managed Home Screen. The possible values are: notConfigured, simple, complex.</summary>
         public global::Microsoft.Graph.Beta.Models.KioskModeManagedHomeScreenPinComplexity? KioskModeManagedHomeScreenPinComplexity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.KioskModeManagedHomeScreenPinComplexity?>("kioskModeManagedHomeScreenPinComplexity"); }
@@ -479,7 +479,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("kioskModeMediaVolumeConfigurationEnabled"); }
             set { BackingStore?.Set("kioskModeMediaVolumeConfigurationEnabled", value); }
         }
-        /// <summary>Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.</summary>
+        /// <summary>Screen orientation configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, portrait, landscape, autoRotate.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeScreenOrientation? KioskModeScreenOrientation
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeScreenOrientation?>("kioskModeScreenOrientation"); }
@@ -537,7 +537,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("kioskModeShowDeviceInfo"); }
             set { BackingStore?.Set("kioskModeShowDeviceInfo", value); }
         }
-        /// <summary>Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.</summary>
+        /// <summary>Whether or not to use single app kiosk mode or multi-app kiosk mode. The possible values are: notConfigured, singleAppMode, multiAppMode.</summary>
         public global::Microsoft.Graph.Beta.Models.KioskModeType? KioskModeUseManagedHomeScreenApp
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.KioskModeType?>("kioskModeUseManagedHomeScreenApp"); }
@@ -549,7 +549,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("kioskModeVirtualHomeButtonEnabled"); }
             set { BackingStore?.Set("kioskModeVirtualHomeButtonEnabled", value); }
         }
-        /// <summary>Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.</summary>
+        /// <summary>Indicates whether the virtual home button is a swipe up home button or a floating home button. The possible values are: notConfigured, swipeUp, floating.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVirtualHomeButtonType? KioskModeVirtualHomeButtonType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVirtualHomeButtonType?>("kioskModeVirtualHomeButtonType"); }
@@ -651,7 +651,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("microsoftLauncherDockPresenceAllowUserModification"); }
             set { BackingStore?.Set("microsoftLauncherDockPresenceAllowUserModification", value); }
         }
-        /// <summary>Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.</summary>
+        /// <summary>Indicates whether or not you want to configure the device dock. The possible values are: notConfigured, show, hide, disabled.</summary>
         public global::Microsoft.Graph.Beta.Models.MicrosoftLauncherDockPresence? MicrosoftLauncherDockPresenceConfiguration
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftLauncherDockPresence?>("microsoftLauncherDockPresenceConfiguration"); }
@@ -669,7 +669,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("microsoftLauncherFeedEnabled"); }
             set { BackingStore?.Set("microsoftLauncherFeedEnabled", value); }
         }
-        /// <summary>Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.</summary>
+        /// <summary>Indicates the search bar placement configuration on the device. The possible values are: notConfigured, top, bottom, hide.</summary>
         public global::Microsoft.Graph.Beta.Models.MicrosoftLauncherSearchBarPlacement? MicrosoftLauncherSearchBarPlacementConfiguration
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftLauncherSearchBarPlacement?>("microsoftLauncherSearchBarPlacementConfiguration"); }
@@ -769,13 +769,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("passwordPreviousPasswordCountToBlock"); }
             set { BackingStore?.Set("passwordPreviousPasswordCountToBlock", value); }
         }
-        /// <summary>Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
+        /// <summary>Indicates the minimum password quality required on the device. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
-        /// <summary>Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.</summary>
+        /// <summary>Indicates the timeout period after which a device must be unlocked using a form of strong authentication. The possible values are: deviceDefault, daily, unkownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock? PasswordRequireUnlock
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock?>("passwordRequireUnlock"); }
@@ -815,7 +815,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("personalProfilePersonalApplications", value); }
         }
 #endif
-        /// <summary>Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.</summary>
+        /// <summary>Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. The possible values are: notConfigured, blockedApps, allowedApps.</summary>
         public global::Microsoft.Graph.Beta.Models.PersonalProfilePersonalPlayStoreMode? PersonalProfilePlayStoreMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PersonalProfilePersonalPlayStoreMode?>("personalProfilePlayStoreMode"); }
@@ -827,7 +827,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("personalProfileScreenCaptureBlocked"); }
             set { BackingStore?.Set("personalProfileScreenCaptureBlocked", value); }
         }
-        /// <summary>Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.</summary>
+        /// <summary>Indicates the Play Store mode of the device. The possible values are: notConfigured, allowList, blockList.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPlayStoreMode? PlayStoreMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPlayStoreMode?>("playStoreMode"); }
@@ -935,7 +935,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("systemUpdateFreezePeriods", value); }
         }
 #endif
-        /// <summary>The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.</summary>
+        /// <summary>The type of system update configuration. The possible values are: deviceDefault, postpone, windowed, automatic.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateInstallType?>("systemUpdateInstallType"); }
@@ -1065,13 +1065,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("workProfilePasswordPreviousPasswordCountToBlock"); }
             set { BackingStore?.Set("workProfilePasswordPreviousPasswordCountToBlock", value); }
         }
-        /// <summary>Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
+        /// <summary>Indicates the minimum password quality required on the work profile password. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? WorkProfilePasswordRequiredType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("workProfilePasswordRequiredType"); }
             set { BackingStore?.Set("workProfilePasswordRequiredType", value); }
         }
-        /// <summary>Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.</summary>
+        /// <summary>Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. The possible values are: deviceDefault, daily, unkownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock? WorkProfilePasswordRequireUnlock
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock?>("workProfilePasswordRequireUnlock"); }

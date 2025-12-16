@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.</summary>
+        /// <summary>The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType? GeographicLocationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("regionRestrictionDetail", value); }
         }
 #endif
-        /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the supported region. The possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus? RegionStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus?>("regionStatus"); }

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.</summary>
+        /// <summary>The possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform?>? ExcludePlatforms
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludePlatforms", value); }
         }
 #endif
-        /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux.</summary>
+        /// <summary>The possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform?>? IncludePlatforms

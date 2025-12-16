@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn&apos;t require authentication. Possible values are: passthru, aadPreAuthentication.</summary>
+        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn&apos;t require authentication. The possible values are: passthru, aadPreAuthentication.</summary>
         public global::Microsoft.Graph.Beta.Models.ExternalAuthenticationType? ExternalAuthenticationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationType?>("externalAuthenticationType"); }

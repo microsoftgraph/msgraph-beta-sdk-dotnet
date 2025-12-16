@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("syncTasks"); }
             set { BackingStore?.Set("syncTasks", value); }
         }
-        /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
+        /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. The possible values are: fullDomainName, netBiosDomainName.</summary>
         public global::Microsoft.Graph.Beta.Models.DomainNameSource? UserDomainNameSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DomainNameSource?>("userDomainNameSource"); }

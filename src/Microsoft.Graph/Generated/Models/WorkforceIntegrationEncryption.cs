@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: sharedSecret, unknownFutureValue.</summary>
+        /// <summary>The possible values are: sharedSecret, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryptionProtocol? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryptionProtocol?>("protocol"); }

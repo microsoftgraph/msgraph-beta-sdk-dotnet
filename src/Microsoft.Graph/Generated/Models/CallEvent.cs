@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("callConversationId", value); }
         }
 #endif
-        /// <summary>The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: rosterUpdated.</summary>
+        /// <summary>The event type of the call. The possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: rosterUpdated.</summary>
         public global::Microsoft.Graph.Beta.Models.CallEventType? CallEventType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CallEventType?>("callEventType"); }

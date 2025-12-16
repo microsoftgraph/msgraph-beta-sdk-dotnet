@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointUserMigrationTaskParameters : global::Microsoft.Graph.Beta.Models.SharePointMigrationTaskParameters, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The sourceUserIdentity property</summary>
+        /// <summary>The source user in the source tenant, including the user object ID and the user principal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.UserIdentity? SourceUserIdentity
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceUserIdentity", value); }
         }
 #endif
-        /// <summary>The targetUserIdentity property</summary>
+        /// <summary>The target user in the target tenant, including the user object ID and the user principal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.UserIdentity? TargetUserIdentity

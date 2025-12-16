@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         {
         }
         /// <summary>
-        /// Get crossOrganizationMigrationTasks from solutions
+        /// Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointMigrationTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,8 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
             return new global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.GetBySourceUserPrincipalNameWithSourcePrincipalName.GetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder(PathParameters, RequestAdapter, sourcePrincipalName);
         }
         /// <summary>
-        /// Create new navigation property to crossOrganizationMigrationTasks for solutions
+        /// Create or update a sharePointMigrationTask to migrate a resource from the source organization to the target organization, using the sharePointMigrationTaskParameters. The resource can be a user, a group, or a site. When an existing sharePointMigrationTask is retrieved, it might contain not only the specifics of the source and target organizations and resources, but also the status of the migration and errors encountered during the migration operation. The API calls occur on the source site and only add list items to the my site root web, for example, contoso-my.sharepoint.com. Then, it triggers a multi-geo site move job in the backend to enqueue and orchestrate several tenant workflow jobs, such as backup, restore, and cleanup, supported by TJ infrastructure. The OData type of sharePointResourceMigrationParameters differentiates user migration from site migration, rather than using different subpaths. For a user&apos;s OneDrive migration, specify sharePointUserMigrationParameters. If this migration task is a regular SharePoint site migration, specify sharePointSiteMigrationParameters. If this migration task is a group-connected site migration, specify sharePointGroupMigrationParameters.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointmigrationtask-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointMigrationTask"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +136,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SharePointMigrationTask>(requestInfo, global::Microsoft.Graph.Beta.Models.SharePointMigrationTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get crossOrganizationMigrationTasks from solutions
+        /// Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +155,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to crossOrganizationMigrationTasks for solutions
+        /// Create or update a sharePointMigrationTask to migrate a resource from the source organization to the target organization, using the sharePointMigrationTaskParameters. The resource can be a user, a group, or a site. When an existing sharePointMigrationTask is retrieved, it might contain not only the specifics of the source and target organizations and resources, but also the status of the migration and errors encountered during the migration operation. The API calls occur on the source site and only add list items to the my site root web, for example, contoso-my.sharepoint.com. Then, it triggers a multi-geo site move job in the backend to enqueue and orchestrate several tenant workflow jobs, such as backup, restore, and cleanup, supported by TJ infrastructure. The OData type of sharePointResourceMigrationParameters differentiates user migration from site migration, rather than using different subpaths. For a user&apos;s OneDrive migration, specify sharePointUserMigrationParameters. If this migration task is a regular SharePoint site migration, specify sharePointSiteMigrationParameters. If this migration task is a group-connected site migration, specify sharePointGroupMigrationParameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -185,7 +186,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
             return new global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.CrossOrganizationMigrationTasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get crossOrganizationMigrationTasks from solutions
+        /// Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CrossOrganizationMigrationTasksRequestBuilderGetQueryParameters 

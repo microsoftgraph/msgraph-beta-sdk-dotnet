@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
     public partial class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
+        /// <summary>The action triggered when the threshold for the given signal is reached. The possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction?>("action"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.</summary>
+        /// <summary>The signal to monitor. The possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal? Signal
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal?>("signal"); }

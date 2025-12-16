@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceConfigurationAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The admin intent to apply or remove the profile. Possible values are: apply, remove.</summary>
+        /// <summary>The admin intent to apply or remove the profile. The possible values are: apply, remove.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceConfigAssignmentIntent? Intent
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceConfigAssignmentIntent?>("intent"); }

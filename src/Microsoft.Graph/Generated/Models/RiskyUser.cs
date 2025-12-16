@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("history", value); }
         }
 #endif
-        /// <summary>Indicates whether the user is deleted. Possible values are: true, false.</summary>
+        /// <summary>Indicates whether the user is deleted. The possible values are: true, false.</summary>
         public bool? IsDeleted
         {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
-        /// <summary>State of the user&apos;s risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
+        /// <summary>State of the user&apos;s risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskState? RiskState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }

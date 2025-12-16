@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("blockCrossOrganizationWriteAccess"); }
             set { BackingStore?.Set("blockCrossOrganizationWriteAccess", value); }
         }
-        /// <summary>Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
+        /// <summary>Select the encryption method for removable  drives. The possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
         public global::Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod? EncryptionMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod?>("encryptionMethod"); }

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The type of the content indicated by the enum value of bodyType. Possible values are: text, html, unknownFutureValue.</summary>
+        /// <summary>The type of the content indicated by the enum value of bodyType. The possible values are: text, html, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.BodyType? ContentType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.BodyType?>("contentType"); }

@@ -63,13 +63,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #endif
-        /// <summary>Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
+        /// <summary>Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. The possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
         public global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("subjectAlternativeNameType"); }
             set { BackingStore?.Set("subjectAlternativeNameType", value); }
         }
-        /// <summary>Certificate Subject Name Format. This collection can contain a maximum of 500 elements. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.</summary>
+        /// <summary>Certificate Subject Name Format. This collection can contain a maximum of 500 elements. The possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.</summary>
         public global::Microsoft.Graph.Beta.Models.SubjectNameFormat? SubjectNameFormat
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectNameFormat?>("subjectNameFormat"); }

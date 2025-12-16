@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get crossOrganizationMigrationTasks from solutions
+        /// Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointmigrationtask-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointMigrationTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
             return requestInfo;
         }
         /// <summary>
-        /// Get crossOrganizationMigrationTasks from solutions
+        /// Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +189,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         {
         }
         /// <summary>
-        /// Get crossOrganizationMigrationTasks from solutions
+        /// Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointMigrationTaskItemRequestBuilderGetQueryParameters 

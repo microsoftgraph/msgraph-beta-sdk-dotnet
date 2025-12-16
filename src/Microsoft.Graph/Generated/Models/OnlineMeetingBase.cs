@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowCopyingAndSharingMeetingContent"); }
             set { BackingStore?.Set("allowCopyingAndSharingMeetingContent", value); }
         }
-        /// <summary>Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
+        /// <summary>Specifies the users who can admit from the lobby. The possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles?>("allowedLobbyAdmitters"); }
             set { BackingStore?.Set("allowedLobbyAdmitters", value); }
         }
-        /// <summary>Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.</summary>
+        /// <summary>Specifies who can be a presenter in a meeting. The possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters? AllowedPresenters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
-        /// <summary>Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.</summary>
+        /// <summary>Indicates whether live share is enabled for the meeting. The possible values are: enabled, disabled, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingLiveShareOptions? AllowLiveShare
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingLiveShareOptions?>("allowLiveShare"); }
             set { BackingStore?.Set("allowLiveShare", value); }
         }
-        /// <summary>Specifies the mode of meeting chat. Possible values are: enabled, disabled, limited, unknownFutureValue.</summary>
+        /// <summary>Specifies the mode of meeting chat. The possible values are: enabled, disabled, limited, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingChatMode? AllowMeetingChat
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingChatMode?>("allowMeetingChat"); }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowWhiteboard"); }
             set { BackingStore?.Set("allowWhiteboard", value); }
         }
-        /// <summary>Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can&apos;t be removed through a PATCH operation once added.</summary>
+        /// <summary>Specifies whose identity is anonymized in the meeting. The possible values are: attendee. The attendee value can&apos;t be removed through a PATCH operation once added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole?>? AnonymizeIdentityForRoles
@@ -296,7 +296,23 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("recordAutomatically"); }
             set { BackingStore?.Set("recordAutomatically", value); }
         }
-        /// <summary>Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.</summary>
+        /// <summary>Specifies the sensitivity label applied to the Teams meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment? SensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment?>("sensitivityLabelAssignment"); }
+            set { BackingStore?.Set("sensitivityLabelAssignment", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment SensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment"); }
+            set { BackingStore?.Set("sensitivityLabelAssignment", value); }
+        }
+#endif
+        /// <summary>Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
@@ -403,6 +419,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "meetingOptionsWebUrl", n => { MeetingOptionsWebUrl = n.GetStringValue(); } },
                 { "meetingSpokenLanguageTag", n => { MeetingSpokenLanguageTag = n.GetStringValue(); } },
                 { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
+                { "sensitivityLabelAssignment", n => { SensitivityLabelAssignment = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>(global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
@@ -446,6 +463,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("meetingOptionsWebUrl", MeetingOptionsWebUrl);
             writer.WriteStringValue("meetingSpokenLanguageTag", MeetingSpokenLanguageTag);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment", SensitivityLabelAssignment);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);

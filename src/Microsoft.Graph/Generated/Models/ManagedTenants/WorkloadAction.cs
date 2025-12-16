@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.</summary>
+        /// <summary>The category for the workload action. The possible values are: automated, manual, unknownFutureValue. Optional. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionCategory? Category
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionCategory?>("category"); }

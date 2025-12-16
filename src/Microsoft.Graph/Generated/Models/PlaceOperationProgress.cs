@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedPlaceCount property</summary>
+        /// <summary>The count of places failed to upsert.</summary>
         public int? FailedPlaceCount
         {
             get { return BackingStore?.Get<int?>("failedPlaceCount"); }
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The succeededPlaceCount property</summary>
+        /// <summary>The count of places succeeded to upsert.</summary>
         public int? SucceededPlaceCount
         {
             get { return BackingStore?.Get<int?>("succeededPlaceCount"); }
             set { BackingStore?.Set("succeededPlaceCount", value); }
         }
-        /// <summary>The totalPlaceCount property</summary>
+        /// <summary>The total count of places in the request.</summary>
         public int? TotalPlaceCount
         {
             get { return BackingStore?.Get<int?>("totalPlaceCount"); }

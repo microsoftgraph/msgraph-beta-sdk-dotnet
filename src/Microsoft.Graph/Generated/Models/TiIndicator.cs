@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TiIndicator : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.</summary>
+        /// <summary>The action to apply if the indicator is matched from within the targetProduct security tool. The possible values are: unknown, allow, block, alert. Required.</summary>
         public global::Microsoft.Graph.Beta.Models.TiAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TiAction?>("action"); }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.</summary>
+        /// <summary>The area of the Diamond Model in which this indicator exists. The possible values are: unknown, adversary, capability, infrastructure, victim.</summary>
         public global::Microsoft.Graph.Beta.Models.DiamondModel? DiamondModel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DiamondModel?>("diamondModel"); }
@@ -686,7 +686,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetProduct", value); }
         }
 #endif
-        /// <summary>Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.</summary>
+        /// <summary>Each indicator must have a valid Indicator Threat Type. The possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreatType
@@ -702,7 +702,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("threatType", value); }
         }
 #endif
-        /// <summary>Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.</summary>
+        /// <summary>Traffic Light Protocol value for the indicator. The possible values are: unknown, white, green, amber, red. Required.</summary>
         public global::Microsoft.Graph.Beta.Models.TlpLevel? TlpLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TlpLevel?>("tlpLevel"); }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("audioDeviceName", value); }
         }
 #endif
-        /// <summary>Specifies how the room can be booked. Possible values are:unknown - Unspecified booking behavior. We don&apos;t recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.</summary>
+        /// <summary>Specifies how the room can be booked. The possible values are:unknown - Unspecified booking behavior. We don&apos;t recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.</summary>
         public global::Microsoft.Graph.Beta.Models.BookingType? BookingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BookingType?>("bookingType"); }

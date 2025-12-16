@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("authenticationBlockPeriodInMinutes"); }
             set { BackingStore?.Set("authenticationBlockPeriodInMinutes", value); }
         }
-        /// <summary>Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.</summary>
+        /// <summary>Specify the authentication method. The possible values are: certificate, usernameAndPassword, derivedCredential. The possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod? AuthenticationMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod?>("authenticationMethod"); }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("authenticationRetryDelayPeriodInSeconds"); }
             set { BackingStore?.Set("authenticationRetryDelayPeriodInSeconds", value); }
         }
-        /// <summary>Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you&apos;re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.</summary>
+        /// <summary>Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you&apos;re using certificate authentication, make sure the certificate type matches the authentication type. The possible values are: none, user, machine, machineOrUser, guest. The possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationType? AuthenticationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationType?>("authenticationType"); }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
 #endif
-        /// <summary>Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
+        /// <summary>Specify inner authentication protocol for EAP TTLS. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
         public global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEAPTTLS"); }
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
         }
 #endif
-        /// <summary>Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.</summary>
+        /// <summary>Specify the secondary authentication method. The possible values are: certificate, usernameAndPassword, derivedCredential. The possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod? SecondaryAuthenticationMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod?>("secondaryAuthenticationMethod"); }

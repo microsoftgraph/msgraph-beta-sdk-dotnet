@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.TermStore
             set { BackingStore?.Set("fromTerm", value); }
         }
 #endif
-        /// <summary>The type of relation. Possible values are: pin, reuse.</summary>
+        /// <summary>The type of relation. The possible values are: pin, reuse.</summary>
         public global::Microsoft.Graph.Beta.Models.TermStore.RelationType? Relationship
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TermStore.RelationType?>("relationship"); }

@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("unreadItemCount"); }
             set { BackingStore?.Set("unreadItemCount", value); }
         }
-        /// <summary>The userConfigurations property</summary>
+        /// <summary>The user configuration objects associated to the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.UserConfiguration>? UserConfigurations

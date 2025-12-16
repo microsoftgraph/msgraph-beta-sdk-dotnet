@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
             set { BackingStore?.Set("recordedDateTime", value); }
         }
-        /// <summary>Possible values are: accepted, declined. Supports $filter (eq).</summary>
+        /// <summary>The possible values are: accepted, declined. Supports $filter (eq).</summary>
         public global::Microsoft.Graph.Beta.Models.AgreementAcceptanceState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgreementAcceptanceState?>("state"); }

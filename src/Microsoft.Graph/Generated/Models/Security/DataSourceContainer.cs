@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("releasedDateTime"); }
             set { BackingStore?.Set("releasedDateTime", value); }
         }
-        /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
+        /// <summary>Latest status of the dataSourceContainer. The possible values are: Active, Released.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.DataSourceContainerStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DataSourceContainerStatus?>("status"); }

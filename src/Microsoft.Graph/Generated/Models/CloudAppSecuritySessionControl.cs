@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudAppSecuritySessionControl : global::Microsoft.Graph.Beta.Models.ConditionalAccessSessionControl, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Possible values are: mcasConfigured, monitorOnly, blockDownloads. To learn more about these values, Deploy Conditional Access App Control for featured apps.</summary>
+        /// <summary>The possible values are: mcasConfigured, monitorOnly, blockDownloads. To learn more about these values, Deploy Conditional Access App Control for featured apps.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControlType? CloudAppSecurityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControlType?>("cloudAppSecurityType"); }

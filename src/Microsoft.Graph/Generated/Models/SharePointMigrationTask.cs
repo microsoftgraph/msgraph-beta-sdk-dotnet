@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The finishedDateTime property</summary>
+        /// <summary>Date and time when the sharePointMigrationTask ended, if available. The task might complete successfully or fail, but it ends at that time. Read-only. Only on OneDrive and SharePoint. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FinishedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("finishedDateTime"); }
             set { BackingStore?.Set("finishedDateTime", value); }
         }
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>Date and time when the sharePointMigrationTask was last updated or processed, if available. Use this property to find tasks that stopped processing for a long time. Read-only. Optional. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastUpdatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
-        /// <summary>The startedDateTime property</summary>
+        /// <summary>Date and time when the sharePointMigrationTask started, if available. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
     public partial class ManagementTemplate : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
+        /// <summary>The management category for the management template. The possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory? Category
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory?>("category"); }

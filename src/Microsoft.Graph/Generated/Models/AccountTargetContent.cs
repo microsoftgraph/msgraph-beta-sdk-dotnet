@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.</summary>
+        /// <summary>The type of account target content. The possible values are: unknown,includeAll, addressBook,  unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AccountTargetContentType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccountTargetContentType?>("type"); }

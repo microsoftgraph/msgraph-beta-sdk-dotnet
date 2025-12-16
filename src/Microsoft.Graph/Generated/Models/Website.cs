@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: other, home, work, blog, profile.</summary>
+        /// <summary>The possible values are: other, home, work, blog, profile.</summary>
         public global::Microsoft.Graph.Beta.Models.WebsiteType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WebsiteType?>("type"); }

@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Places.ListOperations
         {
         }
         /// <summary>
-        /// Invoke function listOperations
+        /// List all existing placeOperation objects. This API doesn&apos;t return operation details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-listoperations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Places.ListOperations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsGetResponse>(requestInfo, global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function listOperations
+        /// List all existing placeOperation objects. This API doesn&apos;t return operation details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-listoperations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.Beta.Places.ListOperations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsResponse>(requestInfo, global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function listOperations
+        /// List all existing placeOperation objects. This API doesn&apos;t return operation details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.Beta.Places.ListOperations
             return new global::Microsoft.Graph.Beta.Places.ListOperations.ListOperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function listOperations
+        /// List all existing placeOperation objects. This API doesn&apos;t return operation details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListOperationsRequestBuilderGetQueryParameters 

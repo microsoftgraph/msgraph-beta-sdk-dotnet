@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("actionName", value); }
         }
 #endif
-        /// <summary>State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.</summary>
+        /// <summary>State of the action. The possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.ActionState? ActionState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }

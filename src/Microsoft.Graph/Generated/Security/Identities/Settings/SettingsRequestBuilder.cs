@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Identities.Settings.AutoAuditingConfiguration;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,11 +18,6 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Provides operations to manage the autoAuditingConfiguration property of the microsoft.graph.security.settingsContainer entity.</summary>
-        public global::Microsoft.Graph.Beta.Security.Identities.Settings.AutoAuditingConfiguration.AutoAuditingConfigurationRequestBuilder AutoAuditingConfiguration
-        {
-            get => new global::Microsoft.Graph.Beta.Security.Identities.Settings.AutoAuditingConfiguration.AutoAuditingConfigurationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.Identities.Settings.SettingsRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileTypes", value); }
         }
 #endif
-        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
+        /// <summary>Pre-defined format of the string. The possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringFormat? Format
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringFormat?>("format"); }

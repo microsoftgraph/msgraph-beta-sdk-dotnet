@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RiskDetection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.</summary>
+        /// <summary>Indicates the activity type the detected risk is linked to.</summary>
         public global::Microsoft.Graph.Beta.Models.ActivityType? Activity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActivityType?>("activity"); }

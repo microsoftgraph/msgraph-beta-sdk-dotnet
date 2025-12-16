@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnClientAuthenticationType?>("clientAuthenticationType"); }
             set { BackingStore?.Set("clientAuthenticationType", value); }
         }
-        /// <summary>Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.</summary>
+        /// <summary>Determine how often to check if a peer connection is still active. . The possible values are: medium, none, low, high.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnDeadPeerDetectionRate? DeadPeerDetectionRate
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnDeadPeerDetectionRate?>("deadPeerDetectionRate"); }
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("serverCertificateIssuerCommonName", value); }
         }
 #endif
-        /// <summary>The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.</summary>
+        /// <summary>The type of certificate the VPN server will present to the VPN client for authentication. The possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnServerCertificateType? ServerCertificateType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnServerCertificateType?>("serverCertificateType"); }

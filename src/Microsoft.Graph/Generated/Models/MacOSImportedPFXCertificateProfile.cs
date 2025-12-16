@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOSImportedPFXCertificateProfile : global::Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase, IParsable
     {
-        /// <summary>Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.</summary>
+        /// <summary>Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AppleDeploymentChannel? DeploymentChannel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeploymentChannel?>("deploymentChannel"); }

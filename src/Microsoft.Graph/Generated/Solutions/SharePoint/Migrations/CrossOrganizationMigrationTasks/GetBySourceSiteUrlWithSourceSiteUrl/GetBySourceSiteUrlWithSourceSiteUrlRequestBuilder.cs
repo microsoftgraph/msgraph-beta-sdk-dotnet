@@ -37,7 +37,8 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         {
         }
         /// <summary>
-        /// Invoke function getBySourceSiteUrl
+        /// Get a sharePointMigrationTask that was previously created for a regular site, using the source site URL. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointmigrationtask-getbysourcesiteurl?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointMigrationTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SharePointMigrationTask>(requestInfo, global::Microsoft.Graph.Beta.Models.SharePointMigrationTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getBySourceSiteUrl
+        /// Get a sharePointMigrationTask that was previously created for a regular site, using the source site URL. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

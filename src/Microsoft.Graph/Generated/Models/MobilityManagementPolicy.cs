@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class MobilityManagementPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.</summary>
+        /// <summary>Indicates the user scope of the mobility management policy. The possible values are: none, all, selected.</summary>
         public global::Microsoft.Graph.Beta.Models.PolicyScope? AppliesTo
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PolicyScope?>("appliesTo"); }

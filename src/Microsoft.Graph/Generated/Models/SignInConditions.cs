@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Agent identity risk levels included in the policy. Possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.</summary>
+        /// <summary>Agent identity risk levels included in the policy. The possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.</summary>
         public global::Microsoft.Graph.Beta.Models.AgentIdRiskLevel? AgentIdRiskLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentIdRiskLevel?>("agentIdRiskLevel"); }

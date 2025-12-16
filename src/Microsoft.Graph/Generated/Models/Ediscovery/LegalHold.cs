@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("siteSources", value); }
         }
 #endif
-        /// <summary>The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.</summary>
+        /// <summary>The status of the legal hold. The possible values are: Pending, Error, Success, UnknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.LegalHoldStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.LegalHoldStatus?>("status"); }

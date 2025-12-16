@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resource", value); }
         }
 #endif
-        /// <summary>Represents type of security resources related to an alert. Possible values are: attacked, related.</summary>
+        /// <summary>Represents type of security resources related to an alert. The possible values are: attacked, related.</summary>
         public global::Microsoft.Graph.Beta.Models.SecurityResourceType? ResourceType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SecurityResourceType?>("resourceType"); }

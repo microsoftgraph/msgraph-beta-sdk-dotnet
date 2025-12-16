@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AttendeeBase : global::Microsoft.Graph.Beta.Models.Recipient, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.</summary>
+        /// <summary>The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.</summary>
         public global::Microsoft.Graph.Beta.Models.AttendeeType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AttendeeType?>("type"); }

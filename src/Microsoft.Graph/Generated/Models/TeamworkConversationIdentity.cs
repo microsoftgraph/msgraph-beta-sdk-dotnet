@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TeamworkConversationIdentity : global::Microsoft.Graph.Beta.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of conversation. Possible values are: team, channel, and chat.</summary>
+        /// <summary>Type of conversation. The possible values are: team, channel, and chat.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamworkConversationIdentityType? ConversationIdentityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkConversationIdentityType?>("conversationIdentityType"); }

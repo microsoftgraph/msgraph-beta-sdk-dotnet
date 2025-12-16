@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.</summary>
+        /// <summary>Current status of a dynamic group processing. The possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatusDetails? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatusDetails?>("status"); }

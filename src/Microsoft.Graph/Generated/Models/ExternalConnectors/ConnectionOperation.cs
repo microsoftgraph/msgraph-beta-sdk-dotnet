@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.</summary>
+        /// <summary>Indicates the status of the asynchronous operation. The possible values are: unspecified, inprogress, completed, failed.</summary>
         public global::Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperationStatus?>("status"); }

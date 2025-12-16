@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
-        /// <summary>Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
+        /// <summary>Type of characters in password. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }

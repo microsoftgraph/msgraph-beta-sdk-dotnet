@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointGroupMigrationTaskParameters : global::Microsoft.Graph.Beta.Models.SharePointMigrationTaskParameters, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The sourceGroupIdentity property</summary>
+        /// <summary>The identity of the source group in the source tenant, including its mail nickname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.GroupIdentity? SourceGroupIdentity
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceGroupIdentity", value); }
         }
 #endif
-        /// <summary>The targetGroupIdentity property</summary>
+        /// <summary>The identity of the target group in the target tenant, including its mail nickname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.GroupIdentity? TargetGroupIdentity

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationAssignmentDefaults : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.</summary>
+        /// <summary>Class-level default behavior for handling students who are added after the assignment is published. The possible values are: none, assignIfOpen.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationAddedStudentAction? AddedStudentAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationAddedStudentAction?>("addedStudentAction"); }

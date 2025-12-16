@@ -276,7 +276,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesConnectionName", value); }
         }
 #endif
-        /// <summary>The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.</summary>
+        /// <summary>The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem? OsVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem?>("osVersion"); }
@@ -348,7 +348,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisioningPolicyName", value); }
         }
 #endif
-        /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.</summary>
+        /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType? ProvisioningType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
@@ -462,7 +462,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("statusDetails", value); }
         }
 #endif
-        /// <summary>The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.</summary>
+        /// <summary>The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType? UserAccountType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType?>("userAccountType"); }

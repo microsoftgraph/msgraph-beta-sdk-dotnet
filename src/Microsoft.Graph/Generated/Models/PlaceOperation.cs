@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PlaceOperation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The details property</summary>
+        /// <summary>The detailed result of the operation, including errors and successful places.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PlaceExecutionResult>? Details
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The progress property</summary>
+        /// <summary>The progress of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlaceOperationProgress? Progress

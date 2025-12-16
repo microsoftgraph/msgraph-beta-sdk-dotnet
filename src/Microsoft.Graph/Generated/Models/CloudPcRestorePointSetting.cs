@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("frequencyInHours"); }
             set { BackingStore?.Set("frequencyInHours", value); }
         }
-        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
+        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. The possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRestorePointFrequencyType? FrequencyType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRestorePointFrequencyType?>("frequencyType"); }

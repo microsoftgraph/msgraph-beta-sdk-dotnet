@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: success, failure, skipped, warning, unknownFutureValue. Supports $filter (eq, contains).</summary>
+        /// <summary>The possible values are: success, failure, skipped, warning, unknownFutureValue. Supports $filter (eq, contains).</summary>
         public global::Microsoft.Graph.Beta.Models.ProvisioningResult? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProvisioningResult?>("status"); }

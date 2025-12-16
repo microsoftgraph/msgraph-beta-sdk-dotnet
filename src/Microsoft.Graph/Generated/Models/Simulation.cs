@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Simulation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant, phishTraining. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant, phishTraining. For more information on the types of social engineering attack techniques, see simulations.</summary>
+        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant, phishTraining. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant, phishTraining. For more information on the types of social engineering attack techniques, see simulations.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationAttackTechnique? AttackTechnique
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationAttackTechnique?>("attackTechnique"); }
             set { BackingStore?.Set("attackTechnique", value); }
         }
-        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
+        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationAttackType? AttackType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationAttackType?>("attackType"); }
@@ -252,7 +252,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("payload", value); }
         }
 #endif
-        /// <summary>Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
+        /// <summary>Method of delivery of the phishing payload used in the attack simulation and training campaign. The possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform? PayloadDeliveryPlatform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform?>("payloadDeliveryPlatform"); }
@@ -274,7 +274,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("report", value); }
         }
 #endif
-        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
+        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationStatus?>("status"); }
