@@ -118,8 +118,8 @@ namespace Microsoft.Graph.Beta.Places.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta" />
+        /// Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-patch-places?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Place"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Places.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
+        /// Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

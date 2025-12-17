@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accountName", value); }
         }
 #endif
-        /// <summary>User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
+        /// <summary>User Account type, per Windows definition. The possible values are: unknown, standard, power, administrator.</summary>
         public global::Microsoft.Graph.Beta.Models.UserAccountSecurityType? AccountType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserAccountSecurityType?>("accountType"); }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("logonId", value); }
         }
 #endif
-        /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
+        /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. The possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.LogonType?>? LogonTypes

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("attestationCertificates", value); }
         }
 #endif
-        /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.</summary>
+        /// <summary>The attestation level of this FIDO2 security key. The possible values are: attested, notAttested, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AttestationLevel? AttestationLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AttestationLevel?>("attestationLevel"); }

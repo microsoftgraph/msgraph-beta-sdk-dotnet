@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #endif
-        /// <summary>Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
+        /// <summary>Certificate Subject Alternative Name Type. The possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
         public global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("subjectAlternativeNameType"); }

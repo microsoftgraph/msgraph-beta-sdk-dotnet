@@ -158,18 +158,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("informationBarrier", value); }
         }
 #endif
-        /// <summary>The isItemVersioningEnabled property</summary>
-        public bool? IsItemVersioningEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
-            set { BackingStore?.Set("isItemVersioningEnabled", value); }
-        }
-        /// <summary>The itemMajorVersionLimit property</summary>
-        public int? ItemMajorVersionLimit
-        {
-            get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }
-            set { BackingStore?.Set("itemMajorVersionLimit", value); }
-        }
         /// <summary>Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.SiteLockState? LockState
         {
@@ -335,8 +323,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "externalGroupId", n => { ExternalGroupId = n.GetGuidValue(); } },
                 { "informationBarrier", n => { InformationBarrier = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>(global::Microsoft.Graph.Beta.Models.InformationBarrier.CreateFromDiscriminatorValue); } },
-                { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
-                { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetIntValue(); } },
                 { "lockState", n => { LockState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>(); } },
                 { "migrationJobs", n => { MigrationJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>(global::Microsoft.Graph.Beta.Models.SharePointMigrationJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -369,8 +355,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteGuidValue("externalGroupId", ExternalGroupId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>("informationBarrier", InformationBarrier);
-            writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
-            writer.WriteIntValue("itemMajorVersionLimit", ItemMajorVersionLimit);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>("lockState", LockState);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>("migrationJobs", MigrationJobs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>("owners", Owners);

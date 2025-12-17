@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
+        /// <summary>The status of the training assigned to the user. The possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TrainingStatus? TrainingStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TrainingStatus?>("trainingStatus"); }

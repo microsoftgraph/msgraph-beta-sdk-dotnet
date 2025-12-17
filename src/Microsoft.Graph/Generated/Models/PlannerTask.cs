@@ -325,7 +325,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("planId", value); }
         }
 #endif
-        /// <summary>The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.</summary>
+        /// <summary>The type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerPreviewType? PreviewType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }
@@ -375,7 +375,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("referenceCount"); }
             set { BackingStore?.Set("referenceCount", value); }
         }
-        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
+        /// <summary>Indicates all the requirements specified on the plannerTask. The possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }

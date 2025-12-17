@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("attendee", value); }
         }
 #endif
-        /// <summary>The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
+        /// <summary>The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.FreeBusyStatus? Availability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FreeBusyStatus?>("availability"); }

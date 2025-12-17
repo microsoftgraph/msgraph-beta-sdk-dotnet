@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UserConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The binaryData property</summary>
+        /// <summary>Arbitrary binary data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? BinaryData

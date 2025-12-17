@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
+        /// <summary>Determine whether AirPrint service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnServiceExceptionAction? AirPrintExceptionAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnServiceExceptionAction?>("airPrintExceptionAction"); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
+        /// <summary>Determine whether Cellular service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnServiceExceptionAction? CellularExceptionAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnServiceExceptionAction?>("cellularExceptionAction"); }
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("userToggleEnabled"); }
             set { BackingStore?.Set("userToggleEnabled", value); }
         }
-        /// <summary>Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
+        /// <summary>Determine whether voicemail service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnServiceExceptionAction? VoicemailExceptionAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnServiceExceptionAction?>("voicemailExceptionAction"); }

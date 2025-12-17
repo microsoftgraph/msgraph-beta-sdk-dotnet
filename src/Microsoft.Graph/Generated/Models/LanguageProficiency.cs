@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("proficiency"); }
             set { BackingStore?.Set("proficiency", value); }
         }
-        /// <summary>Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
+        /// <summary>Represents the users reading comprehension for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.LanguageProficiencyLevel? Reading
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("reading"); }
             set { BackingStore?.Set("reading", value); }
         }
-        /// <summary>Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
+        /// <summary>Represents the users spoken proficiency for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.LanguageProficiencyLevel? Spoken
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("spoken"); }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
 #endif
-        /// <summary>Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
+        /// <summary>Represents the users written proficiency for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.LanguageProficiencyLevel? Written
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("written"); }

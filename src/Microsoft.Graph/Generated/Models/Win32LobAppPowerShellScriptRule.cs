@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("runAs32Bit"); }
             set { BackingStore?.Set("runAs32Bit", value); }
         }
-        /// <summary>The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.</summary>
+        /// <summary>The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. The possible values are: system, user.</summary>
         public global::Microsoft.Graph.Beta.Models.RunAsAccountType? RunAsAccount
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RunAsAccountType?>("runAsAccount"); }

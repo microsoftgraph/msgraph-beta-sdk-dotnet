@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
-        /// <summary>The recurrence range. Possible values are: endDate, noEnd, numbered. Required.</summary>
+        /// <summary>The recurrence range. The possible values are: endDate, noEnd, numbered. Required.</summary>
         public global::Microsoft.Graph.Beta.Models.RecurrenceRangeType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecurrenceRangeType?>("type"); }

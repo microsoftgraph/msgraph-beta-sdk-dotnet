@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TimeConstraint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.</summary>
+        /// <summary>The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.ActivityDomain? ActivityDomain
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActivityDomain?>("activityDomain"); }

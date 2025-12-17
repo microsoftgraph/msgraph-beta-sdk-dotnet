@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials
         {
         }
         /// <summary>
-        /// Get a list of the federatedIdentityCredential objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-beta" />
+        /// Get a list of the federatedIdentityCredential objects and their properties assigned to an application or an agentIdentityBlueprint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FederatedIdentityCredentialCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredentialCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.FederatedIdentityCredentialCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new federatedIdentityCredential object for an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra agent identity blueprint registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an agentIdentityBlueprint.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentidentityblueprint-post-federatedidentitycredentials?view=graph-rest-beta" />
+        /// Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra application registration or agent identity blueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agent identity blueprint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential>(requestInfo, global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the federatedIdentityCredential objects and their properties.
+        /// Get a list of the federatedIdentityCredential objects and their properties assigned to an application or an agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials
             return requestInfo;
         }
         /// <summary>
-        /// Create a new federatedIdentityCredential object for an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra agent identity blueprint registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an agentIdentityBlueprint.
+        /// Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra application registration or agent identity blueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agent identity blueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials
             return new global::Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.FederatedIdentityCredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the federatedIdentityCredential objects and their properties.
+        /// Get a list of the federatedIdentityCredential objects and their properties assigned to an application or an agentIdentityBlueprint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedIdentityCredentialsRequestBuilderGetQueryParameters 

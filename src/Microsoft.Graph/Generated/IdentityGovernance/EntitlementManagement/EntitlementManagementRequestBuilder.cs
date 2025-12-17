@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId;
@@ -112,6 +113,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.ConnectedOrganizationsRequestBuilder ConnectedOrganizations
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.ConnectedOrganizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder ControlConfigurations
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings.SettingsRequestBuilder Settings

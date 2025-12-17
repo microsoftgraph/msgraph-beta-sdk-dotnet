@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TrainingReminderNotification : global::Microsoft.Graph.Beta.Models.BaseEndUserNotification, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.</summary>
+        /// <summary>Configurable frequency for the reminder email introduced during simulation creation. The possible values are: unknown, weekly, biWeekly, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.NotificationDeliveryFrequency? DeliveryFrequency
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NotificationDeliveryFrequency?>("deliveryFrequency"); }

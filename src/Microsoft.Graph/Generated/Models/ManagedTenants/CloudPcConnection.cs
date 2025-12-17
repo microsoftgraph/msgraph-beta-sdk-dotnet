@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.</summary>
+        /// <summary>The health status of the cloud PC connection. The possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HealthCheckStatus

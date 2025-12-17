@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.</summary>
+        /// <summary>Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType? ProvisioningType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcManagementService?>("supportedSolution"); }
             set { BackingStore?.Set("supportedSolution", value); }
         }
-        /// <summary>The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.</summary>
+        /// <summary>The type of the service plan. The possible values are: enterprise, business, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType?>("type"); }

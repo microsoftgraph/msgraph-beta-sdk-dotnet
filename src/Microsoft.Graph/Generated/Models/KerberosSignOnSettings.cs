@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kerberosServicePrincipalName", value); }
         }
 #endif
-        /// <summary>The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.</summary>
+        /// <summary>The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . The possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.</summary>
         public global::Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType? KerberosSignOnMappingAttributeType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType?>("kerberosSignOnMappingAttributeType"); }

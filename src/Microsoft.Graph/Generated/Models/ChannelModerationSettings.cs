@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.</summary>
+        /// <summary>Indicates who is allowed to reply to the teams channel. The possible values are: everyone, authorAndModerators, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.ReplyRestriction? ReplyRestriction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ReplyRestriction?>("replyRestriction"); }
             set { BackingStore?.Set("replyRestriction", value); }
         }
-        /// <summary>Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.</summary>
+        /// <summary>Indicates who is allowed to post messages to teams channel. The possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.UserNewMessageRestriction? UserNewMessageRestriction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserNewMessageRestriction?>("userNewMessageRestriction"); }

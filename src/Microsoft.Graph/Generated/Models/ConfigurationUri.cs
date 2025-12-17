@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The single sign-on mode that the URI is configured for. Possible values are: saml, password.</summary>
+        /// <summary>The single sign-on mode that the URI is configured for. The possible values are: saml, password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppliesToSingleSignOnMode

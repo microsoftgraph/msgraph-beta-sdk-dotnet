@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("userSettingsPersistenceEnabled"); }
             set { BackingStore?.Set("userSettingsPersistenceEnabled", value); }
         }
-        /// <summary>Indicates the storage size for persisting user application settings. Possible values are: fourGB, eightGB, sixteenGB, thirtyTwoGB, sixtyFourGB, unknownFutureValue. The default value is fourGB.</summary>
+        /// <summary>Indicates the storage size for persisting user application settings. The possible values are: fourGB, eightGB, sixteenGB, thirtyTwoGB, sixtyFourGB, unknownFutureValue. The default value is fourGB.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceStorageSizeCategory? UserSettingsPersistenceStorageSizeCategory
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceStorageSizeCategory?>("userSettingsPersistenceStorageSizeCategory"); }

@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("securityDiffieHellmanGroup"); }
             set { BackingStore?.Set("securityDiffieHellmanGroup", value); }
         }
-        /// <summary>Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
+        /// <summary>Encryption algorithm. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType?>("securityEncryptionAlgorithm"); }
             set { BackingStore?.Set("securityEncryptionAlgorithm", value); }
         }
-        /// <summary>Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
+        /// <summary>Integrity algorithm. The possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType?>("securityIntegrityAlgorithm"); }

@@ -300,7 +300,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
-        /// <summary>Specifies the type of cloud object the end user can access. Possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can&apos;t be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.</summary>
+        /// <summary>Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can&apos;t be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType?>("userExperienceType"); }

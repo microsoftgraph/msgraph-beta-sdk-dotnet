@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.</summary>
+        /// <summary>Analyst feedback on the alert. The possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.</summary>
         public global::Microsoft.Graph.Beta.Models.AlertFeedback? Feedback
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AlertFeedback?>("feedback"); }

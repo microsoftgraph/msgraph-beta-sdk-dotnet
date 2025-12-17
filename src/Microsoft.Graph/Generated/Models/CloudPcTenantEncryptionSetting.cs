@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. Possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.</summary>
+        /// <summary>Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. The possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionType? TenantDiskEncryptionType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionType?>("tenantDiskEncryptionType"); }

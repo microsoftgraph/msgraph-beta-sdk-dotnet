@@ -5,28 +5,38 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security
+namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AutoAuditingConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class ControlConfigurationCollectionResponse : global::Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether automatic auditing is enabled for Defender for Identity monitoring.</summary>
-        public bool? IsAutomatic
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ControlConfiguration>? Value
         {
-            get { return BackingStore?.Get<bool?>("isAutomatic"); }
-            set { BackingStore?.Set("isAutomatic", value); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ControlConfiguration>?>("value"); }
+            set { BackingStore?.Set("value", value); }
         }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ControlConfiguration> Value
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ControlConfiguration>>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.AutoAuditingConfiguration"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ControlConfigurationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Security.AutoAuditingConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.ControlConfigurationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.AutoAuditingConfiguration();
+            return new global::Microsoft.Graph.Beta.Models.ControlConfigurationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -36,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isAutomatic", n => { IsAutomatic = n.GetBoolValue(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ControlConfiguration>(global::Microsoft.Graph.Beta.Models.ControlConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -47,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isAutomatic", IsAutomatic);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ControlConfiguration>("value", Value);
         }
     }
 }

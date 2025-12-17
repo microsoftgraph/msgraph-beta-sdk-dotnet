@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ItemFacet : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
+        /// <summary>The audiences that are able to see the values contained within the associated entity. The possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AllowedAudiences? AllowedAudiences
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AllowedAudiences?>("allowedAudiences"); }

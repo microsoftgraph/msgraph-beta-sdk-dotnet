@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.</summary>
+        /// <summary>Indicates the age group classification for students. The possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.</summary>
         public global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup? StudentAgeGroup
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup?>("studentAgeGroup"); }

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.</summary>
+        /// <summary>The attack simulation operation type. The possible values are: createSimulation, updateSimulation, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AttackSimulationOperationType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AttackSimulationOperationType?>("type"); }

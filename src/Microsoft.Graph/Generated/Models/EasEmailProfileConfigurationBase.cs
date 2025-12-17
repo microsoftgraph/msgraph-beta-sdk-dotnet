@@ -29,13 +29,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customDomainName", value); }
         }
 #endif
-        /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
+        /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. The possible values are: fullDomainName, netBiosDomainName.</summary>
         public global::Microsoft.Graph.Beta.Models.DomainNameSource? UserDomainNameSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DomainNameSource?>("userDomainNameSource"); }
             set { BackingStore?.Set("userDomainNameSource", value); }
         }
-        /// <summary>Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.</summary>
+        /// <summary>Name of the AAD field, that will be used to retrieve UserName for email profile. The possible values are: userPrincipalName, primarySmtpAddress, samAccountName.</summary>
         public global::Microsoft.Graph.Beta.Models.UsernameSource? UsernameAADSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UsernameSource?>("usernameAADSource"); }

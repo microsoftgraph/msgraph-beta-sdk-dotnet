@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("osBuild", value); }
         }
 #endif
-        /// <summary>The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.</summary>
+        /// <summary>The product of the revision. The possible values are: Windows 10, Windows 11. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Product

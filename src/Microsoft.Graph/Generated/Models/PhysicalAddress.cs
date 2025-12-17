@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("street", value); }
         }
 #endif
-        /// <summary>The type of address. Possible values are: unknown, home, business, other.</summary>
+        /// <summary>The type of address. The possible values are: unknown, home, business, other.</summary>
         public global::Microsoft.Graph.Beta.Models.PhysicalAddressType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PhysicalAddressType?>("type"); }

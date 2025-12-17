@@ -78,7 +78,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to certificateBasedApplicationConfigurations for directory
+        /// Create a new certificateBasedApplicationConfiguration  object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthoritypath-post-certificatebasedapplicationconfigurations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -122,7 +123,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to certificateBasedApplicationConfigurations for directory
+        /// Create a new certificateBasedApplicationConfiguration  object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

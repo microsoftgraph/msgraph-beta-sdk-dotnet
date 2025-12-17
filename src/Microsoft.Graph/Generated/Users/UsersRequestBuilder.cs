@@ -90,8 +90,8 @@ namespace Microsoft.Graph.Beta.Users
         {
         }
         /// <summary>
-        /// Get a list of the agentUser objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list?view=graph-rest-beta" />
+        /// Retrieve a list of user objects. This API also returns agentUser objects. This operation returns by default only a subset of the more commonly used properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.User>(requestInfo, global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the agentUser objects and their properties.
+        /// Retrieve a list of user objects. This API also returns agentUser objects. This operation returns by default only a subset of the more commonly used properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Users
             return new global::Microsoft.Graph.Beta.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the agentUser objects and their properties.
+        /// Retrieve a list of user objects. This API also returns agentUser objects. This operation returns by default only a subset of the more commonly used properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 

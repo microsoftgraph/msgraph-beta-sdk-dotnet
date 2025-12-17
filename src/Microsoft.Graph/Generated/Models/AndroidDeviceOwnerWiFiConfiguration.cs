@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
-        /// <summary>The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.</summary>
+        /// <summary>The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. The possible values are: automatic, hardware, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MacAddressRandomizationMode? MacAddressRandomizationMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MacAddressRandomizationMode?>("macAddressRandomizationMode"); }

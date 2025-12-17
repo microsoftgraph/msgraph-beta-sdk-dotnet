@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errorMessage", value); }
         }
 #endif
-        /// <summary>The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.</summary>
+        /// <summary>The status of a partner agent installation. The possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallStatus? InstallStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallStatus?>("installStatus"); }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             set { BackingStore?.Set("compliancePolicyName", value); }
         }
 #endif
-        /// <summary>Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.</summary>
+        /// <summary>Platform for the device compliance policy. The possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompliancePolicyPlatform

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Calendar : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
+        /// <summary>Represent the online meeting service providers that can be used to create online meetings in this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingProviderType?>? AllowedOnlineMeetingProviders
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CalendarColor?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
-        /// <summary>The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
+        /// <summary>The default online meeting provider for meetings sent from this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
         public global::Microsoft.Graph.Beta.Models.OnlineMeetingProviderType? DefaultOnlineMeetingProvider
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingProviderType?>("defaultOnlineMeetingProvider"); }

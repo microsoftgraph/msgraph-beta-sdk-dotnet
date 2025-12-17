@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphBuilding.Children
         {
         }
         /// <summary>
-        /// Get children from places
+        /// A collection of children places that is only used in the Upsert places API.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlaceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphBuilding.Children
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlaceCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.PlaceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get children from places
+        /// A collection of children places that is only used in the Upsert places API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphBuilding.Children
             return new global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.Children.ChildrenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get children from places
+        /// A collection of children places that is only used in the Upsert places API.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildrenRequestBuilderGetQueryParameters 

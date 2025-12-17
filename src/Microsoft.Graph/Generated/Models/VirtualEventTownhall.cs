@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class VirtualEventTownhall : global::Microsoft.Graph.Beta.Models.VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The audience to whom the town hall is visible. Possible values are: everyone, organization, unknownFutureValue.</summary>
+        /// <summary>The audience to whom the town hall is visible. The possible values are: everyone, organization, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingAudience? Audience
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingAudience?>("audience"); }

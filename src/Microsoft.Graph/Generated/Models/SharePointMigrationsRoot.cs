@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("crossOrganizationGroupMappings", value); }
         }
 #endif
-        /// <summary>The crossOrganizationMigrationTasks property</summary>
+        /// <summary>A collection of sharePointMigrationTask resources that represent cross-organization migration tasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SharePointMigrationTask>? CrossOrganizationMigrationTasks

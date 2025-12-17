@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("key", value); }
         }
 #endif
-        /// <summary>Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.</summary>
+        /// <summary>Indicates the type of volume the BitLocker key is associated with. The possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.VolumeType? VolumeType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VolumeType?>("volumeType"); }

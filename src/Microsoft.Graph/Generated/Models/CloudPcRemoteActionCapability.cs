@@ -13,13 +13,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcRemoteActionCapability : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.</summary>
+        /// <summary>Indicates the state of the supported action capability to perform a Cloud PC remote action. The possible values are: enabled, disabled. Default value is enabled.</summary>
         public global::Microsoft.Graph.Beta.Models.ActionCapability? ActionCapability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActionCapability?>("actionCapability"); }
             set { BackingStore?.Set("actionCapability", value); }
         }
-        /// <summary>The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
+        /// <summary>The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionName? ActionName
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionName?>("actionName"); }

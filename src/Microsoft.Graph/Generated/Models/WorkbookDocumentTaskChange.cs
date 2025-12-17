@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("title", value); }
         }
 #endif
-        /// <summary>The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.</summary>
+        /// <summary>The type of the change history. The possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

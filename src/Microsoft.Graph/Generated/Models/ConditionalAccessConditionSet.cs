@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Agent identity risk levels included in the policy. Possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.</summary>
+        /// <summary>Agent identity risk levels included in the policy. The possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.</summary>
         public global::Microsoft.Graph.Beta.Models.ConditionalAccessAgentIdRiskLevels? AgentIdRiskLevels
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessAgentIdRiskLevels?>("agentIdRiskLevels"); }
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientApplications", value); }
         }
 #endif
-        /// <summary>Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.</summary>
+        /// <summary>Client application types included in the policy. The possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConditionalAccessClientApp?>? ClientAppTypes
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("platforms", value); }
         }
 #endif
-        /// <summary>Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.</summary>
+        /// <summary>Service principal risk levels included in the policy. The possible values are: low, medium, high, none, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.RiskLevel?>? ServicePrincipalRiskLevels
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
         }
 #endif
-        /// <summary>Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
+        /// <summary>Sign-in risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.RiskLevel?>? SignInRiskLevels
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signInRiskLevels", value); }
         }
 #endif
-        /// <summary>User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
+        /// <summary>User risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.RiskLevel?>? UserRiskLevels

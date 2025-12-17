@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("originalEntry", value); }
         }
 #endif
-        /// <summary>The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.</summary>
+        /// <summary>The current state of the timeCard during its life cycle. The possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TimeCardState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TimeCardState?>("state"); }

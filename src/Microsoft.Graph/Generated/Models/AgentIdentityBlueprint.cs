@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AgentIdentityBlueprint : global::Microsoft.Graph.Beta.Models.Application, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances.</summary>
+        /// <summary>The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? Sponsors

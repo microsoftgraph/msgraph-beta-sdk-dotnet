@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
-        /// <summary>Possible values are: notStarted, running, completed, failed. Read-only.</summary>
+        /// <summary>The possible values are: notStarted, running, completed, failed. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.OperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OperationStatus?>("status"); }

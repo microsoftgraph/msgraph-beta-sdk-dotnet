@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("groupId", value); }
         }
 #endif
-        /// <summary>The group type. Possible values are: Public or Private.</summary>
+        /// <summary>The group type. The possible values are: Public or Private.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupType

@@ -37,19 +37,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The preferredLatestStartDateTime property</summary>
+        /// <summary>The preferred latest start date and time. The system cancels the sharePointMigrationTask if it doesn&apos;t start by this time. The value must be greater than the preferredStartDateTime, if present. Optional. Only on OneDrive and SharePoint.</summary>
         public DateTimeOffset? PreferredLatestStartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("preferredLatestStartDateTime"); }
             set { BackingStore?.Set("preferredLatestStartDateTime", value); }
         }
-        /// <summary>The preferredStartDateTime property</summary>
+        /// <summary>The preferred start date and time that allows the sharePointMigrationTask to start at a future time instead of as soon as possible (default). Optional. Only on OneDrive and SharePoint.</summary>
         public DateTimeOffset? PreferredStartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("preferredStartDateTime"); }
             set { BackingStore?.Set("preferredStartDateTime", value); }
         }
-        /// <summary>The sourceSiteUrl property</summary>
+        /// <summary>The SharePoint URL of the source site. Optional. Exactly one of sourceSiteId or sourceUrl must be specified. If both or neither are specified, it&apos;s an error. Only on OneDrive and SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceSiteUrl
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceSiteUrl", value); }
         }
 #endif
-        /// <summary>The targetDataLocationCode property</summary>
+        /// <summary>In Microsoft Entra, this value represents the geographic location (for example, JPN, NAM) of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn&apos;t required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDataLocationCode
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDataLocationCode", value); }
         }
 #endif
-        /// <summary>The targetOrganizationHost property</summary>
+        /// <summary>The root, admin, or my site host of the specific multi-geo instance of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn&apos;t required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetOrganizationHost
@@ -97,13 +97,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetOrganizationHost", value); }
         }
 #endif
-        /// <summary>The targetOrganizationId property</summary>
+        /// <summary>The unique Microsoft Entra company ID of the target organization to which the source resource must be migrated. Only on OneDrive and SharePoint.</summary>
         public Guid? TargetOrganizationId
         {
             get { return BackingStore?.Get<Guid?>("targetOrganizationId"); }
             set { BackingStore?.Set("targetOrganizationId", value); }
         }
-        /// <summary>The targetSiteUrl property</summary>
+        /// <summary>The SharePoint URL of the target site. Only on OneDrive and SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetSiteUrl
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetSiteUrl", value); }
         }
 #endif
-        /// <summary>The validateOnly property</summary>
+        /// <summary>Indicates whether this task is an actual migration or only a validation. If the parameter is missing, the system treats it as false. The default behavior is a real migration. Optional. Only on OneDrive and SharePoint.</summary>
         public bool? ValidateOnly
         {
             get { return BackingStore?.Get<bool?>("validateOnly"); }

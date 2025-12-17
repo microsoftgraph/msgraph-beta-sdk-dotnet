@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #endif
-        /// <summary>The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.</summary>
+        /// <summary>The list of meeting capabilities. The possible values are: questionAndAnswer,unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MeetingCapabilities?>? Capabilities

@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("order"); }
             set { BackingStore?.Set("order", value); }
         }
-        /// <summary>Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
+        /// <summary>Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.FreeBusyStatus? OrganizerAvailability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FreeBusyStatus?>("organizerAvailability"); }

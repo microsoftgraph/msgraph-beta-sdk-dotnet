@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+        /// Retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID. This API provides access to the following member types:- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant). When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-get-allmembers?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConversationMember"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.Item
             return requestInfo;
         }
         /// <summary>
-        /// A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+        /// Retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID. This API provides access to the following member types:- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant). When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +183,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.Item
         {
         }
         /// <summary>
-        /// A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+        /// Retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID. This API provides access to the following member types:- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant). When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConversationMemberItemRequestBuilderGetQueryParameters 

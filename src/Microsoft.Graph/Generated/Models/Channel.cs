@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
             set { BackingStore?.Set("isFavoriteByDefault", value); }
         }
-        /// <summary>The layoutType property</summary>
+        /// <summary>The layout type of the channel. Can be set during creation and can be updated. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with post layout use traditional post-reply conversation format, while channels with chat layout provide a chat-like threading experience similar to group chats.</summary>
         public global::Microsoft.Graph.Beta.Models.ChannelLayoutType? LayoutType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChannelLayoutType?>("layoutType"); }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
+        /// <summary>Specifies which sources are included in this group. The possible values are: mailbox, site.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.SourceType? IncludedSources
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.SourceType?>("includedSources"); }

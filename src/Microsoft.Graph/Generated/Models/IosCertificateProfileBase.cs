@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
             set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
-        /// <summary>Certificate Subject Alternative Name type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
+        /// <summary>Certificate Subject Alternative Name type. The possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
         public global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("subjectAlternativeNameType"); }

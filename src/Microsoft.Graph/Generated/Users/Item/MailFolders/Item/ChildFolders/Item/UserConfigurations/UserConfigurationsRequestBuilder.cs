@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Use
         {
         }
         /// <summary>
-        /// Get userConfigurations from users
+        /// The user configuration objects associated to the mailFolder.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Use
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UserConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.UserConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get userConfigurations from users
+        /// The user configuration objects associated to the mailFolder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Use
             return new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.UserConfigurations.UserConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get userConfigurations from users
+        /// The user configuration objects associated to the mailFolder.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserConfigurationsRequestBuilderGetQueryParameters 

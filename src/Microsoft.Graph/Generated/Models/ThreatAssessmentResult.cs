@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("message", value); }
         }
 #endif
-        /// <summary>The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.</summary>
+        /// <summary>The threat assessment result type. The possible values are: checkPolicy (only for mail assessment), rescan.</summary>
         public global::Microsoft.Graph.Beta.Models.ThreatAssessmentResultType? ResultType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatAssessmentResultType?>("resultType"); }

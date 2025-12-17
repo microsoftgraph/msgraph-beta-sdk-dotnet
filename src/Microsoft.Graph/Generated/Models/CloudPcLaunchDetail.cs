@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Indicates the reason the Cloud PC isn&apos;t compatible with Windows 365 Switch. Possible values are: osVersionNotSupported, hardwareNotSupported, unknownFutureValue. osVersionNotSupported indicates that the user needs to update their Cloud PC operating system version. hardwareNotSupported indicates that the Cloud PC needs more CPUs or RAM to support the functionality.</summary>
+        /// <summary>Indicates the reason the Cloud PC isn&apos;t compatible with Windows 365 Switch. The possible values are: osVersionNotSupported, hardwareNotSupported, unknownFutureValue. osVersionNotSupported indicates that the user needs to update their Cloud PC operating system version. hardwareNotSupported indicates that the Cloud PC needs more CPUs or RAM to support the functionality.</summary>
         public global::Microsoft.Graph.Beta.Models.Windows365SwitchCompatibilityFailureReasonType? Windows365SwitchCompatibilityFailureReasonType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Windows365SwitchCompatibilityFailureReasonType?>("windows365SwitchCompatibilityFailureReasonType"); }

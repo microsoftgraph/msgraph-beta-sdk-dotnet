@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("performedBy", value); }
         }
 #endif
-        /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
+        /// <summary>Indicates the result of the activity. The possible values are: success, failure, timeout, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OperationResult? Result
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OperationResult?>("result"); }

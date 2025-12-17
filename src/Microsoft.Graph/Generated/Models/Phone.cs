@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.</summary>
+        /// <summary>The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.</summary>
         public global::Microsoft.Graph.Beta.Models.PhoneType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PhoneType?>("type"); }

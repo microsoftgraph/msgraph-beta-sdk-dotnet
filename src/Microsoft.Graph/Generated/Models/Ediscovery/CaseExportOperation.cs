@@ -60,13 +60,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
+        /// <summary>The options provided for the export. For more information, see reviewSet: export. The possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions? ExportOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
-        /// <summary>The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
+        /// <summary>The options provided specify the structure of the export. For more information, see reviewSet: export. The possible values are: none, directory, pst.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure? ExportStructure
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure?>("exportStructure"); }

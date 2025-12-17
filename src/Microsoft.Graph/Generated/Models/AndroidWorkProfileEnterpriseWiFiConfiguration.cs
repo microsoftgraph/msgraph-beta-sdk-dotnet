@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidWorkProfileEnterpriseWiFiConfiguration : global::Microsoft.Graph.Beta.Models.AndroidWorkProfileWiFiConfiguration, IParsable
     {
-        /// <summary>Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
+        /// <summary>Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. The possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public global::Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod? AuthenticationMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod?>("authenticationMethod"); }
@@ -41,13 +41,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
 #endif
-        /// <summary>Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
+        /// <summary>Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
         public global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEapTtls
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEapTtls"); }
             set { BackingStore?.Set("innerAuthenticationProtocolForEapTtls", value); }
         }
-        /// <summary>Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.</summary>
+        /// <summary>Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. The possible values are: none, microsoftChapVersionTwo.</summary>
         public global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap? InnerAuthenticationProtocolForPeap
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap?>("innerAuthenticationProtocolForPeap"); }

@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused, other.</summary>
+        /// <summary>The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused, other.</summary>
         public global::Microsoft.Graph.Beta.Models.InferenceClassificationType? InferenceClassification
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InferenceClassificationType?>("inferenceClassification"); }

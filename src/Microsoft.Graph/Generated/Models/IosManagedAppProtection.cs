@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowWidgetContentSync"); }
             set { BackingStore?.Set("allowWidgetContentSync", value); }
         }
-        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). The possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("filterOpenInToOnlyManagedApps"); }
             set { BackingStore?.Set("filterOpenInToOnlyManagedApps", value); }
         }
-        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. Possible values are: notBlocked, blocked, unknownFutureValue.</summary>
+        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. The possible values are: notBlocked, blocked, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.GenmojiIosManagedAppConfigurationState? GenmojiConfigurationState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GenmojiIosManagedAppConfigurationState?>("genmojiConfigurationState"); }
@@ -265,7 +265,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("protectInboundDataFromUnknownSources"); }
             set { BackingStore?.Set("protectInboundDataFromUnknownSources", value); }
         }
-        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. Possible values are: notBlocked, blocked, unknownFutureValue.</summary>
+        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. The possible values are: notBlocked, blocked, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.ScreenCaptureIosManagedAppConfigurationState? ScreenCaptureConfigurationState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ScreenCaptureIosManagedAppConfigurationState?>("screenCaptureConfigurationState"); }
@@ -277,7 +277,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("thirdPartyKeyboardsBlocked"); }
             set { BackingStore?.Set("thirdPartyKeyboardsBlocked", value); }
         }
-        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. Possible values are: notBlocked, blocked, unknownFutureValue.</summary>
+        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. The possible values are: notBlocked, blocked, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WritingToolsIosManagedAppConfigurationState? WritingToolsConfigurationState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WritingToolsIosManagedAppConfigurationState?>("writingToolsConfigurationState"); }

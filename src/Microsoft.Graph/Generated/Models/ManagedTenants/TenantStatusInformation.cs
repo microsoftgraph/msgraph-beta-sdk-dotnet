@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.</summary>
+        /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. The possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus?>("delegatedPrivilegeStatus"); }
@@ -93,13 +93,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             get { return BackingStore?.Get<DateTimeOffset?>("onboardedDateTime"); }
             set { BackingStore?.Set("onboardedDateTime", value); }
         }
-        /// <summary>The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
+        /// <summary>The onboarding status for the managed tenant.. The possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingStatus? OnboardingStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
-        /// <summary>Organization&apos;s onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
+        /// <summary>Organization&apos;s onboarding eligibility reason in Microsoft 365 Lighthouse.. The possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason?>("tenantOnboardingEligibilityReason"); }
