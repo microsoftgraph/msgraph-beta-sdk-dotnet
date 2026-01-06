@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.internalSponsors" => new global::Microsoft.Graph.Beta.Models.InternalSponsors(),
                 "#microsoft.graph.requestorManager" => new global::Microsoft.Graph.Beta.Models.RequestorManager(),
                 "#microsoft.graph.singleUser" => new global::Microsoft.Graph.Beta.Models.SingleUser(),
+                "#microsoft.graph.targetAgentIdentitySponsorsOrOwners" => new global::Microsoft.Graph.Beta.Models.TargetAgentIdentitySponsorsOrOwners(),
                 "#microsoft.graph.targetUserSponsors" => new global::Microsoft.Graph.Beta.Models.TargetUserSponsors(),
                 _ => new global::Microsoft.Graph.Beta.Models.UserSet(),
             };

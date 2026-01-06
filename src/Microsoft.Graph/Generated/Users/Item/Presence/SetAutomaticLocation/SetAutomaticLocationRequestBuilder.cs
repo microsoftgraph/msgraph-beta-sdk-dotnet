@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetAutomaticLocation
         {
         }
         /// <summary>
-        /// Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn&apos;t clear manual or scheduled signals.
+        /// Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network and location agents, or OEM docking apps). It doesn&apos;t clear manual or scheduled signals.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetAutomaticLocation
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn&apos;t clear manual or scheduled signals.
+        /// Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network and location agents, or OEM docking apps). It doesn&apos;t clear manual or scheduled signals.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

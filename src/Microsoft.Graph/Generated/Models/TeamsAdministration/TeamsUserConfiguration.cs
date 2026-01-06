@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
     public partial class TeamsUserConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of the account in the Teams context. The possible values are: user, resourceAccount, guest, sfbOnPremUser, unknown, unknownFutureValue, ineligibleUser. Use the Prefer: include-unknown-enum-members request header to get the following value from this enum evolvable enum: ineligibleUser.</summary>
+        /// <summary>The accountType property</summary>
         public global::Microsoft.Graph.Beta.Models.TeamsAdministration.AccountType? AccountType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsAdministration.AccountType?>("accountType"); }

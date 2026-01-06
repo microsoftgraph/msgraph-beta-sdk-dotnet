@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
         }
         /// <summary>
-        /// Invoke action retry
+        /// Retry the provisioning operation for Cloud PCs that used the current frontline shared policy and failed to apply the provisioning policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-retry?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action retry
+        /// Retry the provisioning operation for Cloud PCs that used the current frontline shared policy and failed to apply the provisioning policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

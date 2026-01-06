@@ -1100,6 +1100,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("visibility", value); }
         }
 #endif
+        /// <summary>The welcomeMessageEnabled property</summary>
+        public bool? WelcomeMessageEnabled
+        {
+            get { return BackingStore?.Get<bool?>("welcomeMessageEnabled"); }
+            set { BackingStore?.Set("welcomeMessageEnabled", value); }
+        }
         /// <summary>Specifies whether or not a group is configured to write back group object properties to on-premises Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1222,6 +1228,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "unseenCount", n => { UnseenCount = n.GetIntValue(); } },
                 { "unseenMessagesCount", n => { UnseenMessagesCount = n.GetIntValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
+                { "welcomeMessageEnabled", n => { WelcomeMessageEnabled = n.GetBoolValue(); } },
                 { "writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.GroupWritebackConfiguration>(global::Microsoft.Graph.Beta.Models.GroupWritebackConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
@@ -1314,6 +1321,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("unseenCount", UnseenCount);
             writer.WriteIntValue("unseenMessagesCount", UnseenMessagesCount);
             writer.WriteStringValue("visibility", Visibility);
+            writer.WriteBoolValue("welcomeMessageEnabled", WelcomeMessageEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.GroupWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
         }
     }

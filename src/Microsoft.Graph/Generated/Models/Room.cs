@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("nickname", value); }
         }
 #endif
-        /// <summary>An alternate immutable unique identifier of the room. Read-only.</summary>
+        /// <summary>An alternative immutable unique identifier of the room. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceId

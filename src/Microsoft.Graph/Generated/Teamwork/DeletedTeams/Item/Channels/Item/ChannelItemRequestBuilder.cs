@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ProvisionEmail;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.RemoveEmail;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.StartMigration;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Tabs;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -91,6 +92,11 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder SharedWithTeams
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Tabs.TabsRequestBuilder Tabs
