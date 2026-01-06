@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointIdentityMapping : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Indicates that an identity mapping was deleted successfully.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Deleted? Deleted
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Deleted?>("deleted"); }
+            set { BackingStore?.Set("deleted", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Deleted Deleted
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Deleted>("deleted"); }
+            set { BackingStore?.Set("deleted", value); }
+        }
+#endif
         /// <summary>The unique identifier of the source organization in the migration.</summary>
         public Guid? SourceOrganizationId
         {
@@ -42,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Deleted>(global::Microsoft.Graph.Beta.Models.Deleted.CreateFromDiscriminatorValue); } },
                 { "sourceOrganizationId", n => { SourceOrganizationId = n.GetGuidValue(); } },
             };
         }
@@ -53,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Deleted>("deleted", Deleted);
             writer.WriteGuidValue("sourceOrganizationId", SourceOrganizationId);
         }
     }

@@ -92,5 +92,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         AdminDismissedRiskForAgent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftRevokedSessions")]
+        #pragma warning disable CS1591
+        MicrosoftRevokedSessions,
+        #pragma warning restore CS1591
     }
 }

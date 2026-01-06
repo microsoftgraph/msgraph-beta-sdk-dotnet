@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UnavailablePlaceMode : global::Microsoft.Graph.Beta.Models.PlaceMode, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Reason for marking a place unavailable.</summary>
+        /// <summary>The reason a place is marked unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason

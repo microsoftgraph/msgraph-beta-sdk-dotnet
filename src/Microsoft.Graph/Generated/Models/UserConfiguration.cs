@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("binaryData", value); }
         }
 #endif
+        /// <summary>Key-value pairs of supported data types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.StructuredDataEntry>? StructuredData
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.StructuredDataEntry>?>("structuredData"); }
+            set { BackingStore?.Set("structuredData", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.StructuredDataEntry> StructuredData
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.StructuredDataEntry>>("structuredData"); }
+            set { BackingStore?.Set("structuredData", value); }
+        }
+#endif
+        /// <summary>Binary data for storing serialized XML.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? XmlData
+        {
+            get { return BackingStore?.Get<byte[]?>("xmlData"); }
+            set { BackingStore?.Set("xmlData", value); }
+        }
+#nullable restore
+#else
+        public byte[] XmlData
+        {
+            get { return BackingStore?.Get<byte[]>("xmlData"); }
+            set { BackingStore?.Set("xmlData", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +79,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "binaryData", n => { BinaryData = n.GetByteArrayValue(); } },
+                { "structuredData", n => { StructuredData = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.StructuredDataEntry>(global::Microsoft.Graph.Beta.Models.StructuredDataEntry.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "xmlData", n => { XmlData = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +92,8 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteByteArrayValue("binaryData", BinaryData);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.StructuredDataEntry>("structuredData", StructuredData);
+            writer.WriteByteArrayValue("xmlData", XmlData);
         }
     }
 }

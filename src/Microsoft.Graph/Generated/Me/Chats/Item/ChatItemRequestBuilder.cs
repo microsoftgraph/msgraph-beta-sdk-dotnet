@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants;
 using Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages;
 using Microsoft.Graph.Beta.Me.Chats.Item.RemoveAllAccessForUser;
 using Microsoft.Graph.Beta.Me.Chats.Item.SendActivityNotification;
+using Microsoft.Graph.Beta.Me.Chats.Item.StartMigration;
 using Microsoft.Graph.Beta.Me.Chats.Item.Tabs;
 using Microsoft.Graph.Beta.Me.Chats.Item.UnhideForUser;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -97,6 +98,11 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item
         public global::Microsoft.Graph.Beta.Me.Chats.Item.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.Item.SendActivityNotification.SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Beta.Me.Chats.Item.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Chats.Item.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.chat entity.</summary>
         public global::Microsoft.Graph.Beta.Me.Chats.Item.Tabs.TabsRequestBuilder Tabs
