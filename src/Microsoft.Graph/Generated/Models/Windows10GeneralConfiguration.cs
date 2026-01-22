@@ -330,7 +330,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity?>("defenderMonitorFileActivity"); }
             set { BackingStore?.Set("defenderMonitorFileActivity", value); }
         }
-        /// <summary>Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. The possible values are: deviceDefault, block, audit.</summary>
+        /// <summary>Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.</summary>
         public global::Microsoft.Graph.Beta.Models.DefenderPotentiallyUnwantedAppAction? DefenderPotentiallyUnwantedAppAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderPotentiallyUnwantedAppAction?>("defenderPotentiallyUnwantedAppAction"); }
@@ -466,7 +466,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("defenderSignatureUpdateIntervalInHours"); }
             set { BackingStore?.Set("defenderSignatureUpdateIntervalInHours", value); }
         }
-        /// <summary>Checks for the user consent level in Windows Defender to send data. The possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.</summary>
+        /// <summary>Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.</summary>
         public global::Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType?>("defenderSubmitSamplesConsentType"); }

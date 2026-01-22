@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a container for security identities settings APIs.
+        /// Get settings from security
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SettingsContainer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Represents a container for security identities settings APIs.
+        /// Get settings from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
         {
         }
         /// <summary>
-        /// Represents a container for security identities settings APIs.
+        /// Get settings from security
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetQueryParameters 

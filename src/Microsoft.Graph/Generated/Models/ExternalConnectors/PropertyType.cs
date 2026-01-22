@@ -52,5 +52,9 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         #pragma warning disable CS1591
         Principal,
         #pragma warning restore CS1591
+        [EnumMember(Value = "principalCollection")]
+        #pragma warning disable CS1591
+        PrincipalCollection,
+        #pragma warning restore CS1591
     }
 }

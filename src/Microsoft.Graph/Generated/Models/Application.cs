@@ -328,6 +328,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isDeviceOnlyAuthSupported"); }
             set { BackingStore?.Set("isDeviceOnlyAuthSupported", value); }
         }
+        /// <summary>Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.</summary>
+        public bool? IsDisabled
+        {
+            get { return BackingStore?.Get<bool?>("isDisabled"); }
+            set { BackingStore?.Set("isDisabled", value); }
+        }
         /// <summary>Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can&apos;t determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.</summary>
         public bool? IsFallbackPublicClient
         {
@@ -596,6 +602,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signInAudience", value); }
         }
 #endif
+        /// <summary>The signInAudienceRestrictions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase? SignInAudienceRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase?>("signInAudienceRestrictions"); }
+            set { BackingStore?.Set("signInAudienceRestrictions", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase SignInAudienceRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase>("signInAudienceRestrictions"); }
+            set { BackingStore?.Set("signInAudienceRestrictions", value); }
+        }
+#endif
         /// <summary>Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -797,6 +819,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "identifierUris", n => { IdentifierUris = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "info", n => { Info = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>(global::Microsoft.Graph.Beta.Models.InformationalUrl.CreateFromDiscriminatorValue); } },
                 { "isDeviceOnlyAuthSupported", n => { IsDeviceOnlyAuthSupported = n.GetBoolValue(); } },
+                { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "isFallbackPublicClient", n => { IsFallbackPublicClient = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logo", n => { Logo = n.GetByteArrayValue(); } },
@@ -815,6 +838,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
                 { "servicePrincipalLockConfiguration", n => { ServicePrincipalLockConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>(global::Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration.CreateFromDiscriminatorValue); } },
                 { "signInAudience", n => { SignInAudience = n.GetStringValue(); } },
+                { "signInAudienceRestrictions", n => { SignInAudienceRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase>(global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase.CreateFromDiscriminatorValue); } },
                 { "spa", n => { Spa = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SpaApplication>(global::Microsoft.Graph.Beta.Models.SpaApplication.CreateFromDiscriminatorValue); } },
                 { "synchronization", n => { Synchronization = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Synchronization>(global::Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -856,6 +880,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("identifierUris", IdentifierUris);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>("info", Info);
             writer.WriteBoolValue("isDeviceOnlyAuthSupported", IsDeviceOnlyAuthSupported);
+            writer.WriteBoolValue("isDisabled", IsDisabled);
             writer.WriteBoolValue("isFallbackPublicClient", IsFallbackPublicClient);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteByteArrayValue("logo", Logo);
@@ -874,6 +899,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration", ServicePrincipalLockConfiguration);
             writer.WriteStringValue("signInAudience", SignInAudience);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase>("signInAudienceRestrictions", SignInAudienceRestrictions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SpaApplication>("spa", Spa);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Synchronization>("synchronization", Synchronization);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);

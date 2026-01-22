@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailSyncDuration?>("durationOfEmailToSync"); }
             set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
-        /// <summary>Email attribute that is picked from AAD and injected into this profile before installing on the device. The possible values are: userPrincipalName, primarySmtpAddress.</summary>
+        /// <summary>Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.</summary>
         public global::Microsoft.Graph.Beta.Models.UserEmailSource? EmailAddressSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserEmailSource?>("emailAddressSource"); }

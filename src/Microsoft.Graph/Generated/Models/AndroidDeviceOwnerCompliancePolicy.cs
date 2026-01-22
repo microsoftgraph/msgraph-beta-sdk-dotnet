@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidDeviceOwnerCompliancePolicy : global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
-        /// <summary>Indicates the Microsoft Defender for Endpoint (also referred to Microsoft Defender Advanced Threat Protection (MDATP)) minimum risk level to report noncompliance. The possible values are: unavailable, secured, low, medium, high, notSet. The possible values are: unavailable, secured, low, medium, high, notSet.</summary>
+        /// <summary>Indicates the Microsoft Defender for Endpoint (also referred to Microsoft Defender Advanced Threat Protection (MDATP)) minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("deviceThreatProtectionEnabled"); }
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
-        /// <summary>Indicates the minimum mobile threat protection risk level to that results in Intune reporting device noncompliance. The possible values are: unavailable, secured, low, medium, high, notSet. The possible values are: unavailable, secured, low, medium, high, notSet.</summary>
+        /// <summary>Indicates the minimum mobile threat protection risk level to that results in Intune reporting device noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
-        /// <summary>Indicates the password complexity requirement for the device to be marked compliant. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
+        /// <summary>Indicates the password complexity requirement for the device to be marked compliant. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }
             set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
         }
-        /// <summary>Indicates the types of measurements and reference data used to evaluate the device SafetyNet evaluation. Evaluation is completed on the device to assess device integrity based on checks defined by Android and built into the device hardware, for example, compromised OS version or root detection. The possible values are: basic, hardwareBacked, with default value of basic. The possible values are: basic, hardwareBacked.</summary>
+        /// <summary>Indicates the types of measurements and reference data used to evaluate the device SafetyNet evaluation. Evaluation is completed on the device to assess device integrity based on checks defined by Android and built into the device hardware, for example, compromised OS version or root detection. Possible values are: basic, hardwareBacked, with default value of basic. Possible values are: basic, hardwareBacked.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType?>("securityRequiredAndroidSafetyNetEvaluationType"); }

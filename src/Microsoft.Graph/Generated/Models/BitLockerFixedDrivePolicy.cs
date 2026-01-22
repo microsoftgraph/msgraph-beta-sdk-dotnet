@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Select the encryption method for fixed drives. The possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
+        /// <summary>Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
         public global::Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod? EncryptionMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod?>("encryptionMethod"); }

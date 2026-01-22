@@ -12,6 +12,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.ProvisionEmail;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.RemoveEmail;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams;
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.StartMigration;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Unarchive;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -91,6 +92,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel
         public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.SharedWithTeamsRequestBuilder SharedWithTeams
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs.TabsRequestBuilder Tabs

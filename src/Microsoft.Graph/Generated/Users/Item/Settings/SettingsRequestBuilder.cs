@@ -9,6 +9,7 @@ using Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings;
 using Microsoft.Graph.Beta.Users.Item.Settings.ShiftPreferences;
 using Microsoft.Graph.Beta.Users.Item.Settings.Storage;
 using Microsoft.Graph.Beta.Users.Item.Settings.Windows;
+using Microsoft.Graph.Beta.Users.Item.Settings.WorkHoursAndLocations;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -59,6 +60,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         public global::Microsoft.Graph.Beta.Users.Item.Settings.Windows.WindowsRequestBuilder Windows
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.Windows.WindowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the workHoursAndLocations property of the microsoft.graph.userSettings entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Settings.WorkHoursAndLocations.WorkHoursAndLocationsRequestBuilder WorkHoursAndLocations
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Settings.WorkHoursAndLocations.WorkHoursAndLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder"/> and sets the default values.

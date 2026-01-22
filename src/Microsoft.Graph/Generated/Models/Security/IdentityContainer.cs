@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
         }
 #endif
-        /// <summary>Represents Microsoft Defender for Identity sensors that are ready to be activated.</summary>
+        /// <summary>The sensorCandidates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>? SensorCandidates
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensors", value); }
         }
 #endif
-        /// <summary>Represents a container for security identities settings APIs.</summary>
+        /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.SettingsContainer? Settings

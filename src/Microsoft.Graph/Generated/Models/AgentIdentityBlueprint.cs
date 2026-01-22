@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AgentIdentityBlueprint : global::Microsoft.Graph.Beta.Models.Application, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Defines scopes of a resource application that may be automatically granted to agent identities without additional consent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.InheritablePermission>? InheritablePermissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.InheritablePermission>?>("inheritablePermissions"); }
+            set { BackingStore?.Set("inheritablePermissions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.InheritablePermission> InheritablePermissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.InheritablePermission>>("inheritablePermissions"); }
+            set { BackingStore?.Set("inheritablePermissions", value); }
+        }
+#endif
         /// <summary>The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "inheritablePermissions", n => { InheritablePermissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InheritablePermission>(global::Microsoft.Graph.Beta.Models.InheritablePermission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -64,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InheritablePermission>("inheritablePermissions", InheritablePermissions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("sponsors", Sponsors);
         }
     }

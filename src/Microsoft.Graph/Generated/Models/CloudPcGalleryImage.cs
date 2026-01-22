@@ -89,12 +89,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offerName", value); }
         }
 #endif
-        /// <summary>The osArchitecture property</summary>
-        public global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType? OsArchitecture
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType?>("osArchitecture"); }
-            set { BackingStore?.Set("osArchitecture", value); }
-        }
         /// <summary>The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -249,7 +243,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "offer", n => { Offer = n.GetStringValue(); } },
                 { "offerDisplayName", n => { OfferDisplayName = n.GetStringValue(); } },
                 { "offerName", n => { OfferName = n.GetStringValue(); } },
-                { "osArchitecture", n => { OsArchitecture = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType>(); } },
                 { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "publisherName", n => { PublisherName = n.GetStringValue(); } },
@@ -276,7 +269,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("offer", Offer);
             writer.WriteStringValue("offerDisplayName", OfferDisplayName);
             writer.WriteStringValue("offerName", OfferName);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType>("osArchitecture", OsArchitecture);
             writer.WriteStringValue("osVersionNumber", OsVersionNumber);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteStringValue("publisherName", PublisherName);

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowAllAppsAccess"); }
             set { BackingStore?.Set("allowAllAppsAccess", value); }
         }
-        /// <summary>Target store certificate. The possible values are: user, machine.</summary>
+        /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public global::Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #endif
-        /// <summary>Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.</summary>
+        /// <summary>Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AppleDeploymentChannel? DeploymentChannel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeploymentChannel?>("deploymentChannel"); }

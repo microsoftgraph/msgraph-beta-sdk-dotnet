@@ -5,16 +5,16 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum CloudPcImageOsArchitectureType
+    public enum ConnectorType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "x64")]
+        [EnumMember(Value = "sapIag")]
         #pragma warning disable CS1591
-        X64,
+        SapIag,
         #pragma warning restore CS1591
-        [EnumMember(Value = "arm64")]
+        [EnumMember(Value = "sapAc")]
         #pragma warning disable CS1591
-        Arm64,
+        SapAc,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591

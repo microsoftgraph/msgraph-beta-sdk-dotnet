@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("messageTraces", value); }
         }
 #endif
+        /// <summary>Represents a container for administrative resources to trace messages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.MessageTracingRoot? Tracing
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MessageTracingRoot?>("tracing"); }
+            set { BackingStore?.Set("tracing", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.MessageTracingRoot Tracing
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MessageTracingRoot>("tracing"); }
+            set { BackingStore?.Set("tracing", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "mailboxes", n => { Mailboxes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Mailbox>(global::Microsoft.Graph.Beta.Models.Mailbox.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messageTraces", n => { MessageTraces = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MessageTrace>(global::Microsoft.Graph.Beta.Models.MessageTrace.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tracing", n => { Tracing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MessageTracingRoot>(global::Microsoft.Graph.Beta.Models.MessageTracingRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Mailbox>("mailboxes", Mailboxes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MessageTrace>("messageTraces", MessageTraces);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MessageTracingRoot>("tracing", Tracing);
         }
     }
 }

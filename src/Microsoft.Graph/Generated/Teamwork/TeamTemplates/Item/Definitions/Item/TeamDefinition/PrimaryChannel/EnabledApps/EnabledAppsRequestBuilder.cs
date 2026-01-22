@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         {
         }
         /// <summary>
-        /// Get enabledApps from teamwork
+        /// A collection of enabled apps in the channel.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamsAppCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamsAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get enabledApps from teamwork
+        /// A collection of enabled apps in the channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get enabledApps from teamwork
+        /// A collection of enabled apps in the channel.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EnabledAppsRequestBuilderGetQueryParameters 
