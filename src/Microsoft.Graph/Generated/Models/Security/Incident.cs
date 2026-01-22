@@ -164,6 +164,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
+        /// <summary>The priorityScore property</summary>
+        public int? PriorityScore
+        {
+            get { return BackingStore?.Get<int?>("priorityScore"); }
+            set { BackingStore?.Set("priorityScore", value); }
+        }
         /// <summary>A rich text string that represents the actions that are reccomnded to take in order to resolve the incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -318,6 +324,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "priorityScore", n => { PriorityScore = n.GetIntValue(); } },
                 { "recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
                 { "recommendedHuntingQueries", n => { RecommendedHuntingQueries = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery>(global::Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "redirectIncidentId", n => { RedirectIncidentId = n.GetStringValue(); } },
@@ -349,6 +356,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
+            writer.WriteIntValue("priorityScore", PriorityScore);
             writer.WriteStringValue("recommendedActions", RecommendedActions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery>("recommendedHuntingQueries", RecommendedHuntingQueries);
             writer.WriteStringValue("redirectIncidentId", RedirectIncidentId);

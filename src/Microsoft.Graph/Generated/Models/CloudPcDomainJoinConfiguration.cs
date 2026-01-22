@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType?>("domainJoinType"); }
             set { BackingStore?.Set("domainJoinType", value); }
         }
-        /// <summary>The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.</summary>
+        /// <summary>The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue, mexico. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: mexico. The default value is default. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType? GeographicLocationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceEnvironment;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceRoles;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceScopes;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.ExternalOriginResourceConnector;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.Refresh;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.UploadSessions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -37,6 +38,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceScopes.AccessPackageResourceScopesRequestBuilder AccessPackageResourceScopes
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceScopes.AccessPackageResourceScopesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.ExternalOriginResourceConnector.ExternalOriginResourceConnectorRequestBuilder ExternalOriginResourceConnector
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.ExternalOriginResourceConnector.ExternalOriginResourceConnectorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the refresh method.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.Refresh.RefreshRequestBuilder Refresh

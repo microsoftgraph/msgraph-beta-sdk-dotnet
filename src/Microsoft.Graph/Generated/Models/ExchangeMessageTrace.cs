@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ExchangeMessageTrace : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The fromIP property</summary>
+        /// <summary>The source IP address. For incoming messages, this value is the public IP address of the SMTP email server that sent the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromIP
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fromIP", value); }
         }
 #endif
-        /// <summary>The messageId property</summary>
+        /// <summary>The Message-ID header field of the message. The format of the Message-ID depends on the messaging server that sent the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageId
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("messageId", value); }
         }
 #endif
-        /// <summary>The receivedDateTime property</summary>
+        /// <summary>The date and time when the message was received by Exchange Online. The timestamp is in UTC format.</summary>
         public DateTimeOffset? ReceivedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
             set { BackingStore?.Set("receivedDateTime", value); }
         }
-        /// <summary>The recipientAddress property</summary>
+        /// <summary>The SMTP email address of the user that the message was addressed to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientAddress
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("recipientAddress", value); }
         }
 #endif
-        /// <summary>The senderAddress property</summary>
+        /// <summary>The SMTP email address of the user the message was purportedly from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderAddress
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("senderAddress", value); }
         }
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>The size of the message in bytes.</summary>
         public int? Size
         {
             get { return BackingStore?.Get<int?>("size"); }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExchangeMessageTraceStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The subject property</summary>
+        /// <summary>The subject line of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The toIP property</summary>
+        /// <summary>The destination IP address. For outgoing messages, this value is the public IP address in the resolved MX record for the destination domain. For incoming messages to Exchange Online, this value is blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToIP

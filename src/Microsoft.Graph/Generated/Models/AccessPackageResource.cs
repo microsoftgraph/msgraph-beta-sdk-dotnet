@@ -130,6 +130,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The externalOriginResourceConnector property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector? ExternalOriginResourceConnector
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector?>("externalOriginResourceConnector"); }
+            set { BackingStore?.Set("externalOriginResourceConnector", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector ExternalOriginResourceConnector
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>("externalOriginResourceConnector"); }
+            set { BackingStore?.Set("externalOriginResourceConnector", value); }
+        }
+#endif
         /// <summary>True if the resource is not yet available for assignment. Read-only.</summary>
         public bool? IsPendingOnboarding
         {
@@ -247,6 +263,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>(global::Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalOriginResourceConnector", n => { ExternalOriginResourceConnector = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>(global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue); } },
                 { "isPendingOnboarding", n => { IsPendingOnboarding = n.GetBoolValue(); } },
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
@@ -271,6 +288,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>("attributes", Attributes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>("externalOriginResourceConnector", ExternalOriginResourceConnector);
             writer.WriteBoolValue("isPendingOnboarding", IsPendingOnboarding);
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);

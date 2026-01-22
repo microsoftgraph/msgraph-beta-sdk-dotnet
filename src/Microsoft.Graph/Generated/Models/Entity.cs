@@ -852,6 +852,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.externallyAccessibleGcpStorageBucketFinding" => new global::Microsoft.Graph.Beta.Models.ExternallyAccessibleGcpStorageBucketFinding(),
                 "#microsoft.graph.externalMeetingRegistrant" => new global::Microsoft.Graph.Beta.Models.ExternalMeetingRegistrant(),
                 "#microsoft.graph.externalMeetingRegistration" => new global::Microsoft.Graph.Beta.Models.ExternalMeetingRegistration(),
+                "#microsoft.graph.externalOriginResourceConnector" => new global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector(),
                 "#microsoft.graph.externalProfile" => new global::Microsoft.Graph.Beta.Models.ExternalProfile(),
                 "#microsoft.graph.externalUserProfile" => new global::Microsoft.Graph.Beta.Models.ExternalUserProfile(),
                 "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow" => new global::Microsoft.Graph.Beta.Models.ExternalUsersSelfServiceSignUpEventsFlow(),
