@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("messageTraces", value); }
         }
 #endif
-        /// <summary>The tracing property</summary>
+        /// <summary>Represents a container for administrative resources to trace messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.MessageTracingRoot? Tracing

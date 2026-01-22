@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get messageTraces from admin
+        /// Represents the trace information of messages that pass-through Exchange Online organizations.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExchangeMessageTrace"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get messageTraces from admin
+        /// Represents the trace information of messages that pass-through Exchange Online organizations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item
         {
         }
         /// <summary>
-        /// Get messageTraces from admin
+        /// Represents the trace information of messages that pass-through Exchange Online organizations.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExchangeMessageTraceItemRequestBuilderGetQueryParameters 

@@ -69,7 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         public static global::Microsoft.Graph.Beta.Models.ConnectionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ConnectionInfo();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.externalTokenBasedSapIagConnectionInfo" => new global::Microsoft.Graph.Beta.Models.ExternalTokenBasedSapIagConnectionInfo(),
+                _ => new global::Microsoft.Graph.Beta.Models.ConnectionInfo(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

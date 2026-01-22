@@ -326,7 +326,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("defenderCheckForSignaturesBeforeRunningScan"); }
             set { BackingStore?.Set("defenderCheckForSignaturesBeforeRunningScan", value); }
         }
-        /// <summary>Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the &apos;Join Microsoft MAPS&apos; setting enabled in order to function. The possible values are: notConfigured, high, highPlus, zeroTolerance.</summary>
+        /// <summary>Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the &apos;Join Microsoft MAPS&apos; setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.</summary>
         public global::Microsoft.Graph.Beta.Models.DefenderCloudBlockLevelType? DefenderCloudBlockLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderCloudBlockLevelType?>("defenderCloudBlockLevel"); }
@@ -608,7 +608,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderAttackSurfaceType?>("defenderOfficeMacroCodeAllowWin32ImportsType"); }
             set { BackingStore?.Set("defenderOfficeMacroCodeAllowWin32ImportsType", value); }
         }
-        /// <summary>Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. The possible values are: userDefined, enable, auditMode, warn, notConfigured.</summary>
+        /// <summary>Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.</summary>
         public global::Microsoft.Graph.Beta.Models.DefenderProtectionType? DefenderPotentiallyUnwantedAppAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderProtectionType?>("defenderPotentiallyUnwantedAppAction"); }
@@ -648,7 +648,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defenderProcessesToExclude", value); }
         }
 #endif
-        /// <summary>Controls which sets of files should be monitored. The possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.</summary>
+        /// <summary>Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.</summary>
         public global::Microsoft.Graph.Beta.Models.DefenderRealtimeScanDirection? DefenderScanDirection
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderRealtimeScanDirection?>("defenderScanDirection"); }
@@ -660,7 +660,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("defenderScanMaxCpuPercentage"); }
             set { BackingStore?.Set("defenderScanMaxCpuPercentage", value); }
         }
-        /// <summary>Selects whether to perform a quick scan or full scan. The possible values are: userDefined, disabled, quick, full.</summary>
+        /// <summary>Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.</summary>
         public global::Microsoft.Graph.Beta.Models.DefenderScanType? DefenderScanType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderScanType?>("defenderScanType"); }
@@ -672,7 +672,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Time?>("defenderScheduledQuickScanTime"); }
             set { BackingStore?.Set("defenderScheduledQuickScanTime", value); }
         }
-        /// <summary>Selects the day that the Windows Defender scan should run. The possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.</summary>
+        /// <summary>Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.</summary>
         public global::Microsoft.Graph.Beta.Models.WeeklySchedule? DefenderScheduledScanDay
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WeeklySchedule?>("defenderScheduledScanDay"); }
@@ -874,7 +874,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("defenderSignatureUpdateIntervalInHours"); }
             set { BackingStore?.Set("defenderSignatureUpdateIntervalInHours", value); }
         }
-        /// <summary>Checks for the user consent level in Windows Defender to send data. The possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.</summary>
+        /// <summary>Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.</summary>
         public global::Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType? DefenderSubmitSamplesConsentType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType?>("defenderSubmitSamplesConsentType"); }

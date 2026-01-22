@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accountName", value); }
         }
 #endif
-        /// <summary>Authentication method for this Email profile. The possible values are: usernameAndPassword, certificate, derivedCredential.</summary>
+        /// <summary>Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.</summary>
         public global::Microsoft.Graph.Beta.Models.EasAuthenticationMethod? AuthenticationMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EasAuthenticationMethod?>("authenticationMethod"); }
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailSyncDuration?>("durationOfEmailToSync"); }
             set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
-        /// <summary>Exchange data to sync. The possible values are: none, calendars, contacts, email, notes, reminders.</summary>
+        /// <summary>Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.</summary>
         public global::Microsoft.Graph.Beta.Models.EasServices? EasServices
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EasServices?>("easServices"); }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserEmailSource?>("emailAddressSource"); }
             set { BackingStore?.Set("emailAddressSource", value); }
         }
-        /// <summary>Encryption Certificate type for this Email profile. The possible values are: none, certificate, derivedCredential.</summary>
+        /// <summary>Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.</summary>
         public global::Microsoft.Graph.Beta.Models.EmailCertificateType? EncryptionCertificateType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailCertificateType?>("encryptionCertificateType"); }
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("requireSsl"); }
             set { BackingStore?.Set("requireSsl", value); }
         }
-        /// <summary>Signing Certificate type for this Email profile. The possible values are: none, certificate, derivedCredential.</summary>
+        /// <summary>Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.</summary>
         public global::Microsoft.Graph.Beta.Models.EmailCertificateType? SigningCertificateType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailCertificateType?>("signingCertificateType"); }

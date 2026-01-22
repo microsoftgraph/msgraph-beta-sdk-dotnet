@@ -391,7 +391,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("touchIdTimeoutInHours"); }
             set { BackingStore?.Set("touchIdTimeoutInHours", value); }
         }
-        /// <summary>Determines whether to delay OS and/or app updates for macOS. The possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.</summary>
+        /// <summary>Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.</summary>
         public global::Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateDelayPolicy? UpdateDelayPolicy
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateDelayPolicy?>("updateDelayPolicy"); }

@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tracing from admin
+        /// Represents a container for administrative resources to trace messages.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MessageTracingRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing
             return requestInfo;
         }
         /// <summary>
-        /// Get tracing from admin
+        /// Represents a container for administrative resources to trace messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing
         {
         }
         /// <summary>
-        /// Get tracing from admin
+        /// Represents a container for administrative resources to trace messages.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TracingRequestBuilderGetQueryParameters 

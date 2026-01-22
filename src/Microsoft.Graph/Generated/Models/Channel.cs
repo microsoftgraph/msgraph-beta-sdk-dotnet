@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The enabledApps property</summary>
+        /// <summary>A collection of enabled apps in the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TeamsApp>? EnabledApps

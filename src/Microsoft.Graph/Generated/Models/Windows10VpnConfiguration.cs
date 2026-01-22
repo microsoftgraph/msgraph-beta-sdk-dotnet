@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("onlyAssociatedAppsCanUseConnection"); }
             set { BackingStore?.Set("onlyAssociatedAppsCanUseConnection", value); }
         }
-        /// <summary>Profile target type. The possible values are: user, device, autoPilotDevice.</summary>
+        /// <summary>Profile target type. Possible values are: user, device, autoPilotDevice.</summary>
         public global::Microsoft.Graph.Beta.Models.Windows10VpnProfileTarget? ProfileTarget
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Windows10VpnProfileTarget?>("profileTarget"); }

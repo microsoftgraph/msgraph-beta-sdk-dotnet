@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("forceFIPSCompliance"); }
             set { BackingStore?.Set("forceFIPSCompliance", value); }
         }
-        /// <summary>Specify the metered connection limit type for the wifi connection. The possible values are: unrestricted, fixed, variable.</summary>
+        /// <summary>Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.</summary>
         public global::Microsoft.Graph.Beta.Models.MeteredConnectionLimitType? MeteredConnectionLimit
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeteredConnectionLimitType?>("meteredConnectionLimit"); }
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("proxyManualPort"); }
             set { BackingStore?.Set("proxyManualPort", value); }
         }
-        /// <summary>Specify the proxy setting for Wi-Fi configuration. The possible values are: none, manual, automatic, unknownFutureValue.</summary>
+        /// <summary>Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WiFiProxySetting? ProxySetting
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiFiProxySetting?>("proxySetting"); }
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
-        /// <summary>Specify the Wifi Security Type. The possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.</summary>
+        /// <summary>Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.</summary>
         public global::Microsoft.Graph.Beta.Models.WiFiSecurityType? WifiSecurityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiFiSecurityType?>("wifiSecurityType"); }

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("maxUserDeferralsCount"); }
             set { BackingStore?.Set("maxUserDeferralsCount", value); }
         }
-        /// <summary>The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. The possible values are: low, high, unknownFutureValue.</summary>
+        /// <summary>The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MacOSPriority? Priority
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MacOSPriority?>("priority"); }

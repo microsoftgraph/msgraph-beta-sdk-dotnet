@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceEncryptionState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Advanced BitLocker State. The possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.</summary>
+        /// <summary>Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.</summary>
         public global::Microsoft.Graph.Beta.Models.AdvancedBitLockerState? AdvancedBitLockerStates
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AdvancedBitLockerState?>("advancedBitLockerStates"); }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EncryptionState?>("encryptionState"); }
             set { BackingStore?.Set("encryptionState", value); }
         }
-        /// <summary>FileVault State. The possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.</summary>
+        /// <summary>FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.</summary>
         public global::Microsoft.Graph.Beta.Models.FileVaultState? FileVaultStates
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FileVaultState?>("fileVaultStates"); }
