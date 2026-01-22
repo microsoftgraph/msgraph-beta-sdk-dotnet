@@ -128,5 +128,81 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         #pragma warning disable CS1591
         SecondaryId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "personEmails")]
+        #pragma warning disable CS1591
+        PersonEmails,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personAddresses")]
+        #pragma warning disable CS1591
+        PersonAddresses,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personAnniversaries")]
+        #pragma warning disable CS1591
+        PersonAnniversaries,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personName")]
+        #pragma warning disable CS1591
+        PersonName,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personNote")]
+        #pragma warning disable CS1591
+        PersonNote,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personPhones")]
+        #pragma warning disable CS1591
+        PersonPhones,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personCurrentPosition")]
+        #pragma warning disable CS1591
+        PersonCurrentPosition,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personWebAccounts")]
+        #pragma warning disable CS1591
+        PersonWebAccounts,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personWebSite")]
+        #pragma warning disable CS1591
+        PersonWebSite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personSkills")]
+        #pragma warning disable CS1591
+        PersonSkills,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personProjects")]
+        #pragma warning disable CS1591
+        PersonProjects,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personAccount")]
+        #pragma warning disable CS1591
+        PersonAccount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personAwards")]
+        #pragma warning disable CS1591
+        PersonAwards,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personCertifications")]
+        #pragma warning disable CS1591
+        PersonCertifications,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personAssistants")]
+        #pragma warning disable CS1591
+        PersonAssistants,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personColleagues")]
+        #pragma warning disable CS1591
+        PersonColleagues,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personManager")]
+        #pragma warning disable CS1591
+        PersonManager,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personAlternateContacts")]
+        #pragma warning disable CS1591
+        PersonAlternateContacts,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personEmergencyContacts")]
+        #pragma warning disable CS1591
+        PersonEmergencyContacts,
+        #pragma warning restore CS1591
     }
 }

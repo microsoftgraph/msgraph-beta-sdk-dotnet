@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class CustomBlockPage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configuration property</summary>
+        /// <summary>The current configuration of the customized message. The body can be input in limited markdown language, supporting links via the format: link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.BlockPageConfigurationBase? Configuration

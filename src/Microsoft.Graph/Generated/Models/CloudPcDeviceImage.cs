@@ -63,12 +63,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #endif
-        /// <summary>The osArchitecture property</summary>
-        public global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType? OsArchitecture
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType?>("osArchitecture"); }
-            set { BackingStore?.Set("osArchitecture", value); }
-        }
         /// <summary>The OS build version of the image. For example, 1909. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,7 +190,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                { "osArchitecture", n => { OsArchitecture = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType>(); } },
                 { "osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
                 { "osStatus", n => { OsStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>(); } },
                 { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
@@ -221,7 +214,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateValue("expirationDate", ExpirationDate);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("operatingSystem", OperatingSystem);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcImageOsArchitectureType>("osArchitecture", OsArchitecture);
             writer.WriteStringValue("osBuildNumber", OsBuildNumber);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>("osStatus", OsStatus);
             writer.WriteStringValue("osVersionNumber", OsVersionNumber);

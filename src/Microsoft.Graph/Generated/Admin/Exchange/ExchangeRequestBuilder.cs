@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Admin.Exchange.Mailboxes;
 using Microsoft.Graph.Beta.Admin.Exchange.MessageTraces;
+using Microsoft.Graph.Beta.Admin.Exchange.Tracing;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -31,6 +32,12 @@ namespace Microsoft.Graph.Beta.Admin.Exchange
         public global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.MessageTracesRequestBuilder MessageTraces
         {
             get => new global::Microsoft.Graph.Beta.Admin.Exchange.MessageTraces.MessageTracesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tracing property of the microsoft.graph.exchangeAdmin entity.</summary>
+        [Obsolete("Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15")]
+        public global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.TracingRequestBuilder Tracing
+        {
+            get => new global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.TracingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.ExchangeRequestBuilder"/> and sets the default values.

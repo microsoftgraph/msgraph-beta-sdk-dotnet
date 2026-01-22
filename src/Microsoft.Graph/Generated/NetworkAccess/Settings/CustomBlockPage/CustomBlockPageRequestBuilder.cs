@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get customBlockPage from networkAccess
+        /// Read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-customblockpage-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property customBlockPage in networkAccess
+        /// Update the properties of a customBlockPage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-customblockpage-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.CustomBlockPage"/></returns>
         /// <param name="body">The request body</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage
             return requestInfo;
         }
         /// <summary>
-        /// Get customBlockPage from networkAccess
+        /// Read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customBlockPage in networkAccess
+        /// Update the properties of a customBlockPage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CustomBlockPage
         {
         }
         /// <summary>
-        /// Get customBlockPage from networkAccess
+        /// Read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomBlockPageRequestBuilderGetQueryParameters 
