@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsWifiEnterpriseEAPConfiguration : global::Microsoft.Graph.Beta.Models.WindowsWifiConfiguration, IParsable
     {
-        /// <summary>Specify the authentication method. The possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
+        /// <summary>Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public global::Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod? AuthenticationMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod?>("authenticationMethod"); }
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("authenticationRetryDelayPeriodInSeconds"); }
             set { BackingStore?.Set("authenticationRetryDelayPeriodInSeconds", value); }
         }
-        /// <summary>Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you’re using certificate authentication, make sure the certificate type matches the authentication type. The possible values are: none, user, machine, machineOrUser, guest.</summary>
+        /// <summary>Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you’re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest.</summary>
         public global::Microsoft.Graph.Beta.Models.WifiAuthenticationType? AuthenticationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WifiAuthenticationType?>("authenticationType"); }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
 #endif
-        /// <summary>Specify inner authentication protocol for EAP TTLS. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
+        /// <summary>Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
         public global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEAPTTLS"); }
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("maximumPreAuthenticationAttempts"); }
             set { BackingStore?.Set("maximumPreAuthenticationAttempts", value); }
         }
-        /// <summary>Specify the network single sign on type. The possible values are: disabled, prelogon, postlogon.</summary>
+        /// <summary>Specify the network single sign on type. Possible values are: disabled, prelogon, postlogon.</summary>
         public global::Microsoft.Graph.Beta.Models.NetworkSingleSignOnType? NetworkSingleSignOn
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NetworkSingleSignOnType?>("networkSingleSignOn"); }

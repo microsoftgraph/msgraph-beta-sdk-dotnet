@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Authentication Transform Constants. The possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.</summary>
+        /// <summary>Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.</summary>
         public global::Microsoft.Graph.Beta.Models.AuthenticationTransformConstant? AuthenticationTransformConstants
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationTransformConstant?>("authenticationTransformConstants"); }
@@ -28,25 +28,25 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Cipher Transform Constants. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
+        /// <summary>Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType? CipherTransformConstants
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType?>("cipherTransformConstants"); }
             set { BackingStore?.Set("cipherTransformConstants", value); }
         }
-        /// <summary>Diffie Hellman Group. The possible values are: group1, group2, group14, ecp256, ecp384, group24.</summary>
+        /// <summary>Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.</summary>
         public global::Microsoft.Graph.Beta.Models.DiffieHellmanGroup? DhGroup
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DiffieHellmanGroup?>("dhGroup"); }
             set { BackingStore?.Set("dhGroup", value); }
         }
-        /// <summary>Encryption Method. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
+        /// <summary>Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType? EncryptionMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
-        /// <summary>Integrity Check Method. The possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
+        /// <summary>Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType? IntegrityCheckMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType?>("integrityCheckMethod"); }
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Perfect Forward Secrecy Group. The possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.</summary>
+        /// <summary>Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.</summary>
         public global::Microsoft.Graph.Beta.Models.PerfectForwardSecrecyGroup? PfsGroup
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PerfectForwardSecrecyGroup?>("pfsGroup"); }

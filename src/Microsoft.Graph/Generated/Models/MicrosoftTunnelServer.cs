@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentImageDigest", value); }
         }
 #endif
-        /// <summary>Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. The possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.</summary>
+        /// <summary>Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. Possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MicrosoftTunnelDeploymentMode? DeploymentMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftTunnelDeploymentMode?>("deploymentMode"); }

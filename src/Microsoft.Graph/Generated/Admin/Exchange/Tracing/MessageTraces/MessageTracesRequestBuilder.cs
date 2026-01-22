@@ -56,7 +56,8 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces
         {
         }
         /// <summary>
-        /// Get messageTraces from admin
+        /// Get a list of exchangeMessageTrace objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExchangeMessageTraceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +107,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExchangeMessageTrace>(requestInfo, global::Microsoft.Graph.Beta.Models.ExchangeMessageTrace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get messageTraces from admin
+        /// Get a list of exchangeMessageTrace objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +160,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces
             return new global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.MessageTracesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get messageTraces from admin
+        /// Get a list of exchangeMessageTrace objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessageTracesRequestBuilderGetQueryParameters 

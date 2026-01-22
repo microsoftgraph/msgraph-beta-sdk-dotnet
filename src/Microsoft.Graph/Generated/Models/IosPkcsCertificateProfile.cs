@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosPkcsCertificateProfile : global::Microsoft.Graph.Beta.Models.IosCertificateProfileBase, IParsable
     {
-        /// <summary>Target store certificate. The possible values are: user, machine.</summary>
+        /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public global::Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }

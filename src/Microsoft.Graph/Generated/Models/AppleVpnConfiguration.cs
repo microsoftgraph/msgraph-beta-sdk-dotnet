@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("optInToDeviceIdSharing"); }
             set { BackingStore?.Set("optInToDeviceIdSharing", value); }
         }
-        /// <summary>Provider type for per-app VPN. The possible values are: notConfigured, appProxy, packetTunnel.</summary>
+        /// <summary>Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.</summary>
         public global::Microsoft.Graph.Beta.Models.VpnProviderType? ProviderType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VpnProviderType?>("providerType"); }

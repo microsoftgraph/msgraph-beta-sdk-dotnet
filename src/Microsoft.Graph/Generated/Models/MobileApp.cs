@@ -269,7 +269,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("supersedingAppCount"); }
             set { BackingStore?.Set("supersedingAppCount", value); }
         }
-        /// <summary>The upload state. The possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.</summary>
+        /// <summary>The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.</summary>
         public int? UploadState
         {
             get { return BackingStore?.Get<int?>("uploadState"); }

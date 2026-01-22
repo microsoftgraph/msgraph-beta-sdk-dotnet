@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ExchangeMessageTraceDetail : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action property</summary>
+        /// <summary>The action taken on the message during the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("action", value); }
         }
 #endif
-        /// <summary>The data property</summary>
+        /// <summary>Additional data associated with the event, containing supplementary information specific to the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Data
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("data", value); }
         }
 #endif
-        /// <summary>The dateTime property</summary>
+        /// <summary>The date and time when the event occurred. The timestamp is in UTC format.</summary>
         public DateTimeOffset? DateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>A detailed description that provides context about what happened during message processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The event property</summary>
+        /// <summary>The event that occurred during message processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Event
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("event", value); }
         }
 #endif
-        /// <summary>The messageId property</summary>
+        /// <summary>The Message-ID header field of the message. The format depends on the messaging server that sent the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageId

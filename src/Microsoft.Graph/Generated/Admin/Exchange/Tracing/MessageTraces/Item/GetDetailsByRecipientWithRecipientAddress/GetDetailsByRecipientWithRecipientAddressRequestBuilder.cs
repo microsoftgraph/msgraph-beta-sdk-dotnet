@@ -36,7 +36,8 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDeta
         {
         }
         /// <summary>
-        /// Invoke function getDetailsByRecipient
+        /// Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDeta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressGetResponse>(requestInfo, global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getDetailsByRecipient
+        /// Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDeta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressResponse>(requestInfo, global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getDetailsByRecipient
+        /// Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDeta
             return new global::Microsoft.Graph.Beta.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getDetailsByRecipient
+        /// Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters 
