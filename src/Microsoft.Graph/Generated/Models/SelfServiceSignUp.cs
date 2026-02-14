@@ -82,6 +82,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The fraudProtectionDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.FraudProtectionDetails? FraudProtectionDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FraudProtectionDetails?>("fraudProtectionDetails"); }
+            set { BackingStore?.Set("fraudProtectionDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.FraudProtectionDetails FraudProtectionDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FraudProtectionDetails>("fraudProtectionDetails"); }
+            set { BackingStore?.Set("fraudProtectionDetails", value); }
+        }
+#endif
         /// <summary>Unique identifier for self-service sign-up user. Supports $filter (eq) on the signUpIdentifierType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "appliedEventListeners", n => { AppliedEventListeners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>(global::Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "fraudProtectionDetails", n => { FraudProtectionDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FraudProtectionDetails>(global::Microsoft.Graph.Beta.Models.FraudProtectionDetails.CreateFromDiscriminatorValue); } },
                 { "signUpIdentity", n => { SignUpIdentity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignUpIdentity>(global::Microsoft.Graph.Beta.Models.SignUpIdentity.CreateFromDiscriminatorValue); } },
                 { "signUpIdentityProvider", n => { SignUpIdentityProvider = n.GetStringValue(); } },
                 { "signUpStage", n => { SignUpStage = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SignUpStage>(); } },
@@ -195,6 +212,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>("appliedEventListeners", AppliedEventListeners);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FraudProtectionDetails>("fraudProtectionDetails", FraudProtectionDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignUpIdentity>("signUpIdentity", SignUpIdentity);
             writer.WriteStringValue("signUpIdentityProvider", SignUpIdentityProvider);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SignUpStage>("signUpStage", SignUpStage);

@@ -33,6 +33,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
                 "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.FeatureUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.recoveryUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.RecoveryUpdateCatalogEntry(),
                 _ => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry(),
             };
         }

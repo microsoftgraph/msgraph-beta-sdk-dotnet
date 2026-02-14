@@ -12,6 +12,38 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
     public partial class UsageRight : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The set of allotments associated with the assignments that combine to form this usageRight.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment>? Allotments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment>?>("allotments"); }
+            set { BackingStore?.Set("allotments", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment> Allotments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment>>("allotments"); }
+            set { BackingStore?.Set("allotments", value); }
+        }
+#endif
+        /// <summary>The set of assignments that combine to form this usageRight, including both direct assignments and assignments inherited through group membership.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>? Assignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment> Assignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#endif
         /// <summary>Information about the services associated with the usageRight. Not nullable. Read-only. Supports $filter on the planId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +100,8 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allotments", n => { Allotments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Service>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Service.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "skuId", n => { SkuId = n.GetGuidValue(); } },
                 { "skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
@@ -81,6 +115,8 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment>("allotments", Allotments);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>("assignments", Assignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Service>("services", Services);
             writer.WriteGuidValue("skuId", SkuId);
             writer.WriteStringValue("skuPartNumber", SkuPartNumber);

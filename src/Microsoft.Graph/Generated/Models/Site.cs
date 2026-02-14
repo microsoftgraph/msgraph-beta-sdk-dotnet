@@ -463,7 +463,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sites", value); }
         }
 #endif
-        /// <summary>Specifies the template applied to the site. The possible values are: sitepagepublishing, group, sts, unknownFutureValue.</summary>
+        /// <summary>Specifies the template applied to the site. The possible values are: sitepagepublishing, sts, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SiteTemplateType? Template
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteTemplateType?>("template"); }

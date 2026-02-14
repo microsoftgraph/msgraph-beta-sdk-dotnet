@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allSitesBackup", value); }
         }
 #endif
-        /// <summary>The browseSessions property</summary>
+        /// <summary>The list of browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.BrowseSessionBase>? BrowseSessions
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
         }
 #endif
-        /// <summary>The oneDriveForBusinessBrowseSessions property</summary>
+        /// <summary>The list of onedriveforbusiness browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.OneDriveForBusinessBrowseSession>? OneDriveForBusinessBrowseSessions
@@ -364,7 +364,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #endif
-        /// <summary>The sharePointBrowseSessions property</summary>
+        /// <summary>The list of sharepoint browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SharePointBrowseSession>? SharePointBrowseSessions

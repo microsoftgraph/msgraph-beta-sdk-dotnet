@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("externalCloudAuthorizedApplicationId", value); }
         }
 #endif
-        /// <summary>The groupSyncInbound property</summary>
+        /// <summary>Defines whether groups can be synchronized from a partner tenant. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound? GroupSyncInbound

@@ -268,6 +268,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("controlConfigurations", value); }
         }
 #endif
+        /// <summary>The externalOriginResourceConnectors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>? ExternalOriginResourceConnectors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>?>("externalOriginResourceConnectors"); }
+            set { BackingStore?.Set("externalOriginResourceConnectors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector> ExternalOriginResourceConnectors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>>("externalOriginResourceConnectors"); }
+            set { BackingStore?.Set("externalOriginResourceConnectors", value); }
+        }
+#endif
         /// <summary>Represents the settings that control the behavior of Microsoft Entra entitlement management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -334,6 +350,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "availableAccessPackages", n => { AvailableAccessPackages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AvailableAccessPackage>(global::Microsoft.Graph.Beta.Models.AvailableAccessPackage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConnectedOrganization>(global::Microsoft.Graph.Beta.Models.ConnectedOrganization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "controlConfigurations", n => { ControlConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ControlConfiguration>(global::Microsoft.Graph.Beta.Models.ControlConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalOriginResourceConnectors", n => { ExternalOriginResourceConnectors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>(global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EntitlementManagementSettings>(global::Microsoft.Graph.Beta.Models.EntitlementManagementSettings.CreateFromDiscriminatorValue); } },
                 { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageSubject>(global::Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -362,6 +379,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AvailableAccessPackage>("availableAccessPackages", AvailableAccessPackages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ControlConfiguration>("controlConfigurations", ControlConfigurations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>("externalOriginResourceConnectors", ExternalOriginResourceConnectors);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EntitlementManagementSettings>("settings", Settings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageSubject>("subjects", Subjects);
         }

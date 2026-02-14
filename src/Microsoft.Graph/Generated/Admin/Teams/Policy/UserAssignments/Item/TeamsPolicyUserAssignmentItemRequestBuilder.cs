@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams.Policy.UserAssignments.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Navigation property to the collection of user policy assignments.
+        /// The collection of user policy assignments.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams.Policy.UserAssignments.Item
             return requestInfo;
         }
         /// <summary>
-        /// Navigation property to the collection of user policy assignments.
+        /// The collection of user policy assignments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Admin.Teams.Policy.UserAssignments.Item
         {
         }
         /// <summary>
-        /// Navigation property to the collection of user policy assignments.
+        /// The collection of user policy assignments.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsPolicyUserAssignmentItemRequestBuilderGetQueryParameters 

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapsh
         {
         }
         /// <summary>
-        /// Get configurationSnapshotJobs from admin
+        /// Get a list of the configurationSnapshotJob objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshotjobs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationSnapshotJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapsh
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationSnapshotJob>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationSnapshotJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get configurationSnapshotJobs from admin
+        /// Get a list of the configurationSnapshotJob objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapsh
             return new global::Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapshotJobs.ConfigurationSnapshotJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get configurationSnapshotJobs from admin
+        /// Get a list of the configurationSnapshotJob objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationSnapshotJobsRequestBuilderGetQueryParameters 

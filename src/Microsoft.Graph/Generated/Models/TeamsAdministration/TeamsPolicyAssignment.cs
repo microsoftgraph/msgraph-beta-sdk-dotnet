@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
     public partial class TeamsPolicyAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Navigation property to the collection of user policy assignments.</summary>
+        /// <summary>The collection of user policy assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsPolicyUserAssignment>? UserAssignments

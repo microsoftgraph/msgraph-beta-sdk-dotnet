@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The category property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcSourceImageCategory? Category
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSourceImageCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
+        }
         /// <summary>The display name for the source image. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "category", n => { Category = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSourceImageCategory>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -158,6 +165,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSourceImageCategory>("category", Category);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);

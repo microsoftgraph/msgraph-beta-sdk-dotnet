@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isSyncAllowed property</summary>
+        /// <summary>Defines whether group objects should be synchronized from the partner tenant. false stops any current group synchronization from the source tenant to the target tenant. This property has no impact on existing groups that were synchronized.</summary>
         public bool? IsSyncAllowed
         {
             get { return BackingStore?.Get<bool?>("isSyncAllowed"); }

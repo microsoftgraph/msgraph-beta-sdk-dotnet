@@ -78,6 +78,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType?>("detectionTimingType"); }
             set { BackingStore?.Set("detectionTimingType", value); }
         }
+        /// <summary>The identityType property</summary>
+        public global::Microsoft.Graph.Beta.Models.AgentIdentityType? IdentityType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentIdentityType?>("identityType"); }
+            set { BackingStore?.Set("identityType", value); }
+        }
         /// <summary>Date and time that the risk detection was last updated.  Supports $filter (eq, le, and ge).</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
@@ -158,6 +164,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "agentId", n => { AgentId = n.GetStringValue(); } },
                 { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType>(); } },
+                { "identityType", n => { IdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "riskDetail", n => { RiskDetail = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>(); } },
                 { "riskEventType", n => { RiskEventType = n.GetStringValue(); } },
@@ -180,6 +187,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("agentId", AgentId);
             writer.WriteDateTimeOffsetValue("detectedDateTime", DetectedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType>("detectionTimingType", DetectionTimingType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>("identityType", IdentityType);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteStringValue("riskEventType", RiskEventType);

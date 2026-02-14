@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapsh
         {
         }
         /// <summary>
-        /// Get configurationSnapshots from admin
+        /// A container for configuration snapshot baselines.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationBaselineCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapsh
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationBaseline>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationBaseline.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get configurationSnapshots from admin
+        /// A container for configuration snapshot baselines.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapsh
             return new global::Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationSnapshots.ConfigurationSnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get configurationSnapshots from admin
+        /// A container for configuration snapshot baselines.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationSnapshotsRequestBuilderGetQueryParameters 

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get granularDriveRestoreArtifacts from solutions
+        /// A collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             return requestInfo;
         }
         /// <summary>
-        /// Get granularDriveRestoreArtifacts from solutions
+        /// A collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         {
         }
         /// <summary>
-        /// Get granularDriveRestoreArtifacts from solutions
+        /// A collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters 

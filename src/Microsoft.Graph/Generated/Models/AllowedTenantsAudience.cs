@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AllowedTenantsAudience : global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of Entra tenant IDs where the application can be used as either a client application or a resource application (API). Must contain at least one value. The tenant ID where the application is registered may be included, but is not required (see isHomeTenantAllowed). Required.</summary>
+        /// <summary>The list of Entra tenant IDs where the application can be used as either a client application or a resource application (API). This property must contain at least one value and can&apos;t include more than 20 values. The tenant ID where the application is registered may be included, but is not required (see isHomeTenantAllowed). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedTenantIds

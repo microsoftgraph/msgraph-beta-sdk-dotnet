@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentDisplayName", value); }
         }
 #endif
+        /// <summary>The identityType property</summary>
+        public global::Microsoft.Graph.Beta.Models.AgentIdentityType? IdentityType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentIdentityType?>("identityType"); }
+            set { BackingStore?.Set("identityType", value); }
+        }
         /// <summary>Indicates whether the agent is deleted.</summary>
         public bool? IsDeleted
         {
@@ -96,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "agentDisplayName", n => { AgentDisplayName = n.GetStringValue(); } },
+                { "identityType", n => { IdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>(); } },
                 { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
@@ -114,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("agentDisplayName", AgentDisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>("identityType", IdentityType);
             writer.WriteBoolValue("isDeleted", IsDeleted);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isProcessing", IsProcessing);

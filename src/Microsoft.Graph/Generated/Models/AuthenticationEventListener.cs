@@ -84,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.onEmailOtpSendListener" => new global::Microsoft.Graph.Beta.Models.OnEmailOtpSendListener(),
                 "#microsoft.graph.onFraudProtectionLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnFraudProtectionLoadStartListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new global::Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartListener(),
+                "#microsoft.graph.onPasswordSubmitListener" => new global::Microsoft.Graph.Beta.Models.OnPasswordSubmitListener(),
                 "#microsoft.graph.onPhoneMethodLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnPhoneMethodLoadStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartListener(),
                 "#microsoft.graph.onUserCreateStartListener" => new global::Microsoft.Graph.Beta.Models.OnUserCreateStartListener(),
