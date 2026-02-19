@@ -120,5 +120,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         PassKeySynced,
         #pragma warning restore CS1591
+        [EnumMember(Value = "qrCode")]
+        #pragma warning disable CS1591
+        QrCode,
+        #pragma warning restore CS1591
     }
 }

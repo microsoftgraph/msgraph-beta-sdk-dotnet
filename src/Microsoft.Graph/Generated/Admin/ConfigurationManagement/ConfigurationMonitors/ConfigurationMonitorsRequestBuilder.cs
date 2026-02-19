@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
         {
         }
         /// <summary>
-        /// Get configurationMonitors from admin
+        /// Get a list of the configurationMonitor objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationMonitorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationMonitorCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationMonitorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to configurationMonitors for admin
+        /// Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationMonitor"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationMonitor>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationMonitor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get configurationMonitors from admin
+        /// Get a list of the configurationMonitor objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to configurationMonitors for admin
+        /// Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return new global::Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonitors.ConfigurationMonitorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get configurationMonitors from admin
+        /// Get a list of the configurationMonitor objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationMonitorsRequestBuilderGetQueryParameters 

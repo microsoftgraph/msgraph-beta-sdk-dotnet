@@ -1100,7 +1100,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("visibility", value); }
         }
 #endif
-        /// <summary>The welcomeMessageEnabled property</summary>
+        /// <summary>Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? WelcomeMessageEnabled
         {
             get { return BackingStore?.Get<bool?>("welcomeMessageEnabled"); }

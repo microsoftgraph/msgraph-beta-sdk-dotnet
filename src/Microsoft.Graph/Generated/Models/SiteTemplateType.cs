@@ -12,10 +12,6 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         Sitepagepublishing,
         #pragma warning restore CS1591
-        [EnumMember(Value = "group")]
-        #pragma warning disable CS1591
-        Group,
-        #pragma warning restore CS1591
         [EnumMember(Value = "sts")]
         #pragma warning disable CS1591
         Sts,

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Identities.Settings.AutoAuditingConfiguration;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the autoAuditingConfiguration property of the microsoft.graph.security.settingsContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Identities.Settings.AutoAuditingConfiguration.AutoAuditingConfigurationRequestBuilder AutoAuditingConfiguration
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Identities.Settings.AutoAuditingConfiguration.AutoAuditingConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.Identities.Settings.SettingsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -57,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get settings from security
+        /// Represents a container for security identities settings APIs.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SettingsContainer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +130,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Get settings from security
+        /// Represents a container for security identities settings APIs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +188,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Settings
         {
         }
         /// <summary>
-        /// Get settings from security
+        /// Represents a container for security identities settings APIs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetQueryParameters 

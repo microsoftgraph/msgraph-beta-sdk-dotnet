@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         {
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// Get a list of the granularSiteRestoreArtifact objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-list-granularsiterestoreartifacts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GranularSiteRestoreArtifactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GranularSiteRestoreArtifact>(requestInfo, global::Microsoft.Graph.Beta.Models.GranularSiteRestoreArtifact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// Get a list of the granularSiteRestoreArtifact objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts.GranularSiteRestoreArtifactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// Get a list of the granularSiteRestoreArtifact objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GranularSiteRestoreArtifactsRequestBuilderGetQueryParameters 

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("binaryValue", value); }
         }
 #endif
-        /// <summary>Specifies how much of the QRCode can be corrupted while still maintaining its readable. The possible values are: l  (Low), m (Medium), q (Quartile), h ( High), unknownFutureValue.</summary>
+        /// <summary>Specifies how much of the QR code can be corrupted while still maintaining its readable. The possible values are: l  (Low), m (Medium), q (Quartile), h ( High), unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.ErrorCorrectionLevel? ErrorCorrectionLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ErrorCorrectionLevel?>("errorCorrectionLevel"); }

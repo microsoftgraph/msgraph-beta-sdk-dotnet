@@ -18,6 +18,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRe
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId;
@@ -118,6 +119,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder ControlConfigurations
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder ExternalOriginResourceConnectors
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings.SettingsRequestBuilder Settings

@@ -22,6 +22,22 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DataLossPreventi
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The classifyText property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TextClassificationRequest? ClassifyText
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TextClassificationRequest?>("classifyText"); }
+            set { BackingStore?.Set("classifyText", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TextClassificationRequest ClassifyText
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TextClassificationRequest>("classifyText"); }
+            set { BackingStore?.Set("classifyText", value); }
+        }
+#endif
         /// <summary>The evaluationInput property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +112,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DataLossPreventi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "classifyText", n => { ClassifyText = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TextClassificationRequest>(global::Microsoft.Graph.Beta.Models.TextClassificationRequest.CreateFromDiscriminatorValue); } },
                 { "evaluationInput", n => { EvaluationInput = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DlpEvaluationInput>(global::Microsoft.Graph.Beta.Models.DlpEvaluationInput.CreateFromDiscriminatorValue); } },
                 { "notificationInfo", n => { NotificationInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DlpNotification>(global::Microsoft.Graph.Beta.Models.DlpNotification.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -108,6 +125,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DataLossPreventi
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TextClassificationRequest>("classifyText", ClassifyText);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DlpEvaluationInput>("evaluationInput", EvaluationInput);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DlpNotification>("notificationInfo", NotificationInfo);
             writer.WriteStringValue("target", Target);

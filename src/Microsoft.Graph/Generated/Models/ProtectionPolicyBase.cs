@@ -94,6 +94,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The offboardRequestedDateTime property</summary>
+        public DateTimeOffset? OffboardRequestedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
+            set { BackingStore?.Set("offboardRequestedDateTime", value); }
+        }
         /// <summary>The protectionMode property</summary>
         public global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode? ProtectionMode
         {
@@ -170,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "offboardRequestedDateTime", n => { OffboardRequestedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "protectionMode", n => { ProtectionMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode>(); } },
                 { "protectionPolicyArtifactCount", n => { ProtectionPolicyArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>(global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount.CreateFromDiscriminatorValue); } },
                 { "retentionSettings", n => { RetentionSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>(global::Microsoft.Graph.Beta.Models.RetentionSetting.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -191,6 +198,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("offboardRequestedDateTime", OffboardRequestedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode>("protectionMode", ProtectionMode);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>("protectionPolicyArtifactCount", ProtectionPolicyArtifactCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>("retentionSettings", RetentionSettings);

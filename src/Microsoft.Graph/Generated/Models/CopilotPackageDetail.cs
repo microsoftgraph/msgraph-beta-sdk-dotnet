@@ -141,6 +141,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CopilotPackageDetail"/> and sets the default values.
+        /// </summary>
+        public CopilotPackageDetail() : base()
+        {
+            OdataType = "#microsoft.graph.copilotPackageDetail";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CopilotPackageDetail"/></returns>

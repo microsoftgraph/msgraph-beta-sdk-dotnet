@@ -35,6 +35,7 @@ using Microsoft.Graph.Beta.Security.TiIndicators;
 using Microsoft.Graph.Beta.Security.TriggerTypes;
 using Microsoft.Graph.Beta.Security.Triggers;
 using Microsoft.Graph.Beta.Security.UserSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Zones;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -215,6 +216,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder UserSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the zones property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Zones.ZonesRequestBuilder Zones
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Zones.ZonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.SecurityRequestBuilder"/> and sets the default values.
