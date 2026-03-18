@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Activities;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Archive;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.AssignSensitivityLabel;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkin;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkout;
@@ -30,6 +31,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.SearchWithQ;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Subscriptions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Unarchive;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Unfollow;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.ValidatePermission;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions;
@@ -61,6 +63,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the assignSensitivityLabel method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.AssignSensitivityLabel.AssignSensitivityLabelRequestBuilder AssignSensitivityLabel
@@ -186,6 +193,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder Thumbnails
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unfollow method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Unfollow.UnfollowRequestBuilder Unfollow

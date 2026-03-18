@@ -45,6 +45,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
 #endif
+        /// <summary>The storyline property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Storyline? Storyline
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Storyline?>("storyline"); }
+            set { BackingStore?.Set("storyline", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Storyline Storyline
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Storyline>("storyline"); }
+            set { BackingStore?.Set("storyline", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "assignedRoles", n => { AssignedRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EngagementRole>(global::Microsoft.Graph.Beta.Models.EngagementRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LearningCourseActivity>(global::Microsoft.Graph.Beta.Models.LearningCourseActivity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "storyline", n => { Storyline = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Storyline>(global::Microsoft.Graph.Beta.Models.Storyline.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EngagementRole>("assignedRoles", AssignedRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Storyline>("storyline", Storyline);
         }
     }
 }

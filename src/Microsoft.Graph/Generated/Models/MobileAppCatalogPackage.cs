@@ -13,6 +13,22 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppCatalogPackage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
+        /// <summary>The description of the product (example: &quot;Fabrikam for Business is a productivity app.&quot;). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProductDescription
+        {
+            get { return BackingStore?.Get<string?>("productDescription"); }
+            set { BackingStore?.Set("productDescription", value); }
+        }
+#nullable restore
+#else
+        public string ProductDescription
+        {
+            get { return BackingStore?.Get<string>("productDescription"); }
+            set { BackingStore?.Set("productDescription", value); }
+        }
+#endif
         /// <summary>The name of the product (example: &quot;Fabrikam for Business&quot;). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "productDescription", n => { ProductDescription = n.GetStringValue(); } },
                 { "productDisplayName", n => { ProductDisplayName = n.GetStringValue(); } },
                 { "productId", n => { ProductId = n.GetStringValue(); } },
                 { "publisherDisplayName", n => { PublisherDisplayName = n.GetStringValue(); } },

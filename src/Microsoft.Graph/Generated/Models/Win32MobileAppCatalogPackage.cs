@@ -35,6 +35,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("branchDisplayName", value); }
         }
 #endif
+        /// <summary>The identifier of a specific branch irrespective of version, or other attributes. This id is associated with the branchDisplayName. Read-only. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BranchId
+        {
+            get { return BackingStore?.Get<string?>("branchId"); }
+            set { BackingStore?.Set("branchId", value); }
+        }
+#nullable restore
+#else
+        public string BranchId
+        {
+            get { return BackingStore?.Get<string>("branchId"); }
+            set { BackingStore?.Set("branchId", value); }
+        }
+#endif
         /// <summary>One or more locale(s) supported by the branch. Value is a two-letter ISO 639 language tags with optional two-letter subtags (example: en-US, ko, de, de-DE), or mul to indicate multi-language. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
                 { "branchDisplayName", n => { BranchDisplayName = n.GetStringValue(); } },
+                { "branchId", n => { BranchId = n.GetStringValue(); } },
                 { "locales", n => { Locales = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "packageAutoUpdateCapable", n => { PackageAutoUpdateCapable = n.GetBoolValue(); } },
             };

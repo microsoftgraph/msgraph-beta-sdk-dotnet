@@ -16,5 +16,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "federation")]
+        #pragma warning disable CS1591
+        Federation,
+        #pragma warning restore CS1591
     }
 }

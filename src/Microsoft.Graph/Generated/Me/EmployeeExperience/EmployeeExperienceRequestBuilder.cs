@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Me.EmployeeExperience.AssignedRoles;
 using Microsoft.Graph.Beta.Me.EmployeeExperience.LearningCourseActivities;
 using Microsoft.Graph.Beta.Me.EmployeeExperience.LearningCourseActivitiesWithExternalcourseActivityId;
+using Microsoft.Graph.Beta.Me.EmployeeExperience.Storyline;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.Me.EmployeeExperience
         public global::Microsoft.Graph.Beta.Me.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder LearningCourseActivities
         {
             get => new global::Microsoft.Graph.Beta.Me.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the storyline property of the microsoft.graph.employeeExperienceUser entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.EmployeeExperience.Storyline.StorylineRequestBuilder Storyline
+        {
+            get => new global::Microsoft.Graph.Beta.Me.EmployeeExperience.Storyline.StorylineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.EmployeeExperience.EmployeeExperienceRequestBuilder"/> and sets the default values.
@@ -70,7 +76,7 @@ namespace Microsoft.Graph.Beta.Me.EmployeeExperience
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get employeeExperience from me
+        /// The employee experience resources for the user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -147,7 +153,7 @@ namespace Microsoft.Graph.Beta.Me.EmployeeExperience
             return requestInfo;
         }
         /// <summary>
-        /// Get employeeExperience from me
+        /// The employee experience resources for the user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -205,7 +211,7 @@ namespace Microsoft.Graph.Beta.Me.EmployeeExperience
         {
         }
         /// <summary>
-        /// Get employeeExperience from me
+        /// The employee experience resources for the user. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmployeeExperienceRequestBuilderGetQueryParameters 

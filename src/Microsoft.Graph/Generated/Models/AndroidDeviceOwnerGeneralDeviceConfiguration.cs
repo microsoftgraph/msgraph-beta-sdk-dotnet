@@ -223,6 +223,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("googleAccountsBlocked"); }
             set { BackingStore?.Set("googleAccountsBlocked", value); }
         }
+        /// <summary>Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.</summary>
+        public bool? IsKioskModeExitCodeSet
+        {
+            get { return BackingStore?.Get<bool?>("isKioskModeExitCodeSet"); }
+            set { BackingStore?.Set("isKioskModeExitCodeSet", value); }
+        }
         /// <summary>Indicates whether a user can access the device&apos;s Settings app while in Kiosk Mode.</summary>
         public bool? KioskCustomizationDeviceSettingsBlocked
         {
@@ -1133,6 +1139,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "factoryResetDeviceAdministratorEmails", n => { FactoryResetDeviceAdministratorEmails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "globalProxy", n => { GlobalProxy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy.CreateFromDiscriminatorValue); } },
                 { "googleAccountsBlocked", n => { GoogleAccountsBlocked = n.GetBoolValue(); } },
+                { "isKioskModeExitCodeSet", n => { IsKioskModeExitCodeSet = n.GetBoolValue(); } },
                 { "kioskCustomizationDeviceSettingsBlocked", n => { KioskCustomizationDeviceSettingsBlocked = n.GetBoolValue(); } },
                 { "kioskCustomizationPowerButtonActionsBlocked", n => { KioskCustomizationPowerButtonActionsBlocked = n.GetBoolValue(); } },
                 { "kioskCustomizationStatusBar", n => { KioskCustomizationStatusBar = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar>(); } },
@@ -1283,6 +1290,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("factoryResetDeviceAdministratorEmails", FactoryResetDeviceAdministratorEmails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy>("globalProxy", GlobalProxy);
             writer.WriteBoolValue("googleAccountsBlocked", GoogleAccountsBlocked);
+            writer.WriteBoolValue("isKioskModeExitCodeSet", IsKioskModeExitCodeSet);
             writer.WriteBoolValue("kioskCustomizationDeviceSettingsBlocked", KioskCustomizationDeviceSettingsBlocked);
             writer.WriteBoolValue("kioskCustomizationPowerButtonActionsBlocked", KioskCustomizationPowerButtonActionsBlocked);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar>("kioskCustomizationStatusBar", KioskCustomizationStatusBar);
