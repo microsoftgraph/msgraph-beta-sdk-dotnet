@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("directoryPropertyName", value); }
         }
 #endif
+        /// <summary>The isVisible property</summary>
+        public bool? IsVisible
+        {
+            get { return BackingStore?.Get<bool?>("isVisible"); }
+            set { BackingStore?.Set("isVisible", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardAnnotation>(global::Microsoft.Graph.Beta.Models.ProfileCardAnnotation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "directoryPropertyName", n => { DirectoryPropertyName = n.GetStringValue(); } },
+                { "isVisible", n => { IsVisible = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardAnnotation>("annotations", Annotations);
             writer.WriteStringValue("directoryPropertyName", DirectoryPropertyName);
+            writer.WriteBoolValue("isVisible", IsVisible);
         }
     }
 }

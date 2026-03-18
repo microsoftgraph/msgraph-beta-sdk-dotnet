@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ZebraFotaErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>Date and time when the deployment status was updated from Zebra</summary>
+        /// <summary> Date and time when the deployment status was updated from Zebra</summary>
         public DateTimeOffset? LastUpdatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("totalCanceled"); }
             set { BackingStore?.Set("totalCanceled", value); }
         }
-        /// <summary>An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.</summary>
+        /// <summary>An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices. </summary>
         public int? TotalCreated
         {
             get { return BackingStore?.Get<int?>("totalCreated"); }
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("totalFailedInstall"); }
             set { BackingStore?.Set("totalFailedInstall", value); }
         }
-        /// <summary>An integer that indicates the total number of devices that received the json and are scheduled.</summary>
+        /// <summary>An integer that indicates the total number of devices that received the json and are scheduled. </summary>
         public int? TotalScheduled
         {
             get { return BackingStore?.Get<int?>("totalScheduled"); }

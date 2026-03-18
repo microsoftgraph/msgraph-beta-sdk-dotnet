@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZebraFotaConnector : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.</summary>
+        /// <summary>Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrollmentAuthorizationUrl

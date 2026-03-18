@@ -37,6 +37,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
+        /// <summary>The type of content. The possible values are: none, ai, unknownFutureValue.  The default value is ai, which refers to AI generated content.</summary>
+        public global::Microsoft.Graph.Beta.Models.ContentCategory? ContentCategory
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ContentCategory?>("contentCategory"); }
+            set { BackingStore?.Set("contentCategory", value); }
+        }
         /// <summary>An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ContentBase>(global::Microsoft.Graph.Beta.Models.ContentBase.CreateFromDiscriminatorValue); } },
+                { "contentCategory", n => { ContentCategory = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ContentCategory>(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "identifier", n => { Identifier = n.GetStringValue(); } },
@@ -184,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ContentBase>("content", Content);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ContentCategory>("contentCategory", ContentCategory);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("identifier", Identifier);

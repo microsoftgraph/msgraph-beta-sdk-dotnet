@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
+        /// <summary>The principalId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrincipalId
+        {
+            get { return BackingStore?.Get<string?>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
+        }
+#nullable restore
+#else
+        public string PrincipalId
+        {
+            get { return BackingStore?.Get<string>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
+        }
+#endif
         /// <summary>The user-visible title of the sharePointGroup. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointGroupMember>(global::Microsoft.Graph.Beta.Models.SharePointGroupMember.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "principalId", n => { PrincipalId = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -93,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointGroupMember>("members", Members);
+            writer.WriteStringValue("principalId", PrincipalId);
             writer.WriteStringValue("title", Title);
         }
     }

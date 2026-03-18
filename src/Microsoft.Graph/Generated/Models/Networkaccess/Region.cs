@@ -152,5 +152,25 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "taiwanNorth")]
+        #pragma warning disable CS1591
+        TaiwanNorth,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "mexicoCentral")]
+        #pragma warning disable CS1591
+        MexicoCentral,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "spainCentral")]
+        #pragma warning disable CS1591
+        SpainCentral,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "jioIndiaCentral")]
+        #pragma warning disable CS1591
+        JioIndiaCentral,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "brazilSouthEast")]
+        #pragma warning disable CS1591
+        BrazilSouthEast,
+        #pragma warning restore CS1591
     }
 }

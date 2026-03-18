@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("passcodeBlockSimple"); }
             set { BackingStore?.Set("passcodeBlockSimple", value); }
         }
-        /// <summary>Number of days before the passcode expires. Valid values 1 to 65535</summary>
+        /// <summary>Number of days before the passcode expires. Starting January 2026 (Intune release version: 2601), the maximum expiration days will be limited to 730 days. Any setting above 730 days will be default to 730 days. Valid values 1 to 65535</summary>
         public int? PasscodeExpirationDays
         {
             get { return BackingStore?.Get<int?>("passcodeExpirationDays"); }

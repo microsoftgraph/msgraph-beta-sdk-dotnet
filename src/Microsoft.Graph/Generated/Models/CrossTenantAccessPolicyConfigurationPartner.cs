@@ -92,6 +92,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
 #endif
+        /// <summary>The blockServiceProviderOutboundAccess property</summary>
+        public bool? BlockServiceProviderOutboundAccess
+        {
+            get { return BackingStore?.Get<bool?>("blockServiceProviderOutboundAccess"); }
+            set { BackingStore?.Set("blockServiceProviderOutboundAccess", value); }
+        }
         /// <summary>Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,6 +204,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "b2bCollaborationOutbound", n => { B2bCollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 { "b2bDirectConnectInbound", n => { B2bDirectConnectInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 { "b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                { "blockServiceProviderOutboundAccess", n => { BlockServiceProviderOutboundAccess = n.GetBoolValue(); } },
                 { "identitySynchronization", n => { IdentitySynchronization = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner>(global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue); } },
                 { "inboundTrust", n => { InboundTrust = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 { "isInMultiTenantOrganization", n => { IsInMultiTenantOrganization = n.GetBoolValue(); } },
@@ -219,6 +226,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound", B2bCollaborationOutbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound", B2bDirectConnectInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound", B2bDirectConnectOutbound);
+            writer.WriteBoolValue("blockServiceProviderOutboundAccess", BlockServiceProviderOutboundAccess);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner>("identitySynchronization", IdentitySynchronization);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteBoolValue("isInMultiTenantOrganization", IsInMultiTenantOrganization);

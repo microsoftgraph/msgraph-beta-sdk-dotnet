@@ -12,19 +12,23 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProfilePropertySetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A privacy setting that reflects the allowed audience for the configured property. The possible values are: me, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Beta.Models.OrganizationAllowedAudiences? AllowedAudiences
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OrganizationAllowedAudiences?>("allowedAudiences"); }
-            set { BackingStore?.Set("allowedAudiences", value); }
-        }
-        /// <summary>Defines whether a user is allowed to override the tenant admin privacy setting.</summary>
-        public bool? IsUserOverrideForAudienceEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isUserOverrideForAudienceEnabled"); }
-            set { BackingStore?.Set("isUserOverrideForAudienceEnabled", value); }
-        }
         /// <summary>Name of the property-level setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>Other name of the property-level setting. For backward compatibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -74,8 +78,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedAudiences", n => { AllowedAudiences = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.OrganizationAllowedAudiences>(); } },
-                { "isUserOverrideForAudienceEnabled", n => { IsUserOverrideForAudienceEnabled = n.GetBoolValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "prioritizedSourceUrls", n => { PrioritizedSourceUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -88,8 +91,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OrganizationAllowedAudiences>("allowedAudiences", AllowedAudiences);
-            writer.WriteBoolValue("isUserOverrideForAudienceEnabled", IsUserOverrideForAudienceEnabled);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("prioritizedSourceUrls", PrioritizedSourceUrls);
         }
