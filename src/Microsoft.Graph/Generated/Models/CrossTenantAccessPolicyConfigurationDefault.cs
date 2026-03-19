@@ -92,6 +92,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
 #endif
+        /// <summary>The blockServiceProviderOutboundAccess property</summary>
+        public bool? BlockServiceProviderOutboundAccess
+        {
+            get { return BackingStore?.Get<bool?>("blockServiceProviderOutboundAccess"); }
+            set { BackingStore?.Set("blockServiceProviderOutboundAccess", value); }
+        }
         /// <summary>Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +175,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "b2bCollaborationOutbound", n => { B2bCollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 { "b2bDirectConnectInbound", n => { B2bDirectConnectInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 { "b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                { "blockServiceProviderOutboundAccess", n => { BlockServiceProviderOutboundAccess = n.GetBoolValue(); } },
                 { "inboundTrust", n => { InboundTrust = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 { "invitationRedemptionIdentityProviderConfiguration", n => { InvitationRedemptionIdentityProviderConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>(global::Microsoft.Graph.Beta.Models.DefaultInvitationRedemptionIdentityProviderConfiguration.CreateFromDiscriminatorValue); } },
                 { "isServiceDefault", n => { IsServiceDefault = n.GetBoolValue(); } },
@@ -188,6 +195,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound", B2bCollaborationOutbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound", B2bDirectConnectInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound", B2bDirectConnectOutbound);
+            writer.WriteBoolValue("blockServiceProviderOutboundAccess", BlockServiceProviderOutboundAccess);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>("invitationRedemptionIdentityProviderConfiguration", InvitationRedemptionIdentityProviderConfiguration);
             writer.WriteBoolValue("isServiceDefault", IsServiceDefault);

@@ -27,6 +27,7 @@ using Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolicy;
 using Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies;
 using Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies;
 using Microsoft.Graph.Beta.Policies.OnPremAuthenticationPolicies;
+using Microsoft.Graph.Beta.Policies.OwnerlessGroupPolicy;
 using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies;
 using Microsoft.Graph.Beta.Policies.PermissionGrantPreApprovalPolicies;
 using Microsoft.Graph.Beta.Policies.RoleManagementPolicies;
@@ -174,6 +175,11 @@ namespace Microsoft.Graph.Beta.Policies
         public global::Microsoft.Graph.Beta.Policies.OnPremAuthenticationPolicies.OnPremAuthenticationPoliciesRequestBuilder OnPremAuthenticationPolicies
         {
             get => new global::Microsoft.Graph.Beta.Policies.OnPremAuthenticationPolicies.OnPremAuthenticationPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the ownerlessGroupPolicy property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.OwnerlessGroupPolicy.OwnerlessGroupPolicyRequestBuilder OwnerlessGroupPolicy
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.OwnerlessGroupPolicy.OwnerlessGroupPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.PermissionGrantPoliciesRequestBuilder PermissionGrantPolicies

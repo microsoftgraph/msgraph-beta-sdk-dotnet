@@ -1792,6 +1792,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("roleScopeTags", value); }
         }
 #endif
+        /// <summary>The collection of Samsung EFOTA firmware versions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>? SamsungEFotaFirmwareVersions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>?>("samsungEFotaFirmwareVersions"); }
+            set { BackingStore?.Set("samsungEFotaFirmwareVersions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion> SamsungEFotaFirmwareVersions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>>("samsungEFotaFirmwareVersions"); }
+            set { BackingStore?.Set("samsungEFotaFirmwareVersions", value); }
+        }
+#endif
         /// <summary>A list of ServiceNowConnections</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -3111,6 +3127,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>(global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleDefinition>(global::Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleScopeTag>(global::Microsoft.Graph.Beta.Models.RoleScopeTag.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "samsungEFotaFirmwareVersions", n => { SamsungEFotaFirmwareVersions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>(global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceNowConnections", n => { ServiceNowConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceNowConnection>(global::Microsoft.Graph.Beta.Models.ServiceNowConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>(global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSettings>(global::Microsoft.Graph.Beta.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
@@ -3309,6 +3326,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>("roleAssignments", RoleAssignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleDefinition>("roleDefinitions", RoleDefinitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleScopeTag>("roleScopeTags", RoleScopeTags);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>("samsungEFotaFirmwareVersions", SamsungEFotaFirmwareVersions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceNowConnection>("serviceNowConnections", ServiceNowConnections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>("settingDefinitions", SettingDefinitions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSettings>("settings", Settings);

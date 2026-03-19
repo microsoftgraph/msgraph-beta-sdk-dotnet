@@ -56,6 +56,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("nextScheduleRunDateTime"); }
             set { BackingStore?.Set("nextScheduleRunDateTime", value); }
         }
+        /// <summary>The previewScope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? PreviewScope
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>?>("previewScope"); }
+            set { BackingStore?.Set("previewScope", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject> PreviewScope
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>>("previewScope"); }
+            set { BackingStore?.Set("previewScope", value); }
+        }
+#endif
         /// <summary>Workflow runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextScheduleRunDateTime", n => { NextScheduleRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "previewScope", n => { PreviewScope = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "runs", n => { Runs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -174,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>("executionScope", ExecutionScope);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextScheduleRunDateTime", NextScheduleRunDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("previewScope", PreviewScope);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>("runs", Runs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport>("taskReports", TaskReports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>("userProcessingResults", UserProcessingResults);

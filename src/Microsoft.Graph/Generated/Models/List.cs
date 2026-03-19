@@ -92,6 +92,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("drive", value); }
         }
 #endif
+        /// <summary>The itemCount property</summary>
+        public int? ItemCount
+        {
+            get { return BackingStore?.Get<int?>("itemCount"); }
+            set { BackingStore?.Set("itemCount", value); }
+        }
         /// <summary>All items contained in the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,6 +240,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ContentType>(global::Microsoft.Graph.Beta.Models.ContentType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
+                { "itemCount", n => { ItemCount = n.GetIntValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ListItem>(global::Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "list", n => { ListProp = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ListInfo>(global::Microsoft.Graph.Beta.Models.ListInfo.CreateFromDiscriminatorValue); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RichLongRunningOperation>(global::Microsoft.Graph.Beta.Models.RichLongRunningOperation.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -256,6 +263,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ContentType>("contentTypes", ContentTypes);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
+            writer.WriteIntValue("itemCount", ItemCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ListItem>("items", Items);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ListInfo>("list", ListProp);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RichLongRunningOperation>("operations", Operations);

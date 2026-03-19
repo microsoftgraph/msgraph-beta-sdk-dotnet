@@ -58,5 +58,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Template Family for Company Portal settings</summary>
         [EnumMember(Value = "companyPortal")]
         CompanyPortal,
+        /// <summary>Windows Recovery and Remediation Configuration Policy</summary>
+        [EnumMember(Value = "windowsRecoveryAndRemediationConfiguration")]
+        WindowsRecoveryAndRemediationConfiguration,
     }
 }

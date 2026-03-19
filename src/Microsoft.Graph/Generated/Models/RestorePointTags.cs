@@ -21,5 +21,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue = 4,
         #pragma warning restore CS1591
+        [EnumMember(Value = "includeNewerItems")]
+        #pragma warning disable CS1591
+        IncludeNewerItems = 8,
+        #pragma warning restore CS1591
     }
 }

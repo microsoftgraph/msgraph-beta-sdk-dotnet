@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class BackupRestoreRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The activityLogs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ActivityLogBase>? ActivityLogs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ActivityLogBase>?>("activityLogs"); }
+            set { BackingStore?.Set("activityLogs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ActivityLogBase> ActivityLogs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ActivityLogBase>>("activityLogs"); }
+            set { BackingStore?.Set("activityLogs", value); }
+        }
+#endif
         /// <summary>The allDrivesBackup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -300,6 +316,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("protectionUnits", value); }
         }
 #endif
+        /// <summary>The reports property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.BackupReport? Reports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BackupReport?>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.BackupReport Reports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BackupReport>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#endif
         /// <summary>List of restore points in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -478,6 +510,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activityLogs", n => { ActivityLogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ActivityLogBase>(global::Microsoft.Graph.Beta.Models.ActivityLogBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "allDrivesBackup", n => { AllDrivesBackup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AllDrivesBackup>(global::Microsoft.Graph.Beta.Models.AllDrivesBackup.CreateFromDiscriminatorValue); } },
                 { "allMailboxesBackup", n => { AllMailboxesBackup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AllMailboxesBackup>(global::Microsoft.Graph.Beta.Models.AllMailboxesBackup.CreateFromDiscriminatorValue); } },
                 { "allSitesBackup", n => { AllSitesBackup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AllSitesBackup>(global::Microsoft.Graph.Beta.Models.AllSitesBackup.CreateFromDiscriminatorValue); } },
@@ -496,6 +529,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "oneDriveForBusinessRestoreSessions", n => { OneDriveForBusinessRestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession>(global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "protectionPolicies", n => { ProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase>(global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "protectionUnits", n => { ProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProtectionUnitBase>(global::Microsoft.Graph.Beta.Models.ProtectionUnitBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "reports", n => { Reports = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.BackupReport>(global::Microsoft.Graph.Beta.Models.BackupReport.CreateFromDiscriminatorValue); } },
                 { "restorePoints", n => { RestorePoints = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RestorePoint>(global::Microsoft.Graph.Beta.Models.RestorePoint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "restoreSessions", n => { RestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RestoreSessionBase>(global::Microsoft.Graph.Beta.Models.RestoreSessionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceApps", n => { ServiceApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceApp>(global::Microsoft.Graph.Beta.Models.ServiceApp.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -516,6 +550,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ActivityLogBase>("activityLogs", ActivityLogs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AllDrivesBackup>("allDrivesBackup", AllDrivesBackup);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AllMailboxesBackup>("allMailboxesBackup", AllMailboxesBackup);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AllSitesBackup>("allSitesBackup", AllSitesBackup);
@@ -534,6 +569,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession>("oneDriveForBusinessRestoreSessions", OneDriveForBusinessRestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase>("protectionPolicies", ProtectionPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProtectionUnitBase>("protectionUnits", ProtectionUnits);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.BackupReport>("reports", Reports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RestorePoint>("restorePoints", RestorePoints);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RestoreSessionBase>("restoreSessions", RestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceApp>("serviceApps", ServiceApps);

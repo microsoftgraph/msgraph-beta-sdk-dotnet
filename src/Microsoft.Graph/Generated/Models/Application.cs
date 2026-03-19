@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("connectorGroup", value); }
         }
 #endif
-        /// <summary>The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application. Set internally by Microsoft Entra ID. Read-only.</summary>
+        /// <summary>The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedByAppId
@@ -370,6 +370,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<byte[]>("logo"); }
             set { BackingStore?.Set("logo", value); }
+        }
+#endif
+        /// <summary>A collection of application IDs for applications designated as managers of this application. Manager applications can create service principals for the applications they manage. Currently, only Microsoft first-party application IDs can be set as values. Maximum of 10 values. Not nullable. Read-only for third-party (3P) callers; writes by 3P callers are rejected with a 400 Bad Request error. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>?>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
         }
 #endif
         /// <summary>Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: noneand all. Default is none. For more information, see Native Authentication.</summary>
@@ -823,6 +839,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isFallbackPublicClient", n => { IsFallbackPublicClient = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logo", n => { Logo = n.GetByteArrayValue(); } },
+                { "managerApplications", n => { ManagerApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "nativeAuthenticationApisEnabled", n => { NativeAuthenticationApisEnabled = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NativeAuthenticationApisEnabled>(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "onPremisesPublishing", n => { OnPremisesPublishing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishing>(global::Microsoft.Graph.Beta.Models.OnPremisesPublishing.CreateFromDiscriminatorValue); } },
@@ -884,6 +901,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isFallbackPublicClient", IsFallbackPublicClient);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteByteArrayValue("logo", Logo);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("managerApplications", ManagerApplications);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NativeAuthenticationApisEnabled>("nativeAuthenticationApisEnabled", NativeAuthenticationApisEnabled);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishing>("onPremisesPublishing", OnPremisesPublishing);

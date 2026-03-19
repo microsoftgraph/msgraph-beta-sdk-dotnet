@@ -7,7 +7,10 @@ using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.PreviewScope;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Tasks;
@@ -66,10 +69,25 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion.MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the previewTaskFailures method.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures.MicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder MicrosoftGraphIdentityGovernancePreviewTaskFailures
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures.MicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the previewWorkflow method.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow.MicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder MicrosoftGraphIdentityGovernancePreviewWorkflow
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow.MicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the restore method.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore.MicrosoftGraphIdentityGovernanceRestoreRequestBuilder MicrosoftGraphIdentityGovernanceRestore
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore.MicrosoftGraphIdentityGovernanceRestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the previewScope property of the microsoft.graph.identityGovernance.workflow entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.PreviewScope.PreviewScopeRequestBuilder PreviewScope
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.PreviewScope.PreviewScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.RunsRequestBuilder Runs

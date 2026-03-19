@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Valid
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(global::Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,6 +65,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Valid
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Valid
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06")]
         public global::Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsRequestBuilder(rawUrl, RequestAdapter);

@@ -44,22 +44,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientId", value); }
         }
 #endif
-        /// <summary>The domain property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Domain
-        {
-            get { return BackingStore?.Get<string?>("domain"); }
-            set { BackingStore?.Set("domain", value); }
-        }
-#nullable restore
-#else
-        public string Domain
-        {
-            get { return BackingStore?.Get<string>("domain"); }
-            set { BackingStore?.Set("domain", value); }
-        }
-#endif
         /// <summary>The keyVaultName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,7 +135,6 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accessTokenUrl", n => { AccessTokenUrl = n.GetStringValue(); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
-                { "domain", n => { Domain = n.GetStringValue(); } },
                 { "keyVaultName", n => { KeyVaultName = n.GetStringValue(); } },
                 { "resourceGroup", n => { ResourceGroup = n.GetStringValue(); } },
                 { "secretName", n => { SecretName = n.GetStringValue(); } },
@@ -168,7 +151,6 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("accessTokenUrl", AccessTokenUrl);
             writer.WriteStringValue("clientId", ClientId);
-            writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("keyVaultName", KeyVaultName);
             writer.WriteStringValue("resourceGroup", ResourceGroup);
             writer.WriteStringValue("secretName", SecretName);
