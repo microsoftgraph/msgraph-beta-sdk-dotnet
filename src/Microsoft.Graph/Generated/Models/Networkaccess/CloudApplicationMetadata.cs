@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class CloudApplicationMetadata : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The activity property</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationActivity? Activity
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationActivity?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
         {
@@ -173,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "activity", n => { Activity = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationActivity>(); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "cloudApplicationCatalogId", n => { CloudApplicationCatalogId = n.GetStringValue(); } },
                 { "complianceScore", n => { ComplianceScore = n.GetIntValue(); } },
@@ -193,6 +200,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationActivity>("activity", Activity);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("cloudApplicationCatalogId", CloudApplicationCatalogId);
             writer.WriteIntValue("complianceScore", ComplianceScore);

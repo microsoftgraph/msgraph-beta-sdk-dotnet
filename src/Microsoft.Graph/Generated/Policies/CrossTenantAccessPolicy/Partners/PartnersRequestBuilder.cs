@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners
         {
         }
         /// <summary>
-        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user and group synchronization policy for all partner configurations.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-list-partners?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyConfigurationPartnerCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyConfigurationPartner>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user and group synchronization policy for all partner configurations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners
             return new global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user and group synchronization policy for all partner configurations.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PartnersRequestBuilderGetQueryParameters 

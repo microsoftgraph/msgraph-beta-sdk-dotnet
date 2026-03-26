@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Graph.Beta.Models.CloudLicensing;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.EntraRecoveryServices;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Graph.Beta.Models.HealthMonitoring;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
@@ -821,6 +822,12 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.entitlementManagementSettings" => new global::Microsoft.Graph.Beta.Models.EntitlementManagementSettings(),
                 "#microsoft.graph.entra" => new global::Microsoft.Graph.Beta.Models.Entra(),
                 "#microsoft.graph.entraIdProtectionRiskyUserApproval" => new global::Microsoft.Graph.Beta.Models.EntraIdProtectionRiskyUserApproval(),
+                "#microsoft.graph.entraRecoveryServices.recovery" => new global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.Recovery(),
+                "#microsoft.graph.entraRecoveryServices.recoveryChangeObjectBase" => new global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.RecoveryChangeObjectBase(),
+                "#microsoft.graph.entraRecoveryServices.recoveryJob" => new global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.RecoveryJob(),
+                "#microsoft.graph.entraRecoveryServices.recoveryJobBase" => new global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.RecoveryJobBase(),
+                "#microsoft.graph.entraRecoveryServices.recoveryPreviewJob" => new global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.RecoveryPreviewJob(),
+                "#microsoft.graph.entraRecoveryServices.snapshot" => new global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.Snapshot(),
                 "#microsoft.graph.evaluateLabelJobResponse" => new global::Microsoft.Graph.Beta.Models.EvaluateLabelJobResponse(),
                 "#microsoft.graph.event" => new global::Microsoft.Graph.Beta.Models.Event(),
                 "#microsoft.graph.eventMessage" => new global::Microsoft.Graph.Beta.Models.EventMessage(),
@@ -1984,7 +1991,31 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.tenantAppManagementPolicy" => new global::Microsoft.Graph.Beta.Models.TenantAppManagementPolicy(),
                 "#microsoft.graph.tenantAttachRBAC" => new global::Microsoft.Graph.Beta.Models.TenantAttachRBAC(),
                 "#microsoft.graph.tenantDataSecurityAndGovernance" => new global::Microsoft.Graph.Beta.Models.TenantDataSecurityAndGovernance(),
+                "#microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2bRegistrationMetrics(),
+                "#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BRegistrationMetricsBase(),
+                "#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BRegistrationMetricsInitial(),
+                "#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BRegistrationMetricsRecent(),
+                "#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BSignInActivityMetrics(),
+                "#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BSignInActivityMetricsBase(),
+                "#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BSignInActivityMetricsInitial(),
+                "#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BSignInActivityMetricsRecent(),
+                "#microsoft.graph.tenantGovernanceServices.billingMetrics" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.BillingMetrics(),
+                "#microsoft.graph.tenantGovernanceServices.billingMetricsBase" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.BillingMetricsBase(),
+                "#microsoft.graph.tenantGovernanceServices.billingMetricsInitial" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.BillingMetricsInitial(),
+                "#microsoft.graph.tenantGovernanceServices.billingMetricsRecent" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.BillingMetricsRecent(),
+                "#microsoft.graph.tenantGovernanceServices.governanceInvitation" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceInvitation(),
+                "#microsoft.graph.tenantGovernanceServices.governancePolicyTemplate" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernancePolicyTemplate(),
+                "#microsoft.graph.tenantGovernanceServices.governanceRelationship" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRelationship(),
+                "#microsoft.graph.tenantGovernanceServices.governanceRequest" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest(),
                 "#microsoft.graph.tenantGovernanceServices.longRunningOperation" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.LongRunningOperation(),
+                "#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetrics(),
+                "#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsBase(),
+                "#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsInitial(),
+                "#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsRecent(),
+                "#microsoft.graph.tenantGovernanceServices.relatedTenant" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant(),
+                "#microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenantsRefreshRequest(),
+                "#microsoft.graph.tenantGovernanceServices.tenantGovernance" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.TenantGovernance(),
+                "#microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting" => new global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.TenantGovernanceSetting(),
                 "#microsoft.graph.tenantProtectionScopeContainer" => new global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer(),
                 "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new global::Microsoft.Graph.Beta.Models.TenantRelationshipAccessPolicyBase(),
                 "#microsoft.graph.tenantSetupInfo" => new global::Microsoft.Graph.Beta.Models.TenantSetupInfo(),

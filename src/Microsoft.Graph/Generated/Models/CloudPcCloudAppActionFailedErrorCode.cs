@@ -28,5 +28,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "iconPathInvalid")]
+        #pragma warning disable CS1591
+        IconPathInvalid,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "filePathInvalid")]
+        #pragma warning disable CS1591
+        FilePathInvalid,
+        #pragma warning restore CS1591
     }
 }
