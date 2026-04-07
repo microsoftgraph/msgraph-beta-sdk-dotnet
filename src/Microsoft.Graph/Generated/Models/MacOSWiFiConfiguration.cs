@@ -13,25 +13,25 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOSWiFiConfiguration : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
-        /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
+        /// <summary>Indicates whether to automatically connect to this network when it is in range of the device. When TRUE will skip the user prompt and automatically connect the device to Wi-Fi network. Default is false.</summary>
         public bool? ConnectAutomatically
         {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
             set { BackingStore?.Set("connectAutomatically", value); }
         }
-        /// <summary>Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
+        /// <summary>Indicates whether the device should connect to the network when it is not broadcasting its name (SSID). When TRUE, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices. Default is false.</summary>
         public bool? ConnectWhenNetworkNameIsHidden
         {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
-        /// <summary>Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.</summary>
+        /// <summary>Indicates the deployment channel type used to deploy the configuration profile. Once set, cannot be changed. Possible values are deviceChannel, and userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AppleDeploymentChannel? DeploymentChannel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeploymentChannel?>("deploymentChannel"); }
             set { BackingStore?.Set("deploymentChannel", value); }
         }
-        /// <summary>Network Name</summary>
+        /// <summary>Indicates the Wi-Fi configuration profile name. Used to identify the configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetworkName
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #endif
-        /// <summary>URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.</summary>
+        /// <summary>Indicates URL of the proxy server automatic configuration (PAC) script when proxySettings is automatic. Used to find the location of PAC (Proxy Auto Configuration) file. Example: itproxy.contoso.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProxyAutomaticConfigurationUrl
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
 #endif
-        /// <summary>IP Address or DNS hostname of the proxy server when manual configuration is selected.</summary>
+        /// <summary>Indicates IP Address or DNS hostname of the proxy server when manual configuration is selected. Used for proxy settings. Example: 10.0.0.2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProxyManualAddress
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
 #endif
-        /// <summary>Port of the proxy server when manual configuration is selected.</summary>
+        /// <summary>Indicates the proxy server TCP port to use when proxySettings is manual. Used for proxy settings. Example: 8080</summary>
         public int? ProxyManualPort
         {
             get { return BackingStore?.Get<int?>("proxyManualPort"); }

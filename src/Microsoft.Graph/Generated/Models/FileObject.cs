@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The archiveStatus property</summary>
+        public global::Microsoft.Graph.Beta.Models.FileArchiveStatus? ArchiveStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FileArchiveStatus?>("archiveStatus"); }
+            set { BackingStore?.Set("archiveStatus", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Hashes of the file&apos;s binary content, if available. Read-only.</summary>
@@ -101,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "archiveStatus", n => { ArchiveStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FileArchiveStatus>(); } },
                 { "hashes", n => { Hashes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Hashes>(global::Microsoft.Graph.Beta.Models.Hashes.CreateFromDiscriminatorValue); } },
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -114,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FileArchiveStatus>("archiveStatus", ArchiveStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Hashes>("hashes", Hashes);
             writer.WriteStringValue("mimeType", MimeType);
             writer.WriteStringValue("@odata.type", OdataType);

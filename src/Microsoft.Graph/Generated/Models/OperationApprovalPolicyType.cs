@@ -10,6 +10,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Default. Indicates that the configured policy type is unknown. Not a valid policy type in an OperationApprovalPolicy.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,
+        /// <summary>Indicates that the configured policy type is for a Device Wipe Action.</summary>
+        [EnumMember(Value = "deviceWipe")]
+        DeviceWipe,
+        /// <summary>Indicates that the configured policy type is for a Device Retire Action</summary>
+        [EnumMember(Value = "deviceRetire")]
+        DeviceRetire,
+        /// <summary>Indicates that the configured policy type is for a Device Delete Action.</summary>
+        [EnumMember(Value = "deviceDelete")]
+        DeviceDelete,
         /// <summary>Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.</summary>
         [EnumMember(Value = "app")]
         App,
@@ -22,5 +31,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>Indicates that the configured policy type is for Tenant Configuration operations.</summary>
+        [EnumMember(Value = "tenantConfiguration")]
+        TenantConfiguration,
     }
 }

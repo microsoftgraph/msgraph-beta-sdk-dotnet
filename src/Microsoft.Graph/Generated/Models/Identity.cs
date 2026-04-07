@@ -108,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.provisioningSystem" => new global::Microsoft.Graph.Beta.Models.ProvisioningSystem(),
                 "#microsoft.graph.security.submissionUserIdentity" => new global::Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity(),
                 "#microsoft.graph.servicePrincipalIdentity" => new global::Microsoft.Graph.Beta.Models.ServicePrincipalIdentity(),
+                "#microsoft.graph.sharePointGroupIdentity" => new global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity(),
                 "#microsoft.graph.sharePointIdentity" => new global::Microsoft.Graph.Beta.Models.SharePointIdentity(),
                 "#microsoft.graph.sourceProvisionedIdentity" => new global::Microsoft.Graph.Beta.Models.SourceProvisionedIdentity(),
                 "#microsoft.graph.targetProvisionedIdentity" => new global::Microsoft.Graph.Beta.Models.TargetProvisionedIdentity(),

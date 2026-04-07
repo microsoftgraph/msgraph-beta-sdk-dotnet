@@ -76,5 +76,29 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "aviatrix")]
+        #pragma warning disable CS1591
+        Aviatrix,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "netskope")]
+        #pragma warning disable CS1591
+        Netskope,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "teridion")]
+        #pragma warning disable CS1591
+        Teridion,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "aristaNetworks")]
+        #pragma warning disable CS1591
+        AristaNetworks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "aristaVeloCloud")]
+        #pragma warning disable CS1591
+        AristaVeloCloud,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "juniperNetworks")]
+        #pragma warning disable CS1591
+        JuniperNetworks,
+        #pragma warning restore CS1591
     }
 }

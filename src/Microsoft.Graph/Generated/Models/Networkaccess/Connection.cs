@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>Cross tenant access details, for B2B scenarios. The possible values are: none, b2bCollaboration, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessType? CrossTenantAccessType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessType?>("crossTenantAccessType"); }
+            set { BackingStore?.Set("crossTenantAccessType", value); }
+        }
         /// <summary>The destination FQDN of the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +116,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
+        /// <summary>Device registration type, for BYOD scenarios. The possible values are: none, microsoftEntraJoined, microsoftEntraRegistered, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceJoinType? DeviceJoinType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceJoinType?>("deviceJoinType"); }
+            set { BackingStore?.Set("deviceJoinType", value); }
+        }
         /// <summary>The device operating system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +160,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
+        /// <summary>The identifier of the home tenant, for Entra B2B scenarios.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HomeTenantId
+        {
+            get { return BackingStore?.Get<string?>("homeTenantId"); }
+            set { BackingStore?.Set("homeTenantId", value); }
+        }
+#nullable restore
+#else
+        public string HomeTenantId
+        {
+            get { return BackingStore?.Get<string>("homeTenantId"); }
+            set { BackingStore?.Set("homeTenantId", value); }
+        }
+#endif
         /// <summary>The process initiating the traffic connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -341,14 +369,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "agentVersion", n => { AgentVersion = n.GetStringValue(); } },
                 { "applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "crossTenantAccessType", n => { CrossTenantAccessType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessType>(); } },
                 { "destinationFqdn", n => { DestinationFqdn = n.GetStringValue(); } },
                 { "destinationIp", n => { DestinationIp = n.GetStringValue(); } },
                 { "destinationPort", n => { DestinationPort = n.GetIntValue(); } },
                 { "deviceCategory", n => { DeviceCategory = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory>(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceJoinType", n => { DeviceJoinType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceJoinType>(); } },
                 { "deviceOperatingSystem", n => { DeviceOperatingSystem = n.GetStringValue(); } },
                 { "deviceOperatingSystemVersion", n => { DeviceOperatingSystemVersion = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
                 { "initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 { "networkProtocol", n => { NetworkProtocol = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
@@ -379,14 +410,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("agentVersion", AgentVersion);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot", ApplicationSnapshot);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessType>("crossTenantAccessType", CrossTenantAccessType);
             writer.WriteStringValue("destinationFqdn", DestinationFqdn);
             writer.WriteStringValue("destinationIp", DestinationIp);
             writer.WriteIntValue("destinationPort", DestinationPort);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceId", DeviceId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceJoinType>("deviceJoinType", DeviceJoinType);
             writer.WriteStringValue("deviceOperatingSystem", DeviceOperatingSystem);
             writer.WriteStringValue("deviceOperatingSystemVersion", DeviceOperatingSystemVersion);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
+            writer.WriteStringValue("homeTenantId", HomeTenantId);
             writer.WriteStringValue("initiatingProcessName", InitiatingProcessName);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("networkProtocol", NetworkProtocol);

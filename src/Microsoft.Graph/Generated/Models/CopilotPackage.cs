@@ -12,6 +12,38 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CopilotPackage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The appId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppId
+        {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#nullable restore
+#else
+        public string AppId
+        {
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#endif
+        /// <summary>The assetId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssetId
+        {
+            get { return BackingStore?.Get<string?>("assetId"); }
+            set { BackingStore?.Set("assetId", value); }
+        }
+#nullable restore
+#else
+        public string AssetId
+        {
+            get { return BackingStore?.Get<string>("assetId"); }
+            set { BackingStore?.Set("assetId", value); }
+        }
+#endif
         /// <summary>The availableTo property</summary>
         public global::Microsoft.Graph.Beta.Models.PackageStatus? AvailableTo
         {
@@ -68,6 +100,54 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The manifestId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ManifestId
+        {
+            get { return BackingStore?.Get<string?>("manifestId"); }
+            set { BackingStore?.Set("manifestId", value); }
+        }
+#nullable restore
+#else
+        public string ManifestId
+        {
+            get { return BackingStore?.Get<string>("manifestId"); }
+            set { BackingStore?.Set("manifestId", value); }
+        }
+#endif
+        /// <summary>The manifestVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ManifestVersion
+        {
+            get { return BackingStore?.Get<string?>("manifestVersion"); }
+            set { BackingStore?.Set("manifestVersion", value); }
+        }
+#nullable restore
+#else
+        public string ManifestVersion
+        {
+            get { return BackingStore?.Get<string>("manifestVersion"); }
+            set { BackingStore?.Set("manifestVersion", value); }
+        }
+#endif
+        /// <summary>The platform property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Platform
+        {
+            get { return BackingStore?.Get<string?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
+        }
+#nullable restore
+#else
+        public string Platform
+        {
+            get { return BackingStore?.Get<string>("platform"); }
+            set { BackingStore?.Set("platform", value); }
+        }
+#endif
         /// <summary>The publisher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +202,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PackageType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+        /// <summary>The version property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version
+        {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#nullable restore
+#else
+        public string Version
+        {
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#endif
         /// <summary>The zipFile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,16 +257,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "assetId", n => { AssetId = n.GetStringValue(); } },
                 { "availableTo", n => { AvailableTo = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PackageStatus>(); } },
                 { "deployedTo", n => { DeployedTo = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PackageStatus>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "elementTypes", n => { ElementTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isBlocked", n => { IsBlocked = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "manifestId", n => { ManifestId = n.GetStringValue(); } },
+                { "manifestVersion", n => { ManifestVersion = n.GetStringValue(); } },
+                { "platform", n => { Platform = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "shortDescription", n => { ShortDescription = n.GetStringValue(); } },
                 { "supportedHosts", n => { SupportedHosts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PackageType>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
                 { "zipFile", n => { ZipFile = n.GetByteArrayValue(); } },
             };
         }
@@ -182,16 +284,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("appId", AppId);
+            writer.WriteStringValue("assetId", AssetId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PackageStatus>("availableTo", AvailableTo);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PackageStatus>("deployedTo", DeployedTo);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("elementTypes", ElementTypes);
             writer.WriteBoolValue("isBlocked", IsBlocked);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("manifestId", ManifestId);
+            writer.WriteStringValue("manifestVersion", ManifestVersion);
+            writer.WriteStringValue("platform", Platform);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteStringValue("shortDescription", ShortDescription);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedHosts", SupportedHosts);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PackageType>("type", Type);
+            writer.WriteStringValue("version", Version);
             writer.WriteByteArrayValue("zipFile", ZipFile);
         }
     }

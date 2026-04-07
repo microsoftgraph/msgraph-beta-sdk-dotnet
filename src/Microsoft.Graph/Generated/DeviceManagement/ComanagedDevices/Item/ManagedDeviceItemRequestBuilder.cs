@@ -36,16 +36,21 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoteLock;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteAssistance;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreManagedHomeScreen;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveDeviceLocalAdminAccountDetail;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRecoveryLockPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateFileVaultKey;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateLocalAdminPassword;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateRecoveryLockPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SetDeviceName;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ShutDown;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SuspendManagedHomeScreen;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SyncDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerConfigurationManagerAction;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.UpdateWindowsDeviceAccount;
@@ -252,15 +257,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the restoreManagedHomeScreen method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreManagedHomeScreen.RestoreManagedHomeScreenRequestBuilder RestoreManagedHomeScreen
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreManagedHomeScreen.RestoreManagedHomeScreenRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retire method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire.RetireRequestBuilder Retire
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire.RetireRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveDeviceLocalAdminAccountDetail method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveDeviceLocalAdminAccountDetail.RetrieveDeviceLocalAdminAccountDetailRequestBuilder RetrieveDeviceLocalAdminAccountDetail
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveDeviceLocalAdminAccountDetail.RetrieveDeviceLocalAdminAccountDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retrieveMacOSManagedDeviceLocalAdminAccountDetail method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail.RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder RetrieveMacOSManagedDeviceLocalAdminAccountDetail
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail.RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveRecoveryLockPasscode method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRecoveryLockPasscode.RetrieveRecoveryLockPasscodeRequestBuilder RetrieveRecoveryLockPasscode
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRecoveryLockPasscode.RetrieveRecoveryLockPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeAppleVppLicenses method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses.RevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses
@@ -282,6 +302,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateLocalAdminPassword.RotateLocalAdminPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the rotateRecoveryLockPasscode method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateRecoveryLockPasscode.RotateRecoveryLockPasscodeRequestBuilder RotateRecoveryLockPasscode
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateRecoveryLockPasscode.RotateRecoveryLockPasscodeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder SecurityBaselineStates
         {
@@ -301,6 +326,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ShutDown.ShutDownRequestBuilder ShutDown
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ShutDown.ShutDownRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the suspendManagedHomeScreen method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SuspendManagedHomeScreen.SuspendManagedHomeScreenRequestBuilder SuspendManagedHomeScreen
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SuspendManagedHomeScreen.SuspendManagedHomeScreenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncDevice method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder SyncDevice

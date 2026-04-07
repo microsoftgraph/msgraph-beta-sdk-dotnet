@@ -62,6 +62,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
             set { BackingStore?.Set("restorePointDateTime", value); }
         }
+        /// <summary>The restorePointId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RestorePointId
+        {
+            get { return BackingStore?.Get<string?>("restorePointId"); }
+            set { BackingStore?.Set("restorePointId", value); }
+        }
+#nullable restore
+#else
+        public string RestorePointId
+        {
+            get { return BackingStore?.Get<string>("restorePointId"); }
+            set { BackingStore?.Set("restorePointId", value); }
+        }
+#endif
         /// <summary>The status property</summary>
         public global::Microsoft.Graph.Beta.Models.BrowseSessionStatus? Status
         {
@@ -97,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>(global::Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
+                { "restorePointId", n => { RestorePointId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.BrowseSessionStatus>(); } },
             };
         }
@@ -113,6 +130,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>("error", Error);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("restorePointDateTime", RestorePointDateTime);
+            writer.WriteStringValue("restorePointId", RestorePointId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.BrowseSessionStatus>("status", Status);
         }
     }

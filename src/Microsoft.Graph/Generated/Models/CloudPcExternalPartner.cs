@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcExternalPartner : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The agent settings associated with the external partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerAgentSetting? AgentSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerAgentSetting?>("agentSetting"); }
+            set { BackingStore?.Set("agentSetting", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerAgentSetting AgentSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerAgentSetting>("agentSetting"); }
+            set { BackingStore?.Set("agentSetting", value); }
+        }
+#endif
         /// <summary>The connectionStatus property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus? ConnectionStatus
         {
@@ -80,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "agentSetting", n => { AgentSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerAgentSetting>(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerAgentSetting.CreateFromDiscriminatorValue); } },
                 { "connectionStatus", n => { ConnectionStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus>(); } },
                 { "enableConnection", n => { EnableConnection = n.GetBoolValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
@@ -95,6 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerAgentSetting>("agentSetting", AgentSetting);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus>("connectionStatus", ConnectionStatus);
             writer.WriteBoolValue("enableConnection", EnableConnection);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);

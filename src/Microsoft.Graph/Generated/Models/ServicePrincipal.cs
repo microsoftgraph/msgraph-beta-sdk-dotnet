@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("claimsPolicy", value); }
         }
 #endif
-        /// <summary>The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.</summary>
+        /// <summary>The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedByAppId

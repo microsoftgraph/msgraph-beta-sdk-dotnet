@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.AssignedToTaskBoardFormat;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.BucketTaskBoardFormat;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.Details;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.Messages;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.ProgressTaskBoardFormat;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.
         public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.Details.DetailsRequestBuilder Details
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the messages property of the microsoft.graph.plannerTask entity.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.Messages.MessagesRequestBuilder Messages
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner.Plans.Item.Tasks.Item.ProgressTaskBoardFormat.ProgressTaskBoardFormatRequestBuilder ProgressTaskBoardFormat

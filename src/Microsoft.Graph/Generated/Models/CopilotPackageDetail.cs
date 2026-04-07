@@ -92,22 +92,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("longDescription", value); }
         }
 #endif
-        /// <summary>The manifestVersion property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ManifestVersion
-        {
-            get { return BackingStore?.Get<string?>("manifestVersion"); }
-            set { BackingStore?.Set("manifestVersion", value); }
-        }
-#nullable restore
-#else
-        public string ManifestVersion
-        {
-            get { return BackingStore?.Get<string>("manifestVersion"); }
-            set { BackingStore?.Set("manifestVersion", value); }
-        }
-#endif
         /// <summary>The sensitivity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,22 +106,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("sensitivity"); }
             set { BackingStore?.Set("sensitivity", value); }
-        }
-#endif
-        /// <summary>The version property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Version
-        {
-            get { return BackingStore?.Get<string?>("version"); }
-            set { BackingStore?.Set("version", value); }
-        }
-#nullable restore
-#else
-        public string Version
-        {
-            get { return BackingStore?.Get<string>("version"); }
-            set { BackingStore?.Set("version", value); }
         }
 #endif
         /// <summary>
@@ -170,9 +138,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "elementDetails", n => { ElementDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PackageElementDetail>(global::Microsoft.Graph.Beta.Models.PackageElementDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "longDescription", n => { LongDescription = n.GetStringValue(); } },
-                { "manifestVersion", n => { ManifestVersion = n.GetStringValue(); } },
                 { "sensitivity", n => { Sensitivity = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -188,9 +154,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PackageElementDetail>("elementDetails", ElementDetails);
             writer.WriteStringValue("longDescription", LongDescription);
-            writer.WriteStringValue("manifestVersion", ManifestVersion);
             writer.WriteStringValue("sensitivity", Sensitivity);
-            writer.WriteStringValue("version", Version);
         }
     }
 }
