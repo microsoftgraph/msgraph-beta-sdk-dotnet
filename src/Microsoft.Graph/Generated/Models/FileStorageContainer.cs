@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class FileStorageContainer : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The archivalDetails property</summary>
+        /// <summary>Archival details of the fileStorageContainer. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SiteArchivalDetails? ArchivalDetails

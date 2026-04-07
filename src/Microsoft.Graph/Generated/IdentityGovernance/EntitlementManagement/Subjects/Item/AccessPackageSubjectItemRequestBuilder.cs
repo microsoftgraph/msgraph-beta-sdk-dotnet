@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AccessPackageSubject>(requestInfo, global::Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing accessPackageSubject object to change the subject lifecycle.
+        /// Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagesubject-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AccessPackageSubject"/></returns>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing accessPackageSubject object to change the subject lifecycle.
+        /// Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

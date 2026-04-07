@@ -74,6 +74,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Guid?>("owningAppId"); }
             set { BackingStore?.Set("owningAppId", value); }
         }
+        /// <summary>The permissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Permission>? Permissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Permission>?>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Permission> Permissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Permission>>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owningAppId", n => { OwningAppId = n.GetGuidValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>(global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeSettings>(global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -133,6 +150,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("owningAppId", OwningAppId);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeSettings>("settings", Settings);
         }
     }

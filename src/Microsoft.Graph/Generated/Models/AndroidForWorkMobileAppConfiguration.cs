@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("connectedAppsEnabled"); }
             set { BackingStore?.Set("connectedAppsEnabled", value); }
         }
+        /// <summary>The Android credential provider role state for apps.</summary>
+        public global::Microsoft.Graph.Beta.Models.AndroidAppCredentialProviderRoleState? CredentialProviderRoleState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidAppCredentialProviderRoleState?>("credentialProviderRoleState"); }
+            set { BackingStore?.Set("credentialProviderRoleState", value); }
+        }
         /// <summary>Android For Work app configuration package id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "connectedAppsEnabled", n => { ConnectedAppsEnabled = n.GetBoolValue(); } },
+                { "credentialProviderRoleState", n => { CredentialProviderRoleState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidAppCredentialProviderRoleState>(); } },
                 { "packageId", n => { PackageId = n.GetStringValue(); } },
                 { "payloadJson", n => { PayloadJson = n.GetStringValue(); } },
                 { "permissionActions", n => { PermissionActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidPermissionAction>(global::Microsoft.Graph.Beta.Models.AndroidPermissionAction.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -114,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("connectedAppsEnabled", ConnectedAppsEnabled);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidAppCredentialProviderRoleState>("credentialProviderRoleState", CredentialProviderRoleState);
             writer.WriteStringValue("packageId", PackageId);
             writer.WriteStringValue("payloadJson", PayloadJson);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidPermissionAction>("permissionActions", PermissionActions);

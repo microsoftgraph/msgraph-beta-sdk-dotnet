@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceId", value); }
         }
 #endif
-        /// <summary>Web URL of the profile source that directs users to the page view of profile data.</summary>
+        /// <summary>Web URL of the profile source that directs users to the page view of the profile data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl

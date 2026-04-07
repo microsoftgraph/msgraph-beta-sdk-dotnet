@@ -13,22 +13,6 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZebraFotaDeployment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>Collection of Android FOTA Assignment</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment>? DeploymentAssignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment>?>("deploymentAssignments"); }
-            set { BackingStore?.Set("deploymentAssignments", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment> DeploymentAssignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment>>("deploymentAssignments"); }
-            set { BackingStore?.Set("deploymentAssignments", value); }
-        }
-#endif
         /// <summary>The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,7 +111,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deploymentAssignments", n => { DeploymentAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment>(global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentSettings>(global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentSettings.CreateFromDiscriminatorValue); } },
                 { "deploymentStatus", n => { DeploymentStatus = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus>(global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -143,7 +126,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment>("deploymentAssignments", DeploymentAssignments);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentSettings>("deploymentSettings", DeploymentSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus>("deploymentStatus", DeploymentStatus);
             writer.WriteStringValue("description", Description);

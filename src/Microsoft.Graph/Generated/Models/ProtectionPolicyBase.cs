@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("billingPolicyId", value); }
         }
 #endif
-        /// <summary>The identity of person who created the policy.</summary>
+        /// <summary>The identity of the person who created the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The name of the policy to be created.</summary>
+        /// <summary>The name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The offboardRequestedDateTime property</summary>
+        /// <summary>The date and time when offboarding was requested for the protection policy. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? OffboardRequestedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("retentionSettings", value); }
         }
 #endif
-        /// <summary>The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue.</summary>
+        /// <summary>The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue, offboardRequested, offboarded. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: offboardRequested, offboarded.</summary>
         public global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus?>("status"); }

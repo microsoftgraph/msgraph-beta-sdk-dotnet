@@ -316,6 +316,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.win32CatalogApp" => new global::Microsoft.Graph.Beta.Models.Win32CatalogApp(),
                 "#microsoft.graph.win32LobApp" => new global::Microsoft.Graph.Beta.Models.Win32LobApp(),
                 "#microsoft.graph.windowsAppX" => new global::Microsoft.Graph.Beta.Models.WindowsAppX(),
+                "#microsoft.graph.windowsAutoUpdateCatalogApp" => new global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogApp(),
                 "#microsoft.graph.windowsMicrosoftEdgeApp" => new global::Microsoft.Graph.Beta.Models.WindowsMicrosoftEdgeApp(),
                 "#microsoft.graph.windowsMobileMSI" => new global::Microsoft.Graph.Beta.Models.WindowsMobileMSI(),
                 "#microsoft.graph.windowsPhone81AppX" => new global::Microsoft.Graph.Beta.Models.WindowsPhone81AppX(),

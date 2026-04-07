@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// The AAD Group we are deploying firmware updates to
+    /// Represents an assignment to a group.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupAssignmentTarget : global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget, IParsable

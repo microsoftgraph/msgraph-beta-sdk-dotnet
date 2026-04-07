@@ -208,6 +208,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tabs", value); }
         }
 #endif
+        /// <summary>The targetedMessages property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>? TargetedMessages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>?>("targetedMessages"); }
+            set { BackingStore?.Set("targetedMessages", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage> TargetedMessages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>>("targetedMessages"); }
+            set { BackingStore?.Set("targetedMessages", value); }
+        }
+#endif
         /// <summary>The identifier of the tenant in which the chat was created. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -306,6 +322,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>(global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pinnedMessages", n => { PinnedMessages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PinnedChatMessageInfo>(global::Microsoft.Graph.Beta.Models.PinnedChatMessageInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>(global::Microsoft.Graph.Beta.Models.TeamsTab.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "targetedMessages", n => { TargetedMessages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>(global::Microsoft.Graph.Beta.Models.TargetedChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "topic", n => { Topic = n.GetStringValue(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatViewpoint>(global::Microsoft.Graph.Beta.Models.ChatViewpoint.CreateFromDiscriminatorValue); } },
@@ -336,6 +353,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PinnedChatMessageInfo>("pinnedMessages", PinnedMessages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>("tabs", Tabs);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>("targetedMessages", TargetedMessages);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("topic", Topic);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatViewpoint>("viewpoint", Viewpoint);

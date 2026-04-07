@@ -70,7 +70,6 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlert
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleDeviceOSUpdateStatus;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailures;
@@ -447,11 +446,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport.GetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport.GetWindowsUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getZebraFotaDeploymentReport method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveAndroidWorkProfileDeviceMigrationStatuses method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses.RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder RetrieveAndroidWorkProfileDeviceMigrationStatuses

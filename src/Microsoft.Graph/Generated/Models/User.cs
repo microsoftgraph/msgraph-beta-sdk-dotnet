@@ -742,7 +742,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("drives", value); }
         }
 #endif
-        /// <summary>The employeeExperience property</summary>
+        /// <summary>The employee experience resources for the user. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser? EmployeeExperience

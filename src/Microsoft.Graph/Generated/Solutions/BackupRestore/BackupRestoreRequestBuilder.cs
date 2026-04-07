@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ActivityLogs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.AllDrivesBackup;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.AllMailboxesBackup;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.AllSitesBackup;
@@ -21,6 +22,7 @@ using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtection
 using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionPolicies;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.Reports;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.RestoreSessions;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps;
@@ -46,6 +48,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BackupRestoreRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the activityLogs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ActivityLogs.ActivityLogsRequestBuilder ActivityLogs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ActivityLogs.ActivityLogsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the allDrivesBackup property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.AllDrivesBackup.AllDrivesBackupRequestBuilder AllDrivesBackup
         {
@@ -140,6 +147,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.ProtectionUnitsRequestBuilder ProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.ProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the reports property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.ReportsRequestBuilder Reports
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder RestorePoints

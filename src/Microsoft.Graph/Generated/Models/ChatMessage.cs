@@ -360,7 +360,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.ChatMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ChatMessage();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.targetedChatMessage" => new global::Microsoft.Graph.Beta.Models.TargetedChatMessage(),
+                _ => new global::Microsoft.Graph.Beta.Models.ChatMessage(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

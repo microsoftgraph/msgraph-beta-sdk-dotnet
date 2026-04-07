@@ -222,6 +222,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
+        /// <summary>The privilegeLevel property</summary>
+        public global::Microsoft.Graph.Beta.Models.PrivilegeLevel? PrivilegeLevel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivilegeLevel?>("privilegeLevel"); }
+            set { BackingStore?.Set("privilegeLevel", value); }
+        }
         /// <summary>The uniqueName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -271,6 +277,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isExternallyVisible", n => { IsExternallyVisible = n.GetBoolValue(); } },
                 { "modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "privilegeLevel", n => { PrivilegeLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrivilegeLevel>(); } },
                 { "uniqueName", n => { UniqueName = n.GetStringValue(); } },
             };
         }
@@ -297,6 +304,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isExternallyVisible", IsExternallyVisible);
             writer.WriteStringValue("modifiedBy", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrivilegeLevel>("privilegeLevel", PrivilegeLevel);
             writer.WriteStringValue("uniqueName", UniqueName);
         }
     }

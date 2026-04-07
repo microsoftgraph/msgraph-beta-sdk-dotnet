@@ -124,6 +124,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("informationalUrls", value); }
         }
 #endif
+        /// <summary>Indicates whether the application is integrated with Entra ID (for example, through single sign-on or user provisioning).</summary>
+        public bool? IsEntraIntegrated
+        {
+            get { return BackingStore?.Get<bool?>("isEntraIntegrated"); }
+            set { BackingStore?.Set("isEntraIntegrated", value); }
+        }
         /// <summary>The date and time when the data for the application was last updated, represented using ISO 8601 format and always in UTC time.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
@@ -267,6 +273,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "endpoints", n => { Endpoints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
                 { "informationalUrls", n => { InformationalUrls = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrls>(global::Microsoft.Graph.Beta.Models.InformationalUrls.CreateFromDiscriminatorValue); } },
+                { "isEntraIntegrated", n => { IsEntraIntegrated = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "logoUrl", n => { LogoUrl = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
@@ -292,6 +299,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("endpoints", Endpoints);
             writer.WriteStringValue("homePageUrl", HomePageUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrls>("informationalUrls", InformationalUrls);
+            writer.WriteBoolValue("isEntraIntegrated", IsEntraIntegrated);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("logoUrl", LogoUrl);
             writer.WriteStringValue("publisher", Publisher);

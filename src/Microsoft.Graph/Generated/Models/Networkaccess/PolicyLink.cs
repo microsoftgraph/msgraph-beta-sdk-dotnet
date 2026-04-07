@@ -61,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.networkaccess.cloudFirewallPolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicyLink(),
                 "#microsoft.graph.networkaccess.filteringPolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyLink(),
                 "#microsoft.graph.networkaccess.forwardingPolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyLink(),
                 "#microsoft.graph.networkaccess.threatIntelligencePolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicyLink(),
