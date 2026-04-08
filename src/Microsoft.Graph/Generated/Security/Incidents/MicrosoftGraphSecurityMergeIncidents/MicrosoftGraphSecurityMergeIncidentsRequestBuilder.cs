@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.Incidents.MicrosoftGraphSecurityMergeInc
         {
         }
         /// <summary>
-        /// Invoke action mergeIncidents
+        /// Merge multiple incident resources into a single incident.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-incident-mergeincidents?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.MergeResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.MicrosoftGraphSecurityMergeInc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.MergeResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.MergeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action mergeIncidents
+        /// Merge multiple incident resources into a single incident.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

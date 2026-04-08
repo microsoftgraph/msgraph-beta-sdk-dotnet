@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
         {
         }
         /// <summary>
-        /// Get permissions from storage
+        /// Get the list of permission objects associated with a fileStorageContainerType. Each permission represents a user with management rights to the container type. The calling user must be listed in the permissions collection for the container type with the owner role, or be a SharePoint Embedded Administrator or Global Administrator.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertype-list-permissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PermissionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.PermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to permissions for storage
+        /// Create a user permission object, which adds this permission to a fileStorageContainerType. Only existing owners (users with the owner role in the permissions collection of the container type), SharePoint Embedded Administrators, or Global Administrators can add permissions. The following constraints apply:- A maximum of 3 permissions per container type is allowed. Adding a fourth permission returns a 400 Bad Request error.- Duplicate permissions are treated as idempotent. If the specified user already has a permission on the container type, the service makes no changes and returns the existing permission resource in the response body with a 201 Created status, even though no new permission is created.- Currently only the owner role is supported.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainertype-post-permissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Permission>(requestInfo, global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get permissions from storage
+        /// Get the list of permission objects associated with a fileStorageContainerType. Each permission represents a user with management rights to the container type. The calling user must be listed in the permissions collection for the container type with the owner role, or be a SharePoint Embedded Administrator or Global Administrator.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to permissions for storage
+        /// Create a user permission object, which adds this permission to a fileStorageContainerType. Only existing owners (users with the owner role in the permissions collection of the container type), SharePoint Embedded Administrators, or Global Administrators can add permissions. The following constraints apply:- A maximum of 3 permissions per container type is allowed. Adding a fourth permission returns a 400 Bad Request error.- Duplicate permissions are treated as idempotent. If the specified user already has a permission on the container type, the service makes no changes and returns the existing permission resource in the response body with a 201 Created status, even though no new permission is created.- Currently only the owner role is supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
             return new global::Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissions.PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get permissions from storage
+        /// Get the list of permission objects associated with a fileStorageContainerType. Each permission represents a user with management rights to the container type. The calling user must be listed in the permissions collection for the container type with the owner role, or be a SharePoint Embedded Administrator or Global Administrator.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionsRequestBuilderGetQueryParameters 

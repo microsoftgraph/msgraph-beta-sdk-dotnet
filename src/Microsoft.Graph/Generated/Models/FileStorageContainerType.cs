@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Guid?>("owningAppId"); }
             set { BackingStore?.Set("owningAppId", value); }
         }
-        /// <summary>The permissions property</summary>
+        /// <summary>The set of permissions for users in the container type. The permissions collection defines who has access to manage the container type. Use the owner role to grant management access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Permission>? Permissions

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentDisplayName", value); }
         }
 #endif
+        /// <summary>The identifier of the blueprint associated with the agent. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BlueprintId
+        {
+            get { return BackingStore?.Get<string?>("blueprintId"); }
+            set { BackingStore?.Set("blueprintId", value); }
+        }
+#nullable restore
+#else
+        public string BlueprintId
+        {
+            get { return BackingStore?.Get<string>("blueprintId"); }
+            set { BackingStore?.Set("blueprintId", value); }
+        }
+#endif
         /// <summary>The identityType property</summary>
         public global::Microsoft.Graph.Beta.Models.AgentIdentityType? IdentityType
         {
@@ -102,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "agentDisplayName", n => { AgentDisplayName = n.GetStringValue(); } },
+                { "blueprintId", n => { BlueprintId = n.GetStringValue(); } },
                 { "identityType", n => { IdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>(); } },
                 { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
@@ -121,6 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("agentDisplayName", AgentDisplayName);
+            writer.WriteStringValue("blueprintId", BlueprintId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>("identityType", IdentityType);
             writer.WriteBoolValue("isDeleted", IsDeleted);
             writer.WriteBoolValue("isEnabled", IsEnabled);

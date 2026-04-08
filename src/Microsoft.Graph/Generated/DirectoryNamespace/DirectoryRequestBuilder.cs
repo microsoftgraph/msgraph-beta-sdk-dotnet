@@ -18,11 +18,13 @@ using Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure;
 using Microsoft.Graph.Beta.DirectoryNamespace.RecommendationConfiguration;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recovery;
 using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
 using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
 using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscriptionId;
 using Microsoft.Graph.Beta.DirectoryNamespace.Templates;
+using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -131,6 +133,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.RecommendationsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the recovery property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.Recovery.RecoveryRequestBuilder Recovery
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Recovery.RecoveryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains.SharedEmailDomainsRequestBuilder SharedEmailDomains
         {
@@ -145,6 +152,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.TemplatesRequestBuilder Templates
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tenantGovernance property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder TenantGovernance
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.DirectoryRequestBuilder"/> and sets the default values.

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ConfigurationDrift : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Resource instance for which the drift is detected.</summary>
+        /// <summary>Resource instance for which the drift is detected. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BaselineResourceDisplayName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("baselineResourceDisplayName", value); }
         }
 #endif
-        /// <summary>Properties within one or more resource instances in which drift is detected.</summary>
+        /// <summary>Properties within one or more resource instances in which drift is detected. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriftedProperty>? DriftedProperties
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("driftedProperties", value); }
         }
 #endif
-        /// <summary>The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? FirstReportedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("firstReportedDateTime"); }
             set { BackingStore?.Set("firstReportedDateTime", value); }
         }
-        /// <summary>Globally unique identifier (GUID) of the monitor. System-generated.</summary>
+        /// <summary>Globally unique identifier (GUID) of the monitor. System-generated. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MonitorId
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceInstanceIdentifier", value); }
         }
 #endif
-        /// <summary>Resource for which the drift is detected.</summary>
+        /// <summary>Resource for which the drift is detected. Supports $filter (eq, ne, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceType
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DriftStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.</summary>
+        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

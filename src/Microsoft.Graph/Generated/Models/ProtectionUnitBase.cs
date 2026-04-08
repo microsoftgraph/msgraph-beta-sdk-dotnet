@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("backupRetentionPeriodInDays"); }
             set { BackingStore?.Set("backupRetentionPeriodInDays", value); }
         }
+        /// <summary>The unique identifier of the billing policy assigned to the protection unit for cost allocation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingPolicyId
+        {
+            get { return BackingStore?.Get<string?>("billingPolicyId"); }
+            set { BackingStore?.Set("billingPolicyId", value); }
+        }
+#nullable restore
+#else
+        public string BillingPolicyId
+        {
+            get { return BackingStore?.Get<string>("billingPolicyId"); }
+            set { BackingStore?.Set("billingPolicyId", value); }
+        }
+#endif
         /// <summary>The identity of person who created the protection unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "backupRetentionPeriodInDays", n => { BackupRetentionPeriodInDays = n.GetIntValue(); } },
+                { "billingPolicyId", n => { BillingPolicyId = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>(global::Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
@@ -158,6 +175,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("backupRetentionPeriodInDays", BackupRetentionPeriodInDays);
+            writer.WriteStringValue("billingPolicyId", BillingPolicyId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>("error", Error);

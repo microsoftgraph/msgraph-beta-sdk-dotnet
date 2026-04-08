@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
         {
         }
         /// <summary>
-        /// Get externalOriginResourceConnectors from identityGovernance
+        /// Get a list of externalOriginResourceConnector objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-list-externaloriginresourceconnectors?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnectorCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to externalOriginResourceConnectors for identityGovernance
+        /// Creates a new externalOriginResourceConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-post-externaloriginresourceconnectors?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get externalOriginResourceConnectors from identityGovernance
+        /// Get a list of externalOriginResourceConnector objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to externalOriginResourceConnectors for identityGovernance
+        /// Creates a new externalOriginResourceConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get externalOriginResourceConnectors from identityGovernance
+        /// Get a list of externalOriginResourceConnector objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExternalOriginResourceConnectorsRequestBuilderGetQueryParameters 
