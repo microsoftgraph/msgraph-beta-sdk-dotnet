@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ConfigurationMonitoringResult : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Number of drifts observed during a monitor run.</summary>
+        /// <summary>Number of drifts observed during a monitor run. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public int? DriftsCount
         {
             get { return BackingStore?.Get<int?>("driftsCount"); }
             set { BackingStore?.Set("driftsCount", value); }
         }
-        /// <summary>All the error details that prevent the monitor from running successfully. The error details are a contained entity.</summary>
+        /// <summary>All the error details that prevent the monitor from running successfully. The error details are a contained entity. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ErrorDetail>? ErrorDetails
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errorDetails", value); }
         }
 #endif
-        /// <summary>Globally unique identifier (GUID) of the monitor. System-generated.</summary>
+        /// <summary>Globally unique identifier (GUID) of the monitor. System-generated. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MonitorId
@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("monitorId", value); }
         }
 #endif
-        /// <summary>Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? RunCompletionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("runCompletionDateTime"); }
             set { BackingStore?.Set("runCompletionDateTime", value); }
         }
-        /// <summary>Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? RunInitiationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("runInitiationDateTime"); }
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorRunStatus?>("runStatus"); }
             set { BackingStore?.Set("runStatus", value); }
         }
-        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.</summary>
+        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

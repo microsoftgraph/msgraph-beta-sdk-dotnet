@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>User-friendly description of the monitor given by the user.</summary>
+        /// <summary>User-friendly description of the monitor given by the user. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>User-friendly name given by the user to the monitor.</summary>
+        /// <summary>User-friendly name given by the user to the monitor. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The reason for the monitor&apos;s inactivation.</summary>
+        /// <summary>The reason for the monitor&apos;s inactivation. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InactivationReason
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The date and time when the monitor was last modified. If no modifications are made to the monitor, it&apos;s the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The date and time when the monitor was last modified. If no modifications are made to the monitor, it&apos;s the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("monitorRunFrequencyInHours"); }
             set { BackingStore?.Set("monitorRunFrequencyInHours", value); }
         }
-        /// <summary>Key-value pairs that contain parameter values which might be used in the baseline.</summary>
+        /// <summary>Key-value pairs that contain parameter values which might be used in the baseline. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType? Parameters
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.</summary>
+        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

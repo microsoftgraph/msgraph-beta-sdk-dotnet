@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.TargetedMessages.Item
         {
         }
         /// <summary>
-        /// Delete navigation property targetedMessages for users
+        /// Delete a specific targeted message from a chat context. Teams administrators can use this API to remove targeted messages from group chats.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete-targetedmessages?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +70,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.TargetedMessages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get targetedMessages from users
+        /// A collection of targeted messages in the chat that are visible only to specific users. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TargetedChatMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.TargetedMessages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>(requestInfo, global::Microsoft.Graph.Beta.Models.TargetedChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property targetedMessages for users
+        /// Delete a specific targeted message from a chat context. Teams administrators can use this API to remove targeted messages from group chats.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +137,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.TargetedMessages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get targetedMessages from users
+        /// A collection of targeted messages in the chat that are visible only to specific users. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +195,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.TargetedMessages.Item
         {
         }
         /// <summary>
-        /// Get targetedMessages from users
+        /// A collection of targeted messages in the chat that are visible only to specific users. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TargetedChatMessageItemRequestBuilderGetQueryParameters 

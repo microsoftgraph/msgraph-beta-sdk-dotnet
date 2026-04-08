@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The principalId property</summary>
+        /// <summary>The principal ID of the SharePoint group in the tenant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalId

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The inheritableScopes property</summary>
+        /// <summary>Inheritance configuration for delegated permission scopes published by the resource application. Supports three patterns: allAllowedScopes (inherit all available scopes), enumeratedScopes (inherit only the listed scopes), and noScopes (inherit none). Each pattern exposes a kind discriminator for filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.InheritableScopes? InheritableScopes

@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
         {
         }
         /// <summary>
-        /// Delete navigation property externalOriginResourceConnectors for identityGovernance
+        /// Delete an externalOriginResourceConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externaloriginresourceconnector-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get externalOriginResourceConnectors from identityGovernance
+        /// Represents the connectors used to communicate with external resource systems.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property externalOriginResourceConnectors in identityGovernance
+        /// Update the properties of an externalOriginResourceConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externaloriginresourceconnector-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>(requestInfo, global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property externalOriginResourceConnectors for identityGovernance
+        /// Delete an externalOriginResourceConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return requestInfo;
         }
         /// <summary>
-        /// Get externalOriginResourceConnectors from identityGovernance
+        /// Represents the connectors used to communicate with external resource systems.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property externalOriginResourceConnectors in identityGovernance
+        /// Update the properties of an externalOriginResourceConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.External
         {
         }
         /// <summary>
-        /// Get externalOriginResourceConnectors from identityGovernance
+        /// Represents the connectors used to communicate with external resource systems.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExternalOriginResourceConnectorItemRequestBuilderGetQueryParameters 

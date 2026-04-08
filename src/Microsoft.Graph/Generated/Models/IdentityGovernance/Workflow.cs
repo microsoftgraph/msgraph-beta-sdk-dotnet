@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("nextScheduleRunDateTime"); }
             set { BackingStore?.Set("nextScheduleRunDateTime", value); }
         }
-        /// <summary>The previewScope property</summary>
+        /// <summary>A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? PreviewScope

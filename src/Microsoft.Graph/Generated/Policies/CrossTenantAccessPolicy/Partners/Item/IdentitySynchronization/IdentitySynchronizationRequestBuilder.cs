@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         {
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
+        /// Delete the user and group synchronization policy for a partner-specific configuration.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user and group synchronization policy of a partner-specific configuration.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner"/></returns>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
+        /// Create a cross-tenant user and optionally group synchronization policy for a partner-specific configuration.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner"/></returns>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
+        /// Delete the user and group synchronization policy for a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return requestInfo;
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user and group synchronization policy of a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return requestInfo;
         }
         /// <summary>
-        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
+        /// Create a cross-tenant user and optionally group synchronization policy for a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         {
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user and group synchronization policy of a partner-specific configuration.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitySynchronizationRequestBuilderGetQueryParameters 

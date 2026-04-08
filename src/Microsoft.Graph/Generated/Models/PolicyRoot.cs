@@ -412,7 +412,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremAuthenticationPolicies", value); }
         }
 #endif
-        /// <summary>The ownerlessGroupPolicy property</summary>
+        /// <summary>The policy configuration for managing groups that have lost their sole owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OwnerlessGroupPolicy? OwnerlessGroupPolicy

@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tabs", value); }
         }
 #endif
-        /// <summary>The targetedMessages property</summary>
+        /// <summary>A collection of targeted messages in the chat that are visible only to specific users. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>? TargetedMessages

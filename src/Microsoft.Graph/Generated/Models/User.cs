@@ -952,6 +952,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identities", value); }
         }
 #endif
+        /// <summary>The identityGovernance property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings? IdentityGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings?>("identityGovernance"); }
+            set { BackingStore?.Set("identityGovernance", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings IdentityGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>("identityGovernance"); }
+            set { BackingStore?.Set("identityGovernance", value); }
+        }
+#endif
         /// <summary>The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2539,6 +2555,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
                 { "hireDate", n => { HireDate = n.GetDateTimeOffsetValue(); } },
                 { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>(global::Microsoft.Graph.Beta.Models.ObjectIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "identityGovernance", n => { IdentityGovernance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>(global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings.CreateFromDiscriminatorValue); } },
                 { "identityParentId", n => { IdentityParentId = n.GetStringValue(); } },
                 { "imAddresses", n => { ImAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "inferenceClassification", n => { InferenceClassification = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>(global::Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue); } },
@@ -2711,6 +2728,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("givenName", GivenName);
             writer.WriteDateTimeOffsetValue("hireDate", HireDate);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>("identities", Identities);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>("identityGovernance", IdentityGovernance);
             writer.WriteStringValue("identityParentId", IdentityParentId);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>("inferenceClassification", InferenceClassification);

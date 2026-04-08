@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("connections", value); }
         }
 #endif
+        /// <summary>The generativeAIInsights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.GenerativeAIInsight>? GenerativeAIInsights
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.GenerativeAIInsight>?>("generativeAIInsights"); }
+            set { BackingStore?.Set("generativeAIInsights", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.GenerativeAIInsight> GenerativeAIInsights
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.GenerativeAIInsight>>("generativeAIInsights"); }
+            set { BackingStore?.Set("generativeAIInsights", value); }
+        }
+#endif
         /// <summary>A collection of remote network health events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "connections", n => { Connections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Connection>(global::Microsoft.Graph.Beta.Models.Networkaccess.Connection.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "generativeAIInsights", n => { GenerativeAIInsights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.GenerativeAIInsight>(global::Microsoft.Graph.Beta.Models.Networkaccess.GenerativeAIInsight.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>(global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "traffic", n => { Traffic = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic>(global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -92,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Connection>("connections", Connections);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.GenerativeAIInsight>("generativeAIInsights", GenerativeAIInsights);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>("remoteNetworks", RemoteNetworks);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic>("traffic", Traffic);
         }

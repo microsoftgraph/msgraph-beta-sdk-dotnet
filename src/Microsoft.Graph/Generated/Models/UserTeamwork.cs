@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("region", value); }
         }
 #endif
+        /// <summary>User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TeamworkSection>? Sections
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamworkSection>?>("sections"); }
+            set { BackingStore?.Set("sections", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TeamworkSection> Sections
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamworkSection>>("sections"); }
+            set { BackingStore?.Set("sections", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -98,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation>(global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
+                { "sections", n => { Sections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamworkSection>(global::Microsoft.Graph.Beta.Models.TeamworkSection.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -112,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation>("installedApps", InstalledApps);
             writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("region", Region);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamworkSection>("sections", Sections);
         }
     }
 }

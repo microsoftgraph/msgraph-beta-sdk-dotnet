@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectorType?>("connectorType"); }
             set { BackingStore?.Set("connectorType", value); }
         }
-        /// <summary>The createdBy property</summary>
+        /// <summary>The identifier of the user or application that created the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy
@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the connector was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>A description of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The modifiedBy property</summary>
+        /// <summary>The identifier of the user or application that last modified the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifiedBy
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("modifiedBy", value); }
         }
 #endif
-        /// <summary>The modifiedDateTime property</summary>
+        /// <summary>The date and time when the connector was last modified.</summary>
         public DateTimeOffset? ModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }

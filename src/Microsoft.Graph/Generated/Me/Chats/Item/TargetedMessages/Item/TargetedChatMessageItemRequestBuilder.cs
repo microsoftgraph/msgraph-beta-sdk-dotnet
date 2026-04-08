@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.TargetedMessages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get targetedMessages from me
+        /// A collection of targeted messages in the chat that are visible only to specific users. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TargetedChatMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.TargetedMessages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get targetedMessages from me
+        /// A collection of targeted messages in the chat that are visible only to specific users. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.TargetedMessages.Item
         {
         }
         /// <summary>
-        /// Get targetedMessages from me
+        /// A collection of targeted messages in the chat that are visible only to specific users. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TargetedChatMessageItemRequestBuilderGetQueryParameters 

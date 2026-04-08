@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The externalOriginResourceConnector property</summary>
+        /// <summary>The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector? ExternalOriginResourceConnector
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("originId", value); }
         }
 #endif
-        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter (eq).</summary>
+        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter and $expand (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginSystem
