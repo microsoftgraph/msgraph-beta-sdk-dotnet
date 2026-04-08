@@ -610,6 +610,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesDomainName", value); }
         }
 #endif
+        /// <summary>The onPremisesExtensionAttributes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes? OnPremisesExtensionAttributes
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes?>("onPremisesExtensionAttributes"); }
+            set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes OnPremisesExtensionAttributes
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes"); }
+            set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
+        }
+#endif
         /// <summary>Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime
         {
@@ -1192,6 +1208,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
                 { "membershipRuleProcessingStatus", n => { MembershipRuleProcessingStatus = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus>(global::Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus.CreateFromDiscriminatorValue); } },
                 { "onPremisesDomainName", n => { OnPremisesDomainName = n.GetStringValue(); } },
+                { "onPremisesExtensionAttributes", n => { OnPremisesExtensionAttributes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>(global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes.CreateFromDiscriminatorValue); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesNetBiosName", n => { OnPremisesNetBiosName = n.GetStringValue(); } },
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1286,6 +1303,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("membersWithLicenseErrors", MembersWithLicenseErrors);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>("onenote", Onenote);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes", OnPremisesExtensionAttributes);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteStringValue("onPremisesNetBiosName", OnPremisesNetBiosName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);

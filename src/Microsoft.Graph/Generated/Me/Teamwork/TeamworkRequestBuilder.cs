@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Me.Teamwork.DeleteTargetedMessage;
 using Microsoft.Graph.Beta.Me.Teamwork.GetAllRetainedTargetedMessages;
 using Microsoft.Graph.Beta.Me.Teamwork.GetAllTargetedMessages;
 using Microsoft.Graph.Beta.Me.Teamwork.InstalledApps;
+using Microsoft.Graph.Beta.Me.Teamwork.Sections;
 using Microsoft.Graph.Beta.Me.Teamwork.SendActivityNotification;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.Beta.Me.Teamwork
         public global::Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.InstalledAppsRequestBuilder InstalledApps
         {
             get => new global::Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sections property of the microsoft.graph.userTeamwork entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Teamwork.Sections.SectionsRequestBuilder Sections
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Teamwork.Sections.SectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendActivityNotification method.</summary>
         public global::Microsoft.Graph.Beta.Me.Teamwork.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification

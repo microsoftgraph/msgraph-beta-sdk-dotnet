@@ -107,7 +107,13 @@ namespace Microsoft.Graph.Beta.Models
         public static global::Microsoft.Graph.Beta.Models.CloudPcCloudAppDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.CloudPcCloudAppDetail();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.cloudPcAutomaticDiscoveredAppDetail" => new global::Microsoft.Graph.Beta.Models.CloudPcAutomaticDiscoveredAppDetail(),
+                "#microsoft.graph.cloudPcFilePathAppDetail" => new global::Microsoft.Graph.Beta.Models.CloudPcFilePathAppDetail(),
+                _ => new global::Microsoft.Graph.Beta.Models.CloudPcCloudAppDetail(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

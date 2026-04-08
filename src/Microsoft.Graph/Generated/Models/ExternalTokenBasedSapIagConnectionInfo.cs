@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ExternalTokenBasedSapIagConnectionInfo : global::Microsoft.Graph.Beta.Models.ConnectionInfo, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessTokenUrl property</summary>
+        /// <summary>The URL endpoint used to obtain access tokens for authentication with the SAP IAG system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessTokenUrl
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessTokenUrl", value); }
         }
 #endif
-        /// <summary>The clientId property</summary>
+        /// <summary>The client identifier used for authentication with the SAP IAG system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientId", value); }
         }
 #endif
-        /// <summary>The keyVaultName property</summary>
+        /// <summary>The name of the Azure Key Vault that stores the client secret for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KeyVaultName
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("keyVaultName", value); }
         }
 #endif
-        /// <summary>The resourceGroup property</summary>
+        /// <summary>The Azure resource group that contains the Key Vault.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceGroup
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceGroup", value); }
         }
 #endif
-        /// <summary>The secretName property</summary>
+        /// <summary>The name of the secret in Azure Key Vault that contains the client secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecretName
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("secretName", value); }
         }
 #endif
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The Azure subscription ID that contains the Key Vault.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionId

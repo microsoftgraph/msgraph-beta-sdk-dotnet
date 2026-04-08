@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The definitionId property</summary>
+        /// <summary>The identifier of the task definition of the task that failed during the preview operation of a workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefinitionId
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("definitionId", value); }
         }
 #endif
-        /// <summary>The failureReason property</summary>
+        /// <summary>The reason why the task failed in the preview operation of a workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the task that failed within the preview operation of a workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The taskId property</summary>
+        /// <summary>The identifier of the task that failed during the preview operation of a workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaskId

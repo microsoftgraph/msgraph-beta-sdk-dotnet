@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The sharePointGroup property</summary>
+        /// <summary>The SharePoint group associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity? SharePointGroup

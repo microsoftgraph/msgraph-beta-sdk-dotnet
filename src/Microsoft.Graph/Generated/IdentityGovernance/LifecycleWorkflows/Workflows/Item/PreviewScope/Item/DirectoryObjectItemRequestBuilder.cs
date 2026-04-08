@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         {
         }
         /// <summary>
-        /// Get previewScope from identityGovernance
+        /// A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get previewScope from identityGovernance
+        /// A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.PreviewScope.Item.DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get previewScope from identityGovernance
+        /// A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DirectoryObjectItemRequestBuilderGetQueryParameters 

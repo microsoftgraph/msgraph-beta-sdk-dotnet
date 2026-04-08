@@ -268,7 +268,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("controlConfigurations", value); }
         }
 #endif
-        /// <summary>The externalOriginResourceConnectors property</summary>
+        /// <summary>Represents the connectors used to communicate with external resource systems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>? ExternalOriginResourceConnectors

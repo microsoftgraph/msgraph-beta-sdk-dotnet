@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
             set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
-        /// <summary>The restrictionType property</summary>
+        /// <summary>A unique identifier key for keyCredentialConfiguration. This value also represents the type of restriction being applied. Possible values are asymmetricKeyLifetime, trustedCertificateAuthority, and unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
         public global::Microsoft.Graph.Beta.Models.AppKeyCredentialRestrictionType? RestrictionType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppKeyCredentialRestrictionType?>("restrictionType"); }

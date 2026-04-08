@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get permissions from storage
+        /// The set of permissions for users in the container type. The permissions collection defines who has access to manage the container type. Use the owner role to grant management access.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
             return requestInfo;
         }
         /// <summary>
-        /// Get permissions from storage
+        /// The set of permissions for users in the container type. The permissions collection defines who has access to manage the container type. Use the owner role to grant management access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.ContainerTypes.Item.Permissio
         {
         }
         /// <summary>
-        /// Get permissions from storage
+        /// The set of permissions for users in the container type. The permissions collection defines who has access to manage the container type. Use the owner role to grant management access.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionItemRequestBuilderGetQueryParameters 
