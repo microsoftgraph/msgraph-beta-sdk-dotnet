@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("advancedThreatProtectionOnboardingStateSummary", value); }
         }
 #endif
+        /// <summary>Android App Configurations Schema entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema? AndroidAppConfigurationSchema
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema?>("androidAppConfigurationSchema"); }
+            set { BackingStore?.Set("androidAppConfigurationSchema", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema AndroidAppConfigurationSchema
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema>("androidAppConfigurationSchema"); }
+            set { BackingStore?.Set("androidAppConfigurationSchema", value); }
+        }
+#endif
         /// <summary>Android device owner enrollment profile entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -3015,6 +3031,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "accountMoveCompletionDateTime", n => { AccountMoveCompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "adminConsent", n => { AdminConsent = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminConsent>(global::Microsoft.Graph.Beta.Models.AdminConsent.CreateFromDiscriminatorValue); } },
                 { "advancedThreatProtectionOnboardingStateSummary", n => { AdvancedThreatProtectionOnboardingStateSummary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>(global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary.CreateFromDiscriminatorValue); } },
+                { "androidAppConfigurationSchema", n => { AndroidAppConfigurationSchema = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema>(global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema.CreateFromDiscriminatorValue); } },
                 { "androidDeviceOwnerEnrollmentProfiles", n => { AndroidDeviceOwnerEnrollmentProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "androidForWorkAppConfigurationSchemas", n => { AndroidForWorkAppConfigurationSchemas = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>(global::Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "androidForWorkEnrollmentProfiles", n => { AndroidForWorkEnrollmentProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -3217,6 +3234,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteDateTimeOffsetValue("accountMoveCompletionDateTime", AccountMoveCompletionDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminConsent>("adminConsent", AdminConsent);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>("advancedThreatProtectionOnboardingStateSummary", AdvancedThreatProtectionOnboardingStateSummary);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema>("androidAppConfigurationSchema", AndroidAppConfigurationSchema);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>("androidDeviceOwnerEnrollmentProfiles", AndroidDeviceOwnerEnrollmentProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>("androidForWorkAppConfigurationSchemas", AndroidForWorkAppConfigurationSchemas);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>("androidForWorkEnrollmentProfiles", AndroidForWorkEnrollmentProfiles);

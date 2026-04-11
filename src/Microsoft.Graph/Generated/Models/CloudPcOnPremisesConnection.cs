@@ -224,6 +224,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subnetId", value); }
         }
 #endif
+        /// <summary>The subnetPrivateIpDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail? SubnetPrivateIpDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail?>("subnetPrivateIpDetail"); }
+            set { BackingStore?.Set("subnetPrivateIpDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail SubnetPrivateIpDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail>("subnetPrivateIpDetail"); }
+            set { BackingStore?.Set("subnetPrivateIpDetail", value); }
+        }
+#endif
         /// <summary>The ID of the target Azure subscription associated with your tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -329,6 +345,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subnetId", n => { SubnetId = n.GetStringValue(); } },
+                { "subnetPrivateIpDetail", n => { SubnetPrivateIpDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail>(global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail.CreateFromDiscriminatorValue); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>(); } },
@@ -361,6 +378,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("resourceGroupId", ResourceGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("subnetId", SubnetId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail>("subnetPrivateIpDetail", SubnetPrivateIpDetail);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>("type", Type);

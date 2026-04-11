@@ -66,6 +66,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("senseClientVersion", value); }
         }
 #endif
+        /// <summary>The list of device type of the sensor. The possible values are: domainController, adfs,, adcs, entraConnect unknownFutureValue. This flagged enumeration allows multiple members to be returned simultaneously.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?>? SensorTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?>?>("sensorTypes"); }
+            set { BackingStore?.Set("sensorTypes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?> SensorTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?>>("sensorTypes"); }
+            set { BackingStore?.Set("sensorTypes", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "senseClientVersion", n => { SenseClientVersion = n.GetStringValue(); } },
+                { "sensorTypes", n => { SensorTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.DeviceType>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -102,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("senseClientVersion", SenseClientVersion);
+            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.DeviceType>("sensorTypes", SensorTypes);
         }
     }
 }
