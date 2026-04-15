@@ -13,10 +13,12 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationAction;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Report;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveTenantEncryptionSetting;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ServicePlans;
@@ -105,6 +107,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.OnPremisesConnectionsRequestBuilder OnPremisesConnections
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.OnPremisesConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the organizationAction method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationAction.OrganizationActionRequestBuilder OrganizationAction
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationAction.OrganizationActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the organizationSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings.OrganizationSettingsRequestBuilder OrganizationSettings
@@ -241,6 +248,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEndpoint>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the retrieveOrganizationActionDetail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType.RetrieveOrganizationActionDetailWithActionTypeRequestBuilder"/></returns>
+        /// <param name="actionType">Usage: actionType=&apos;{actionType}&apos;</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType.RetrieveOrganizationActionDetailWithActionTypeRequestBuilder RetrieveOrganizationActionDetailWithActionType(string actionType)
+        {
+            if(string.IsNullOrEmpty(actionType)) throw new ArgumentNullException(nameof(actionType));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType.RetrieveOrganizationActionDetailWithActionTypeRequestBuilder(PathParameters, RequestAdapter, actionType);
         }
         /// <summary>
         /// Delete navigation property virtualEndpoint for deviceManagement
