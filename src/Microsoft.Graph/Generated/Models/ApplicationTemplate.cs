@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -44,6 +45,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("configurationUris", value); }
         }
 #endif
+        /// <summary>Deprecation date for this application. If specified, the application will be removed from the Microsoft Entra application gallery on this date.</summary>
+        public Date? DeprecationDate
+        {
+            get { return BackingStore?.Get<Date?>("deprecationDate"); }
+            set { BackingStore?.Set("deprecationDate", value); }
+        }
         /// <summary>A description of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -268,6 +275,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "configurationUris", n => { ConfigurationUris = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationUri>(global::Microsoft.Graph.Beta.Models.ConfigurationUri.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deprecationDate", n => { DeprecationDate = n.GetDateValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endpoints", n => { Endpoints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -294,6 +302,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationUri>("configurationUris", ConfigurationUris);
+            writer.WriteDateValue("deprecationDate", DeprecationDate);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("endpoints", Endpoints);

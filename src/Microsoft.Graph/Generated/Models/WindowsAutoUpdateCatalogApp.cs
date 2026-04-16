@@ -13,6 +13,28 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsAutoUpdateCatalogApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
+        /// <summary>Indicates the set of CPU architectures on which this application is allowed to be installed. When null, the app is eligible for installation on all the supported architectures. Possible values are: x86, x64, arm64, or a combination of them.</summary>
+        public global::Microsoft.Graph.Beta.Models.WindowsArchitecture? AllowedArchitectures
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsArchitecture?>("allowedArchitectures"); }
+            set { BackingStore?.Set("allowedArchitectures", value); }
+        }
+        /// <summary>Describes how the app installer executes on the target device, including the account context (system or user) under which the installer runs and how the device handles restarts after installation completes. When omitted, the service applies default values (runAsAccount = system, deviceRestartBehavior = basedOnReturnCode).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppInstallExperience? InstallExperience
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppInstallExperience?>("installExperience"); }
+            set { BackingStore?.Set("installExperience", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppInstallExperience InstallExperience
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppInstallExperience>("installExperience"); }
+            set { BackingStore?.Set("installExperience", value); }
+        }
+#endif
         /// <summary>The identifier of a specific branch in a product, which is a specific subset of product functionality as defined by the publisher . This is run-time resolved to be the latest MobileAppCatalogPackage in the branch. (example:&apos;31a4c766-f23d-8d41-4803-35e155be7389&apos;). Read-Only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +76,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allowedArchitectures", n => { AllowedArchitectures = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
+                { "installExperience", n => { InstallExperience = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppInstallExperience>(global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppInstallExperience.CreateFromDiscriminatorValue); } },
                 { "mobileAppCatalogPackageBranchId", n => { MobileAppCatalogPackageBranchId = n.GetStringValue(); } },
             };
         }
@@ -65,6 +89,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>("allowedArchitectures", AllowedArchitectures);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppInstallExperience>("installExperience", InstallExperience);
             writer.WriteStringValue("mobileAppCatalogPackageBranchId", MobileAppCatalogPackageBranchId);
         }
     }

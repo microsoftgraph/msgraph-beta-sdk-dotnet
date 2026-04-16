@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("catalog", value); }
         }
 #endif
+        /// <summary>The policySettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CopilotPolicySetting>? PolicySettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CopilotPolicySetting>?>("policySettings"); }
+            set { BackingStore?.Set("policySettings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CopilotPolicySetting> PolicySettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CopilotPolicySetting>>("policySettings"); }
+            set { BackingStore?.Set("policySettings", value); }
+        }
+#endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "catalog", n => { Catalog = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CopilotAdminCatalog>(global::Microsoft.Graph.Beta.Models.CopilotAdminCatalog.CreateFromDiscriminatorValue); } },
+                { "policySettings", n => { PolicySettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CopilotPolicySetting>(global::Microsoft.Graph.Beta.Models.CopilotPolicySetting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CopilotAdminSetting>(global::Microsoft.Graph.Beta.Models.CopilotAdminSetting.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CopilotAdminCatalog>("catalog", Catalog);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CopilotPolicySetting>("policySettings", PolicySettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CopilotAdminSetting>("settings", Settings);
         }
     }

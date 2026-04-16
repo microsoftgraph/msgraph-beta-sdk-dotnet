@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "5E75ED1A5F0EC2F78B5DCC06C37C52CAE4EF410A4CF7D61CD838B96C1B4B0CDFFD1D3D9A65174E1E93ED540B5E3D688E0A5981FDBFD7AC9B18B8F4B418E3A2AC",
+  "descriptionHash": "8469BAEA79AA7E8D76A271EFB61EEFE25F4CC53DDFC1663BF8C086FA2B84BCF26ED4779A33D74301EA9BF9F31F26EBE9CD75E54E9409C7BF972581A8BBF44722",
   "descriptionLocation": "../../msgraph-metadata/clean_beta_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.30.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "BaseGraphServiceClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.Beta",

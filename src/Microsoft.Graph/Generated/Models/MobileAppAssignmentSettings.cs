@@ -68,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.win32CatalogAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.Win32CatalogAppAssignmentSettings(),
                 "#microsoft.graph.win32LobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.Win32LobAppAssignmentSettings(),
                 "#microsoft.graph.windowsAppXAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WindowsAppXAppAssignmentSettings(),
+                "#microsoft.graph.windowsAutoUpdateCatalogAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppAssignmentSettings(),
                 "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WindowsUniversalAppXAppAssignmentSettings(),
                 "#microsoft.graph.winGetAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WinGetAppAssignmentSettings(),
                 _ => new global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings(),

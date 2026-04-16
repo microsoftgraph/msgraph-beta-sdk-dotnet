@@ -95,6 +95,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
+        /// <summary>List of app package names that will be able to access the network directly when VPN is in lockdown mode but not connected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? LockdownExclusionList
+        {
+            get { return BackingStore?.Get<List<string>?>("lockdownExclusionList"); }
+            set { BackingStore?.Set("lockdownExclusionList", value); }
+        }
+#nullable restore
+#else
+        public List<string> LockdownExclusionList
+        {
+            get { return BackingStore?.Get<List<string>>("lockdownExclusionList"); }
+            set { BackingStore?.Set("lockdownExclusionList", value); }
+        }
+#endif
         /// <summary>Microsoft Tunnel site ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,6 +223,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyValuePair>(global::Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>(global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
                 { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "lockdownExclusionList", n => { LockdownExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
                 { "proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "proxyServer", n => { ProxyServer = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VpnProxyServer>(global::Microsoft.Graph.Beta.Models.VpnProxyServer.CreateFromDiscriminatorValue); } },
@@ -229,6 +246,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyValuePair>("customKeyValueData", CustomKeyValueData);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteCollectionOfPrimitiveValues<string>("lockdownExclusionList", LockdownExclusionList);
             writer.WriteStringValue("microsoftTunnelSiteId", MicrosoftTunnelSiteId);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyExclusionList", ProxyExclusionList);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VpnProxyServer>("proxyServer", ProxyServer);
