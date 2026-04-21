@@ -7,27 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Audit data for MS365D Suppression Rule events.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MS365DSuppressionRuleAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
+    public partial class Ms365dSuppressionRuleAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.MS365DSuppressionRuleAuditRecord"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.Ms365dSuppressionRuleAuditRecord"/> and sets the default values.
         /// </summary>
-        public MS365DSuppressionRuleAuditRecord() : base()
+        public Ms365dSuppressionRuleAuditRecord() : base()
         {
-            OdataType = "#microsoft.graph.security.mS365DSuppressionRuleAuditRecord";
+            OdataType = "#microsoft.graph.security.ms365dSuppressionRuleAuditRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.MS365DSuppressionRuleAuditRecord"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Ms365dSuppressionRuleAuditRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Security.MS365DSuppressionRuleAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.Security.Ms365dSuppressionRuleAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.MS365DSuppressionRuleAuditRecord();
+            return new global::Microsoft.Graph.Beta.Models.Security.Ms365dSuppressionRuleAuditRecord();
         }
         /// <summary>
         /// The deserialization information for the current model

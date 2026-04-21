@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationalActivityDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Shortened name of the degree or program (example: PhD, MBA)</summary>
+        /// <summary>Shortened name of the degree or program, for example, PhD and MBA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Abbreviation
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Majors and minors associated with the program. (if applicable)</summary>
+        /// <summary>Majors and minors associated with the program, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? FieldsOfStudy
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fieldsOfStudy", value); }
         }
 #endif
-        /// <summary>The final grade, class, GPA, or score.</summary>
+        /// <summary>The final grade, class, grade point average (GPA), or score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Grade
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("grade", value); }
         }
 #endif
-        /// <summary>More notes the user provided.</summary>
+        /// <summary>More notes provided by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes

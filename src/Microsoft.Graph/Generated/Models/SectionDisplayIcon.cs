@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The contentUrl property</summary>
+        /// <summary>The URL to a custom icon image. Applicable when iconType is custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentUrl
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentUrl", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The human-readable name of the icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The iconType property</summary>
+        /// <summary>The type of icon. Use an emoji character such as 👍 for an emoji icon, or custom for a custom image icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IconType
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The skinTone property</summary>
+        /// <summary>The skin tone variant applied to the icon. Read-only. The possible values are: light, mediumLight, medium, mediumDark, dark, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SectionIconSkinTone? SkinTone
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SectionIconSkinTone?>("skinTone"); }

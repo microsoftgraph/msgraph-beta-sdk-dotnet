@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.Sections.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// The sections in the user&apos;s chat list.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.Sections.Item
             return requestInfo;
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// The sections in the user&apos;s chat list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.Sections.Item
         {
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// The sections in the user&apos;s chat list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamworkSectionItemRequestBuilderGetQueryParameters 

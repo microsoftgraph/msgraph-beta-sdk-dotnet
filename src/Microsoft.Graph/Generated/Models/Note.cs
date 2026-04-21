@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("body", value); }
         }
 #endif
+        /// <summary>Auto-generated preview of the note body content (first ~255 characters). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BodyPreview
+        {
+            get { return BackingStore?.Get<string?>("bodyPreview"); }
+            set { BackingStore?.Set("bodyPreview", value); }
+        }
+#nullable restore
+#else
+        public string BodyPreview
+        {
+            get { return BackingStore?.Get<string>("bodyPreview"); }
+            set { BackingStore?.Set("bodyPreview", value); }
+        }
+#endif
         /// <summary>The extensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +163,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Attachment>(global::Microsoft.Graph.Beta.Models.Attachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "bodyPreview", n => { BodyPreview = n.GetStringValue(); } },
                 { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>(global::Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
                 { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
@@ -166,8 +183,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Attachment>("attachments", Attachments);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
-            writer.WriteBoolValue("hasAttachments", HasAttachments);
-            writer.WriteBoolValue("isDeleted", IsDeleted);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteStringValue("subject", Subject);

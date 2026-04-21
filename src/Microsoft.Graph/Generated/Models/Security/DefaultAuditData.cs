@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Default open-type audit data when no specific subtype applies.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class DefaultAuditData : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.DefaultAuditData"/> and sets the default values.

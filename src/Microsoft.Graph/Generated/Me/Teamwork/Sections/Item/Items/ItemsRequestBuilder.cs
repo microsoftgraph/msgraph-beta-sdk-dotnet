@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.Sections.Item.Items
         {
         }
         /// <summary>
-        /// Get items from me
+        /// The items (chats, channels, meetings, or communities) organized within the section.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSectionItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.Sections.Item.Items
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSectionItem>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSectionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get items from me
+        /// The items (chats, channels, meetings, or communities) organized within the section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.Sections.Item.Items
             return new global::Microsoft.Graph.Beta.Me.Teamwork.Sections.Item.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get items from me
+        /// The items (chats, channels, meetings, or communities) organized within the section.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 

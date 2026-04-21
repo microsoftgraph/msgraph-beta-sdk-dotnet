@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections
         {
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// Get the list of sections in a user&apos;s teamwork.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-list-sections?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSectionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to sections for users
+        /// Create a new section in a user&apos;s teamwork.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-post-sections?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSection"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSection>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// Get the list of sections in a user&apos;s teamwork.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to sections for users
+        /// Create a new section in a user&apos;s teamwork.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections
             return new global::Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.SectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// Get the list of sections in a user&apos;s teamwork.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SectionsRequestBuilderGetQueryParameters 

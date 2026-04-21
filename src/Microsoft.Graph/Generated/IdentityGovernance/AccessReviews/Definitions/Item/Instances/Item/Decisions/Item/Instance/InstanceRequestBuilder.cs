@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.AcceptRecommendations;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ApplyDecisions;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.BatchApplyCustomDataProvidedResourceDecisions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.BatchRecordDecisions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ContactedReviewers;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.Definition;
@@ -37,6 +38,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ApplyDecisions.ApplyDecisionsRequestBuilder ApplyDecisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ApplyDecisions.ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder BatchApplyCustomDataProvidedResourceDecisions
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder BatchRecordDecisions

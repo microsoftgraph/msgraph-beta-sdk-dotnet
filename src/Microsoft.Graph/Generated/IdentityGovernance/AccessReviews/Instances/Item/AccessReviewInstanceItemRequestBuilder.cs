@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.AcceptRecommendations;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.ApplyDecisions;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.BatchApplyCustomDataProvidedResourceDecisions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.BatchRecordDecisions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.ContactedReviewers;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.Decisions;
@@ -38,6 +39,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder ApplyDecisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder BatchApplyCustomDataProvidedResourceDecisions
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances.Item.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder BatchRecordDecisions

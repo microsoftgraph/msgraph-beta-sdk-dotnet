@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationMethods", value); }
         }
 #endif
-        /// <summary>The azureADPremiumLicenseInsight property</summary>
+        /// <summary>Provides insight into the Microsoft Entra ID P1 and P2 premium license utilization for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight? AzureADPremiumLicenseInsight

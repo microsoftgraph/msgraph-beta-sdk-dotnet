@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TeamworkSectionItem : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time when the item was added to the section. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The itemType property</summary>
+        /// <summary>The type of the item. The possible values are: chat, channel, meeting, community, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.SectionItemType? ItemType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SectionItemType?>("itemType"); }
             set { BackingStore?.Set("itemType", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Date and time when the item was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

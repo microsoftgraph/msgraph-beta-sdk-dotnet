@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("archivedDateTime"); }
             set { BackingStore?.Set("archivedDateTime", value); }
         }
-        /// <summary>Represents the current archive status of the site collection. Returned only on $select.</summary>
+        /// <summary>Represents the current archive status of the site collection. Requires $select to retrieve.</summary>
         public global::Microsoft.Graph.Beta.Models.SiteArchiveStatus? ArchiveStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteArchiveStatus?>("archiveStatus"); }

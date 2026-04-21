@@ -3,10 +3,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ActivityLogs;
-using Microsoft.Graph.Beta.Solutions.BackupRestore.AllDrivesBackup;
-using Microsoft.Graph.Beta.Solutions.BackupRestore.AllMailboxesBackup;
-using Microsoft.Graph.Beta.Solutions.BackupRestore.AllSitesBackup;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.DriveInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnits;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs;
@@ -14,6 +13,9 @@ using Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.Enable;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxProtectionUnits;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs;
@@ -29,6 +31,8 @@ using Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointBrowseSessions;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SiteInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SiteProtectionUnits;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SiteProtectionUnitsBulkAdditionJobs;
@@ -53,25 +57,20 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ActivityLogs.ActivityLogsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the allDrivesBackup property of the microsoft.graph.backupRestoreRoot entity.</summary>
-        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.AllDrivesBackup.AllDrivesBackupRequestBuilder AllDrivesBackup
-        {
-            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.AllDrivesBackup.AllDrivesBackupRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the allMailboxesBackup property of the microsoft.graph.backupRestoreRoot entity.</summary>
-        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.AllMailboxesBackup.AllMailboxesBackupRequestBuilder AllMailboxesBackup
-        {
-            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.AllMailboxesBackup.AllMailboxesBackupRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the allSitesBackup property of the microsoft.graph.backupRestoreRoot entity.</summary>
-        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.AllSitesBackup.AllSitesBackupRequestBuilder AllSitesBackup
-        {
-            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.AllSitesBackup.AllSitesBackupRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the browseSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.BrowseSessionsRequestBuilder BrowseSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.BrowseSessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the driveExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder DriveExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder DriveExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driveInclusionRules property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveInclusionRules.DriveInclusionRulesRequestBuilder DriveInclusionRules
@@ -107,6 +106,21 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.ExchangeRestoreSessionsRequestBuilder ExchangeRestoreSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.ExchangeRestoreSessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the exclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.ExclusionUnitsRequestBuilder ExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.ExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder MailboxExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder MailboxExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxInclusionRules.MailboxInclusionRulesRequestBuilder MailboxInclusionRules
@@ -182,6 +196,16 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.SharePointRestoreSessionsRequestBuilder SharePointRestoreSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.SharePointRestoreSessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder SiteExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder SiteExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteInclusionRules property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteInclusionRules.SiteInclusionRulesRequestBuilder SiteInclusionRules

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get azureADPremiumLicenseInsight from reports
+        /// Get the premium license utilization insight for the tenant. This API returns data about how many premium licenses are entitled and how the associated P1 and P2 features are being used. The calling tenant must have at least one Microsoft Entra ID P1 or P2 license. Tenants without a premium license receive a 403 Forbidden response with the missingLicense error code.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/azureadpremiumlicenseinsight-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight
             return requestInfo;
         }
         /// <summary>
-        /// Get azureADPremiumLicenseInsight from reports
+        /// Get the premium license utilization insight for the tenant. This API returns data about how many premium licenses are entitled and how the associated P1 and P2 features are being used. The calling tenant must have at least one Microsoft Entra ID P1 or P2 license. Tenants without a premium license receive a 403 Forbidden response with the missingLicense error code.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +183,7 @@ namespace Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight
         {
         }
         /// <summary>
-        /// Get azureADPremiumLicenseInsight from reports
+        /// Get the premium license utilization insight for the tenant. This API returns data about how many premium licenses are entitled and how the associated P1 and P2 features are being used. The calling tenant must have at least one Microsoft Entra ID P1 or P2 license. Tenants without a premium license receive a 403 Forbidden response with the missingLicense error code.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AzureADPremiumLicenseInsightRequestBuilderGetQueryParameters 

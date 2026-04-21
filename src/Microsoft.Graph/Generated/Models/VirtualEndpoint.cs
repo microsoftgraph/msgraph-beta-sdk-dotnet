@@ -252,7 +252,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("report", value); }
         }
 #endif
-        /// <summary>Cloud PC-related reports.</summary>
+        /// <summary>Cloud PC-related reports. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcReports? Reports

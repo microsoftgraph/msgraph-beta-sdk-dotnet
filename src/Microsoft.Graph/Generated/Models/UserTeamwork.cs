@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("region", value); }
         }
 #endif
-        /// <summary>User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.</summary>
+        /// <summary>The sections in the user&apos;s chat list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TeamworkSection>? Sections
