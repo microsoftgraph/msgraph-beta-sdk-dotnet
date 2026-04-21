@@ -7,27 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Audit data for MS365D Custom Detection events.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MS365DCustomDetectionAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
+    public partial class Ms365dCustomDetectionAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.MS365DCustomDetectionAuditRecord"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.Ms365dCustomDetectionAuditRecord"/> and sets the default values.
         /// </summary>
-        public MS365DCustomDetectionAuditRecord() : base()
+        public Ms365dCustomDetectionAuditRecord() : base()
         {
-            OdataType = "#microsoft.graph.security.mS365DCustomDetectionAuditRecord";
+            OdataType = "#microsoft.graph.security.ms365dCustomDetectionAuditRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.MS365DCustomDetectionAuditRecord"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Ms365dCustomDetectionAuditRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Security.MS365DCustomDetectionAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.Security.Ms365dCustomDetectionAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.MS365DCustomDetectionAuditRecord();
+            return new global::Microsoft.Graph.Beta.Models.Security.Ms365dCustomDetectionAuditRecord();
         }
         /// <summary>
         /// The deserialization information for the current model

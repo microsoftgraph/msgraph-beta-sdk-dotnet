@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TeamworkSection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time when the section was created. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The displayIcon property</summary>
+        /// <summary>The icon displayed for the section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SectionDisplayIcon? DisplayIcon
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayIcon", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the section. Required. Maximum length is 50 characters. Display names are case-sensitive and must be unique within a user&apos;s sections. The following names are reserved for system-defined sections and can&apos;t be used when creating a user-defined section: RecentChats, QuickViews, TeamsAndChannels, MutedChats, MeetingChats, EngageCommunities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -50,19 +50,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The isExpanded property</summary>
+        /// <summary>Indicates whether the section is expanded in the user interface. The default value is true.</summary>
         public bool? IsExpanded
         {
             get { return BackingStore?.Get<bool?>("isExpanded"); }
             set { BackingStore?.Set("isExpanded", value); }
         }
-        /// <summary>The isHierarchicalViewEnabled property</summary>
+        /// <summary>Indicates whether the hierarchical view is enabled for the section. Read-only.</summary>
         public bool? IsHierarchicalViewEnabled
         {
             get { return BackingStore?.Get<bool?>("isHierarchicalViewEnabled"); }
             set { BackingStore?.Set("isHierarchicalViewEnabled", value); }
         }
-        /// <summary>The items property</summary>
+        /// <summary>The items (chats, channels, meetings, or communities) organized within the section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TeamworkSectionItem>? Items
@@ -78,19 +78,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("items", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Date and time when the section was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The sectionType property</summary>
+        /// <summary>The type of the section. The possible values are: userDefined, systemDefined, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.SectionType? SectionType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SectionType?>("sectionType"); }
             set { BackingStore?.Set("sectionType", value); }
         }
-        /// <summary>The sortType property</summary>
+        /// <summary>The sort order of items in the section. The valid values depend on the sectionType. The possible values are: mostRecent, unreadThenMostRecent, nameAlphabetical, userDefinedCustomOrder, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SectionSortType? SortType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SectionSortType?>("sortType"); }

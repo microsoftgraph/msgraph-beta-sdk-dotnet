@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The userCount property</summary>
+        /// <summary>The number of users who have used this premium feature.</summary>
         public long? UserCount
         {
             get { return BackingStore?.Get<long?>("userCount"); }

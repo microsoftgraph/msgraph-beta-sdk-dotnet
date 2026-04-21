@@ -28,10 +28,6 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
-        [EnumMember(Value = "dormant")]
-        #pragma warning disable CS1591
-        Dormant,
-        #pragma warning restore CS1591
         [EnumMember(Value = "offboardRequested")]
         #pragma warning disable CS1591
         OffboardRequested,

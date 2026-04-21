@@ -7,27 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Audit data for Compliance DLP SharePoint Classification events.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ComplianceDlpSharePointClassificationAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
+    public partial class ComplianceDLPSharePointClassificationAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpSharePointClassificationAuditRecord"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPSharePointClassificationAuditRecord"/> and sets the default values.
         /// </summary>
-        public ComplianceDlpSharePointClassificationAuditRecord() : base()
+        public ComplianceDLPSharePointClassificationAuditRecord() : base()
         {
-            OdataType = "#microsoft.graph.security.complianceDlpSharePointClassificationAuditRecord";
+            OdataType = "#microsoft.graph.security.complianceDLPSharePointClassificationAuditRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpSharePointClassificationAuditRecord"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPSharePointClassificationAuditRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpSharePointClassificationAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPSharePointClassificationAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpSharePointClassificationAuditRecord();
+            return new global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPSharePointClassificationAuditRecord();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode?>("protectionMode"); }
             set { BackingStore?.Set("protectionMode", value); }
         }
-        /// <summary>The count of artifacts in the protection policy by status. Returned only on $select.</summary>
+        /// <summary>The count of artifacts in the protection policy by status. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount? ProtectionPolicyArtifactCount

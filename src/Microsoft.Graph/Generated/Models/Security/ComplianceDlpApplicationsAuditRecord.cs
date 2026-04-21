@@ -7,27 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Audit data for Compliance DLP Applications events.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ComplianceDlpApplicationsAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
+    public partial class ComplianceDLPApplicationsAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpApplicationsAuditRecord"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPApplicationsAuditRecord"/> and sets the default values.
         /// </summary>
-        public ComplianceDlpApplicationsAuditRecord() : base()
+        public ComplianceDLPApplicationsAuditRecord() : base()
         {
-            OdataType = "#microsoft.graph.security.complianceDlpApplicationsAuditRecord";
+            OdataType = "#microsoft.graph.security.complianceDLPApplicationsAuditRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpApplicationsAuditRecord"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPApplicationsAuditRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpApplicationsAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPApplicationsAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpApplicationsAuditRecord();
+            return new global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPApplicationsAuditRecord();
         }
         /// <summary>
         /// The deserialization information for the current model

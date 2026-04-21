@@ -12,25 +12,25 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AzureADPremiumLicenseInsight : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The entitledP1LicenseCount property</summary>
+        /// <summary>The number of Microsoft Entra ID P1 licenses entitled to the tenant.</summary>
         public long? EntitledP1LicenseCount
         {
             get { return BackingStore?.Get<long?>("entitledP1LicenseCount"); }
             set { BackingStore?.Set("entitledP1LicenseCount", value); }
         }
-        /// <summary>The entitledP2LicenseCount property</summary>
+        /// <summary>The number of Microsoft Entra ID P2 licenses entitled to the tenant.</summary>
         public long? EntitledP2LicenseCount
         {
             get { return BackingStore?.Get<long?>("entitledP2LicenseCount"); }
             set { BackingStore?.Set("entitledP2LicenseCount", value); }
         }
-        /// <summary>The entitledTotalLicenseCount property</summary>
+        /// <summary>The total number of Microsoft Entra ID premium licenses (P1 + P2) entitled to the tenant.</summary>
         public long? EntitledTotalLicenseCount
         {
             get { return BackingStore?.Get<long?>("entitledTotalLicenseCount"); }
             set { BackingStore?.Set("entitledTotalLicenseCount", value); }
         }
-        /// <summary>The internetAccessFeatureUtilizations property</summary>
+        /// <summary>The utilization data for Microsoft Entra Internet Access features.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.InternetAccessFeatureUtilizations? InternetAccessFeatureUtilizations
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("p2FeatureUtilizations", value); }
         }
 #endif
-        /// <summary>The privateAccessFeatureUtilizations property</summary>
+        /// <summary>The utilization data for Microsoft Entra Private Access features.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PrivateAccessFeatureUtilizations? PrivateAccessFeatureUtilizations

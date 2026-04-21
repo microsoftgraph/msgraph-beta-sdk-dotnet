@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TargetDeviceGroupCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TargetDeviceGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+        /// Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TargetDeviceGroup"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfi
             return requestInfo;
         }
         /// <summary>
-        /// Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+        /// Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

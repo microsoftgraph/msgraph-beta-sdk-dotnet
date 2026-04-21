@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.AcceptRecommendations;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ApplyDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchApplyCustomDataProvidedResourceDecisions;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchRecordDecisions;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ContactedReviewers;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions;
@@ -38,6 +39,11 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item
         public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder ApplyDecisions
         {
             get => new global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.</summary>
+        public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder BatchApplyCustomDataProvidedResourceDecisions
+        {
+            get => new global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
         public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder BatchRecordDecisions

@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items.Item
         {
         }
         /// <summary>
-        /// Delete navigation property items for users
+        /// Remove an item from a user-defined section in a user&apos;s teamwork. This API doesn&apos;t delete the underlying chat, channel, meeting, or community; it only removes the item from the user-defined section. The item is automatically moved back to its default system-defined section.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworksectionitem-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get items from users
+        /// The items (chats, channels, meetings, or communities) organized within the section.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSectionItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSectionItem>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSectionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property items for users
+        /// Remove an item from a user-defined section in a user&apos;s teamwork. This API doesn&apos;t delete the underlying chat, channel, meeting, or community; it only removes the item from the user-defined section. The item is automatically moved back to its default system-defined section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get items from users
+        /// The items (chats, channels, meetings, or communities) organized within the section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +189,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items.Item
         {
         }
         /// <summary>
-        /// Get items from users
+        /// The items (chats, channels, meetings, or communities) organized within the section.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamworkSectionItemItemRequestBuilderGetQueryParameters 

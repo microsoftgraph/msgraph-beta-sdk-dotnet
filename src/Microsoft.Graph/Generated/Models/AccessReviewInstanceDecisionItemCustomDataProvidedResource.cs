@@ -12,6 +12,54 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AccessReviewInstanceDecisionItemCustomDataProvidedResource : global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The customData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomData
+        {
+            get { return BackingStore?.Get<string?>("customData"); }
+            set { BackingStore?.Set("customData", value); }
+        }
+#nullable restore
+#else
+        public string CustomData
+        {
+            get { return BackingStore?.Get<string>("customData"); }
+            set { BackingStore?.Set("customData", value); }
+        }
+#endif
+        /// <summary>The scopeDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScopeDisplayName
+        {
+            get { return BackingStore?.Get<string?>("scopeDisplayName"); }
+            set { BackingStore?.Set("scopeDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string ScopeDisplayName
+        {
+            get { return BackingStore?.Get<string>("scopeDisplayName"); }
+            set { BackingStore?.Set("scopeDisplayName", value); }
+        }
+#endif
+        /// <summary>The scopeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScopeId
+        {
+            get { return BackingStore?.Get<string?>("scopeId"); }
+            set { BackingStore?.Set("scopeId", value); }
+        }
+#nullable restore
+#else
+        public string ScopeId
+        {
+            get { return BackingStore?.Get<string>("scopeId"); }
+            set { BackingStore?.Set("scopeId", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemCustomDataProvidedResource"/> and sets the default values.
         /// </summary>
@@ -37,6 +85,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "customData", n => { CustomData = n.GetStringValue(); } },
+                { "scopeDisplayName", n => { ScopeDisplayName = n.GetStringValue(); } },
+                { "scopeId", n => { ScopeId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +98,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("customData", CustomData);
+            writer.WriteStringValue("scopeDisplayName", ScopeDisplayName);
+            writer.WriteStringValue("scopeId", ScopeId);
         }
     }
 }

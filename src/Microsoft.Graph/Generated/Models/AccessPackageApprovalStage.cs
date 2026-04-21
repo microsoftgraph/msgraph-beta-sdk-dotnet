@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<TimeSpan?>("durationBeforeEscalation"); }
             set { BackingStore?.Set("durationBeforeEscalation", value); }
         }
-        /// <summary>If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.</summary>
+        /// <summary>If escalation is enabled and the primary approvers don&apos;t respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SubjectSet>? EscalationApprovers

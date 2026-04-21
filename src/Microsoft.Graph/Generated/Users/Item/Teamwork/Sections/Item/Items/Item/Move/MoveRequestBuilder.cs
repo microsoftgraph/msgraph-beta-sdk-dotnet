@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items.Item.Move
         {
         }
         /// <summary>
-        /// Invoke action move
+        /// Move an item from one user-defined section to another user-defined section in a user&apos;s teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section. Use this action instead of add when the item is already in a user-defined section.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworksectionitem-move?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSectionItem"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items.Item.Move
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSectionItem>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSectionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action move
+        /// Move an item from one user-defined section to another user-defined section in a user&apos;s teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section. Use this action instead of add when the item is already in a user-defined section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfi
         {
         }
         /// <summary>
-        /// Get approvedClientApps from servicePrincipals
+        /// Get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-approvedclientapps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ApprovedClientAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ApprovedClientAppCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ApprovedClientAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to approvedClientApps for servicePrincipals
+        /// Create a new approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal. You can configure a maximum of 20 approved client apps.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-approvedclientapps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ApprovedClientApp"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>(requestInfo, global::Microsoft.Graph.Beta.Models.ApprovedClientApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get approvedClientApps from servicePrincipals
+        /// Get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfi
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to approvedClientApps for servicePrincipals
+        /// Create a new approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal. You can configure a maximum of 20 approved client apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfi
             return new global::Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.ApprovedClientApps.ApprovedClientAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get approvedClientApps from servicePrincipals
+        /// Get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApprovedClientAppsRequestBuilderGetQueryParameters 

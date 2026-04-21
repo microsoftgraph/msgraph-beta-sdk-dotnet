@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item
         {
         }
         /// <summary>
-        /// Delete navigation property sections for users
+        /// Delete a user-defined section from a user&apos;s teamwork. System-defined sections can&apos;t be deleted.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworksection-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// Read the properties of a section in a user&apos;s teamwork.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworksection-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSection>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sections in users
+        /// Update the properties of a section in a user&apos;s teamwork. For system-defined sections, only the sortType property can be updated.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworksection-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSection"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSection>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sections for users
+        /// Delete a user-defined section from a user&apos;s teamwork. System-defined sections can&apos;t be deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item
             return requestInfo;
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// Read the properties of a section in a user&apos;s teamwork.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sections in users
+        /// Update the properties of a section in a user&apos;s teamwork. For system-defined sections, only the sortType property can be updated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +191,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item
         {
         }
         /// <summary>
-        /// User&apos;s teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+        /// Read the properties of a section in a user&apos;s teamwork.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamworkSectionItemRequestBuilderGetQueryParameters 

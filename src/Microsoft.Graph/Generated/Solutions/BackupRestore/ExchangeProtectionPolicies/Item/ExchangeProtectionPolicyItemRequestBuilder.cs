@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs;
@@ -21,6 +23,16 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExchangeProtectionPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder MailboxExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder MailboxExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxInclusionRules.MailboxInclusionRulesRequestBuilder MailboxInclusionRules
         {

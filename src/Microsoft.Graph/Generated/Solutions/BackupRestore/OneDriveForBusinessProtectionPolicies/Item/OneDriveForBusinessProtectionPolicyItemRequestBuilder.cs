@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnits;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnitsBulkAdditionJobs;
@@ -21,6 +23,16 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtec
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OneDriveForBusinessProtectionPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the driveExclusionUnits property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder DriveExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder DriveExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the driveInclusionRules property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveInclusionRules.DriveInclusionRulesRequestBuilder DriveInclusionRules
         {
