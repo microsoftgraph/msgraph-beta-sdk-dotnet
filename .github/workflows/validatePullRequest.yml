@@ -28,6 +28,8 @@ jobs:
             10.x
       - name: Restore dependencies
         run: dotnet restore ${{ env.solutionName }}
+      # Build each TFM sequentially to avoid OOM kills on the runner.
+      # Building all TFMs in parallel exhausts memory on standard GitHub Actions runners (exit code 137).
       - name: Build for netstandard2.0
         run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release
       - name: Build for netstandard2.1

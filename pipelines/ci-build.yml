@@ -94,11 +94,28 @@ extends:
             Write-Host "Updated the .csproj files so that we can sign the built assemblies."
           workingDirectory: src
           displayName: 'Set project ready to sign'
+        # Build each TFM sequentially to avoid OOM kills on the build agent.
+        # Building all TFMs in parallel exhausts memory on standard runners (exit code 137).
         - task: DotNetCoreCLI@2
-          displayName: 'dotnet build'
+          displayName: 'dotnet build netstandard2.0'
           inputs:
             projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
-            arguments: '-c $(BuildConfiguration) --no-incremental --no-restore'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f netstandard2.0 --no-restore'
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet build netstandard2.1'
+          inputs:
+            projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f netstandard2.1 --no-restore'
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet build net8.0'
+          inputs:
+            projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f net8.0 --no-restore'
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet build net10.0'
+          inputs:
+            projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f net10.0 --no-restore'
         - task: DotNetCoreCLI@2
           displayName: 'dotnet build test project'
           inputs:
