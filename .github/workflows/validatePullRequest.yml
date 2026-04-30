@@ -28,7 +28,15 @@ jobs:
             10.x
       - name: Restore dependencies
         run: dotnet restore ${{ env.solutionName }}
-      - name: Build
+      - name: Build for netstandard2.0
+        run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release
+      - name: Build for netstandard2.1
+        run: dotnet build ${{ env.projectName }} -f netstandard2.1 --no-restore -c Release
+      - name: Build for net8.0
+        run: dotnet build ${{ env.projectName }} -f net8.0 --no-restore -c Release
+      - name: Build for net10.0
+        run: dotnet build ${{ env.projectName }} -f net10.0 --no-restore -c Release
+      - name: Build test project
         run: dotnet build ${{ env.solutionName }} --no-restore -c Release
       - name: Test
         run: dotnet test ${{ env.solutionName }} --no-build --verbosity normal -c Release /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=opencover
