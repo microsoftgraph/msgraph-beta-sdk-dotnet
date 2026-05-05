@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
+        /// <summary>The capacity property</summary>
+        public int? Capacity
+        {
+            get { return BackingStore?.Get<int?>("capacity"); }
+            set { BackingStore?.Set("capacity", value); }
+        }
         /// <summary>Identity information of the coorganizers of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "audience", n => { Audience = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingAudience>(); } },
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
                 { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>(global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingAudience>("audience", Audience);
+            writer.WriteIntValue("capacity", Capacity);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Identity>("invitedAttendees", InvitedAttendees);
             writer.WriteBoolValue("isInviteOnly", IsInviteOnly);

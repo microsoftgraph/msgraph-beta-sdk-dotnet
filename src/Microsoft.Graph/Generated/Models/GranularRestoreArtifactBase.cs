@@ -34,6 +34,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
+        /// <summary>The destinationType property</summary>
+        public global::Microsoft.Graph.Beta.Models.DestinationType? DestinationType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DestinationType?>("destinationType"); }
+            set { BackingStore?.Set("destinationType", value); }
+        }
         /// <summary>The unique identifier for the restored artifact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +148,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "browseSessionId", n => { BrowseSessionId = n.GetStringValue(); } },
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "destinationType", n => { DestinationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DestinationType>(); } },
                 { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
                 { "restoredItemKey", n => { RestoredItemKey = n.GetStringValue(); } },
                 { "restoredItemPath", n => { RestoredItemPath = n.GetStringValue(); } },
@@ -161,6 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("browseSessionId", BrowseSessionId);
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DestinationType>("destinationType", DestinationType);
             writer.WriteStringValue("restoredItemKey", RestoredItemKey);
             writer.WriteStringValue("restoredItemPath", RestoredItemPath);
             writer.WriteStringValue("restoredItemWebUrl", RestoredItemWebUrl);

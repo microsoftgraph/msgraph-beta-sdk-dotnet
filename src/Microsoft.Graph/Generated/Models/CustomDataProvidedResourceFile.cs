@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomDataProvidedResourceFile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Name of the file that was uploaded.</summary>
+        /// <summary>Name of the uploaded file, including the file extension. Required.  Supports $filter (eq, ne)  and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>Size of the uploaded file in bytes.</summary>
+        /// <summary>Size of the file in bytes. Read-only.  Supports $filter (eq, ne, gt, ge, lt, le) and $orderby.</summary>
         public long? Size
         {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>Time at which the file was uploaded.</summary>
+        /// <summary>Timestamp when the file was uploaded. Read-only.  Supports $filter (eq, ne, gt, ge, lt, le) and $orderby.</summary>
         public DateTimeOffset? UploadedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("uploadedDateTime"); }

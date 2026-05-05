@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomDataProvidedResourceUploadSession : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>DateTime when the upload session was created. Read-only.</summary>
+        /// <summary>DateTime when the upload session was created. Read-only. Supports $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -34,12 +34,44 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("data", value); }
         }
 #endif
+        /// <summary>The files uploaded during this upload session. Supports $expand and $expand with nested $filter and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceFile>? Files
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceFile>?>("files"); }
+            set { BackingStore?.Set("files", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceFile> Files
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceFile>>("files"); }
+            set { BackingStore?.Set("files", value); }
+        }
+#endif
         /// <summary>Indicates if all the necessary files have been uploaded to this session.</summary>
         public bool? IsUploadDone
         {
             get { return BackingStore?.Get<bool?>("isUploadDone"); }
             set { BackingStore?.Set("isUploadDone", value); }
         }
+        /// <summary>The ID of the context for which data is being uploaded, for example, the Access Review instance ID. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReferenceId
+        {
+            get { return BackingStore?.Get<string?>("referenceId"); }
+            set { BackingStore?.Set("referenceId", value); }
+        }
+#nullable restore
+#else
+        public string ReferenceId
+        {
+            get { return BackingStore?.Get<string>("referenceId"); }
+            set { BackingStore?.Set("referenceId", value); }
+        }
+#endif
         /// <summary>The source of the access data. This should be set to the customdataprovidedresource&apos;s name when creating the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,7 +146,9 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionData>(global::Microsoft.Graph.Beta.Models.CustomExtensionData.CreateFromDiscriminatorValue); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceFile>(global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceFile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isUploadDone", n => { IsUploadDone = n.GetBoolValue(); } },
+                { "referenceId", n => { ReferenceId = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "stats", n => { Stats = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadStats>(global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadStats.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadStatus>(); } },
@@ -131,7 +165,9 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomExtensionData>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceFile>("files", Files);
             writer.WriteBoolValue("isUploadDone", IsUploadDone);
+            writer.WriteStringValue("referenceId", ReferenceId);
             writer.WriteStringValue("source", Source);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadStats>("stats", Stats);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadStatus>("status", Status);

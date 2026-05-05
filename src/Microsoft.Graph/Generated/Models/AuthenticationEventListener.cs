@@ -88,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.onPhoneMethodLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnPhoneMethodLoadStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartListener(),
                 "#microsoft.graph.onUserCreateStartListener" => new global::Microsoft.Graph.Beta.Models.OnUserCreateStartListener(),
+                "#microsoft.graph.onVerifiedIdClaimValidationListener" => new global::Microsoft.Graph.Beta.Models.OnVerifiedIdClaimValidationListener(),
                 _ => new global::Microsoft.Graph.Beta.Models.AuthenticationEventListener(),
             };
         }

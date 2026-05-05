@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Beta.Models
     public partial class VirtualEventSession : global::Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The capacity property</summary>
+        public int? Capacity
+        {
+            get { return BackingStore?.Get<int?>("capacity"); }
+            set { BackingStore?.Set("capacity", value); }
+        }
         /// <summary>The virtual event session end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>(global::Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>(global::Microsoft.Graph.Beta.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -132,6 +139,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteIntValue("capacity", Capacity);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>("presenters", Presenters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>("registrations", Registrations);

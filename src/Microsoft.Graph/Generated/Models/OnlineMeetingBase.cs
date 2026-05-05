@@ -176,6 +176,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
+        /// <summary>The cloudVideoInteropInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo? CloudVideoInteropInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo?>("cloudVideoInteropInfo"); }
+            set { BackingStore?.Set("cloudVideoInteropInfo", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo CloudVideoInteropInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo>("cloudVideoInteropInfo"); }
+            set { BackingStore?.Set("cloudVideoInteropInfo", value); }
+        }
+#endif
         /// <summary>Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpiryDateTime
         {
@@ -409,6 +425,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>(global::Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>(global::Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatRestrictions>(global::Microsoft.Graph.Beta.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
+                { "cloudVideoInteropInfo", n => { CloudVideoInteropInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo>(global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo.CreateFromDiscriminatorValue); } },
                 { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
@@ -453,6 +470,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo>("cloudVideoInteropInfo", CloudVideoInteropInfo);
             writer.WriteDateTimeOffsetValue("expiryDateTime", ExpiryDateTime);
             writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);

@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("drive", value); }
         }
 #endif
-        /// <summary>The number of items in the list. Read-only.</summary>
+        /// <summary>The total count of items in the list. Read-only.</summary>
         public int? ItemCount
         {
             get { return BackingStore?.Get<int?>("itemCount"); }

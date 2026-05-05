@@ -56,7 +56,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageRes
         {
         }
         /// <summary>
-        /// Get uploadSessions from identityGovernance
+        /// Get a list of the customDataProvidedResourceUploadSession objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageresource-list-uploadsessions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSessionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageRes
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to uploadSessions for identityGovernance
+        /// Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customdataprovidedresource-post-uploadsessions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession"/></returns>
         /// <param name="body">The request body</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageRes
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>(requestInfo, global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get uploadSessions from identityGovernance
+        /// Get a list of the customDataProvidedResourceUploadSession objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageRes
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to uploadSessions for identityGovernance
+        /// Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +161,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageRes
             return new global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageResources.Item.UploadSessions.UploadSessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get uploadSessions from identityGovernance
+        /// Get a list of the customDataProvidedResourceUploadSession objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UploadSessionsRequestBuilderGetQueryParameters 

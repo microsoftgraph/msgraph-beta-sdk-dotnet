@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The subnetAvailableIpCount property</summary>
+        /// <summary>The number of available private IP addresses within the subnet.</summary>
         public int? SubnetAvailableIpCount
         {
             get { return BackingStore?.Get<int?>("subnetAvailableIpCount"); }
             set { BackingStore?.Set("subnetAvailableIpCount", value); }
         }
-        /// <summary>The subnetAvailableIpCountLastSyncDateTime property</summary>
+        /// <summary>Indicates the date and time at which the subnet available IP count was synced with Azure. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SubnetAvailableIpCountLastSyncDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("subnetAvailableIpCountLastSyncDateTime"); }

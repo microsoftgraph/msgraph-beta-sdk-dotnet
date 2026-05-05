@@ -88,7 +88,8 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension>(requestInfo, global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property customAuthenticationExtensions in identity
+        /// Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customAuthenticationExtensions in identity
+        /// Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
