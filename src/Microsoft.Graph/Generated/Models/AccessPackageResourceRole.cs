@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("originId", value); }
         }
 #endif
-        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.</summary>
+        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, AzureResources or AadGroup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginSystem
@@ -92,6 +92,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("originSystem", value); }
         }
 #endif
+        /// <summary>The role type for the Azure resource role. The possible values are: active, eligible, application, delegated, unknownFutureValue. The values active and eligible are only supported where originSystem is AzureResources while application and delegated aren&apos;t currently implemented.</summary>
+        public global::Microsoft.Graph.Beta.Models.RoleType? Type
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RoleType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -115,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RoleType>(); } },
             };
         }
         /// <summary>
@@ -130,6 +137,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RoleType>("type", Type);
         }
     }
 }

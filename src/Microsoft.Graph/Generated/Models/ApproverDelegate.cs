@@ -24,16 +24,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The delegate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.SubjectSet? Delegate
+        public global::Microsoft.Graph.Beta.Models.UserSet? Delegate
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectSet?>("delegate"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserSet?>("delegate"); }
             set { BackingStore?.Set("delegate", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.SubjectSet Delegate
+        public global::Microsoft.Graph.Beta.Models.UserSet Delegate
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectSet>("delegate"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserSet>("delegate"); }
             set { BackingStore?.Set("delegate", value); }
         }
 #endif
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delegate", n => { Delegate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SubjectSet>(global::Microsoft.Graph.Beta.Models.SubjectSet.CreateFromDiscriminatorValue); } },
+                { "delegate", n => { Delegate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserSet>(global::Microsoft.Graph.Beta.Models.UserSet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RequestSchedule>(global::Microsoft.Graph.Beta.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
             };
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SubjectSet>("delegate", Delegate);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserSet>("delegate", Delegate);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RequestSchedule>("schedule", Schedule);
             writer.WriteAdditionalData(AdditionalData);

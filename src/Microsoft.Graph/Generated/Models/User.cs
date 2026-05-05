@@ -394,6 +394,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudLicensing", value); }
         }
 #endif
+        /// <summary>The cloudPcPools property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool>? CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>?>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool> CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
+        }
+#endif
         /// <summary>The user&apos;s Cloud PCs. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2518,6 +2534,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cloudClipboard", n => { CloudClipboard = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudClipboardRoot>(global::Microsoft.Graph.Beta.Models.CloudClipboardRoot.CreateFromDiscriminatorValue); } },
                 { "cloudLicensing", n => { CloudLicensing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing>(global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing.CreateFromDiscriminatorValue); } },
                 { "cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>(global::Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudPcPools", n => { CloudPcPools = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>(global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudRealtimeCommunicationInfo", n => { CloudRealtimeCommunicationInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>(global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo.CreateFromDiscriminatorValue); } },
                 { "communications", n => { Communications = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserCloudCommunication>(global::Microsoft.Graph.Beta.Models.UserCloudCommunication.CreateFromDiscriminatorValue); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
@@ -2690,6 +2707,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("city", City);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudClipboardRoot>("cloudClipboard", CloudClipboard);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing>("cloudLicensing", CloudLicensing);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>("cloudPcPools", CloudPcPools);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>("cloudRealtimeCommunicationInfo", CloudRealtimeCommunicationInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserCloudCommunication>("communications", Communications);

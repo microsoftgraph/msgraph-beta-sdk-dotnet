@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityMoveAler
         {
         }
         /// <summary>
-        /// Move one or more alert resources to an existing incident.
+        /// Move one or more alert resources to a new or existing incident.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-movealerts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.MergeResponse"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityMoveAler
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.MergeResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.MergeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Move one or more alert resources to an existing incident.
+        /// Move one or more alert resources to a new or existing incident.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
         {
         }
         /// <summary>
-        /// Invoke action cancelProcessing
+        /// Cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-cancelprocessing?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action cancelProcessing
+        /// Cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

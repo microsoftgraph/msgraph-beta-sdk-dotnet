@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The matchConfidenceLevel property</summary>
+        public global::Microsoft.Graph.Beta.Models.MatchConfidenceLevel? MatchConfidenceLevel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MatchConfidenceLevel?>("matchConfidenceLevel"); }
+            set { BackingStore?.Set("matchConfidenceLevel", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "matchConfidenceLevel", n => { MatchConfidenceLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MatchConfidenceLevel>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sourceAttribute", n => { SourceAttribute = n.GetStringValue(); } },
                 { "verifiedIdClaim", n => { VerifiedIdClaim = n.GetStringValue(); } },
@@ -107,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MatchConfidenceLevel>("matchConfidenceLevel", MatchConfidenceLevel);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sourceAttribute", SourceAttribute);
             writer.WriteStringValue("verifiedIdClaim", VerifiedIdClaim);

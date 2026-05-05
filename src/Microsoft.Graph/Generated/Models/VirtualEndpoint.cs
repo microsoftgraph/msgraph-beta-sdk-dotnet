@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudApps", value); }
         }
 #endif
+        /// <summary>The cloudPcPools property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool>? CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>?>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool> CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
+        }
+#endif
         /// <summary>Cloud managed virtual desktops.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -354,6 +370,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "bulkActions", n => { BulkActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcBulkAction>(global::Microsoft.Graph.Beta.Models.CloudPcBulkAction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudApps", n => { CloudApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>(global::Microsoft.Graph.Beta.Models.CloudPcCloudApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>(global::Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudPcPools", n => { CloudPcPools = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>(global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "crossCloudGovernmentOrganizationMapping", n => { CrossCloudGovernmentOrganizationMapping = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping>(global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue); } },
                 { "deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>(global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalPartnerSettings", n => { ExternalPartnerSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting>(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -383,6 +400,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcAuditEvent>("auditEvents", AuditEvents);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcBulkAction>("bulkActions", BulkActions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>("cloudApps", CloudApps);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>("cloudPcPools", CloudPcPools);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping>("crossCloudGovernmentOrganizationMapping", CrossCloudGovernmentOrganizationMapping);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>("deviceImages", DeviceImages);

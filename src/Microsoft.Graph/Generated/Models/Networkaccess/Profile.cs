@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 "#microsoft.graph.networkaccess.filteringProfile" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile(),
                 "#microsoft.graph.networkaccess.forwardingProfile" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile(),
+                "#microsoft.graph.networkaccess.forwardingProfileBase" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfileBase(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.Profile(),
             };
         }

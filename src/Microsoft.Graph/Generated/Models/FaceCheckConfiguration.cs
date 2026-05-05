@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sourcePhotoClaimName property</summary>
+        /// <summary>Source of photo to validate Face Check against. Currently must always be portrait</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourcePhotoClaimName

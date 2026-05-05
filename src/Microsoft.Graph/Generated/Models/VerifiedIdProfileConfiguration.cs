@@ -59,6 +59,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ClaimBindingSource?>("claimBindingSource"); }
             set { BackingStore?.Set("claimBindingSource", value); }
         }
+        /// <summary>The claimValidation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ClaimValidation? ClaimValidation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ClaimValidation?>("claimValidation"); }
+            set { BackingStore?.Set("claimValidation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ClaimValidation ClaimValidation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ClaimValidation>("claimValidation"); }
+            set { BackingStore?.Set("claimValidation", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "acceptedIssuer", n => { AcceptedIssuer = n.GetStringValue(); } },
                 { "claimBindingSource", n => { ClaimBindingSource = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ClaimBindingSource>(); } },
                 { "claimBindings", n => { ClaimBindings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimBinding>(global::Microsoft.Graph.Beta.Models.ClaimBinding.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "claimValidation", n => { ClaimValidation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ClaimValidation>(global::Microsoft.Graph.Beta.Models.ClaimValidation.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -134,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("acceptedIssuer", AcceptedIssuer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimBinding>("claimBindings", ClaimBindings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ClaimBindingSource>("claimBindingSource", ClaimBindingSource);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ClaimValidation>("claimValidation", ClaimValidation);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

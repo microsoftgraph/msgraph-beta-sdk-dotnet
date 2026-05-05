@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies whether this policy scope is configurable by the admin. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organzation.</summary>
+        /// <summary>Specifies whether LAPS is enabled. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organization.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }

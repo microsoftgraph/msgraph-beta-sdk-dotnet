@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Fo
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.ForwardingProfiles.Item.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.</summary>
+        /// <summary>Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.ForwardingProfiles.Item.ServicePrincipal.ServicePrincipalRequestBuilder ServicePrincipal
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.ForwardingProfiles.Item.ServicePrincipal.ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);

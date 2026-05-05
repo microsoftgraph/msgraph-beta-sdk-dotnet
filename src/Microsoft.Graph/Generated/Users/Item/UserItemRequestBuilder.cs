@@ -23,6 +23,7 @@ using Microsoft.Graph.Beta.Users.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.Users.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Users.Item.CloudClipboard;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs;
+using Microsoft.Graph.Beta.Users.Item.CloudPcPools;
 using Microsoft.Graph.Beta.Users.Item.Communications;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders;
 using Microsoft.Graph.Beta.Users.Item.Contacts;
@@ -233,6 +234,11 @@ namespace Microsoft.Graph.Beta.Users.Item
         public global::Microsoft.Graph.Beta.Users.Item.CloudClipboard.CloudClipboardRequestBuilder CloudClipboard
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CloudClipboard.CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudPcPools property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.CloudPcPools.CloudPcPoolsRequestBuilder CloudPcPools
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.CloudPcPools.CloudPcPoolsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.CloudPCsRequestBuilder CloudPCs

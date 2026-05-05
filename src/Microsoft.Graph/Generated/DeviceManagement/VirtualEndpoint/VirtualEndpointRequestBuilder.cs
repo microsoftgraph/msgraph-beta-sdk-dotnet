@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernmentOrganizationMapping;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings;
@@ -57,6 +58,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.CloudAppsRequestBuilder CloudApps
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.CloudAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudPcPools property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.CloudPcPoolsRequestBuilder CloudPcPools
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.CloudPcPoolsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.CloudPCsRequestBuilder CloudPCs
