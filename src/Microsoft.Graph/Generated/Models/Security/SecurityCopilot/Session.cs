@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
     public partial class Session : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Created time of the session (UTC).</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Last modified time of the session (UTC). Updated when displayName changes.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The prompts property</summary>
+        /// <summary>The collection of prompts in the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Prompt>? Prompts

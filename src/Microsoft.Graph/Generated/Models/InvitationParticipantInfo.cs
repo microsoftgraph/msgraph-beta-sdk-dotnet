@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.</summary>
+        /// <summary>The type of endpoint. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.EndpointType? EndpointType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }

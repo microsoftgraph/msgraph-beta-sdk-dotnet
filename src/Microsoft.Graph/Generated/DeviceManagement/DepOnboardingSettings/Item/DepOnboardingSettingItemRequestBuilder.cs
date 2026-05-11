@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrollmen
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ReleaseAppleDevices;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService;
@@ -69,6 +70,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder ImportedAppleDeviceIdentities
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the releaseAppleDevices method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ReleaseAppleDevices.ReleaseAppleDevicesRequestBuilder ReleaseAppleDevices
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ReleaseAppleDevices.ReleaseAppleDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the shareForSchoolDataSyncService method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService.ShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService

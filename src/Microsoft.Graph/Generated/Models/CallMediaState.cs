@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The audio media state. Possible values are: active, inactive, unknownFutureValue.</summary>
+        /// <summary>The audio media state. The possible values are: active, inactive, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MediaState? Audio
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MediaState?>("audio"); }

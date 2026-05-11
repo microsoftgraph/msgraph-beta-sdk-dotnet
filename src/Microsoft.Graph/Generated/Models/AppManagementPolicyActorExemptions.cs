@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The customSecurityAttributes property</summary>
+        /// <summary>The collection of customSecurityAttributeExemption to exempt from the policy enforcement. Limit of 5.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeExemption>? CustomSecurityAttributes

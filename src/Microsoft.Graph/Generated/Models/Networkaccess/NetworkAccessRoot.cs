@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("alerts", value); }
         }
 #endif
+        /// <summary>A collection of cloud firewall policies that define rules for managing network traffic through the Global Secure Access services.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicy>? CloudFirewallPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicy>?>("cloudFirewallPolicies"); }
+            set { BackingStore?.Set("cloudFirewallPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicy> CloudFirewallPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicy>>("cloudFirewallPolicies"); }
+            set { BackingStore?.Set("cloudFirewallPolicies", value); }
+        }
+#endif
         /// <summary>Connectivity represents all the connectivity components in Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -239,6 +255,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Alert>(global::Microsoft.Graph.Beta.Models.Networkaccess.Alert.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudFirewallPolicies", n => { CloudFirewallPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "connectivity", n => { Connectivity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>(global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity.CreateFromDiscriminatorValue); } },
                 { "filteringPolicies", n => { FilteringPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "filteringProfiles", n => { FilteringProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile>(global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -262,6 +279,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Alert>("alerts", Alerts);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicy>("cloudFirewallPolicies", CloudFirewallPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>("connectivity", Connectivity);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>("filteringPolicies", FilteringPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile>("filteringProfiles", FilteringProfiles);

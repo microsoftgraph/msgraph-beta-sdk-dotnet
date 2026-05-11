@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcCloudApp : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The error code if publishing, unpublishing, or resetting a cloud app fails. Possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.</summary>
+        /// <summary>The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcCloudAppActionFailedErrorCode? ActionFailedErrorCode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcCloudAppActionFailedErrorCode?>("actionFailedErrorCode"); }

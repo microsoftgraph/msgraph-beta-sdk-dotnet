@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
-        /// <summary>The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.</summary>
+        /// <summary>The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. The possible values are: configured, proposed.</summary>
         public global::Microsoft.Graph.Beta.Models.ConnectedOrganizationState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectedOrganizationState?>("state"); }

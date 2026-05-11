@@ -12,19 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ConfigurationMonitoringResult : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The driftsCount property</summary>
+        /// <summary>Number of drifts observed during a monitor run. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public int? DriftsCount
         {
             get { return BackingStore?.Get<int?>("driftsCount"); }
             set { BackingStore?.Set("driftsCount", value); }
         }
-        /// <summary>The driftsFixed property</summary>
-        public int? DriftsFixed
-        {
-            get { return BackingStore?.Get<int?>("driftsFixed"); }
-            set { BackingStore?.Set("driftsFixed", value); }
-        }
-        /// <summary>The errorDetails property</summary>
+        /// <summary>All the error details that prevent the monitor from running successfully. The error details are a contained entity. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ErrorDetail>? ErrorDetails
@@ -40,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errorDetails", value); }
         }
 #endif
-        /// <summary>The monitorId property</summary>
+        /// <summary>Globally unique identifier (GUID) of the monitor. System-generated. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MonitorId
@@ -56,13 +50,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("monitorId", value); }
         }
 #endif
-        /// <summary>The runCompletionDateTime property</summary>
+        /// <summary>Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? RunCompletionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("runCompletionDateTime"); }
             set { BackingStore?.Set("runCompletionDateTime", value); }
         }
-        /// <summary>The runInitiationDateTime property</summary>
+        /// <summary>Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? RunInitiationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("runInitiationDateTime"); }
@@ -74,13 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorRunStatus?>("runStatus"); }
             set { BackingStore?.Set("runStatus", value); }
         }
-        /// <summary>The runType property</summary>
-        public global::Microsoft.Graph.Beta.Models.MonitorRunType? RunType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorRunType?>("runType"); }
-            set { BackingStore?.Set("runType", value); }
-        }
-        /// <summary>The tenantId property</summary>
+        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId
@@ -115,13 +103,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "driftsCount", n => { DriftsCount = n.GetIntValue(); } },
-                { "driftsFixed", n => { DriftsFixed = n.GetIntValue(); } },
                 { "errorDetails", n => { ErrorDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ErrorDetail>(global::Microsoft.Graph.Beta.Models.ErrorDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "monitorId", n => { MonitorId = n.GetStringValue(); } },
                 { "runCompletionDateTime", n => { RunCompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "runInitiationDateTime", n => { RunInitiationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "runStatus", n => { RunStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunStatus>(); } },
-                { "runType", n => { RunType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunType>(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -134,7 +120,6 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunStatus>("runStatus", RunStatus);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorRunType>("runType", RunType);
         }
     }
 }

@@ -41,8 +41,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
         {
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta" />
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
             return new global::Microsoft.Graph.Beta.Users.Item.Manager.ManagerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagerRequestBuilderGetQueryParameters 

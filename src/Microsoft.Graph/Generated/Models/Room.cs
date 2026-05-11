@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("audioDeviceName", value); }
         }
 #endif
-        /// <summary>Specifies how the room can be booked. Possible values are:unknown - Unspecified booking behavior. We don&apos;t recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.</summary>
+        /// <summary>Specifies how the room can be booked. The possible values are:unknown - Unspecified booking behavior. We don&apos;t recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.</summary>
         public global::Microsoft.Graph.Beta.Models.BookingType? BookingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BookingType?>("bookingType"); }
@@ -132,6 +132,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("nickname", value); }
         }
 #endif
+        /// <summary>An alternative immutable unique identifier of the room. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlaceId
+        {
+            get { return BackingStore?.Get<string?>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#nullable restore
+#else
+        public string PlaceId
+        {
+            get { return BackingStore?.Get<string>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#endif
+        /// <summary>The teamsEnabledState property</summary>
+        public global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement? TeamsEnabledState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement?>("teamsEnabledState"); }
+            set { BackingStore?.Set("teamsEnabledState", value); }
+        }
         /// <summary>The name of the video device that is available in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,6 +205,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
                 { "isTeamsEnabled", n => { IsTeamsEnabled = n.GetBoolValue(); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
+                { "placeId", n => { PlaceId = n.GetStringValue(); } },
+                { "teamsEnabledState", n => { TeamsEnabledState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement>(); } },
                 { "videoDeviceName", n => { VideoDeviceName = n.GetStringValue(); } },
             };
         }
@@ -204,6 +228,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("floorNumber", FloorNumber);
             writer.WriteBoolValue("isTeamsEnabled", IsTeamsEnabled);
             writer.WriteStringValue("nickname", Nickname);
+            writer.WriteStringValue("placeId", PlaceId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement>("teamsEnabledState", TeamsEnabledState);
             writer.WriteStringValue("videoDeviceName", VideoDeviceName);
         }
     }

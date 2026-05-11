@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class ForwardingPolicyLink : global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The priority property</summary>
+        public long? Priority
+        {
+            get { return BackingStore?.Get<long?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyLink"/> and sets the default values.
         /// </summary>
@@ -37,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "priority", n => { Priority = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteLongValue("priority", Priority);
         }
     }
 }

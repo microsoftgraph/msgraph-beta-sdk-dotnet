@@ -68,5 +68,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "mexico")]
+        #pragma warning disable CS1591
+        Mexico,
+        #pragma warning restore CS1591
     }
 }

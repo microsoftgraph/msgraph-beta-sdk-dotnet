@@ -81,7 +81,6 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.allDevicesAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.AllDevicesAssignmentTarget(),
                 "#microsoft.graph.allLicensedUsersAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.AllLicensedUsersAssignmentTarget(),
-                "#microsoft.graph.androidFotaDeploymentAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget(),
                 "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.ConfigurationManagerCollectionAssignmentTarget(),
                 "#microsoft.graph.exclusionGroupAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.ExclusionGroupAssignmentTarget(),
                 "#microsoft.graph.groupAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.GroupAssignmentTarget(),

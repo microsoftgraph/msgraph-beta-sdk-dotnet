@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.networkaccess.cloudFirewallRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallRule(),
                 "#microsoft.graph.networkaccess.filteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringRule(),
                 "#microsoft.graph.networkaccess.forwardingRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule(),
                 "#microsoft.graph.networkaccess.fqdnFilteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FqdnFilteringRule(),
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessForwardingRule(),
                 "#microsoft.graph.networkaccess.threatIntelligenceRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligenceRule(),
                 "#microsoft.graph.networkaccess.tlsInspectionRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionRule(),
+                "#microsoft.graph.networkaccess.urlDestinationFilteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.UrlDestinationFilteringRule(),
                 "#microsoft.graph.networkaccess.webCategoryFilteringRule" => new global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategoryFilteringRule(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule(),
             };

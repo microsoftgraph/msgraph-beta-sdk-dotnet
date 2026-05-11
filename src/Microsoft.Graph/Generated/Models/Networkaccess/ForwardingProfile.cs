@@ -9,59 +9,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ForwardingProfile : global::Microsoft.Graph.Beta.Models.Networkaccess.Profile, IParsable
+    public partial class ForwardingProfile : global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfileBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.Association>? Associations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.Association>?>("associations"); }
-            set { BackingStore?.Set("associations", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.Networkaccess.Association> Associations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Networkaccess.Association>>("associations"); }
-            set { BackingStore?.Set("associations", value); }
-        }
-#endif
-        /// <summary>The isCustomProfile property</summary>
-        public bool? IsCustomProfile
-        {
-            get { return BackingStore?.Get<bool?>("isCustomProfile"); }
-            set { BackingStore?.Set("isCustomProfile", value); }
-        }
-        /// <summary>Profile priority.</summary>
-        public int? Priority
-        {
-            get { return BackingStore?.Get<int?>("priority"); }
-            set { BackingStore?.Set("priority", value); }
-        }
-        /// <summary>The servicePrincipal property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.ServicePrincipal? ServicePrincipal
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ServicePrincipal?>("servicePrincipal"); }
-            set { BackingStore?.Set("servicePrincipal", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.ServicePrincipal ServicePrincipal
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ServicePrincipal>("servicePrincipal"); }
-            set { BackingStore?.Set("servicePrincipal", value); }
-        }
-#endif
-        /// <summary>The trafficForwardingType property</summary>
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType? TrafficForwardingType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType?>("trafficForwardingType"); }
-            set { BackingStore?.Set("trafficForwardingType", value); }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile"/> and sets the default values.
         /// </summary>
@@ -87,11 +37,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "associations", n => { Associations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Association>(global::Microsoft.Graph.Beta.Models.Networkaccess.Association.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "isCustomProfile", n => { IsCustomProfile = n.GetBoolValue(); } },
-                { "priority", n => { Priority = n.GetIntValue(); } },
-                { "servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipal>(global::Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue); } },
-                { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>(); } },
             };
         }
         /// <summary>
@@ -102,11 +47,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.Association>("associations", Associations);
-            writer.WriteBoolValue("isCustomProfile", IsCustomProfile);
-            writer.WriteIntValue("priority", Priority);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipal>("servicePrincipal", ServicePrincipal);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);
         }
     }
 }

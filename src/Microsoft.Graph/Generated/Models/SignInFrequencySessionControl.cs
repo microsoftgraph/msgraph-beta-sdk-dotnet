@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInFrequencyInterval?>("frequencyInterval"); }
             set { BackingStore?.Set("frequencyInterval", value); }
         }
-        /// <summary>Possible values are: days, hours, or null if frequencyInterval is everyTime .</summary>
+        /// <summary>The possible values are: days, hours, or null if frequencyInterval is everyTime .</summary>
         public global::Microsoft.Graph.Beta.Models.SigninFrequencyType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SigninFrequencyType?>("type"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PlayPromptOperation : global::Microsoft.Graph.Beta.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.</summary>
+        /// <summary>The possible values are: unknown, completedSuccessfully, mediaOperationCanceled.</summary>
         public global::Microsoft.Graph.Beta.Models.PlayPromptCompletionReason? CompletionReason
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlayPromptCompletionReason?>("completionReason"); }

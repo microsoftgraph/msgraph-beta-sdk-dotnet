@@ -12,23 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ConfigurationManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configurationApplications property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.ConfigurationApplication>? ConfigurationApplications
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConfigurationApplication>?>("configurationApplications"); }
-            set { BackingStore?.Set("configurationApplications", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.ConfigurationApplication> ConfigurationApplications
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConfigurationApplication>>("configurationApplications"); }
-            set { BackingStore?.Set("configurationApplications", value); }
-        }
-#endif
-        /// <summary>The configurationDrifts property</summary>
+        /// <summary>A container for configuration drift resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConfigurationDrift>? ConfigurationDrifts
@@ -44,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("configurationDrifts", value); }
         }
 #endif
-        /// <summary>The configurationMonitoringResults property</summary>
+        /// <summary>A container for configuration monitoring results resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConfigurationMonitoringResult>? ConfigurationMonitoringResults
@@ -60,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("configurationMonitoringResults", value); }
         }
 #endif
-        /// <summary>The configurationMonitors property</summary>
+        /// <summary>A container for configuration monitor resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConfigurationMonitor>? ConfigurationMonitors
@@ -76,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("configurationMonitors", value); }
         }
 #endif
-        /// <summary>The configurationSnapshotJobs property</summary>
+        /// <summary>A container for snapshot job resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConfigurationSnapshotJob>? ConfigurationSnapshotJobs
@@ -92,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("configurationSnapshotJobs", value); }
         }
 #endif
-        /// <summary>The configurationSnapshots property</summary>
+        /// <summary>A container for configuration snapshot baselines.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ConfigurationBaseline>? ConfigurationSnapshots
@@ -126,7 +110,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "configurationApplications", n => { ConfigurationApplications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationApplication>(global::Microsoft.Graph.Beta.Models.ConfigurationApplication.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configurationDrifts", n => { ConfigurationDrifts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationDrift>(global::Microsoft.Graph.Beta.Models.ConfigurationDrift.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configurationMonitoringResults", n => { ConfigurationMonitoringResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationMonitoringResult>(global::Microsoft.Graph.Beta.Models.ConfigurationMonitoringResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configurationMonitors", n => { ConfigurationMonitors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationMonitor>(global::Microsoft.Graph.Beta.Models.ConfigurationMonitor.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -142,7 +125,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationApplication>("configurationApplications", ConfigurationApplications);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationDrift>("configurationDrifts", ConfigurationDrifts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationMonitoringResult>("configurationMonitoringResults", ConfigurationMonitoringResults);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConfigurationMonitor>("configurationMonitors", ConfigurationMonitors);

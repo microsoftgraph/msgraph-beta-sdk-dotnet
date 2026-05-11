@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
         {
         }
         /// <summary>
-        /// Get the properties of an existing accessPackageSubject object.
+        /// Get the properties of an external directory user represented by an existing accessPackageSubject object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagesubject-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AccessPackageSubjectCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AccessPackageSubject>(requestInfo, global::Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of an existing accessPackageSubject object.
+        /// Get the properties of an external directory user represented by an existing accessPackageSubject object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects.SubjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the properties of an existing accessPackageSubject object.
+        /// Get the properties of an external directory user represented by an existing accessPackageSubject object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectsRequestBuilderGetQueryParameters 

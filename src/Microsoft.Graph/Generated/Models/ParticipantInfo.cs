@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("countryCode", value); }
         }
 #endif
-        /// <summary>The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.</summary>
+        /// <summary>The type of endpoint the participant is using. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.EndpointType? EndpointType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }

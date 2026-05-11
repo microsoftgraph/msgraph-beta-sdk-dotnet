@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AdhocCalls.Item.Recordings
         {
         }
         /// <summary>
-        /// Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
+        /// Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CallRecordingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AdhocCalls.Item.Recordings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CallRecording>(requestInfo, global::Microsoft.Graph.Beta.Models.CallRecording.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
+        /// Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AdhocCalls.Item.Recordings
             return new global::Microsoft.Graph.Beta.Users.Item.AdhocCalls.Item.Recordings.RecordingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
+        /// Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordingsRequestBuilderGetQueryParameters 

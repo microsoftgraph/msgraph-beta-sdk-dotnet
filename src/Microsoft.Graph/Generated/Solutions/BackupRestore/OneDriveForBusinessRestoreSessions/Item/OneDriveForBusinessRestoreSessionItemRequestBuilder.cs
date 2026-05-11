@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder DriveRestoreArtifactsBulkAdditionRequests
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the granularDriveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts.GranularDriveRestoreArtifactsRequestBuilder GranularDriveRestoreArtifacts
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts.GranularDriveRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder"/> and sets the default values.

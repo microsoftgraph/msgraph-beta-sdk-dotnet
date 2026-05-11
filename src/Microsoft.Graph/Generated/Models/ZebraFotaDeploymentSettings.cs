@@ -57,13 +57,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ZebraFotaNetworkType?>("downloadRuleNetworkType"); }
             set { BackingStore?.Set("downloadRuleNetworkType", value); }
         }
-        /// <summary>Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.</summary>
+        /// <summary>Date and time in the device time zone when the download will start (e.g., `2018-07-25T10:20:32`). The default value is UTC now and the maximum is 10 days from deployment creation.</summary>
         public DateTimeOffset? DownloadRuleStartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("downloadRuleStartDateTime"); }
             set { BackingStore?.Set("downloadRuleStartDateTime", value); }
         }
-        /// <summary>A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).</summary>
+        /// <summary>A description provided by Zebra for the the firmware artifact to update the device to (e.g.: `LifeGuard Update 120 (released 29-June-2022)`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirmwareTargetArtifactDescription
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ZebraFotaScheduleMode?>("scheduleMode"); }
             set { BackingStore?.Set("scheduleMode", value); }
         }
-        /// <summary>This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone</summary>
+        /// <summary>This attribute indicates the deployment time offset (e.g.`180` represents an offset of `+03:00`, and `-270` represents an offset of `-04:30`). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone</summary>
         public int? TimeZoneOffsetInMinutes
         {
             get { return BackingStore?.Get<int?>("timeZoneOffsetInMinutes"); }

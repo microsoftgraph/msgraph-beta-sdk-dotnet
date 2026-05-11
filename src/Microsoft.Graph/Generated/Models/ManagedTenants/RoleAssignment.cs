@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.</summary>
+        /// <summary>The type of the admin relationship(s) associated with the role assignment. The possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? AssignmentType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus?>("assignmentType"); }

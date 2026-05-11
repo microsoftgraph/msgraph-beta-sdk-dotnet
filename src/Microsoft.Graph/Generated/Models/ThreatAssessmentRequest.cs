@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The content type of threat assessment. Possible values are: mail, url, file.</summary>
+        /// <summary>The content type of threat assessment. The possible values are: mail, url, file.</summary>
         public global::Microsoft.Graph.Beta.Models.ThreatAssessmentContentType? ContentType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatAssessmentContentType?>("contentType"); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatExpectedAssessment?>("expectedAssessment"); }
             set { BackingStore?.Set("expectedAssessment", value); }
         }
-        /// <summary>The source of the threat assessment request. Possible values are: user, administrator.</summary>
+        /// <summary>The source of the threat assessment request. The possible values are: user, administrator.</summary>
         public global::Microsoft.Graph.Beta.Models.ThreatAssessmentRequestSource? RequestSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatAssessmentRequestSource?>("requestSource"); }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("results", value); }
         }
 #endif
-        /// <summary>The assessment process status. Possible values are: pending, completed.</summary>
+        /// <summary>The assessment process status. The possible values are: pending, completed.</summary>
         public global::Microsoft.Graph.Beta.Models.ThreatAssessmentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatAssessmentStatus?>("status"); }

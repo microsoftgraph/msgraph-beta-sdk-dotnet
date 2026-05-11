@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Training : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
+        /// <summary>The training availability status. The possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TrainingAvailabilityStatus? AvailabilityStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TrainingAvailabilityStatus?>("availabilityStatus"); }
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The source of the training content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
+        /// <summary>The source of the training content. The possible values are: unknown, global, tenant, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationContentSource? Source
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationContentSource?>("source"); }
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tags", value); }
         }
 #endif
-        /// <summary>The type of training. Possible values are: unknown, phishing, unknownFutureValue.</summary>
+        /// <summary>The type of training. The possible values are: unknown, phishing, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TrainingType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TrainingType?>("type"); }

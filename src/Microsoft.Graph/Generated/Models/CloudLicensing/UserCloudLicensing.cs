@@ -19,6 +19,38 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The assignmentErrors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.AssignmentError>? AssignmentErrors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.AssignmentError>?>("assignmentErrors"); }
+            set { BackingStore?.Set("assignmentErrors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.AssignmentError> AssignmentErrors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.AssignmentError>>("assignmentErrors"); }
+            set { BackingStore?.Set("assignmentErrors", value); }
+        }
+#endif
+        /// <summary>The assignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>? Assignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment> Assignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
@@ -53,6 +85,22 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
             set { BackingStore?.Set("usageRights", value); }
         }
 #endif
+        /// <summary>The waitingMembers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.WaitingMember>? WaitingMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.WaitingMember>?>("waitingMembers"); }
+            set { BackingStore?.Set("waitingMembers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.WaitingMember> WaitingMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.WaitingMember>>("waitingMembers"); }
+            set { BackingStore?.Set("waitingMembers", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing"/> and sets the default values.
         /// </summary>
@@ -79,8 +127,11 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "assignmentErrors", n => { AssignmentErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.AssignmentError>(global::Microsoft.Graph.Beta.Models.CloudLicensing.AssignmentError.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "usageRights", n => { UsageRights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.UsageRight>(global::Microsoft.Graph.Beta.Models.CloudLicensing.UsageRight.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "waitingMembers", n => { WaitingMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.WaitingMember>(global::Microsoft.Graph.Beta.Models.CloudLicensing.WaitingMember.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -90,8 +141,11 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.AssignmentError>("assignmentErrors", AssignmentErrors);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>("assignments", Assignments);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.UsageRight>("usageRights", UsageRights);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.WaitingMember>("waitingMembers", WaitingMembers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

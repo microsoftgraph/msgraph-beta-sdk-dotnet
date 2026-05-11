@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CertificateBasedAuthConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
+        /// <summary>Collection of certificate authorities that creates a trusted certificate chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CertificateAuthority>? CertificateAuthorities

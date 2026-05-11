@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.Item.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.</summary>
+        /// <summary>Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.</summary>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20")]
         public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.Item.ServicePrincipal.ServicePrincipalRequestBuilder ServicePrincipal
         {

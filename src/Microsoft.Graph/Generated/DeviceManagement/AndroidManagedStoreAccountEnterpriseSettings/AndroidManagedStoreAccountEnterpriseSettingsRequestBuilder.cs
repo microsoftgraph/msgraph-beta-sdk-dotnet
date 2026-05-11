@@ -4,8 +4,11 @@ using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterprise
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RetrieveStoreLayout;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetStoreLayout;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.Unbind;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -46,15 +49,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the requestEnterpriseUpgradeUrl method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl.RequestEnterpriseUpgradeUrlRequestBuilder RequestEnterpriseUpgradeUrl
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl.RequestEnterpriseUpgradeUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the requestSignupUrl method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlRequestBuilder RequestSignupUrl
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveStoreLayout method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RetrieveStoreLayout.RetrieveStoreLayoutRequestBuilder RetrieveStoreLayout
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RetrieveStoreLayout.RetrieveStoreLayoutRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the setAndroidDeviceOwnerFullyManagedEnrollmentState method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState.SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder SetAndroidDeviceOwnerFullyManagedEnrollmentState
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState.SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setStoreLayout method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetStoreLayout.SetStoreLayoutRequestBuilder SetStoreLayout
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetStoreLayout.SetStoreLayoutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncApps method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps.SyncAppsRequestBuilder SyncApps

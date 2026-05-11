@@ -28,13 +28,29 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("computerDnsName", value); }
         }
 #endif
+        /// <summary>The domain name of the sensor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DomainName
+        {
+            get { return BackingStore?.Get<string?>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#nullable restore
+#else
+        public string DomainName
+        {
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#endif
         /// <summary>The date and time when the sensor was last seen.</summary>
         public DateTimeOffset? LastSeenDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The version of the Defender for Identity sensor client.</summary>
+        /// <summary>The version of the Defender for Identity sensor client.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenseClientVersion
@@ -48,6 +64,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("senseClientVersion"); }
             set { BackingStore?.Set("senseClientVersion", value); }
+        }
+#endif
+        /// <summary>The list of device types for the sensor. The possible values are: domainController, adfs, adcs, entraConnect unknownFutureValue. This flagged enumeration allows multiple members to be returned simultaneously.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?>? SensorTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?>?>("sensorTypes"); }
+            set { BackingStore?.Set("sensorTypes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?> SensorTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.DeviceType?>>("sensorTypes"); }
+            set { BackingStore?.Set("sensorTypes", value); }
         }
 #endif
         /// <summary>
@@ -69,8 +101,10 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "computerDnsName", n => { ComputerDnsName = n.GetStringValue(); } },
+                { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "senseClientVersion", n => { SenseClientVersion = n.GetStringValue(); } },
+                { "sensorTypes", n => { SensorTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.DeviceType>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -82,8 +116,10 @@ namespace Microsoft.Graph.Beta.Models.Security
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("computerDnsName", ComputerDnsName);
+            writer.WriteStringValue("domainName", DomainName);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("senseClientVersion", SenseClientVersion);
+            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Security.DeviceType>("sensorTypes", SensorTypes);
         }
     }
 }

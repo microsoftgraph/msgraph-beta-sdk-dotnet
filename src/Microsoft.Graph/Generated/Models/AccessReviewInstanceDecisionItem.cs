@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("appliedDateTime"); }
             set { BackingStore?.Set("appliedDateTime", value); }
         }
+        /// <summary>The description of the apply result.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApplyDescription
+        {
+            get { return BackingStore?.Get<string?>("applyDescription"); }
+            set { BackingStore?.Set("applyDescription", value); }
+        }
+#nullable restore
+#else
+        public string ApplyDescription
+        {
+            get { return BackingStore?.Get<string>("applyDescription"); }
+            set { BackingStore?.Set("applyDescription", value); }
+        }
+#endif
         /// <summary>The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +144,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
+        }
+#endif
+        /// <summary>The permission that grants the principal access to a resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemPermission? Permission
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemPermission?>("permission"); }
+            set { BackingStore?.Set("permission", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemPermission Permission
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemPermission>("permission"); }
+            set { BackingStore?.Set("permission", value); }
         }
 #endif
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the principal. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is &apos;Bob&apos; and the resource is &apos;Sales&apos;. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
@@ -285,11 +317,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
                 { "appliedBy", n => { AppliedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "applyDescription", n => { ApplyDescription = n.GetStringValue(); } },
                 { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
                 { "insights", n => { Insights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceInsight>(global::Microsoft.Graph.Beta.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "instance", n => { Instance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>(global::Microsoft.Graph.Beta.Models.AccessReviewInstance.CreateFromDiscriminatorValue); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemPermission>(global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemPermission.CreateFromDiscriminatorValue); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "principalLink", n => { PrincipalLink = n.GetStringValue(); } },
                 { "principalResourceMembership", n => { PrincipalResourceMembership = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership>(global::Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership.CreateFromDiscriminatorValue); } },
@@ -312,11 +346,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("accessReviewId", AccessReviewId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserIdentity>("appliedBy", AppliedBy);
             writer.WriteDateTimeOffsetValue("appliedDateTime", AppliedDateTime);
+            writer.WriteStringValue("applyDescription", ApplyDescription);
             writer.WriteStringValue("applyResult", ApplyResult);
             writer.WriteStringValue("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceInsight>("insights", Insights);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>("instance", Instance);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemPermission>("permission", Permission);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("principal", Principal);
             writer.WriteStringValue("principalLink", PrincipalLink);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership>("principalResourceMembership", PrincipalResourceMembership);

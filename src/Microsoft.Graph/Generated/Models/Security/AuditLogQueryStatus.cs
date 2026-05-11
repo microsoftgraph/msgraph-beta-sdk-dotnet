@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>Status of an audit log query.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AuditLogQueryStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "notStarted")]
         #pragma warning disable CS1591

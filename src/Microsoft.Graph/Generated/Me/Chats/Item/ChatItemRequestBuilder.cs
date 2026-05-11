@@ -13,7 +13,9 @@ using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants;
 using Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages;
 using Microsoft.Graph.Beta.Me.Chats.Item.RemoveAllAccessForUser;
 using Microsoft.Graph.Beta.Me.Chats.Item.SendActivityNotification;
+using Microsoft.Graph.Beta.Me.Chats.Item.StartMigration;
 using Microsoft.Graph.Beta.Me.Chats.Item.Tabs;
+using Microsoft.Graph.Beta.Me.Chats.Item.TargetedMessages;
 using Microsoft.Graph.Beta.Me.Chats.Item.UnhideForUser;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -98,10 +100,20 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.Item.SendActivityNotification.SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Beta.Me.Chats.Item.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Chats.Item.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.chat entity.</summary>
         public global::Microsoft.Graph.Beta.Me.Chats.Item.Tabs.TabsRequestBuilder Tabs
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.Item.Tabs.TabsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the targetedMessages property of the microsoft.graph.chat entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Chats.Item.TargetedMessages.TargetedMessagesRequestBuilder TargetedMessages
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Chats.Item.TargetedMessages.TargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unhideForUser method.</summary>
         public global::Microsoft.Graph.Beta.Me.Chats.Item.UnhideForUser.UnhideForUserRequestBuilder UnhideForUser

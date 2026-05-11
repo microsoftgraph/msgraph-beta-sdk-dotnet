@@ -136,6 +136,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("windows", value); }
         }
 #endif
+        /// <summary>The user&apos;s settings for work hours and location preferences for scheduling and availability management.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.WorkHoursAndLocationsSetting? WorkHoursAndLocations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkHoursAndLocationsSetting?>("workHoursAndLocations"); }
+            set { BackingStore?.Set("workHoursAndLocations", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.WorkHoursAndLocationsSetting WorkHoursAndLocations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WorkHoursAndLocationsSetting>("workHoursAndLocations"); }
+            set { BackingStore?.Set("workHoursAndLocations", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -163,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ShiftPreferences>(global::Microsoft.Graph.Beta.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
                 { "storage", n => { Storage = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserStorage>(global::Microsoft.Graph.Beta.Models.UserStorage.CreateFromDiscriminatorValue); } },
                 { "windows", n => { Windows = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsSetting>(global::Microsoft.Graph.Beta.Models.WindowsSetting.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workHoursAndLocations", n => { WorkHoursAndLocations = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkHoursAndLocationsSetting>(global::Microsoft.Graph.Beta.Models.WorkHoursAndLocationsSetting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -182,6 +199,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ShiftPreferences>("shiftPreferences", ShiftPreferences);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserStorage>("storage", Storage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsSetting>("windows", Windows);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkHoursAndLocationsSetting>("workHoursAndLocations", WorkHoursAndLocations);
         }
     }
 }

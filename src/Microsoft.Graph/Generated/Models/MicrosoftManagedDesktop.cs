@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates the provisioning policy associated with Microsoft Managed Desktop settings. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default value is notManaged.</summary>
+        /// <summary>Indicates the provisioning policy associated with Microsoft Managed Desktop settings. The possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default value is notManaged.</summary>
         public global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktopType? ManagedType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktopType?>("managedType"); }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("profile", value); }
         }
 #endif
-        /// <summary>Indicates whether the provisioning policy enables Microsoft Managed Desktop and, if enabled, specifies the type of plan managing the device. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The type property is deprecated and will stop returning data on January 31, 2024. Going forward, use the managedType property.</summary>
+        /// <summary>Indicates whether the provisioning policy enables Microsoft Managed Desktop and, if enabled, specifies the type of plan managing the device. The possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The type property is deprecated and will stop returning data on January 31, 2024. Going forward, use the managedType property.</summary>
         public global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktopType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktopType?>("type"); }

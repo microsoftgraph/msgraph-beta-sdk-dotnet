@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The applicable log data provider. Possible values are: barracuda, bluecoat, checkpoint, ciscoAsa, ciscoIronportProxy, fortigate, paloAlto, squid, zscaler, mcafeeSwg, ciscoScanSafe, juniperSrx, sophosSg, websenseV75, websenseSiemCef, machineZoneMeraki, squidNative, ciscoFwsm, microsoftIsaW3C, sonicwall, sophosCyberoam, clavister, customParser, juniperSsg, zscalerQradar, juniperSrxSd, juniperSrxWelf, microsoftConditionalAppAccess, ciscoAsaFirepower, genericCef, genericLeef, genericW3C, iFilter, checkpointXml, checkpointSmartViewTracker, barracudaNextGenFw, barracudaNextGenFwWeblog, microsoftDefenderForEndpoint, zscalerCef, sophosXg, iboss, forcepoint, fortios, ciscoIronportWsaIi, paloAltoLeef, forcepointLeef, stormshield, contentkeeper, ciscoIronportWsaIii, checkpointCef, corrata, ciscoFirepowerV6, menloSecurityCef, watchguardXtm, openSystemsSecureWebGateway, wandera, unknownFutureValue.</summary>
+        /// <summary>The applicable log data provider. The possible values are: barracuda, bluecoat, checkpoint, ciscoAsa, ciscoIronportProxy, fortigate, paloAlto, squid, zscaler, mcafeeSwg, ciscoScanSafe, juniperSrx, sophosSg, websenseV75, websenseSiemCef, machineZoneMeraki, squidNative, ciscoFwsm, microsoftIsaW3C, sonicwall, sophosCyberoam, clavister, customParser, juniperSsg, zscalerQradar, juniperSrxSd, juniperSrxWelf, microsoftConditionalAppAccess, ciscoAsaFirepower, genericCef, genericLeef, genericW3C, iFilter, checkpointXml, checkpointSmartViewTracker, barracudaNextGenFw, barracudaNextGenFwWeblog, microsoftDefenderForEndpoint, zscalerCef, sophosXg, iboss, forcepoint, fortios, ciscoIronportWsaIi, paloAltoLeef, forcepointLeef, stormshield, contentkeeper, ciscoIronportWsaIii, checkpointCef, corrata, ciscoFirepowerV6, menloSecurityCef, watchguardXtm, openSystemsSecureWebGateway, wandera, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.LogDataProvider? LogDataProvider
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.LogDataProvider?>("logDataProvider"); }
@@ -92,13 +92,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<int?>("logFileCount"); }
             set { BackingStore?.Set("logFileCount", value); }
         }
-        /// <summary>The applicable receiver protocol. Possible values are: ftp, ftps, syslogUdp, syslogTcp, syslogTls, unknownFutureValue.</summary>
+        /// <summary>The applicable receiver protocol. The possible values are: ftp, ftps, syslogUdp, syslogTcp, syslogTls, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ReceiverProtocol? ReceiverProtocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ReceiverProtocol?>("receiverProtocol"); }
             set { BackingStore?.Set("receiverProtocol", value); }
         }
-        /// <summary>The supported entity type. Possible values are: userName, ipAddress, machineName, other, unknown, unknownFutureValue.</summary>
+        /// <summary>The supported entity type. The possible values are: userName, ipAddress, machineName, other, unknown, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.EntityType?>? SupportedEntityTypes
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("supportedEntityTypes", value); }
         }
 #endif
-        /// <summary>The supported traffic type. Possible values are: downloadedBytes, uploadedBytes, unknown, unknownFutureValue.</summary>
+        /// <summary>The supported traffic type. The possible values are: downloadedBytes, uploadedBytes, unknown, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.TrafficType?>? SupportedTrafficTypes

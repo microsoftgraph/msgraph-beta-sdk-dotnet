@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("comments", value); }
         }
 #endif
-        /// <summary>Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.</summary>
+        /// <summary>Analyst feedback on the alert in this update. The possible values are: unknown, truePositive, falsePositive, benignPositive.</summary>
         public global::Microsoft.Graph.Beta.Models.AlertFeedback? Feedback
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AlertFeedback?>("feedback"); }
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.</summary>
+        /// <summary>Alert status value (if updated). The possible values are: unknown, newAlert, inProgress, resolved, dismissed.</summary>
         public global::Microsoft.Graph.Beta.Models.AlertStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AlertStatus?>("status"); }

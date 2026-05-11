@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
     public partial class CaseOperation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
+        /// <summary>The type of action the operation represents. The possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.CaseAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.CaseAction?>("action"); }
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("resultInfo", value); }
         }
 #endif
-        /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
+        /// <summary>The status of the case operation. The possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.CaseOperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.CaseOperationStatus?>("status"); }

@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("notes", value); }
         }
 #endif
-        /// <summary>This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.</summary>
+        /// <summary>This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerPreviewType? PreviewType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }

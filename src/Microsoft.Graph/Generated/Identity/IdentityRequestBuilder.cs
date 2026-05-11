@@ -10,8 +10,10 @@ using Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy;
 using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions;
 using Microsoft.Graph.Beta.Identity.IdentityProviders;
 using Microsoft.Graph.Beta.Identity.RiskPrevention;
+using Microsoft.Graph.Beta.Identity.SignInIdentifiers;
 using Microsoft.Graph.Beta.Identity.UserFlowAttributes;
 using Microsoft.Graph.Beta.Identity.UserFlows;
+using Microsoft.Graph.Beta.Identity.VerifiedId;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -80,6 +82,11 @@ namespace Microsoft.Graph.Beta.Identity
         {
             get => new global::Microsoft.Graph.Beta.Identity.RiskPrevention.RiskPreventionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the signInIdentifiers property of the microsoft.graph.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Identity.SignInIdentifiers.SignInIdentifiersRequestBuilder SignInIdentifiers
+        {
+            get => new global::Microsoft.Graph.Beta.Identity.SignInIdentifiers.SignInIdentifiersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Identity.UserFlowAttributes.UserFlowAttributesRequestBuilder UserFlowAttributes
         {
@@ -89,6 +96,11 @@ namespace Microsoft.Graph.Beta.Identity
         public global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder UserFlows
         {
             get => new global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the verifiedId property of the microsoft.graph.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Identity.VerifiedId.VerifiedIdRequestBuilder VerifiedId
+        {
+            get => new global::Microsoft.Graph.Beta.Identity.VerifiedId.VerifiedIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Identity.IdentityRequestBuilder"/> and sets the default values.

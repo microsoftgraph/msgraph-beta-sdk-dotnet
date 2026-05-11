@@ -7,27 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Audit data for Compliance DLP Exchange Classification CDP events.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ComplianceDlpExchangeClassificationCdpRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
+    public partial class ComplianceDLPExchangeClassificationCdpRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpExchangeClassificationCdpRecord"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPExchangeClassificationCdpRecord"/> and sets the default values.
         /// </summary>
-        public ComplianceDlpExchangeClassificationCdpRecord() : base()
+        public ComplianceDLPExchangeClassificationCdpRecord() : base()
         {
-            OdataType = "#microsoft.graph.security.complianceDlpExchangeClassificationCdpRecord";
+            OdataType = "#microsoft.graph.security.complianceDLPExchangeClassificationCdpRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpExchangeClassificationCdpRecord"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPExchangeClassificationCdpRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpExchangeClassificationCdpRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPExchangeClassificationCdpRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.ComplianceDlpExchangeClassificationCdpRecord();
+            return new global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPExchangeClassificationCdpRecord();
         }
         /// <summary>
         /// The deserialization information for the current model

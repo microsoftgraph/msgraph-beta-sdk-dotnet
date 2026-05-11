@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("externalName", value); }
         }
 #endif
-        /// <summary>The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.</summary>
+        /// <summary>The type of external source this resource was generated from (automatically determined from externalSourceDetail). The possible values are: sis, lms, or manual.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationExternalSource? ExternalSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationExternalSource?>("externalSource"); }

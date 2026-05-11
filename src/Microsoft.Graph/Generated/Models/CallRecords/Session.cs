@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             get { return BackingStore?.Get<bool?>("isTest"); }
             set { BackingStore?.Set("isTest", value); }
         }
-        /// <summary>List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
+        /// <summary>List of modalities present in the session. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CallRecords.Modality?>? Modalities

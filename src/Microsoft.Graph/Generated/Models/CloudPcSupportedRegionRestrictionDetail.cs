@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>Indicates that the region is restricted due to lack of availability zone support. When True, the region does not have availability zone infrastructure and is intended for disaster recovery scenarios only. When false, the region has full availability zone support. The default is false. Read-Only.</summary>
+        public bool? AvailabilityZoneRestricted
+        {
+            get { return BackingStore?.Get<bool?>("availabilityZoneRestricted"); }
+            set { BackingStore?.Set("availabilityZoneRestricted", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates that the region is restricted for Cloud PC CPU provisioning. True indicates that Cloud PC provisioning with CPU isn&apos;t available in this region. false indicates that it&apos;s available. The default value is false. Read-only.</summary>
@@ -81,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "availabilityZoneRestricted", n => { AvailabilityZoneRestricted = n.GetBoolValue(); } },
                 { "cPURestricted", n => { CPURestricted = n.GetBoolValue(); } },
                 { "gPURestricted", n => { GPURestricted = n.GetBoolValue(); } },
                 { "nestedVirtualizationRestricted", n => { NestedVirtualizationRestricted = n.GetBoolValue(); } },
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("availabilityZoneRestricted", AvailabilityZoneRestricted);
             writer.WriteBoolValue("cPURestricted", CPURestricted);
             writer.WriteBoolValue("gPURestricted", GPURestricted);
             writer.WriteBoolValue("nestedVirtualizationRestricted", NestedVirtualizationRestricted);

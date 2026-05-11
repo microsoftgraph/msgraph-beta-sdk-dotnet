@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("productRevisions", value); }
         }
 #endif
-        /// <summary>The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.</summary>
+        /// <summary>The publishing cadence of the quality update. The possible values are: monthly, outOfBand, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? QualityUpdateCadence
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence?>("qualityUpdateCadence"); }

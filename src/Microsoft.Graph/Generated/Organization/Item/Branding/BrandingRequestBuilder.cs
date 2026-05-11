@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.Organization.Item.Branding.HeaderLogo;
 using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations;
 using Microsoft.Graph.Beta.Organization.Item.Branding.SquareLogo;
 using Microsoft.Graph.Beta.Organization.Item.Branding.SquareLogoDark;
+using Microsoft.Graph.Beta.Organization.Item.Branding.Themes;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -65,6 +66,11 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding
         public global::Microsoft.Graph.Beta.Organization.Item.Branding.SquareLogoDark.SquareLogoDarkRequestBuilder SquareLogoDark
         {
             get => new global::Microsoft.Graph.Beta.Organization.Item.Branding.SquareLogoDark.SquareLogoDarkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the themes property of the microsoft.graph.organizationalBranding entity.</summary>
+        public global::Microsoft.Graph.Beta.Organization.Item.Branding.Themes.ThemesRequestBuilder Themes
+        {
+            get => new global::Microsoft.Graph.Beta.Organization.Item.Branding.Themes.ThemesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Organization.Item.Branding.BrandingRequestBuilder"/> and sets the default values.

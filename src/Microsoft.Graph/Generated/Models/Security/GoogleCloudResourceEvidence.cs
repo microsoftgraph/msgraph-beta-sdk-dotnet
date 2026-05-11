@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("location", value); }
         }
 #endif
-        /// <summary>The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.</summary>
+        /// <summary>The type of location. The possible values are: unknown, regional, zonal, global, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.GoogleCloudLocationType? LocationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.GoogleCloudLocationType?>("locationType"); }

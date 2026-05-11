@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TeamworkApplicationIdentity : global::Microsoft.Graph.Beta.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.</summary>
+        /// <summary>Type of application that is referenced. The possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamworkApplicationIdentityType? ApplicationIdentityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkApplicationIdentityType?>("applicationIdentityType"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CrossTenantIdentitySyncPolicyPartner : global::Microsoft.Graph.Beta.Models.PolicyDeletableItem, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.</summary>
+        /// <summary>Display name for the cross-tenant user and group synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -44,7 +44,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("externalCloudAuthorizedApplicationId", value); }
         }
 #endif
-        /// <summary>Tenant identifier for the partner Microsoft Entra organization. Read-only.</summary>
+        /// <summary>Defines whether groups can be synchronized from a partner tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound? GroupSyncInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound?>("groupSyncInbound"); }
+            set { BackingStore?.Set("groupSyncInbound", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound GroupSyncInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound>("groupSyncInbound"); }
+            set { BackingStore?.Set("groupSyncInbound", value); }
+        }
+#endif
+        /// <summary>Tenant identifier for the partner Microsoft Entra organization. Key. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId
@@ -60,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>Defines whether users can be synchronized from the partner tenant. Key.</summary>
+        /// <summary>Defines whether users can be synchronized from the partner tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound? UserSyncInbound
@@ -103,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalCloudAuthorizedApplicationId", n => { ExternalCloudAuthorizedApplicationId = n.GetStringValue(); } },
+                { "groupSyncInbound", n => { GroupSyncInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound>(global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound.CreateFromDiscriminatorValue); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound>(global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
             };
@@ -117,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalCloudAuthorizedApplicationId", ExternalCloudAuthorizedApplicationId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantGroupSyncInbound>("groupSyncInbound", GroupSyncInbound);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);
         }

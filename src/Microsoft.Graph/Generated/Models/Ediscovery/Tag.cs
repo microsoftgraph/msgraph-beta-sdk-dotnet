@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
     public partial class Tag : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
+        /// <summary>Indicates whether a single or multiple child tags can be associated with a document. The possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability? ChildSelectability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability?>("childSelectability"); }

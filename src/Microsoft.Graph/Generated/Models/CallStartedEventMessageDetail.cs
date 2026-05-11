@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CallStartedEventMessageDetail : global::Microsoft.Graph.Beta.Models.EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
+        /// <summary>Represents the call event type. The possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamworkCallEventType? CallEventType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkCallEventType?>("callEventType"); }

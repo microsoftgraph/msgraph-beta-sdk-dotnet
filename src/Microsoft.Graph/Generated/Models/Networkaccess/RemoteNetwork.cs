@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RemoteNetwork : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class RemoteNetwork : global::Microsoft.Graph.Beta.Models.Networkaccess.BaseEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the connectivity details of all device links associated with a remote network.</summary>
@@ -66,22 +66,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
         /// <summary>The region property</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.Region? Region
         {
@@ -105,6 +89,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork"/> and sets the default values.
+        /// </summary>
+        public RemoteNetwork() : base()
+        {
+            OdataType = "#microsoft.graph.networkaccess.remoteNetwork";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork"/></returns>
@@ -126,7 +117,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>(global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Region>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -143,7 +133,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>("deviceLinks", DeviceLinks);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>("forwardingProfiles", ForwardingProfiles);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Region>("region", Region);
             writer.WriteStringValue("version", Version);
         }

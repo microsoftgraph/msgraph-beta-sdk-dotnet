@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.</summary>
+        /// <summary>Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityStatus? CertificationAuthorityStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityStatus?>("certificationAuthorityStatus"); }

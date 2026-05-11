@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The set of audience external to the signed-in user&apos;s organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.</summary>
+        /// <summary>The set of audience external to the signed-in user&apos;s organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.</summary>
         public global::Microsoft.Graph.Beta.Models.ExternalAudienceScope? ExternalAudience
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalAudienceScope?>("externalAudience"); }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scheduledStartDateTime", value); }
         }
 #endif
-        /// <summary>Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.</summary>
+        /// <summary>Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.</summary>
         public global::Microsoft.Graph.Beta.Models.AutomaticRepliesStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AutomaticRepliesStatus?>("status"); }

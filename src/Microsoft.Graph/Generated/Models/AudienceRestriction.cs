@@ -87,7 +87,12 @@ namespace Microsoft.Graph.Beta.Models
         public static global::Microsoft.Graph.Beta.Models.AudienceRestriction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.AudienceRestriction();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.azureAdMultipleOrgsAudienceRestriction" => new global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction(),
+                _ => new global::Microsoft.Graph.Beta.Models.AudienceRestriction(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

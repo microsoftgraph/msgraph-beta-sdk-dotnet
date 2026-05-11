@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs;
@@ -21,6 +23,16 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SharePointProtectionPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the siteExclusionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder SiteExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder SiteExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the siteInclusionRules property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteInclusionRules.SiteInclusionRulesRequestBuilder SiteInclusionRules
         {

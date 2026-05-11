@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsAdministration
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The type of Teams policy assigned or unassigned, such as TeamsMeetingBroadcastPolicy.</summary>
+        /// <summary>The type of Teams policy assigned or unassigned, such as teamsMeetingBroadcastPolicy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyType

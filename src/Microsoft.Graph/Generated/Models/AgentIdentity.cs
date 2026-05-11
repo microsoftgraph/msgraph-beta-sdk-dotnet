@@ -12,23 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AgentIdentity : global::Microsoft.Graph.Beta.Models.ServicePrincipal, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The agentAppId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AgentAppId
-        {
-            get { return BackingStore?.Get<string?>("agentAppId"); }
-            set { BackingStore?.Set("agentAppId", value); }
-        }
-#nullable restore
-#else
-        public string AgentAppId
-        {
-            get { return BackingStore?.Get<string>("agentAppId"); }
-            set { BackingStore?.Set("agentAppId", value); }
-        }
-#endif
-        /// <summary>The agentIdentityBlueprintId property</summary>
+        /// <summary>The appId of the agent identity blueprint that defines the configuration for this agent identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentIdentityBlueprintId
@@ -44,12 +28,60 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentIdentityBlueprintId", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>Application role assignments that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>? InheritedAppRoleAssignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>?>("inheritedAppRoleAssignments"); }
+            set { BackingStore?.Set("inheritedAppRoleAssignments", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AppRoleAssignment> InheritedAppRoleAssignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>>("inheritedAppRoleAssignments"); }
+            set { BackingStore?.Set("inheritedAppRoleAssignments", value); }
+        }
+#endif
+        /// <summary>Delegated permission grants that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>? InheritedOauth2PermissionGrants
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>?>("inheritedOauth2PermissionGrants"); }
+            set { BackingStore?.Set("inheritedOauth2PermissionGrants", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant> InheritedOauth2PermissionGrants
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>>("inheritedOauth2PermissionGrants"); }
+            set { BackingStore?.Set("inheritedOauth2PermissionGrants", value); }
+        }
+#endif
+        /// <summary>The sponsors for this agent identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? Sponsors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>?>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject> Sponsors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AgentIdentity"/> and sets the default values.
         /// </summary>
@@ -75,9 +107,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "agentAppId", n => { AgentAppId = n.GetStringValue(); } },
                 { "agentIdentityBlueprintId", n => { AgentIdentityBlueprintId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "inheritedAppRoleAssignments", n => { InheritedAppRoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>(global::Microsoft.Graph.Beta.Models.AppRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inheritedOauth2PermissionGrants", n => { InheritedOauth2PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>(global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,9 +122,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("agentAppId", AgentAppId);
             writer.WriteStringValue("agentIdentityBlueprintId", AgentIdentityBlueprintId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>("inheritedAppRoleAssignments", InheritedAppRoleAssignments);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>("inheritedOauth2PermissionGrants", InheritedOauth2PermissionGrants);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("sponsors", Sponsors);
         }
     }
 }

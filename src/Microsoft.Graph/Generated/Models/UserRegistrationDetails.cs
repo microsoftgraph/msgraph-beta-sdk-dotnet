@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("methodsRegistered", value); }
         }
 #endif
-        /// <summary>Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).</summary>
+        /// <summary>Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SystemPreferredAuthenticationMethods
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.</summary>
+        /// <summary>The method the user selected as the default second-factor for performing multifactor authentication. The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.UserDefaultAuthenticationMethod? UserPreferredMethodForSecondaryAuthentication
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserDefaultAuthenticationMethod?>("userPreferredMethodForSecondaryAuthentication"); }

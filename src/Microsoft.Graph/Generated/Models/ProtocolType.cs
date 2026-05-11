@@ -113,5 +113,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         SamlOnBehalfOf = 33554432,
         #pragma warning restore CS1591
+        [EnumMember(Value = "officeS2S")]
+        #pragma warning disable CS1591
+        OfficeS2S = 67108864,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "wsTrust")]
+        #pragma warning disable CS1591
+        WsTrust = 134217728,
+        #pragma warning restore CS1591
     }
 }

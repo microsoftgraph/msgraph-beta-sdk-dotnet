@@ -35,6 +35,7 @@ using Microsoft.Graph.Beta.Security.TiIndicators;
 using Microsoft.Graph.Beta.Security.TriggerTypes;
 using Microsoft.Graph.Beta.Security.Triggers;
 using Microsoft.Graph.Beta.Security.UserSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Zones;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -216,6 +217,11 @@ namespace Microsoft.Graph.Beta.Security
         {
             get => new global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the zones property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Zones.ZonesRequestBuilder Zones
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Zones.ZonesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.SecurityRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -259,7 +265,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Update security
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Security"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Security singleton providing access to audit log resources.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
@@ -303,7 +309,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Update security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Security singleton providing access to audit log resources.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

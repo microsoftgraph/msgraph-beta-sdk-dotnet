@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    /// <summary>Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.</summary>
+    /// <summary>Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CloudCertificationAuthorityStatus
     {
@@ -25,5 +25,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>Indicates certification authority has expired and cannot issue certificates until renewed and activated.</summary>
+        [EnumMember(Value = "expired")]
+        Expired,
     }
 }

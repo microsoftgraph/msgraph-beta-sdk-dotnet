@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PositiveReinforcementNotification : global::Microsoft.Graph.Beta.Models.BaseEndUserNotification, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.</summary>
+        /// <summary>Delivery preference. The possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.NotificationDeliveryPreference? DeliveryPreference
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NotificationDeliveryPreference?>("deliveryPreference"); }

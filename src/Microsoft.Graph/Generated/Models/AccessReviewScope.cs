@@ -56,8 +56,11 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.accessReviewAccessPackageAssignmentPolicyScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewAccessPackageAssignmentPolicyScope(),
                 "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewInactiveUsersQueryScope(),
+                "#microsoft.graph.accessReviewPrincipalScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewPrincipalScope(),
                 "#microsoft.graph.accessReviewQueryScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewQueryScope(),
+                "#microsoft.graph.accessReviewResourceScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewResourceScope(),
                 "#microsoft.graph.accessReviewReviewerScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScope(),
                 "#microsoft.graph.principalResourceMembershipsScope" => new global::Microsoft.Graph.Beta.Models.PrincipalResourceMembershipsScope(),
                 _ => new global::Microsoft.Graph.Beta.Models.AccessReviewScope(),

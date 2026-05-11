@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Where this user was created from. Possible values are: sis, lms, or manual.</summary>
+        /// <summary>Where this user was created from. The possible values are: sis, lms, or manual.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationExternalSource? ExternalSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationExternalSource?>("externalSource"); }

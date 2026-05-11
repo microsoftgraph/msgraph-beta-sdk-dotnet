@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Audit data for MIP Auto Label Simulation SharePoint Completion events.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MipAutoLabelSimulationSharePointCompletionRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.MipAutoLabelSimulationSharePointCompletionRecord"/> and sets the default values.

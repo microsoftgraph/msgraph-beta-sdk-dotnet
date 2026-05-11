@@ -349,12 +349,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
-        /// <summary>Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate</summary>
-        public bool? SendDeviceOwnershipChangePushNotification
-        {
-            get { return BackingStore?.Get<bool?>("sendDeviceOwnershipChangePushNotification"); }
-            set { BackingStore?.Set("sendDeviceOwnershipChangePushNotification", value); }
-        }
         /// <summary>Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal</summary>
         public bool? ShowAzureADEnterpriseApps
         {
@@ -461,7 +455,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "profileDescription", n => { ProfileDescription = n.GetStringValue(); } },
                 { "profileName", n => { ProfileName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sendDeviceOwnershipChangePushNotification", n => { SendDeviceOwnershipChangePushNotification = n.GetBoolValue(); } },
                 { "showAzureADEnterpriseApps", n => { ShowAzureADEnterpriseApps = n.GetBoolValue(); } },
                 { "showConfigurationManagerApps", n => { ShowConfigurationManagerApps = n.GetBoolValue(); } },
                 { "showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
@@ -505,7 +498,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("profileDescription", ProfileDescription);
             writer.WriteStringValue("profileName", ProfileName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteBoolValue("sendDeviceOwnershipChangePushNotification", SendDeviceOwnershipChangePushNotification);
             writer.WriteBoolValue("showAzureADEnterpriseApps", ShowAzureADEnterpriseApps);
             writer.WriteBoolValue("showConfigurationManagerApps", ShowConfigurationManagerApps);
             writer.WriteBoolValue("showDisplayNameNextToLogo", ShowDisplayNameNextToLogo);

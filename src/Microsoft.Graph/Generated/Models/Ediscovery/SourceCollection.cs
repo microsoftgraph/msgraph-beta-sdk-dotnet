@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("custodianSources", value); }
         }
 #endif
-        /// <summary>When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
+        /// <summary>When specified, the collection spans across a service for an entire workload. The possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.DataSourceScopes? DataSourceScopes
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.DataSourceScopes?>("dataSourceScopes"); }

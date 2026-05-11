@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class AutoAuditingConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isAutomatic property</summary>
+        /// <summary>Indicates whether automatic auditing is enabled for Defender for Identity monitoring.</summary>
         public bool? IsAutomatic
         {
             get { return BackingStore?.Get<bool?>("isAutomatic"); }

@@ -19,6 +19,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The agentRiskDetections property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AgentRiskDetection>? AgentRiskDetections
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AgentRiskDetection>?>("agentRiskDetections"); }
+            set { BackingStore?.Set("agentRiskDetections", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AgentRiskDetection> AgentRiskDetections
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AgentRiskDetection>>("agentRiskDetections"); }
+            set { BackingStore?.Set("agentRiskDetections", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
@@ -51,6 +67,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RiskDetection>>("riskDetections"); }
             set { BackingStore?.Set("riskDetections", value); }
+        }
+#endif
+        /// <summary>The riskyAgents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.RiskyAgent>? RiskyAgents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RiskyAgent>?>("riskyAgents"); }
+            set { BackingStore?.Set("riskyAgents", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.RiskyAgent> RiskyAgents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RiskyAgent>>("riskyAgents"); }
+            set { BackingStore?.Set("riskyAgents", value); }
         }
 #endif
         /// <summary>Microsoft Entra service principals that are at risk.</summary>
@@ -127,8 +159,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "agentRiskDetections", n => { AgentRiskDetections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AgentRiskDetection>(global::Microsoft.Graph.Beta.Models.AgentRiskDetection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "riskDetections", n => { RiskDetections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskDetection>(global::Microsoft.Graph.Beta.Models.RiskDetection.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "riskyAgents", n => { RiskyAgents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskyAgent>(global::Microsoft.Graph.Beta.Models.RiskyAgent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "riskyServicePrincipals", n => { RiskyServicePrincipals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskyServicePrincipal>(global::Microsoft.Graph.Beta.Models.RiskyServicePrincipal.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "riskyUsers", n => { RiskyUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskyUser>(global::Microsoft.Graph.Beta.Models.RiskyUser.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "servicePrincipalRiskDetections", n => { ServicePrincipalRiskDetections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServicePrincipalRiskDetection>(global::Microsoft.Graph.Beta.Models.ServicePrincipalRiskDetection.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -141,8 +175,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AgentRiskDetection>("agentRiskDetections", AgentRiskDetections);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskDetection>("riskDetections", RiskDetections);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskyAgent>("riskyAgents", RiskyAgents);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskyServicePrincipal>("riskyServicePrincipals", RiskyServicePrincipals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RiskyUser>("riskyUsers", RiskyUsers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServicePrincipalRiskDetection>("servicePrincipalRiskDetections", ServicePrincipalRiskDetections);

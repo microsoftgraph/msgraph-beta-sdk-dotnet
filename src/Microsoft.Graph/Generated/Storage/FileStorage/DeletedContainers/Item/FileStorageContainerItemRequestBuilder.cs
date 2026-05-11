@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Activate;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Archive;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Columns;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Lock;
@@ -13,6 +14,7 @@ using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.ProvisionM
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -34,6 +36,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Activate.ActivateRequestBuilder Activate
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Columns.ColumnsRequestBuilder Columns
@@ -84,6 +91,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder SharePointGroups
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unlock method.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock.UnlockRequestBuilder Unlock

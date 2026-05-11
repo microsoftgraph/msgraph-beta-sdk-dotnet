@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         {
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxSettings>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
             return new global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.MailboxSettings.MailboxSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxSettingsRequestBuilderGetQueryParameters 

@@ -116,6 +116,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("messages", value); }
         }
 #endif
+        /// <summary>Indicates whether a chat is in migration mode. This value is null for chats that never entered migration mode. The possible values are: inProgress, completed, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.MigrationMode? MigrationMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MigrationMode?>("migrationMode"); }
+            set { BackingStore?.Set("migrationMode", value); }
+        }
         /// <summary>Represents details about an online meeting. If the chat isn&apos;t associated with an online meeting, the property is empty. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +154,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operations", value); }
         }
 #endif
+        /// <summary>Timestamp of the original creation time for the chat. The value is null if the chat never entered migration mode.</summary>
+        public DateTimeOffset? OriginalCreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("originalCreatedDateTime"); }
+            set { BackingStore?.Set("originalCreatedDateTime", value); }
+        }
         /// <summary>A collection of permissions granted to apps for the chat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,6 +206,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamsTab>>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
+        }
+#endif
+        /// <summary>A collection of targeted messages in the chat that are visible only to specific users. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>? TargetedMessages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>?>("targetedMessages"); }
+            set { BackingStore?.Set("targetedMessages", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage> TargetedMessages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>>("targetedMessages"); }
+            set { BackingStore?.Set("targetedMessages", value); }
         }
 #endif
         /// <summary>The identifier of the tenant in which the chat was created. Read-only.</summary>
@@ -287,11 +315,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>(global::Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "migrationMode", n => { MigrationMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MigrationMode>(); } },
                 { "onlineMeetingInfo", n => { OnlineMeetingInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamworkOnlineMeetingInfo>(global::Microsoft.Graph.Beta.Models.TeamworkOnlineMeetingInfo.CreateFromDiscriminatorValue); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsAsyncOperation>(global::Microsoft.Graph.Beta.Models.TeamsAsyncOperation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "originalCreatedDateTime", n => { OriginalCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>(global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pinnedMessages", n => { PinnedMessages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PinnedChatMessageInfo>(global::Microsoft.Graph.Beta.Models.PinnedChatMessageInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>(global::Microsoft.Graph.Beta.Models.TeamsTab.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "targetedMessages", n => { TargetedMessages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>(global::Microsoft.Graph.Beta.Models.TargetedChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "topic", n => { Topic = n.GetStringValue(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatViewpoint>(global::Microsoft.Graph.Beta.Models.ChatViewpoint.CreateFromDiscriminatorValue); } },
@@ -315,11 +346,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("members", Members);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>("messages", Messages);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MigrationMode>("migrationMode", MigrationMode);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamworkOnlineMeetingInfo>("onlineMeetingInfo", OnlineMeetingInfo);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsAsyncOperation>("operations", Operations);
+            writer.WriteDateTimeOffsetValue("originalCreatedDateTime", OriginalCreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PinnedChatMessageInfo>("pinnedMessages", PinnedMessages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>("tabs", Tabs);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>("targetedMessages", TargetedMessages);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("topic", Topic);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatViewpoint>("viewpoint", Viewpoint);

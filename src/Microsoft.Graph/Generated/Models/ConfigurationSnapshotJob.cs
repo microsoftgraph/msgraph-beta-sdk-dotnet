@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ConfigurationSnapshotJob : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>The date and time when the snapshot job was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the snapshot job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>User-friendly description of the snapshot given by the user. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>User-friendly name provided by the user during snapshot creation. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The errorDetails property</summary>
+        /// <summary>Details of errors related to the reasons why the snapshot can&apos;t complete. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ErrorDetails
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errorDetails", value); }
         }
 #endif
-        /// <summary>The resourceLocation property</summary>
+        /// <summary>The URL at which the snapshot file resides. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceLocation
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #endif
-        /// <summary>The resources property</summary>
+        /// <summary>The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Resources
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SnapshotJobStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>Globally unique identifier (GUID) of the tenant for which the snapshot is created. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

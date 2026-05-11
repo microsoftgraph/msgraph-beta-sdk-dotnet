@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GroupAccessType?>("accessType"); }
             set { BackingStore?.Set("accessType", value); }
         }
-        /// <summary>Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AllowExternalSenders
         {
             get { return BackingStore?.Get<bool?>("allowExternalSenders"); }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #endif
-        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.</summary>
+        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AssignedLabel>? AssignedLabels
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignedLabels", value); }
         }
 #endif
-        /// <summary>The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.</summary>
+        /// <summary>The licenses that are assigned to the group. Requires $select to retrieve. Supports $filter (eq). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AssignedLicense>? AssignedLicenses
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #endif
-        /// <summary>Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don&apos;t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don&apos;t set it in the initial POST request that creates the group. Default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AutoSubscribeNewMembers
         {
             get { return BackingStore?.Get<bool?>("autoSubscribeNewMembers"); }
@@ -370,13 +370,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("hasMembersWithLicenseErrors"); }
             set { BackingStore?.Set("hasMembersWithLicenseErrors", value); }
         }
-        /// <summary>true if the group isn&apos;t displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>true if the group isn&apos;t displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? HideFromAddressLists
         {
             get { return BackingStore?.Get<bool?>("hideFromAddressLists"); }
             set { BackingStore?.Set("hideFromAddressLists", value); }
         }
-        /// <summary>true if the group isn&apos;t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>true if the group isn&apos;t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? HideFromOutlookClients
         {
             get { return BackingStore?.Get<bool?>("hideFromOutlookClients"); }
@@ -422,13 +422,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
         }
-        /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? IsSubscribedByMail
         {
             get { return BackingStore?.Get<bool?>("isSubscribedByMail"); }
             set { BackingStore?.Set("isSubscribedByMail", value); }
         }
-        /// <summary>Indicates the status of the group license assignment to all group members. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.</summary>
+        /// <summary>Indicates the status of the group license assignment to all group members. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Requires $select to retrieve. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.LicenseProcessingState? LicenseProcessingState
@@ -546,7 +546,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("membershipRuleProcessingState", value); }
         }
 #endif
-        /// <summary>Describes the processing status for rules-based dynamic groups. The property is null for non-rule-based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.</summary>
+        /// <summary>Describes the processing status for rules-based dynamic groups. The property is null for non-rule-based dynamic groups or if the dynamic group processing has been paused. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus? MembershipRuleProcessingStatus
@@ -608,6 +608,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("onPremisesDomainName"); }
             set { BackingStore?.Set("onPremisesDomainName", value); }
+        }
+#endif
+        /// <summary>Complex type containing extension attributes 1-15 for the group, synchronized from on-premises Active Directory. Returned only on $select. Supports $filter (eq, ne, not, in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes? OnPremisesExtensionAttributes
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes?>("onPremisesExtensionAttributes"); }
+            set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes OnPremisesExtensionAttributes
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes"); }
+            set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
         }
 #endif
         /// <summary>Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
@@ -884,7 +900,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceBehaviorOptions", value); }
         }
 #endif
-        /// <summary>Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.</summary>
+        /// <summary>Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResourceProvisioningOptions
@@ -1066,25 +1082,25 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uniqueName", value); }
         }
 #endif
-        /// <summary>Count of conversations delivered one or more new posts since the signed-in user&apos;s last visit to the group. This property is the same as unseenCount. Returned only on $select.</summary>
+        /// <summary>Count of conversations delivered one or more new posts since the signed-in user&apos;s last visit to the group. This property is the same as unseenCount. Requires $select to retrieve.</summary>
         public int? UnseenConversationsCount
         {
             get { return BackingStore?.Get<int?>("unseenConversationsCount"); }
             set { BackingStore?.Set("unseenConversationsCount", value); }
         }
-        /// <summary>Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public int? UnseenCount
         {
             get { return BackingStore?.Get<int?>("unseenCount"); }
             set { BackingStore?.Set("unseenCount", value); }
         }
-        /// <summary>Count of new posts that have been delivered to the group&apos;s conversations since the signed-in user&apos;s last visit to the group. Returned only on $select.</summary>
+        /// <summary>Count of new posts that have been delivered to the group&apos;s conversations since the signed-in user&apos;s last visit to the group. Requires $select to retrieve.</summary>
         public int? UnseenMessagesCount
         {
             get { return BackingStore?.Get<int?>("unseenMessagesCount"); }
             set { BackingStore?.Set("unseenMessagesCount", value); }
         }
-        /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value isn&apos;t specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
+        /// <summary>Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value isn&apos;t specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility
@@ -1100,6 +1116,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("visibility", value); }
         }
 #endif
+        /// <summary>Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        public bool? WelcomeMessageEnabled
+        {
+            get { return BackingStore?.Get<bool?>("welcomeMessageEnabled"); }
+            set { BackingStore?.Set("welcomeMessageEnabled", value); }
+        }
         /// <summary>Specifies whether or not a group is configured to write back group object properties to on-premises Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1186,6 +1208,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
                 { "membershipRuleProcessingStatus", n => { MembershipRuleProcessingStatus = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus>(global::Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus.CreateFromDiscriminatorValue); } },
                 { "onPremisesDomainName", n => { OnPremisesDomainName = n.GetStringValue(); } },
+                { "onPremisesExtensionAttributes", n => { OnPremisesExtensionAttributes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>(global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes.CreateFromDiscriminatorValue); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesNetBiosName", n => { OnPremisesNetBiosName = n.GetStringValue(); } },
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1222,6 +1245,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "unseenCount", n => { UnseenCount = n.GetIntValue(); } },
                 { "unseenMessagesCount", n => { UnseenMessagesCount = n.GetIntValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
+                { "welcomeMessageEnabled", n => { WelcomeMessageEnabled = n.GetBoolValue(); } },
                 { "writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.GroupWritebackConfiguration>(global::Microsoft.Graph.Beta.Models.GroupWritebackConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
@@ -1279,6 +1303,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("membersWithLicenseErrors", MembersWithLicenseErrors);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>("onenote", Onenote);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes", OnPremisesExtensionAttributes);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteStringValue("onPremisesNetBiosName", OnPremisesNetBiosName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
@@ -1314,6 +1339,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("unseenCount", UnseenCount);
             writer.WriteIntValue("unseenMessagesCount", UnseenMessagesCount);
             writer.WriteStringValue("visibility", Visibility);
+            writer.WriteBoolValue("welcomeMessageEnabled", WelcomeMessageEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.GroupWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
         }
     }

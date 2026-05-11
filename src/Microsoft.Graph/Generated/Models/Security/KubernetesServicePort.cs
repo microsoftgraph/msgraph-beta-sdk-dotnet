@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
-        /// <summary>The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.</summary>
+        /// <summary>The protocol name. The possible values are: udp, tcp, sctp, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ContainerPortProtocol? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ContainerPortProtocol?>("protocol"); }

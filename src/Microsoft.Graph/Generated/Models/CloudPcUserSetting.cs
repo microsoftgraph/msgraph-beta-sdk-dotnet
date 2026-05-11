@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("notificationSetting", value); }
         }
 #endif
-        /// <summary>Indicates the provisioning source of the Cloud PC prepared for an end user. Possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn&apos;t set or set to null, its functionality is the same as setting it to image.</summary>
+        /// <summary>Indicates the provisioning source of the Cloud PC prepared for an end user. The possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn&apos;t set or set to null, its functionality is the same as setting it to image.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningSourceType? ProvisioningSourceType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningSourceType?>("provisioningSourceType"); }

@@ -300,12 +300,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
-        /// <summary>Specifies the type of cloud object the end user can access. Possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can&apos;t be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.</summary>
+        /// <summary>Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can&apos;t be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType?>("userExperienceType"); }
             set { BackingStore?.Set("userExperienceType", value); }
         }
+        /// <summary>Indicates specific settings that enable the persistence of user application settings between Cloud PC sessions. The default value is null. This feature is only available for Cloud PC provisioning policies of type sharedByEntraGroup. Supports $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration? UserSettingsPersistenceConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration?>("userSettingsPersistenceConfiguration"); }
+            set { BackingStore?.Set("userSettingsPersistenceConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration UserSettingsPersistenceConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>("userSettingsPersistenceConfiguration"); }
+            set { BackingStore?.Set("userSettingsPersistenceConfiguration", value); }
+        }
+#endif
         /// <summary>Indicates a specific Windows setting to configure during the creation of Cloud PCs for this provisioning policy. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -380,6 +396,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "userExperienceType", n => { UserExperienceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>(); } },
+                { "userSettingsPersistenceConfiguration", n => { UserSettingsPersistenceConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration.CreateFromDiscriminatorValue); } },
                 { "windowsSetting", n => { WindowsSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>(global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
                 { "windowsSettings", n => { WindowsSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings>(global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
@@ -416,6 +433,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>("userExperienceType", UserExperienceType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>("userSettingsPersistenceConfiguration", UserSettingsPersistenceConfiguration);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>("windowsSetting", WindowsSetting);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }

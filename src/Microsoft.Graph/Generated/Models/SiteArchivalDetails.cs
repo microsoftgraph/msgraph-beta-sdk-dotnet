@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The archivedBy property</summary>
+        /// <summary>The user or application that archived the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? ArchivedBy
@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("archivedBy", value); }
         }
 #endif
-        /// <summary>The archivedDateTime property</summary>
+        /// <summary>Time when the container was archived. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ArchivedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("archivedDateTime"); }
             set { BackingStore?.Set("archivedDateTime", value); }
         }
-        /// <summary>Represents the current archive status of the site collection. Returned only on $select.</summary>
+        /// <summary>Represents the current archive status of the site collection. Requires $select to retrieve.</summary>
         public global::Microsoft.Graph.Beta.Models.SiteArchiveStatus? ArchiveStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteArchiveStatus?>("archiveStatus"); }

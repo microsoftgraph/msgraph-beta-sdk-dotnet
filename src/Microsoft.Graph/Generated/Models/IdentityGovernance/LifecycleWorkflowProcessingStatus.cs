@@ -36,5 +36,9 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "canceling")]
+        #pragma warning disable CS1591
+        Canceling,
+        #pragma warning restore CS1591
     }
 }

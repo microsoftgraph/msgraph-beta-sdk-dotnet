@@ -69,6 +69,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The redirectUris property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration? RedirectUris
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration?>("redirectUris"); }
+            set { BackingStore?.Set("redirectUris", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration RedirectUris
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration>("redirectUris"); }
+            set { BackingStore?.Set("redirectUris", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration"/> and sets the default values.
         /// </summary>
@@ -98,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "audiences", n => { Audiences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>(global::Microsoft.Graph.Beta.Models.AudiencesConfiguration.CreateFromDiscriminatorValue); } },
                 { "identifierUris", n => { IdentifierUris = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>(global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "redirectUris", n => { RedirectUris = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration>(global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -110,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>("audiences", Audiences);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>("identifierUris", IdentifierUris);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration>("redirectUris", RedirectUris);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

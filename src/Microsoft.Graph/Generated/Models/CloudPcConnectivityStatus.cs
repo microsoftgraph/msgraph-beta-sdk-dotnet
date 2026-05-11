@@ -28,5 +28,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "underServiceMaintenance")]
+        #pragma warning disable CS1591
+        UnderServiceMaintenance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "inUse")]
+        #pragma warning disable CS1591
+        InUse,
+        #pragma warning restore CS1591
     }
 }

@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("historyDefinitions", value); }
         }
 #endif
+        /// <summary>Represents the instance of a review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>? Instances
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>?>("instances"); }
+            set { BackingStore?.Set("instances", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AccessReviewInstance> Instances
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>>("instances"); }
+            set { BackingStore?.Set("instances", value); }
+        }
+#endif
         /// <summary>Resource that enables administrators to manage directory-level access review policies in their tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>(global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>(global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>(global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>(global::Microsoft.Graph.Beta.Models.AccessReviewInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewPolicy>(global::Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue); } },
             };
         }
@@ -111,6 +128,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>("decisions", Decisions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>("definitions", Definitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>("instances", Instances);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewPolicy>("policy", Policy);
         }
     }

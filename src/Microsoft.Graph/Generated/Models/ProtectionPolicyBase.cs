@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("billingPolicyId", value); }
         }
 #endif
-        /// <summary>The identity of person who created the policy.</summary>
+        /// <summary>The identity of the person who created the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The name of the policy to be created.</summary>
+        /// <summary>The name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -94,7 +94,19 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The count of artifacts in the protection policy by status. Returned only on $select.</summary>
+        /// <summary>The date and time when offboarding was requested for the protection policy. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? OffboardRequestedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
+            set { BackingStore?.Set("offboardRequestedDateTime", value); }
+        }
+        /// <summary>The protectionMode property</summary>
+        public global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode? ProtectionMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode?>("protectionMode"); }
+            set { BackingStore?.Set("protectionMode", value); }
+        }
+        /// <summary>The count of artifacts in the protection policy by status. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount? ProtectionPolicyArtifactCount
@@ -126,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("retentionSettings", value); }
         }
 #endif
-        /// <summary>The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue.</summary>
+        /// <summary>The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue, offboardRequested, offboarded. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: offboardRequested, offboarded.</summary>
         public global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus?>("status"); }
@@ -164,6 +176,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "offboardRequestedDateTime", n => { OffboardRequestedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "protectionMode", n => { ProtectionMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode>(); } },
                 { "protectionPolicyArtifactCount", n => { ProtectionPolicyArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>(global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount.CreateFromDiscriminatorValue); } },
                 { "retentionSettings", n => { RetentionSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>(global::Microsoft.Graph.Beta.Models.RetentionSetting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus>(); } },
@@ -184,6 +198,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("offboardRequestedDateTime", OffboardRequestedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode>("protectionMode", ProtectionMode);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount>("protectionPolicyArtifactCount", ProtectionPolicyArtifactCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RetentionSetting>("retentionSettings", RetentionSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus>("status", Status);

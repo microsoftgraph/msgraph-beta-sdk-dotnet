@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The property that the rule condition monitors. Possible values are: provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue, frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold.</summary>
+        /// <summary>The property that the rule condition monitors. The possible values are: provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue, frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagement.ConditionCategory? ConditionCategory
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.ConditionCategory?>("conditionCategory"); }
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.OperatorType?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
-        /// <summary>The relationship type.  Possible values are: and, or.</summary>
+        /// <summary>The relationship type.  The possible values are: and, or.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagement.RelationshipType? RelationshipType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.RelationshipType?>("relationshipType"); }

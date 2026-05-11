@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("destinationUrl", value); }
         }
 #endif
-        /// <summary>Network connection direction. Possible values are: unknown, inbound, outbound.</summary>
+        /// <summary>Network connection direction. The possible values are: unknown, inbound, outbound.</summary>
         public global::Microsoft.Graph.Beta.Models.ConnectionDirection? Direction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectionDirection?>("direction"); }
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
+        /// <summary>Network protocol. The possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
         public global::Microsoft.Graph.Beta.Models.SecurityNetworkProtocol? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SecurityNetworkProtocol?>("protocol"); }
@@ -295,7 +295,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourcePort", value); }
         }
 #endif
-        /// <summary>Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.</summary>
+        /// <summary>Network connection status. The possible values are: unknown, attempted, succeeded, blocked, failed.</summary>
         public global::Microsoft.Graph.Beta.Models.ConnectionStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectionStatus?>("status"); }

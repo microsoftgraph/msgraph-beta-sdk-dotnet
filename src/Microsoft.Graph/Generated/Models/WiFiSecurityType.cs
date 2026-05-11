@@ -7,23 +7,29 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WiFiSecurityType
     {
-        /// <summary>Open (No Authentication).</summary>
+        /// <summary>Default. Indicates Wi-Fi security type is associated with Open (No Authentication).</summary>
         [EnumMember(Value = "open")]
         Open,
-        /// <summary>WPA-Personal.</summary>
+        /// <summary>Indicates Wi-Fi security type is associated with WPA-Personal.</summary>
         [EnumMember(Value = "wpaPersonal")]
         WpaPersonal,
-        /// <summary>WPA-Enterprise. Must use IOSEnterpriseWifiConfiguration type to configure enterprise options.</summary>
+        /// <summary>Indicates Wi-Fi security type is associated with WPA-Enterprise. Must use IOSEnterpriseWifiConfiguration type to configure enterprise options.</summary>
         [EnumMember(Value = "wpaEnterprise")]
         WpaEnterprise,
-        /// <summary>WEP Encryption.</summary>
+        /// <summary>Indicates Wi-Fi security type is associated with WEP Encryption.</summary>
         [EnumMember(Value = "wep")]
         Wep,
-        /// <summary>WPA2-Personal.</summary>
+        /// <summary>Indicates Wi-Fi security type is associated with WPA2-Personal.</summary>
         [EnumMember(Value = "wpa2Personal")]
         Wpa2Personal,
-        /// <summary>WPA2-Enterprise. Must use WindowsWifiEnterpriseEAPConfiguration type to configure enterprise options.</summary>
+        /// <summary>Indicates Wi-Fi security type is associated with WPA2-Enterprise. Must use WindowsWifiEnterpriseEAPConfiguration type to configure enterprise options.</summary>
         [EnumMember(Value = "wpa2Enterprise")]
         Wpa2Enterprise,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+        /// <summary>Indicates Wi-Fi security type is associated with WPA3-Personal. Provides stronger encryption using Simultaneous Authentication of Equals (SAE).</summary>
+        [EnumMember(Value = "wpa3Personal")]
+        Wpa3Personal,
     }
 }

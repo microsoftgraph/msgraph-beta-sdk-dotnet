@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.TermStore
             set { BackingStore?.Set("parentSiteId", value); }
         }
 #endif
-        /// <summary>Returns the type of the group. Possible values are: global, system, and siteCollection.</summary>
+        /// <summary>Returns the type of the group. The possible values are: global, system, and siteCollection.</summary>
         public global::Microsoft.Graph.Beta.Models.TermStore.TermGroupScope? Scope
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TermStore.TermGroupScope?>("scope"); }

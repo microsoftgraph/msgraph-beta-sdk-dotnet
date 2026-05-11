@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Security.Partner
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners’ customers, including alerts, scores, and all aspects of security.
+        /// A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners&apos; customers, including alerts, scores, and all aspects of security.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Security.Partner
             return requestInfo;
         }
         /// <summary>
-        /// A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners’ customers, including alerts, scores, and all aspects of security.
+        /// A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners&apos; customers, including alerts, scores, and all aspects of security.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Security.Partner
         {
         }
         /// <summary>
-        /// A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners’ customers, including alerts, scores, and all aspects of security.
+        /// A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners&apos; customers, including alerts, scores, and all aspects of security.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PartnerRequestBuilderGetQueryParameters 
