@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does NOT adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and packages shipped from the beta service library will always be in `preview` as changes to the API are for non production use and commonly ship breaking changes.
 
 
+## [6.0.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.135.0-preview...6.0.0-preview) (2026-05-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update microsoft-graph-core to 4.x
+* Dropped net5.0 target framework. The SDK now targets netstandard2.0, netstandard2.1, net8.0, and net10.0.
+
+### Features
+
+* **generation:** update request builders and models ([35d1941](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/35d1941b9d8e0ee638f719142c9765ef4869a30d))
+* update target frameworks to net8.0 and net10.0, drop net5.0 ([#1111](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1111)) ([402ffb9](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/402ffb920f029b6588aa643252d45a6484e79929))
+
+
+### Miscellaneous Chores
+
+* **deps:** update microsoft-graph-core to 4.x ([5899861](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/5899861d74081f7cba7d78d0fd6a0007d8f897cb))
+
 ## [5.135.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.134.0-preview...5.135.0-preview) (2026-04-24)
 
 
