@@ -32,5 +32,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "moveToQuarantine")]
+        #pragma warning disable CS1591
+        MoveToQuarantine,
+        #pragma warning restore CS1591
     }
 }

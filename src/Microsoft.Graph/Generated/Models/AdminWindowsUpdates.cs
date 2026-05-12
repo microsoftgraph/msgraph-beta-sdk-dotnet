@@ -61,6 +61,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deployments", value); }
         }
 #endif
+        /// <summary>A collection of policies for approving the deployment of different content to an audience over time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>? Policies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>?>("policies"); }
+            set { BackingStore?.Set("policies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy> Policies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>>("policies"); }
+            set { BackingStore?.Set("policies", value); }
+        }
+#endif
         /// <summary>A collection of Windows products.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "catalog", n => { Catalog = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog.CreateFromDiscriminatorValue); } },
                 { "deploymentAudiences", n => { DeploymentAudiences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceConnections", n => { ResourceConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updatableAssets", n => { UpdatableAssets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -163,6 +180,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>("catalog", Catalog);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>("deploymentAudiences", DeploymentAudiences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>("deployments", Deployments);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>("policies", Policies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product>("products", Products);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>("resourceConnections", ResourceConnections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("updatableAssets", UpdatableAssets);

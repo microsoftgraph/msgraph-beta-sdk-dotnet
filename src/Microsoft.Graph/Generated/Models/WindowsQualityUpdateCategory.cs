@@ -16,5 +16,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Non security only update type</summary>
         [EnumMember(Value = "nonSecurity")]
         NonSecurity,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+        /// <summary>Quick machine recovery update type</summary>
+        [EnumMember(Value = "quickMachineRecovery")]
+        QuickMachineRecovery,
     }
 }

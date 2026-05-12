@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PasskeyAuthenticationMethodTarget : global::Microsoft.Graph.Beta.Models.AuthenticationMethodTarget, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>List of passkey profiles scoped to the targets. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? AllowedPasskeyProfiles
+        {
+            get { return BackingStore?.Get<List<Guid?>?>("allowedPasskeyProfiles"); }
+            set { BackingStore?.Set("allowedPasskeyProfiles", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> AllowedPasskeyProfiles
+        {
+            get { return BackingStore?.Get<List<Guid?>>("allowedPasskeyProfiles"); }
+            set { BackingStore?.Set("allowedPasskeyProfiles", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allowedPasskeyProfiles", n => { AllowedPasskeyProfiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -40,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("allowedPasskeyProfiles", AllowedPasskeyProfiles);
         }
     }
 }

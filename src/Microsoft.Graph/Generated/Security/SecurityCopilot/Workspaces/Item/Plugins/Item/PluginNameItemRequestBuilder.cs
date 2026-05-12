@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityCopilot.Workspaces.Item.Plugins.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get plugins from security
+        /// Represents plugins in Security Copilot.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Plugin"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityCopilot.Workspaces.Item.Plugins.
             return requestInfo;
         }
         /// <summary>
-        /// Get plugins from security
+        /// Represents plugins in Security Copilot.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityCopilot.Workspaces.Item.Plugins.
         {
         }
         /// <summary>
-        /// Get plugins from security
+        /// Represents plugins in Security Copilot.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PluginNameItemRequestBuilderGetQueryParameters 

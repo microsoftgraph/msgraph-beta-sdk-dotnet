@@ -62,6 +62,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationMethods", value); }
         }
 #endif
+        /// <summary>Provides insight into the Microsoft Entra ID P1 and P2 premium license utilization for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight? AzureADPremiumLicenseInsight
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight?>("azureADPremiumLicenseInsight"); }
+            set { BackingStore?.Set("azureADPremiumLicenseInsight", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight AzureADPremiumLicenseInsight
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight>("azureADPremiumLicenseInsight"); }
+            set { BackingStore?.Set("azureADPremiumLicenseInsight", value); }
+        }
+#endif
         /// <summary>Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -371,6 +387,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "appCredentialSignInActivities", n => { AppCredentialSignInActivities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppCredentialSignInActivity>(global::Microsoft.Graph.Beta.Models.AppCredentialSignInActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "applicationSignInDetailedSummary", n => { ApplicationSignInDetailedSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(global::Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "authenticationMethods", n => { AuthenticationMethods = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot>(global::Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot.CreateFromDiscriminatorValue); } },
+                { "azureADPremiumLicenseInsight", n => { AzureADPremiumLicenseInsight = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight>(global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight.CreateFromDiscriminatorValue); } },
                 { "credentialUserRegistrationDetails", n => { CredentialUserRegistrationDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(global::Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dailyPrintUsage", n => { DailyPrintUsage = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsage>(global::Microsoft.Graph.Beta.Models.PrintUsage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dailyPrintUsageByPrinter", n => { DailyPrintUsageByPrinter = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -402,6 +419,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppCredentialSignInActivity>("appCredentialSignInActivities", AppCredentialSignInActivities);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>("applicationSignInDetailedSummary", ApplicationSignInDetailedSummary);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot>("authenticationMethods", AuthenticationMethods);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight>("azureADPremiumLicenseInsight", AzureADPremiumLicenseInsight);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>("credentialUserRegistrationDetails", CredentialUserRegistrationDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsage>("dailyPrintUsage", DailyPrintUsage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("dailyPrintUsageByPrinter", DailyPrintUsageByPrinter);

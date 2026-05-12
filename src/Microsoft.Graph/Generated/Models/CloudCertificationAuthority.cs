@@ -13,6 +13,22 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudCertificationAuthority : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
+        /// <summary>The currently active certification authority version. This navigation property provides direct access to the active version&apos;s details including certificate information, URLs, and validity periods. The active version is automatically included in the default response when retrieving a certification authority entity without requiring $expand. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion? ActiveVersion
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion?>("activeVersion"); }
+            set { BackingStore?.Set("activeVersion", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion ActiveVersion
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>("activeVersion"); }
+            set { BackingStore?.Set("activeVersion", value); }
+        }
+#endif
         /// <summary>The URL to download the certification authority certificate. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificationAuthorityIssuerUri", value); }
         }
 #endif
-        /// <summary>Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.</summary>
+        /// <summary>Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityStatus? CertificationAuthorityStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityStatus?>("certificationAuthorityStatus"); }
@@ -463,6 +479,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
+        /// <summary>The collection of all certification authority versions, including active, staged, retired, and expired versions. This navigation property provides access to the full version history of the certification authority. Use $expand=versions to include this collection in the response. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>? Versions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>?>("versions"); }
+            set { BackingStore?.Set("versions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion> Versions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>>("versions"); }
+            set { BackingStore?.Set("versions", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -481,6 +513,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activeVersion", n => { ActiveVersion = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>(global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion.CreateFromDiscriminatorValue); } },
                 { "certificateDownloadUrl", n => { CertificateDownloadUrl = n.GetStringValue(); } },
                 { "certificateKeySize", n => { CertificateKeySize = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityCertificateKeySize>(); } },
                 { "certificateRevocationListUrl", n => { CertificateRevocationListUrl = n.GetStringValue(); } },
@@ -516,6 +549,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "validityPeriodInYears", n => { ValidityPeriodInYears = n.GetIntValue(); } },
                 { "validityStartDateTime", n => { ValidityStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "versionNumber", n => { VersionNumber = n.GetIntValue(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>(global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -526,6 +560,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>("activeVersion", ActiveVersion);
             writer.WriteStringValue("certificateDownloadUrl", CertificateDownloadUrl);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityCertificateKeySize>("certificateKeySize", CertificateKeySize);
             writer.WriteStringValue("certificateRevocationListUrl", CertificateRevocationListUrl);
@@ -561,6 +596,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("validityPeriodInYears", ValidityPeriodInYears);
             writer.WriteDateTimeOffsetValue("validityStartDateTime", ValidityStartDateTime);
             writer.WriteIntValue("versionNumber", VersionNumber);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>("versions", Versions);
         }
     }
 }

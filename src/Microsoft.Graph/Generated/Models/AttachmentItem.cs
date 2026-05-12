@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The type of attachment. Possible values are: file, item, reference. Required.</summary>
+        /// <summary>The type of attachment. The possible values are: file, item, reference. Required.</summary>
         public global::Microsoft.Graph.Beta.Models.AttachmentType? AttachmentType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AttachmentType?>("attachmentType"); }

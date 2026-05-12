@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Security.Identities.HealthIssues;
 using Microsoft.Graph.Beta.Security.Identities.IdentityAccounts;
 using Microsoft.Graph.Beta.Security.Identities.SensorCandidateActivationConfiguration;
 using Microsoft.Graph.Beta.Security.Identities.SensorCandidates;
+using Microsoft.Graph.Beta.Security.Identities.SensorMigration;
 using Microsoft.Graph.Beta.Security.Identities.Sensors;
 using Microsoft.Graph.Beta.Security.Identities.Settings;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -43,6 +44,11 @@ namespace Microsoft.Graph.Beta.Security.Identities
         public global::Microsoft.Graph.Beta.Security.Identities.SensorCandidates.SensorCandidatesRequestBuilder SensorCandidates
         {
             get => new global::Microsoft.Graph.Beta.Security.Identities.SensorCandidates.SensorCandidatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensorMigration property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Identities.SensorMigration.SensorMigrationRequestBuilder SensorMigration
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Identities.SensorMigration.SensorMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Security.Identities.Sensors.SensorsRequestBuilder Sensors

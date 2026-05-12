@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RemoteDesktopSecurityConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The approvedClientApps property</summary>
+        /// <summary>The collection of approved client apps that are associated with the RDS configuration. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>? ApprovedClientApps

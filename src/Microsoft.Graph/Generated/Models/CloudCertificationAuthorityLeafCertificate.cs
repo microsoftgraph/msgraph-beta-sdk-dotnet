@@ -35,6 +35,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificationAuthorityIssuerUri", value); }
         }
 #endif
+        /// <summary>The version number of the certification authority that issued this leaf certificate. Read-only.</summary>
+        public int? CertificationAuthorityVersionNumber
+        {
+            get { return BackingStore?.Get<int?>("certificationAuthorityVersionNumber"); }
+            set { BackingStore?.Set("certificationAuthorityVersionNumber", value); }
+        }
+        /// <summary>The certification authority version that issued this leaf certificate. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion? CloudCertificationAuthorityVersion
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion?>("cloudCertificationAuthorityVersion"); }
+            set { BackingStore?.Set("cloudCertificationAuthorityVersion", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion CloudCertificationAuthorityVersion
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>("cloudCertificationAuthorityVersion"); }
+            set { BackingStore?.Set("cloudCertificationAuthorityVersion", value); }
+        }
+#endif
         /// <summary>URL to find the relevant Certificate Revocation List for this certificate. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -297,6 +319,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "certificateStatus", n => { CertificateStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificateStatus>(); } },
                 { "certificationAuthorityIssuerUri", n => { CertificationAuthorityIssuerUri = n.GetStringValue(); } },
+                { "certificationAuthorityVersionNumber", n => { CertificationAuthorityVersionNumber = n.GetIntValue(); } },
+                { "cloudCertificationAuthorityVersion", n => { CloudCertificationAuthorityVersion = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>(global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion.CreateFromDiscriminatorValue); } },
                 { "crlDistributionPointUrl", n => { CrlDistributionPointUrl = n.GetStringValue(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
@@ -326,6 +350,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificateStatus>("certificateStatus", CertificateStatus);
             writer.WriteStringValue("certificationAuthorityIssuerUri", CertificationAuthorityIssuerUri);
+            writer.WriteIntValue("certificationAuthorityVersionNumber", CertificationAuthorityVersionNumber);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityVersion>("cloudCertificationAuthorityVersion", CloudCertificationAuthorityVersion);
             writer.WriteStringValue("crlDistributionPointUrl", CrlDistributionPointUrl);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);

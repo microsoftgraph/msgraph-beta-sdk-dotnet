@@ -184,13 +184,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused, other.</summary>
+        /// <summary>The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused, other.</summary>
         public global::Microsoft.Graph.Beta.Models.InferenceClassificationType? InferenceClassification
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InferenceClassificationType?>("inferenceClassification"); }
             set { BackingStore?.Set("inferenceClassification", value); }
         }
-        /// <summary>A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.</summary>
+        /// <summary>A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Requires $select to retrieve. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.InternetMessageHeader>? InternetMessageHeaders

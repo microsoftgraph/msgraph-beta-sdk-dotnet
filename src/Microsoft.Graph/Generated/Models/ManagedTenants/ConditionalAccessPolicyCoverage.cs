@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
     public partial class ConditionalAccessPolicyCoverage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
+        /// <summary>The state for the conditional access policy. The possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConditionalAccessPolicyState

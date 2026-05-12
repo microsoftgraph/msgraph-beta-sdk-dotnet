@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SendDtmfTonesOperation : global::Microsoft.Graph.Beta.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The results of the action. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.</summary>
+        /// <summary>The results of the action. The possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SendDtmfCompletionReason? CompletionReason
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SendDtmfCompletionReason?>("completionReason"); }

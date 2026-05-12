@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The description property</summary>
+        /// <summary>Unsupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Unsupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name

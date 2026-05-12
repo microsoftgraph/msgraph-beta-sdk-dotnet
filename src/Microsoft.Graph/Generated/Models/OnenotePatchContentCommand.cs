@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.</summary>
+        /// <summary>The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.</summary>
         public global::Microsoft.Graph.Beta.Models.OnenotePatchInsertPosition? Position
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnenotePatchInsertPosition?>("position"); }

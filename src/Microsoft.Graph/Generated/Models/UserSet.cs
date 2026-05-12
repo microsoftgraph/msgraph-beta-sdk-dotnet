@@ -62,12 +62,14 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.attributeRuleMembers" => new global::Microsoft.Graph.Beta.Models.AttributeRuleMembers(),
                 "#microsoft.graph.connectedOrganizationMembers" => new global::Microsoft.Graph.Beta.Models.ConnectedOrganizationMembers(),
                 "#microsoft.graph.externalSponsors" => new global::Microsoft.Graph.Beta.Models.ExternalSponsors(),
                 "#microsoft.graph.groupMembers" => new global::Microsoft.Graph.Beta.Models.GroupMembers(),
                 "#microsoft.graph.internalSponsors" => new global::Microsoft.Graph.Beta.Models.InternalSponsors(),
                 "#microsoft.graph.requestorManager" => new global::Microsoft.Graph.Beta.Models.RequestorManager(),
                 "#microsoft.graph.singleUser" => new global::Microsoft.Graph.Beta.Models.SingleUser(),
+                "#microsoft.graph.targetAgentIdentitySponsorsOrOwners" => new global::Microsoft.Graph.Beta.Models.TargetAgentIdentitySponsorsOrOwners(),
                 "#microsoft.graph.targetUserSponsors" => new global::Microsoft.Graph.Beta.Models.TargetUserSponsors(),
                 _ => new global::Microsoft.Graph.Beta.Models.UserSet(),
             };

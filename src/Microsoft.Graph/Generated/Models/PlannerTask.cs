@@ -235,13 +235,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>The hasChat property</summary>
+        /// <summary>Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.</summary>
         public bool? HasChat
         {
             get { return BackingStore?.Get<bool?>("hasChat"); }
             set { BackingStore?.Set("hasChat", value); }
         }
-        /// <summary>Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.</summary>
+        /// <summary>Read-only. This value is true if the details object of the task has a nonempty description. Otherwise, false.</summary>
         public bool? HasDescription
         {
             get { return BackingStore?.Get<bool?>("hasDescription"); }
@@ -287,7 +287,23 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.</summary>
+        /// <summary>Read-only. Nullable. Chat messages associated with the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>? Messages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>?>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage> Messages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#endif
+        /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in planner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderHint
@@ -325,7 +341,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("planId", value); }
         }
 #endif
-        /// <summary>The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.</summary>
+        /// <summary>The type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerPreviewType? PreviewType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }
@@ -375,7 +391,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("referenceCount"); }
             set { BackingStore?.Set("referenceCount", value); }
         }
-        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
+        /// <summary>Indicates all the requirements specified on the plannerTask. The possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
@@ -450,6 +466,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isOnMyDayLastModifiedDate", n => { IsOnMyDayLastModifiedDate = n.GetDateValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>(global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "orderHint", n => { OrderHint = n.GetStringValue(); } },
                 { "percentComplete", n => { PercentComplete = n.GetIntValue(); } },
                 { "planId", n => { PlanId = n.GetStringValue(); } },
@@ -495,6 +512,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateValue("isOnMyDayLastModifiedDate", IsOnMyDayLastModifiedDate);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>("messages", Messages);
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteIntValue("percentComplete", PercentComplete);
             writer.WriteStringValue("planId", PlanId);

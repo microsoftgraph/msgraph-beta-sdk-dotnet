@@ -116,5 +116,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         RegionalInaccessibleCloudPcTrendReport,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcUsageCategoryReport")]
+        #pragma warning disable CS1591
+        CloudPcUsageCategoryReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPCInventoryReport")]
+        #pragma warning disable CS1591
+        CloudPCInventoryReport,
+        #pragma warning restore CS1591
     }
 }

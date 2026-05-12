@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.</summary>
+        /// <summary>Key strength of this Platform Credential key. The possible values are: normal, weak, unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.AuthenticationMethodKeyStrength? KeyStrength
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationMethodKeyStrength?>("keyStrength"); }
             set { BackingStore?.Set("keyStrength", value); }
         }
-        /// <summary>Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.</summary>
+        /// <summary>Platform on which this Platform Credential key is present. The possible values are: unknown, windows, macOS,iOS, android, linux.</summary>
         public global::Microsoft.Graph.Beta.Models.AuthenticationMethodPlatform? Platform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationMethodPlatform?>("platform"); }

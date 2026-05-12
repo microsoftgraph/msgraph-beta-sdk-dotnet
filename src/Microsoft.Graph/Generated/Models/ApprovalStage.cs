@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("approvalStageTimeOutInDays"); }
             set { BackingStore?.Set("approvalStageTimeOutInDays", value); }
         }
+        /// <summary>The approverInformationVisibility property</summary>
+        public global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility? ApproverInformationVisibility
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility?>("approverInformationVisibility"); }
+            set { BackingStore?.Set("approverInformationVisibility", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The users who are asked to approve requests if escalation is enabled and the primary approvers don&apos;t respond before the escalation time. This property can be a collection of singleUser, groupMembers, requestorManager, internalSponsors, and externalSponsors. When you create or update a policy, if there are no escalation approvers, or escalation approvers aren&apos;t required for the stage, assign an empty collection to this property.</summary>
@@ -125,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approvalStageTimeOutInDays", n => { ApprovalStageTimeOutInDays = n.GetIntValue(); } },
+                { "approverInformationVisibility", n => { ApproverInformationVisibility = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility>(); } },
                 { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSet>(global::Microsoft.Graph.Beta.Models.UserSet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "escalationTimeInMinutes", n => { EscalationTimeInMinutes = n.GetIntValue(); } },
                 { "isApproverJustificationRequired", n => { IsApproverJustificationRequired = n.GetBoolValue(); } },
@@ -141,6 +148,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("approvalStageTimeOutInDays", ApprovalStageTimeOutInDays);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility>("approverInformationVisibility", ApproverInformationVisibility);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSet>("escalationApprovers", EscalationApprovers);
             writer.WriteIntValue("escalationTimeInMinutes", EscalationTimeInMinutes);
             writer.WriteBoolValue("isApproverJustificationRequired", IsApproverJustificationRequired);

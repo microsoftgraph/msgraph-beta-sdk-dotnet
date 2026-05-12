@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("otherLabel", value); }
         }
 #endif
-        /// <summary>The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.</summary>
+        /// <summary>The type of email address. The possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.</summary>
         public global::Microsoft.Graph.Beta.Models.EmailType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailType?>("type"); }

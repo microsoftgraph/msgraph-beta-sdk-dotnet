@@ -199,6 +199,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("skipPrimarySetupAccountCreation"); }
             set { BackingStore?.Set("skipPrimarySetupAccountCreation", value); }
         }
+        /// <summary>Indicates whether Platform SSO is used as part of device enrollment during Setup Assistant. When TRUE, Platform SSO is used in device enrollment during Setup Assistant. When FALSE Platform SSO is not used in enrollment during Setup Assistant. Note: This value cannot be TRUE when configurationWebUrl is TRUE.</summary>
+        public bool? UsePlatformSSODuringSetupAssistant
+        {
+            get { return BackingStore?.Get<bool?>("usePlatformSSODuringSetupAssistant"); }
+            set { BackingStore?.Set("usePlatformSSODuringSetupAssistant", value); }
+        }
         /// <summary>Indicates if zoom setup pane is disabled</summary>
         public bool? ZoomDisabled
         {
@@ -251,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "requestRequiresNetworkTether", n => { RequestRequiresNetworkTether = n.GetBoolValue(); } },
                 { "setPrimarySetupAccountAsRegularUser", n => { SetPrimarySetupAccountAsRegularUser = n.GetBoolValue(); } },
                 { "skipPrimarySetupAccountCreation", n => { SkipPrimarySetupAccountCreation = n.GetBoolValue(); } },
+                { "usePlatformSSODuringSetupAssistant", n => { UsePlatformSSODuringSetupAssistant = n.GetBoolValue(); } },
                 { "zoomDisabled", n => { ZoomDisabled = n.GetBoolValue(); } },
             };
         }
@@ -283,6 +290,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("requestRequiresNetworkTether", RequestRequiresNetworkTether);
             writer.WriteBoolValue("setPrimarySetupAccountAsRegularUser", SetPrimarySetupAccountAsRegularUser);
             writer.WriteBoolValue("skipPrimarySetupAccountCreation", SkipPrimarySetupAccountCreation);
+            writer.WriteBoolValue("usePlatformSSODuringSetupAssistant", UsePlatformSSODuringSetupAssistant);
             writer.WriteBoolValue("zoomDisabled", ZoomDisabled);
         }
     }

@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
         {
         }
         /// <summary>
-        /// Delete navigation property configurationMonitors for admin
+        /// Delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can&apos;t be restored.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmonitor-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get configurationMonitors from admin
+        /// Get the properties and relationships of a configurationMonitor object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationMonitor"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationMonitor>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationMonitor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property configurationMonitors in admin
+        /// Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationMonitor"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationMonitor>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationMonitor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property configurationMonitors for admin
+        /// Delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can&apos;t be restored.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return requestInfo;
         }
         /// <summary>
-        /// Get configurationMonitors from admin
+        /// Get the properties and relationships of a configurationMonitor object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property configurationMonitors in admin
+        /// Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +191,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
         {
         }
         /// <summary>
-        /// Get configurationMonitors from admin
+        /// Get the properties and relationships of a configurationMonitor object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationMonitorItemRequestBuilderGetQueryParameters 

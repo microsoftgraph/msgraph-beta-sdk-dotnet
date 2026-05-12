@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isFolder"); }
             set { BackingStore?.Set("isFolder", value); }
         }
-        /// <summary>Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.</summary>
+        /// <summary>Specifies the permissions granted for the attachment by the type of provider in providerType. The possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.</summary>
         public global::Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission? Permission
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission?>("permission"); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("previewUrl", value); }
         }
 #endif
-        /// <summary>The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
+        /// <summary>The type of provider that supports an attachment of this contentType. The possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
         public global::Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider? ProviderType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider?>("providerType"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class InferenceClassificationOverride : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.</summary>
+        /// <summary>Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.</summary>
         public global::Microsoft.Graph.Beta.Models.InferenceClassificationType? ClassifyAs
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InferenceClassificationType?>("classifyAs"); }

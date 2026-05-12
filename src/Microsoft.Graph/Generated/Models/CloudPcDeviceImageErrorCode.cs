@@ -60,5 +60,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         SourceImageWithAzureDiskEncryptionNotSupported,
         #pragma warning restore CS1591
+        [EnumMember(Value = "fSLogixInstalledSourceImageNotSupported")]
+        #pragma warning disable CS1591
+        FSLogixInstalledSourceImageNotSupported,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "startMenuAppLimitExceeded")]
+        #pragma warning disable CS1591
+        StartMenuAppLimitExceeded,
+        #pragma warning restore CS1591
     }
 }

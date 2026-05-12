@@ -19,6 +19,22 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The assignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>? Assignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment> Assignments
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
@@ -79,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "usageRights", n => { UsageRights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.UsageRight>(global::Microsoft.Graph.Beta.Models.CloudLicensing.UsageRight.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -90,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>("assignments", Assignments);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.UsageRight>("usageRights", UsageRights);
             writer.WriteAdditionalData(AdditionalData);

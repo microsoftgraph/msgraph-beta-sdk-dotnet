@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("locationEmailAddress", value); }
         }
 #endif
-        /// <summary>The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.</summary>
+        /// <summary>The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.LocationType? LocationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LocationType?>("locationType"); }

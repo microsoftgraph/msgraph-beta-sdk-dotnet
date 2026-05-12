@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWit
         {
         }
         /// <summary>
-        /// Deletes a federatedIdentityCredential object from an application.
+        /// Delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWit
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential"/></returns>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential>(requestInfo, global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new federatedIdentityCredential object for an application if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+        /// Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential"/></returns>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential>(requestInfo, global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a federatedIdentityCredential object from an application.
+        /// Delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWit
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWit
             return requestInfo;
         }
         /// <summary>
-        /// Create a new federatedIdentityCredential object for an application if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+        /// Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWit
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters 

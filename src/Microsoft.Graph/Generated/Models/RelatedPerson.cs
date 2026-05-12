@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.</summary>
+        /// <summary>The possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PersonRelationship? Relationship
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PersonRelationship?>("relationship"); }

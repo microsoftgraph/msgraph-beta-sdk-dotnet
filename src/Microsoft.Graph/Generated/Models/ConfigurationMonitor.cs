@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>User-friendly description of the monitor given by the user. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>User-friendly name given by the user to the monitor. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The inactivationReason property</summary>
+        /// <summary>The reason for the monitor&apos;s inactivation. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InactivationReason
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the monitor was last modified. If no modifications are made to the monitor, it&apos;s the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -126,13 +126,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorMode?>("mode"); }
             set { BackingStore?.Set("mode", value); }
         }
-        /// <summary>The monitorRunFrequencyInHours property</summary>
+        /// <summary>Frequency at which the monitor runs. The default frequency is six hours. Regardless of when you create or update a monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM.</summary>
         public int? MonitorRunFrequencyInHours
         {
             get { return BackingStore?.Get<int?>("monitorRunFrequencyInHours"); }
             set { BackingStore?.Set("monitorRunFrequencyInHours", value); }
         }
-        /// <summary>The parameters property</summary>
+        /// <summary>Key-value pairs that contain parameter values which might be used in the baseline. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType? Parameters
@@ -148,35 +148,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
-        /// <summary>The runAsUTCMServicePrincipal property</summary>
-        public bool? RunAsUTCMServicePrincipal
-        {
-            get { return BackingStore?.Get<bool?>("runAsUTCMServicePrincipal"); }
-            set { BackingStore?.Set("runAsUTCMServicePrincipal", value); }
-        }
-        /// <summary>The runningOnBehalfOf property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.IdentitySet? RunningOnBehalfOf
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("runningOnBehalfOf"); }
-            set { BackingStore?.Set("runningOnBehalfOf", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.IdentitySet RunningOnBehalfOf
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("runningOnBehalfOf"); }
-            set { BackingStore?.Set("runningOnBehalfOf", value); }
-        }
-#endif
         /// <summary>The status property</summary>
         public global::Microsoft.Graph.Beta.Models.MonitorStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MonitorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId
@@ -221,8 +199,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "mode", n => { Mode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorMode>(); } },
                 { "monitorRunFrequencyInHours", n => { MonitorRunFrequencyInHours = n.GetIntValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType>(global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType.CreateFromDiscriminatorValue); } },
-                { "runAsUTCMServicePrincipal", n => { RunAsUTCMServicePrincipal = n.GetBoolValue(); } },
-                { "runningOnBehalfOf", n => { RunningOnBehalfOf = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MonitorStatus>(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
@@ -241,10 +217,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorMode>("mode", Mode);
-            writer.WriteIntValue("monitorRunFrequencyInHours", MonitorRunFrequencyInHours);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OpenComplexDictionaryType>("parameters", Parameters);
-            writer.WriteBoolValue("runAsUTCMServicePrincipal", RunAsUTCMServicePrincipal);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("runningOnBehalfOf", RunningOnBehalfOf);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MonitorStatus>("status", Status);
         }
     }

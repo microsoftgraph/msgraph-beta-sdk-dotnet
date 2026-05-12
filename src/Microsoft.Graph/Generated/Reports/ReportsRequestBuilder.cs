@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities;
 using Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods;
+using Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight;
 using Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsage;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageByPrinter;
@@ -182,6 +183,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder AuthenticationMethods
         {
             get => new global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the azureADPremiumLicenseInsight property of the microsoft.graph.reportRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight.AzureADPremiumLicenseInsightRequestBuilder AzureADPremiumLicenseInsight
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight.AzureADPremiumLicenseInsightRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails

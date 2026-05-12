@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
-        /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
+        /// <summary>The state of the policy. The possible values are: enabled, disabled.</summary>
         public global::Microsoft.Graph.Beta.Models.AuthenticationMethodState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationMethodState?>("state"); }
@@ -54,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SmsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethodConfiguration(),
+                "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.VerifiableCredentialsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.voiceAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodConfiguration(),
                 "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMethodConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration(),

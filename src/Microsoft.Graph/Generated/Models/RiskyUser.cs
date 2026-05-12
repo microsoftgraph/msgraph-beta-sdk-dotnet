@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("history", value); }
         }
 #endif
-        /// <summary>Indicates whether the user is deleted. Possible values are: true, false.</summary>
+        /// <summary>Indicates whether the user is deleted. The possible values are: true, false.</summary>
         public bool? IsDeleted
         {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isProcessing"); }
             set { BackingStore?.Set("isProcessing", value); }
         }
-        /// <summary>The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.  Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.</summary>
+        /// <summary>Details of the detected risk. Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
-        /// <summary>State of the user&apos;s risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
+        /// <summary>State of the user&apos;s risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskState? RiskState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }

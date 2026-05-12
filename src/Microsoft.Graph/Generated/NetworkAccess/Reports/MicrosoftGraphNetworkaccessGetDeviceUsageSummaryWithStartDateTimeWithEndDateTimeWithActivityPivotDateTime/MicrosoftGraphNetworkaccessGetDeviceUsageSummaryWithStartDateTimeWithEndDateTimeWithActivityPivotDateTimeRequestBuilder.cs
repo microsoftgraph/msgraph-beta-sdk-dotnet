@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
         }
         /// <summary>
-        /// Get a summary of device onboarding and offboarding within a specified timeframe. This summary includes the total number of devices, active devices, and inactive devices.
+        /// Get a summary of device onboarding and offboarding within a specified timeframe as logged in Global Secure Access. This summary includes the total number of devices, active devices, and inactive devices.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceUsageSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceUsageSummary>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceUsageSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a summary of device onboarding and offboarding within a specified timeframe. This summary includes the total number of devices, active devices, and inactive devices.
+        /// Get a summary of device onboarding and offboarding within a specified timeframe as logged in Global Secure Access. This summary includes the total number of devices, active devices, and inactive devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

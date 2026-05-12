@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("color", value); }
         }
 #endif
-        /// <summary>Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.</summary>
+        /// <summary>Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataOption
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.</summary>
+        /// <summary>Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SortOn

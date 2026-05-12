@@ -83,21 +83,11 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The date and time when the status was last updated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastModifiedDateTime
+        public DateTimeOffset? LastModifiedDateTime
         {
-            get { return BackingStore?.Get<string?>("lastModifiedDateTime"); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-#nullable restore
-#else
-        public string LastModifiedDateTime
-        {
-            get { return BackingStore?.Get<string>("lastModifiedDateTime"); }
-            set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-#endif
         /// <summary>The user responsible for maintaining the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -219,7 +209,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "apiUrl", n => { ApiUrl = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
-                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "portalUrl", n => { PortalUrl = n.GetStringValue(); } },
                 { "postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
@@ -243,7 +233,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("apiUrl", ApiUrl);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
-            writer.WriteStringValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("portalUrl", PortalUrl);
             writer.WriteDateTimeOffsetValue("postponeUntilDateTime", PostponeUntilDateTime);

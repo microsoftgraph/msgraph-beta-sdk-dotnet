@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
     public partial class RoleSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.</summary>
         /// <param name="position">The unique identifier of governanceRoleSetting</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item.GovernanceRoleSettingItemRequestBuilder"/></returns>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item.GovernanceRoleSettingItemRequestBuilder this[string position]
         {
             get
@@ -60,6 +62,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.GovernanceRoleSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder.RoleSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,6 +87,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting?> PostAsync(global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,6 +110,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder.RoleSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -126,6 +131,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -147,6 +153,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder(rawUrl, RequestAdapter);

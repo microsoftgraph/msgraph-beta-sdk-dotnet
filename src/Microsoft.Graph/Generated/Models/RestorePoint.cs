@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("protectionUnit", value); }
         }
 #endif
-        /// <summary>The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue.</summary>
+        /// <summary>The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue, includeNewerItems. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: includeNewerItems.</summary>
         public global::Microsoft.Graph.Beta.Models.RestorePointTags? Tags
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestorePointTags?>("tags"); }

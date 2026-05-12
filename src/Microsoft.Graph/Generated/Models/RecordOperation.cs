@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RecordOperation : global::Microsoft.Graph.Beta.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.</summary>
+        /// <summary>The possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.</summary>
         public global::Microsoft.Graph.Beta.Models.RecordCompletionReason? CompletionReason
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecordCompletionReason?>("completionReason"); }

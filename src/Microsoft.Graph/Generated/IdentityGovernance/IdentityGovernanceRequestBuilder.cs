@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews;
 using Microsoft.Graph.Beta.IdentityGovernance.AppConsent;
+using Microsoft.Graph.Beta.IdentityGovernance.Catalogs;
+using Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows;
 using Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics;
@@ -37,6 +39,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder Catalogs
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder EntitlementManagement
         {
@@ -71,6 +78,17 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         public global::Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.TermsOfUseRequestBuilder TermsOfUse
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.TermsOfUseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName.CatalogsWithUniqueNameRequestBuilder"/></returns>
+        /// <param name="uniqueName">Alternate key of accessPackageCatalog</param>
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
+        public global::Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName.CatalogsWithUniqueNameRequestBuilder CatalogsWithUniqueName(string uniqueName)
+        {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName.CatalogsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder"/> and sets the default values.

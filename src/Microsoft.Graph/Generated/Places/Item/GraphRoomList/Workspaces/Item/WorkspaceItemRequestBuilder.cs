@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.CheckIns;
+using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.Children;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.CheckIns.CheckInsRequestBuilder CheckIns
         {
             get => new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.Children.ChildrenRequestBuilder Children
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.Children.ChildrenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.Item.WorkspaceItemRequestBuilder"/> and sets the default values.

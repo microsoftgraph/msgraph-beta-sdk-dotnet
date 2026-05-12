@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.IdentitySynchronization;
+using Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.M365Capabilities;
 using Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item
         public global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder IdentitySynchronization
         {
             get => new global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the m365Capabilities property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.M365Capabilities.M365CapabilitiesRequestBuilder M365Capabilities
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.M365Capabilities.M365CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
         public global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.Restore.RestoreRequestBuilder Restore

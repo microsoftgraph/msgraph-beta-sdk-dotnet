@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Setting to allow or disallow creation of apps with multitenant signInAudience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.AudienceRestriction? AzureAdMultipleOrgs
+        public global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction? AzureAdMultipleOrgs
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AudienceRestriction?>("azureAdMultipleOrgs"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction?>("azureAdMultipleOrgs"); }
             set { BackingStore?.Set("azureAdMultipleOrgs", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.AudienceRestriction AzureAdMultipleOrgs
+        public global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction AzureAdMultipleOrgs
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AudienceRestriction>("azureAdMultipleOrgs"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction>("azureAdMultipleOrgs"); }
             set { BackingStore?.Set("azureAdMultipleOrgs", value); }
         }
 #endif
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "azureAdMultipleOrgs", n => { AzureAdMultipleOrgs = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudienceRestriction>(global::Microsoft.Graph.Beta.Models.AudienceRestriction.CreateFromDiscriminatorValue); } },
+                { "azureAdMultipleOrgs", n => { AzureAdMultipleOrgs = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction>(global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "personalMicrosoftAccount", n => { PersonalMicrosoftAccount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudienceRestriction>(global::Microsoft.Graph.Beta.Models.AudienceRestriction.CreateFromDiscriminatorValue); } },
             };
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudienceRestriction>("azureAdMultipleOrgs", AzureAdMultipleOrgs);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AzureAdMultipleOrgsAudienceRestriction>("azureAdMultipleOrgs", AzureAdMultipleOrgs);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudienceRestriction>("personalMicrosoftAccount", PersonalMicrosoftAccount);
             writer.WriteAdditionalData(AdditionalData);

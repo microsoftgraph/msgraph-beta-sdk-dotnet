@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Users.Item.TransitiveReports
         {
         }
         /// <summary>
-        /// Retrieve a count of transitive reports for a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get-transitivereports?view=graph-rest-beta" />
+        /// Get the transitive reports for an agentUser.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-transitivereports?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Users.Item.TransitiveReports
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a count of transitive reports for a user.
+        /// Get the transitive reports for an agentUser.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Users.Item.TransitiveReports
             return new global::Microsoft.Graph.Beta.Users.Item.TransitiveReports.TransitiveReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a count of transitive reports for a user.
+        /// Get the transitive reports for an agentUser.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransitiveReportsRequestBuilderGetQueryParameters 

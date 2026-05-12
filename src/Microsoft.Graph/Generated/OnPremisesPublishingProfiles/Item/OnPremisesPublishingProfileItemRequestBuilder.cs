@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ApplicationSegments
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Sensors;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -53,6 +54,11 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item
         public global::Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources.PublishedResourcesRequestBuilder PublishedResources
         {
             get => new global::Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources.PublishedResourcesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensors property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
+        public global::Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Sensors.SensorsRequestBuilder Sensors
+        {
+            get => new global::Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Sensors.SensorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.OnPremisesPublishingProfileItemRequestBuilder"/> and sets the default values.

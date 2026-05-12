@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget" => new global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethodTarget(),
                 "#microsoft.graph.passkeyAuthenticationMethodTarget" => new global::Microsoft.Graph.Beta.Models.PasskeyAuthenticationMethodTarget(),
                 "#microsoft.graph.smsAuthenticationMethodTarget" => new global::Microsoft.Graph.Beta.Models.SmsAuthenticationMethodTarget(),
+                "#microsoft.graph.verifiableCredentialAuthenticationMethodTarget" => new global::Microsoft.Graph.Beta.Models.VerifiableCredentialAuthenticationMethodTarget(),
                 "#microsoft.graph.voiceAuthenticationMethodTarget" => new global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodTarget(),
                 _ => new global::Microsoft.Graph.Beta.Models.AuthenticationMethodTarget(),
             };

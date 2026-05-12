@@ -197,6 +197,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("riskPrevention", value); }
         }
 #endif
+        /// <summary>The signInIdentifiers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>? SignInIdentifiers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>?>("signInIdentifiers"); }
+            set { BackingStore?.Set("signInIdentifiers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase> SignInIdentifiers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>>("signInIdentifiers"); }
+            set { BackingStore?.Set("signInIdentifiers", value); }
+        }
+#endif
         /// <summary>Represents entry point for identity userflow attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -227,6 +243,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>>("userFlows"); }
             set { BackingStore?.Set("userFlows", value); }
+        }
+#endif
+        /// <summary>The verifiedId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot? VerifiedId
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot?>("verifiedId"); }
+            set { BackingStore?.Set("verifiedId", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot VerifiedId
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot>("verifiedId"); }
+            set { BackingStore?.Set("verifiedId", value); }
         }
 #endif
         /// <summary>
@@ -266,8 +298,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityProviderBase>(global::Microsoft.Graph.Beta.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "riskPrevention", n => { RiskPrevention = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>(global::Microsoft.Graph.Beta.Models.RiskPreventionContainer.CreateFromDiscriminatorValue); } },
+                { "signInIdentifiers", n => { SignInIdentifiers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>(global::Microsoft.Graph.Beta.Models.SignInIdentifierBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>(global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userFlows", n => { UserFlows = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>(global::Microsoft.Graph.Beta.Models.IdentityUserFlow.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "verifiedId", n => { VerifiedId = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot>(global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -288,8 +322,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityProviderBase>("identityProviders", IdentityProviders);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>("riskPrevention", RiskPrevention);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>("signInIdentifiers", SignInIdentifiers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>("userFlows", UserFlows);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot>("verifiedId", VerifiedId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Audit data for MIP Auto Label Exchange Item events.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MipAutoLabelExchangeItemAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.MipAutoLabelExchangeItemAuditRecord"/> and sets the default values.

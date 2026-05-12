@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn&apos;t require authentication. Possible values are: passthru, aadPreAuthentication.</summary>
+        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn&apos;t require authentication. The possible values are: passthru, aadPreAuthentication.</summary>
         public global::Microsoft.Graph.Beta.Models.ExternalAuthenticationType? ExternalAuthenticationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationType?>("externalAuthenticationType"); }
@@ -237,6 +237,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
 #endif
+        /// <summary>The trafficRoutingMethod property</summary>
+        public global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod? TrafficRoutingMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod?>("trafficRoutingMethod"); }
+            set { BackingStore?.Set("trafficRoutingMethod", value); }
+        }
         /// <summary>Indicates whether the application should use alternateUrl instead of externalUrl.</summary>
         public bool? UseAlternateUrlForTranslationAndRedirect
         {
@@ -386,6 +392,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>(global::Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "segmentsConfiguration", n => { SegmentsConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SegmentConfiguration>(global::Microsoft.Graph.Beta.Models.SegmentConfiguration.CreateFromDiscriminatorValue); } },
                 { "singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn>(global::Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
+                { "trafficRoutingMethod", n => { TrafficRoutingMethod = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod>(); } },
                 { "useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
                 { "verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
                 { "verifiedCustomDomainKeyCredential", n => { VerifiedCustomDomainKeyCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue); } },
@@ -423,6 +430,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>("onPremisesApplicationSegments", OnPremisesApplicationSegments);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SegmentConfiguration>("segmentsConfiguration", SegmentsConfiguration);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod>("trafficRoutingMethod", TrafficRoutingMethod);
             writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", UseAlternateUrlForTranslationAndRedirect);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.KeyCredential>("verifiedCustomDomainKeyCredential", VerifiedCustomDomainKeyCredential);

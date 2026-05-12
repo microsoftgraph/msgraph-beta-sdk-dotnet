@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// The AAD Group we are deploying firmware updates to
+    /// Represents a group that should be excluded from an assignment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExclusionGroupAssignmentTarget : global::Microsoft.Graph.Beta.Models.GroupAssignmentTarget, IParsable

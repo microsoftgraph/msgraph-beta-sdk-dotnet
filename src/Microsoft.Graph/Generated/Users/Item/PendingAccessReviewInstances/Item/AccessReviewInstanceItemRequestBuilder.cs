@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.AcceptRecommendations;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.ApplyDecisions;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.BatchApplyCustomDataProvidedResourceDecisions;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.BatchRecordDecisions;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.ContactedReviewers;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions;
@@ -38,6 +39,11 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item
         public global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder ApplyDecisions
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder BatchApplyCustomDataProvidedResourceDecisions
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder BatchRecordDecisions

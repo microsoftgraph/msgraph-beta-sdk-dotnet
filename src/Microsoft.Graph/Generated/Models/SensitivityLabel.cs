@@ -94,6 +94,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The hasProtection property</summary>
+        public bool? HasProtection
+        {
+            get { return BackingStore?.Get<bool?>("hasProtection"); }
+            set { BackingStore?.Set("hasProtection", value); }
+        }
         /// <summary>The isDefault property</summary>
         public bool? IsDefault
         {
@@ -229,6 +235,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "hasProtection", n => { HasProtection = n.GetBoolValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
@@ -256,6 +263,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("hasProtection", HasProtection);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isEndpointProtectionEnabled", IsEndpointProtectionEnabled);

@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Sponsors.Count;
 using Microsoft.Graph.Beta.Users.Item.Sponsors.Item;
+using Microsoft.Graph.Beta.Users.Item.Sponsors.Ref;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -25,7 +26,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Sponsors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
+        /// <summary>Provides operations to manage the collection of user entities.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Sponsors.Ref.RefRequestBuilder Ref
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Sponsors.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.sponsors.item collection</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Sponsors.Item.DirectoryObjectItemRequestBuilder"/></returns>
         public global::Microsoft.Graph.Beta.Users.Item.Sponsors.Item.DirectoryObjectItemRequestBuilder this[string position]
@@ -54,8 +60,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors
         {
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-beta" />
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +84,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +112,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors
             return new global::Microsoft.Graph.Beta.Users.Item.Sponsors.SponsorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SponsorsRequestBuilderGetQueryParameters 

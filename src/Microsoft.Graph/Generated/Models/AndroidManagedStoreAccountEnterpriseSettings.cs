@@ -71,6 +71,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Bind Type of the tenant with the Google EMM API</summary>
+        public global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType? ManagedGooglePlayEnterpriseType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType?>("managedGooglePlayEnterpriseType"); }
+            set { BackingStore?.Set("managedGooglePlayEnterpriseType", value); }
+        }
         /// <summary>Initial scope tags for MGP apps</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +167,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastAppSyncDateTime", n => { LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managedGooglePlayEnterpriseType", n => { ManagedGooglePlayEnterpriseType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType>(); } },
                 { "managedGooglePlayInitialScopeTagIds", n => { ManagedGooglePlayInitialScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
                 { "ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
@@ -183,6 +190,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastAppSyncDateTime", LastAppSyncDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus>("lastAppSyncStatus", LastAppSyncStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType>("managedGooglePlayEnterpriseType", ManagedGooglePlayEnterpriseType);
             writer.WriteCollectionOfPrimitiveValues<string>("managedGooglePlayInitialScopeTagIds", ManagedGooglePlayInitialScopeTagIds);
             writer.WriteStringValue("ownerOrganizationName", OwnerOrganizationName);
             writer.WriteStringValue("ownerUserPrincipalName", OwnerUserPrincipalName);

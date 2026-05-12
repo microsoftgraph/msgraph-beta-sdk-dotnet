@@ -49,7 +49,9 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionStartCustomExtension(),
                 "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitCustomExtension(),
                 "#microsoft.graph.onOtpSendCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnOtpSendCustomExtension(),
+                "#microsoft.graph.onPasswordSubmitCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnPasswordSubmitCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension(),
+                "#microsoft.graph.onVerifiedIdClaimValidationCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnVerifiedIdClaimValidationCustomExtension(),
                 _ => new global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension(),
             };
         }

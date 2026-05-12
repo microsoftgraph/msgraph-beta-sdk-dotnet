@@ -69,8 +69,10 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new global::Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.b2bManagementPolicy" => new global::Microsoft.Graph.Beta.Models.B2bManagementPolicy(),
                 "#microsoft.graph.claimsMappingPolicy" => new global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.onPremAuthenticationPolicy" => new global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy(),
                 "#microsoft.graph.tokenIssuancePolicy" => new global::Microsoft.Graph.Beta.Models.TokenIssuancePolicy(),
                 "#microsoft.graph.tokenLifetimePolicy" => new global::Microsoft.Graph.Beta.Models.TokenLifetimePolicy(),
                 _ => new global::Microsoft.Graph.Beta.Models.StsPolicy(),

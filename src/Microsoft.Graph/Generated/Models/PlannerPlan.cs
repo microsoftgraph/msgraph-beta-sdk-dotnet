@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("container", value); }
         }
 #endif
+        /// <summary>The sensitivity label assignment for the plan. Used to classify and protect the plan content based on organizational policies. This property is null if no sensitivity label is assigned. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ContentSensitivityLabelAssignment? ContentSensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ContentSensitivityLabelAssignment?>("contentSensitivityLabelAssignment"); }
+            set { BackingStore?.Set("contentSensitivityLabelAssignment", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ContentSensitivityLabelAssignment ContentSensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ContentSensitivityLabelAssignment>("contentSensitivityLabelAssignment"); }
+            set { BackingStore?.Set("contentSensitivityLabelAssignment", value); }
+        }
+#endif
         /// <summary>Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -221,6 +237,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "archivalInfo", n => { ArchivalInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerArchivalInfo>(global::Microsoft.Graph.Beta.Models.PlannerArchivalInfo.CreateFromDiscriminatorValue); } },
                 { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerBucket>(global::Microsoft.Graph.Beta.Models.PlannerBucket.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "container", n => { Container = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanContainer>(global::Microsoft.Graph.Beta.Models.PlannerPlanContainer.CreateFromDiscriminatorValue); } },
+                { "contentSensitivityLabelAssignment", n => { ContentSensitivityLabelAssignment = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ContentSensitivityLabelAssignment>(global::Microsoft.Graph.Beta.Models.ContentSensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "contexts", n => { Contexts = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanContextCollection>(global::Microsoft.Graph.Beta.Models.PlannerPlanContextCollection.CreateFromDiscriminatorValue); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -244,6 +261,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerArchivalInfo>("archivalInfo", ArchivalInfo);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerBucket>("buckets", Buckets);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanContainer>("container", Container);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ContentSensitivityLabelAssignment>("contentSensitivityLabelAssignment", ContentSensitivityLabelAssignment);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanContextCollection>("contexts", Contexts);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

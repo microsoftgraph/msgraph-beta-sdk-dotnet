@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class User : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A freeform text entry field for users to describe themselves. Returned only on $select.</summary>
+        /// <summary>A freeform text entry field for users to describe themselves. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AboutMe
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("aboutMe", value); }
         }
 #endif
-        /// <summary>true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).</summary>
+        /// <summary>true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).</summary>
         public bool? AccountEnabled
         {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authorizationInfo", value); }
         }
 #endif
-        /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.</summary>
+        /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Requires $select to retrieve.</summary>
         public DateTimeOffset? Birthday
         {
             get { return BackingStore?.Get<DateTimeOffset?>("birthday"); }
@@ -392,6 +392,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing>("cloudLicensing"); }
             set { BackingStore?.Set("cloudLicensing", value); }
+        }
+#endif
+        /// <summary>The cloudPcPools property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool>? CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>?>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool> CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
         }
 #endif
         /// <summary>The user&apos;s Cloud PCs. Read-only. Nullable.</summary>
@@ -560,7 +576,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("creationType", value); }
         }
 #endif
-        /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive. To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role. Supports $filter (eq, ne, not , ge, le, in).</summary>
+        /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Requires $select to retrieve. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive. To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role. Supports $filter (eq, ne, not , ge, le, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue? CustomSecurityAttributes
@@ -742,7 +758,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("drives", value); }
         }
 #endif
-        /// <summary>The employeeExperience property</summary>
+        /// <summary>The employee experience resources for the user. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser? EmployeeExperience
@@ -930,7 +946,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("givenName", value); }
         }
 #endif
-        /// <summary>The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.</summary>
+        /// <summary>The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Requires $select to retrieve.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.</summary>
         public DateTimeOffset? HireDate
         {
             get { return BackingStore?.Get<DateTimeOffset?>("hireDate"); }
@@ -950,6 +966,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ObjectIdentity>>("identities"); }
             set { BackingStore?.Set("identities", value); }
+        }
+#endif
+        /// <summary>The identityGovernance property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings? IdentityGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings?>("identityGovernance"); }
+            set { BackingStore?.Set("identityGovernance", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings IdentityGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>("identityGovernance"); }
+            set { BackingStore?.Set("identityGovernance", value); }
+        }
+#endif
+        /// <summary>The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityParentId
+        {
+            get { return BackingStore?.Get<string?>("identityParentId"); }
+            set { BackingStore?.Set("identityParentId", value); }
+        }
+#nullable restore
+#else
+        public string IdentityParentId
+        {
+            get { return BackingStore?.Get<string>("identityParentId"); }
+            set { BackingStore?.Set("identityParentId", value); }
         }
 #endif
         /// <summary>The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).</summary>
@@ -1032,7 +1080,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("insights", value); }
         }
 #endif
-        /// <summary>A list for users to describe their interests. Returned only on $select.</summary>
+        /// <summary>A list for users to describe their interests. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Interests
@@ -1130,13 +1178,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("joinedTeams", value); }
         }
 #endif
-        /// <summary>When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.</summary>
+        /// <summary>When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Requires $select to retrieve.</summary>
         public DateTimeOffset? LastPasswordChangeDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastPasswordChangeDateTime"); }
             set { BackingStore?.Set("lastPasswordChangeDateTime", value); }
         }
-        /// <summary>Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.</summary>
+        /// <summary>Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LegalAgeGroupClassification
@@ -1152,7 +1200,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("legalAgeGroupClassification", value); }
         }
 #endif
-        /// <summary>State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.</summary>
+        /// <summary>State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.LicenseAssignmentState>? LicenseAssignmentStates
@@ -1200,7 +1248,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mail", value); }
         }
 #endif
-        /// <summary>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.</summary>
+        /// <summary>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.MailboxSettings? MailboxSettings
@@ -1392,7 +1440,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobilePhone", value); }
         }
 #endif
-        /// <summary>The URL for the user&apos;s site. Returned only on $select.</summary>
+        /// <summary>The URL for the user&apos;s site. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MySite
@@ -1756,7 +1804,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordProfile", value); }
         }
 #endif
-        /// <summary>A list for users to enumerate their past projects. Returned only on $select.</summary>
+        /// <summary>A list for users to enumerate their past projects. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PastProjects
@@ -1916,7 +1964,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("preferredLanguage", value); }
         }
 #endif
-        /// <summary>The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.</summary>
+        /// <summary>The preferred name for the user. Not Supported. This attribute returns an empty string.Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredName
@@ -2034,7 +2082,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registeredDevices", value); }
         }
 #endif
-        /// <summary>A list for the user to enumerate their responsibilities. Returned only on $select.</summary>
+        /// <summary>A list for the user to enumerate their responsibilities. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Responsibilities
@@ -2050,7 +2098,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("responsibilities", value); }
         }
 #endif
-        /// <summary>A list for the user to enumerate the schools they have attended. Returned only on $select.</summary>
+        /// <summary>A list for the user to enumerate the schools they have attended. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Schools
@@ -2152,7 +2200,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("showInAddressList"); }
             set { BackingStore?.Set("showInAddressList", value); }
         }
-        /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.</summary>
+        /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SignInActivity? SignInActivity
@@ -2174,7 +2222,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("signInSessionsValidFromDateTime"); }
             set { BackingStore?.Set("signInSessionsValidFromDateTime", value); }
         }
-        /// <summary>A list for the user to enumerate their skills. Returned only on $select.</summary>
+        /// <summary>A list for the user to enumerate their skills. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Skills
@@ -2445,7 +2493,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.User CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.User();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentUser" => new global::Microsoft.Graph.Beta.Models.AgentUser(),
+                _ => new global::Microsoft.Graph.Beta.Models.User(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -2481,6 +2534,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cloudClipboard", n => { CloudClipboard = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudClipboardRoot>(global::Microsoft.Graph.Beta.Models.CloudClipboardRoot.CreateFromDiscriminatorValue); } },
                 { "cloudLicensing", n => { CloudLicensing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing>(global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing.CreateFromDiscriminatorValue); } },
                 { "cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>(global::Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudPcPools", n => { CloudPcPools = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>(global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudRealtimeCommunicationInfo", n => { CloudRealtimeCommunicationInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>(global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo.CreateFromDiscriminatorValue); } },
                 { "communications", n => { Communications = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserCloudCommunication>(global::Microsoft.Graph.Beta.Models.UserCloudCommunication.CreateFromDiscriminatorValue); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
@@ -2518,6 +2572,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
                 { "hireDate", n => { HireDate = n.GetDateTimeOffsetValue(); } },
                 { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>(global::Microsoft.Graph.Beta.Models.ObjectIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "identityGovernance", n => { IdentityGovernance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>(global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings.CreateFromDiscriminatorValue); } },
+                { "identityParentId", n => { IdentityParentId = n.GetStringValue(); } },
                 { "imAddresses", n => { ImAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "inferenceClassification", n => { InferenceClassification = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>(global::Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue); } },
                 { "infoCatalogs", n => { InfoCatalogs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -2651,6 +2707,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("city", City);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudClipboardRoot>("cloudClipboard", CloudClipboard);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudLicensing.UserCloudLicensing>("cloudLicensing", CloudLicensing);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>("cloudPcPools", CloudPcPools);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>("cloudRealtimeCommunicationInfo", CloudRealtimeCommunicationInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserCloudCommunication>("communications", Communications);
@@ -2689,6 +2746,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("givenName", GivenName);
             writer.WriteDateTimeOffsetValue("hireDate", HireDate);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>("identities", Identities);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>("identityGovernance", IdentityGovernance);
+            writer.WriteStringValue("identityParentId", IdentityParentId);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>("inferenceClassification", InferenceClassification);
             writer.WriteCollectionOfPrimitiveValues<string>("infoCatalogs", InfoCatalogs);

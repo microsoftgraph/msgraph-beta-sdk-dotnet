@@ -21,7 +21,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
     public partial class ReprocessedRunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +28,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// <summary>Provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.run entity.</summary>
         /// <param name="position">The unique identifier of run</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.Item.RunItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.Item.RunItemRequestBuilder this[string position]
         {
             get
@@ -62,7 +60,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.RunCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.ReprocessedRunsRequestBuilder.ReprocessedRunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,7 +81,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.ReprocessedRunsRequestBuilder.ReprocessedRunsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -104,7 +100,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.ReprocessedRunsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.ReprocessedRunsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.ReprocessedRuns.ReprocessedRunsRequestBuilder(rawUrl, RequestAdapter);

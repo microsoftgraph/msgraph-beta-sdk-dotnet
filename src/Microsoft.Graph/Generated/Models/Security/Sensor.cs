@@ -78,6 +78,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SensorHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
+        /// <summary>The migrationState property</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.MigrationState? MigrationState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.MigrationState?>("migrationState"); }
+            set { BackingStore?.Set("migrationState", value); }
+        }
         /// <summary>This field displays the count of health issues related to this sensor.</summary>
         public long? OpenHealthIssuesCount
         {
@@ -89,6 +95,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SensorType?>("sensorType"); }
             set { BackingStore?.Set("sensorType", value); }
+        }
+        /// <summary>The serviceStatus property</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.ServiceStatus? ServiceStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ServiceStatus?>("serviceStatus"); }
+            set { BackingStore?.Set("serviceStatus", value); }
         }
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,8 +158,10 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>(global::Microsoft.Graph.Beta.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.SensorHealthStatus>(); } },
+                { "migrationState", n => { MigrationState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.MigrationState>(); } },
                 { "openHealthIssuesCount", n => { OpenHealthIssuesCount = n.GetLongValue(); } },
                 { "sensorType", n => { SensorType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.SensorType>(); } },
+                { "serviceStatus", n => { ServiceStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.ServiceStatus>(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorSettings>(global::Microsoft.Graph.Beta.Models.Security.SensorSettings.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -166,8 +180,10 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>("healthIssues", HealthIssues);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.SensorHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.MigrationState>("migrationState", MigrationState);
             writer.WriteLongValue("openHealthIssuesCount", OpenHealthIssuesCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.SensorType>("sensorType", SensorType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.ServiceStatus>("serviceStatus", ServiceStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorSettings>("settings", Settings);
             writer.WriteStringValue("version", Version);
         }

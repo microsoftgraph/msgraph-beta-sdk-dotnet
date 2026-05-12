@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PlannerRoster : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The sensitivity label applied to the roster. If mandatory labeling is enabled for the user and no label is specified, the user can&apos;t create the roster. Also, if labels are mandatory for the user, the user can&apos;t change the label of the roster to null. Possible values are: standard, privileged, auto, unknownFutureValue.</summary>
+        /// <summary>The sensitivity label applied to the roster. If mandatory labeling is enabled for the user and no label is specified, the user can&apos;t create the roster. Also, if labels are mandatory for the user, the user can&apos;t change the label of the roster to null. The possible values are: standard, privileged, auto, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SensitivityLabelAssignment? AssignedSensitivityLabel

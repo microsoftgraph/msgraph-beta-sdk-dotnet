@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts;
+using Microsoft.Graph.Beta.NetworkAccess.CloudFirewallPolicies;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity;
 using Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies;
 using Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         public global::Microsoft.Graph.Beta.NetworkAccess.Alerts.AlertsRequestBuilder Alerts
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudFirewallPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.CloudFirewallPolicies.CloudFirewallPoliciesRequestBuilder CloudFirewallPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.CloudFirewallPolicies.CloudFirewallPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.ConnectivityRequestBuilder Connectivity

@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensorCandidates", value); }
         }
 #endif
+        /// <summary>The sensorMigration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>? SensorMigration
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>?>("sensorMigration"); }
+            set { BackingStore?.Set("sensorMigration", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration> SensorMigration
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>>("sensorMigration"); }
+            set { BackingStore?.Set("sensorMigration", value); }
+        }
+#endif
         /// <summary>Represents a customer&apos;s Microsoft Defender for Identity sensors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensors", value); }
         }
 #endif
-        /// <summary>The settings property</summary>
+        /// <summary>Represents a container for security identities settings APIs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.SettingsContainer? Settings
@@ -130,6 +146,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "identityAccounts", n => { IdentityAccounts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>(global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensorCandidateActivationConfiguration", n => { SensorCandidateActivationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration.CreateFromDiscriminatorValue); } },
                 { "sensorCandidates", n => { SensorCandidates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidate.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sensorMigration", n => { SensorMigration = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>(global::Microsoft.Graph.Beta.Models.Security.SensorMigration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>(global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>(global::Microsoft.Graph.Beta.Models.Security.SettingsContainer.CreateFromDiscriminatorValue); } },
             };
@@ -146,6 +163,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>("identityAccounts", IdentityAccounts);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", SensorCandidateActivationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>("sensorCandidates", SensorCandidates);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>("sensorMigration", SensorMigration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>("sensors", Sensors);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>("settings", Settings);
         }

@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentS
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules;
+using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Resources;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -59,6 +60,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder EligibilitySchedules
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resources property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Resources.ResourcesRequestBuilder Resources
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder"/> and sets the default values.

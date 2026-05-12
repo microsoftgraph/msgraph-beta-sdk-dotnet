@@ -12,37 +12,37 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
     public partial class Evaluation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>Evaluation completion time.</summary>
         public DateTimeOffset? CompletedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Evaluation created time.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The executionCount property</summary>
+        /// <summary>Evaluation execution count.</summary>
         public long? ExecutionCount
         {
             get { return BackingStore?.Get<long?>("executionCount"); }
             set { BackingStore?.Set("executionCount", value); }
         }
-        /// <summary>The isCancelled property</summary>
+        /// <summary>Evaluation cancellation status.</summary>
         public bool? IsCancelled
         {
             get { return BackingStore?.Get<bool?>("isCancelled"); }
             set { BackingStore?.Set("isCancelled", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Evaluation modified time.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The result property</summary>
+        /// <summary>Evaluation results collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.EvaluationResult? Result
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("result", value); }
         }
 #endif
-        /// <summary>The runStartDateTime property</summary>
+        /// <summary>Evaluation Run start time.</summary>
         public DateTimeOffset? RunStartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("runStartDateTime"); }

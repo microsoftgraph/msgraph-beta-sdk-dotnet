@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("networkNames", value); }
         }
 #endif
-        /// <summary>Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.</summary>
+        /// <summary>Provides the type of network used when signing in. The possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.NetworkType? NetworkType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NetworkType?>("networkType"); }

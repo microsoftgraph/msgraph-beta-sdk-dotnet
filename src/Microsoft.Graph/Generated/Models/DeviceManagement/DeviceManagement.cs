@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("advancedThreatProtectionOnboardingStateSummary", value); }
         }
 #endif
+        /// <summary>Android App Configurations Schema entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema? AndroidAppConfigurationSchema
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema?>("androidAppConfigurationSchema"); }
+            set { BackingStore?.Set("androidAppConfigurationSchema", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema AndroidAppConfigurationSchema
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema>("androidAppConfigurationSchema"); }
+            set { BackingStore?.Set("androidAppConfigurationSchema", value); }
+        }
+#endif
         /// <summary>Android device owner enrollment profile entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1792,6 +1808,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("roleScopeTags", value); }
         }
 #endif
+        /// <summary>The collection of Samsung EFOTA firmware versions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>? SamsungEFotaFirmwareVersions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>?>("samsungEFotaFirmwareVersions"); }
+            set { BackingStore?.Set("samsungEFotaFirmwareVersions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion> SamsungEFotaFirmwareVersions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>>("samsungEFotaFirmwareVersions"); }
+            set { BackingStore?.Set("samsungEFotaFirmwareVersions", value); }
+        }
+#endif
         /// <summary>A list of ServiceNowConnections</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2999,6 +3031,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "accountMoveCompletionDateTime", n => { AccountMoveCompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "adminConsent", n => { AdminConsent = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminConsent>(global::Microsoft.Graph.Beta.Models.AdminConsent.CreateFromDiscriminatorValue); } },
                 { "advancedThreatProtectionOnboardingStateSummary", n => { AdvancedThreatProtectionOnboardingStateSummary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>(global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary.CreateFromDiscriminatorValue); } },
+                { "androidAppConfigurationSchema", n => { AndroidAppConfigurationSchema = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema>(global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema.CreateFromDiscriminatorValue); } },
                 { "androidDeviceOwnerEnrollmentProfiles", n => { AndroidDeviceOwnerEnrollmentProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "androidForWorkAppConfigurationSchemas", n => { AndroidForWorkAppConfigurationSchemas = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>(global::Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "androidForWorkEnrollmentProfiles", n => { AndroidForWorkEnrollmentProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>(global::Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -3111,6 +3144,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>(global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleDefinition>(global::Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleScopeTag>(global::Microsoft.Graph.Beta.Models.RoleScopeTag.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "samsungEFotaFirmwareVersions", n => { SamsungEFotaFirmwareVersions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>(global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceNowConnections", n => { ServiceNowConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceNowConnection>(global::Microsoft.Graph.Beta.Models.ServiceNowConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>(global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSettings>(global::Microsoft.Graph.Beta.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
@@ -3200,6 +3234,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteDateTimeOffsetValue("accountMoveCompletionDateTime", AccountMoveCompletionDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminConsent>("adminConsent", AdminConsent);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>("advancedThreatProtectionOnboardingStateSummary", AdvancedThreatProtectionOnboardingStateSummary);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidAppConfigurationSchema>("androidAppConfigurationSchema", AndroidAppConfigurationSchema);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>("androidDeviceOwnerEnrollmentProfiles", AndroidDeviceOwnerEnrollmentProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>("androidForWorkAppConfigurationSchemas", AndroidForWorkAppConfigurationSchemas);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>("androidForWorkEnrollmentProfiles", AndroidForWorkEnrollmentProfiles);
@@ -3309,6 +3344,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>("roleAssignments", RoleAssignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleDefinition>("roleDefinitions", RoleDefinitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleScopeTag>("roleScopeTags", RoleScopeTags);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SamsungEFotaFirmwareVersion>("samsungEFotaFirmwareVersions", SamsungEFotaFirmwareVersions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceNowConnection>("serviceNowConnections", ServiceNowConnections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>("settingDefinitions", SettingDefinitions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementSettings>("settings", Settings);

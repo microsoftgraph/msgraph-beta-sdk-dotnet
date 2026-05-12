@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifactsBulkAdditionRequests;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SharePointRestoreSessionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the granularSiteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts.GranularSiteRestoreArtifactsRequestBuilder GranularSiteRestoreArtifacts
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts.GranularSiteRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the siteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder SiteRestoreArtifacts
         {
@@ -92,7 +98,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SharePointRestoreSession>(requestInfo, global::Microsoft.Graph.Beta.Models.SharePointRestoreSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sharePointRestoreSessions in solutions
+        /// Update the properties of a sharePointRestoreSession object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharePointRestoreSession"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +162,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sharePointRestoreSessions in solutions
+        /// Update the properties of a sharePointRestoreSession object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

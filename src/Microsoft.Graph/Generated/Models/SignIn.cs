@@ -337,7 +337,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: passthrough. If the sign in didn&apos;t cross tenant boundaries, the value is none.</summary>
+        /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. The possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: passthrough. If the sign in didn&apos;t cross tenant boundaries, the value is none.</summary>
         public global::Microsoft.Graph.Beta.Models.SignInAccessType? CrossTenantAccessType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInAccessType?>("crossTenantAccessType"); }
@@ -673,7 +673,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #endif
-        /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.  Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.The value none means that Microsoft Entra risk detection hasn&apos;t flagged the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
+        /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. The value none means that Microsoft Entra risk detection hasn&apos;t flagged the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
@@ -809,7 +809,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sessionLifetimePolicies", value); }
         }
 #endif
-        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&amp;$filter=signInEventTypes/any(t: t eq &apos;nonInteractiveUser&apos;).</summary>
+        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. The possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&amp;$filter=signInEventTypes/any(t: t eq &apos;nonInteractiveUser&apos;). You can also get both interactive and non-interactive sign-ins using the filter signInEventTypes/any(t: t eq &apos;interactiveUser&apos; or t eq &apos;noninteractiveUser&apos;). However, the filter for getting both user and service principal sign-in even types is not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SignInEventTypes
@@ -841,7 +841,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signInIdentifier", value); }
         }
 #endif
-        /// <summary>The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.</summary>
+        /// <summary>The type of sign in identifier. The possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SignInIdentifierType? SignInIdentifierType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInIdentifierType?>("signInIdentifierType"); }
@@ -987,7 +987,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
-        /// <summary>Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.</summary>
+        /// <summary>Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SignInUserType? UserType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInUserType?>("userType"); }

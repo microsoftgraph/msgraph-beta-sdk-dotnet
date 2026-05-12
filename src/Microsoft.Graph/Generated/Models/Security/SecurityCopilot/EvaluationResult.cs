@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The content property</summary>
+        /// <summary>The final content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content

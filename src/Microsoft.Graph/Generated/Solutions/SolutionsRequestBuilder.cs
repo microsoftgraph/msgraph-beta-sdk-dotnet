@@ -8,6 +8,8 @@ using Microsoft.Graph.Beta.Solutions.BookingBusinesses;
 using Microsoft.Graph.Beta.Solutions.BookingCurrencies;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios;
 using Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName;
+using Microsoft.Graph.Beta.Solutions.Migrations;
+using Microsoft.Graph.Beta.Solutions.SharePoint;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -49,6 +51,16 @@ namespace Microsoft.Graph.Beta.Solutions
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder BusinessScenarios
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the migrations property of the microsoft.graph.solutionsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.Migrations.MigrationsRequestBuilder Migrations
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.Migrations.MigrationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sharePoint property of the microsoft.graph.solutionsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.SharePoint.SharePointRequestBuilder SharePoint
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.SharePoint.SharePointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.VirtualEventsRequestBuilder VirtualEvents

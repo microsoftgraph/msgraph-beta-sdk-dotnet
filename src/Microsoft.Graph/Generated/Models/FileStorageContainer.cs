@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class FileStorageContainer : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The archivalDetails property</summary>
+        /// <summary>Archival details of the fileStorageContainer. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SiteArchivalDetails? ArchivalDetails
@@ -142,18 +142,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Guid?>("externalGroupId"); }
             set { BackingStore?.Set("externalGroupId", value); }
         }
-        /// <summary>The isItemVersioningEnabled property</summary>
-        public bool? IsItemVersioningEnabled
+        /// <summary>Information barrier of a fileStorageContainer. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.InformationBarrier? InformationBarrier
         {
-            get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
-            set { BackingStore?.Set("isItemVersioningEnabled", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InformationBarrier?>("informationBarrier"); }
+            set { BackingStore?.Set("informationBarrier", value); }
         }
-        /// <summary>The itemMajorVersionLimit property</summary>
-        public int? ItemMajorVersionLimit
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.InformationBarrier InformationBarrier
         {
-            get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }
-            set { BackingStore?.Set("itemMajorVersionLimit", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InformationBarrier>("informationBarrier"); }
+            set { BackingStore?.Set("informationBarrier", value); }
         }
+#endif
         /// <summary>Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.SiteLockState? LockState
         {
@@ -318,8 +322,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "externalGroupId", n => { ExternalGroupId = n.GetGuidValue(); } },
-                { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
-                { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetIntValue(); } },
+                { "informationBarrier", n => { InformationBarrier = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>(global::Microsoft.Graph.Beta.Models.InformationBarrier.CreateFromDiscriminatorValue); } },
                 { "lockState", n => { LockState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>(); } },
                 { "migrationJobs", n => { MigrationJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>(global::Microsoft.Graph.Beta.Models.SharePointMigrationJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -351,8 +354,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteGuidValue("externalGroupId", ExternalGroupId);
-            writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
-            writer.WriteIntValue("itemMajorVersionLimit", ItemMajorVersionLimit);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>("informationBarrier", InformationBarrier);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>("lockState", LockState);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>("migrationJobs", MigrationJobs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>("owners", Owners);

@@ -21,12 +21,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The category property</summary>
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationCategory? Category
+        /// <summary>The list of categories for the application. Supported values are: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design &amp; hosting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Categories
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationCategory?>("category"); }
-            set { BackingStore?.Set("category", value); }
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
+#else
+        public List<string> Categories
+        {
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#endif
         /// <summary>The ID of the application in the SaaS application catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,7 +189,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationCategory>(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "cloudApplicationCatalogId", n => { CloudApplicationCatalogId = n.GetStringValue(); } },
                 { "complianceScore", n => { ComplianceScore = n.GetIntValue(); } },
                 { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
@@ -205,7 +215,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationCategory>("category", Category);
+            writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("cloudApplicationCatalogId", CloudApplicationCatalogId);
             writer.WriteIntValue("complianceScore", ComplianceScore);
             writer.WriteIntValue("deviceCount", DeviceCount);

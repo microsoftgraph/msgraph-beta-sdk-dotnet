@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #endif
-        /// <summary>Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).</summary>
+        /// <summary>Indicates the activity name or the operation name. The possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).</summary>
         public global::Microsoft.Graph.Beta.Models.ProvisioningAction? ProvisioningAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProvisioningAction?>("provisioningAction"); }

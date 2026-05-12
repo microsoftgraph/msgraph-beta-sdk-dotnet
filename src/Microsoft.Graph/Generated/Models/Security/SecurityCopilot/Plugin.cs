@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The authorization property</summary>
+        /// <summary>Authorization for the plugin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.PluginAuth? Authorization
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.PluginCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Brief description of the plugin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of the plugin.   Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -81,13 +81,13 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Displays whether the plugin is enabled for use within the catalogScope.   Supports $filter (eq).</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>Represents the name of the plugin. Primary key.   Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.PluginPreviewStates?>("previewState"); }
             set { BackingStore?.Set("previewState", value); }
         }
-        /// <summary>The settings property</summary>
+        /// <summary>Settings for the plugin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.PluginSetting>? Settings

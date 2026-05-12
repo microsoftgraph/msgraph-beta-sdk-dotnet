@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.</summary>
+        /// <summary>The geographic location where the region is located. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType? GeographicLocationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
-        /// <summary>When the region isn&apos;t available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.</summary>
+        /// <summary>When the region isn&apos;t available, all region restrictions are set to true. These restrictions apply to four properties: cPURestricted, gPURestricted, nestedVirtualizationRestricted and availabilityZoneRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, nestedVirtualizationRestricted indicates whether the region is available for nested virtualization, and availabilityZoneRestricted indicates whether the region is available for availability zone support. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail? RegionRestrictionDetail
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("regionRestrictionDetail", value); }
         }
 #endif
-        /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the supported region. The possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus? RegionStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus?>("regionStatus"); }

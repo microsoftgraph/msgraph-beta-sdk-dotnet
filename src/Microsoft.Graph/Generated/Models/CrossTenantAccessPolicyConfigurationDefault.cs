@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CrossTenantAccessPolicyConfigurationDefault : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Defines your default configuration for inbound app service connect settings that control which applications can connect across tenant boundaries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyAppServiceConnectSetting? AppServiceConnectInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyAppServiceConnectSetting?>("appServiceConnectInbound"); }
+            set { BackingStore?.Set("appServiceConnectInbound", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyAppServiceConnectSetting AppServiceConnectInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyAppServiceConnectSetting>("appServiceConnectInbound"); }
+            set { BackingStore?.Set("appServiceConnectInbound", value); }
+        }
+#endif
         /// <summary>Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and can&apos;t be updated in the default configuration. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +108,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
 #endif
+        /// <summary>Specifies whether users can use granular delegated admin privileges (GDAP) to sign-in and access resources in other organizations. Default value is false.</summary>
+        public bool? BlockServiceProviderOutboundAccess
+        {
+            get { return BackingStore?.Get<bool?>("blockServiceProviderOutboundAccess"); }
+            set { BackingStore?.Set("blockServiceProviderOutboundAccess", value); }
+        }
         /// <summary>Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +152,54 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isServiceDefault"); }
             set { BackingStore?.Set("isServiceDefault", value); }
         }
+        /// <summary>Defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>? M365Capabilities
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>?>("m365Capabilities"); }
+            set { BackingStore?.Set("m365Capabilities", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.M365CapabilityBase> M365Capabilities
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>>("m365Capabilities"); }
+            set { BackingStore?.Set("m365Capabilities", value); }
+        }
+#endif
+        /// <summary>Defines your default configuration for inbound Microsoft 365 collaboration settings that determine which users from other organizations can collaborate with your organization using Microsoft 365 apps.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting? M365CollaborationInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting?>("m365CollaborationInbound"); }
+            set { BackingStore?.Set("m365CollaborationInbound", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting M365CollaborationInbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>("m365CollaborationInbound"); }
+            set { BackingStore?.Set("m365CollaborationInbound", value); }
+        }
+#endif
+        /// <summary>Defines your default configuration for outbound Microsoft 365 collaboration settings that determine which users in your organization can collaborate with other organizations using Microsoft 365 apps.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting? M365CollaborationOutbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting?>("m365CollaborationOutbound"); }
+            set { BackingStore?.Set("m365CollaborationOutbound", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting M365CollaborationOutbound
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>("m365CollaborationOutbound"); }
+            set { BackingStore?.Set("m365CollaborationOutbound", value); }
+        }
+#endif
         /// <summary>Defines the default tenant restrictions configuration for users in your organization who access an external organization on your network or devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,14 +234,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "appServiceConnectInbound", n => { AppServiceConnectInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyAppServiceConnectSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyAppServiceConnectSetting.CreateFromDiscriminatorValue); } },
                 { "automaticUserConsentSettings", n => { AutomaticUserConsentSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InboundOutboundPolicyConfiguration>(global::Microsoft.Graph.Beta.Models.InboundOutboundPolicyConfiguration.CreateFromDiscriminatorValue); } },
                 { "b2bCollaborationInbound", n => { B2bCollaborationInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 { "b2bCollaborationOutbound", n => { B2bCollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 { "b2bDirectConnectInbound", n => { B2bDirectConnectInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 { "b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                { "blockServiceProviderOutboundAccess", n => { BlockServiceProviderOutboundAccess = n.GetBoolValue(); } },
                 { "inboundTrust", n => { InboundTrust = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 { "invitationRedemptionIdentityProviderConfiguration", n => { InvitationRedemptionIdentityProviderConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>(global::Microsoft.Graph.Beta.Models.DefaultInvitationRedemptionIdentityProviderConfiguration.CreateFromDiscriminatorValue); } },
                 { "isServiceDefault", n => { IsServiceDefault = n.GetBoolValue(); } },
+                { "m365Capabilities", n => { M365Capabilities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>(global::Microsoft.Graph.Beta.Models.M365CapabilityBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "m365CollaborationInbound", n => { M365CollaborationInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting.CreateFromDiscriminatorValue); } },
+                { "m365CollaborationOutbound", n => { M365CollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting.CreateFromDiscriminatorValue); } },
                 { "tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTenantRestrictions>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
             };
         }
@@ -183,14 +258,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyAppServiceConnectSetting>("appServiceConnectInbound", AppServiceConnectInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InboundOutboundPolicyConfiguration>("automaticUserConsentSettings", AutomaticUserConsentSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bCollaborationInbound", B2bCollaborationInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound", B2bCollaborationOutbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound", B2bDirectConnectInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound", B2bDirectConnectOutbound);
+            writer.WriteBoolValue("blockServiceProviderOutboundAccess", BlockServiceProviderOutboundAccess);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>("invitationRedemptionIdentityProviderConfiguration", InvitationRedemptionIdentityProviderConfiguration);
             writer.WriteBoolValue("isServiceDefault", IsServiceDefault);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>("m365Capabilities", M365Capabilities);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>("m365CollaborationInbound", M365CollaborationInbound);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>("m365CollaborationOutbound", M365CollaborationOutbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);
         }
     }

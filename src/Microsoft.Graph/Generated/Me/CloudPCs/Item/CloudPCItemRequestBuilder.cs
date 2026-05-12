@@ -15,6 +15,8 @@ using Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPcLaunchDetail;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFrontlineCloudPcDetail;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveSnapshots;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation;
@@ -110,10 +112,20 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveCloudPcLaunchDetail method.</summary>
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder RetrieveCloudPcLaunchDetail
+        {
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retrieveCloudPCRemoteActionResults method.</summary>
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsRequestBuilder RetrieveCloudPCRemoteActionResults
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveFrontlineCloudPcDetail method.</summary>
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFrontlineCloudPcDetail.RetrieveFrontlineCloudPcDetailRequestBuilder RetrieveFrontlineCloudPcDetail
+        {
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFrontlineCloudPcDetail.RetrieveFrontlineCloudPcDetailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveReviewStatus method.</summary>
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder RetrieveReviewStatus

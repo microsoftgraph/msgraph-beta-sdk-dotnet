@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
-        /// <summary>Possible values are: female, male, other.</summary>
+        /// <summary>The possible values are: female, male, other.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationGender? Gender
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationGender?>("gender"); }

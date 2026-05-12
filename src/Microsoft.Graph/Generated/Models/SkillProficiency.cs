@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.</summary>
+        /// <summary>Detail of the users proficiency with this skill. The possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SkillProficiencyLevel? Proficiency
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SkillProficiencyLevel?>("proficiency"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
     public partial class Workspace : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the Security Copilot workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The plugins property</summary>
+        /// <summary>Represents plugins in Security Copilot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Plugin>? Plugins
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security.SecurityCopilot
             set { BackingStore?.Set("plugins", value); }
         }
 #endif
-        /// <summary>The sessions property</summary>
+        /// <summary>Represents sessions in Security Copilot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SecurityCopilot.Session>? Sessions

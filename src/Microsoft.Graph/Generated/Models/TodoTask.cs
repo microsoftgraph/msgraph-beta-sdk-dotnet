@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #endif
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>A collection of custom fields linked to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>? SingleValueExtendedProperties

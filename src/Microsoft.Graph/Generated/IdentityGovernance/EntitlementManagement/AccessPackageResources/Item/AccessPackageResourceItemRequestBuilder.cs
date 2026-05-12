@@ -3,7 +3,9 @@
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceEnvironment;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceRoles;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceScopes;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.ExternalOriginResourceConnector;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.Refresh;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.UploadSessions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -37,10 +39,20 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceScopes.AccessPackageResourceScopesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.ExternalOriginResourceConnector.ExternalOriginResourceConnectorRequestBuilder ExternalOriginResourceConnector
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.ExternalOriginResourceConnector.ExternalOriginResourceConnectorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the refresh method.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.Refresh.RefreshRequestBuilder Refresh
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.UploadSessions.UploadSessionsRequestBuilder UploadSessions
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.UploadSessions.UploadSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources.Item.AccessPackageResourceItemRequestBuilder"/> and sets the default values.

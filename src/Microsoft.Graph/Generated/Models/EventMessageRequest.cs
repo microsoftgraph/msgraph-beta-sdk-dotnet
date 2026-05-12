@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowNewTimeProposals"); }
             set { BackingStore?.Set("allowNewTimeProposals", value); }
         }
-        /// <summary>The type of meeting request. Possible values are: none, newMeetingRequest, fullUpdate, informationalUpdate, silentUpdate, outdated, and principalWantsCopy.</summary>
+        /// <summary>The type of meeting request. The possible values are: none, newMeetingRequest, fullUpdate, informationalUpdate, silentUpdate, outdated, and principalWantsCopy.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingRequestType? MeetingRequestType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingRequestType?>("meetingRequestType"); }

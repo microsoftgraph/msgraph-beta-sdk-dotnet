@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
-        /// <summary>The importance of the event. Possible values are: low, normal, high.</summary>
+        /// <summary>The importance of the event. The possible values are: low, normal, high.</summary>
         public global::Microsoft.Graph.Beta.Models.Importance? Importance
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Importance?>("importance"); }
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #endif
-        /// <summary>Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.</summary>
+        /// <summary>Indicates the level of privacy for the task. The possible values are: normal, personal, private, confidential.</summary>
         public global::Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Sensitivity?>("sensitivity"); }
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
-        /// <summary>Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
+        /// <summary>Indicates the state or progress of the task. The possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
         public global::Microsoft.Graph.Beta.Models.TaskStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TaskStatus?>("status"); }

@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
-        /// <summary>Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.</summary>
+        /// <summary>Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise, unknownFutureValue, wpa3Personal.</summary>
         public global::Microsoft.Graph.Beta.Models.WiFiSecurityType? WifiSecurityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiFiSecurityType?>("wifiSecurityType"); }
