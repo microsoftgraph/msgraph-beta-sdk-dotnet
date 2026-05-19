@@ -265,7 +265,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("isOnMyDayLastModifiedDate"); }
             set { BackingStore?.Set("isOnMyDayLastModifiedDate", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Read-only. User ID by which this is last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
@@ -281,7 +281,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Read-only. Date and time at which this is last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

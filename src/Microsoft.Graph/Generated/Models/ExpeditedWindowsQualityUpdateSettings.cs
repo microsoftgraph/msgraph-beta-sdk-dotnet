@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The unique identifier for the quality update catalog item targeted by the expedite.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QualityUpdateCatalogItemId
+        {
+            get { return BackingStore?.Get<string?>("qualityUpdateCatalogItemId"); }
+            set { BackingStore?.Set("qualityUpdateCatalogItemId", value); }
+        }
+#nullable restore
+#else
+        public string QualityUpdateCatalogItemId
+        {
+            get { return BackingStore?.Get<string>("qualityUpdateCatalogItemId"); }
+            set { BackingStore?.Set("qualityUpdateCatalogItemId", value); }
+        }
+#endif
         /// <summary>The release date to identify a quality update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "qualityUpdateCatalogItemId", n => { QualityUpdateCatalogItemId = n.GetStringValue(); } },
                 { "qualityUpdateRelease", n => { QualityUpdateRelease = n.GetStringValue(); } },
             };
         }
@@ -100,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("daysUntilForcedReboot", DaysUntilForcedReboot);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("qualityUpdateCatalogItemId", QualityUpdateCatalogItemId);
             writer.WriteStringValue("qualityUpdateRelease", QualityUpdateRelease);
             writer.WriteAdditionalData(AdditionalData);
         }

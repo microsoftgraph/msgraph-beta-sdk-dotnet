@@ -72,5 +72,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         Mexico,
         #pragma warning restore CS1591
+        [EnumMember(Value = "australiaNewZealand")]
+        #pragma warning disable CS1591
+        AustraliaNewZealand,
+        #pragma warning restore CS1591
     }
 }

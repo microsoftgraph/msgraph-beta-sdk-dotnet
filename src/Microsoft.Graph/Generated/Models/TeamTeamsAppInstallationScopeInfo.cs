@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TeamTeamsAppInstallationScopeInfo : global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The teamId property</summary>
+        /// <summary>The ID of the team where the Teams app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamId

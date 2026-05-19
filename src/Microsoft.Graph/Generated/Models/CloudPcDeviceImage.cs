@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("osVersionNumber", value); }
         }
 #endif
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The scope IDs of the corresponding permission. Currently, it&apos;s the Intune scope tag ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds

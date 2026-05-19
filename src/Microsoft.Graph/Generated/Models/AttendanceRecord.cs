@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
+        /// <summary>The list of real-time participant interaction behaviors during a meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MeetingEngagement>? Engagements
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingEngagement>?>("engagements"); }
+            set { BackingStore?.Set("engagements", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MeetingEngagement> Engagements
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingEngagement>>("engagements"); }
+            set { BackingStore?.Set("engagements", value); }
+        }
+#endif
         /// <summary>The external information for a virtual event registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +166,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "attendanceIntervals", n => { AttendanceIntervals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceInterval>(global::Microsoft.Graph.Beta.Models.AttendanceInterval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "engagements", n => { Engagements = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingEngagement>(global::Microsoft.Graph.Beta.Models.MeetingEngagement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalRegistrationInformation", n => { ExternalRegistrationInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>(global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "registrantId", n => { RegistrantId = n.GetStringValue(); } },
@@ -168,6 +185,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingEngagement>("engagements", Engagements);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation", ExternalRegistrationInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("identity", Identity);
             writer.WriteStringValue("registrantId", RegistrantId);

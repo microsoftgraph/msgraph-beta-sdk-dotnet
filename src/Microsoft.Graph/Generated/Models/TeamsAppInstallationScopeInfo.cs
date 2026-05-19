@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>The scope in which the Teams app is installed. The possible values are: team, groupChat, personal, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes? Scope
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes?>("scope"); }

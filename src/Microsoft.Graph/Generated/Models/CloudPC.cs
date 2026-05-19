@@ -354,7 +354,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The scope IDs of the corresponding permission. Currently, it&apos;s the Intune scope tag ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds

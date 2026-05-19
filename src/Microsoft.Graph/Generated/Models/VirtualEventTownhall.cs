@@ -62,6 +62,38 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isInviteOnly"); }
             set { BackingStore?.Set("isInviteOnly", value); }
         }
+        /// <summary>The registrationConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration? RegistrationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration?>("registrationConfiguration"); }
+            set { BackingStore?.Set("registrationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration RegistrationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration>("registrationConfiguration"); }
+            set { BackingStore?.Set("registrationConfiguration", value); }
+        }
+#endif
+        /// <summary>The registrations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>? Registrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>?>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration> Registrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventTownhall"/> and sets the default values.
         /// </summary>
@@ -92,6 +124,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>(global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
+                { "registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration>(global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration.CreateFromDiscriminatorValue); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -107,6 +141,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Identity>("invitedAttendees", InvitedAttendees);
             writer.WriteBoolValue("isInviteOnly", IsInviteOnly);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>("registrations", Registrations);
         }
     }
 }

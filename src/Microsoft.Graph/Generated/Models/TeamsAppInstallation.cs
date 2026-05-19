@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #endif
-        /// <summary>The scopeInfo property</summary>
+        /// <summary>The details of the scope in which the app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo? ScopeInfo

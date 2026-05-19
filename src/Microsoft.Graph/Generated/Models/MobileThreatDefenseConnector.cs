@@ -55,6 +55,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("androidMobileApplicationManagementEnabled"); }
             set { BackingStore?.Set("androidMobileApplicationManagementEnabled", value); }
         }
+        /// <summary>When TRUE, indicates that the Mobile Threat Defense partner is granted the Mobile Threat Defense role on enrolled Android Corporate Owned Business Only and Corporate Owned Personally Enabled devices. When FALSE, indicates that the Mobile Threat Defense partner is not granted the Mobile Threat Defense role. Default value is FALSE.</summary>
+        public bool? GrantMobileThreatDefensePartnerRole
+        {
+            get { return BackingStore?.Get<bool?>("grantMobileThreatDefensePartnerRole"); }
+            set { BackingStore?.Set("grantMobileThreatDefensePartnerRole", value); }
+        }
         /// <summary>When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.</summary>
         public bool? IosDeviceBlockedOnMissingPartnerData
         {
@@ -78,6 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastHeartbeatDateTime"); }
             set { BackingStore?.Set("lastHeartbeatDateTime", value); }
+        }
+        /// <summary>When TRUE, indicates that the Mobile Threat Defense partner will be automatically launched during Android Corporate Owned Business Only and Corporate Owned Personally Enabled device setup. When FALSE, indicates that the Mobile Threat Defense partner will not be automatically launched during setup. Default value is FALSE.</summary>
+        public bool? LaunchMobileThreatDefensePartnerOnSetupEnabled
+        {
+            get { return BackingStore?.Get<bool?>("launchMobileThreatDefensePartnerOnSetupEnabled"); }
+            set { BackingStore?.Set("launchMobileThreatDefensePartnerOnSetupEnabled", value); }
         }
         /// <summary>When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a Mac device compliant. When FALSE, indicates that Intune may mark a Mac device compliant prior to receiving data from the Mobile Threat Defense partner. Default value is FALSE.</summary>
         public bool? MacDeviceBlockedOnMissingPartnerData
@@ -158,10 +170,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "androidDeviceBlockedOnMissingPartnerData", n => { AndroidDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
                 { "androidEnabled", n => { AndroidEnabled = n.GetBoolValue(); } },
                 { "androidMobileApplicationManagementEnabled", n => { AndroidMobileApplicationManagementEnabled = n.GetBoolValue(); } },
+                { "grantMobileThreatDefensePartnerRole", n => { GrantMobileThreatDefensePartnerRole = n.GetBoolValue(); } },
                 { "iosDeviceBlockedOnMissingPartnerData", n => { IosDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
                 { "iosEnabled", n => { IosEnabled = n.GetBoolValue(); } },
                 { "iosMobileApplicationManagementEnabled", n => { IosMobileApplicationManagementEnabled = n.GetBoolValue(); } },
                 { "lastHeartbeatDateTime", n => { LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
+                { "launchMobileThreatDefensePartnerOnSetupEnabled", n => { LaunchMobileThreatDefensePartnerOnSetupEnabled = n.GetBoolValue(); } },
                 { "macDeviceBlockedOnMissingPartnerData", n => { MacDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
                 { "macEnabled", n => { MacEnabled = n.GetBoolValue(); } },
                 { "microsoftDefenderForEndpointAttachEnabled", n => { MicrosoftDefenderForEndpointAttachEnabled = n.GetBoolValue(); } },
@@ -188,10 +202,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("androidDeviceBlockedOnMissingPartnerData", AndroidDeviceBlockedOnMissingPartnerData);
             writer.WriteBoolValue("androidEnabled", AndroidEnabled);
             writer.WriteBoolValue("androidMobileApplicationManagementEnabled", AndroidMobileApplicationManagementEnabled);
+            writer.WriteBoolValue("grantMobileThreatDefensePartnerRole", GrantMobileThreatDefensePartnerRole);
             writer.WriteBoolValue("iosDeviceBlockedOnMissingPartnerData", IosDeviceBlockedOnMissingPartnerData);
             writer.WriteBoolValue("iosEnabled", IosEnabled);
             writer.WriteBoolValue("iosMobileApplicationManagementEnabled", IosMobileApplicationManagementEnabled);
             writer.WriteDateTimeOffsetValue("lastHeartbeatDateTime", LastHeartbeatDateTime);
+            writer.WriteBoolValue("launchMobileThreatDefensePartnerOnSetupEnabled", LaunchMobileThreatDefensePartnerOnSetupEnabled);
             writer.WriteBoolValue("macDeviceBlockedOnMissingPartnerData", MacDeviceBlockedOnMissingPartnerData);
             writer.WriteBoolValue("macEnabled", MacEnabled);
             writer.WriteBoolValue("microsoftDefenderForEndpointAttachEnabled", MicrosoftDefenderForEndpointAttachEnabled);

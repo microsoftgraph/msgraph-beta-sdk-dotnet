@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement
 {
+    /// <summary>
+    /// Singleton that acts as container for a collection of Resource Access entities.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class DeviceManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
         public DateTimeOffset? AccountMoveCompletionDateTime

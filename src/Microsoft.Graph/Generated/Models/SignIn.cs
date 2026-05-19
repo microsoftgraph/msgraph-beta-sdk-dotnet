@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appOwnerTenantId", value); }
         }
 #endif
-        /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the app token was bound to the device.</summary>
+        /// <summary>Deprecated. Use tokenProtectionStatusDetails instead. Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the app token was bound to the device.</summary>
         public global::Microsoft.Graph.Beta.Models.TokenProtectionStatus? AppTokenProtectionStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenProtectionStatus?>("appTokenProtectionStatus"); }
@@ -293,6 +293,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ClientCredentialType?>("clientCredentialType"); }
             set { BackingStore?.Set("clientCredentialType", value); }
         }
+        /// <summary>The clientSessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSessionId
+        {
+            get { return BackingStore?.Get<string?>("clientSessionId"); }
+            set { BackingStore?.Set("clientSessionId", value); }
+        }
+#nullable restore
+#else
+        public string ClientSessionId
+        {
+            get { return BackingStore?.Get<string>("clientSessionId"); }
+            set { BackingStore?.Set("clientSessionId", value); }
+        }
+#endif
         /// <summary>A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -847,7 +863,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInIdentifierType?>("signInIdentifierType"); }
             set { BackingStore?.Set("signInIdentifierType", value); }
         }
-        /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.</summary>
+        /// <summary>Deprecated. Use tokenProtectionStatusDetails instead. Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the sign-in token was bound to the device. The possible values are: none, bound, unbound, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TokenProtectionStatus? SignInTokenProtectionStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenProtectionStatus?>("signInTokenProtectionStatus"); }
@@ -891,7 +907,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }
             set { BackingStore?.Set("tokenIssuerType", value); }
         }
-        /// <summary>The tokenProtectionStatusDetails property</summary>
+        /// <summary>The status of the token protection for a request in the sign-in logs. For more information, see Conditional Access: Token Protection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails? TokenProtectionStatusDetails
@@ -1031,6 +1047,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "azureResourceId", n => { AzureResourceId = n.GetStringValue(); } },
                 { "clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
                 { "clientCredentialType", n => { ClientCredentialType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ClientCredentialType>(); } },
+                { "clientSessionId", n => { ClientSessionId = n.GetStringValue(); } },
                 { "conditionalAccessAudiences", n => { ConditionalAccessAudiences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessStatus>(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
@@ -1116,6 +1133,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("azureResourceId", AzureResourceId);
             writer.WriteStringValue("clientAppUsed", ClientAppUsed);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ClientCredentialType>("clientCredentialType", ClientCredentialType);
+            writer.WriteStringValue("clientSessionId", ClientSessionId);
             writer.WriteCollectionOfPrimitiveValues<string>("conditionalAccessAudiences", ConditionalAccessAudiences);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
             writer.WriteStringValue("correlationId", CorrelationId);

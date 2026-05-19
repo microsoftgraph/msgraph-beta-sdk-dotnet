@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("deviceType", value); }
         }
 #endif
-        /// <summary>The importance level for the IoT device. Possible values are low, normal, high, and unknownFutureValue.</summary>
+        /// <summary>The importance level for the IoT device. The possible values are: unknown, low, normal, high, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.IoTDeviceImportanceType? Importance
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.IoTDeviceImportanceType?>("importance"); }

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeActors", value); }
         }
 #endif
-        /// <summary>String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.</summary>
+        /// <summary>String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to asymmetricKeyLifetime.</summary>
         public TimeSpan? MaxLifetime
         {
             get { return BackingStore?.Get<TimeSpan?>("maxLifetime"); }

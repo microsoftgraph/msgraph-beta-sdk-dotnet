@@ -95,7 +95,6 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.aadUserConversationMember" => new global::Microsoft.Graph.Beta.Models.AadUserConversationMember(),
-                "#microsoft.graph.accessDriftReport" => new global::Microsoft.Graph.Beta.Models.AccessDriftReport(),
                 "#microsoft.graph.accessPackage" => new global::Microsoft.Graph.Beta.Models.AccessPackage(),
                 "#microsoft.graph.accessPackageAssignment" => new global::Microsoft.Graph.Beta.Models.AccessPackageAssignment(),
                 "#microsoft.graph.accessPackageAssignmentPolicy" => new global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy(),
@@ -2218,6 +2217,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.virtualEventSession" => new global::Microsoft.Graph.Beta.Models.VirtualEventSession(),
                 "#microsoft.graph.virtualEventsRoot" => new global::Microsoft.Graph.Beta.Models.VirtualEventsRoot(),
                 "#microsoft.graph.virtualEventTownhall" => new global::Microsoft.Graph.Beta.Models.VirtualEventTownhall(),
+                "#microsoft.graph.virtualEventTownhallRegistrationConfiguration" => new global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration(),
                 "#microsoft.graph.virtualEventWebinar" => new global::Microsoft.Graph.Beta.Models.VirtualEventWebinar(),
                 "#microsoft.graph.virtualEventWebinarRegistrationConfiguration" => new global::Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration(),
                 "#microsoft.graph.virtualMachineDetails" => new global::Microsoft.Graph.Beta.Models.VirtualMachineDetails(),

@@ -968,7 +968,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identities", value); }
         }
 #endif
-        /// <summary>The identityGovernance property</summary>
+        /// <summary>The identity governance settings for the user, including the approver delegate configuration. Nullable. Returned only on $select. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings? IdentityGovernance
@@ -1124,7 +1124,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
         }
-        /// <summary>Do not use – reserved for future use.</summary>
+        /// <summary>Do not use. Reserved for future use.</summary>
         public bool? IsResourceAccount
         {
             get { return BackingStore?.Get<bool?>("isResourceAccount"); }

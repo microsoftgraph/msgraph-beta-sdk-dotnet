@@ -111,6 +111,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Indicates the operating system platform type that this compliance script targets.</summary>
+        public global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType? Platform
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
+        }
         /// <summary>Name of the device compliance script publisher</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,6 +219,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "platform", n => { Platform = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType>(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
@@ -235,6 +242,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState>("deviceRunStates", DeviceRunStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enforceSignatureCheck", EnforceSignatureCheck);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType>("platform", Platform);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteBoolValue("runAs32Bit", RunAs32Bit);

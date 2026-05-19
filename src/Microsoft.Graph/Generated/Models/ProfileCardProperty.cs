@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("directoryPropertyName", value); }
         }
 #endif
-        /// <summary>The isVisible property</summary>
+        /// <summary>Indicates whether the given directory property should be shown on a user’s profile card.</summary>
         public bool? IsVisible
         {
             get { return BackingStore?.Get<bool?>("isVisible"); }
