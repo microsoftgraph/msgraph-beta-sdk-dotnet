@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeActors", value); }
         }
 #endif
-        /// <summary>If true, the restriction isn&apos;t enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction isn&apos;t enforced for those applications.</summary>
+        /// <summary>If true, the restriction isn&apos;t enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction is enforced for those applications.</summary>
         public bool? ExcludeAppsReceivingV2Tokens
         {
             get { return BackingStore?.Get<bool?>("excludeAppsReceivingV2Tokens"); }

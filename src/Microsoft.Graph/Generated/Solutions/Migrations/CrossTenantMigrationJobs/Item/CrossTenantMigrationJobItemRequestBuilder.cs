@@ -3,7 +3,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Cancel;
+using Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Migrate;
 using Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Users;
+using Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Validate;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -26,11 +28,23 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Ite
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the migrate method.</summary>
+        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
+        public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Migrate.MigrateRequestBuilder Migrate
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Migrate.MigrateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.crossTenantMigrationJob entity.</summary>
         [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Users.UsersRequestBuilder Users
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validate method.</summary>
+        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
+        public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Validate.ValidateRequestBuilder Validate
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.CrossTenantMigrationJobItemRequestBuilder"/> and sets the default values.

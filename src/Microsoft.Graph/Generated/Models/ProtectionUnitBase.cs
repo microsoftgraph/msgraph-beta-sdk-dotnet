@@ -100,6 +100,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
             set { BackingStore?.Set("offboardRequestedDateTime", value); }
         }
+        /// <summary>The pendingRetentionPeriodChange property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RetentionPeriodChange? PendingRetentionPeriodChange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RetentionPeriodChange?>("pendingRetentionPeriodChange"); }
+            set { BackingStore?.Set("pendingRetentionPeriodChange", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RetentionPeriodChange PendingRetentionPeriodChange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RetentionPeriodChange>("pendingRetentionPeriodChange"); }
+            set { BackingStore?.Set("pendingRetentionPeriodChange", value); }
+        }
+#endif
         /// <summary>The unique identifier of the protection policy based on which protection unit was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +177,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "offboardRequestedDateTime", n => { OffboardRequestedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "pendingRetentionPeriodChange", n => { PendingRetentionPeriodChange = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RetentionPeriodChange>(global::Microsoft.Graph.Beta.Models.RetentionPeriodChange.CreateFromDiscriminatorValue); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "protectionSources", n => { ProtectionSources = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus>(); } },

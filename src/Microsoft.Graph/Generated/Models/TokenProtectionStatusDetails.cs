@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The signInSessionStatus property</summary>
+        /// <summary>The token protection status of the sign-in session. The possible values are: none, bound, unbound, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TokenProtectionStatus? SignInSessionStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenProtectionStatus?>("signInSessionStatus"); }
             set { BackingStore?.Set("signInSessionStatus", value); }
         }
-        /// <summary>The signInSessionStatusCode property</summary>
+        /// <summary>Additional information about the status.</summary>
         public int? SignInSessionStatusCode
         {
             get { return BackingStore?.Get<int?>("signInSessionStatusCode"); }

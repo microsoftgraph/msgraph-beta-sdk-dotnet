@@ -5,16 +5,24 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum AccessDriftReportResourceType
+    public enum RetentionPeriodChangeStatus
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "application")]
+        [EnumMember(Value = "none")]
         #pragma warning disable CS1591
-        Application,
+        None,
         #pragma warning restore CS1591
-        [EnumMember(Value = "group")]
+        [EnumMember(Value = "inProgress")]
         #pragma warning disable CS1591
-        Group,
+        InProgress,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
+        Failed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
+        Completed,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591

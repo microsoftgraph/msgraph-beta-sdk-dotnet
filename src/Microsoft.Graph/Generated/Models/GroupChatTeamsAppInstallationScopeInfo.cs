@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class GroupChatTeamsAppInstallationScopeInfo : global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The chatId property</summary>
+        /// <summary>The ID of the chat where the Teams app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChatId

@@ -3,6 +3,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Cancel;
+using Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Migrate;
+using Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Validate;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +26,18 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the migrate method.</summary>
+        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
+        public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Migrate.MigrateRequestBuilder Migrate
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Migrate.MigrateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validate method.</summary>
+        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
+        public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Validate.ValidateRequestBuilder Validate
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.CrossTenantMigrationJobsWithDisplayNameRequestBuilder"/> and sets the default values.

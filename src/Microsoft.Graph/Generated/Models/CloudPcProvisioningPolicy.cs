@@ -284,7 +284,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The list of scope tag IDs for this resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds

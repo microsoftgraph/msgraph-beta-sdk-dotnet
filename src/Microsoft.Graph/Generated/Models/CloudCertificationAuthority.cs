@@ -251,6 +251,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #endif
+        /// <summary>The geographic region where a cloud certification authority (CA) is hosted. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GeographicRegion
+        {
+            get { return BackingStore?.Get<string?>("geographicRegion"); }
+            set { BackingStore?.Set("geographicRegion", value); }
+        }
+#nullable restore
+#else
+        public string GeographicRegion
+        {
+            get { return BackingStore?.Get<string>("geographicRegion"); }
+            set { BackingStore?.Set("geographicRegion", value); }
+        }
+#endif
         /// <summary>The issuerCommonName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -531,6 +547,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "eTag", n => { ETag = n.GetStringValue(); } },
                 { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExtendedKeyUsage>(global::Microsoft.Graph.Beta.Models.ExtendedKeyUsage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "geographicRegion", n => { GeographicRegion = n.GetStringValue(); } },
                 { "issuerCommonName", n => { IssuerCommonName = n.GetStringValue(); } },
                 { "keyPlatform", n => { KeyPlatform = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityKeyPlatformType>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -578,6 +595,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("eTag", ETag);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
+            writer.WriteStringValue("geographicRegion", GeographicRegion);
             writer.WriteStringValue("issuerCommonName", IssuerCommonName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityKeyPlatformType>("keyPlatform", KeyPlatform);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

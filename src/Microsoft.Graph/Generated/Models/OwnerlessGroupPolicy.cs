@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailInfo", value); }
         }
 #endif
-        /// <summary>The collection of IDs for groups to which the policy is enabled.</summary>
+        /// <summary>The collection of IDs for groups to which the policy is enabled. If empty, the policy is enabled for all groups in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EnabledGroupIds

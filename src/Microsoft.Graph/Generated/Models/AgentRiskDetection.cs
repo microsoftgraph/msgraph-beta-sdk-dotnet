@@ -82,6 +82,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("blueprintId", value); }
         }
 #endif
+        /// <summary>The clientSessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSessionId
+        {
+            get { return BackingStore?.Get<string?>("clientSessionId"); }
+            set { BackingStore?.Set("clientSessionId", value); }
+        }
+#nullable restore
+#else
+        public string ClientSessionId
+        {
+            get { return BackingStore?.Get<string>("clientSessionId"); }
+            set { BackingStore?.Set("clientSessionId", value); }
+        }
+#endif
         /// <summary>Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge).</summary>
         public DateTimeOffset? DetectedDateTime
         {
@@ -156,6 +172,54 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
+        /// <summary>The signInClientDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SignInClientDisplayName
+        {
+            get { return BackingStore?.Get<string?>("signInClientDisplayName"); }
+            set { BackingStore?.Set("signInClientDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string SignInClientDisplayName
+        {
+            get { return BackingStore?.Get<string>("signInClientDisplayName"); }
+            set { BackingStore?.Set("signInClientDisplayName", value); }
+        }
+#endif
+        /// <summary>The signInCorrelationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SignInCorrelationId
+        {
+            get { return BackingStore?.Get<string?>("signInCorrelationId"); }
+            set { BackingStore?.Set("signInCorrelationId", value); }
+        }
+#nullable restore
+#else
+        public string SignInCorrelationId
+        {
+            get { return BackingStore?.Get<string>("signInCorrelationId"); }
+            set { BackingStore?.Set("signInCorrelationId", value); }
+        }
+#endif
+        /// <summary>The signInRequestId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SignInRequestId
+        {
+            get { return BackingStore?.Get<string?>("signInRequestId"); }
+            set { BackingStore?.Set("signInRequestId", value); }
+        }
+#nullable restore
+#else
+        public string SignInRequestId
+        {
+            get { return BackingStore?.Get<string>("signInRequestId"); }
+            set { BackingStore?.Set("signInRequestId", value); }
+        }
+#endif
         /// <summary>The source system that generated the risk detection. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,6 +259,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "agentDisplayName", n => { AgentDisplayName = n.GetStringValue(); } },
                 { "agentId", n => { AgentId = n.GetStringValue(); } },
                 { "blueprintId", n => { BlueprintId = n.GetStringValue(); } },
+                { "clientSessionId", n => { ClientSessionId = n.GetStringValue(); } },
                 { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType>(); } },
                 { "identityType", n => { IdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>(); } },
@@ -204,6 +269,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "riskEvidence", n => { RiskEvidence = n.GetStringValue(); } },
                 { "riskLevel", n => { RiskLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>(); } },
                 { "riskState", n => { RiskState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskState>(); } },
+                { "signInClientDisplayName", n => { SignInClientDisplayName = n.GetStringValue(); } },
+                { "signInCorrelationId", n => { SignInCorrelationId = n.GetStringValue(); } },
+                { "signInRequestId", n => { SignInRequestId = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
         }
@@ -220,6 +288,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("agentDisplayName", AgentDisplayName);
             writer.WriteStringValue("agentId", AgentId);
             writer.WriteStringValue("blueprintId", BlueprintId);
+            writer.WriteStringValue("clientSessionId", ClientSessionId);
             writer.WriteDateTimeOffsetValue("detectedDateTime", DetectedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType>("detectionTimingType", DetectionTimingType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>("identityType", IdentityType);
@@ -229,6 +298,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("riskEvidence", RiskEvidence);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>("riskLevel", RiskLevel);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskState>("riskState", RiskState);
+            writer.WriteStringValue("signInClientDisplayName", SignInClientDisplayName);
+            writer.WriteStringValue("signInCorrelationId", SignInCorrelationId);
+            writer.WriteStringValue("signInRequestId", SignInRequestId);
             writer.WriteStringValue("source", Source);
         }
     }
