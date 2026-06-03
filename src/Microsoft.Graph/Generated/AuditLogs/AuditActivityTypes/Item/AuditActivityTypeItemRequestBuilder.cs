@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.AuditActivityTypes.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditActivityTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/auditActivityTypes/{auditActivityType%2Did}{?%24expand,%24select}", pathParameters)
+        public AuditActivityTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/auditActivityTypes/{auditActivityType%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.AuditActivityTypes.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditActivityTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/auditActivityTypes/{auditActivityType%2Did}{?%24expand,%24select}", rawUrl)
+        public AuditActivityTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/auditActivityTypes/{auditActivityType%2Did}", rawUrl)
         {
         }
         /// <summary>

@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.EnabledApps;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.JoinedUsers;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Planner;
@@ -63,6 +64,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.JoinedUsers.JoinedUsersRequestBuilder JoinedUsers
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.JoinedUsers.JoinedUsersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members.MembersRequestBuilder Members
         {
@@ -113,7 +119,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrimaryChannelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel{?%24expand,%24select}", pathParameters)
+        public PrimaryChannelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel", pathParameters)
         {
         }
         /// <summary>
@@ -121,7 +127,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrimaryChannelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel{?%24expand,%24select}", rawUrl)
+        public PrimaryChannelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel", rawUrl)
         {
         }
         /// <summary>

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Admin.CloudLicensing.Assignments.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/cloudLicensing/assignments/{assignment%2Did}{?%24expand,%24select}", pathParameters)
+        public AssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/cloudLicensing/assignments/{assignment%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Admin.CloudLicensing.Assignments.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/cloudLicensing/assignments/{assignment%2Did}{?%24expand,%24select}", rawUrl)
+        public AssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/cloudLicensing/assignments/{assignment%2Did}", rawUrl)
         {
         }
         /// <summary>

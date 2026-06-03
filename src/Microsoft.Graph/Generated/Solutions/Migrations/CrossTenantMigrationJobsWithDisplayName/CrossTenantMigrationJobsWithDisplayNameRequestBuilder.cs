@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         /// <param name="displayName">Alternate key of crossTenantMigrationJob</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CrossTenantMigrationJobsWithDisplayNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string displayName = "") : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}'){?%24expand,%24select}", pathParameters)
+        public CrossTenantMigrationJobsWithDisplayNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string displayName = "") : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(displayName)) PathParameters.Add("displayName", displayName);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CrossTenantMigrationJobsWithDisplayNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}'){?%24expand,%24select}", rawUrl)
+        public CrossTenantMigrationJobsWithDisplayNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", rawUrl)
         {
         }
         /// <summary>

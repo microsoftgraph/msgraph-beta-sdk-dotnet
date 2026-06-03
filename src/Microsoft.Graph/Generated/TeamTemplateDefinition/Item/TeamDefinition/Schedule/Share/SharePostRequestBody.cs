@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            NotifyTeam = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

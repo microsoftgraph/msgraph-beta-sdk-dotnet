@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcPoolsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public CloudPcPoolsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -50,11 +50,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcPoolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public CloudPcPoolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
-        /// Get cloudPcPools from me
+        /// List the cloudPcPool objects that the signed-in user can access.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-cloudpcpools?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPoolCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPool>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get cloudPcPools from me
+        /// List the cloudPcPool objects that the signed-in user can access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools
             return new global::Microsoft.Graph.Beta.Me.CloudPcPools.CloudPcPoolsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get cloudPcPools from me
+        /// List the cloudPcPool objects that the signed-in user can access.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcPoolsRequestBuilderGetQueryParameters 

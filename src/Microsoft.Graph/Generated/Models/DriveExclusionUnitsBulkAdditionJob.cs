@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DriveExclusionUnitsBulkAdditionJob : global::Microsoft.Graph.Beta.Models.ExclusionUnitBulkAdditionJob, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The drives property</summary>
+        /// <summary>The email addresses or user principal names of the users whose OneDrive drives are to be added as exclusion units to the protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Drives

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulk
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -50,11 +50,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulk
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
-        /// Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for mailbox exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulk
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for mailbox exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulk
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for mailbox exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters 

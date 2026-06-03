@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }
             set { BackingStore?.Set("geographicLocationType", value); }
         }
-        /// <summary>The regionGroups property</summary>
+        /// <summary>The region group configurations for the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroupConfiguration>? RegionGroups

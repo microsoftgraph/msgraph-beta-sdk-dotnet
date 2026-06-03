@@ -40,6 +40,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.UpdateAllMessagesReadState
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            IsRead = false;
+            SuppressReadReceipts = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

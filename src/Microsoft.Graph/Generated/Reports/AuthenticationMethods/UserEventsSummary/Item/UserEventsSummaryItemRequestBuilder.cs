@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserEventsSummary.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserEventsSummaryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/authenticationMethods/userEventsSummary/{userEventsSummary%2Did}{?%24expand,%24select}", pathParameters)
+        public UserEventsSummaryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/authenticationMethods/userEventsSummary/{userEventsSummary%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserEventsSummary.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserEventsSummaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/authenticationMethods/userEventsSummary/{userEventsSummary%2Did}{?%24expand,%24select}", rawUrl)
+        public UserEventsSummaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/authenticationMethods/userEventsSummary/{userEventsSummary%2Did}", rawUrl)
         {
         }
         /// <summary>

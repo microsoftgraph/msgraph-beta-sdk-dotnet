@@ -18,11 +18,11 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastAssignmentDateTime"); }
             set { BackingStore?.Set("lastAssignmentDateTime", value); }
         }
-        /// <summary>The pastAssigmentCount property</summary>
-        public int? PastAssigmentCount
+        /// <summary>The number of times the user has been assigned to this access package in the past. Read-only.</summary>
+        public int? PastAssignmentCount
         {
-            get { return BackingStore?.Get<int?>("pastAssigmentCount"); }
-            set { BackingStore?.Set("pastAssigmentCount", value); }
+            get { return BackingStore?.Get<int?>("pastAssignmentCount"); }
+            set { BackingStore?.Set("pastAssignmentCount", value); }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AccessPackageSuggestionSelfAssignmentHistoryBased"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "lastAssignmentDateTime", n => { LastAssignmentDateTime = n.GetDateTimeOffsetValue(); } },
-                { "pastAssigmentCount", n => { PastAssigmentCount = n.GetIntValue(); } },
+                { "pastAssignmentCount", n => { PastAssignmentCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("lastAssignmentDateTime", LastAssignmentDateTime);
-            writer.WriteIntValue("pastAssigmentCount", PastAssigmentCount);
+            writer.WriteIntValue("pastAssignmentCount", PastAssignmentCount);
         }
     }
 }

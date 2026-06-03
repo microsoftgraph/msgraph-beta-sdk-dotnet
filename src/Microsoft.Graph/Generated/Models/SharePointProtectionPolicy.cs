@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SharePointProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The siteExclusionUnits property</summary>
+        /// <summary>The site exclusion units associated with the SharePoint protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>? SiteExclusionUnits
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteExclusionUnits", value); }
         }
 #endif
-        /// <summary>The siteExclusionUnitsBulkAdditionJobs property</summary>
+        /// <summary>The list of bulk addition jobs for site exclusion units associated with the SharePoint protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob>? SiteExclusionUnitsBulkAdditionJobs

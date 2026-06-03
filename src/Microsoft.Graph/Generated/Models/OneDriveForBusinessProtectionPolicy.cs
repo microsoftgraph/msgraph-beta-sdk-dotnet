@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OneDriveForBusinessProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The driveExclusionUnits property</summary>
+        /// <summary>The drive exclusion units associated with the OneDrive for work or school protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>? DriveExclusionUnits
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("driveExclusionUnits", value); }
         }
 #endif
-        /// <summary>The driveExclusionUnitsBulkAdditionJobs property</summary>
+        /// <summary>The list of bulk addition jobs for drive exclusion units associated with the OneDrive for work or school protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>? DriveExclusionUnitsBulkAdditionJobs

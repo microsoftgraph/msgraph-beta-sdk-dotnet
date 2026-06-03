@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.M3
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public M365CapabilityBaseNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/m365Capabilities/{m365CapabilityBase%2Dname}{?%24expand,%24select}", pathParameters)
+        public M365CapabilityBaseNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/m365Capabilities/{m365CapabilityBase%2Dname}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.M3
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public M365CapabilityBaseNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/m365Capabilities/{m365CapabilityBase%2Dname}{?%24expand,%24select}", rawUrl)
+        public M365CapabilityBaseNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/m365Capabilities/{m365CapabilityBase%2Dname}", rawUrl)
         {
         }
         /// <summary>

@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isInviteOnly"); }
             set { BackingStore?.Set("isInviteOnly", value); }
         }
-        /// <summary>The registrationConfiguration property</summary>
+        /// <summary>Registration configuration of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration? RegistrationConfiguration
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registrationConfiguration", value); }
         }
 #endif
-        /// <summary>The registrations property</summary>
+        /// <summary>Registration records of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>? Registrations

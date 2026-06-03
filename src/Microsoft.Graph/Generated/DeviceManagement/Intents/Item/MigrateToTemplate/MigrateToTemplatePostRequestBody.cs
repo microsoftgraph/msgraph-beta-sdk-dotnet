@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            PreserveCustomValues = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

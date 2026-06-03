@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            MoveToInbox = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

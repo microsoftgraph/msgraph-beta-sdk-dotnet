@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Tls.ExternalCertificateAuthorityCer
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalCertificateAuthorityCertificateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tls/externalCertificateAuthorityCertificates/{externalCertificateAuthorityCertificate%2Did}{?%24expand,%24select}", pathParameters)
+        public ExternalCertificateAuthorityCertificateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tls/externalCertificateAuthorityCertificates/{externalCertificateAuthorityCertificate%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Tls.ExternalCertificateAuthorityCer
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalCertificateAuthorityCertificateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tls/externalCertificateAuthorityCertificates/{externalCertificateAuthorityCertificate%2Did}{?%24expand,%24select}", rawUrl)
+        public ExternalCertificateAuthorityCertificateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tls/externalCertificateAuthorityCertificates/{externalCertificateAuthorityCertificate%2Did}", rawUrl)
         {
         }
         /// <summary>

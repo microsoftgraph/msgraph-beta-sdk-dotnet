@@ -103,6 +103,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            ExportSingleItems = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

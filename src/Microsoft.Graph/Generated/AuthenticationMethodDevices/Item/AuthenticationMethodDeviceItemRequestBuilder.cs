@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodDevices.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthenticationMethodDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/authenticationMethodDevices/{authenticationMethodDevice%2Did}{?%24expand,%24select}", pathParameters)
+        public AuthenticationMethodDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/authenticationMethodDevices/{authenticationMethodDevice%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodDevices.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthenticationMethodDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/authenticationMethodDevices/{authenticationMethodDevice%2Did}{?%24expand,%24select}", rawUrl)
+        public AuthenticationMethodDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/authenticationMethodDevices/{authenticationMethodDevice%2Did}", rawUrl)
         {
         }
         /// <summary>

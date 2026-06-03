@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         {
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// Get a list of mailbox exclusion units associated with an Exchange protection policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxexclusionunits?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// Get a list of mailbox exclusion units associated with an Exchange protection policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// Get a list of mailbox exclusion units associated with an Exchange protection policy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxExclusionUnitsRequestBuilderGetQueryParameters 

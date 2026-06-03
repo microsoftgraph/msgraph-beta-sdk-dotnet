@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="userId">Alternate key of virtualEventRegistration</param>
-        public RegistrationsWithUserIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(userId='{userId}'){?%24expand,%24select}", pathParameters)
+        public RegistrationsWithUserIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(userId='{userId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(userId)) PathParameters.Add("userId", userId);
         }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsWithUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(userId='{userId}'){?%24expand,%24select}", rawUrl)
+        public RegistrationsWithUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(userId='{userId}')", rawUrl)
         {
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
             return requestInfo;
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         {
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationsWithUserIdRequestBuilderGetQueryParameters 

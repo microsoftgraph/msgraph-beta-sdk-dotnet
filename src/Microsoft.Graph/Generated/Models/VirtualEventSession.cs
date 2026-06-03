@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class VirtualEventSession : global::Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The capacity property</summary>
+        /// <summary>Represents the expected number of attendees for town hall session.</summary>
         public int? Capacity
         {
             get { return BackingStore?.Get<int?>("capacity"); }

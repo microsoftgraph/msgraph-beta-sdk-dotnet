@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegionalAndLanguageSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings{?%24expand,%24select}", pathParameters)
+        public RegionalAndLanguageSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegionalAndLanguageSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings{?%24expand,%24select}", rawUrl)
+        public RegionalAndLanguageSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings", rawUrl)
         {
         }
         /// <summary>

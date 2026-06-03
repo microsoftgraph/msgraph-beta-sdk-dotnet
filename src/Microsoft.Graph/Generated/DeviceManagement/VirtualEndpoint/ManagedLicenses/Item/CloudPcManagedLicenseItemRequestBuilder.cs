@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcManagedLicenseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/managedLicenses/{cloudPcManagedLicense%2Did}{?%24expand,%24select}", pathParameters)
+        public CloudPcManagedLicenseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/managedLicenses/{cloudPcManagedLicense%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcManagedLicenseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/managedLicenses/{cloudPcManagedLicense%2Did}{?%24expand,%24select}", rawUrl)
+        public CloudPcManagedLicenseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/managedLicenses/{cloudPcManagedLicense%2Did}", rawUrl)
         {
         }
         /// <summary>
