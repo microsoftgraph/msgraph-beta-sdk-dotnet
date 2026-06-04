@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item.Assignments.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcPoolAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}{?%24expand,%24select}", pathParameters)
+        public CloudPcPoolAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item.Assignments.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcPoolAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}{?%24expand,%24select}", rawUrl)
+        public CloudPcPoolAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item.Assignments.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get assignments from me
+        /// The collection of assignments that grant user or service principal identities access to this pool.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item.Assignments.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get assignments from me
+        /// The collection of assignments that grant user or service principal identities access to this pool.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item.Assignments.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.CloudPcPools.Item.Assignments.Item.CloudPcPoolAssignmentItemRequestBuilder.CloudPcPoolAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item.Assignments.Item
         {
         }
         /// <summary>
-        /// Get assignments from me
+        /// The collection of assignments that grant user or service principal identities access to this pool.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcPoolAssignmentItemRequestBuilderGetQueryParameters 

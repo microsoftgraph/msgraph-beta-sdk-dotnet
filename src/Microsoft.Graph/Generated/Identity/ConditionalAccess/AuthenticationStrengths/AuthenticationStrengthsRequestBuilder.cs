@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthenticationStrengthsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths{?%24expand,%24select}", pathParameters)
+        public AuthenticationStrengthsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthenticationStrengthsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths{?%24expand,%24select}", rawUrl)
+        public AuthenticationStrengthsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths", rawUrl)
         {
         }
         /// <summary>
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder.AuthenticationStrengthsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/identity/conditionalAccess/authenticationStrengths{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

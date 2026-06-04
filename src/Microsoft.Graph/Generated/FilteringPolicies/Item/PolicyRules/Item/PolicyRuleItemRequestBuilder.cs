@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.FilteringPolicies.Item.PolicyRules.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PolicyRuleItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}{?%24expand,%24select}", pathParameters)
+        public PolicyRuleItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.FilteringPolicies.Item.PolicyRules.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PolicyRuleItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}{?%24expand,%24select}", rawUrl)
+        public PolicyRuleItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.FilteringPolicies.Item.PolicyRules.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.FilteringPolicies.Item.PolicyRules.Item.PolicyRuleItemRequestBuilder.PolicyRuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

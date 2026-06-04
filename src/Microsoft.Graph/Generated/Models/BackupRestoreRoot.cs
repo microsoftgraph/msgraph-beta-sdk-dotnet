@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("browseSessions", value); }
         }
 #endif
-        /// <summary>The driveExclusionUnits property</summary>
+        /// <summary>The list of drive exclusion units in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>? DriveExclusionUnits
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("driveExclusionUnits", value); }
         }
 #endif
-        /// <summary>The driveExclusionUnitsBulkAdditionJobs property</summary>
+        /// <summary>The list of bulk addition jobs for drive exclusion units in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>? DriveExclusionUnitsBulkAdditionJobs
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("exchangeRestoreSessions", value); }
         }
 #endif
-        /// <summary>The exclusionUnits property</summary>
+        /// <summary>The list of exclusion units in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ExclusionUnitBase>? ExclusionUnits
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("exclusionUnits", value); }
         }
 #endif
-        /// <summary>The mailboxExclusionUnits property</summary>
+        /// <summary>The list of mailbox exclusion units in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>? MailboxExclusionUnits
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mailboxExclusionUnits", value); }
         }
 #endif
-        /// <summary>The mailboxExclusionUnitsBulkAdditionJobs property</summary>
+        /// <summary>The list of bulk addition jobs for mailbox exclusion units in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>? MailboxExclusionUnitsBulkAdditionJobs
@@ -268,7 +268,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
         }
 #endif
-        /// <summary>The list of onedriveforbusiness browse sessions in the tenant.</summary>
+        /// <summary>The list of OneDrive for work or school browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.OneDriveForBusinessBrowseSession>? OneDriveForBusinessBrowseSessions
@@ -428,7 +428,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #endif
-        /// <summary>The list of sharepoint browse sessions in the tenant.</summary>
+        /// <summary>The list of SharePoint browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SharePointBrowseSession>? SharePointBrowseSessions
@@ -476,7 +476,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sharePointRestoreSessions", value); }
         }
 #endif
-        /// <summary>The siteExclusionUnits property</summary>
+        /// <summary>The list of site exclusion units in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>? SiteExclusionUnits
@@ -492,7 +492,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteExclusionUnits", value); }
         }
 #endif
-        /// <summary>The siteExclusionUnitsBulkAdditionJobs property</summary>
+        /// <summary>The list of bulk addition jobs for site exclusion units in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob>? SiteExclusionUnitsBulkAdditionJobs

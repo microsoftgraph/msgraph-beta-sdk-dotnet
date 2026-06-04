@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.WindowsDef
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            QuickScan = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

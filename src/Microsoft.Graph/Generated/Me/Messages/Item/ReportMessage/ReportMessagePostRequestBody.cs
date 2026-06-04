@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.ReportMessage
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            IsMessageMoveRequested = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

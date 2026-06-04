@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Solutions.Approval.ApprovalItems.Item.Responses
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResponsesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/approval/approvalItems/{approvalItem%2Did}/responses{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public ResponsesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Solutions.Approval.ApprovalItems.Item.Responses
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResponsesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/approval/approvalItems/{approvalItem%2Did}/responses{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public ResponsesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Solutions.Approval.ApprovalItems.Item.Responses
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.Approval.ApprovalItems.Item.Responses.ResponsesRequestBuilder.ResponsesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/approval/approvalItems/{approvalItem%2Did}/responses{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Solutions.Approval.ApprovalItems.Item.Responses
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/solutions/approval/approvalItems/{approvalItem%2Did}/responses", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

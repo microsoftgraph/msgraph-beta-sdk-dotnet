@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.AgentRegistry.AgentCollections.Item.Members.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentInstanceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agentRegistry/agentCollections/{agentCollection%2Did}/members/{agentInstance%2Did}{?%24expand,%24select}", pathParameters)
+        public AgentInstanceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.AgentRegistry.AgentCollections.Item.Members.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentInstanceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agentRegistry/agentCollections/{agentCollection%2Did}/members/{agentInstance%2Did}{?%24expand,%24select}", rawUrl)
+        public AgentInstanceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.AgentRegistry.AgentCollections.Item.Members.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/agentRegistry/agentCollections/{agentCollection%2Did}/members/{agentInstance%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.AgentRegistry.AgentCollections.Item.Members.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.AgentRegistry.AgentCollections.Item.Members.Item.AgentInstanceItemRequestBuilder.AgentInstanceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/agentRegistry/agentCollections/{agentCollection%2Did}/members/{agentInstance%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

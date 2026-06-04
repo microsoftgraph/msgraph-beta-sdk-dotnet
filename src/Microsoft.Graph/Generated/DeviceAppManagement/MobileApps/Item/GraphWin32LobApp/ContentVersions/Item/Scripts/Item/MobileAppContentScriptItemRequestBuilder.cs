@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32Lob
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MobileAppContentScriptItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}{?%24expand,%24select}", pathParameters)
+        public MobileAppContentScriptItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32Lob
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MobileAppContentScriptItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}{?%24expand,%24select}", rawUrl)
+        public MobileAppContentScriptItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32Lob
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.ContentVersions.Item.Scripts.Item.MobileAppContentScriptItemRequestBuilder.MobileAppContentScriptItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

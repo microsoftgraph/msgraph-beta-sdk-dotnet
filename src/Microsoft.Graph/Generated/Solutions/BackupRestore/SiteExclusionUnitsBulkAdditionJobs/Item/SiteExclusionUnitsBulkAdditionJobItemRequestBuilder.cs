@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdd
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SiteExclusionUnitsBulkAdditionJobItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", pathParameters)
+        public SiteExclusionUnitsBulkAdditionJobItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdd
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SiteExclusionUnitsBulkAdditionJobItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", rawUrl)
+        public SiteExclusionUnitsBulkAdditionJobItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdd
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get siteExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for site exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdd
             return requestInfo;
         }
         /// <summary>
-        /// Get siteExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for site exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdd
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdditionJobs.Item.SiteExclusionUnitsBulkAdditionJobItemRequestBuilder.SiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdd
         {
         }
         /// <summary>
-        /// Get siteExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for site exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters 

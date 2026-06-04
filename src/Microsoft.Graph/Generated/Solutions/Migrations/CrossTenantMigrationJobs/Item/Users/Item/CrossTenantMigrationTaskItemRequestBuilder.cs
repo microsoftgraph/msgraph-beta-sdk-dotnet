@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CrossTenantMigrationTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/users/{crossTenantMigrationTask%2Did}{?%24expand,%24select}", pathParameters)
+        public CrossTenantMigrationTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/users/{crossTenantMigrationTask%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CrossTenantMigrationTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/users/{crossTenantMigrationTask%2Did}{?%24expand,%24select}", rawUrl)
+        public CrossTenantMigrationTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/users/{crossTenantMigrationTask%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Ite
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.Users.Item.CrossTenantMigrationTaskItemRequestBuilder.CrossTenantMigrationTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/users/{crossTenantMigrationTask%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

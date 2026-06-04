@@ -40,6 +40,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            NotifyManagedDevices = false;
+            RevokeUntrackedLicenses = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

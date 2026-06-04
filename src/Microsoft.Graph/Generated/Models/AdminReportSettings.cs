@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("displayConcealedNames"); }
             set { BackingStore?.Set("displayConcealedNames", value); }
         }
+        /// <summary>A container for SharePoint-specific report settings. Access the SharePoint API usage report metrics through the operations defined on the sharePointReportSettings resource type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SharePointReportSettings? SharePoint
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointReportSettings?>("sharePoint"); }
+            set { BackingStore?.Set("sharePoint", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SharePointReportSettings SharePoint
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointReportSettings>("sharePoint"); }
+            set { BackingStore?.Set("sharePoint", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayConcealedNames", n => { DisplayConcealedNames = n.GetBoolValue(); } },
+                { "sharePoint", n => { SharePoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SharePointReportSettings>(global::Microsoft.Graph.Beta.Models.SharePointReportSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("displayConcealedNames", DisplayConcealedNames);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SharePointReportSettings>("sharePoint", SharePoint);
         }
     }
 }

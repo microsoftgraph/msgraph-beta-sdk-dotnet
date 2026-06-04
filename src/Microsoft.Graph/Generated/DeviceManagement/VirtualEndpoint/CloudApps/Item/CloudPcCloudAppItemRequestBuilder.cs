@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcCloudAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}{?%24expand,%24select}", pathParameters)
+        public CloudPcCloudAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,11 +31,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcCloudAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}{?%24expand,%24select}", rawUrl)
+        public CloudPcCloudAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete navigation property cloudApps for deviceManagement
+        /// Delete a cloudPcCloudApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccloudapp-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcCloudApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property cloudApps for deviceManagement
+        /// Delete a cloudPcCloudApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item.CloudPcCloudAppItemRequestBuilder.CloudPcCloudAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

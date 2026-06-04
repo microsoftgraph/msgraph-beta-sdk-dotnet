@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySett
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelPolicySettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/labelPolicySettings{?%24expand,%24select}", pathParameters)
+        public LabelPolicySettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/labelPolicySettings", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySett
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelPolicySettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/labelPolicySettings{?%24expand,%24select}", rawUrl)
+        public LabelPolicySettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/labelPolicySettings", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySett
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySettings.LabelPolicySettingsRequestBuilder.LabelPolicySettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/me/security/informationProtection/labelPolicySettings{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

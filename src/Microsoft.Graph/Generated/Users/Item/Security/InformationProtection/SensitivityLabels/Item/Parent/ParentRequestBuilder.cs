@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24expand,%24select}", pathParameters)
+        public ParentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24expand,%24select}", rawUrl)
+        public ParentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Item.Parent.ParentRequestBuilder.ParentRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/users/{user%2Did}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveExclusionUnitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/driveExclusionUnits{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public DriveExclusionUnitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -50,11 +50,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveExclusionUnitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/driveExclusionUnits{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public DriveExclusionUnitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// The list of drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveExclusionUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>(requestInfo, global::Microsoft.Graph.Beta.Models.DriveExclusionUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// The list of drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder.DriveExclusionUnitsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/backupRestore/driveExclusionUnits{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/solutions/backupRestore/driveExclusionUnits", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// The list of drive exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveExclusionUnitsRequestBuilderGetQueryParameters 

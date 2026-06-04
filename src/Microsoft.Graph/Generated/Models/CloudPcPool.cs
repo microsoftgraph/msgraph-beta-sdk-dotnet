@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcPool : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The assignments property</summary>
+        /// <summary>The collection of assignments that grant user or service principal identities access to this pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment>? Assignments
@@ -60,13 +60,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudPcConfiguration", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the pool was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the pool. The maximum length is 512 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the pool. The name is unique across Cloud PC pools in an organization. The maximum length is 60 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the pool was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

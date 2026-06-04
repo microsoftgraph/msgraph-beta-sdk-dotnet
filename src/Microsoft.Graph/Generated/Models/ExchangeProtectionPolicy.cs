@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ExchangeProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The mailboxExclusionUnits property</summary>
+        /// <summary>The mailbox exclusion units associated with the Exchange protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>? MailboxExclusionUnits
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mailboxExclusionUnits", value); }
         }
 #endif
-        /// <summary>The mailboxExclusionUnitsBulkAdditionJobs property</summary>
+        /// <summary>The list of bulk addition jobs for mailbox exclusion units associated with the Exchange protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>? MailboxExclusionUnitsBulkAdditionJobs

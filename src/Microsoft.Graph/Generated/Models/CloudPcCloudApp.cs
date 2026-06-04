@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcCloudApp : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.</summary>
+        /// <summary>The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue, iconPathInvalid, filePathInvalid. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconPathInvalid, filePathInvalid. The default value is null. Supports $filter, $select, $orderBy. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcCloudAppActionFailedErrorCode? ActionFailedErrorCode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcCloudAppActionFailedErrorCode?>("actionFailedErrorCode"); }
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastPublishedDateTime"); }
             set { BackingStore?.Set("lastPublishedDateTime", value); }
         }
-        /// <summary>The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.</summary>
+        /// <summary>The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProvisioningPolicyId

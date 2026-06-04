@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailNotificationsSettingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/emailNotificationsSetting{?%24expand,%24select}", pathParameters)
+        public EmailNotificationsSettingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/emailNotificationsSetting", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailNotificationsSettingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/emailNotificationsSetting{?%24expand,%24select}", rawUrl)
+        public EmailNotificationsSettingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/emailNotificationsSetting", rawUrl)
         {
         }
         /// <summary>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting.EmailNotificationsSettingRequestBuilder.EmailNotificationsSettingRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/backupRestore/emailNotificationsSetting{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
         }
         /// <summary>
-        /// Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
+        /// Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. You can apply policy settings such as region and singleSignOn. This action also supports reprovisioning for frontline shared mode Cloud PCs by using the reservePercentage parameter to control the percentage of Cloud PCs that remain available during the process.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-apply?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
+        /// Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. You can apply policy settings such as region and singleSignOn. This action also supports reprovisioning for frontline shared mode Cloud PCs by using the reservePercentage parameter to control the percentage of Cloud PCs that remain available during the process.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

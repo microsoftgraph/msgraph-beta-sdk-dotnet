@@ -20,6 +20,7 @@ using Microsoft.Graph.Beta.Security.Incidents;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
+using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.Partner;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
@@ -142,6 +143,11 @@ namespace Microsoft.Graph.Beta.Security
         {
             get => new global::Microsoft.Graph.Beta.Security.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getHuntingSchema method.</summary>
+        public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder MicrosoftGraphSecurityGetHuntingSchema
+        {
+            get => new global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the runHuntingQuery method.</summary>
         public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery
         {
@@ -227,7 +233,7 @@ namespace Microsoft.Graph.Beta.Security
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security{?%24expand,%24select}", pathParameters)
+        public SecurityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -235,7 +241,7 @@ namespace Microsoft.Graph.Beta.Security
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security{?%24expand,%24select}", rawUrl)
+        public SecurityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
@@ -300,7 +306,7 @@ namespace Microsoft.Graph.Beta.Security
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Security.SecurityRequestBuilder.SecurityRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/security{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -321,7 +327,7 @@ namespace Microsoft.Graph.Beta.Security
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/security", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            ApproveAllPermissions = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

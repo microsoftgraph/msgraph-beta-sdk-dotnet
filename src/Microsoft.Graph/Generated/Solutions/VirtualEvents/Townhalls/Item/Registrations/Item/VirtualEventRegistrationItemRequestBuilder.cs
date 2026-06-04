@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualEventRegistrationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}{?%24expand,%24select}", pathParameters)
+        public VirtualEventRegistrationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualEventRegistrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}{?%24expand,%24select}", rawUrl)
+        public VirtualEventRegistrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
             return requestInfo;
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrations.Item.VirtualEventRegistrationItemRequestBuilder.VirtualEventRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         {
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEventRegistrationItemRequestBuilderGetQueryParameters 

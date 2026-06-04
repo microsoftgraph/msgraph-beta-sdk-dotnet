@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryCha
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.EnabledApps;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.FilesFolder;
+using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.JoinedUsers;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.Members;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.Messages;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.Planner;
@@ -63,6 +64,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Primar
         {
             get => new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.JoinedUsers.JoinedUsersRequestBuilder JoinedUsers
+        {
+            get => new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.JoinedUsers.JoinedUsersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.Members.MembersRequestBuilder Members
         {
@@ -113,7 +119,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Primar
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrimaryChannelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel{?%24expand,%24select}", pathParameters)
+        public PrimaryChannelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel", pathParameters)
         {
         }
         /// <summary>
@@ -121,7 +127,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Primar
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrimaryChannelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel{?%24expand,%24select}", rawUrl)
+        public PrimaryChannelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel", rawUrl)
         {
         }
         /// <summary>
@@ -227,7 +233,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Primar
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.PrimaryChannelRequestBuilder.PrimaryChannelRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsDefenderSca
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            QuickScan = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

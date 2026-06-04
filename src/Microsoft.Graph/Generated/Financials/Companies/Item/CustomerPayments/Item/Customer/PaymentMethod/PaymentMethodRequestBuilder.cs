@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item.C
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentMethod{?%24expand,%24select}", pathParameters)
+        public PaymentMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentMethod", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item.C
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentMethod{?%24expand,%24select}", rawUrl)
+        public PaymentMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentMethod", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item.C
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item.Customer.PaymentMethod.PaymentMethodRequestBuilder.PaymentMethodRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentMethod{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

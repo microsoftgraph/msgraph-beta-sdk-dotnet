@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveExclusionUnitsBulkAdditionJobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public DriveExclusionUnitsBulkAdditionJobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -50,11 +50,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveExclusionUnitsBulkAdditionJobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public DriveExclusionUnitsBulkAdditionJobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
-        /// Get driveExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>(requestInfo, global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder.DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get driveExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for drive exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters 

@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.CompleteMigr
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.EnabledApps;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.FilesFolder;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.JoinedUsers;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Planner;
@@ -63,6 +64,11 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.JoinedUsers.JoinedUsersRequestBuilder JoinedUsers
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.JoinedUsers.JoinedUsersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.MembersRequestBuilder Members
         {
@@ -113,7 +119,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}{?%24expand,%24select}", pathParameters)
+        public ChannelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -121,7 +127,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}{?%24expand,%24select}", rawUrl)
+        public ChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -227,7 +233,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

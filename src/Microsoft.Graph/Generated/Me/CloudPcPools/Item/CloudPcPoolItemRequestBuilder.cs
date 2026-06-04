@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcPoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}{?%24expand,%24select}", pathParameters)
+        public CloudPcPoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcPoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}{?%24expand,%24select}", rawUrl)
+        public CloudPcPoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get cloudPcPools from me
+        /// Read the properties and relationships of a cloudPcPool object that the signed-in user can access.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get-cloudpcpool?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get cloudPcPools from me
+        /// Read the properties and relationships of a cloudPcPool object that the signed-in user can access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +144,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.CloudPcPools.Item.CloudPcPoolItemRequestBuilder.CloudPcPoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/me/cloudPcPools/{cloudPcPool%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -188,7 +189,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPcPools.Item
         {
         }
         /// <summary>
-        /// Get cloudPcPools from me
+        /// Read the properties and relationships of a cloudPcPool object that the signed-in user can access.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcPoolItemRequestBuilderGetQueryParameters 

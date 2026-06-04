@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         {
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// Get a mailbox exclusion unit associated with an Exchange protection policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxexclusionunit-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// Get a mailbox exclusion unit associated with an Exchange protection policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.Item.MailboxExclusionUnitItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// Get a mailbox exclusion unit associated with an Exchange protection policy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxExclusionUnitItemRequestBuilderGetQueryParameters 

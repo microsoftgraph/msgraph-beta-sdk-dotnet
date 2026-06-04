@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Loop = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

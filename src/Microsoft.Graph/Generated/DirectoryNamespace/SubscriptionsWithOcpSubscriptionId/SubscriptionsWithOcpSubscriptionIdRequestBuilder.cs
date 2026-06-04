@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         /// <param name="ocpSubscriptionId">Alternate key of companySubscription</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string ocpSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24expand,%24select}", pathParameters)
+        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string ocpSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(ocpSubscriptionId)) PathParameters.Add("ocpSubscriptionId", ocpSubscriptionId);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24expand,%24select}", rawUrl)
+        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}')", rawUrl)
         {
         }
         /// <summary>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscriptionId.SubscriptionsWithOcpSubscriptionIdRequestBuilder.SubscriptionsWithOcpSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

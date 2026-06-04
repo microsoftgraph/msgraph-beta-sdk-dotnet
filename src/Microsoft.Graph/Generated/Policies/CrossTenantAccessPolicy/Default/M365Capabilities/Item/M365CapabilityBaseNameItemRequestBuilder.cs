@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.M365Capa
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public M365CapabilityBaseNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}{?%24expand,%24select}", pathParameters)
+        public M365CapabilityBaseNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.M365Capa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public M365CapabilityBaseNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}{?%24expand,%24select}", rawUrl)
+        public M365CapabilityBaseNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.M365Capa
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.M365Capabilities.Item.M365CapabilityBaseNameItemRequestBuilder.M365CapabilityBaseNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -18,13 +18,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
-        /// <summary>The isManualApprovalEnabled property</summary>
+        /// <summary>Indicates whether registrations require organizer approval before a participant is confirmed.</summary>
         public bool? IsManualApprovalEnabled
         {
             get { return BackingStore?.Get<bool?>("isManualApprovalEnabled"); }
             set { BackingStore?.Set("isManualApprovalEnabled", value); }
         }
-        /// <summary>The isWaitlistEnabled property</summary>
+        /// <summary>Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.</summary>
         public bool? IsWaitlistEnabled
         {
             get { return BackingStore?.Get<bool?>("isWaitlistEnabled"); }

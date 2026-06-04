@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SiteExclusionUnit : global::Microsoft.Graph.Beta.Models.ExclusionUnitBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The siteId property</summary>
+        /// <summary>The unique identifier of the SharePoint site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteId", value); }
         }
 #endif
-        /// <summary>The siteName property</summary>
+        /// <summary>The display name of the SharePoint site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteName", value); }
         }
 #endif
-        /// <summary>The siteWebUrl property</summary>
+        /// <summary>The URL of the SharePoint site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteWebUrl

@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.I
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OverwriteResourceNamespace = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

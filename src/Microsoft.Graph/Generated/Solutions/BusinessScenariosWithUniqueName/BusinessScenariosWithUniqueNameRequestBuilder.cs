@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="uniqueName">Alternate key of businessScenario</param>
-        public BusinessScenariosWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters)
+        public BusinessScenariosWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(uniqueName)) PathParameters.Add("uniqueName", uniqueName);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessScenariosWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl)
+        public BusinessScenariosWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}')", rawUrl)
         {
         }
         /// <summary>
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName.BusinessScenariosWithUniqueNameRequestBuilder.BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
