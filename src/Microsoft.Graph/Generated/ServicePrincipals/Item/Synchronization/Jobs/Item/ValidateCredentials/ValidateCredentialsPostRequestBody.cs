@@ -83,6 +83,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            UseSavedCredentials = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

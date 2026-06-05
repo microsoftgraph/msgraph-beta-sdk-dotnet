@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
         {
         }
         /// <summary>
-        /// Delete navigation property cloudPcPools for deviceManagement
+        /// Delete a cloudPcPool object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcpool-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get cloudPcPools from deviceManagement
+        /// Read the properties and relationships of a cloudPcPool object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcpool-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPool>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property cloudPcPools in deviceManagement
+        /// Update the properties of a cloudPcPool object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcpool-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPool"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPool>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property cloudPcPools for deviceManagement
+        /// Delete a cloudPcPool object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get cloudPcPools from deviceManagement
+        /// Read the properties and relationships of a cloudPcPool object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property cloudPcPools in deviceManagement
+        /// Update the properties of a cloudPcPool object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +191,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
         {
         }
         /// <summary>
-        /// Get cloudPcPools from deviceManagement
+        /// Read the properties and relationships of a cloudPcPool object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcPoolItemRequestBuilderGetQueryParameters 

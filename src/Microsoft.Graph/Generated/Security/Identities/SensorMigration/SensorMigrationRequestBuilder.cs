@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration
         {
         }
         /// <summary>
-        /// Get sensorMigration from security
+        /// Get a list of the sensorMigration objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensormigration?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SensorMigrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.SensorMigration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensorMigration from security
+        /// Get a list of the sensorMigration objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration
             return new global::Microsoft.Graph.Beta.Security.Identities.SensorMigration.SensorMigrationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sensorMigration from security
+        /// Get a list of the sensorMigration objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorMigrationRequestBuilderGetQueryParameters 

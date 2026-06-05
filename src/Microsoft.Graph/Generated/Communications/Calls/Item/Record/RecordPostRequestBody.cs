@@ -113,6 +113,9 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Record
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            BargeInAllowed = false;
+            PlayBeep = false;
+            StreamWhileRecording = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -95,6 +95,7 @@ namespace Microsoft.Graph.Beta.Me.FindMeetingLocations
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            AllowFreeOnly = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

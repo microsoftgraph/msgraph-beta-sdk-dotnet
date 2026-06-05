@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcAgentPoolSessionUsage : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activeSessionsCount property</summary>
+        /// <summary>The number of active sessions in the pool. Read-only.</summary>
         public int? ActiveSessionsCount
         {
             get { return BackingStore?.Get<int?>("activeSessionsCount"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The availableSessionsCount property</summary>
+        /// <summary>The number of available sessions in the pool. Read-only.</summary>
         public int? AvailableSessionsCount
         {
             get { return BackingStore?.Get<int?>("availableSessionsCount"); }

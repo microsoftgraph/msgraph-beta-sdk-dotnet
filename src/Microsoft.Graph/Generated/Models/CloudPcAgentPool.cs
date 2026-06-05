@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("billingConfiguration", value); }
         }
 #endif
-        /// <summary>The poolUrl property</summary>
+        /// <summary>The endpoint URL used to check out and check in agent sessions. This value becomes available after the pool reaches the active status. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PoolUrl

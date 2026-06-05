@@ -78,6 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            AllowEdit = false;
+            Chromeless = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

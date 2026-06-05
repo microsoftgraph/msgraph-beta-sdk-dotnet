@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensorMigration from security
+        /// Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SensorMigration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get sensorMigration from security
+        /// Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration.Item
         {
         }
         /// <summary>
-        /// Get sensorMigration from security
+        /// Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorMigrationItemRequestBuilderGetQueryParameters 

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
             return requestInfo;
         }
         /// <summary>
-        /// Get driveExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAd
         {
         }
         /// <summary>
-        /// Get driveExclusionUnitsBulkAdditionJobs from solutions
+        /// The list of bulk addition jobs for drive exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters 

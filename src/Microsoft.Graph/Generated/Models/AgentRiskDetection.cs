@@ -110,6 +110,38 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType?>("detectionTimingType"); }
             set { BackingStore?.Set("detectionTimingType", value); }
         }
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The identityId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityId
+        {
+            get { return BackingStore?.Get<string?>("identityId"); }
+            set { BackingStore?.Set("identityId", value); }
+        }
+#nullable restore
+#else
+        public string IdentityId
+        {
+            get { return BackingStore?.Get<string>("identityId"); }
+            set { BackingStore?.Set("identityId", value); }
+        }
+#endif
         /// <summary>The identityType property</summary>
         public global::Microsoft.Graph.Beta.Models.AgentIdentityType? IdentityType
         {
@@ -262,6 +294,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "clientSessionId", n => { ClientSessionId = n.GetStringValue(); } },
                 { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "identityId", n => { IdentityId = n.GetStringValue(); } },
                 { "identityType", n => { IdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "riskDetail", n => { RiskDetail = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>(); } },
@@ -291,6 +325,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("clientSessionId", ClientSessionId);
             writer.WriteDateTimeOffsetValue("detectedDateTime", DetectedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType>("detectionTimingType", DetectionTimingType);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("identityId", IdentityId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>("identityType", IdentityType);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>("riskDetail", RiskDetail);

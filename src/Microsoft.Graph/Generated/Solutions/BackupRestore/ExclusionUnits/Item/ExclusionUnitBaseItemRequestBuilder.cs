@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.Item
         {
         }
         /// <summary>
-        /// Get exclusionUnits from solutions
+        /// The list of exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExclusionUnitBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExclusionUnitBase>(requestInfo, global::Microsoft.Graph.Beta.Models.ExclusionUnitBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get exclusionUnits from solutions
+        /// The list of exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.Item
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.Item.ExclusionUnitBaseItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get exclusionUnits from solutions
+        /// The list of exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExclusionUnitBaseItemRequestBuilderGetQueryParameters 
