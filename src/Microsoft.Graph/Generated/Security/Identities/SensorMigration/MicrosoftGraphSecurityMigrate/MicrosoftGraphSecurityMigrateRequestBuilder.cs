@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration.MicrosoftGrap
         {
         }
         /// <summary>
-        /// Invoke action migrate
+        /// Migrate the specified sensors to the unified security portal. This action initiates the migration process for one or more Microsoft Defender for Identity sensors.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensormigration-migrate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.MigrateSensorsResult"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.SensorMigration.MicrosoftGrap
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.MigrateSensorsResult>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.MigrateSensorsResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action migrate
+        /// Migrate the specified sensors to the unified security portal. This action initiates the migration process for one or more Microsoft Defender for Identity sensors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

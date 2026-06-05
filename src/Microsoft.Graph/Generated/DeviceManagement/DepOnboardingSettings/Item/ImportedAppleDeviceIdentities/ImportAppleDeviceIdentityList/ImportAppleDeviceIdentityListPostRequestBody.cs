@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OverwriteImportedDeviceIdentities = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

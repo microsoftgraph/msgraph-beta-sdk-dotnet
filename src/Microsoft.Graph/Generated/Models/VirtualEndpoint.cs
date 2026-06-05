@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudApps", value); }
         }
 #endif
-        /// <summary>The cloudPcPools property</summary>
+        /// <summary>The Cloud PC pools managed by the virtual endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CloudPcPool>? CloudPcPools

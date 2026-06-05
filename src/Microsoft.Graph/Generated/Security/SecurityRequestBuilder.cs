@@ -20,6 +20,7 @@ using Microsoft.Graph.Beta.Security.Incidents;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
+using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.Partner;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
@@ -141,6 +142,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.Labels.LabelsRequestBuilder Labels
         {
             get => new global::Microsoft.Graph.Beta.Security.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getHuntingSchema method.</summary>
+        public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder MicrosoftGraphSecurityGetHuntingSchema
+        {
+            get => new global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the runHuntingQuery method.</summary>
         public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery

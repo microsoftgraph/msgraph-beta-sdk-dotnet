@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         {
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Get a list of all registration records of a webinar or town hall.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a registration record for a registrant of a webinar. This method registers the person for the webinar. 
+        /// Create a registration record for a registrant of a webinar or town hall. This method registers the person for the webinar or town hall. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventRegistration"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Get a list of all registration records of a webinar or town hall.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return requestInfo;
         }
         /// <summary>
-        /// Create a registration record for a registrant of a webinar. This method registers the person for the webinar. 
+        /// Create a registration record for a registrant of a webinar or town hall. This method registers the person for the webinar or town hall. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Get a list of all registration records of a webinar or town hall.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationsRequestBuilderGetQueryParameters 

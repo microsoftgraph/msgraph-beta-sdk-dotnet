@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         {
         }
         /// <summary>
-        /// Get a list of sessions that a registrant registered for in a webinar.
+        /// Get a list of sessions that a registrant registered for in a webinar or town hall.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistration-list-sessions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventSessionCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of sessions that a registrant registered for in a webinar.
+        /// Get a list of sessions that a registrant registered for in a webinar or town hall.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.Item.Sessions.SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of sessions that a registrant registered for in a webinar.
+        /// Get a list of sessions that a registrant registered for in a webinar or town hall.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SessionsRequestBuilderGetQueryParameters 

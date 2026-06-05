@@ -95,6 +95,7 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            RemediateSendersCopy = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

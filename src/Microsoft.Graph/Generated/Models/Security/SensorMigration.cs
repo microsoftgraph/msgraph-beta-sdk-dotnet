@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class SensorMigration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time the sensor was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The domainName property</summary>
+        /// <summary>The fully qualified domain name (FQDN) of the domain controller where the sensor is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ServiceStatus?>("serviceStatus"); }
             set { BackingStore?.Set("serviceStatus", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>The version number of the sensor software.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version

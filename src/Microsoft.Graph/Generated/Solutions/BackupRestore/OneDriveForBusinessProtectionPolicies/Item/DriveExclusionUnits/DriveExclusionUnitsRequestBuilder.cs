@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtec
         {
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// Get a list of drive exclusion units associated with a OneDrive for work or school protection policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveexclusionunits?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveExclusionUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtec
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DriveExclusionUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// Get a list of drive exclusion units associated with a OneDrive for work or school protection policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtec
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// Get a list of drive exclusion units associated with a OneDrive for work or school protection policy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveExclusionUnitsRequestBuilderGetQueryParameters 

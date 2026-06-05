@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcAgentPoolUserAssignment : global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The userPrincipalId property</summary>
+        /// <summary>The unique identifier of the user principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalId

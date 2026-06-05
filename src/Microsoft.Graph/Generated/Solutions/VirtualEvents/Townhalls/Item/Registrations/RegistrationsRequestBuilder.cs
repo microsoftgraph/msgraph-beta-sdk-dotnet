@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
         {
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrati
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrations.RegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of the town hall.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationsRequestBuilderGetQueryParameters 

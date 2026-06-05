@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.MarkAsJunk
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            MoveToJunk = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

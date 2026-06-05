@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensorCandidates", value); }
         }
 #endif
-        /// <summary>The sensorMigration property</summary>
+        /// <summary>Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>? SensorMigration

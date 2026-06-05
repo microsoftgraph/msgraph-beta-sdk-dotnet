@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.</summary>
+        /// <summary>Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. When you create or update a provisioning policy with autopatch, you must use a delegated token and the signed-in user must have the Intune Administrator role. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch? Autopatch
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("autopatch", value); }
         }
 #endif
-        /// <summary>The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.</summary>
+        /// <summary>The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. When you create or update a provisioning policy with autopilotConfiguration, use the required Microsoft Graph permissions listed on the corresponding create and update API pages. In delegated scenarios, the signed-in user must also have the Microsoft.Intune/DeviceConfigurations/Assign Intune RBAC permission. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration? AutopilotConfiguration

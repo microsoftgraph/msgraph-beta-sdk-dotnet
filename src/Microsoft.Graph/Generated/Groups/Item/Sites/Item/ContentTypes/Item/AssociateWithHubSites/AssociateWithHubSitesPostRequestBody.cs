@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.Associat
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            PropagateToExistingLists = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

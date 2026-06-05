@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.EnabledApps;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.JoinedUsers;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Planner;
@@ -62,6 +63,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel
         public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.JoinedUsers.JoinedUsersRequestBuilder JoinedUsers
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.JoinedUsers.JoinedUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members.MembersRequestBuilder Members

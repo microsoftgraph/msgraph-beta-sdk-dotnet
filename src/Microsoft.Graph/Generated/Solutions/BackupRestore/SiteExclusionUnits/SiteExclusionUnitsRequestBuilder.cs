@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits
         {
         }
         /// <summary>
-        /// Get siteExclusionUnits from solutions
+        /// The list of site exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteExclusionUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteExclusionUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get siteExclusionUnits from solutions
+        /// The list of site exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get siteExclusionUnits from solutions
+        /// The list of site exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteExclusionUnitsRequestBuilderGetQueryParameters 

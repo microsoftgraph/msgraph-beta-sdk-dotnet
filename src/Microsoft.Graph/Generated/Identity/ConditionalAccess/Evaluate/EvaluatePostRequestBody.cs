@@ -83,6 +83,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            AppliedPoliciesOnly = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

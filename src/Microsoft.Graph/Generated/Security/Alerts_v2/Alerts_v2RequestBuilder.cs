@@ -84,7 +84,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.AlertCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.AlertCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to alerts_v2 for security
+        /// Create a manual security alert in Microsoft 365 Defender with specified entities and metadata. When the alert is created, the backend automatically creates a new incident to contain the alert, or links the alert to an existing incident if linkToIncident is specified.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-post-manualalert?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Alert"/></returns>
         /// <param name="body">The request body</param>
@@ -128,7 +129,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to alerts_v2 for security
+        /// Create a manual security alert in Microsoft 365 Defender with specified entities and metadata. When the alert is created, the backend automatically creates a new incident to contain the alert, or links the alert to an existing incident if linkToIncident is specified.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

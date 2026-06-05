@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
         {
         }
         /// <summary>
-        /// Delete navigation property cloudApps for deviceManagement
+        /// Delete a cloudPcCloudApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccloudapp-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcCloudApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property cloudApps for deviceManagement
+        /// Delete a cloudPcCloudApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

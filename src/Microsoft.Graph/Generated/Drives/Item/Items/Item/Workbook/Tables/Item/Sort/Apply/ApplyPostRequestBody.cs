@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Sort.
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            MatchCase = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

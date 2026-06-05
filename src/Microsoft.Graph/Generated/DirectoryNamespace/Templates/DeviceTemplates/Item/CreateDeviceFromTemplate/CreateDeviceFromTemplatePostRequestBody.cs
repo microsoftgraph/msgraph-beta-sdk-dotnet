@@ -115,6 +115,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Templates.DeviceTemplates.Item
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            AccountEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

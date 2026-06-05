@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.EnabledApps;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.FilesFolder;
+using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.JoinedUsers;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Planner;
@@ -62,6 +63,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.JoinedUsers.JoinedUsersRequestBuilder JoinedUsers
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.JoinedUsers.JoinedUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.MembersRequestBuilder Members
