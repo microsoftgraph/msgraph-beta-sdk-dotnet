@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class MailboxExclusionUnit : global::Microsoft.Graph.Beta.Models.ExclusionUnitBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The directoryObjectId property</summary>
+        /// <summary>The unique identifier of the directory object (user) associated with the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DirectoryObjectId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("directoryObjectId", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>The email address of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email

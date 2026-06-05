@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools
         {
         }
         /// <summary>
-        /// Get cloudPcPools from deviceManagement
+        /// List the properties and relationships of the cloudPcPool objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcpools?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPoolCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPoolCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPoolCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to cloudPcPools for deviceManagement
+        /// Create a new cloudPcPool object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-cloudpcpools?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPool"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPool>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get cloudPcPools from deviceManagement
+        /// List the properties and relationships of the cloudPcPool objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to cloudPcPools for deviceManagement
+        /// Create a new cloudPcPool object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.CloudPcPoolsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get cloudPcPools from deviceManagement
+        /// List the properties and relationships of the cloudPcPool objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcPoolsRequestBuilderGetQueryParameters 

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits
         {
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// The list of mailbox exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>(requestInfo, global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// The list of mailbox exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mailboxExclusionUnits from solutions
+        /// The list of mailbox exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxExclusionUnitsRequestBuilderGetQueryParameters 

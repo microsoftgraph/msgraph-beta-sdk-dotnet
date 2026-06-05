@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The maximumCount property</summary>
+        /// <summary>The maximum number of Cloud PCs in the pool. The valid values are 1 to 900, and must be greater than or equal to minimumCount.</summary>
         public int? MaximumCount
         {
             get { return BackingStore?.Get<int?>("maximumCount"); }
             set { BackingStore?.Set("maximumCount", value); }
         }
-        /// <summary>The minimumCount property</summary>
+        /// <summary>The minimum number of Cloud PCs in the pool. The valid values are 0 to 900, and must be less than or equal to maximumCount.</summary>
         public int? MinimumCount
         {
             get { return BackingStore?.Get<int?>("minimumCount"); }

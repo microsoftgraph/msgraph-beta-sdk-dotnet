@@ -24,5 +24,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         AgentIdentityBlueprintPrincipal,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user")]
+        #pragma warning disable CS1591
+        User,
+        #pragma warning restore CS1591
     }
 }

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
         {
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// The list of drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveExclusionUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>(requestInfo, global::Microsoft.Graph.Beta.Models.DriveExclusionUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// The list of drive exclusion units in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get driveExclusionUnits from solutions
+        /// The list of drive exclusion units in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveExclusionUnitsRequestBuilderGetQueryParameters 

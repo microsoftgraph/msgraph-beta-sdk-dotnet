@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPcPools.Item.Assignments
         {
         }
         /// <summary>
-        /// Get assignments from users
+        /// The collection of assignments that grant user or service principal identities access to this pool.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPcPools.Item.Assignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get assignments from users
+        /// The collection of assignments that grant user or service principal identities access to this pool.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPcPools.Item.Assignments
             return new global::Microsoft.Graph.Beta.Users.Item.CloudPcPools.Item.Assignments.AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get assignments from users
+        /// The collection of assignments that grant user or service principal identities access to this pool.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignmentsRequestBuilderGetQueryParameters 

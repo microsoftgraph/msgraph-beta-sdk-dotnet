@@ -97,7 +97,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcCloudAppCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcCloudAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to cloudApps for deviceManagement
+        /// Create a new cloudPcCloudApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-cloudapps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcCloudApp"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to cloudApps for deviceManagement
+        /// Create a new cloudPcCloudApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

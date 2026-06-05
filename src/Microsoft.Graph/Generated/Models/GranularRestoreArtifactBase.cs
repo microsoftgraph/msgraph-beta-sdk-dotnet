@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
-        /// <summary>The destinationType property</summary>
+        /// <summary>The restoration destination. The possible values are: new, inPlace, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.DestinationType? DestinationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DestinationType?>("destinationType"); }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("restoredItemPath", value); }
         }
 #endif
-        /// <summary>The web url of the restord artifact.</summary>
+        /// <summary>The web url of the restored artifact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestoredItemWebUrl

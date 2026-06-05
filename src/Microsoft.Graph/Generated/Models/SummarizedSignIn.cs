@@ -213,6 +213,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
+        /// <summary>The tokenIssuerType property</summary>
+        public global::Microsoft.Graph.Beta.Models.TokenIssuerType? TokenIssuerType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }
+            set { BackingStore?.Set("tokenIssuerType", value); }
+        }
         /// <summary>User principal name of the user that initiated the sign-in. This value is always in lowercase. For guest users whose values in the user object typically contain #EXT# before the domain part, this property stores the value in both lowercase and the &apos;true&apos; format. For example, while the user object stores AdeleVance_fabrikam.com#EXT#@contoso.com, the sign-in logs store adelevance@fabrikam.com. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -262,6 +268,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "signInCount", n => { SignInCount = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInStatus>(global::Microsoft.Graph.Beta.Models.SignInStatus.CreateFromDiscriminatorValue); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TokenIssuerType>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -288,6 +295,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteLongValue("signInCount", SignInCount);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInStatus>("status", Status);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TokenIssuerType>("tokenIssuerType", TokenIssuerType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }

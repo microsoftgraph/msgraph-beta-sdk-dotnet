@@ -126,6 +126,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
             set { BackingStore?.Set("isFavoriteByDefault", value); }
         }
+        /// <summary>The joinedUsers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember>? JoinedUsers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>?>("joinedUsers"); }
+            set { BackingStore?.Set("joinedUsers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember> JoinedUsers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>>("joinedUsers"); }
+            set { BackingStore?.Set("joinedUsers", value); }
+        }
+#endif
         /// <summary>The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.</summary>
         public global::Microsoft.Graph.Beta.Models.ChannelLayoutType? LayoutType
         {
@@ -321,6 +337,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "filesFolder", n => { FilesFolder = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>(global::Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
+                { "joinedUsers", n => { JoinedUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "layoutType", n => { LayoutType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChannelLayoutType>(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membershipType", n => { MembershipType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>(); } },
@@ -353,6 +370,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>("filesFolder", FilesFolder);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("joinedUsers", JoinedUsers);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChannelLayoutType>("layoutType", LayoutType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("members", Members);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>("membershipType", MembershipType);

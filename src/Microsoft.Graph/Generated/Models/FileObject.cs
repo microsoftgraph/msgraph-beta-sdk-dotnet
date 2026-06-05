@@ -43,6 +43,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("hashes", value); }
         }
 #endif
+        /// <summary>The lockInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.LockInfo? LockInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LockInfo?>("lockInfo"); }
+            set { BackingStore?.Set("lockInfo", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.LockInfo LockInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LockInfo>("lockInfo"); }
+            set { BackingStore?.Set("lockInfo", value); }
+        }
+#endif
         /// <summary>The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "archiveStatus", n => { ArchiveStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FileArchiveStatus>(); } },
                 { "hashes", n => { Hashes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Hashes>(global::Microsoft.Graph.Beta.Models.Hashes.CreateFromDiscriminatorValue); } },
+                { "lockInfo", n => { LockInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LockInfo>(global::Microsoft.Graph.Beta.Models.LockInfo.CreateFromDiscriminatorValue); } },
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "processingMetadata", n => { ProcessingMetadata = n.GetBoolValue(); } },
@@ -123,6 +140,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FileArchiveStatus>("archiveStatus", ArchiveStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Hashes>("hashes", Hashes);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LockInfo>("lockInfo", LockInfo);
             writer.WriteStringValue("mimeType", MimeType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("processingMetadata", ProcessingMetadata);

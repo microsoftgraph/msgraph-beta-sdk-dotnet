@@ -98,6 +98,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isRegistrationEnabled"); }
             set { BackingStore?.Set("isRegistrationEnabled", value); }
         }
+        /// <summary>The isRegistrationRequired property</summary>
+        public bool? IsRegistrationRequired
+        {
+            get { return BackingStore?.Get<bool?>("isRegistrationRequired"); }
+            set { BackingStore?.Set("isRegistrationRequired", value); }
+        }
         /// <summary>The virtual event presenters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,6 +204,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>(global::Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "externalEventInformation", n => { ExternalEventInformation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation>(global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isRegistrationEnabled", n => { IsRegistrationEnabled = n.GetBoolValue(); } },
+                { "isRegistrationRequired", n => { IsRegistrationRequired = n.GetBoolValue(); } },
                 { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>(global::Microsoft.Graph.Beta.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventSession>(global::Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventSettings>(global::Microsoft.Graph.Beta.Models.VirtualEventSettings.CreateFromDiscriminatorValue); } },
@@ -219,6 +226,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation>("externalEventInformation", ExternalEventInformation);
             writer.WriteBoolValue("isRegistrationEnabled", IsRegistrationEnabled);
+            writer.WriteBoolValue("isRegistrationRequired", IsRegistrationRequired);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>("presenters", Presenters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventSession>("sessions", Sessions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventSettings>("settings", Settings);

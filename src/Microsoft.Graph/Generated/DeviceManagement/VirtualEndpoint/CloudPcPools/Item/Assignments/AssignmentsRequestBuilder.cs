@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
         {
         }
         /// <summary>
-        /// Get assignments from deviceManagement
+        /// List the assignments of a cloudPcPool.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcpool-list-assignments?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to assignments for deviceManagement
+        /// Create a new cloudPcPoolAssignment for a cloudPcPool.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcpool-post-assignments?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get assignments from deviceManagement
+        /// List the assignments of a cloudPcPool.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to assignments for deviceManagement
+        /// Create a new cloudPcPoolAssignment for a cloudPcPool.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Ite
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.Item.Assignments.AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get assignments from deviceManagement
+        /// List the assignments of a cloudPcPool.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignmentsRequestBuilderGetQueryParameters 

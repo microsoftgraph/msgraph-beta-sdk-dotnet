@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         Failed,
         #pragma warning restore CS1591
-        /// <summary>A marker value for members added after the release of this API.</summary>
-        [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
         [EnumMember(Value = "partiallySuccessful")]
         #pragma warning disable CS1591
         PartiallySuccessful,
         #pragma warning restore CS1591
+        /// <summary>A marker value for members added after the release of this API.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

@@ -100,13 +100,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
             set { BackingStore?.Set("offboardRequestedDateTime", value); }
         }
-        /// <summary>The protectionMode property</summary>
+        /// <summary>The backup mode for the protection policy. The possible values are: standard, fullServiceBackup, unknownFutureValue. When set to fullServiceBackup, the entire workload is backed up and specific items can be excluded using exclusion units. When set to standard, only the items explicitly added as protection units are backed up.</summary>
         public global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode? ProtectionMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BackupPolicyProtectionMode?>("protectionMode"); }
             set { BackingStore?.Set("protectionMode", value); }
         }
-        /// <summary>The count of artifacts in the protection policy by status. Requires $select to retrieve.</summary>
+        /// <summary>The count of artifacts in the protection policy by status. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ProtectionPolicyArtifactCount? ProtectionPolicyArtifactCount

@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            ScopedToAllDevices = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
