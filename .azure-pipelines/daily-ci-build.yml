@@ -21,7 +21,7 @@ extends:
   parameters:
     pool:
       name: Azure-Pipelines-1ESPT-ExDShared
-      image: windows-latest
+      image: windows-2022-large
       os: windows
     sdl:
       sourceAnalysisPool:
