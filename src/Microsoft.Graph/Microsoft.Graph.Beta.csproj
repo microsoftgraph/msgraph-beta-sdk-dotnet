@@ -85,10 +85,7 @@
     <PackageReference Include="Microsoft.Graph.Core" Version="4.*" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.203" PrivateAssets="All" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <!-- System.Net.Http is required for netstandard2.0 compatibility; suppress NU1510 pruning warning from .NET 10+ SDK -->
-    <PackageReference Include="System.Net.Http" Version="4.3.4" NoWarn="NU1510" />
-  </ItemGroup>
+
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
