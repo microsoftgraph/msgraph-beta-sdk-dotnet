@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enterprise settings for an Android managed store account.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidManagedStoreAccountEnterpriseSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Company codes for AndroidManagedStoreAccountEnterpriseSettings</summary>
@@ -70,6 +70,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>Bind Type of the tenant with the Google EMM API</summary>
+        public global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType? ManagedGooglePlayEnterpriseType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType?>("managedGooglePlayEnterpriseType"); }
+            set { BackingStore?.Set("managedGooglePlayEnterpriseType", value); }
         }
         /// <summary>Initial scope tags for MGP apps</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings();
         }
         /// <summary>
@@ -161,6 +167,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastAppSyncDateTime", n => { LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managedGooglePlayEnterpriseType", n => { ManagedGooglePlayEnterpriseType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType>(); } },
                 { "managedGooglePlayInitialScopeTagIds", n => { ManagedGooglePlayInitialScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
                 { "ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
@@ -173,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("androidDeviceOwnerFullyManagedEnrollmentEnabled", AndroidDeviceOwnerFullyManagedEnrollmentEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountBindStatus>("bindStatus", BindStatus);
@@ -183,6 +190,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastAppSyncDateTime", LastAppSyncDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus>("lastAppSyncStatus", LastAppSyncStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedGooglePlayEnterpriseType>("managedGooglePlayEnterpriseType", ManagedGooglePlayEnterpriseType);
             writer.WriteCollectionOfPrimitiveValues<string>("managedGooglePlayInitialScopeTagIds", ManagedGooglePlayInitialScopeTagIds);
             writer.WriteStringValue("ownerOrganizationName", OwnerOrganizationName);
             writer.WriteStringValue("ownerUserPrincipalName", OwnerUserPrincipalName);

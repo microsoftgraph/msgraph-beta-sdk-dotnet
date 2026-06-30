@@ -7,12 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EducationAssignmentPointsGrade : global::Microsoft.Graph.Beta.Models.EducationAssignmentGrade, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Number of points a teacher is giving this submission object.</summary>
+        /// <summary>The grade letter from the grading scheme that corresponds to the given number of points.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Grade
+        {
+            get { return BackingStore?.Get<string?>("grade"); }
+            set { BackingStore?.Set("grade", value); }
+        }
+#nullable restore
+#else
+        public string Grade
+        {
+            get { return BackingStore?.Get<string>("grade"); }
+            set { BackingStore?.Set("grade", value); }
+        }
+#endif
+        /// <summary>Number of points a teacher gives to this submission object.</summary>
         public float? Points
         {
             get { return BackingStore?.Get<float?>("points"); }
@@ -32,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.EducationAssignmentPointsGrade CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.EducationAssignmentPointsGrade();
         }
         /// <summary>
@@ -43,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "grade", n => { Grade = n.GetStringValue(); } },
                 { "points", n => { Points = n.GetFloatValue(); } },
             };
         }
@@ -52,8 +69,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("grade", Grade);
             writer.WriteFloatValue("points", Points);
         }
     }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class MailboxEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("primaryAddress", value); }
         }
 #endif
+        /// <summary>The user principal name of the mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Upn
+        {
+            get { return BackingStore?.Get<string?>("upn"); }
+            set { BackingStore?.Set("upn", value); }
+        }
+#nullable restore
+#else
+        public string Upn
+        {
+            get { return BackingStore?.Get<string>("upn"); }
+            set { BackingStore?.Set("upn", value); }
+        }
+#endif
         /// <summary>The user account of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.MailboxEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.MailboxEvidence();
         }
         /// <summary>
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "primaryAddress", n => { PrimaryAddress = n.GetStringValue(); } },
+                { "upn", n => { Upn = n.GetStringValue(); } },
                 { "userAccount", n => { UserAccount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.UserAccount>(global::Microsoft.Graph.Beta.Models.Security.UserAccount.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,10 +113,11 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("primaryAddress", PrimaryAddress);
+            writer.WriteStringValue("upn", Upn);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount", UserAccount);
         }
     }

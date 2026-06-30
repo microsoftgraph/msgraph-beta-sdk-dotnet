@@ -7,11 +7,27 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EdiscoveryCase : global::Microsoft.Graph.Beta.Models.Security.Case, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Returns a list of ediscoveryCaseMember objects associated to this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseMember>? CaseMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseMember>?>("caseMembers"); }
+            set { BackingStore?.Set("caseMembers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseMember> CaseMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseMember>>("caseMembers"); }
+            set { BackingStore?.Set("caseMembers", value); }
+        }
+#endif
         /// <summary>The user who closed the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,7 +208,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCase();
         }
         /// <summary>
@@ -203,6 +219,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "caseMembers", n => { CaseMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseMember>(global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "closedBy", n => { ClosedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian>(global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -222,8 +239,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseMember>("caseMembers", CaseMembers);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("closedBy", ClosedBy);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian>("custodians", Custodians);

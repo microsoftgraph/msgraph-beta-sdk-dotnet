@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
     /// <summary>
     /// Provides operations to manage the attachments property of the microsoft.graph.event entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttachmentItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -35,13 +35,12 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
         {
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, message, Outlook task, or post.
+        /// Delete an attachment from a user calendar event, message, note, Outlook task, or post.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,7 +65,6 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Attachment?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item.AttachmentItemRequestBuilder.AttachmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,11 +82,10 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Attachment>(requestInfo, global::Microsoft.Graph.Beta.Models.Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, message, Outlook task, or post.
+        /// Delete an attachment from a user calendar event, message, note, Outlook task, or post.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -108,7 +105,6 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item.AttachmentItemRequestBuilder.AttachmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -128,7 +124,6 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item.AttachmentItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item.AttachmentItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item.AttachmentItemRequestBuilder(rawUrl, RequestAdapter);
@@ -137,14 +132,14 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -172,7 +167,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item.AttachmentItemRequestBuilder.AttachmentItemRequestBuilderGetQueryParameters>
         {
         }

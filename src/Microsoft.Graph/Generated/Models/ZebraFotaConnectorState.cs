@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents various states for Zebra FOTA connector.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ZebraFotaConnectorState
     {
         /// <summary>Default value when the connector has not been setup (the feature has not been used yet).</summary>
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Disconnected state indicates that the account was connected in the past and later disconnected.</summary>
         [EnumMember(Value = "disconnected")]
         Disconnected,
-        /// <summary>Unknown future enum value.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Status of ServiceNow Connection</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ServiceNowConnectionStatus
     {
         /// <summary>Tenant has disabled the connection</summary>
@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Tenant has enabled the connection</summary>
         [EnumMember(Value = "enabled")]
         Enabled,
-        /// <summary>Future authentication method to be added here.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

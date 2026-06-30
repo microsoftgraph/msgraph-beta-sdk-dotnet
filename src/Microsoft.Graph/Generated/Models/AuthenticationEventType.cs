@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum AuthenticationEventType
     #pragma warning restore CS1591
@@ -19,6 +19,18 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "attributeCollectionStart")]
+        #pragma warning disable CS1591
+        AttributeCollectionStart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "attributeCollectionSubmit")]
+        #pragma warning disable CS1591
+        AttributeCollectionSubmit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "emailOtpSend")]
+        #pragma warning disable CS1591
+        EmailOtpSend,
         #pragma warning restore CS1591
     }
 }

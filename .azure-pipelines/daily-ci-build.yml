@@ -1,0 +1,98 @@
+trigger: none
+pr: none
+
+schedules:
+  - cron: '0 0 * * *'
+    displayName: Daily builds
+    branches:
+      include:
+        - main
+    always: true
+
+resources:
+  repositories:
+    - repository: 1ESPipelineTemplates
+      type: git
+      name: 1ESPipelineTemplates/1ESPipelineTemplates
+      ref: refs/tags/release
+
+extends:
+  template: v1/1ES.Unofficial.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    pool: 1es-windows-ps-compute-m
+    sdl:
+      sourceAnalysisPool:
+        name: Azure-Pipelines-1ESPT-ExDShared
+        image: windows-2022
+        os: windows
+      credscan:
+        enabled: true
+      policheck:
+        enabled: true
+      binskim:
+        enabled: true
+    stages:
+      - stage: Build
+        jobs:
+          - job: Build
+            displayName: Build .NET Beta SDK
+            steps:
+              - checkout: self
+                submodules: recursive
+
+              - task: UseDotNet@2
+                displayName: Set up .NET 8
+                inputs:
+                  packageType: 'sdk'
+                  version: 8.x
+
+              - task: UseDotNet@2
+                displayName: Set up .NET 10
+                inputs:
+                  packageType: 'sdk'
+                  version: 10.x
+
+              - task: NuGetAuthenticate@1
+                displayName: Authenticate to Azure Artifacts
+
+              - powershell: |
+                  @"
+                  <?xml version="1.0" encoding="utf-8"?>
+                  <configuration>
+                    <packageSources>
+                      <clear />
+                      <add key="GraphDeveloperExperiences_Public" value="$(NUGET_FEED_URI)" />
+                    </packageSources>
+                  </configuration>
+                  "@ | Set-Content -Path "$(Build.SourcesDirectory)\nuget.config" -Encoding UTF8
+                displayName: Create nuget.config
+
+              - script: dotnet restore Microsoft.Graph.Beta.sln --configfile nuget.config
+                displayName: Restore dependencies
+                workingDirectory: $(Build.SourcesDirectory)
+
+              # Build each TFM sequentially to avoid OOM kills on the build agent.
+              # Building all TFMs in parallel exhausts memory on standard runners.
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.Beta.csproj --no-restore -f netstandard2.0
+                displayName: Build SDK (netstandard2.0)
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.Beta.csproj --no-restore -f netstandard2.1
+                displayName: Build SDK (netstandard2.1)
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.Beta.csproj --no-restore -f net8.0
+                displayName: Build SDK (net8.0)
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.Beta.csproj --no-restore -f net10.0
+                displayName: Build SDK (net10.0)
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj --no-restore
+                displayName: Build test project
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet test tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj --no-build
+                displayName: Run unit tests
+                workingDirectory: $(Build.SourcesDirectory)

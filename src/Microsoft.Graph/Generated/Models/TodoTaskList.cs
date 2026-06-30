@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class TodoTaskList : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -56,6 +56,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isShared"); }
             set { BackingStore?.Set("isShared", value); }
         }
+        /// <summary>The collection of single-value extended properties defined for the task list. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>? SingleValueExtendedProperties
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty> SingleValueExtendedProperties
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#endif
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.TodoTaskList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.TodoTaskList();
         }
         /// <summary>
@@ -100,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>(global::Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isOwner", n => { IsOwner = n.GetBoolValue(); } },
                 { "isShared", n => { IsShared = n.GetBoolValue(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>(global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TodoTask>(global::Microsoft.Graph.Beta.Models.TodoTask.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "wellknownListName", n => { WellknownListName = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WellknownListName>(); } },
             };
@@ -110,12 +127,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("isOwner", IsOwner);
             writer.WriteBoolValue("isShared", IsShared);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TodoTask>("tasks", Tasks);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WellknownListName>("wellknownListName", WellknownListName);
         }

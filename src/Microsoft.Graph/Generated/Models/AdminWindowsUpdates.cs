@@ -8,12 +8,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AdminWindowsUpdates : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
+        /// <summary>Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog? Catalog
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deploymentAudiences", value); }
         }
 #endif
-        /// <summary>Deployments created using the deployment service.</summary>
+        /// <summary>Deployments created using Windows Autopatch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>? Deployments
@@ -59,6 +59,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
+        }
+#endif
+        /// <summary>A collection of policies for approving the deployment of different content to an audience over time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>? Policies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>?>("policies"); }
+            set { BackingStore?.Set("policies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy> Policies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>>("policies"); }
+            set { BackingStore?.Set("policies", value); }
         }
 #endif
         /// <summary>A collection of Windows products.</summary>
@@ -93,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceConnections", value); }
         }
 #endif
-        /// <summary>Assets registered with the deployment service that can receive updates.</summary>
+        /// <summary>Assets registered with Windows Autopatch that can receive updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>? UpdatableAssets
@@ -132,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AdminWindowsUpdates CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AdminWindowsUpdates();
         }
         /// <summary>
@@ -146,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "catalog", n => { Catalog = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog.CreateFromDiscriminatorValue); } },
                 { "deploymentAudiences", n => { DeploymentAudiences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceConnections", n => { ResourceConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updatableAssets", n => { UpdatableAssets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -158,11 +175,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>("catalog", Catalog);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>("deploymentAudiences", DeploymentAudiences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>("deployments", Deployments);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>("policies", Policies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product>("products", Products);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>("resourceConnections", ResourceConnections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("updatableAssets", UpdatableAssets);

@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
     /// <summary>
     /// Provides operations to manage the settings property of the microsoft.graph.group entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectorySettingCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectorySettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectorySetting"/></returns>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
         public async Task<global::Microsoft.Graph.Beta.Models.DirectorySetting> PostAsync(global::Microsoft.Graph.Beta.Models.DirectorySetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.DirectorySetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
         /// <summary>
         /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Groups.Item.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>
         {
         }
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

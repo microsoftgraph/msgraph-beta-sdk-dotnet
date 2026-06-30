@@ -8,11 +8,27 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcConnectivityEvent : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The unique identifier (GUID) that represents the activity associated with this event. When the event type is userConnection, this value is the activity identifier for this event. For any other event types, this value is 00000000-0000-0000-0000-000000000000.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActivityId
+        {
+            get { return BackingStore?.Get<string?>("activityId"); }
+            set { BackingStore?.Set("activityId", value); }
+        }
+#nullable restore
+#else
+        public string ActivityId
+        {
+            get { return BackingStore?.Get<string>("activityId"); }
+            set { BackingStore?.Set("activityId", value); }
+        }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
         {
@@ -102,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CloudPcConnectivityEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcConnectivityEvent();
         }
         /// <summary>
@@ -113,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "activityId", n => { ActivityId = n.GetStringValue(); } },
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "eventName", n => { EventName = n.GetStringValue(); } },
                 { "eventResult", n => { EventResult = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult>(); } },
@@ -127,7 +144,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("activityId", ActivityId);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("eventName", EventName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult>("eventResult", EventResult);

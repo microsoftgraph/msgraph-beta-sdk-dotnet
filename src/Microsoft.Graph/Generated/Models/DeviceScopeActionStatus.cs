@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the status of the attempted device scope action</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DeviceScopeActionStatus
     {
         /// <summary>Indicates the device scope action failed to trigger.</summary>
@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the device scope action was successfully triggered.</summary>
         [EnumMember(Value = "succeeded")]
         Succeeded,
-        /// <summary>Placeholder value for future expansion.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

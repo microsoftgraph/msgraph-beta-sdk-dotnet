@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
     /// <summary>
     /// Provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileDeviceManagementPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -26,15 +26,15 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
             get => new global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        /// <param name="position">The unique identifier of mobilityManagementPolicy</param>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.MobilityManagementPolicyItemRequestBuilder"/></returns>
-        public global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.MobilityManagementPolicyItemRequestBuilder this[string position]
+        /// <param name="position">The unique identifier of mobileDeviceManagementPolicy</param>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.MobileDeviceManagementPolicyItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.MobileDeviceManagementPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("mobilityManagementPolicy%2Did", position);
-                return new global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.MobilityManagementPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("mobileDeviceManagementPolicy%2Did", position);
+                return new global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.MobileDeviceManagementPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -57,17 +57,17 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
         /// Get a list of the mobilityManagementPolicy objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder.MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder.MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder.MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder.MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -75,32 +75,32 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MobilityManagementPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to mobileDeviceManagementPolicies for policies
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy?> PostAsync(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy?> PostAsync(global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy> PostAsync(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy> PostAsync(global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the mobilityManagementPolicy objects and their properties.
@@ -129,14 +129,14 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobilityManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MobileDeviceManagementPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
         /// <summary>
         /// Get a list of the mobilityManagementPolicy objects and their properties.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder.MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters>
         {
         }
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

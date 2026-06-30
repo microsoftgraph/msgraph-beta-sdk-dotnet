@@ -7,18 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class QualityUpdateFilter : global::Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsUpdateFilter, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The cadence property</summary>
+        /// <summary>Specifies the cadence for publishing quality updates of the filter. The possible values are: monthly, outOfBand, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? Cadence
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence?>("cadence"); }
             set { BackingStore?.Set("cadence", value); }
         }
-        /// <summary>The classification property</summary>
+        /// <summary>Specifies the quality update classification of the filter. The possible values are: all, security, nonSecurity, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification? Classification
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>("classification"); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter();
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence>("cadence", Cadence);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification>("classification", Classification);

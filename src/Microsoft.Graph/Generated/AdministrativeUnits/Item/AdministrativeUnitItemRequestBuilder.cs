@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.DeletedMembers;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.Extensions;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.GetMemberObjects;
@@ -23,7 +24,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
     /// <summary>
     /// Provides operations to manage the collection of administrativeUnit entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdministrativeUnitItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
@@ -35,6 +36,11 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
         public global::Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
             get => new global::Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deletedMembers property of the microsoft.graph.administrativeUnit entity.</summary>
+        public global::Microsoft.Graph.Beta.AdministrativeUnits.Item.DeletedMembers.DeletedMembersRequestBuilder DeletedMembers
+        {
+            get => new global::Microsoft.Graph.Beta.AdministrativeUnits.Item.DeletedMembers.DeletedMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.</summary>
         public global::Microsoft.Graph.Beta.AdministrativeUnits.Item.Extensions.ExtensionsRequestBuilder Extensions
@@ -106,7 +112,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object. Since the administrativeUnit resource supports extensions, you can also use the GET operation to get custom properties and extension data in an administrativeUnit instance.
+        /// Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AdministrativeUnit"/></returns>
@@ -147,7 +153,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
         public async Task<global::Microsoft.Graph.Beta.Models.AdministrativeUnit> PatchAsync(global::Microsoft.Graph.Beta.Models.AdministrativeUnit body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -175,7 +181,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object. Since the administrativeUnit resource supports extensions, you can also use the GET operation to get custom properties and extension data in an administrativeUnit instance.
+        /// Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -208,7 +214,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.AdministrativeUnit body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -228,14 +234,14 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdministrativeUnitItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object. Since the administrativeUnit resource supports extensions, you can also use the GET operation to get custom properties and extension data in an administrativeUnit instance.
+        /// Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdministrativeUnitItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -263,7 +269,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdministrativeUnitItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder.AdministrativeUnitItemRequestBuilderGetQueryParameters>
         {
         }
@@ -271,7 +277,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdministrativeUnitItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

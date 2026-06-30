@@ -7,11 +7,17 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SensitivityLabel : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The actionSource property</summary>
+        public global::Microsoft.Graph.Beta.Models.LabelActionSource? ActionSource
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LabelActionSource?>("actionSource"); }
+            set { BackingStore?.Set("actionSource", value); }
+        }
         /// <summary>The applicableTo property</summary>
         public global::Microsoft.Graph.Beta.Models.SensitivityLabelTarget? ApplicableTo
         {
@@ -24,36 +30,36 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApplicationMode?>("applicationMode"); }
             set { BackingStore?.Set("applicationMode", value); }
         }
-        /// <summary>The assignedPolicies property</summary>
+        /// <summary>The autoTooltip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.LabelPolicy>? AssignedPolicies
+        public string? AutoTooltip
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.LabelPolicy>?>("assignedPolicies"); }
-            set { BackingStore?.Set("assignedPolicies", value); }
+            get { return BackingStore?.Get<string?>("autoTooltip"); }
+            set { BackingStore?.Set("autoTooltip", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.LabelPolicy> AssignedPolicies
+        public string AutoTooltip
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.LabelPolicy>>("assignedPolicies"); }
-            set { BackingStore?.Set("assignedPolicies", value); }
+            get { return BackingStore?.Get<string>("autoTooltip"); }
+            set { BackingStore?.Set("autoTooltip", value); }
         }
 #endif
-        /// <summary>The autoLabeling property</summary>
+        /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.AutoLabeling? AutoLabeling
+        public string? Color
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AutoLabeling?>("autoLabeling"); }
-            set { BackingStore?.Set("autoLabeling", value); }
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.AutoLabeling AutoLabeling
+        public string Color
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AutoLabeling>("autoLabeling"); }
-            set { BackingStore?.Set("autoLabeling", value); }
+            get { return BackingStore?.Get<string>("color"); }
+            set { BackingStore?.Set("color", value); }
         }
 #endif
         /// <summary>The description property</summary>
@@ -88,11 +94,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The hasProtection property</summary>
+        public bool? HasProtection
+        {
+            get { return BackingStore?.Get<bool?>("hasProtection"); }
+            set { BackingStore?.Set("hasProtection", value); }
+        }
         /// <summary>The isDefault property</summary>
         public bool? IsDefault
         {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
+        }
+        /// <summary>The isEnabled property</summary>
+        public bool? IsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The isEndpointProtectionEnabled property</summary>
         public bool? IsEndpointProtectionEnabled
@@ -100,20 +118,26 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isEndpointProtectionEnabled"); }
             set { BackingStore?.Set("isEndpointProtectionEnabled", value); }
         }
-        /// <summary>The labelActions property</summary>
+        /// <summary>The isScopedToUser property</summary>
+        public bool? IsScopedToUser
+        {
+            get { return BackingStore?.Get<bool?>("isScopedToUser"); }
+            set { BackingStore?.Set("isScopedToUser", value); }
+        }
+        /// <summary>The locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.LabelActionBase>? LabelActions
+        public string? Locale
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.LabelActionBase>?>("labelActions"); }
-            set { BackingStore?.Set("labelActions", value); }
+            get { return BackingStore?.Get<string?>("locale"); }
+            set { BackingStore?.Set("locale", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.LabelActionBase> LabelActions
+        public string Locale
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.LabelActionBase>>("labelActions"); }
-            set { BackingStore?.Set("labelActions", value); }
+            get { return BackingStore?.Get<string>("locale"); }
+            set { BackingStore?.Set("locale", value); }
         }
 #endif
         /// <summary>The name property</summary>
@@ -138,6 +162,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
+        /// <summary>The rights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.UsageRightsIncluded? Rights
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UsageRightsIncluded?>("rights"); }
+            set { BackingStore?.Set("rights", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.UsageRightsIncluded Rights
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UsageRightsIncluded>("rights"); }
+            set { BackingStore?.Set("rights", value); }
+        }
+#endif
         /// <summary>The sublabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,7 +217,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.SensitivityLabel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.SensitivityLabel();
         }
         /// <summary>
@@ -188,17 +228,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "actionSource", n => { ActionSource = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.LabelActionSource>(); } },
                 { "applicableTo", n => { ApplicableTo = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SensitivityLabelTarget>(); } },
                 { "applicationMode", n => { ApplicationMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ApplicationMode>(); } },
-                { "assignedPolicies", n => { AssignedPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelPolicy>(global::Microsoft.Graph.Beta.Models.LabelPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "autoLabeling", n => { AutoLabeling = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AutoLabeling>(global::Microsoft.Graph.Beta.Models.AutoLabeling.CreateFromDiscriminatorValue); } },
+                { "autoTooltip", n => { AutoTooltip = n.GetStringValue(); } },
+                { "color", n => { Color = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "hasProtection", n => { HasProtection = n.GetBoolValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
-                { "labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelActionBase>(global::Microsoft.Graph.Beta.Models.LabelActionBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isScopedToUser", n => { IsScopedToUser = n.GetBoolValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
+                { "rights", n => { Rights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UsageRightsIncluded>(global::Microsoft.Graph.Beta.Models.UsageRightsIncluded.CreateFromDiscriminatorValue); } },
                 { "sublabels", n => { Sublabels = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SensitivityLabel>(global::Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "toolTip", n => { ToolTip = n.GetStringValue(); } },
             };
@@ -209,19 +254,24 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.LabelActionSource>("actionSource", ActionSource);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SensitivityLabelTarget>("applicableTo", ApplicableTo);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ApplicationMode>("applicationMode", ApplicationMode);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelPolicy>("assignedPolicies", AssignedPolicies);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AutoLabeling>("autoLabeling", AutoLabeling);
+            writer.WriteStringValue("autoTooltip", AutoTooltip);
+            writer.WriteStringValue("color", Color);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("hasProtection", HasProtection);
             writer.WriteBoolValue("isDefault", IsDefault);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isEndpointProtectionEnabled", IsEndpointProtectionEnabled);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LabelActionBase>("labelActions", LabelActions);
+            writer.WriteBoolValue("isScopedToUser", IsScopedToUser);
+            writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("priority", Priority);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UsageRightsIncluded>("rights", Rights);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SensitivityLabel>("sublabels", Sublabels);
             writer.WriteStringValue("toolTip", ToolTip);
         }

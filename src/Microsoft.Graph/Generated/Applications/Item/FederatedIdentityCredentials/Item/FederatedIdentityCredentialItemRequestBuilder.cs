@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
     /// <summary>
     /// Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FederatedIdentityCredentialItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
         {
         }
         /// <summary>
-        /// Deletes a federatedIdentityCredential object from an application.
+        /// Delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential"/></returns>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential>(requestInfo, global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new federatedIdentityCredential object for an application if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+        /// Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential"/></returns>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
         public async Task<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential> PatchAsync(global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential>(requestInfo, global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a federatedIdentityCredential object from an application.
+        /// Delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             return requestInfo;
         }
         /// <summary>
-        /// Create a new federatedIdentityCredential object for an application if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+        /// Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn&apos;t exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -180,14 +180,14 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedIdentityCredentialItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.Item.FederatedIdentityCredentialItemRequestBuilder.FederatedIdentityCredentialItemRequestBuilderGetQueryParameters>
         {
         }
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

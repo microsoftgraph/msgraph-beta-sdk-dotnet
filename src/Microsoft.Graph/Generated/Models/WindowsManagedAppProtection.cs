@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on a Windows device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsManagedAppProtection : global::Microsoft.Graph.Beta.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>Data can be transferred from/to these classes of apps</summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel?>("allowedOutboundDataTransferDestinations"); }
             set { BackingStore?.Set("allowedOutboundDataTransferDestinations", value); }
         }
-        /// <summary>If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.</summary>
+        /// <summary>If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfUnableToAuthenticateUser"); }
@@ -317,7 +317,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.WindowsManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.WindowsManagedAppProtection();
         }
         /// <summary>
@@ -361,7 +361,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>("allowedInboundDataTransferSources", AllowedInboundDataTransferSources);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel>("allowedOutboundClipboardSharingLevel", AllowedOutboundClipboardSharingLevel);

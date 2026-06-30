@@ -8,9 +8,9 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// Contains properties for the installation summary of a mobile app. This will be deprecated in May, 2023
+    /// Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppInstallSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of Devices that have failed to install this app.</summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MobileAppInstallSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MobileAppInstallSummary();
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }
     }

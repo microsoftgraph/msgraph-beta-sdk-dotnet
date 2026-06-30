@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Management Configuration Policy
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementConfigurationPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Policy assignments</summary>
@@ -67,6 +67,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
+        /// <summary>Indicates whether Entra Group policy assignment is disabled</summary>
+        public bool? DisableEntraGroupPolicyAssignment
+        {
+            get { return BackingStore?.Get<bool?>("disableEntraGroupPolicyAssignment"); }
+            set { BackingStore?.Set("disableEntraGroupPolicyAssignment", value); }
+        }
         /// <summary>Policy assignment status. This property is read-only.</summary>
         public bool? IsAssigned
         {
@@ -184,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy();
         }
         /// <summary>
@@ -199,6 +205,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "creationSource", n => { CreationSource = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "disableEntraGroupPolicyAssignment", n => { DisableEntraGroupPolicyAssignment = n.GetBoolValue(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -217,12 +224,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("creationSource", CreationSource);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("disableEntraGroupPolicyAssignment", DisableEntraGroupPolicyAssignment);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>("platforms", Platforms);

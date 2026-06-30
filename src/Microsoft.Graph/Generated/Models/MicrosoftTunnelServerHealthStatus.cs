@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Enum of possible MicrosoftTunnelServer health status types</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MicrosoftTunnelServerHealthStatus
     {
         /// <summary>Indicates that the health status of the server is unknown. This occurs when no health status has been reported, for example when the server is initialized, but has not yet been evaluated for its health.</summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the failure of the upgrade during the upgrade cycle of when Intune begins upgrading servers, one server at a time</summary>
         [EnumMember(Value = "upgradeFailed")]
         UpgradeFailed,
-        /// <summary>Evolvable enumeration sentinel value. Do not use enums.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

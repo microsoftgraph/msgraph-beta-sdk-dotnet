@@ -3,7 +3,12 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Identities.HealthIssues;
+using Microsoft.Graph.Beta.Security.Identities.IdentityAccounts;
+using Microsoft.Graph.Beta.Security.Identities.SensorCandidateActivationConfiguration;
+using Microsoft.Graph.Beta.Security.Identities.SensorCandidates;
+using Microsoft.Graph.Beta.Security.Identities.SensorMigration;
 using Microsoft.Graph.Beta.Security.Identities.Sensors;
+using Microsoft.Graph.Beta.Security.Identities.Settings;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -17,7 +22,7 @@ namespace Microsoft.Graph.Beta.Security.Identities
     /// <summary>
     /// Provides operations to manage the identities property of the microsoft.graph.security entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentitiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the healthIssues property of the microsoft.graph.security.identityContainer entity.</summary>
@@ -25,10 +30,35 @@ namespace Microsoft.Graph.Beta.Security.Identities
         {
             get => new global::Microsoft.Graph.Beta.Security.Identities.HealthIssues.HealthIssuesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the identityAccounts property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.IdentityAccountsRequestBuilder IdentityAccounts
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Identities.IdentityAccounts.IdentityAccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensorCandidateActivationConfiguration property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Identities.SensorCandidateActivationConfiguration.SensorCandidateActivationConfigurationRequestBuilder SensorCandidateActivationConfiguration
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Identities.SensorCandidateActivationConfiguration.SensorCandidateActivationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensorCandidates property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Identities.SensorCandidates.SensorCandidatesRequestBuilder SensorCandidates
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Identities.SensorCandidates.SensorCandidatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensorMigration property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Identities.SensorMigration.SensorMigrationRequestBuilder SensorMigration
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Identities.SensorMigration.SensorMigrationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Security.Identities.Sensors.SensorsRequestBuilder Sensors
         {
             get => new global::Microsoft.Graph.Beta.Security.Identities.Sensors.SensorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Identities.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Identities.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.Identities.IdentitiesRequestBuilder"/> and sets the default values.
@@ -108,7 +138,7 @@ namespace Microsoft.Graph.Beta.Security.Identities
         public async Task<global::Microsoft.Graph.Beta.Models.Security.IdentityContainer> PatchAsync(global::Microsoft.Graph.Beta.Models.Security.IdentityContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -169,7 +199,7 @@ namespace Microsoft.Graph.Beta.Security.Identities
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Security.IdentityContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -189,14 +219,14 @@ namespace Microsoft.Graph.Beta.Security.Identities
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitiesRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// A container for security identities APIs.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitiesRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -224,7 +254,7 @@ namespace Microsoft.Graph.Beta.Security.Identities
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitiesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Security.Identities.IdentitiesRequestBuilder.IdentitiesRequestBuilderGetQueryParameters>
         {
         }
@@ -232,7 +262,7 @@ namespace Microsoft.Graph.Beta.Security.Identities
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitiesRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

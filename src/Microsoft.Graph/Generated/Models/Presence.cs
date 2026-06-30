@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Presence : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.</summary>
+        /// <summary>The supplemental information to a user&apos;s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Activity
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("activity", value); }
         }
 #endif
-        /// <summary>The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.</summary>
+        /// <summary>The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Availability
@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("outOfOfficeSettings", value); }
         }
 #endif
+        /// <summary>The lexicographically sortable String stamp that represents the version of a presence object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SequenceNumber
+        {
+            get { return BackingStore?.Get<string?>("sequenceNumber"); }
+            set { BackingStore?.Set("sequenceNumber", value); }
+        }
+#nullable restore
+#else
+        public string SequenceNumber
+        {
+            get { return BackingStore?.Get<string>("sequenceNumber"); }
+            set { BackingStore?.Set("sequenceNumber", value); }
+        }
+#endif
         /// <summary>The presence status message of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("statusMessage", value); }
         }
 #endif
+        /// <summary>Represents the user’s aggregated work location state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.UserWorkLocation? WorkLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserWorkLocation?>("workLocation"); }
+            set { BackingStore?.Set("workLocation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.UserWorkLocation WorkLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserWorkLocation>("workLocation"); }
+            set { BackingStore?.Set("workLocation", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Presence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Presence();
         }
         /// <summary>
@@ -97,7 +129,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "activity", n => { Activity = n.GetStringValue(); } },
                 { "availability", n => { Availability = n.GetStringValue(); } },
                 { "outOfOfficeSettings", n => { OutOfOfficeSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(global::Microsoft.Graph.Beta.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
+                { "sequenceNumber", n => { SequenceNumber = n.GetStringValue(); } },
                 { "statusMessage", n => { StatusMessage = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PresenceStatusMessage>(global::Microsoft.Graph.Beta.Models.PresenceStatusMessage.CreateFromDiscriminatorValue); } },
+                { "workLocation", n => { WorkLocation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserWorkLocation>(global::Microsoft.Graph.Beta.Models.UserWorkLocation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,12 +140,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("activity", Activity);
             writer.WriteStringValue("availability", Availability);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PresenceStatusMessage>("statusMessage", StatusMessage);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserWorkLocation>("workLocation", WorkLocation);
         }
     }
 }

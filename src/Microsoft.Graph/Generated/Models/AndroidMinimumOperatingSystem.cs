@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the minimum operating system required for an Android mobile app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -67,6 +67,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("v14_0"); }
             set { BackingStore?.Set("v14_0", value); }
+        }
+        /// <summary>When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        public bool? V150
+        {
+            get { return BackingStore?.Get<bool?>("v15_0"); }
+            set { BackingStore?.Set("v15_0", value); }
         }
         /// <summary>When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V40
@@ -167,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem();
         }
         /// <summary>
@@ -184,6 +190,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "v12_0", n => { V120 = n.GetBoolValue(); } },
                 { "v13_0", n => { V130 = n.GetBoolValue(); } },
                 { "v14_0", n => { V140 = n.GetBoolValue(); } },
+                { "v15_0", n => { V150 = n.GetBoolValue(); } },
                 { "v4_0", n => { V40 = n.GetBoolValue(); } },
                 { "v4_0_3", n => { V403 = n.GetBoolValue(); } },
                 { "v4_1", n => { V41 = n.GetBoolValue(); } },
@@ -206,13 +213,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("v10_0", V100);
             writer.WriteBoolValue("v11_0", V110);
             writer.WriteBoolValue("v12_0", V120);
             writer.WriteBoolValue("v13_0", V130);
             writer.WriteBoolValue("v14_0", V140);
+            writer.WriteBoolValue("v15_0", V150);
             writer.WriteBoolValue("v4_0", V40);
             writer.WriteBoolValue("v4_0_3", V403);
             writer.WriteBoolValue("v4_1", V41);

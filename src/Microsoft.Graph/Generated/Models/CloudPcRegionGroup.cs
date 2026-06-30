@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum CloudPcRegionGroup
     #pragma warning restore CS1591
@@ -99,6 +99,90 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "mexico")]
         #pragma warning disable CS1591
         Mexico,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "australasia")]
+        #pragma warning disable CS1591
+        Australasia,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "europe")]
+        #pragma warning disable CS1591
+        Europe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "singapore")]
+        #pragma warning disable CS1591
+        Singapore,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hongKong")]
+        #pragma warning disable CS1591
+        HongKong,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ireland")]
+        #pragma warning disable CS1591
+        Ireland,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sweden")]
+        #pragma warning disable CS1591
+        Sweden,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "poland")]
+        #pragma warning disable CS1591
+        Poland,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "italy")]
+        #pragma warning disable CS1591
+        Italy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "spain")]
+        #pragma warning disable CS1591
+        Spain,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "netherlands")]
+        #pragma warning disable CS1591
+        Netherlands,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "brazil")]
+        #pragma warning disable CS1591
+        Brazil,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "israel")]
+        #pragma warning disable CS1591
+        Israel,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automatic")]
+        #pragma warning disable CS1591
+        Automatic,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "indonesia")]
+        #pragma warning disable CS1591
+        Indonesia,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "taiwan")]
+        #pragma warning disable CS1591
+        Taiwan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "malaysia")]
+        #pragma warning disable CS1591
+        Malaysia,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "newZealand")]
+        #pragma warning disable CS1591
+        NewZealand,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "austria")]
+        #pragma warning disable CS1591
+        Austria,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "denmark")]
+        #pragma warning disable CS1591
+        Denmark,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "belgium")]
+        #pragma warning disable CS1591
+        Belgium,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kenya")]
+        #pragma warning disable CS1591
+        Kenya,
         #pragma warning restore CS1591
     }
 }

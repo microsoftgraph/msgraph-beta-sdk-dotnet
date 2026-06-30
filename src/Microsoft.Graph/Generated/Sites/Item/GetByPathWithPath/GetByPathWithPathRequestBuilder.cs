@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics;
+using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Archive;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Columns;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.ContentModels;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.ContentTypes;
@@ -10,6 +11,7 @@ using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.CreatedByUser;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.DocumentProcessingJobs;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Drive;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Drives;
+using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Extensions;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.ExternalColumns;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId;
@@ -19,11 +21,13 @@ using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.LastModifiedByUser;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Lists;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Onenote;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Operations;
+using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.PageTemplates;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Pages;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Permissions;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.RecycleBin;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Sites;
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.TermStore;
+using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -37,13 +41,18 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath
     /// <summary>
     /// Provides operations to call the getByPath method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetByPathWithPathRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the analytics property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Columns.ColumnsRequestBuilder Columns
@@ -79,6 +88,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Drives.DrivesRequestBuilder Drives
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.site entity.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Extensions.ExtensionsRequestBuilder Extensions
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.ExternalColumns.ExternalColumnsRequestBuilder ExternalColumns
@@ -120,6 +134,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the pageTemplates property of the microsoft.graph.site entity.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.PageTemplates.PageTemplatesRequestBuilder PageTemplates
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.PageTemplates.PageTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Permissions.PermissionsRequestBuilder Permissions
         {
@@ -139,6 +158,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath
         public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.TermStore.TermStoreRequestBuilder TermStore
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.GetByPathWithPathRequestBuilder"/> and sets the default values.
@@ -237,7 +261,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetByPathWithPathRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

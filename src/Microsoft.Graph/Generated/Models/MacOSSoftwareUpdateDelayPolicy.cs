@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Flag enum to determine whether to delay software updates for macOS.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     public enum MacOSSoftwareUpdateDelayPolicy
     {
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Force delays for app software updates.</summary>
         [EnumMember(Value = "delayAppUpdateVisibility")]
         DelayAppUpdateVisibility = 4,
-        /// <summary>Sentinel member for cases where the client cannot handle the new enum values.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 8,
         /// <summary>Force delays for major OS software updates.</summary>

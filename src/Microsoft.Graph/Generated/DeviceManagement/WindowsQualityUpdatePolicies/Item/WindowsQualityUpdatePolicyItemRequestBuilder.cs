@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.BulkAction;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -17,7 +19,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
     /// <summary>
     /// Provides operations to manage the windowsQualityUpdatePolicies property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsQualityUpdatePolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
@@ -29,6 +31,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
         public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the bulkAction method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.BulkAction.BulkActionRequestBuilder BulkAction
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.BulkAction.BulkActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.WindowsQualityUpdatePolicyItemRequestBuilder"/> and sets the default values.
@@ -108,13 +115,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
         public async Task<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy> PatchAsync(global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the retrieveWindowsQualityUpdateCatalogItemDetails method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder"/></returns>
+        /// <param name="ids">Usage: ids={ids}</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds(string ids)
+        {
+            if(string.IsNullOrEmpty(ids)) throw new ArgumentNullException(nameof(ids));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds.RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder(PathParameters, RequestAdapter, ids);
         }
         /// <summary>
         /// Delete navigation property windowsQualityUpdatePolicies for deviceManagement
@@ -169,7 +186,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -189,14 +206,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsQualityUpdatePolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// A collection of Windows quality update policies
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsQualityUpdatePolicyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -224,7 +241,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsQualityUpdatePolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Item.WindowsQualityUpdatePolicyItemRequestBuilder.WindowsQualityUpdatePolicyItemRequestBuilderGetQueryParameters>
         {
         }
@@ -232,7 +249,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsQualityUpdatePolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

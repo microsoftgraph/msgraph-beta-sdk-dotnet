@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
     /// <summary>
     /// Provides operations to call the evaluate method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EvaluateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         {
         }
         /// <summary>
-        /// Invoke action evaluate
+        /// Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         public async Task<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse> PostAsEvaluatePostResponseAsync(global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse>(requestInfo, global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action evaluate
+        /// Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -76,7 +78,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         public async Task<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse> PostAsync(global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse>(requestInfo, global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action evaluate
+        /// Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -119,7 +121,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EvaluateRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

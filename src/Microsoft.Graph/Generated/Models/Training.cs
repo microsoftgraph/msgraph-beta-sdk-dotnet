@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Training : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
+        /// <summary>The training availability status. The possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TrainingAvailabilityStatus? AvailabilityStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TrainingAvailabilityStatus?>("availabilityStatus"); }
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The source of the training content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
+        /// <summary>The source of the training content. The possible values are: unknown, global, tenant, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationContentSource? Source
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationContentSource?>("source"); }
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tags", value); }
         }
 #endif
-        /// <summary>The type of training. Possible values are: unknown, phishing, unknownFutureValue.</summary>
+        /// <summary>The type of training. The possible values are: unknown, phishing, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TrainingType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TrainingType?>("type"); }
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Training CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Training();
         }
         /// <summary>
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TrainingAvailabilityStatus>("availabilityStatus", AvailabilityStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EmailIdentity>("createdBy", CreatedBy);

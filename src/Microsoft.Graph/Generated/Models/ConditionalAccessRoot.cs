@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ConditionalAccessRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -58,6 +58,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrengths"); }
             set { BackingStore?.Set("authenticationStrengths", value); }
+        }
+#endif
+        /// <summary>Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot? DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot?>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
@@ -115,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ConditionalAccessRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ConditionalAccessRoot();
         }
         /// <summary>
@@ -129,6 +145,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>(global::Microsoft.Graph.Beta.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>(global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
                 { "authenticationStrengths", n => { AuthenticationStrengths = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>(global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
+                { "deletedItems", n => { DeletedItems = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot>(global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot.CreateFromDiscriminatorValue); } },
                 { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NamedLocation>(global::Microsoft.Graph.Beta.Models.NamedLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templates", n => { Templates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>(global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -140,11 +157,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrengths", AuthenticationStrengths);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot>("deletedItems", DeletedItems);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NamedLocation>("namedLocations", NamedLocations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("policies", Policies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>("templates", Templates);

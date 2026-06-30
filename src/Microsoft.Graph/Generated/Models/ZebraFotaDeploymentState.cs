@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents the state of Zebra FOTA deployment.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ZebraFotaDeploymentState
     {
         /// <summary>Deployment is created but Zebra has not confirmed its creation.</summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Deployment has been successfully canceled by Zebra.</summary>
         [EnumMember(Value = "canceled")]
         Canceled,
-        /// <summary>Unknown future enum value.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class StsPolicy : global::Microsoft.Graph.Beta.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
@@ -64,13 +64,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.StsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new global::Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.b2bManagementPolicy" => new global::Microsoft.Graph.Beta.Models.B2bManagementPolicy(),
                 "#microsoft.graph.claimsMappingPolicy" => new global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.onPremAuthenticationPolicy" => new global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy(),
                 "#microsoft.graph.tokenIssuancePolicy" => new global::Microsoft.Graph.Beta.Models.TokenIssuancePolicy(),
                 "#microsoft.graph.tokenLifetimePolicy" => new global::Microsoft.Graph.Beta.Models.TokenLifetimePolicy(),
                 _ => new global::Microsoft.Graph.Beta.Models.StsPolicy(),
@@ -95,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("appliesTo", AppliesTo);
             writer.WriteCollectionOfPrimitiveValues<string>("definition", Definition);

@@ -7,11 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
+    /// <summary>
+    /// Represents a Microsoft online meeting.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OnlineMeeting : global::Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
-    #pragma warning restore CS1591
     {
+        /// <summary>The AI insights generated for an online meeting. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CallAiInsight>? AiInsights
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CallAiInsight>?>("aiInsights"); }
+            set { BackingStore?.Set("aiInsights", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CallAiInsight> AiInsights
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CallAiInsight>>("aiInsights"); }
+            set { BackingStore?.Set("aiInsights", value); }
+        }
+#endif
         /// <summary>The content stream of the alternative recording of a Microsoft Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #endif
-        /// <summary>The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.</summary>
+        /// <summary>The list of meeting capabilities. The possible values are: questionAndAnswer,unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MeetingCapabilities?>? Capabilities
@@ -104,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The external ID. A custom ID. Optional.</summary>
+        /// <summary>The external ID that is a custom identifier. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId
@@ -274,7 +291,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OnlineMeeting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OnlineMeeting();
         }
         /// <summary>
@@ -285,6 +302,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "aiInsights", n => { AiInsights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallAiInsight>(global::Microsoft.Graph.Beta.Models.CallAiInsight.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 { "attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 { "broadcastRecording", n => { BroadcastRecording = n.GetByteArrayValue(); } },
@@ -311,8 +329,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallAiInsight>("aiInsights", AiInsights);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteByteArrayValue("broadcastRecording", BroadcastRecording);

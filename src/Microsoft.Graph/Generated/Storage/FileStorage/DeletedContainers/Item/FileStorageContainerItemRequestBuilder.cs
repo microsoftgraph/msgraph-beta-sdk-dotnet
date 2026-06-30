@@ -3,12 +3,19 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Activate;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Archive;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Columns;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Lock;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.MigrationJobs;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.PermanentDelete;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Permissions;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.ProvisionMigrationContainers;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -22,13 +29,18 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
     /// <summary>
     /// Provides operations to manage the deletedContainers property of the microsoft.graph.fileStorage entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FileStorageContainerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the activate method.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Activate.ActivateRequestBuilder Activate
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Columns.ColumnsRequestBuilder Columns
@@ -40,6 +52,16 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the lock method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Lock.LockRequestBuilder Lock
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Lock.LockRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the migrationJobs property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.MigrationJobs.MigrationJobsRequestBuilder MigrationJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.MigrationJobs.MigrationJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
@@ -50,6 +72,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the provisionMigrationContainers method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.ProvisionMigrationContainers.ProvisionMigrationContainersRequestBuilder ProvisionMigrationContainers
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.ProvisionMigrationContainers.ProvisionMigrationContainersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin.RecycleBinRequestBuilder RecycleBin
         {
@@ -59,6 +86,21 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder SharePointGroups
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unlock method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock.UnlockRequestBuilder Unlock
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock.UnlockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.FileStorageContainerItemRequestBuilder"/> and sets the default values.
@@ -99,7 +141,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get deletedContainers from storage
+        /// The collection of deleted fileStorageContainer resources.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -138,7 +180,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         public async Task<global::Microsoft.Graph.Beta.Models.FileStorageContainer> PatchAsync(global::Microsoft.Graph.Beta.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -166,7 +208,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get deletedContainers from storage
+        /// The collection of deleted fileStorageContainer resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +241,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -219,14 +261,14 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Get deletedContainers from storage
+        /// The collection of deleted fileStorageContainer resources.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -254,7 +296,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.FileStorageContainerItemRequestBuilder.FileStorageContainerItemRequestBuilderGetQueryParameters>
         {
         }
@@ -262,7 +304,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

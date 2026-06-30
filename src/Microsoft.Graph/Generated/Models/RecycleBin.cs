@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RecycleBin : global::Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("items", value); }
         }
 #endif
+        /// <summary>Settings of the recycleBin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RecycleBinSettings? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecycleBinSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RecycleBinSettings Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecycleBinSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.RecycleBin"/> and sets the default values.
         /// </summary>
@@ -42,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.RecycleBin CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.RecycleBin();
         }
         /// <summary>
@@ -54,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecycleBinItem>(global::Microsoft.Graph.Beta.Models.RecycleBinItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBinSettings>(global::Microsoft.Graph.Beta.Models.RecycleBinSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,9 +79,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecycleBinItem>("items", Items);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBinSettings>("settings", Settings);
         }
     }
 }

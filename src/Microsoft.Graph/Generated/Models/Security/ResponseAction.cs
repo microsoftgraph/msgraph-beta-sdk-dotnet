@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ResponseAction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -52,26 +52,41 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Security.ResponseAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.security.allowFileResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.AllowFileResponseAction(),
                 "#microsoft.graph.security.blockFileResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.BlockFileResponseAction(),
+                "#microsoft.graph.security.collectInvestigationPackageIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.CollectInvestigationPackageIncidentTaskResponseAction(),
                 "#microsoft.graph.security.collectInvestigationPackageResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.CollectInvestigationPackageResponseAction(),
+                "#microsoft.graph.security.disableUserIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.DisableUserIncidentTaskResponseAction(),
                 "#microsoft.graph.security.disableUserResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.DisableUserResponseAction(),
+                "#microsoft.graph.security.enableUserIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.EnableUserIncidentTaskResponseAction(),
+                "#microsoft.graph.security.forceUserPasswordResetIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.ForceUserPasswordResetIncidentTaskResponseAction(),
                 "#microsoft.graph.security.forceUserPasswordResetResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.ForceUserPasswordResetResponseAction(),
+                "#microsoft.graph.security.hardDeleteEmailIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.HardDeleteEmailIncidentTaskResponseAction(),
                 "#microsoft.graph.security.hardDeleteResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.HardDeleteResponseAction(),
+                "#microsoft.graph.security.incidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.IncidentTaskResponseAction(),
                 "#microsoft.graph.security.initiateInvestigationResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.InitiateInvestigationResponseAction(),
+                "#microsoft.graph.security.isolateDeviceIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.IsolateDeviceIncidentTaskResponseAction(),
                 "#microsoft.graph.security.isolateDeviceResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.IsolateDeviceResponseAction(),
+                "#microsoft.graph.security.markUserAsCompromisedIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.MarkUserAsCompromisedIncidentTaskResponseAction(),
                 "#microsoft.graph.security.markUserAsCompromisedResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.MarkUserAsCompromisedResponseAction(),
                 "#microsoft.graph.security.moveToDeletedItemsResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.MoveToDeletedItemsResponseAction(),
                 "#microsoft.graph.security.moveToInboxResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.MoveToInboxResponseAction(),
                 "#microsoft.graph.security.moveToJunkResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.MoveToJunkResponseAction(),
+                "#microsoft.graph.security.requireSignInIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.RequireSignInIncidentTaskResponseAction(),
+                "#microsoft.graph.security.restrictAppExecutionIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.RestrictAppExecutionIncidentTaskResponseAction(),
                 "#microsoft.graph.security.restrictAppExecutionResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.RestrictAppExecutionResponseAction(),
+                "#microsoft.graph.security.runAntivirusScanIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.RunAntivirusScanIncidentTaskResponseAction(),
                 "#microsoft.graph.security.runAntivirusScanResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.RunAntivirusScanResponseAction(),
+                "#microsoft.graph.security.softDeleteIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.SoftDeleteIncidentTaskResponseAction(),
                 "#microsoft.graph.security.softDeleteResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.SoftDeleteResponseAction(),
+                "#microsoft.graph.security.stopAndQuarantineFileIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.StopAndQuarantineFileIncidentTaskResponseAction(),
                 "#microsoft.graph.security.stopAndQuarantineFileResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.StopAndQuarantineFileResponseAction(),
+                "#microsoft.graph.security.unIsolateDeviceIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.UnIsolateDeviceIncidentTaskResponseAction(),
+                "#microsoft.graph.security.unRestrictAppExecutionIncidentTaskResponseAction" => new global::Microsoft.Graph.Beta.Models.Security.UnRestrictAppExecutionIncidentTaskResponseAction(),
                 _ => new global::Microsoft.Graph.Beta.Models.Security.ResponseAction(),
             };
         }
@@ -92,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

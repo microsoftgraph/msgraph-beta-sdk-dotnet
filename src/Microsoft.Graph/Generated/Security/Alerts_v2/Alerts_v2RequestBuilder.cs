@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Alerts_v2.Count;
 using Microsoft.Graph.Beta.Security.Alerts_v2.Item;
+using Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -17,13 +18,18 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
     /// <summary>
     /// Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Alerts_v2RequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public global::Microsoft.Graph.Beta.Security.Alerts_v2.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Security.Alerts_v2.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the moveAlerts method.</summary>
+        public global::Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts.MicrosoftGraphSecurityMoveAlertsRequestBuilder MicrosoftGraphSecurityMoveAlerts
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts.MicrosoftGraphSecurityMoveAlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of alert</param>
@@ -78,7 +84,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.AlertCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.AlertCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to alerts_v2 for security
+        /// Create a manual security alert in Microsoft 365 Defender with specified entities and metadata. When the alert is created, the backend automatically creates a new incident to contain the alert, or links the alert to an existing incident if linkToIncident is specified.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-post-manualalert?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Alert"/></returns>
         /// <param name="body">The request body</param>
@@ -94,7 +101,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
         public async Task<global::Microsoft.Graph.Beta.Models.Security.Alert> PostAsync(global::Microsoft.Graph.Beta.Models.Security.Alert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -122,7 +129,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to alerts_v2 for security
+        /// Create a manual security alert in Microsoft 365 Defender with specified entities and metadata. When the alert is created, the backend automatically creates a new incident to contain the alert, or links the alert to an existing incident if linkToIncident is specified.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +143,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Security.Alert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -155,7 +162,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
         /// <summary>
         /// Get a list of alert resources that were created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Alerts_v2RequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -222,7 +229,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Alerts_v2RequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Security.Alerts_v2.Alerts_v2RequestBuilder.Alerts_v2RequestBuilderGetQueryParameters>
         {
         }
@@ -230,7 +237,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Alerts_v2RequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

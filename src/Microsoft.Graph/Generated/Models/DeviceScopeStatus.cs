@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DeviceScopeStatus
     {
         /// <summary>Indicates the device scope is not enabled and there are no calculations in progress.</summary>
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Device scope is enabled and finished recalculating the report metric. Device scope is now ready to be used.</summary>
         [EnumMember(Value = "completed")]
         Completed,
-        /// <summary>Placeholder value for future expansion.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

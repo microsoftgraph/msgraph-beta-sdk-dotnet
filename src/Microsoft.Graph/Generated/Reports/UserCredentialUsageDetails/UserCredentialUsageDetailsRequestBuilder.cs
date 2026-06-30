@@ -17,10 +17,11 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
     /// <summary>
     /// Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserCredentialUsageDetailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
         /// <param name="position">The unique identifier of userCredentialUsageDetails</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item.UserCredentialUsageDetailsItemRequestBuilder"/></returns>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item.UserCredentialUsageDetailsItemRequestBuilder this[string position]
         {
             get
@@ -61,6 +63,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetailsCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetails?> PostAsync(global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,7 +98,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         public async Task<global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetails> PostAsync(global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -107,6 +111,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -127,6 +132,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -136,7 +142,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -148,6 +154,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder(rawUrl, RequestAdapter);
@@ -155,7 +162,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <summary>
         /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserCredentialUsageDetailsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -222,7 +229,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserCredentialUsageDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>
         {
         }
@@ -230,7 +237,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserCredentialUsageDetailsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

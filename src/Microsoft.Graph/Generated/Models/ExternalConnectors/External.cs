@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class External : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.</summary>
+        /// <summary>Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AuthorizationSystem>? AuthorizationSystems
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.ExternalConnectors.External CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ExternalConnectors.External();
         }
         /// <summary>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystems", AuthorizationSystems);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>("connections", Connections);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot>("industryData", IndustryData);

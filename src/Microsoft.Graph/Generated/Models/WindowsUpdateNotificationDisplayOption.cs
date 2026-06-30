@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Windows Update Notification Display Options</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WindowsUpdateNotificationDisplayOption
     {
         /// <summary>Not configured</summary>
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Turn off all notifications, including restart warnings.</summary>
         [EnumMember(Value = "disableAllNotifications")]
         DisableAllNotifications,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

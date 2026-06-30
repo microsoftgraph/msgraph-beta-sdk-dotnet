@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Product Status of Windows Defender</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     public enum WindowsDefenderProductStatus
     {
@@ -23,13 +23,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Pending reboot due to threat action</summary>
         [EnumMember(Value = "pendingRebootDueToThreatAction")]
         PendingRebootDueToThreatAction = 16,
-        /// <summary>Pending manual steps due to threat action </summary>
+        /// <summary>Pending manual steps due to threat action</summary>
         [EnumMember(Value = "pendingManualStepsDueToThreatAction")]
         PendingManualStepsDueToThreatAction = 32,
-        /// <summary>AV signatures out of date</summary>
+        /// <summary>Antivirus (AV) signatures out of date</summary>
         [EnumMember(Value = "avSignaturesOutOfDate")]
         AvSignaturesOutOfDate = 64,
-        /// <summary>AS signatures out of date</summary>
+        /// <summary>Antisypware (AS) signatures out of date</summary>
         [EnumMember(Value = "asSignaturesOutOfDate")]
         AsSignaturesOutOfDate = 128,
         /// <summary>No quick scan has happened for a specified period</summary>

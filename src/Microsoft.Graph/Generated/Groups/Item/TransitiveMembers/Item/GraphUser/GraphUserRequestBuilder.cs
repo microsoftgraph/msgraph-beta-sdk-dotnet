@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser
     /// <summary>
     /// Casts the previous resource to user.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GraphUserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -35,14 +35,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser
         {
         }
         /// <summary>
-        /// Get a list of the group&apos;s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.
+        /// Get a list of a group&apos;s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.User?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser.GraphUserRequestBuilder.GraphUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,11 +59,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.User>(requestInfo, global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the group&apos;s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.
+        /// Get a list of a group&apos;s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser.GraphUserRequestBuilder.GraphUserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -84,15 +82,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser.GraphUserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser.GraphUserRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser.GraphUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the group&apos;s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.
+        /// Get a list of a group&apos;s members. A group can have different object types as members. For more information about supported member types for different groups, see Group membership. This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a 400 Bad Request error with the Request_UnsupportedQuery code.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphUserRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -120,7 +117,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphUserRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphUser.GraphUserRequestBuilder.GraphUserRequestBuilderGetQueryParameters>
         {
         }

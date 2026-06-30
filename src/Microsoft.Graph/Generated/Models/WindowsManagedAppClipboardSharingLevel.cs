@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WindowsManagedAppClipboardSharingLevel
     {
         /// <summary>Org users can paste data from and cut/copy data to any account, document, location or application.</summary>
@@ -13,5 +13,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Org users cannot cut, copy or paste data to or from external accounts, documents, locations or applications from or into the org context.</summary>
         [EnumMember(Value = "none")]
         None,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

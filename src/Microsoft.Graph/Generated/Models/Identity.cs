@@ -10,7 +10,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Identity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The display name of the identity. This property is read-only.</summary>
+        /// <summary>The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don&apos;t show up as changed when using delta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The identifier of the identity. This property is read-only.</summary>
+        /// <summary>Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that&apos;s subject to review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Identity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -100,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.communicationsPhoneIdentity" => new global::Microsoft.Graph.Beta.Models.CommunicationsPhoneIdentity(),
                 "#microsoft.graph.communicationsUserIdentity" => new global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity(),
                 "#microsoft.graph.emailIdentity" => new global::Microsoft.Graph.Beta.Models.EmailIdentity(),
+                "#microsoft.graph.groupIdentity" => new global::Microsoft.Graph.Beta.Models.GroupIdentity(),
                 "#microsoft.graph.initiator" => new global::Microsoft.Graph.Beta.Models.Initiator(),
                 "#microsoft.graph.programResource" => new global::Microsoft.Graph.Beta.Models.ProgramResource(),
                 "#microsoft.graph.provisionedIdentity" => new global::Microsoft.Graph.Beta.Models.ProvisionedIdentity(),
@@ -107,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.provisioningSystem" => new global::Microsoft.Graph.Beta.Models.ProvisioningSystem(),
                 "#microsoft.graph.security.submissionUserIdentity" => new global::Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity(),
                 "#microsoft.graph.servicePrincipalIdentity" => new global::Microsoft.Graph.Beta.Models.ServicePrincipalIdentity(),
+                "#microsoft.graph.sharePointGroupIdentity" => new global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity(),
                 "#microsoft.graph.sharePointIdentity" => new global::Microsoft.Graph.Beta.Models.SharePointIdentity(),
                 "#microsoft.graph.sourceProvisionedIdentity" => new global::Microsoft.Graph.Beta.Models.SourceProvisionedIdentity(),
                 "#microsoft.graph.targetProvisionedIdentity" => new global::Microsoft.Graph.Beta.Models.TargetProvisionedIdentity(),
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ConnectionOperation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.</summary>
+        /// <summary>Indicates the status of the asynchronous operation. The possible values are: unspecified, inprogress, completed, failed.</summary>
         public global::Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperationStatus?>("status"); }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation();
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>("error", Error);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperationStatus>("status", Status);

@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Auto restart required notification dismissal method</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AutoRestartNotificationDismissalMethod
     {
         /// <summary>Not configured</summary>
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>User dismissal. Allows the user to dismiss the notification</summary>
         [EnumMember(Value = "user")]
         User,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

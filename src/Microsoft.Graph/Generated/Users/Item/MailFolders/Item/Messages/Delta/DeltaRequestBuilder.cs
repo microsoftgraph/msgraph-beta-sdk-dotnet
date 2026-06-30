@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta
     /// <summary>
     /// Provides operations to call the delta method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeltaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -34,14 +34,13 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta
         {
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user&apos;s messages.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user&apos;s messages.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaResponse"/></returns>
@@ -84,11 +83,10 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user&apos;s messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -108,15 +106,14 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages that were added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). Using deltas allows you toincrementally maintain and synchronize a local store of a user&apos;s messages.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 
         {
             /// <summary>A custom query option to filter the delta response based on the type of change. Supported values are created, updated or deleted.</summary>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>
         {
         }

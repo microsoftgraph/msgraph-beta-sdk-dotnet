@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DirectoryObject : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -25,20 +25,29 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DirectoryObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new global::Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy(),
                 "#microsoft.graph.administrativeUnit" => new global::Microsoft.Graph.Beta.Models.AdministrativeUnit(),
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Beta.Models.AgentIdentity(),
+                "#microsoft.graph.agentIdentityBlueprint" => new global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprint(),
+                "#microsoft.graph.agentIdentityBlueprintPrincipal" => new global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal(),
+                "#microsoft.graph.agentUser" => new global::Microsoft.Graph.Beta.Models.AgentUser(),
                 "#microsoft.graph.application" => new global::Microsoft.Graph.Beta.Models.Application(),
                 "#microsoft.graph.appManagementPolicy" => new global::Microsoft.Graph.Beta.Models.AppManagementPolicy(),
+                "#microsoft.graph.appRoleAssignment" => new global::Microsoft.Graph.Beta.Models.AppRoleAssignment(),
                 "#microsoft.graph.authorizationPolicy" => new global::Microsoft.Graph.Beta.Models.AuthorizationPolicy(),
+                "#microsoft.graph.b2bManagementPolicy" => new global::Microsoft.Graph.Beta.Models.B2bManagementPolicy(),
+                "#microsoft.graph.certificateAuthorityDetail" => new global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail(),
                 "#microsoft.graph.certificateBasedApplicationConfiguration" => new global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration(),
+                "#microsoft.graph.certificateBasedAuthPki" => new global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPki(),
                 "#microsoft.graph.claimsMappingPolicy" => new global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy(),
                 "#microsoft.graph.contract" => new global::Microsoft.Graph.Beta.Models.Contract(),
                 "#microsoft.graph.crossTenantAccessPolicy" => new global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy(),
                 "#microsoft.graph.device" => new global::Microsoft.Graph.Beta.Models.Device(),
+                "#microsoft.graph.deviceTemplate" => new global::Microsoft.Graph.Beta.Models.DeviceTemplate(),
                 "#microsoft.graph.directoryObjectPartnerReference" => new global::Microsoft.Graph.Beta.Models.DirectoryObjectPartnerReference(),
                 "#microsoft.graph.directoryRole" => new global::Microsoft.Graph.Beta.Models.DirectoryRole(),
                 "#microsoft.graph.directoryRoleTemplate" => new global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate(),
@@ -50,9 +59,13 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.externalUserProfile" => new global::Microsoft.Graph.Beta.Models.ExternalUserProfile(),
                 "#microsoft.graph.federatedTokenValidationPolicy" => new global::Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy(),
                 "#microsoft.graph.group" => new global::Microsoft.Graph.Beta.Models.Group(),
+                "#microsoft.graph.groupResource" => new global::Microsoft.Graph.Beta.Models.GroupResource(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.mailbox" => new global::Microsoft.Graph.Beta.Models.Mailbox(),
                 "#microsoft.graph.multiTenantOrganizationMember" => new global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationMember(),
+                "#microsoft.graph.mutualTlsOauthConfiguration" => new global::Microsoft.Graph.Beta.Models.MutualTlsOauthConfiguration(),
+                "#microsoft.graph.onPremAuthenticationPolicy" => new global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy(),
                 "#microsoft.graph.organization" => new global::Microsoft.Graph.Beta.Models.Organization(),
                 "#microsoft.graph.orgContact" => new global::Microsoft.Graph.Beta.Models.OrgContact(),
                 "#microsoft.graph.pendingExternalUserProfile" => new global::Microsoft.Graph.Beta.Models.PendingExternalUserProfile(),
@@ -68,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.tokenIssuancePolicy" => new global::Microsoft.Graph.Beta.Models.TokenIssuancePolicy(),
                 "#microsoft.graph.tokenLifetimePolicy" => new global::Microsoft.Graph.Beta.Models.TokenLifetimePolicy(),
                 "#microsoft.graph.trustedCertificateAuthorityAsEntityBase" => new global::Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityAsEntityBase(),
+                "#microsoft.graph.trustedCertificateAuthorityBase" => new global::Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityBase(),
                 "#microsoft.graph.user" => new global::Microsoft.Graph.Beta.Models.User(),
                 _ => new global::Microsoft.Graph.Beta.Models.DirectoryObject(),
             };
@@ -89,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
         }

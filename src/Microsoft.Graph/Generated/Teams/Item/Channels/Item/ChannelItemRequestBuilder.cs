@@ -2,15 +2,20 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Archive;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.EnabledApps;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.JoinedUsers;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.ProvisionEmail;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.RemoveEmail;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.StartMigration;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Tabs;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -26,9 +31,14 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
     /// <summary>
     /// Provides operations to manage the channels property of the microsoft.graph.team entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChannelItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the allMembers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder AllMembers
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the archive method.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Archive.ArchiveRequestBuilder Archive
         {
@@ -44,10 +54,20 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.JoinedUsers.JoinedUsersRequestBuilder JoinedUsers
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.JoinedUsers.JoinedUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.MembersRequestBuilder Members
@@ -58,6 +78,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the planner property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.PlannerRequestBuilder Planner
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the provisionEmail method.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.ProvisionEmail.ProvisionEmailRequestBuilder ProvisionEmail
@@ -73,6 +98,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder SharedWithTeams
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Tabs.TabsRequestBuilder Tabs
@@ -165,7 +195,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Channel> PatchAsync(global::Microsoft.Graph.Beta.Models.Channel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -226,7 +256,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Channel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -246,14 +276,14 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChannelItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChannelItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -281,7 +311,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChannelItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>
         {
         }
@@ -289,7 +319,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChannelItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The DepMacOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to macOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DepMacOSEnrollmentProfile : global::Microsoft.Graph.Beta.Models.DepEnrollmentBaseProfile, IParsable
     {
         /// <summary>Indicates if Accessibility screen is disabled</summary>
@@ -85,6 +85,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("chooseYourLockScreenDisabled"); }
             set { BackingStore?.Set("chooseYourLockScreenDisabled", value); }
         }
+        /// <summary>Settings for local admin account password automatic rotation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting? DepProfileAdminAccountPasswordRotationSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting?>("depProfileAdminAccountPasswordRotationSetting"); }
+            set { BackingStore?.Set("depProfileAdminAccountPasswordRotationSetting", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting DepProfileAdminAccountPasswordRotationSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting>("depProfileAdminAccountPasswordRotationSetting"); }
+            set { BackingStore?.Set("depProfileAdminAccountPasswordRotationSetting", value); }
+        }
+#endif
         /// <summary>Indicates whether Setup Assistant will auto populate the primary account information</summary>
         public bool? DontAutoPopulatePrimaryAccountInfo
         {
@@ -183,6 +199,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("skipPrimarySetupAccountCreation"); }
             set { BackingStore?.Set("skipPrimarySetupAccountCreation", value); }
         }
+        /// <summary>Indicates whether Platform SSO is used as part of device enrollment during Setup Assistant. When TRUE, Platform SSO is used in device enrollment during Setup Assistant. When FALSE Platform SSO is not used in enrollment during Setup Assistant. Note: This value cannot be TRUE when configurationWebUrl is TRUE.</summary>
+        public bool? UsePlatformSSODuringSetupAssistant
+        {
+            get { return BackingStore?.Get<bool?>("usePlatformSSODuringSetupAssistant"); }
+            set { BackingStore?.Set("usePlatformSSODuringSetupAssistant", value); }
+        }
         /// <summary>Indicates if zoom setup pane is disabled</summary>
         public bool? ZoomDisabled
         {
@@ -203,7 +225,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile();
         }
         /// <summary>
@@ -221,6 +243,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "autoAdvanceSetupEnabled", n => { AutoAdvanceSetupEnabled = n.GetBoolValue(); } },
                 { "autoUnlockWithWatchDisabled", n => { AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
                 { "chooseYourLockScreenDisabled", n => { ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
+                { "depProfileAdminAccountPasswordRotationSetting", n => { DepProfileAdminAccountPasswordRotationSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting>(global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting.CreateFromDiscriminatorValue); } },
                 { "dontAutoPopulatePrimaryAccountInfo", n => { DontAutoPopulatePrimaryAccountInfo = n.GetBoolValue(); } },
                 { "enableRestrictEditing", n => { EnableRestrictEditing = n.GetBoolValue(); } },
                 { "fileVaultDisabled", n => { FileVaultDisabled = n.GetBoolValue(); } },
@@ -234,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "requestRequiresNetworkTether", n => { RequestRequiresNetworkTether = n.GetBoolValue(); } },
                 { "setPrimarySetupAccountAsRegularUser", n => { SetPrimarySetupAccountAsRegularUser = n.GetBoolValue(); } },
                 { "skipPrimarySetupAccountCreation", n => { SkipPrimarySetupAccountCreation = n.GetBoolValue(); } },
+                { "usePlatformSSODuringSetupAssistant", n => { UsePlatformSSODuringSetupAssistant = n.GetBoolValue(); } },
                 { "zoomDisabled", n => { ZoomDisabled = n.GetBoolValue(); } },
             };
         }
@@ -243,7 +267,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accessibilityScreenDisabled", AccessibilityScreenDisabled);
             writer.WriteStringValue("adminAccountFullName", AdminAccountFullName);
@@ -252,6 +276,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("autoAdvanceSetupEnabled", AutoAdvanceSetupEnabled);
             writer.WriteBoolValue("autoUnlockWithWatchDisabled", AutoUnlockWithWatchDisabled);
             writer.WriteBoolValue("chooseYourLockScreenDisabled", ChooseYourLockScreenDisabled);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DepProfileAdminAccountPasswordRotationSetting>("depProfileAdminAccountPasswordRotationSetting", DepProfileAdminAccountPasswordRotationSetting);
             writer.WriteBoolValue("dontAutoPopulatePrimaryAccountInfo", DontAutoPopulatePrimaryAccountInfo);
             writer.WriteBoolValue("enableRestrictEditing", EnableRestrictEditing);
             writer.WriteBoolValue("fileVaultDisabled", FileVaultDisabled);
@@ -265,6 +290,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("requestRequiresNetworkTether", RequestRequiresNetworkTether);
             writer.WriteBoolValue("setPrimarySetupAccountAsRegularUser", SetPrimarySetupAccountAsRegularUser);
             writer.WriteBoolValue("skipPrimarySetupAccountCreation", SkipPrimarySetupAccountCreation);
+            writer.WriteBoolValue("usePlatformSSODuringSetupAssistant", UsePlatformSSODuringSetupAssistant);
             writer.WriteBoolValue("zoomDisabled", ZoomDisabled);
         }
     }

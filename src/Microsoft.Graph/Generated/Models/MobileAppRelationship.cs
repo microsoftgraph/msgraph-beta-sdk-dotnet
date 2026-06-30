@@ -8,12 +8,76 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// Describes a relationship between two mobile apps.
+    /// The MobileAppRelationship describes the relationship between two mobile applications by providing information that tells if an application is dependent on or superseded by another application.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppRelationship : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The target mobile app&apos;s display name. This property is read-only.</summary>
+        /// <summary>The display name of the app that is the source of the mobile app relationship entity. For example: Orca. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceDisplayName
+        {
+            get { return BackingStore?.Get<string?>("sourceDisplayName"); }
+            set { BackingStore?.Set("sourceDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string SourceDisplayName
+        {
+            get { return BackingStore?.Get<string>("sourceDisplayName"); }
+            set { BackingStore?.Set("sourceDisplayName", value); }
+        }
+#endif
+        /// <summary>The display version of the app that is the source of the mobile app relationship entity. For example 1.0.12 or 1.2203.156 or 3. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceDisplayVersion
+        {
+            get { return BackingStore?.Get<string?>("sourceDisplayVersion"); }
+            set { BackingStore?.Set("sourceDisplayVersion", value); }
+        }
+#nullable restore
+#else
+        public string SourceDisplayVersion
+        {
+            get { return BackingStore?.Get<string>("sourceDisplayVersion"); }
+            set { BackingStore?.Set("sourceDisplayVersion", value); }
+        }
+#endif
+        /// <summary>The unique app identifier of the source of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. If null during relationship creation, then it will be populated with parent Id. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceId
+        {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#nullable restore
+#else
+        public string SourceId
+        {
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#endif
+        /// <summary>The publisher display name of the app that is the source of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourcePublisherDisplayName
+        {
+            get { return BackingStore?.Get<string?>("sourcePublisherDisplayName"); }
+            set { BackingStore?.Set("sourcePublisherDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string SourcePublisherDisplayName
+        {
+            get { return BackingStore?.Get<string>("sourcePublisherDisplayName"); }
+            set { BackingStore?.Set("sourcePublisherDisplayName", value); }
+        }
+#endif
+        /// <summary>The display name of the app that is the target of the mobile app relationship entity. For example: Firefox Setup 52.0.2 32bit.intunewin. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDisplayName
@@ -29,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDisplayName", value); }
         }
 #endif
-        /// <summary>The target mobile app&apos;s display version. This property is read-only.</summary>
+        /// <summary>The display version of the app that is the target of the mobile app relationship entity. For example 1.0 or 1.2203.156. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDisplayVersion
@@ -45,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDisplayVersion", value); }
         }
 #endif
-        /// <summary>The target mobile app&apos;s app id.</summary>
+        /// <summary>The unique app identifier of the target of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetId
@@ -61,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetId", value); }
         }
 #endif
-        /// <summary>The target mobile app&apos;s publisher. This property is read-only.</summary>
+        /// <summary>The publisher of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetPublisher
@@ -77,6 +141,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetPublisher", value); }
         }
 #endif
+        /// <summary>The publisher display name of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetPublisherDisplayName
+        {
+            get { return BackingStore?.Get<string?>("targetPublisherDisplayName"); }
+            set { BackingStore?.Set("targetPublisherDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string TargetPublisherDisplayName
+        {
+            get { return BackingStore?.Get<string>("targetPublisherDisplayName"); }
+            set { BackingStore?.Set("targetPublisherDisplayName", value); }
+        }
+#endif
         /// <summary>Indicates whether the target of a relationship is the parent or the child in the relationship.</summary>
         public global::Microsoft.Graph.Beta.Models.MobileAppRelationshipType? TargetType
         {
@@ -90,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MobileAppRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -107,10 +187,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "sourceDisplayName", n => { SourceDisplayName = n.GetStringValue(); } },
+                { "sourceDisplayVersion", n => { SourceDisplayVersion = n.GetStringValue(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "sourcePublisherDisplayName", n => { SourcePublisherDisplayName = n.GetStringValue(); } },
                 { "targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
                 { "targetDisplayVersion", n => { TargetDisplayVersion = n.GetStringValue(); } },
                 { "targetId", n => { TargetId = n.GetStringValue(); } },
                 { "targetPublisher", n => { TargetPublisher = n.GetStringValue(); } },
+                { "targetPublisherDisplayName", n => { TargetPublisherDisplayName = n.GetStringValue(); } },
                 { "targetType", n => { TargetType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppRelationshipType>(); } },
             };
         }
@@ -120,7 +205,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("targetId", TargetId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppRelationshipType>("targetType", TargetType);

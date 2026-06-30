@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EdiscoveryEstimateOperation : global::Microsoft.Graph.Beta.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
@@ -30,6 +30,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<int?>("mailboxCount"); }
             set { BackingStore?.Set("mailboxCount", value); }
         }
+        /// <summary>Contains the properties for report file metadata, including downloadUrl, fileName, and size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>? ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>?>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata> ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#endif
         /// <summary>eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<int?>("siteCount"); }
             set { BackingStore?.Set("siteCount", value); }
         }
+        /// <summary>The options to generate statistics. The possible values are: includeRefiners, includeQueryStats, includeUnindexedStats, advancedIndexing, locationsWithoutHits, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.StatisticsOptions? StatisticsOptions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.StatisticsOptions?>("statisticsOptions"); }
+            set { BackingStore?.Set("statisticsOptions", value); }
+        }
         /// <summary>The estimated count of unindexed items for the collection.</summary>
         public long? UnindexedItemCount
         {
@@ -71,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryEstimateOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryEstimateOperation();
         }
         /// <summary>
@@ -85,8 +107,10 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "indexedItemCount", n => { IndexedItemCount = n.GetLongValue(); } },
                 { "indexedItemsSize", n => { IndexedItemsSize = n.GetLongValue(); } },
                 { "mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
+                { "reportFileMetadata", n => { ReportFileMetadata = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>(global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "search", n => { Search = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearch>(global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
                 { "siteCount", n => { SiteCount = n.GetIntValue(); } },
+                { "statisticsOptions", n => { StatisticsOptions = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.StatisticsOptions>(); } },
                 { "unindexedItemCount", n => { UnindexedItemCount = n.GetLongValue(); } },
                 { "unindexedItemsSize", n => { UnindexedItemsSize = n.GetLongValue(); } },
             };
@@ -97,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("indexedItemCount", IndexedItemCount);
             writer.WriteLongValue("indexedItemsSize", IndexedItemsSize);
             writer.WriteIntValue("mailboxCount", MailboxCount);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ReportFileMetadata>("reportFileMetadata", ReportFileMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearch>("search", Search);
             writer.WriteIntValue("siteCount", SiteCount);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.StatisticsOptions>("statisticsOptions", StatisticsOptions);
             writer.WriteLongValue("unindexedItemCount", UnindexedItemCount);
             writer.WriteLongValue("unindexedItemsSize", UnindexedItemsSize);
         }

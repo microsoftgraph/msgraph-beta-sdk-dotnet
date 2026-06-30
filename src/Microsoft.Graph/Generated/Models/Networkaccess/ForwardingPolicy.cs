@@ -7,11 +7,27 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ForwardingPolicy : global::Microsoft.Graph.Beta.Models.Networkaccess.Policy, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The privateAccessAppId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrivateAccessAppId
+        {
+            get { return BackingStore?.Get<string?>("privateAccessAppId"); }
+            set { BackingStore?.Set("privateAccessAppId", value); }
+        }
+#nullable restore
+#else
+        public string PrivateAccessAppId
+        {
+            get { return BackingStore?.Get<string>("privateAccessAppId"); }
+            set { BackingStore?.Set("privateAccessAppId", value); }
+        }
+#endif
         /// <summary>The trafficForwardingType property</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType? TrafficForwardingType
         {
@@ -32,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy();
         }
         /// <summary>
@@ -43,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "privateAccessAppId", n => { PrivateAccessAppId = n.GetStringValue(); } },
                 { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>(); } },
             };
         }
@@ -52,8 +69,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("privateAccessAppId", PrivateAccessAppId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);
         }
     }

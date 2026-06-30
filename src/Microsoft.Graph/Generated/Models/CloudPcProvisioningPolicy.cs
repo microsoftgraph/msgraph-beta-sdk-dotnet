@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcProvisioningPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>The specific settings for Windows Autopatch that enable its customers to experience it on Cloud PC. The settings take effect when the tenant enrolls in Windows Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.</summary>
+        /// <summary>Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. When you create or update a provisioning policy with autopatch, you must use a delegated token and the signed-in user must have the Intune Administrator role. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch? Autopatch
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("autopatch", value); }
         }
 #endif
-        /// <summary>The autopilotConfiguration property</summary>
+        /// <summary>The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. When you create or update a provisioning policy with autopilotConfiguration, use the required Microsoft Graph permissions listed on the corresponding create and update API pages. In delegated scenarios, the signed-in user must also have the Microsoft.Intune/DeviceConfigurations/Assign Intune RBAC permission. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration? AutopilotConfiguration
@@ -108,6 +108,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudPcNamingTemplate", value); }
         }
 #endif
+        /// <summary>The unique ID of the user who created this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy
+        {
+            get { return BackingStore?.Get<string?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#nullable restore
+#else
+        public string CreatedBy
+        {
+            get { return BackingStore?.Get<string>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#endif
+        /// <summary>The timestamp when this provisioning policy was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.</summary>
+        public DateTimeOffset? CreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>The provisioning policy description. Supports $filter, $select, and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,6 +228,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyImageType?>("imageType"); }
             set { BackingStore?.Set("imageType", value); }
         }
+        /// <summary>The unique ID of the user who last updated this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastModifiedBy
+        {
+            get { return BackingStore?.Get<string?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public string LastModifiedBy
+        {
+            get { return BackingStore?.Get<string>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>The timestamp when this provisioning policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
         /// <summary>When true, the local admin is enabled for Cloud PCs; false indicates that the local admin isn&apos;t enabled for Cloud PCs. The default value is false. Supports $filter, $select, and $orderBy.</summary>
         public bool? LocalAdminEnabled
         {
@@ -234,13 +278,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("microsoftManagedDesktop", value); }
         }
 #endif
-        /// <summary>Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn&apos;t specified when you create the cloudPcProvisioningPolicy. You can&apos;t change this property after the cloudPcProvisioningPolicy is created.</summary>
+        /// <summary>Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn&apos;t specified when you create the cloudPcProvisioningPolicy. You can&apos;t change this property after the cloudPcProvisioningPolicy is created.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType? ProvisioningType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The list of scope tag IDs for this resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds
@@ -254,6 +298,28 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<string>>("scopeIds"); }
             set { BackingStore?.Set("scopeIds", value); }
+        }
+#endif
+        /// <summary>Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can&apos;t be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType?>("userExperienceType"); }
+            set { BackingStore?.Set("userExperienceType", value); }
+        }
+        /// <summary>Indicates specific settings that enable the persistence of user application settings between Cloud PC sessions. The default value is null. This feature is only available for Cloud PC provisioning policies of type sharedByEntraGroup. Supports $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration? UserSettingsPersistenceConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration?>("userSettingsPersistenceConfiguration"); }
+            set { BackingStore?.Set("userSettingsPersistenceConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration UserSettingsPersistenceConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>("userSettingsPersistenceConfiguration"); }
+            set { BackingStore?.Set("userSettingsPersistenceConfiguration", value); }
         }
 #endif
         /// <summary>Indicates a specific Windows setting to configure during the creation of Cloud PCs for this provisioning policy. Supports $select.</summary>
@@ -295,7 +361,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicy();
         }
         /// <summary>
@@ -312,6 +378,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "autopilotConfiguration", n => { AutopilotConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration.CreateFromDiscriminatorValue); } },
                 { "cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
                 { "cloudPcNamingTemplate", n => { CloudPcNamingTemplate = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "domainJoinConfigurations", n => { DomainJoinConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -320,11 +388,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 { "imageId", n => { ImageId = n.GetStringValue(); } },
                 { "imageType", n => { ImageType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyImageType>(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
                 { "managedBy", n => { ManagedBy = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>(); } },
                 { "microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "userExperienceType", n => { UserExperienceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>(); } },
+                { "userSettingsPersistenceConfiguration", n => { UserSettingsPersistenceConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration.CreateFromDiscriminatorValue); } },
                 { "windowsSetting", n => { WindowsSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>(global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
                 { "windowsSettings", n => { WindowsSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings>(global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
@@ -335,7 +407,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
@@ -343,6 +415,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration>("autopilotConfiguration", AutopilotConfiguration);
             writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
             writer.WriteStringValue("cloudPcNamingTemplate", CloudPcNamingTemplate);
+            writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration>("domainJoinConfigurations", DomainJoinConfigurations);
@@ -351,11 +425,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteStringValue("imageId", ImageId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyImageType>("imageType", ImageType);
+            writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>("userExperienceType", UserExperienceType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>("userSettingsPersistenceConfiguration", UserSettingsPersistenceConfiguration);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>("windowsSetting", WindowsSetting);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }

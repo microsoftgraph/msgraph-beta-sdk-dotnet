@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RelatedResource : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -52,18 +52,21 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.networkaccess.relatedDestination" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedDestination(),
                 "#microsoft.graph.networkaccess.relatedDevice" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedDevice(),
+                "#microsoft.graph.networkaccess.relatedFile" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedFile(),
+                "#microsoft.graph.networkaccess.relatedFileHash" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedFileHash(),
                 "#microsoft.graph.networkaccess.relatedMalware" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedMalware(),
-                "#microsoft.graph.networkaccess.relatedProcess" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedProcess(),
                 "#microsoft.graph.networkaccess.relatedRemoteNetwork" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedRemoteNetwork(),
                 "#microsoft.graph.networkaccess.relatedTenant" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedTenant(),
                 "#microsoft.graph.networkaccess.relatedThreatIntelligence" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedThreatIntelligence(),
                 "#microsoft.graph.networkaccess.relatedToken" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedToken(),
+                "#microsoft.graph.networkaccess.relatedTransaction" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedTransaction(),
+                "#microsoft.graph.networkaccess.relatedUrl" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedUrl(),
                 "#microsoft.graph.networkaccess.relatedUser" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedUser(),
                 "#microsoft.graph.networkaccess.relatedWebCategory" => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedWebCategory(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource(),
@@ -86,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

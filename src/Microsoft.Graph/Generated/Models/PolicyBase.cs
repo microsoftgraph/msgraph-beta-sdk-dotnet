@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class PolicyBase : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
@@ -58,18 +58,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.PolicyBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new global::Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy(),
                 "#microsoft.graph.appManagementPolicy" => new global::Microsoft.Graph.Beta.Models.AppManagementPolicy(),
                 "#microsoft.graph.authorizationPolicy" => new global::Microsoft.Graph.Beta.Models.AuthorizationPolicy(),
+                "#microsoft.graph.b2bManagementPolicy" => new global::Microsoft.Graph.Beta.Models.B2bManagementPolicy(),
                 "#microsoft.graph.claimsMappingPolicy" => new global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy(),
                 "#microsoft.graph.crossTenantAccessPolicy" => new global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy(),
                 "#microsoft.graph.externalIdentitiesPolicy" => new global::Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new global::Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.onPremAuthenticationPolicy" => new global::Microsoft.Graph.Beta.Models.OnPremAuthenticationPolicy(),
                 "#microsoft.graph.permissionGrantPolicy" => new global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy(),
                 "#microsoft.graph.servicePrincipalCreationPolicy" => new global::Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy(),
                 "#microsoft.graph.stsPolicy" => new global::Microsoft.Graph.Beta.Models.StsPolicy(),
@@ -98,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

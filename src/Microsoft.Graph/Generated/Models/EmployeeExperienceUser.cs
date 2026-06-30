@@ -7,11 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
+    /// <summary>
+    /// Represents a container that exposes navigation properties for employee experience user resources.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmployeeExperienceUser : global::Microsoft.Graph.Beta.Models.Entity, IParsable
-    #pragma warning restore CS1591
     {
+        /// <summary>Represents the collection of Viva Engage roles assigned to a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.EngagementRole>? AssignedRoles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EngagementRole>?>("assignedRoles"); }
+            set { BackingStore?.Set("assignedRoles", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.EngagementRole> AssignedRoles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EngagementRole>>("assignedRoles"); }
+            set { BackingStore?.Set("assignedRoles", value); }
+        }
+#endif
         /// <summary>The learningCourseActivities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +45,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
 #endif
+        /// <summary>The storyline property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Storyline? Storyline
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Storyline?>("storyline"); }
+            set { BackingStore?.Set("storyline", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Storyline Storyline
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Storyline>("storyline"); }
+            set { BackingStore?.Set("storyline", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser();
         }
         /// <summary>
@@ -46,7 +79,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "assignedRoles", n => { AssignedRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EngagementRole>(global::Microsoft.Graph.Beta.Models.EngagementRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LearningCourseActivity>(global::Microsoft.Graph.Beta.Models.LearningCourseActivity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "storyline", n => { Storyline = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Storyline>(global::Microsoft.Graph.Beta.Models.Storyline.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,9 +90,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EngagementRole>("assignedRoles", AssignedRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Storyline>("storyline", Storyline);
         }
     }
 }

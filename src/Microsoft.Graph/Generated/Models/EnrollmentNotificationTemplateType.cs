@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>This enum indicates the Template type for which the enrollment notification applies.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EnrollmentNotificationTemplateType
     {
         /// <summary>Email Notification</summary>
@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Push Notification</summary>
         [EnumMember(Value = "push")]
         Push,
-        /// <summary>Unknown Type</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

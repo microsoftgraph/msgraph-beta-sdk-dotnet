@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class PrinterCapabilities : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("leftMargins", value); }
         }
 #endif
-        /// <summary>The media (that is, paper) colors supported by the printer.</summary>
+        /// <summary>The media (for example, paper) colors supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MediaColors
@@ -231,7 +231,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mediaColors", value); }
         }
 #endif
-        /// <summary>The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.</summary>
+        /// <summary>The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MediaSizes
@@ -636,7 +636,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.PrinterCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.PrinterCapabilities();
         }
         /// <summary>
@@ -695,7 +695,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("bottomMargins", BottomMargins);
             writer.WriteBoolValue("collation", Collation);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.PrintColorMode>("colorModes", ColorModes);

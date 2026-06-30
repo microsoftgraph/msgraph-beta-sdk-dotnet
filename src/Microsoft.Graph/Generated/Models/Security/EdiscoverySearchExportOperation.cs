@@ -7,18 +7,24 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EdiscoverySearchExportOperation : global::Microsoft.Graph.Beta.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.</summary>
+        /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.AdditionalOptions? AdditionalOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AdditionalOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
-        /// <summary>The name of export provided by the user.</summary>
+        /// <summary>The versions of cloud attachments to include in messages. The possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.CloudAttachmentVersion? CloudAttachmentVersion
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CloudAttachmentVersion?>("cloudAttachmentVersion"); }
+            set { BackingStore?.Set("cloudAttachmentVersion", value); }
+        }
+        /// <summary>The description of the export by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -34,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The description of the export by the user.</summary>
+        /// <summary>The name of export provided by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -50,6 +56,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The versions of files in SharePoint to include. The possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.DocumentVersion? DocumentVersion
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DocumentVersion?>("documentVersion"); }
+            set { BackingStore?.Set("documentVersion", value); }
+        }
         /// <summary>Items to be included in the export. The possible values are: searchHits, partiallyIndexed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ExportCriteria? ExportCriteria
         {
@@ -72,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.</summary>
+        /// <summary>Format of the emails of the export. The possible values are: pst, msg, eml (deprecated), unknownFutureValue. The eml member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ExportFormat? ExportFormat
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ExportFormat?>("exportFormat"); }
@@ -113,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearchExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearchExportOperation();
         }
         /// <summary>
@@ -125,8 +137,10 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "additionalOptions", n => { AdditionalOptions = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AdditionalOptions>(); } },
+                { "cloudAttachmentVersion", n => { CloudAttachmentVersion = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.CloudAttachmentVersion>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "documentVersion", n => { DocumentVersion = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DocumentVersion>(); } },
                 { "exportCriteria", n => { ExportCriteria = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.ExportCriteria>(); } },
                 { "exportFileMetadata", n => { ExportFileMetadata = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>(global::Microsoft.Graph.Beta.Models.Security.ExportFileMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exportFormat", n => { ExportFormat = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.ExportFormat>(); } },
@@ -141,11 +155,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AdditionalOptions>("additionalOptions", AdditionalOptions);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.CloudAttachmentVersion>("cloudAttachmentVersion", CloudAttachmentVersion);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DocumentVersion>("documentVersion", DocumentVersion);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.ExportCriteria>("exportCriteria", ExportCriteria);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>("exportFileMetadata", ExportFileMetadata);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.ExportFormat>("exportFormat", ExportFormat);

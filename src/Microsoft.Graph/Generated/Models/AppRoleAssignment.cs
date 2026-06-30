@@ -7,9 +7,9 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AppRoleAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class AppRoleAssignment : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application&apos;s service principal (resourceId). If the resource application hasn&apos;t declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</summary>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("creationTimestamp"); }
             set { BackingStore?.Set("creationTimestamp", value); }
         }
-        /// <summary>The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).</summary>
+        /// <summary>The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalDisplayName
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("principalType", value); }
         }
 #endif
-        /// <summary>The display name of the resource app&apos;s service principal to which the assignment is made.</summary>
+        /// <summary>The display name of the resource app&apos;s service principal to which the assignment is made. Maximum length is 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceDisplayName
@@ -85,13 +85,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AppRoleAssignment"/> and sets the default values.
+        /// </summary>
+        public AppRoleAssignment() : base()
+        {
+            OdataType = "#microsoft.graph.appRoleAssignment";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AppRoleAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AppRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AppRoleAssignment();
         }
         /// <summary>
@@ -117,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteGuidValue("appRoleId", AppRoleId);
             writer.WriteDateTimeOffsetValue("creationTimestamp", CreationTimestamp);

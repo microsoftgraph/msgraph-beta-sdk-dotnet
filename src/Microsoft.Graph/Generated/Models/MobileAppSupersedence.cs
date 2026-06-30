@@ -10,10 +10,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Describes a supersedence relationship between two mobile apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppSupersedence : global::Microsoft.Graph.Beta.Models.MobileAppRelationship, IParsable
     {
-        /// <summary>The total number of apps directly or indirectly superseded by the child app. This property is read-only.</summary>
+        /// <summary>The total number of apps directly or indirectly superseded by the child app. Read-Only. This property is read-only.</summary>
         public int? SupersededAppCount
         {
             get { return BackingStore?.Get<int?>("supersededAppCount"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppSupersedenceType?>("supersedenceType"); }
             set { BackingStore?.Set("supersedenceType", value); }
         }
-        /// <summary>The total number of apps directly or indirectly superseding the parent app. This property is read-only.</summary>
+        /// <summary>The total number of apps directly or indirectly superseding the parent app. Read-Only. This property is read-only.</summary>
         public int? SupersedingAppCount
         {
             get { return BackingStore?.Get<int?>("supersedingAppCount"); }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MobileAppSupersedence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MobileAppSupersedence();
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppSupersedenceType>("supersedenceType", SupersedenceType);
         }

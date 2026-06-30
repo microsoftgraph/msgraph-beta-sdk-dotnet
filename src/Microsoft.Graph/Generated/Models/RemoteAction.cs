@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Remote actions Intune supports.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RemoteAction
     {
         /// <summary>Indicate user initiates an unknown action.</summary>
@@ -124,5 +124,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates remote device action to delete a device from Intune portal.</summary>
         [EnumMember(Value = "delete")]
         Delete,
+        /// <summary>Indicates remote device action to temporarily suspend the Managed Home Screen kiosk app.</summary>
+        [EnumMember(Value = "suspendManagedHomeScreen")]
+        SuspendManagedHomeScreen,
+        /// <summary>Indicates remote device action to restore the Managed Home Screen kiosk app.</summary>
+        [EnumMember(Value = "restoreManagedHomeScreen")]
+        RestoreManagedHomeScreen,
     }
 }

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties of the minimum operating system required for an iOS mobile app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,61 +38,73 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 10.0 or later is required to install the app. If &apos;False&apos;, iOS Version 10.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V100
         {
             get { return BackingStore?.Get<bool?>("v10_0"); }
             set { BackingStore?.Set("v10_0", value); }
         }
-        /// <summary>When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 11.0 or later is required to install the app. If &apos;False&apos;, iOS Version 11.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V110
         {
             get { return BackingStore?.Get<bool?>("v11_0"); }
             set { BackingStore?.Set("v11_0", value); }
         }
-        /// <summary>When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 12.0 or later is required to install the app. If &apos;False&apos;, iOS Version 12.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V120
         {
             get { return BackingStore?.Get<bool?>("v12_0"); }
             set { BackingStore?.Set("v12_0", value); }
         }
-        /// <summary>When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 13.0 or later is required to install the app. If &apos;False&apos;, iOS Version 13.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V130
         {
             get { return BackingStore?.Get<bool?>("v13_0"); }
             set { BackingStore?.Set("v13_0", value); }
         }
-        /// <summary>When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 14.0 or later is required to install the app. If &apos;False&apos;, iOS Version 14.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V140
         {
             get { return BackingStore?.Get<bool?>("v14_0"); }
             set { BackingStore?.Set("v14_0", value); }
         }
-        /// <summary>When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 15.0 or later is required to install the app. If &apos;False&apos;, iOS Version 15.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V150
         {
             get { return BackingStore?.Get<bool?>("v15_0"); }
             set { BackingStore?.Set("v15_0", value); }
         }
-        /// <summary>When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 16.0 or later is required to install the app. If &apos;False&apos;, iOS Version 16.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V160
         {
             get { return BackingStore?.Get<bool?>("v16_0"); }
             set { BackingStore?.Set("v16_0", value); }
         }
-        /// <summary>When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 17.0 or later is required to install the app. If &apos;False&apos;, iOS Version 17.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V170
         {
             get { return BackingStore?.Get<bool?>("v17_0"); }
             set { BackingStore?.Set("v17_0", value); }
         }
-        /// <summary>When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 18.0 or later is required to install the app. If &apos;False&apos;, iOS Version 18.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        public bool? V180
+        {
+            get { return BackingStore?.Get<bool?>("v18_0"); }
+            set { BackingStore?.Set("v18_0", value); }
+        }
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 26.0 or later is required to install the app. If &apos;False&apos;, iOS Version 26.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        public bool? V260
+        {
+            get { return BackingStore?.Get<bool?>("v26_0"); }
+            set { BackingStore?.Set("v26_0", value); }
+        }
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 8.0 or later is required to install the app. If &apos;False&apos;, iOS Version 8.0  is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V80
         {
             get { return BackingStore?.Get<bool?>("v8_0"); }
             set { BackingStore?.Set("v8_0", value); }
         }
-        /// <summary>When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 9.0 or later is required to install the app. If &apos;False&apos;, iOS Version 9.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V90
         {
             get { return BackingStore?.Get<bool?>("v9_0"); }
@@ -113,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.IosMinimumOperatingSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IosMinimumOperatingSystem();
         }
         /// <summary>
@@ -133,6 +145,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "v15_0", n => { V150 = n.GetBoolValue(); } },
                 { "v16_0", n => { V160 = n.GetBoolValue(); } },
                 { "v17_0", n => { V170 = n.GetBoolValue(); } },
+                { "v18_0", n => { V180 = n.GetBoolValue(); } },
+                { "v26_0", n => { V260 = n.GetBoolValue(); } },
                 { "v8_0", n => { V80 = n.GetBoolValue(); } },
                 { "v9_0", n => { V90 = n.GetBoolValue(); } },
             };
@@ -143,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("v10_0", V100);
             writer.WriteBoolValue("v11_0", V110);
@@ -153,6 +167,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("v15_0", V150);
             writer.WriteBoolValue("v16_0", V160);
             writer.WriteBoolValue("v17_0", V170);
+            writer.WriteBoolValue("v18_0", V180);
+            writer.WriteBoolValue("v26_0", V260);
             writer.WriteBoolValue("v8_0", V80);
             writer.WriteBoolValue("v9_0", V90);
             writer.WriteAdditionalData(AdditionalData);

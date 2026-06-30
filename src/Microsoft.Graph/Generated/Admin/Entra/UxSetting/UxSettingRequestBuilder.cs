@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
     /// <summary>
     /// Provides operations to manage the uxSetting property of the microsoft.graph.entra entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UxSettingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -40,7 +40,6 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:BulkJobs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,13 +57,13 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get uxSetting from admin
+        /// Get the properties and relationships of a uxSetting object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/uxsetting-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UxSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:BulkJobs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UxSetting?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Entra.UxSetting.UxSettingRequestBuilder.UxSettingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,14 +81,14 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UxSetting>(requestInfo, global::Microsoft.Graph.Beta.Models.UxSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property uxSetting in admin
+        /// Update the properties of a uxSetting object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/uxsetting-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UxSetting"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:BulkJobs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UxSetting?> PatchAsync(global::Microsoft.Graph.Beta.Models.UxSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -99,7 +98,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         public async Task<global::Microsoft.Graph.Beta.Models.UxSetting> PatchAsync(global::Microsoft.Graph.Beta.Models.UxSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -112,7 +111,6 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:BulkJobs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -128,11 +126,10 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             return requestInfo;
         }
         /// <summary>
-        /// Get uxSetting from admin
+        /// Get the properties and relationships of a uxSetting object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:BulkJobs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Entra.UxSetting.UxSettingRequestBuilder.UxSettingRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -148,12 +145,11 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property uxSetting in admin
+        /// Update the properties of a uxSetting object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:BulkJobs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UxSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -163,7 +159,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UxSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -175,7 +171,6 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Entra.UxSetting.UxSettingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:BulkJobs")]
         public global::Microsoft.Graph.Beta.Admin.Entra.UxSetting.UxSettingRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Admin.Entra.UxSetting.UxSettingRequestBuilder(rawUrl, RequestAdapter);
@@ -184,14 +179,14 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UxSettingRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Get uxSetting from admin
+        /// Get the properties and relationships of a uxSetting object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UxSettingRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -219,7 +214,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UxSettingRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Entra.UxSetting.UxSettingRequestBuilder.UxSettingRequestBuilderGetQueryParameters>
         {
         }
@@ -227,7 +222,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UxSettingRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

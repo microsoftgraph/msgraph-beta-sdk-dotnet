@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CaseOperation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of action the operation represents. Possible values are: contentExport, applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.</summary>
+        /// <summary>The type of action the operation represents. The possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult, holdPolicySync. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult, holdPolicySync.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.CaseAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CaseAction?>("action"); }
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("resultInfo", value); }
         }
 #endif
-        /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
+        /// <summary>The status of the case operation. The possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.CaseOperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CaseOperationStatus?>("status"); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -89,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.ediscoveryEstimateOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryEstimateOperation(),
                 "#microsoft.graph.security.ediscoveryExportOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryExportOperation(),
                 "#microsoft.graph.security.ediscoveryHoldOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldOperation(),
+                "#microsoft.graph.security.ediscoveryHoldPolicySyncOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicySyncOperation(),
                 "#microsoft.graph.security.ediscoveryIndexOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryIndexOperation(),
                 "#microsoft.graph.security.ediscoveryPurgeDataOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryPurgeDataOperation(),
                 "#microsoft.graph.security.ediscoverySearchExportOperation" => new global::Microsoft.Graph.Beta.Models.Security.EdiscoverySearchExportOperation(),
@@ -119,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.CaseAction>("action", Action);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);

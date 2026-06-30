@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ServicePrincipal : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appDescription", value); }
         }
 #endif
-        /// <summary>The display name exposed by the associated application.</summary>
+        /// <summary>The display name exposed by the associated application. Maximum length is 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName
@@ -222,6 +222,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("claimsPolicy", value); }
         }
 #endif
+        /// <summary>The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#endif
         /// <summary>Directory objects created by this service principal. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -238,7 +254,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdObjects", value); }
         }
 #endif
-        /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.</summary>
+        /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Requires $select to retrieve. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue? CustomSecurityAttributes
@@ -286,7 +302,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).</summary>
+        /// <summary>Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisabledByMicrosoftStatus
@@ -414,6 +430,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("info", value); }
         }
 #endif
+        /// <summary>Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.</summary>
+        public bool? IsDisabled
+        {
+            get { return BackingStore?.Get<bool?>("isDisabled"); }
+            set { BackingStore?.Set("isDisabled", value); }
+        }
         /// <summary>The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -558,7 +580,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ownedObjects", value); }
         }
 #endif
-        /// <summary>Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
+        /// <summary>Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? Owners
@@ -772,7 +794,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("servicePrincipalNames", value); }
         }
 #endif
-        /// <summary>Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.</summary>
+        /// <summary>Identifies if the service principal represents an application or a managed identity. This property is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity.For a service principal that represents an agent identity, this is set to ServiceIdentity. The SocialIdp type is for internal use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalType
@@ -920,8 +942,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ServicePrincipal();
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Beta.Models.AgentIdentity(),
+                "#microsoft.graph.agentIdentityBlueprintPrincipal" => new global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprintPrincipal(),
+                _ => new global::Microsoft.Graph.Beta.Models.ServicePrincipal(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -946,6 +974,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>(global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "claimsPolicy", n => { ClaimsPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy>(global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy.CreateFromDiscriminatorValue); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue>(global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
                 { "delegatedPermissionClassifications", n => { DelegatedPermissionClassifications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DelegatedPermissionClassification>(global::Microsoft.Graph.Beta.Models.DelegatedPermissionClassification.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -958,6 +987,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>(global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "homepage", n => { Homepage = n.GetStringValue(); } },
                 { "info", n => { Info = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>(global::Microsoft.Graph.Beta.Models.InformationalUrl.CreateFromDiscriminatorValue); } },
+                { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "licenseDetails", n => { LicenseDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LicenseDetails>(global::Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "loginUrl", n => { LoginUrl = n.GetStringValue(); } },
@@ -998,7 +1028,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AddIn>("addIns", AddIns);
@@ -1015,6 +1045,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRole>("appRoles", AppRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomClaimsPolicy>("claimsPolicy", ClaimsPolicy);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DelegatedPermissionClassification>("delegatedPermissionClassifications", DelegatedPermissionClassifications);
@@ -1027,6 +1058,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("homepage", Homepage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>("info", Info);
+            writer.WriteBoolValue("isDisabled", IsDisabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LicenseDetails>("licenseDetails", LicenseDetails);
             writer.WriteStringValue("loginUrl", LoginUrl);

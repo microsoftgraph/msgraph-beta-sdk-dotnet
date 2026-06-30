@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
     /// <summary>
     /// Provides operations to call the invite method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InviteRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
         {
         }
         /// <summary>
-        /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+        /// Send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostResponse"/></returns>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
         public async Task<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostResponse> PostAsInvitePostResponseAsync(global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostResponse>(requestInfo, global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+        /// Send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InviteResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
         public async Task<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InviteResponse> PostAsync(global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InviteResponse>(requestInfo, global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InviteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+        /// Send a sharing invitation for a driveItem. A sharing invitation provides permissions to the recipients and, optionally, sends them an email to notify them that the item was shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite.InvitePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InviteRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

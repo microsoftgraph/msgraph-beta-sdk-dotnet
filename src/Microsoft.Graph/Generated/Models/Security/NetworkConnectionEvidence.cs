@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class NetworkConnectionEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The destinationAddress property</summary>
+        /// <summary>An entity of type IP that is the destination for this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.IpEvidence? DestinationAddress
@@ -28,19 +28,19 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("destinationAddress", value); }
         }
 #endif
-        /// <summary>The destinationPort property</summary>
+        /// <summary>The destination port number, for example, 80.</summary>
         public int? DestinationPort
         {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
-        /// <summary>The protocol property</summary>
+        /// <summary>The protocol type. Possible values are tcp, udp, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ProtocolType? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ProtocolType?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
-        /// <summary>The sourceAddress property</summary>
+        /// <summary>An entity of type IP that is the source for this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.IpEvidence? SourceAddress
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sourceAddress", value); }
         }
 #endif
-        /// <summary>The sourcePort property</summary>
+        /// <summary>The source port number, for example, 80.</summary>
         public int? SourcePort
         {
             get { return BackingStore?.Get<int?>("sourcePort"); }
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.NetworkConnectionEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.NetworkConnectionEvidence();
         }
         /// <summary>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.IpEvidence>("destinationAddress", DestinationAddress);
             writer.WriteIntValue("destinationPort", DestinationPort);

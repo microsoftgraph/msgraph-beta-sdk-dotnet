@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class PolicyLink : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -57,12 +57,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.networkaccess.cloudFirewallPolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.CloudFirewallPolicyLink(),
                 "#microsoft.graph.networkaccess.filteringPolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyLink(),
                 "#microsoft.graph.networkaccess.forwardingPolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyLink(),
+                "#microsoft.graph.networkaccess.threatIntelligencePolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatIntelligencePolicyLink(),
+                "#microsoft.graph.networkaccess.tlsInspectionPolicyLink" => new global::Microsoft.Graph.Beta.Models.Networkaccess.TlsInspectionPolicyLink(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink(),
             };
         }
@@ -85,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Policy>("policy", Policy);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Status>("state", State);

@@ -16,11 +16,11 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Micro
     /// <summary>
     /// Casts the previous resource to caseExportOperation.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
+        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
         public global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Micro
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
+        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperationCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Micro
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
+        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Micro
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
+        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
         public global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder(rawUrl, RequestAdapter);
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Micro
         /// <summary>
         /// Get the items of type microsoft.graph.ediscovery.caseExportOperation in the microsoft.graph.ediscovery.caseOperation collection
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Micro
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder.MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParameters>
         {
         }

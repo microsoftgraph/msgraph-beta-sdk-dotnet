@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews;
 using Microsoft.Graph.Beta.IdentityGovernance.AppConsent;
+using Microsoft.Graph.Beta.IdentityGovernance.Catalogs;
+using Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows;
 using Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics;
@@ -24,7 +26,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
     /// <summary>
     /// Provides operations to manage the identityGovernance singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityGovernanceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.</summary>
@@ -36,6 +38,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         public global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequestBuilder AppConsent
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder Catalogs
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder EntitlementManagement
@@ -71,6 +78,17 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         public global::Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.TermsOfUseRequestBuilder TermsOfUse
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.TermsOfUseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName.CatalogsWithUniqueNameRequestBuilder"/></returns>
+        /// <param name="uniqueName">Alternate key of accessPackageCatalog</param>
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
+        public global::Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName.CatalogsWithUniqueNameRequestBuilder CatalogsWithUniqueName(string uniqueName)
+        {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.CatalogsWithUniqueName.CatalogsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder"/> and sets the default values.
@@ -128,7 +146,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -170,7 +188,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -189,7 +207,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// <summary>
         /// Get identityGovernance
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentityGovernanceRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -217,7 +235,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentityGovernanceRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder.IdentityGovernanceRequestBuilderGetQueryParameters>
         {
         }
@@ -225,7 +243,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentityGovernanceRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum WorkplaceSensorType
     #pragma warning restore CS1591
@@ -26,5 +26,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The unknown feature value.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>The Wifi sensor type.</summary>
+        [EnumMember(Value = "wifi")]
+        Wifi,
     }
 }

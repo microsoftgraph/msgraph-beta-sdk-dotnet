@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.RoleManagement.CloudPC;
+using Microsoft.Graph.Beta.RoleManagement.Defender;
 using Microsoft.Graph.Beta.RoleManagement.DeviceManagement;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace;
 using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps;
@@ -21,35 +22,47 @@ namespace Microsoft.Graph.Beta.RoleManagement
     /// <summary>
     /// Provides operations to manage the roleManagement singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoleManagementRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the cloudPC property of the microsoft.graph.roleManagement entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.CloudPC.CloudPCRequestBuilder CloudPC
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.CloudPC.CloudPCRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the defender property of the microsoft.graph.roleManagement entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
+        public global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder Defender
+        {
+            get => new global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DeviceManagement.DeviceManagementRequestBuilder DeviceManagement
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DeviceManagement.DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.DirectoryRequestBuilder Directory
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.DirectoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.EnterpriseAppsRequestBuilder EnterpriseApps
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.EnterpriseAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder EntitlementManagement
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.EntitlementManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchange property of the microsoft.graph.roleManagement entity.</summary>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.Exchange.ExchangeRequestBuilder Exchange
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.Exchange.ExchangeRequestBuilder(PathParameters, RequestAdapter);
@@ -77,6 +90,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.RoleManagement?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder.RoleManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -101,6 +115,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.RoleManagement?> PatchAsync(global::Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +125,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         public async Task<global::Microsoft.Graph.Beta.Models.RoleManagement> PatchAsync(global::Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -123,6 +138,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder.RoleManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -143,6 +159,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -152,7 +169,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -164,6 +181,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01")]
         public global::Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder(rawUrl, RequestAdapter);
@@ -171,7 +189,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// <summary>
         /// Get roleManagement
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleManagementRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -199,7 +217,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder.RoleManagementRequestBuilderGetQueryParameters>
         {
         }
@@ -207,7 +225,7 @@ namespace Microsoft.Graph.Beta.RoleManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class MailboxProtectionUnit : global::Microsoft.Graph.Beta.Models.ProtectionUnitBase, IParsable
     #pragma warning restore CS1591
@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
+        /// <summary>The type of mailbox which is assigned to the user with id: directoryObjectId.The possible values are: unknown, user, shared, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.MailboxType? MailboxType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MailboxType?>("mailboxType"); }
+            set { BackingStore?.Set("mailboxType", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit"/> and sets the default values.
         /// </summary>
@@ -74,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit();
         }
         /// <summary>
@@ -88,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "directoryObjectId", n => { DirectoryObjectId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "mailboxType", n => { MailboxType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MailboxType>(); } },
             };
         }
         /// <summary>
@@ -96,9 +103,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("directoryObjectId", DirectoryObjectId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MailboxType>("mailboxType", MailboxType);
         }
     }
 }

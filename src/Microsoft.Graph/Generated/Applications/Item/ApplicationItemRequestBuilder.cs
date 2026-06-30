@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
     /// <summary>
     /// Provides operations to manage the collection of application entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplicationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the addKey method.</summary>
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
         {
         }
         /// <summary>
-        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
             return new global::Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder(PathParameters, RequestAdapter, name);
         }
         /// <summary>
-        /// Get the properties and relationships of an application object.
+        /// Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Application"/></returns>
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Application>(requestInfo, global::Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object.
+        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object from an agentIdentityBlueprint if it doesn&apos;t exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Application"/></returns>
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Application> PatchAsync(global::Microsoft.Graph.Beta.Models.Application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -251,7 +251,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Application>(requestInfo, global::Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -270,7 +270,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an application object.
+        /// Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -289,7 +289,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object.
+        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object from an agentIdentityBlueprint if it doesn&apos;t exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -303,7 +303,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -323,14 +323,14 @@ namespace Microsoft.Graph.Beta.Applications.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Get the properties and relationships of an application object.
+        /// Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -358,7 +358,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Applications.Item.ApplicationItemRequestBuilder.ApplicationItemRequestBuilderGetQueryParameters>
         {
         }
@@ -366,7 +366,7 @@ namespace Microsoft.Graph.Beta.Applications.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

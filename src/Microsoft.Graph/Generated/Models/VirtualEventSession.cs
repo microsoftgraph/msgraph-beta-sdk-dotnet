@@ -7,11 +7,17 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class VirtualEventSession : global::Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Represents the expected number of attendees for town hall session.</summary>
+        public int? Capacity
+        {
+            get { return BackingStore?.Get<int?>("capacity"); }
+            set { BackingStore?.Set("capacity", value); }
+        }
         /// <summary>The virtual event session end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +82,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
+        /// <summary>The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string?>("videoOnDemandWebUrl"); }
+            set { BackingStore?.Set("videoOnDemandWebUrl", value); }
+        }
+#nullable restore
+#else
+        public string VideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string>("videoOnDemandWebUrl"); }
+            set { BackingStore?.Set("videoOnDemandWebUrl", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventSession"/> and sets the default values.
         /// </summary>
@@ -90,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.VirtualEventSession CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.VirtualEventSession();
         }
         /// <summary>
@@ -101,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>(global::Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>(global::Microsoft.Graph.Beta.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>(global::Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "videoOnDemandWebUrl", n => { VideoOnDemandWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -113,12 +137,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteIntValue("capacity", Capacity);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventPresenter>("presenters", Presenters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>("registrations", Registrations);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteStringValue("videoOnDemandWebUrl", VideoOnDemandWebUrl);
         }
     }
 }

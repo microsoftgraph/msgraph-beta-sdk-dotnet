@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -53,6 +53,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The catalogs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AccessPackageCatalog>? Catalogs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AccessPackageCatalog>?>("catalogs"); }
+            set { BackingStore?.Set("catalogs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AccessPackageCatalog> Catalogs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AccessPackageCatalog>>("catalogs"); }
+            set { BackingStore?.Set("catalogs", value); }
+        }
+#endif
         /// <summary>The entitlementManagement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,7 +212,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance();
         }
         /// <summary>
@@ -209,6 +225,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             {
                 { "accessReviews", n => { AccessReviews = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewSet>(global::Microsoft.Graph.Beta.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
                 { "appConsent", n => { AppConsent = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>(global::Microsoft.Graph.Beta.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
+                { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageCatalog>(global::Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EntitlementManagement>(global::Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
                 { "lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -225,9 +242,10 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewSet>("accessReviews", AccessReviews);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>("appConsent", AppConsent);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageCatalog>("catalogs", Catalogs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EntitlementManagement>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);

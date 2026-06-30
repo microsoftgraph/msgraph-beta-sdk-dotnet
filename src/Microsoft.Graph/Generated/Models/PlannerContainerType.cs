@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum PlannerContainerType
     #pragma warning restore CS1591
@@ -31,6 +31,18 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "user")]
         #pragma warning disable CS1591
         User,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "teamsChannel")]
+        #pragma warning disable CS1591
+        TeamsChannel,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "onlineMeeting")]
+        #pragma warning disable CS1591
+        OnlineMeeting,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plannerTask")]
+        #pragma warning disable CS1591
+        PlannerTask,
         #pragma warning restore CS1591
     }
 }

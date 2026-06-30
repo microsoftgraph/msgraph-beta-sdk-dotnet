@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OnlineMeetingBase : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -30,19 +30,31 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowBreakoutRooms"); }
             set { BackingStore?.Set("allowBreakoutRooms", value); }
         }
-        /// <summary>Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.</summary>
+        /// <summary>Indicates whether copying and sharing meeting content is enabled for the meeting.</summary>
+        public bool? AllowCopyingAndSharingMeetingContent
+        {
+            get { return BackingStore?.Get<bool?>("allowCopyingAndSharingMeetingContent"); }
+            set { BackingStore?.Set("allowCopyingAndSharingMeetingContent", value); }
+        }
+        /// <summary>Specifies the users who can admit from the lobby. The possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles?>("allowedLobbyAdmitters"); }
+            set { BackingStore?.Set("allowedLobbyAdmitters", value); }
+        }
+        /// <summary>Specifies who can be a presenter in a meeting. The possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters? AllowedPresenters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
-        /// <summary>Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.</summary>
+        /// <summary>Indicates whether live share is enabled for the meeting. The possible values are: enabled, disabled, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingLiveShareOptions? AllowLiveShare
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingLiveShareOptions?>("allowLiveShare"); }
             set { BackingStore?.Set("allowLiveShare", value); }
         }
-        /// <summary>Specifies the mode of meeting chat. Possible values are: enabled, disabled, limited, unknownFutureValue.</summary>
+        /// <summary>Specifies the mode of meeting chat. The possible values are: enabled, disabled, limited, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingChatMode? AllowMeetingChat
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingChatMode?>("allowMeetingChat"); }
@@ -84,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowWhiteboard"); }
             set { BackingStore?.Set("allowWhiteboard", value); }
         }
-        /// <summary>Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can&apos;t be removed through a PATCH operation once added.</summary>
+        /// <summary>Specifies whose identity is anonymized in the meeting. The possible values are: attendee. The attendee value can&apos;t be removed through a PATCH operation once added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole?>? AnonymizeIdentityForRoles
@@ -148,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("chatInfo", value); }
         }
 #endif
-        /// <summary>The chatRestrictions property</summary>
+        /// <summary>Specifies the configuration settings for meeting chat restrictions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ChatRestrictions? ChatRestrictions
@@ -164,7 +176,29 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
-        /// <summary>The isEndToEndEncryptionEnabled property</summary>
+        /// <summary>The cloudVideoInteropInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo? CloudVideoInteropInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo?>("cloudVideoInteropInfo"); }
+            set { BackingStore?.Set("cloudVideoInteropInfo", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo CloudVideoInteropInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo>("cloudVideoInteropInfo"); }
+            set { BackingStore?.Set("cloudVideoInteropInfo", value); }
+        }
+#endif
+        /// <summary>Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? ExpiryDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
+            set { BackingStore?.Set("expiryDateTime", value); }
+        }
+        /// <summary>Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.</summary>
         public bool? IsEndToEndEncryptionEnabled
         {
             get { return BackingStore?.Get<bool?>("isEndToEndEncryptionEnabled"); }
@@ -240,13 +274,61 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
 #endif
+        /// <summary>Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingOptionsWebUrl
+        {
+            get { return BackingStore?.Get<string?>("meetingOptionsWebUrl"); }
+            set { BackingStore?.Set("meetingOptionsWebUrl", value); }
+        }
+#nullable restore
+#else
+        public string MeetingOptionsWebUrl
+        {
+            get { return BackingStore?.Get<string>("meetingOptionsWebUrl"); }
+            set { BackingStore?.Set("meetingOptionsWebUrl", value); }
+        }
+#endif
+        /// <summary>Specifies the spoken language used during the meeting for recording and transcription purposes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingSpokenLanguageTag
+        {
+            get { return BackingStore?.Get<string?>("meetingSpokenLanguageTag"); }
+            set { BackingStore?.Set("meetingSpokenLanguageTag", value); }
+        }
+#nullable restore
+#else
+        public string MeetingSpokenLanguageTag
+        {
+            get { return BackingStore?.Get<string>("meetingSpokenLanguageTag"); }
+            set { BackingStore?.Set("meetingSpokenLanguageTag", value); }
+        }
+#endif
         /// <summary>Indicates whether to record the meeting automatically.</summary>
         public bool? RecordAutomatically
         {
             get { return BackingStore?.Get<bool?>("recordAutomatically"); }
             set { BackingStore?.Set("recordAutomatically", value); }
         }
-        /// <summary>Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.</summary>
+        /// <summary>Specifies the sensitivity label applied to the Teams meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment? SensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment?>("sensitivityLabelAssignment"); }
+            set { BackingStore?.Set("sensitivityLabelAssignment", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment SensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment"); }
+            set { BackingStore?.Set("sensitivityLabelAssignment", value); }
+        }
+#endif
+        /// <summary>Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
@@ -307,7 +389,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OnlineMeetingBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -327,6 +409,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 { "allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
                 { "allowBreakoutRooms", n => { AllowBreakoutRooms = n.GetBoolValue(); } },
+                { "allowCopyingAndSharingMeetingContent", n => { AllowCopyingAndSharingMeetingContent = n.GetBoolValue(); } },
                 { "allowLiveShare", n => { AllowLiveShare = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingLiveShareOptions>(); } },
                 { "allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatMode>(); } },
                 { "allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
@@ -335,19 +418,25 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 { "allowTranscription", n => { AllowTranscription = n.GetBoolValue(); } },
                 { "allowWhiteboard", n => { AllowWhiteboard = n.GetBoolValue(); } },
+                { "allowedLobbyAdmitters", n => { AllowedLobbyAdmitters = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles>(); } },
                 { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters>(); } },
                 { "anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole>()?.AsList(); } },
                 { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>(global::Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>(global::Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatRestrictions>(global::Microsoft.Graph.Beta.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
+                { "cloudVideoInteropInfo", n => { CloudVideoInteropInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo>(global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo.CreateFromDiscriminatorValue); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
                 { "joinInformation", n => { JoinInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>(global::Microsoft.Graph.Beta.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
                 { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
                 { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LobbyBypassSettings>(global::Microsoft.Graph.Beta.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
+                { "meetingOptionsWebUrl", n => { MeetingOptionsWebUrl = n.GetStringValue(); } },
+                { "meetingSpokenLanguageTag", n => { MeetingSpokenLanguageTag = n.GetStringValue(); } },
                 { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
+                { "sensitivityLabelAssignment", n => { SensitivityLabelAssignment = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>(global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
@@ -360,11 +449,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
             writer.WriteBoolValue("allowBreakoutRooms", AllowBreakoutRooms);
+            writer.WriteBoolValue("allowCopyingAndSharingMeetingContent", AllowCopyingAndSharingMeetingContent);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles>("allowedLobbyAdmitters", AllowedLobbyAdmitters);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingLiveShareOptions>("allowLiveShare", AllowLiveShare);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
@@ -379,13 +470,18 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo>("cloudVideoInteropInfo", CloudVideoInteropInfo);
+            writer.WriteDateTimeOffsetValue("expiryDateTime", ExpiryDateTime);
             writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("joinInformation", JoinInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
+            writer.WriteStringValue("meetingOptionsWebUrl", MeetingOptionsWebUrl);
+            writer.WriteStringValue("meetingSpokenLanguageTag", MeetingSpokenLanguageTag);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment", SensitivityLabelAssignment);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);

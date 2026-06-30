@@ -7,12 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class IpApplicationSegment : global::Microsoft.Graph.Beta.Models.ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The application property</summary>
+        /// <summary>The action property</summary>
+        public global::Microsoft.Graph.Beta.Models.ActionType? Action
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActionType?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
+        /// <summary>The on-premises nonweb application published through Microsoft Entra application proxy. Expanded by default and supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Application? Application
@@ -28,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("application", value); }
         }
 #endif
-        /// <summary>The destinationHost property</summary>
+        /// <summary>Either the IP address, IP range, or FQDN of the applicationSegment, with or without wildcards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationHost
@@ -44,19 +50,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("destinationHost", value); }
         }
 #endif
-        /// <summary>The destinationType property</summary>
+        /// <summary>The possible values are: ipAddress, ipRange, ipRangeCidr, fqdn, dnsSuffix, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType? DestinationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType?>("destinationType"); }
             set { BackingStore?.Set("destinationType", value); }
         }
-        /// <summary>The port property</summary>
+        /// <summary>Port supported for the application segment. DO NOT USE.</summary>
         public int? Port
         {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
-        /// <summary>The ports property</summary>
+        /// <summary>List of ports supported for the application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ports
@@ -72,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ports", value); }
         }
 #endif
-        /// <summary>The protocol property</summary>
+        /// <summary>Indicates the protocol of the network traffic acquired for the application segment. The possible values are: tcp, udp, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PrivateNetworkProtocol? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PrivateNetworkProtocol?>("protocol"); }
@@ -92,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IpApplicationSegment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IpApplicationSegment();
         }
         /// <summary>
@@ -103,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ActionType>(); } },
                 { "application", n => { Application = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Application>(global::Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue); } },
                 { "destinationHost", n => { DestinationHost = n.GetStringValue(); } },
                 { "destinationType", n => { DestinationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType>(); } },
@@ -117,8 +124,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ActionType>("action", Action);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Application>("application", Application);
             writer.WriteStringValue("destinationHost", DestinationHost);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType>("destinationType", DestinationType);

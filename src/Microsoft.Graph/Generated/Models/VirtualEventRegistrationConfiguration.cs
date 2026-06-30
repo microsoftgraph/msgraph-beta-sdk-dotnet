@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class VirtualEventRegistrationConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -17,6 +17,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
+        }
+        /// <summary>Indicates whether registrations require organizer approval before a participant is confirmed.</summary>
+        public bool? IsManualApprovalEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isManualApprovalEnabled"); }
+            set { BackingStore?.Set("isManualApprovalEnabled", value); }
+        }
+        /// <summary>Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.</summary>
+        public bool? IsWaitlistEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isWaitlistEnabled"); }
+            set { BackingStore?.Set("isWaitlistEnabled", value); }
         }
         /// <summary>Registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +69,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.virtualEventTownhallRegistrationConfiguration" => new global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration(),
                 "#microsoft.graph.virtualEventWebinarRegistrationConfiguration" => new global::Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationConfiguration(),
             };
@@ -74,6 +87,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "capacity", n => { Capacity = n.GetIntValue(); } },
+                { "isManualApprovalEnabled", n => { IsManualApprovalEnabled = n.GetBoolValue(); } },
+                { "isWaitlistEnabled", n => { IsWaitlistEnabled = n.GetBoolValue(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionBase>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
             };
@@ -84,9 +99,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("capacity", Capacity);
+            writer.WriteBoolValue("isManualApprovalEnabled", IsManualApprovalEnabled);
+            writer.WriteBoolValue("isWaitlistEnabled", IsWaitlistEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionBase>("questions", Questions);
             writer.WriteStringValue("registrationWebUrl", RegistrationWebUrl);
         }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcSnapshot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -34,11 +34,17 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The date and time when the snapshot expires. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
+        }
+        /// <summary>Indicates the health check status of the Cloud PC snapshot. The possible values are: unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus? HealthCheckStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus?>("healthCheckStatus"); }
+            set { BackingStore?.Set("healthCheckStatus", value); }
         }
         /// <summary>The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastRestoredDateTime
@@ -46,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastRestoredDateTime"); }
             set { BackingStore?.Set("lastRestoredDateTime", value); }
         }
-        /// <summary>The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.</summary>
+        /// <summary>The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: retention. The default value is automatic.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType? SnapshotType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType?>("snapshotType"); }
@@ -65,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcSnapshot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcSnapshot();
         }
         /// <summary>
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus>(); } },
                 { "lastRestoredDateTime", n => { LastRestoredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "snapshotType", n => { SnapshotType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotStatus>(); } },
@@ -90,11 +97,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("cloudPcId", CloudPcId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotHealthCheckStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteDateTimeOffsetValue("lastRestoredDateTime", LastRestoredDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotType>("snapshotType", SnapshotType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotStatus>("status", Status);

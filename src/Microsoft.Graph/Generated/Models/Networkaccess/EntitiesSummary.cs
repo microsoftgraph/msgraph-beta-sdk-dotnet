@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EntitiesSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The number of unique devices that were seen.</summary>
+        /// <summary>The number of devices in the summary. Required.</summary>
         public long? DeviceCount
         {
             get { return BackingStore?.Get<long?>("deviceCount"); }
@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
-        /// <summary>The number of unique Microsoft Entra ID users that were seen.</summary>
+        /// <summary>The number of users in the summary. Required.</summary>
         public long? UserCount
         {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
-        /// <summary>The number of unique target workloads/hosts that were seen.</summary>
+        /// <summary>The number of workloads in the summary. Required.</summary>
         public long? WorkloadCount
         {
             get { return BackingStore?.Get<long?>("workloadCount"); }
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Networkaccess.EntitiesSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.EntitiesSummary();
         }
         /// <summary>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("deviceCount", DeviceCount);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>("trafficType", TrafficType);

@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GitHubOrganizationEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The company property</summary>
+        /// <summary>The name of the company that owns the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("company", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>The email address of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The login property</summary>
+        /// <summary>The login (name) of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Login
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("login", value); }
         }
 #endif
-        /// <summary>The orgId property</summary>
+        /// <summary>The unique and immutable ID of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgId
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("orgId", value); }
         }
 #endif
-        /// <summary>The webUrl property</summary>
+        /// <summary>The URL of the web page for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.GitHubOrganizationEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.GitHubOrganizationEvidence();
         }
         /// <summary>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("company", Company);
             writer.WriteStringValue("displayName", DisplayName);

@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AuthenticationsMetric : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -35,6 +35,38 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<long?>("attemptsCount"); }
             set { BackingStore?.Set("attemptsCount", value); }
         }
+        /// <summary>The authFlow property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthFlow
+        {
+            get { return BackingStore?.Get<string?>("authFlow"); }
+            set { BackingStore?.Set("authFlow", value); }
+        }
+#nullable restore
+#else
+        public string AuthFlow
+        {
+            get { return BackingStore?.Get<string>("authFlow"); }
+            set { BackingStore?.Set("authFlow", value); }
+        }
+#endif
+        /// <summary>The browser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Browser
+        {
+            get { return BackingStore?.Get<string?>("browser"); }
+            set { BackingStore?.Set("browser", value); }
+        }
+#nullable restore
+#else
+        public string Browser
+        {
+            get { return BackingStore?.Get<string>("browser"); }
+            set { BackingStore?.Set("browser", value); }
+        }
+#endif
         /// <summary>The location where the customers authenticated from. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +89,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
+        /// <summary>The failures property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AuthenticationFailure>? Failures
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AuthenticationFailure>?>("failures"); }
+            set { BackingStore?.Set("failures", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AuthenticationFailure> Failures
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AuthenticationFailure>>("failures"); }
+            set { BackingStore?.Set("failures", value); }
+        }
+#endif
         /// <summary>The identityProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AuthenticationsMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AuthenticationsMetric();
         }
         /// <summary>
@@ -131,8 +179,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "appid", n => { Appid = n.GetStringValue(); } },
                 { "attemptsCount", n => { AttemptsCount = n.GetLongValue(); } },
+                { "authFlow", n => { AuthFlow = n.GetStringValue(); } },
+                { "browser", n => { Browser = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "factDate", n => { FactDate = n.GetDateValue(); } },
+                { "failures", n => { Failures = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationFailure>(global::Microsoft.Graph.Beta.Models.AuthenticationFailure.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "os", n => { Os = n.GetStringValue(); } },
@@ -145,12 +196,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appid", Appid);
             writer.WriteLongValue("attemptsCount", AttemptsCount);
+            writer.WriteStringValue("authFlow", AuthFlow);
+            writer.WriteStringValue("browser", Browser);
             writer.WriteStringValue("country", Country);
             writer.WriteDateValue("factDate", FactDate);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationFailure>("failures", Failures);
             writer.WriteStringValue("identityProvider", IdentityProvider);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("os", Os);

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CommsOperation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CommsOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -70,7 +70,11 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.recordOperation" => new global::Microsoft.Graph.Beta.Models.RecordOperation(),
                 "#microsoft.graph.sendDtmfTonesOperation" => new global::Microsoft.Graph.Beta.Models.SendDtmfTonesOperation(),
                 "#microsoft.graph.startHoldMusicOperation" => new global::Microsoft.Graph.Beta.Models.StartHoldMusicOperation(),
+                "#microsoft.graph.startRecordingOperation" => new global::Microsoft.Graph.Beta.Models.StartRecordingOperation(),
+                "#microsoft.graph.startTranscriptionOperation" => new global::Microsoft.Graph.Beta.Models.StartTranscriptionOperation(),
                 "#microsoft.graph.stopHoldMusicOperation" => new global::Microsoft.Graph.Beta.Models.StopHoldMusicOperation(),
+                "#microsoft.graph.stopRecordingOperation" => new global::Microsoft.Graph.Beta.Models.StopRecordingOperation(),
+                "#microsoft.graph.stopTranscriptionOperation" => new global::Microsoft.Graph.Beta.Models.StopTranscriptionOperation(),
                 "#microsoft.graph.subscribeToToneOperation" => new global::Microsoft.Graph.Beta.Models.SubscribeToToneOperation(),
                 "#microsoft.graph.unmuteParticipantOperation" => new global::Microsoft.Graph.Beta.Models.UnmuteParticipantOperation(),
                 "#microsoft.graph.updateRecordingStatusOperation" => new global::Microsoft.Graph.Beta.Models.UpdateRecordingStatusOperation(),
@@ -96,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("clientContext", ClientContext);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ResultInfo>("resultInfo", ResultInfo);

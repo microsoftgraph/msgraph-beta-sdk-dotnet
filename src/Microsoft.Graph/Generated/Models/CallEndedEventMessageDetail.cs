@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CallEndedEventMessageDetail : global::Microsoft.Graph.Beta.Models.EventMessageDetail, IParsable
     #pragma warning restore CS1591
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<TimeSpan?>("callDuration"); }
             set { BackingStore?.Set("callDuration", value); }
         }
-        /// <summary>Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
+        /// <summary>Represents the call event type. The possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamworkCallEventType? CallEventType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkCallEventType?>("callEventType"); }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CallEndedEventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CallEndedEventMessageDetail();
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteTimeSpanValue("callDuration", CallDuration);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TeamworkCallEventType>("callEventType", CallEventType);

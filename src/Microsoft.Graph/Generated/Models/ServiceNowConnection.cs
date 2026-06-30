@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// ServiceNow properties including the ServiceNow instanceUrl, connection credentials and other metadata.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServiceNowConnection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the method used by Intune to authenticate with ServiceNow. Currently supports only web authentication with ServiceNow using the specified app id.</summary>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("incidentApiUrl", value); }
         }
 #endif
-        /// <summary>Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com</summary>
+        /// <summary>Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://&lt;instance&gt;.service-now.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstanceUrl
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ServiceNowConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ServiceNowConnection();
         }
         /// <summary>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ServiceNowAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

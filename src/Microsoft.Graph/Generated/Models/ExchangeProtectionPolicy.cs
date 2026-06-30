@@ -7,11 +7,43 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ExchangeProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The mailbox exclusion units associated with the Exchange protection policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>? MailboxExclusionUnits
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>?>("mailboxExclusionUnits"); }
+            set { BackingStore?.Set("mailboxExclusionUnits", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit> MailboxExclusionUnits
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>>("mailboxExclusionUnits"); }
+            set { BackingStore?.Set("mailboxExclusionUnits", value); }
+        }
+#endif
+        /// <summary>The list of bulk addition jobs for mailbox exclusion units associated with the Exchange protection policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>? MailboxExclusionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>?>("mailboxExclusionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("mailboxExclusionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob> MailboxExclusionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>>("mailboxExclusionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("mailboxExclusionUnitsBulkAdditionJobs", value); }
+        }
+#endif
         /// <summary>The rules associated with the Exchange protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mailboxProtectionUnits", value); }
         }
 #endif
+        /// <summary>The mailboxProtectionUnitsBulkAdditionJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob>? MailboxProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob>?>("mailboxProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob> MailboxProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob>>("mailboxProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy"/> and sets the default values.
         /// </summary>
@@ -58,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy();
         }
         /// <summary>
@@ -69,8 +117,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "mailboxExclusionUnits", n => { MailboxExclusionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>(global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mailboxExclusionUnitsBulkAdditionJobs", n => { MailboxExclusionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>(global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxInclusionRules", n => { MailboxInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxProtectionRule>(global::Microsoft.Graph.Beta.Models.MailboxProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxProtectionUnits", n => { MailboxProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit>(global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mailboxProtectionUnitsBulkAdditionJobs", n => { MailboxProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -79,10 +130,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnit>("mailboxExclusionUnits", MailboxExclusionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxExclusionUnitsBulkAdditionJob>("mailboxExclusionUnitsBulkAdditionJobs", MailboxExclusionUnitsBulkAdditionJobs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxProtectionRule>("mailboxInclusionRules", MailboxInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit>("mailboxProtectionUnits", MailboxProtectionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob>("mailboxProtectionUnitsBulkAdditionJobs", MailboxProtectionUnitsBulkAdditionJobs);
         }
     }
 }

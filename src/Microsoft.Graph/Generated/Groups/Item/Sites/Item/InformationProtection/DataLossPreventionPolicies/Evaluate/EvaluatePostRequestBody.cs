@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DataLossPreventionPolicies.Evaluate
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -22,6 +22,22 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Data
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The classifyText property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TextClassificationRequest? ClassifyText
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TextClassificationRequest?>("classifyText"); }
+            set { BackingStore?.Set("classifyText", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TextClassificationRequest ClassifyText
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TextClassificationRequest>("classifyText"); }
+            set { BackingStore?.Set("classifyText", value); }
+        }
+#endif
         /// <summary>The evaluationInput property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +101,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Data
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DataLossPreventionPolicies.Evaluate.EvaluatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DataLossPreventionPolicies.Evaluate.EvaluatePostRequestBody();
         }
         /// <summary>
@@ -96,6 +112,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Data
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "classifyText", n => { ClassifyText = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TextClassificationRequest>(global::Microsoft.Graph.Beta.Models.TextClassificationRequest.CreateFromDiscriminatorValue); } },
                 { "evaluationInput", n => { EvaluationInput = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DlpEvaluationInput>(global::Microsoft.Graph.Beta.Models.DlpEvaluationInput.CreateFromDiscriminatorValue); } },
                 { "notificationInfo", n => { NotificationInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DlpNotification>(global::Microsoft.Graph.Beta.Models.DlpNotification.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -107,7 +124,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Data
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TextClassificationRequest>("classifyText", ClassifyText);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DlpEvaluationInput>("evaluationInput", EvaluationInput);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DlpNotification>("notificationInfo", NotificationInfo);
             writer.WriteStringValue("target", Target);

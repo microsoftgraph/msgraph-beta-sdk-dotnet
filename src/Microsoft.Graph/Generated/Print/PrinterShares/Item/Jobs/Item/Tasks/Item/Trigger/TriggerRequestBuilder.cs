@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Tri
     /// <summary>
     /// Provides operations to manage the trigger property of the microsoft.graph.printTask entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TriggerRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Tri
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrintTaskTrigger?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Tri
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Tri
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
+        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder(rawUrl, RequestAdapter);
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Tri
         /// <summary>
         /// The printTaskTrigger that triggered this task&apos;s execution. Read-only.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TriggerRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Tri
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TriggerRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.Item.Trigger.TriggerRequestBuilder.TriggerRequestBuilderGetQueryParameters>
         {
         }

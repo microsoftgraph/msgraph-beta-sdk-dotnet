@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DailyUserInsightMetricsRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mfaCompletions", value); }
         }
 #endif
+        /// <summary>The mfaTelecomFraud property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MfaTelecomFraudMetric>? MfaTelecomFraud
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MfaTelecomFraudMetric>?>("mfaTelecomFraud"); }
+            set { BackingStore?.Set("mfaTelecomFraud", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MfaTelecomFraudMetric> MfaTelecomFraud
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MfaTelecomFraudMetric>>("mfaTelecomFraud"); }
+            set { BackingStore?.Set("mfaTelecomFraud", value); }
+        }
+#endif
         /// <summary>Total sign-ups on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot();
         }
         /// <summary>
@@ -163,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "inactiveUsers", n => { InactiveUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric>(global::Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inactiveUsersByApplication", n => { InactiveUsersByApplication = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>(global::Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mfaCompletions", n => { MfaCompletions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaCompletionMetric>(global::Microsoft.Graph.Beta.Models.MfaCompletionMetric.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mfaTelecomFraud", n => { MfaTelecomFraud = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaTelecomFraudMetric>(global::Microsoft.Graph.Beta.Models.MfaTelecomFraudMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signUps", n => { SignUps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSignUpMetric>(global::Microsoft.Graph.Beta.Models.UserSignUpMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "summary", n => { Summary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InsightSummary>(global::Microsoft.Graph.Beta.Models.InsightSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userCount", n => { UserCount = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserCountMetric>(global::Microsoft.Graph.Beta.Models.UserCountMetric.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -174,13 +191,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ActiveUsersMetric>("activeUsers", ActiveUsers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationsMetric>("authentications", Authentications);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric>("inactiveUsers", InactiveUsers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>("inactiveUsersByApplication", InactiveUsersByApplication);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaCompletionMetric>("mfaCompletions", MfaCompletions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaTelecomFraudMetric>("mfaTelecomFraud", MfaTelecomFraud);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSignUpMetric>("signUps", SignUps);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InsightSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserCountMetric>("userCount", UserCount);

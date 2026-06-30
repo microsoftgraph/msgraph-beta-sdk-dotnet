@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class BaseItem : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.BaseItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -185,6 +185,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.list" => new global::Microsoft.Graph.Beta.Models.List(),
                 "#microsoft.graph.listItem" => new global::Microsoft.Graph.Beta.Models.ListItem(),
                 "#microsoft.graph.newsLinkPage" => new global::Microsoft.Graph.Beta.Models.NewsLinkPage(),
+                "#microsoft.graph.pageTemplate" => new global::Microsoft.Graph.Beta.Models.PageTemplate(),
                 "#microsoft.graph.recycleBin" => new global::Microsoft.Graph.Beta.Models.RecycleBin(),
                 "#microsoft.graph.recycleBinItem" => new global::Microsoft.Graph.Beta.Models.RecycleBinItem(),
                 "#microsoft.graph.sharedDriveItem" => new global::Microsoft.Graph.Beta.Models.SharedDriveItem(),
@@ -221,7 +222,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("createdByUser", CreatedByUser);

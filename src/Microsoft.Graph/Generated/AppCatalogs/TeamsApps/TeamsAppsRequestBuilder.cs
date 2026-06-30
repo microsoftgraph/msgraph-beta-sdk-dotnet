@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
     /// <summary>
     /// Provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamsAppsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
         {
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog. This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog, including apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsAppCollectionResponse"/></returns>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
         public async Task<global::Microsoft.Graph.Beta.Models.TeamsApp> PostAsync(global::Microsoft.Graph.Beta.Models.TeamsApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamsApp>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog. This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog, including apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TeamsApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
             return new global::Microsoft.Graph.Beta.AppCatalogs.TeamsApps.TeamsAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog. This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog, including apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.AppCatalogs.TeamsApps.TeamsAppsRequestBuilder.TeamsAppsRequestBuilderGetQueryParameters>
         {
         }
@@ -231,7 +231,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -7,23 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class VirtualEventWebinarRegistrationConfiguration : global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isManualApprovalEnabled property</summary>
-        public bool? IsManualApprovalEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isManualApprovalEnabled"); }
-            set { BackingStore?.Set("isManualApprovalEnabled", value); }
-        }
-        /// <summary>The isWaitlistEnabled property</summary>
-        public bool? IsWaitlistEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isWaitlistEnabled"); }
-            set { BackingStore?.Set("isWaitlistEnabled", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration();
         }
         /// <summary>
@@ -42,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isManualApprovalEnabled", n => { IsManualApprovalEnabled = n.GetBoolValue(); } },
-                { "isWaitlistEnabled", n => { IsWaitlistEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -52,10 +38,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isManualApprovalEnabled", IsManualApprovalEnabled);
-            writer.WriteBoolValue("isWaitlistEnabled", IsWaitlistEnabled);
         }
     }
 }

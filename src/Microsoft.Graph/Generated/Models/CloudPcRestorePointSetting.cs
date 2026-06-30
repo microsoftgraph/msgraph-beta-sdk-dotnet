@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcRestorePointSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("frequencyInHours"); }
             set { BackingStore?.Set("frequencyInHours", value); }
         }
-        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
+        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. The possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRestorePointFrequencyType? FrequencyType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRestorePointFrequencyType?>("frequencyType"); }
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("frequencyInHours", FrequencyInHours);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRestorePointFrequencyType>("frequencyType", FrequencyType);
             writer.WriteStringValue("@odata.type", OdataType);

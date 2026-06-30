@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Rights;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -16,11 +17,15 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
     /// <summary>
     /// Provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SensitivityLabelItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Rights.RightsRequestBuilder Rights
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Rights.RightsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.SublabelsRequestBuilder Sublabels
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.SublabelsRequestBuilder(PathParameters, RequestAdapter);
@@ -47,7 +52,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +75,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SensitivityLabel?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder.SensitivityLabelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,7 +99,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SensitivityLabel?> PatchAsync(global::Microsoft.Graph.Beta.Models.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         public async Task<global::Microsoft.Graph.Beta.Models.SensitivityLabel> PatchAsync(global::Microsoft.Graph.Beta.Models.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -119,7 +121,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -139,7 +140,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder.SensitivityLabelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -160,7 +160,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -170,7 +169,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -182,7 +181,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder(rawUrl, RequestAdapter);
@@ -191,14 +189,14 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get sensitivityLabels from users
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -226,7 +224,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder.SensitivityLabelItemRequestBuilderGetQueryParameters>
         {
         }
@@ -234,7 +232,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

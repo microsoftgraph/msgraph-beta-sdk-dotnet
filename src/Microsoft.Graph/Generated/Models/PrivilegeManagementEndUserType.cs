@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The type of user account on Windows that was used to performed the elevation.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PrivilegeManagementEndUserType
     {
         /// <summary>Default. Unable to determine the login type of the user.</summary>
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user who performed the elevation logged in using a Windows local account.</summary>
         [EnumMember(Value = "local")]
         Local,
-        /// <summary>Evolvable emuneration sentinel value. Do not use.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

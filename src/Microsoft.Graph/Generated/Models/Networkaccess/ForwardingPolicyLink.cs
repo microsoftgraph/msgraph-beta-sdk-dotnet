@@ -7,11 +7,17 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ForwardingPolicyLink : global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The priority property</summary>
+        public long? Priority
+        {
+            get { return BackingStore?.Get<long?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyLink"/> and sets the default values.
         /// </summary>
@@ -26,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyLink CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyLink();
         }
         /// <summary>
@@ -37,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "priority", n => { Priority = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -45,8 +52,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteLongValue("priority", Priority);
         }
     }
 }

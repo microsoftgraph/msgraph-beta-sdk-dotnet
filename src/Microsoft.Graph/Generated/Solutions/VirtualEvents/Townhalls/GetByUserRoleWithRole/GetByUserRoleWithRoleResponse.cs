@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole
 {
     [Obsolete("This class is obsolete. Use GetByUserRoleWithRoleGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetByUserRoleWithRoleResponse : global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse, IParsable
     #pragma warning restore CS1591
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWi
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleResponse();
         }
     }

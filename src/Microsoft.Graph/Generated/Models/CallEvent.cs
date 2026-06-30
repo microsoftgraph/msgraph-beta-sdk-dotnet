@@ -7,24 +7,40 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CallEvent : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The callEventType property</summary>
+        /// <summary>The callConversationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallConversationId
+        {
+            get { return BackingStore?.Get<string?>("callConversationId"); }
+            set { BackingStore?.Set("callConversationId", value); }
+        }
+#nullable restore
+#else
+        public string CallConversationId
+        {
+            get { return BackingStore?.Get<string>("callConversationId"); }
+            set { BackingStore?.Set("callConversationId", value); }
+        }
+#endif
+        /// <summary>The event type of the call. The possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: rosterUpdated.</summary>
         public global::Microsoft.Graph.Beta.Models.CallEventType? CallEventType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CallEventType?>("callEventType"); }
             set { BackingStore?.Set("callEventType", value); }
         }
-        /// <summary>The eventDateTime property</summary>
+        /// <summary>The date and time when the event occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EventDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The participants property</summary>
+        /// <summary>Participants collection for the call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Participant>? Participants
@@ -40,6 +56,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("participants", value); }
         }
 #endif
+        /// <summary>The recordingState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RecordingState? RecordingState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecordingState?>("recordingState"); }
+            set { BackingStore?.Set("recordingState", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RecordingState RecordingState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecordingState>("recordingState"); }
+            set { BackingStore?.Set("recordingState", value); }
+        }
+#endif
+        /// <summary>The transcriptionState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TranscriptionState? TranscriptionState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TranscriptionState?>("transcriptionState"); }
+            set { BackingStore?.Set("transcriptionState", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TranscriptionState TranscriptionState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TranscriptionState>("transcriptionState"); }
+            set { BackingStore?.Set("transcriptionState", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,8 +95,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CallEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.CallEvent();
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.emergencyCallEvent" => new global::Microsoft.Graph.Beta.Models.EmergencyCallEvent(),
+                _ => new global::Microsoft.Graph.Beta.Models.CallEvent(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,9 +111,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "callConversationId", n => { CallConversationId = n.GetStringValue(); } },
                 { "callEventType", n => { CallEventType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CallEventType>(); } },
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>(global::Microsoft.Graph.Beta.Models.Participant.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recordingState", n => { RecordingState = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecordingState>(global::Microsoft.Graph.Beta.Models.RecordingState.CreateFromDiscriminatorValue); } },
+                { "transcriptionState", n => { TranscriptionState = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TranscriptionState>(global::Microsoft.Graph.Beta.Models.TranscriptionState.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,11 +125,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("callConversationId", CallConversationId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CallEventType>("callEventType", CallEventType);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Participant>("participants", Participants);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecordingState>("recordingState", RecordingState);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TranscriptionState>("transcriptionState", TranscriptionState);
         }
     }
 }

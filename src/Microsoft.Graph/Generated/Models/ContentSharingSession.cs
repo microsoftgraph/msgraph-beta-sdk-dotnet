@@ -7,11 +7,43 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ContentSharingSession : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The pngOfCurrentSlide property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? PngOfCurrentSlide
+        {
+            get { return BackingStore?.Get<byte[]?>("pngOfCurrentSlide"); }
+            set { BackingStore?.Set("pngOfCurrentSlide", value); }
+        }
+#nullable restore
+#else
+        public byte[] PngOfCurrentSlide
+        {
+            get { return BackingStore?.Get<byte[]>("pngOfCurrentSlide"); }
+            set { BackingStore?.Set("pngOfCurrentSlide", value); }
+        }
+#endif
+        /// <summary>The presenterParticipantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PresenterParticipantId
+        {
+            get { return BackingStore?.Get<string?>("presenterParticipantId"); }
+            set { BackingStore?.Set("presenterParticipantId", value); }
+        }
+#nullable restore
+#else
+        public string PresenterParticipantId
+        {
+            get { return BackingStore?.Get<string>("presenterParticipantId"); }
+            set { BackingStore?.Set("presenterParticipantId", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -19,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ContentSharingSession CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ContentSharingSession();
         }
         /// <summary>
@@ -30,6 +62,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "pngOfCurrentSlide", n => { PngOfCurrentSlide = n.GetByteArrayValue(); } },
+                { "presenterParticipantId", n => { PresenterParticipantId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -38,8 +72,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteByteArrayValue("pngOfCurrentSlide", PngOfCurrentSlide);
+            writer.WriteStringValue("presenterParticipantId", PresenterParticipantId);
         }
     }
 }

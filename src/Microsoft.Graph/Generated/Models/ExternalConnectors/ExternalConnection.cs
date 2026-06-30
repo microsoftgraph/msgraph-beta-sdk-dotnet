@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ExternalConnection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -76,6 +76,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             set { BackingStore?.Set("connectorId", value); }
         }
 #endif
+        /// <summary>The contentCategory property</summary>
+        public global::Microsoft.Graph.Beta.Models.ExternalConnectors.ContentCategory? ContentCategory
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ContentCategory?>("contentCategory"); }
+            set { BackingStore?.Set("contentCategory", value); }
+        }
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -229,7 +235,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection();
         }
         /// <summary>
@@ -244,6 +250,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
                 { "complianceSettings", n => { ComplianceSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>(global::Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings.CreateFromDiscriminatorValue); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>(global::Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
+                { "contentCategory", n => { ContentCategory = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ContentCategory>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabledContentExperiences", n => { EnabledContentExperiences = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ContentExperienceType>(); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup>(global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -263,12 +270,13 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings>("activitySettings", ActivitySettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>("complianceSettings", ComplianceSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>("configuration", Configuration);
             writer.WriteStringValue("connectorId", ConnectorId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ContentCategory>("contentCategory", ContentCategory);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ContentExperienceType>("enabledContentExperiences", EnabledContentExperiences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup>("groups", Groups);

@@ -5,12 +5,13 @@ using Microsoft.Graph.Beta.AccessReviews;
 using Microsoft.Graph.Beta.Activitystatistics;
 using Microsoft.Graph.Beta.Admin;
 using Microsoft.Graph.Beta.AdministrativeUnits;
+using Microsoft.Graph.Beta.AgentRegistry;
+using Microsoft.Graph.Beta.Agents;
 using Microsoft.Graph.Beta.AgreementAcceptances;
 using Microsoft.Graph.Beta.Agreements;
 using Microsoft.Graph.Beta.AllowedDataLocations;
 using Microsoft.Graph.Beta.App;
 using Microsoft.Graph.Beta.AppCatalogs;
-using Microsoft.Graph.Beta.AppRoleAssignments;
 using Microsoft.Graph.Beta.ApplicationTemplates;
 using Microsoft.Graph.Beta.Applications;
 using Microsoft.Graph.Beta.ApplicationsWithAppId;
@@ -18,10 +19,12 @@ using Microsoft.Graph.Beta.ApplicationsWithUniqueName;
 using Microsoft.Graph.Beta.ApprovalWorkflowProviders;
 using Microsoft.Graph.Beta.AuditLogs;
 using Microsoft.Graph.Beta.AuthenticationMethodConfigurations;
+using Microsoft.Graph.Beta.AuthenticationMethodDevices;
 using Microsoft.Graph.Beta.AuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.BookingBusinesses;
 using Microsoft.Graph.Beta.BookingCurrencies;
 using Microsoft.Graph.Beta.BusinessFlowTemplates;
+using Microsoft.Graph.Beta.CertificateAuthorities;
 using Microsoft.Graph.Beta.CertificateBasedAuthConfiguration;
 using Microsoft.Graph.Beta.Chats;
 using Microsoft.Graph.Beta.Commands;
@@ -33,7 +36,6 @@ using Microsoft.Graph.Beta.Contracts;
 using Microsoft.Graph.Beta.DataClassification;
 using Microsoft.Graph.Beta.DataPolicyOperations;
 using Microsoft.Graph.Beta.DeviceAppManagement;
-using Microsoft.Graph.Beta.DeviceLocalCredentials;
 using Microsoft.Graph.Beta.DeviceManagement;
 using Microsoft.Graph.Beta.Devices;
 using Microsoft.Graph.Beta.DevicesWithDeviceId;
@@ -82,7 +84,6 @@ using Microsoft.Graph.Beta.Organization;
 using Microsoft.Graph.Beta.PayloadResponse;
 using Microsoft.Graph.Beta.PermissionGrants;
 using Microsoft.Graph.Beta.Places;
-using Microsoft.Graph.Beta.PlacesWithPlaceId;
 using Microsoft.Graph.Beta.Planner;
 using Microsoft.Graph.Beta.Policies;
 using Microsoft.Graph.Beta.Print;
@@ -118,11 +119,13 @@ using Microsoft.Graph.Beta.TeamTemplateDefinition;
 using Microsoft.Graph.Beta.Teams;
 using Microsoft.Graph.Beta.TeamsTemplates;
 using Microsoft.Graph.Beta.Teamwork;
+using Microsoft.Graph.Beta.Templates;
 using Microsoft.Graph.Beta.TenantRelationships;
 using Microsoft.Graph.Beta.TermStore;
 using Microsoft.Graph.Beta.ThreatSubmission;
 using Microsoft.Graph.Beta.TrustFramework;
 using Microsoft.Graph.Beta.Users;
+using Microsoft.Graph.Beta.UsersWithUserPrincipalName;
 using Microsoft.Graph.Beta.Workplace;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Store;
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BaseGraphServiceClient : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
@@ -167,6 +170,16 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder AdministrativeUnits
         {
             get => new global::Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the agentRegistry singleton.</summary>
+        public global::Microsoft.Graph.Beta.AgentRegistry.AgentRegistryRequestBuilder AgentRegistry
+        {
+            get => new global::Microsoft.Graph.Beta.AgentRegistry.AgentRegistryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collection of agent entities.</summary>
+        public global::Microsoft.Graph.Beta.Agents.AgentsRequestBuilder Agents
+        {
+            get => new global::Microsoft.Graph.Beta.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
         public global::Microsoft.Graph.Beta.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances
@@ -203,11 +216,6 @@ namespace Microsoft.Graph.Beta
         {
             get => new global::Microsoft.Graph.Beta.ApplicationTemplates.ApplicationTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the collection of appRoleAssignment entities.</summary>
-        public global::Microsoft.Graph.Beta.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
-        {
-            get => new global::Microsoft.Graph.Beta.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
         public global::Microsoft.Graph.Beta.ApprovalWorkflowProviders.ApprovalWorkflowProvidersRequestBuilder ApprovalWorkflowProviders
         {
@@ -222,6 +230,11 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.AuthenticationMethodConfigurations.AuthenticationMethodConfigurationsRequestBuilder AuthenticationMethodConfigurations
         {
             get => new global::Microsoft.Graph.Beta.AuthenticationMethodConfigurations.AuthenticationMethodConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collection of authenticationMethodDevice entities.</summary>
+        public global::Microsoft.Graph.Beta.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder AuthenticationMethodDevices
+        {
+            get => new global::Microsoft.Graph.Beta.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
         public global::Microsoft.Graph.Beta.AuthenticationMethodsPolicy.AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
@@ -242,6 +255,11 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.BusinessFlowTemplates.BusinessFlowTemplatesRequestBuilder BusinessFlowTemplates
         {
             get => new global::Microsoft.Graph.Beta.BusinessFlowTemplates.BusinessFlowTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the certificateAuthorityPath singleton.</summary>
+        public global::Microsoft.Graph.Beta.CertificateAuthorities.CertificateAuthoritiesRequestBuilder CertificateAuthorities
+        {
+            get => new global::Microsoft.Graph.Beta.CertificateAuthorities.CertificateAuthoritiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of certificateBasedAuthConfiguration entities.</summary>
         public global::Microsoft.Graph.Beta.CertificateBasedAuthConfiguration.CertificateBasedAuthConfigurationRequestBuilder CertificateBasedAuthConfiguration
@@ -297,11 +315,6 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder DeviceAppManagement
         {
             get => new global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the collection of deviceLocalCredentialInfo entities.</summary>
-        public global::Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder DeviceManagement
@@ -523,7 +536,7 @@ namespace Microsoft.Graph.Beta
         {
             get => new global::Microsoft.Graph.Beta.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The places property</summary>
+        /// <summary>Provides operations to manage the collection of place entities.</summary>
         public global::Microsoft.Graph.Beta.Places.PlacesRequestBuilder Places
         {
             get => new global::Microsoft.Graph.Beta.Places.PlacesRequestBuilder(PathParameters, RequestAdapter);
@@ -698,6 +711,11 @@ namespace Microsoft.Graph.Beta
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.TeamworkRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the template singleton.</summary>
+        public global::Microsoft.Graph.Beta.Templates.TemplatesRequestBuilder Templates
+        {
+            get => new global::Microsoft.Graph.Beta.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
         public global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder TenantRelationships
         {
@@ -800,16 +818,6 @@ namespace Microsoft.Graph.Beta
             return new global::Microsoft.Graph.Beta.GroupsWithUniqueName.GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
-        /// Provides operations to manage the collection of place entities.
-        /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder"/></returns>
-        /// <param name="placeId">Alternate key of place</param>
-        public global::Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder PlacesWithPlaceId(string placeId)
-        {
-            if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
-            return new global::Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
-        }
-        /// <summary>
         /// Provides operations to manage the collection of servicePrincipal entities.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder"/></returns>
@@ -818,6 +826,16 @@ namespace Microsoft.Graph.Beta
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
             return new global::Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of user entities.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder UsersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
     }
 }

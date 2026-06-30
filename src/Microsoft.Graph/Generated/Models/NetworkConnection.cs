@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class NetworkConnection : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("destinationUrl", value); }
         }
 #endif
-        /// <summary>Network connection direction. Possible values are: unknown, inbound, outbound.</summary>
+        /// <summary>Network connection direction. The possible values are: unknown, inbound, outbound.</summary>
         public global::Microsoft.Graph.Beta.Models.ConnectionDirection? Direction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectionDirection?>("direction"); }
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
+        /// <summary>Network protocol. The possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
         public global::Microsoft.Graph.Beta.Models.SecurityNetworkProtocol? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SecurityNetworkProtocol?>("protocol"); }
@@ -295,7 +295,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourcePort", value); }
         }
 #endif
-        /// <summary>Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.</summary>
+        /// <summary>Network connection status. The possible values are: unknown, attempted, succeeded, blocked, failed.</summary>
         public global::Microsoft.Graph.Beta.Models.ConnectionStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectionStatus?>("status"); }
@@ -332,7 +332,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.NetworkConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.NetworkConnection();
         }
         /// <summary>
@@ -372,7 +372,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("applicationName", ApplicationName);
             writer.WriteStringValue("destinationAddress", DestinationAddress);
             writer.WriteStringValue("destinationDomain", DestinationDomain);

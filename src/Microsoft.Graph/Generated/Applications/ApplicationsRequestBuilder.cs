@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Applications
     /// <summary>
     /// Provides operations to manage the collection of application entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplicationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Applications
         {
         }
         /// <summary>
-        /// Get the list of applications in this organization.
+        /// Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ApplicationCollectionResponse"/></returns>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Applications
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ApplicationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ApplicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new application object.
+        /// Create a new application object. This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Application"/></returns>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Applications
         public async Task<global::Microsoft.Graph.Beta.Models.Application> PostAsync(global::Microsoft.Graph.Beta.Models.Application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Applications
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Application>(requestInfo, global::Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of applications in this organization.
+        /// Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Applications
             return requestInfo;
         }
         /// <summary>
-        /// Create a new application object.
+        /// Create a new application object. This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Applications
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -178,9 +178,9 @@ namespace Microsoft.Graph.Beta.Applications
             return new global::Microsoft.Graph.Beta.Applications.ApplicationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of applications in this organization.
+        /// Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.Beta.Applications
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Applications.ApplicationsRequestBuilder.ApplicationsRequestBuilderGetQueryParameters>
         {
         }
@@ -255,7 +255,7 @@ namespace Microsoft.Graph.Beta.Applications
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

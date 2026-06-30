@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for the device configuration profile.</summary>
@@ -252,7 +252,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -334,6 +334,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.iosUpdateConfiguration" => new global::Microsoft.Graph.Beta.Models.IosUpdateConfiguration(),
                 "#microsoft.graph.iosVpnConfiguration" => new global::Microsoft.Graph.Beta.Models.IosVpnConfiguration(),
                 "#microsoft.graph.iosWiFiConfiguration" => new global::Microsoft.Graph.Beta.Models.IosWiFiConfiguration(),
+                "#microsoft.graph.iosWiredNetworkConfiguration" => new global::Microsoft.Graph.Beta.Models.IosWiredNetworkConfiguration(),
                 "#microsoft.graph.macOSCertificateProfileBase" => new global::Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase(),
                 "#microsoft.graph.macOSCustomAppConfiguration" => new global::Microsoft.Graph.Beta.Models.MacOSCustomAppConfiguration(),
                 "#microsoft.graph.macOSCustomConfiguration" => new global::Microsoft.Graph.Beta.Models.MacOSCustomConfiguration(),
@@ -393,6 +394,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.windowsWifiConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsWifiConfiguration(),
                 "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsWifiEnterpriseEAPConfiguration(),
                 "#microsoft.graph.windowsWiredNetworkConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsWiredNetworkConfiguration(),
+                "#microsoft.graph.windowsZtdnsConfiguration" => new global::Microsoft.Graph.Beta.Models.WindowsZtdnsConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.DeviceConfiguration(),
             };
         }
@@ -429,7 +431,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

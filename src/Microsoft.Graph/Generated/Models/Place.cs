@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Place : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The street address of the place.</summary>
+        /// <summary>The physical address of the place, including the street, city, state, country or region, and postal code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PhysicalAddress? Address
@@ -28,7 +28,39 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("address", value); }
         }
 #endif
-        /// <summary>The name associated with the place.</summary>
+        /// <summary>A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CheckInClaim>? CheckIns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CheckInClaim>?>("checkIns"); }
+            set { BackingStore?.Set("checkIns", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CheckInClaim> CheckIns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CheckInClaim>>("checkIns"); }
+            set { BackingStore?.Set("checkIns", value); }
+        }
+#endif
+        /// <summary>A collection of children places that is only used in the Upsert places API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Place>? Children
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Place>?>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Place> Children
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Place>>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#endif
+        /// <summary>The name that is associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -60,6 +92,44 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #endif
+        /// <summary>Indicates whether the place is wheelchair accessible.</summary>
+        public bool? IsWheelChairAccessible
+        {
+            get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
+            set { BackingStore?.Set("isWheelChairAccessible", value); }
+        }
+        /// <summary>User-defined description of the place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Label
+        {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#nullable restore
+#else
+        public string Label
+        {
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#endif
+        /// <summary>The ID of a parent place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId
+        {
+            get { return BackingStore?.Get<string?>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#nullable restore
+#else
+        public string ParentId
+        {
+            get { return BackingStore?.Get<string>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#endif
         /// <summary>The phone number of the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,20 +146,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("phone", value); }
         }
 #endif
-        /// <summary>A unique, immutable identifier for the place. Read-only. The value of this identifier is equal to the ExternalDirectoryObjectId returned from the Get-Mailbox cmdlet.</summary>
+        /// <summary>Custom tags that are associated with the place for categorization or filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaceId
+        public List<string>? Tags
         {
-            get { return BackingStore?.Get<string?>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public string PlaceId
+        public List<string> Tags
         {
-            get { return BackingStore?.Get<string>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>
@@ -99,12 +169,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Place CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.building" => new global::Microsoft.Graph.Beta.Models.Building(),
+                "#microsoft.graph.desk" => new global::Microsoft.Graph.Beta.Models.Desk(),
+                "#microsoft.graph.floor" => new global::Microsoft.Graph.Beta.Models.Floor(),
                 "#microsoft.graph.room" => new global::Microsoft.Graph.Beta.Models.Room(),
                 "#microsoft.graph.roomList" => new global::Microsoft.Graph.Beta.Models.RoomList(),
+                "#microsoft.graph.section" => new global::Microsoft.Graph.Beta.Models.Section(),
                 "#microsoft.graph.workspace" => new global::Microsoft.Graph.Beta.Models.Workspace(),
                 _ => new global::Microsoft.Graph.Beta.Models.Place(),
             };
@@ -118,10 +192,15 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "address", n => { Address = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>(global::Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "checkIns", n => { CheckIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CheckInClaim>(global::Microsoft.Graph.Beta.Models.CheckInClaim.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Place>(global::Microsoft.Graph.Beta.Models.Place.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>(global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "placeId", n => { PlaceId = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -130,13 +209,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>("address", Address);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CheckInClaim>("checkIns", CheckIns);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Place>("children", Children);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
+            writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);
+            writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteStringValue("placeId", PlaceId);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
         }
     }
 }

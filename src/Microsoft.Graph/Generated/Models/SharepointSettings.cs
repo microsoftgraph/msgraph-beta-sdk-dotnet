@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SharepointSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("idleSessionSignOut", value); }
         }
 #endif
-        /// <summary>Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.</summary>
+        /// <summary>Specifies the image tagging option for the tenant. The possible values are: disabled, basic, enhanced.</summary>
         public global::Microsoft.Graph.Beta.Models.ImageTaggingChoice? ImageTaggingOption
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ImageTaggingChoice?>("imageTaggingOption"); }
@@ -216,13 +216,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sharingBlockedDomainList", value); }
         }
 #endif
-        /// <summary>Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
+        /// <summary>Sharing capability for the tenant. The possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
         public global::Microsoft.Graph.Beta.Models.SharingCapabilities? SharingCapability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharingCapabilities?>("sharingCapability"); }
             set { BackingStore?.Set("sharingCapability", value); }
         }
-        /// <summary>Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.</summary>
+        /// <summary>Specifies the external sharing mode for domains. The possible values are: none, allowList, blockList.</summary>
         public global::Microsoft.Graph.Beta.Models.SharingDomainRestrictionMode? SharingDomainRestrictionMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharingDomainRestrictionMode?>("sharingDomainRestrictionMode"); }
@@ -273,7 +273,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.SharepointSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.SharepointSettings();
         }
         /// <summary>
@@ -321,7 +321,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("allowedDomainGuidsForSyncApp", AllowedDomainGuidsForSyncApp);
             writer.WriteCollectionOfPrimitiveValues<string>("availableManagedPathsForSiteCreation", AvailableManagedPathsForSiteCreation);

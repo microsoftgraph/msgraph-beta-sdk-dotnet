@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// String constraints
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementConfigurationStringSettingValueDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition, IParsable
     {
         /// <summary>Supported file types for this setting.</summary>
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileTypes", value); }
         }
 #endif
-        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
+        /// <summary>Pre-defined format of the string. The possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringFormat? Format
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringFormat?>("format"); }
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefinition();
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("fileTypes", FileTypes);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringFormat>("format", Format);

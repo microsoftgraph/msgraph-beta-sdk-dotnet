@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy
 {
     [Obsolete("This class is obsolete. Use SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy.SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse, IParsable
     #pragma warning restore CS1591
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteCon
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy.SummarizeDeviceRemoteConnectionWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy.SummarizeDeviceRemoteConnectionWithSummarizeByResponse();
         }
     }

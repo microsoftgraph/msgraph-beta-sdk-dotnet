@@ -4,8 +4,11 @@ using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterprise
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RetrieveStoreLayout;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetStoreLayout;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.Unbind;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -23,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
     /// <summary>
     /// Provides operations to manage the androidManagedStoreAccountEnterpriseSettings property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the addApps method.</summary>
@@ -46,15 +49,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the requestEnterpriseUpgradeUrl method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl.RequestEnterpriseUpgradeUrlRequestBuilder RequestEnterpriseUpgradeUrl
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl.RequestEnterpriseUpgradeUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the requestSignupUrl method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlRequestBuilder RequestSignupUrl
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveStoreLayout method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RetrieveStoreLayout.RetrieveStoreLayoutRequestBuilder RetrieveStoreLayout
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RetrieveStoreLayout.RetrieveStoreLayoutRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the setAndroidDeviceOwnerFullyManagedEnrollmentState method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState.SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder SetAndroidDeviceOwnerFullyManagedEnrollmentState
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState.SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setStoreLayout method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetStoreLayout.SetStoreLayoutRequestBuilder SetStoreLayout
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetStoreLayout.SetStoreLayoutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncApps method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps.SyncAppsRequestBuilder SyncApps
@@ -144,7 +162,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public async Task<global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings> PatchAsync(global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -205,7 +223,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -225,14 +243,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The singleton Android managed store account enterprise settings entity.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -260,7 +278,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters>
         {
         }
@@ -268,7 +286,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

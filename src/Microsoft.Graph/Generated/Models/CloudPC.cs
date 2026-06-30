@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPC : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("connectionSetting", value); }
         }
 #endif
-        /// <summary>The connectionSettings property</summary>
+        /// <summary>The connection settings of the Cloud PC. Possible values: enableSingleSignOn. Read-only. This property is deprecated and stopped retuning data on August 31, 2024. Going forward, use the connectionSetting property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcConnectionSettings? ConnectionSettings
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceRegionName", value); }
         }
 #endif
-        /// <summary>The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more details, see Example 4: List Cloud PCs filtered by disaster recovery capability type. Read-only.</summary>
+        /// <summary>The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more information, see Example 3: List Cloud PCs filtered by disaster recovery capability type. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability? DisasterRecoveryCapability
@@ -146,12 +146,34 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available, notAvailable, and unknownFutureValue. Default value is notApplicable. Read-only. This property is deprecated and will stop returning data on October 30, 2025. Going forward use the retrieveFrontlineCloudPcDetail API.</summary>
+        public global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability? FrontlineCloudPcAvailability
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability?>("frontlineCloudPcAvailability"); }
+            set { BackingStore?.Set("frontlineCloudPcAvailability", value); }
+        }
         /// <summary>The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? GracePeriodEndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("gracePeriodEndDateTime"); }
             set { BackingStore?.Set("gracePeriodEndDateTime", value); }
         }
+        /// <summary>The Microsoft Entra group details (for example, ID and display name) for the Entra ID group associated with the user&apos;s Reserve Cloud PC assignment. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail? GroupDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail?>("groupDetail"); }
+            set { BackingStore?.Set("groupDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail GroupDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>("groupDetail"); }
+            set { BackingStore?.Set("groupDetail", value); }
+        }
+#endif
         /// <summary>Name of the OS image that&apos;s on the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -254,7 +276,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesConnectionName", value); }
         }
 #endif
-        /// <summary>The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.</summary>
+        /// <summary>The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem? OsVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem?>("osVersion"); }
@@ -281,6 +303,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPowerState?>("powerState"); }
             set { BackingStore?.Set("powerState", value); }
+        }
+        /// <summary>The product type of the Cloud PC. The possible values are: enterprise, frontline, devBox, powerAutomate, business, unknownFutureValue. For the available service plans and pricing for enterprise, frontline, and business, see Windows 365 for business. For pricing information for devBox, see Microsoft Dev Box pricing. For the available plans and pricing for powerAutomate, see Power Automate pricing. The default value is enterprise. Supports $filter and $select. For more information, see Example 4: List Cloud PCs filtered by product type. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcProductType? ProductType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProductType?>("productType"); }
+            set { BackingStore?.Set("productType", value); }
+        }
+        /// <summary>The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? ProvisionedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("provisionedDateTime"); }
+            set { BackingStore?.Set("provisionedDateTime", value); }
         }
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -314,13 +348,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisioningPolicyName", value); }
         }
 #endif
-        /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.</summary>
+        /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType? ProvisioningType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The scope IDs of the corresponding permission. Currently, it&apos;s the Intune scope tag ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds
@@ -374,6 +408,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType?>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
+        /// <summary>Indicates the Cloud PC device details associated with the frontline shared service plan, including the user&apos;s UPN and the session start date and time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail? SharedDeviceDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail?>("sharedDeviceDetail"); }
+            set { BackingStore?.Set("sharedDeviceDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail SharedDeviceDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail>("sharedDeviceDetail"); }
+            set { BackingStore?.Set("sharedDeviceDetail", value); }
+        }
+#endif
         /// <summary>The status property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcStatus? Status
         {
@@ -412,11 +462,33 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("statusDetails", value); }
         }
 #endif
-        /// <summary>The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.</summary>
+        /// <summary>The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType? UserAccountType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
+        }
+        /// <summary>The user details (for example, ID and display name) for the user associated with a Reserve Cloud PC assignment. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail? UserDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail?>("userDetail"); }
+            set { BackingStore?.Set("userDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail UserDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail>("userDetail"); }
+            set { BackingStore?.Set("userDetail", value); }
+        }
+#endif
+        /// <summary>Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. When set to cloudPc, it indicates that the end user can access the entire desktop. When set to cloudApp, it indicates that the end user can only access cloud apps published under the associated provisioning policy. Since the cloud app experience also creates Cloud PC devices that appear in the Cloud PC device list, this property helps differentiate them. The default value is cloudPc. This property is defined in the provisioning policy.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType?>("userExperienceType"); }
+            set { BackingStore?.Set("userExperienceType", value); }
         }
         /// <summary>The user principal name (UPN) of the user assigned to the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -441,7 +513,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPC CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPC();
         }
         /// <summary>
@@ -461,7 +533,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability>(global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
                 { "diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "frontlineCloudPcAvailability", n => { FrontlineCloudPcAvailability = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability>(); } },
                 { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "groupDetail", n => { GroupDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>(global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail.CreateFromDiscriminatorValue); } },
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>(global::Microsoft.Graph.Beta.Models.CloudPcLoginResult.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -472,6 +546,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "osVersion", n => { OsVersion = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem>(); } },
                 { "partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>(global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "powerState", n => { PowerState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>(); } },
+                { "productType", n => { ProductType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>(); } },
+                { "provisionedDateTime", n => { ProvisionedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 { "provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
@@ -479,10 +555,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
                 { "servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
                 { "servicePlanType", n => { ServicePlanType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType>(); } },
+                { "sharedDeviceDetail", n => { SharedDeviceDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail>(global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcStatus>(); } },
                 { "statusDetail", n => { StatusDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail.CreateFromDiscriminatorValue); } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>(global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
                 { "userAccountType", n => { UserAccountType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType>(); } },
+                { "userDetail", n => { UserDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail>(global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail.CreateFromDiscriminatorValue); } },
+                { "userExperienceType", n => { UserExperienceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -492,7 +571,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("aadDeviceId", AadDeviceId);
             writer.WriteStringValue("allotmentDisplayName", AllotmentDisplayName);
@@ -503,7 +582,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability", DisasterRecoveryCapability);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState>("diskEncryptionState", DiskEncryptionState);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FrontlineCloudPcAvailability>("frontlineCloudPcAvailability", FrontlineCloudPcAvailability);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>("groupDetail", GroupDetail);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>("lastLoginResult", LastLoginResult);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
@@ -514,6 +595,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOperatingSystem>("osVersion", OsVersion);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>("partnerAgentInstallResults", PartnerAgentInstallResults);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>("powerState", PowerState);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>("productType", ProductType);
+            writer.WriteDateTimeOffsetValue("provisionedDateTime", ProvisionedDateTime);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
@@ -521,10 +604,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("servicePlanId", ServicePlanId);
             writer.WriteStringValue("servicePlanName", ServicePlanName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcServicePlanType>("servicePlanType", ServicePlanType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcFrontlineSharedDeviceDetail>("sharedDeviceDetail", SharedDeviceDetail);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcStatus>("status", Status);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetail>("statusDetail", StatusDetail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails", StatusDetails);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserAccountType>("userAccountType", UserAccountType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraUserDetail>("userDetail", UserDetail);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>("userExperienceType", UserExperienceType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }

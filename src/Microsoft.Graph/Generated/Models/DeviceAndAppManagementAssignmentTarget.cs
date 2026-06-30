@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base type for assignment targets.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceAndAppManagementAssignmentTarget : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The Id of the filter for the target assignment.</summary>
+        /// <summary>The ID of the filter for the target assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceAndAppManagementAssignmentFilterId
@@ -75,13 +75,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.allDevicesAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.AllDevicesAssignmentTarget(),
                 "#microsoft.graph.allLicensedUsersAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.AllLicensedUsersAssignmentTarget(),
-                "#microsoft.graph.androidFotaDeploymentAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget(),
                 "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.ConfigurationManagerCollectionAssignmentTarget(),
                 "#microsoft.graph.exclusionGroupAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.ExclusionGroupAssignmentTarget(),
                 "#microsoft.graph.groupAssignmentTarget" => new global::Microsoft.Graph.Beta.Models.GroupAssignmentTarget(),
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deviceAndAppManagementAssignmentFilterId", DeviceAndAppManagementAssignmentFilterId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>("deviceAndAppManagementAssignmentFilterType", DeviceAndAppManagementAssignmentFilterType);
             writer.WriteStringValue("@odata.type", OdataType);

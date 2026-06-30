@@ -7,18 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OfferShiftRequest : global::Microsoft.Graph.Beta.Models.ScheduleChangeRequest, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The date and time when the recipient approved or declined the request.</summary>
         public DateTimeOffset? RecipientActionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("recipientActionDateTime"); }
             set { BackingStore?.Set("recipientActionDateTime", value); }
         }
-        /// <summary>Custom message sent by recipient of the offer shift request.</summary>
+        /// <summary>The message sent by the recipient regarding the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientActionMessage
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("recipientActionMessage", value); }
         }
 #endif
-        /// <summary>User id of the recipient of the offer shift request.</summary>
+        /// <summary>The recipient&apos;s user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientUserId
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("recipientUserId", value); }
         }
 #endif
-        /// <summary>User id of the sender of the offer shift request.</summary>
+        /// <summary>The sender&apos;s shift ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderShiftId
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OfferShiftRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("recipientActionMessage", RecipientActionMessage);
             writer.WriteStringValue("recipientUserId", RecipientUserId);

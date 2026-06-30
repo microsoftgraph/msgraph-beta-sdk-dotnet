@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope
 {
     [Obsolete("This class is obsolete. Use GetEffectivePermissionsWithScopeGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetEffectivePermissionsWithScopeResponse : global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse, IParsable
     #pragma warning restore CS1591
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse();
         }
     }

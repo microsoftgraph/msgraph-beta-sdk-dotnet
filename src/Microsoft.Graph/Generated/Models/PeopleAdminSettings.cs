@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class PeopleAdminSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents administrator settings that manage the support for item insights in an organization.</summary>
+        /// <summary>Administrator settings that manage the support for item insights in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.InsightsSettings? ItemInsights
@@ -28,7 +28,39 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("itemInsights", value); }
         }
 #endif
-        /// <summary>Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.</summary>
+        /// <summary>Administrator settings that manage the support of name pronunciation in an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.NamePronunciationSettings? NamePronunciation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings?>("namePronunciation"); }
+            set { BackingStore?.Set("namePronunciation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.NamePronunciationSettings NamePronunciation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings>("namePronunciation"); }
+            set { BackingStore?.Set("namePronunciation", value); }
+        }
+#endif
+        /// <summary>Administrator settings that manage the support for item photo updates in an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings? PhotoUpdateSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings?>("photoUpdateSettings"); }
+            set { BackingStore?.Set("photoUpdateSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings PhotoUpdateSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings>("photoUpdateSettings"); }
+            set { BackingStore?.Set("photoUpdateSettings", value); }
+        }
+#endif
+        /// <summary>A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>? ProfileCardProperties
@@ -44,7 +76,39 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #endif
-        /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
+        /// <summary>A collection of profile property configuration settings defined by an administrator for an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>? ProfilePropertySettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>?>("profilePropertySettings"); }
+            set { BackingStore?.Set("profilePropertySettings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting> ProfilePropertySettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>>("profilePropertySettings"); }
+            set { BackingStore?.Set("profilePropertySettings", value); }
+        }
+#endif
+        /// <summary>A collection of profile source settings configured by an administrator in an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ProfileSource>? ProfileSources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfileSource>?>("profileSources"); }
+            set { BackingStore?.Set("profileSources", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ProfileSource> ProfileSources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ProfileSource>>("profileSources"); }
+            set { BackingStore?.Set("profileSources", value); }
+        }
+#endif
+        /// <summary>Administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PronounsSettings? Pronouns
@@ -67,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.PeopleAdminSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.PeopleAdminSettings();
         }
         /// <summary>
@@ -79,7 +143,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "itemInsights", n => { ItemInsights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>(global::Microsoft.Graph.Beta.Models.InsightsSettings.CreateFromDiscriminatorValue); } },
+                { "namePronunciation", n => { NamePronunciation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings>(global::Microsoft.Graph.Beta.Models.NamePronunciationSettings.CreateFromDiscriminatorValue); } },
+                { "photoUpdateSettings", n => { PhotoUpdateSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings>(global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings.CreateFromDiscriminatorValue); } },
                 { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>(global::Microsoft.Graph.Beta.Models.ProfileCardProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "profilePropertySettings", n => { ProfilePropertySettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>(global::Microsoft.Graph.Beta.Models.ProfilePropertySetting.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "profileSources", n => { ProfileSources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSource>(global::Microsoft.Graph.Beta.Models.ProfileSource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pronouns", n => { Pronouns = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PronounsSettings>(global::Microsoft.Graph.Beta.Models.PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -89,10 +157,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InsightsSettings>("itemInsights", ItemInsights);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.NamePronunciationSettings>("namePronunciation", NamePronunciation);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PhotoUpdateSettings>("photoUpdateSettings", PhotoUpdateSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>("profilePropertySettings", ProfilePropertySettings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileSource>("profileSources", ProfileSources);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PronounsSettings>("pronouns", Pronouns);
         }
     }

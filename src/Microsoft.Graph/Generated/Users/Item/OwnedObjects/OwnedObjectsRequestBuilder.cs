@@ -20,29 +20,25 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects
     /// <summary>
     /// Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OwnedObjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
@@ -50,7 +46,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects
         /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
@@ -77,13 +72,13 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects
         {
         }
         /// <summary>
-        /// Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Get the list of directory objects that are owned by the agentUser.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-ownedobjects?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -101,11 +96,10 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Get the list of directory objects that are owned by the agentUser.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -125,15 +119,14 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Get the list of directory objects that are owned by the agentUser.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OwnedObjectsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -200,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OwnedObjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>
         {
         }

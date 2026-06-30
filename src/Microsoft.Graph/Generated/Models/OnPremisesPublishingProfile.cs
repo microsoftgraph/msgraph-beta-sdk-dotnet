@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OnPremisesPublishingProfile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agents", value); }
         }
 #endif
-        /// <summary>The applicationSegments property</summary>
+        /// <summary>Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.IpApplicationSegment>? ApplicationSegments
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
 #endif
-        /// <summary>The isDefaultAccessEnabled property</summary>
+        /// <summary>Specifies whether default access for app proxy is enabled or disabled.</summary>
         public bool? IsDefaultAccessEnabled
         {
             get { return BackingStore?.Get<bool?>("isDefaultAccessEnabled"); }
@@ -136,6 +136,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publishedResources", value); }
         }
 #endif
+        /// <summary>A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>? Sensors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>?>("sensors"); }
+            set { BackingStore?.Set("sensors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor> Sensors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>>("sensors"); }
+            set { BackingStore?.Set("sensors", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -143,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OnPremisesPublishingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OnPremisesPublishingProfile();
         }
         /// <summary>
@@ -163,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isDefaultAccessEnabled", n => { IsDefaultAccessEnabled = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "publishedResources", n => { PublishedResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PublishedResource>(global::Microsoft.Graph.Beta.Models.PublishedResource.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>(global::Microsoft.Graph.Beta.Models.PrivateAccessSensor.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -171,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>("agentGroups", AgentGroups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesAgent>("agents", Agents);
@@ -182,6 +199,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isDefaultAccessEnabled", IsDefaultAccessEnabled);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PublishedResource>("publishedResources", PublishedResources);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrivateAccessSensor>("sensors", Sensors);
         }
     }
 }

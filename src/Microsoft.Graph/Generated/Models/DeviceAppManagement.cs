@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Singleton entity that acts as a container for all device app management functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceAppManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Android managed app policies.</summary>
@@ -293,7 +293,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #endif
-        /// <summary>List mobileAppRelationship objects for mobile applications.</summary>
+        /// <summary>The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>? MobileAppRelationships
@@ -492,7 +492,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceAppManagement();
         }
         /// <summary>
@@ -543,7 +543,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>("androidManagedAppProtections", AndroidManagedAppProtections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>("defaultManagedAppProtections", DefaultManagedAppProtections);

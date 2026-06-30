@@ -4,17 +4,20 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An admin initiated action to be applied on a managed app.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagedAppRemediationAction
     {
-        /// <summary>app and the corresponding company data to be blocked</summary>
+        /// <summary>Indicates the user will be blocked from accessing the app and corporate data</summary>
         [EnumMember(Value = "block")]
         Block,
-        /// <summary>app and the corresponding company data to be wiped</summary>
+        /// <summary>Indicates the corporate data will be removed from the app</summary>
         [EnumMember(Value = "wipe")]
         Wipe,
-        /// <summary>app and the corresponding user to be warned</summary>
+        /// <summary>Indicates user will be warned the when accessing the app</summary>
         [EnumMember(Value = "warn")]
         Warn,
+        /// <summary>Indicates user will be blocked from accessing the app and corporate data if devices supports this setting</summary>
+        [EnumMember(Value = "blockWhenSettingIsSupported")]
+        BlockWhenSettingIsSupported,
     }
 }

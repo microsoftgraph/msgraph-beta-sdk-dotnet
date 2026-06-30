@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This class contains compliance settings for Mac OS.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOSCompliancePolicy : global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
@@ -19,6 +19,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("advancedThreatProtectionRequiredSecurityLevel", value); }
         }
+        /// <summary>Custom compliance configuration for the policy (script identifier and rules content). When set, custom compliance rules are evaluated and the device is marked noncompliant when any rule evaluates to noncompliant. When not set, no custom compliance rules are evaluated. Default is null, when set to default it is not evaluated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript? DeviceCompliancePolicyScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript?>("deviceCompliancePolicyScript"); }
+            set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript"); }
+            set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
+        }
+#endif
         /// <summary>Require that devices have enabled device threat protection.</summary>
         public bool? DeviceThreatProtectionEnabled
         {
@@ -193,7 +209,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MacOSCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MacOSCompliancePolicy();
         }
         /// <summary>
@@ -205,6 +221,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "advancedThreatProtectionRequiredSecurityLevel", n => { AdvancedThreatProtectionRequiredSecurityLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>(); } },
+                { "deviceCompliancePolicyScript", n => { DeviceCompliancePolicyScript = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>(global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript.CreateFromDiscriminatorValue); } },
                 { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
                 { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>(); } },
                 { "firewallBlockAllIncoming", n => { FirewallBlockAllIncoming = n.GetBoolValue(); } },
@@ -233,9 +250,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>("advancedThreatProtectionRequiredSecurityLevel", AdvancedThreatProtectionRequiredSecurityLevel);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript", DeviceCompliancePolicyScript);
             writer.WriteBoolValue("deviceThreatProtectionEnabled", DeviceThreatProtectionEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
             writer.WriteBoolValue("firewallBlockAllIncoming", FirewallBlockAllIncoming);

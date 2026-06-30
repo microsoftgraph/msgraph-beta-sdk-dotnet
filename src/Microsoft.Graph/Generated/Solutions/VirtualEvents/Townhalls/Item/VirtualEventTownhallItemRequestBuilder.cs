@@ -3,6 +3,10 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationConfiguration;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrations;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Sessions;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.SessionsWithJoinWebUrl;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -18,13 +22,23 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
     /// <summary>
     /// Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VirtualEventTownhallItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.PresentersRequestBuilder Presenters
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.PresentersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the registrationConfiguration property of the microsoft.graph.virtualEventTownhall entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationConfiguration.RegistrationConfigurationRequestBuilder RegistrationConfiguration
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationConfiguration.RegistrationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the registrations property of the microsoft.graph.virtualEventTownhall entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrations.RegistrationsRequestBuilder Registrations
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Sessions.SessionsRequestBuilder Sessions
@@ -111,13 +125,33 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
         public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventTownhall> PatchAsync(global::Microsoft.Graph.Beta.Models.VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventTownhall>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventTownhall.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the registrations property of the microsoft.graph.virtualEventTownhall entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder"/></returns>
+        /// <param name="email">Alternate key of virtualEventRegistration</param>
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder RegistrationsWithEmail(string email)
+        {
+            if(string.IsNullOrEmpty(email)) throw new ArgumentNullException(nameof(email));
+            return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder(PathParameters, RequestAdapter, email);
+        }
+        /// <summary>
+        /// Provides operations to manage the registrations property of the microsoft.graph.virtualEventTownhall entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder"/></returns>
+        /// <param name="userId">Alternate key of virtualEventRegistration</param>
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder RegistrationsWithUserId(string userId)
+        {
+            if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder(PathParameters, RequestAdapter, userId);
         }
         /// <summary>
         /// Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
@@ -182,7 +216,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -202,14 +236,14 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEventTownhallItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a virtualEventTownhall object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEventTownhallItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -237,7 +271,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEventTownhallItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.VirtualEventTownhallItemRequestBuilder.VirtualEventTownhallItemRequestBuilderGetQueryParameters>
         {
         }
@@ -245,7 +279,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEventTownhallItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

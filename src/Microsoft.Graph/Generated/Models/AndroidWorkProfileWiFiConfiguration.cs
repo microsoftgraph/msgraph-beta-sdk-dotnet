@@ -10,22 +10,22 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android Work Profile device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidWorkProfileWiFiConfiguration : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
-        /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
+        /// <summary>When set to true, device will connect automatically to the Wi-Fi network when in range, skipping the user prompt. When false, user will need to connect manually through Settings on the Android device. Default value is false.</summary>
         public bool? ConnectAutomatically
         {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
             set { BackingStore?.Set("connectAutomatically", value); }
         }
-        /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
+        /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices. When false, device will not automatically connect to hidden networks. Default value is false.</summary>
         public bool? ConnectWhenNetworkNameIsHidden
         {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
-        /// <summary>Network Name</summary>
+        /// <summary>The name of the Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetworkName
@@ -41,6 +41,50 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("networkName", value); }
         }
 #endif
+        /// <summary>Specify the pre-shared key for a WEP or WPA personal Wi-Fi network. Restrictions depend on the value set for wiFiSecurityType. If WEP type security is used, then preSharedKey must be a valid passphrase (5 or 13 characters) or a valid HEX key (10 or 26 hexidecimal characters). If WPA security type is used, then preSharedKey can be any string between 8 and 64 characters long.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreSharedKey
+        {
+            get { return BackingStore?.Get<string?>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
+        }
+#nullable restore
+#else
+        public string PreSharedKey
+        {
+            get { return BackingStore?.Get<string>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
+        }
+#endif
+        /// <summary>When set to true, indicates that the pre-shared key is configured. When set to false, indicates that pre-shared key is not configured (any values set for preSharedKey will be ignored). Default value is false.</summary>
+        public bool? PreSharedKeyIsSet
+        {
+            get { return BackingStore?.Get<bool?>("preSharedKeyIsSet"); }
+            set { BackingStore?.Set("preSharedKeyIsSet", value); }
+        }
+        /// <summary>URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProxyAutomaticConfigurationUrl
+        {
+            get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
+        }
+#nullable restore
+#else
+        public string ProxyAutomaticConfigurationUrl
+        {
+            get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
+        }
+#endif
+        /// <summary>Wi-Fi Proxy Settings.</summary>
+        public global::Microsoft.Graph.Beta.Models.WiFiProxySetting? ProxySettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiFiProxySetting?>("proxySettings"); }
+            set { BackingStore?.Set("proxySettings", value); }
+        }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
-        /// <summary>Wi-Fi Security Types for Android.</summary>
+        /// <summary>The possible security types for Android Wi-Fi profiles. Default value &apos;Open&apos;, indicates no authentication required for the network. The security protocols supported are WEP, WPA and WPA2. &apos;WpaEnterprise&apos; and &apos;Wpa2Enterprise&apos; options are available for Enterprise Wi-Fi profiles. &apos;Wep&apos; and &apos;WpaPersonal&apos; (supports WPA and WPA2) options are available for Basic Wi-Fi profiles.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType? WiFiSecurityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType?>("wiFiSecurityType"); }
@@ -77,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AndroidWorkProfileWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -96,6 +140,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
                 { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
                 { "networkName", n => { NetworkName = n.GetStringValue(); } },
+                { "preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
+                { "preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
+                { "proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
+                { "proxySettings", n => { ProxySettings = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WiFiProxySetting>(); } },
                 { "ssid", n => { Ssid = n.GetStringValue(); } },
                 { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType>(); } },
             };
@@ -106,11 +154,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("connectAutomatically", ConnectAutomatically);
             writer.WriteBoolValue("connectWhenNetworkNameIsHidden", ConnectWhenNetworkNameIsHidden);
             writer.WriteStringValue("networkName", NetworkName);
+            writer.WriteStringValue("preSharedKey", PreSharedKey);
+            writer.WriteBoolValue("preSharedKeyIsSet", PreSharedKeyIsSet);
+            writer.WriteStringValue("proxyAutomaticConfigurationUrl", ProxyAutomaticConfigurationUrl);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WiFiProxySetting>("proxySettings", ProxySettings);
             writer.WriteStringValue("ssid", Ssid);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
         }

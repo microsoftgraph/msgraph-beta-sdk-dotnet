@@ -10,9 +10,15 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for iOS Line Of Business apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosLobApp : global::Microsoft.Graph.Beta.Models.MobileLobApp, IParsable
     {
+        /// <summary>Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices</summary>
+        public global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol? AppleDeviceAppDeliveryProtocolType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol?>("appleDeviceAppDeliveryProtocolType"); }
+            set { BackingStore?.Set("appleDeviceAppDeliveryProtocolType", value); }
+        }
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IosLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IosLobApp();
         }
         /// <summary>
@@ -124,6 +130,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "appleDeviceAppDeliveryProtocolType", n => { AppleDeviceAppDeliveryProtocolType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>(); } },
                 { "applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IosDeviceType>(global::Microsoft.Graph.Beta.Models.IosDeviceType.CreateFromDiscriminatorValue); } },
                 { "buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 { "bundleId", n => { BundleId = n.GetStringValue(); } },
@@ -138,8 +145,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>("appleDeviceAppDeliveryProtocolType", AppleDeviceAppDeliveryProtocolType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IosDeviceType>("applicableDeviceType", ApplicableDeviceType);
             writer.WriteStringValue("buildNumber", BuildNumber);
             writer.WriteStringValue("bundleId", BundleId);

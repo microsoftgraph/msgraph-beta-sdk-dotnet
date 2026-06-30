@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class FederatedIdentityCredential : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -26,6 +26,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<string>>("audiences"); }
             set { BackingStore?.Set("audiences", value); }
+        }
+#endif
+        /// <summary>Nullable.  Defaults to null if not set. Enables the use of claims matching expressions against specified claims. If claimsMatchingExpression is defined, subject must be null. For the list of supported expression syntax and claims, visit the Flexible FIC reference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression? ClaimsMatchingExpression
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression?>("claimsMatchingExpression"); }
+            set { BackingStore?.Set("claimsMatchingExpression", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression ClaimsMatchingExpression
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression>("claimsMatchingExpression"); }
+            set { BackingStore?.Set("claimsMatchingExpression", value); }
         }
 #endif
         /// <summary>The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.</summary>
@@ -76,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).</summary>
+        /// <summary>Nullable.  Defaults to null if not set. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. If subject is defined, claimsMatchingExpression must be null. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject
@@ -99,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential();
         }
         /// <summary>
@@ -111,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "audiences", n => { Audiences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "claimsMatchingExpression", n => { ClaimsMatchingExpression = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression>(global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -123,9 +140,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("audiences", Audiences);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FederatedIdentityExpression>("claimsMatchingExpression", ClaimsMatchingExpression);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("name", Name);

@@ -7,9 +7,9 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Profile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class Profile : global::Microsoft.Graph.Beta.Models.Networkaccess.BaseEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description.</summary>
@@ -28,29 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Profile last modified time.</summary>
+        /// <summary>The date and time when the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Profile name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>Traffic forwarding policies associated with this profile.</summary>
+        /// <summary>The traffic forwarding policies associated with this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>? Policies
@@ -89,18 +73,26 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.Profile"/> and sets the default values.
+        /// </summary>
+        public Profile() : base()
+        {
+            OdataType = "#microsoft.graph.networkaccess.profile";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.Profile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.Profile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.networkaccess.filteringProfile" => new global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile(),
                 "#microsoft.graph.networkaccess.forwardingProfile" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile(),
+                "#microsoft.graph.networkaccess.forwardingProfileBase" => new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfileBase(),
                 _ => new global::Microsoft.Graph.Beta.Models.Networkaccess.Profile(),
             };
         }
@@ -114,7 +106,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>(global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Status>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -126,11 +117,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>("policies", Policies);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Status>("state", State);
             writer.WriteStringValue("version", Version);

@@ -12,10 +12,14 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRawRemote
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcRecommendationReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -31,7 +35,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
     /// <summary>
     /// Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.</summary>
@@ -84,15 +88,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports.GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the getSharedUseLicenseUsageReport method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the getTotalAggregatedRemoteConnectionReports method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports.GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports.GetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveBulkActionStatusReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder RetrieveBulkActionStatusReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcRecommendationReports method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcRecommendationReports.RetrieveCloudPcRecommendationReportsRequestBuilder RetrieveCloudPcRecommendationReports
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcRecommendationReports.RetrieveCloudPcRecommendationReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcTenantMetricsReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport.RetrieveCloudPcTenantMetricsReportRequestBuilder RetrieveCloudPcTenantMetricsReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTenantMetricsReport.RetrieveCloudPcTenantMetricsReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcTroubleshootReports method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports.RetrieveCloudPcTroubleshootReportsRequestBuilder RetrieveCloudPcTroubleshootReports
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcTroubleshootReports.RetrieveCloudPcTroubleshootReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveConnectionQualityReports method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports.RetrieveConnectionQualityReportsRequestBuilder RetrieveConnectionQualityReports
@@ -103,6 +122,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport.RetrieveCrossRegionDisasterRecoveryReportRequestBuilder RetrieveCrossRegionDisasterRecoveryReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport.RetrieveCrossRegionDisasterRecoveryReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveFrontlineReports method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports.RetrieveFrontlineReportsRequestBuilder RetrieveFrontlineReports
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports.RetrieveFrontlineReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder"/> and sets the default values.
@@ -143,7 +167,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cloud PC related reports.
+        /// Cloud PC-related reports. Read-only.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcReports"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -202,7 +226,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcReports> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -230,7 +254,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
             return requestInfo;
         }
         /// <summary>
-        /// Cloud PC related reports.
+        /// Cloud PC-related reports. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -263,7 +287,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -283,14 +307,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Cloud PC related reports.
+        /// Cloud PC-related reports. Read-only.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -318,7 +342,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>
         {
         }
@@ -326,7 +350,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

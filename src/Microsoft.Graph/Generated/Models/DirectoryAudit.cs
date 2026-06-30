@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DirectoryAudit : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -130,7 +130,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operationType", value); }
         }
 #endif
-        /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
+        /// <summary>The performedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AuditActivityPerformer? PerformedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer?>("performedBy"); }
+            set { BackingStore?.Set("performedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AuditActivityPerformer PerformedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer>("performedBy"); }
+            set { BackingStore?.Set("performedBy", value); }
+        }
+#endif
+        /// <summary>Indicates the result of the activity. The possible values are: success, failure, timeout, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OperationResult? Result
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OperationResult?>("result"); }
@@ -191,7 +207,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DirectoryAudit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DirectoryAudit();
         }
         /// <summary>
@@ -210,6 +226,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityInitiator>(global::Microsoft.Graph.Beta.Models.AuditActivityInitiator.CreateFromDiscriminatorValue); } },
                 { "loggedByService", n => { LoggedByService = n.GetStringValue(); } },
                 { "operationType", n => { OperationType = n.GetStringValue(); } },
+                { "performedBy", n => { PerformedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer>(global::Microsoft.Graph.Beta.Models.AuditActivityPerformer.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.OperationResult>(); } },
                 { "resultReason", n => { ResultReason = n.GetStringValue(); } },
                 { "targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetResource>(global::Microsoft.Graph.Beta.Models.TargetResource.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -222,7 +239,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("activityDateTime", ActivityDateTime);
             writer.WriteStringValue("activityDisplayName", ActivityDisplayName);
@@ -232,6 +249,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityInitiator>("initiatedBy", InitiatedBy);
             writer.WriteStringValue("loggedByService", LoggedByService);
             writer.WriteStringValue("operationType", OperationType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuditActivityPerformer>("performedBy", PerformedBy);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OperationResult>("result", Result);
             writer.WriteStringValue("resultReason", ResultReason);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetResource>("targetResources", TargetResources);

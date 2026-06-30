@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class TeamsAppSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
             set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }
         }
+        /// <summary>The settings for all custom apps in the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CustomAppSettings? CustomAppSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomAppSettings?>("customAppSettings"); }
+            set { BackingStore?.Set("customAppSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CustomAppSettings CustomAppSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomAppSettings>("customAppSettings"); }
+            set { BackingStore?.Set("customAppSettings", value); }
+        }
+#endif
         /// <summary>Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.</summary>
         public bool? IsChatResourceSpecificConsentEnabled
         {
@@ -37,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.TeamsAppSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.TeamsAppSettings();
         }
         /// <summary>
@@ -49,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowUserRequestsForAppAccess", n => { AllowUserRequestsForAppAccess = n.GetBoolValue(); } },
+                { "customAppSettings", n => { CustomAppSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomAppSettings>(global::Microsoft.Graph.Beta.Models.CustomAppSettings.CreateFromDiscriminatorValue); } },
                 { "isChatResourceSpecificConsentEnabled", n => { IsChatResourceSpecificConsentEnabled = n.GetBoolValue(); } },
                 { "isUserPersonalScopeResourceSpecificConsentEnabled", n => { IsUserPersonalScopeResourceSpecificConsentEnabled = n.GetBoolValue(); } },
             };
@@ -59,9 +76,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowUserRequestsForAppAccess", AllowUserRequestsForAppAccess);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomAppSettings>("customAppSettings", CustomAppSettings);
             writer.WriteBoolValue("isChatResourceSpecificConsentEnabled", IsChatResourceSpecificConsentEnabled);
             writer.WriteBoolValue("isUserPersonalScopeResourceSpecificConsentEnabled", IsUserPersonalScopeResourceSpecificConsentEnabled);
         }

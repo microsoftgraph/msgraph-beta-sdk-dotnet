@@ -7,11 +7,27 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Channel : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember>? AllMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>?>("allMembers"); }
+            set { BackingStore?.Set("allMembers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember> AllMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>>("allMembers"); }
+            set { BackingStore?.Set("allMembers", value); }
+        }
+#endif
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -66,6 +82,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
+        /// <summary>A collection of enabled apps in the channel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TeamsApp>? EnabledApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamsApp>?>("enabledApps"); }
+            set { BackingStore?.Set("enabledApps", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TeamsApp> EnabledApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamsApp>>("enabledApps"); }
+            set { BackingStore?.Set("enabledApps", value); }
+        }
+#endif
         /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +126,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
             set { BackingStore?.Set("isFavoriteByDefault", value); }
         }
+        /// <summary>The joinedUsers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember>? JoinedUsers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>?>("joinedUsers"); }
+            set { BackingStore?.Set("joinedUsers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConversationMember> JoinedUsers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConversationMember>>("joinedUsers"); }
+            set { BackingStore?.Set("joinedUsers", value); }
+        }
+#endif
+        /// <summary>The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.</summary>
+        public global::Microsoft.Graph.Beta.Models.ChannelLayoutType? LayoutType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChannelLayoutType?>("layoutType"); }
+            set { BackingStore?.Set("layoutType", value); }
+        }
         /// <summary>A collection of membership records associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,13 +164,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
+        /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: shared.</summary>
         public global::Microsoft.Graph.Beta.Models.ChannelMembershipType? MembershipType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChannelMembershipType?>("membershipType"); }
             set { BackingStore?.Set("membershipType", value); }
         }
-        /// <summary>A collection of all the messages in the channel. A navigation property. Nullable.</summary>
+        /// <summary>A collection of all the messages in the channel. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ChatMessage>? Messages
@@ -132,6 +186,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("messages", value); }
         }
 #endif
+        /// <summary>Indicates whether a channel is in migration mode. This value is null for channels that never entered migration mode. The possible values are: inProgress, completed, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.MigrationMode? MigrationMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MigrationMode?>("migrationMode"); }
+            set { BackingStore?.Set("migrationMode", value); }
+        }
         /// <summary>Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +206,28 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChannelModerationSettings>("moderationSettings"); }
             set { BackingStore?.Set("moderationSettings", value); }
+        }
+#endif
+        /// <summary>Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.</summary>
+        public DateTimeOffset? OriginalCreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("originalCreatedDateTime"); }
+            set { BackingStore?.Set("originalCreatedDateTime", value); }
+        }
+        /// <summary>Selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner? Planner
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner?>("planner"); }
+            set { BackingStore?.Set("planner", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner Planner
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>("planner"); }
+            set { BackingStore?.Set("planner", value); }
         }
 #endif
         /// <summary>A collection of teams with which a channel is shared.</summary>
@@ -180,7 +262,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("summary", value); }
         }
 #endif
-        /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
+        /// <summary>A collection of all the tabs in the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TeamsTab>? Tabs
@@ -235,7 +317,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Channel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Channel();
         }
         /// <summary>
@@ -246,17 +328,24 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allMembers", n => { AllMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "enabledApps", n => { EnabledApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsApp>(global::Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "filesFolder", n => { FilesFolder = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>(global::Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
+                { "joinedUsers", n => { JoinedUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "layoutType", n => { LayoutType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChannelLayoutType>(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>(global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membershipType", n => { MembershipType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>(global::Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "migrationMode", n => { MigrationMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MigrationMode>(); } },
                 { "moderationSettings", n => { ModerationSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChannelModerationSettings>(global::Microsoft.Graph.Beta.Models.ChannelModerationSettings.CreateFromDiscriminatorValue); } },
+                { "originalCreatedDateTime", n => { OriginalCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "planner", n => { Planner = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>(global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner.CreateFromDiscriminatorValue); } },
                 { "sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>(global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "summary", n => { Summary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChannelSummary>(global::Microsoft.Graph.Beta.Models.ChannelSummary.CreateFromDiscriminatorValue); } },
                 { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>(global::Microsoft.Graph.Beta.Models.TeamsTab.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -270,19 +359,26 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("allMembers", AllMembers);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsApp>("enabledApps", EnabledApps);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>("filesFolder", FilesFolder);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("joinedUsers", JoinedUsers);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChannelLayoutType>("layoutType", LayoutType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConversationMember>("members", Members);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChannelMembershipType>("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessage>("messages", Messages);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MigrationMode>("migrationMode", MigrationMode);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChannelModerationSettings>("moderationSettings", ModerationSettings);
+            writer.WriteDateTimeOffsetValue("originalCreatedDateTime", OriginalCreatedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>("planner", Planner);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChannelSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>("tabs", Tabs);

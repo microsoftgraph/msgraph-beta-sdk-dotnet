@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcCrossRegionDisasterRecoverySetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false.</summary>
+        /// <summary>True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false. This property is deprecated and will no longer be supported effective February 11, 2025. For scenarios where crossRegionDisasterRecoveryEnabled is true, set disasterRecoveryType to crossRegion. For scenarios where crossRegionDisasterRecoveryEnabled is false,  set disasterRecoveryType to notconfigured.</summary>
         public bool? CrossRegionDisasterRecoveryEnabled
         {
             get { return BackingStore?.Get<bool?>("crossRegionDisasterRecoveryEnabled"); }
@@ -43,6 +43,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("disasterRecoveryNetworkSetting", value); }
         }
 #endif
+        /// <summary>Indicates the type of disaster recovery to perform when a disaster occurs on the user&apos;s Cloud PC. The possible values are: notConfigured, crossRegion, premium, unknownFutureValue. The default value is notConfigured.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType? DisasterRecoveryType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType?>("disasterRecoveryType"); }
+            set { BackingStore?.Set("disasterRecoveryType", value); }
+        }
         /// <summary>Indicates whether Windows 365 maintain the cross-region disaster recovery function generated restore points. If true, the Windows 365 stored restore points; false indicates that Windows 365 doesn&apos;t generate or keep the restore point from the original Cloud PC. If a disaster occurs, the new Cloud PC can only be provisioned using the initial image. This limitation can result in the loss of some user data on the original Cloud PC. The default value is false.</summary>
         public bool? MaintainCrossRegionRestorePointEnabled
         {
@@ -65,6 +71,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Indicates whether the client allows the end user to initiate a disaster recovery activation. True indicates that the client includes the option for the end user to activate Backup Cloud PC. When false, the end user doesn&apos;t have the option to activate disaster recovery. The default value is false. Currently, only premium disaster recovery is supported.</summary>
+        public bool? UserInitiatedDisasterRecoveryAllowed
+        {
+            get { return BackingStore?.Get<bool?>("userInitiatedDisasterRecoveryAllowed"); }
+            set { BackingStore?.Set("userInitiatedDisasterRecoveryAllowed", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting"/> and sets the default values.
         /// </summary>
@@ -80,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting();
         }
         /// <summary>
@@ -93,8 +105,10 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "crossRegionDisasterRecoveryEnabled", n => { CrossRegionDisasterRecoveryEnabled = n.GetBoolValue(); } },
                 { "disasterRecoveryNetworkSetting", n => { DisasterRecoveryNetworkSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting>(global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting.CreateFromDiscriminatorValue); } },
+                { "disasterRecoveryType", n => { DisasterRecoveryType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType>(); } },
                 { "maintainCrossRegionRestorePointEnabled", n => { MaintainCrossRegionRestorePointEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "userInitiatedDisasterRecoveryAllowed", n => { UserInitiatedDisasterRecoveryAllowed = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -103,11 +117,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossRegionDisasterRecoveryEnabled", CrossRegionDisasterRecoveryEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting>("disasterRecoveryNetworkSetting", DisasterRecoveryNetworkSetting);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType>("disasterRecoveryType", DisasterRecoveryType);
             writer.WriteBoolValue("maintainCrossRegionRestorePointEnabled", MaintainCrossRegionRestorePointEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteBoolValue("userInitiatedDisasterRecoveryAllowed", UserInitiatedDisasterRecoveryAllowed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

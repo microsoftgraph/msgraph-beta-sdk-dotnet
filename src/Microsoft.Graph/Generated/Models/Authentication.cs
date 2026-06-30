@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Authentication : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailMethods", value); }
         }
 #endif
+        /// <summary>Represents the external MFA registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>? ExternalAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>?>("externalAuthenticationMethods"); }
+            set { BackingStore?.Set("externalAuthenticationMethods", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod> ExternalAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>>("externalAuthenticationMethods"); }
+            set { BackingStore?.Set("externalAuthenticationMethods", value); }
+        }
+#endif
         /// <summary>Represents the FIDO2 security keys registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +58,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>>("fido2Methods"); }
             set { BackingStore?.Set("fido2Methods", value); }
+        }
+#endif
+        /// <summary>The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>? HardwareOathMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>?>("hardwareOathMethods"); }
+            set { BackingStore?.Set("hardwareOathMethods", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod> HardwareOathMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>>("hardwareOathMethods"); }
+            set { BackingStore?.Set("hardwareOathMethods", value); }
         }
 #endif
         /// <summary>Represents all authentication methods registered to a user.</summary>
@@ -140,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("phoneMethods", value); }
         }
 #endif
-        /// <summary>The platformCredentialMethods property</summary>
+        /// <summary>Represents a platform credential instance registered to a user on Mac OS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>? PlatformCredentialMethods
@@ -154,6 +186,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>>("platformCredentialMethods"); }
             set { BackingStore?.Set("platformCredentialMethods", value); }
+        }
+#endif
+        /// <summary>Represents a QR code authentication method registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod? QrCodePinMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod?>("qrCodePinMethod"); }
+            set { BackingStore?.Set("qrCodePinMethod", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod QrCodePinMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>("qrCodePinMethod"); }
+            set { BackingStore?.Set("qrCodePinMethod", value); }
         }
 #endif
         /// <summary>The settings and preferences for per-user Microsoft Entra multifactor authentication.</summary>
@@ -243,7 +291,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Authentication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Authentication();
         }
         /// <summary>
@@ -255,7 +303,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "emailMethods", n => { EmailMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalAuthenticationMethods", n => { ExternalAuthenticationMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fido2Methods", n => { Fido2Methods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>(global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "hardwareOathMethods", n => { HardwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "methods", n => { Methods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethod>(global::Microsoft.Graph.Beta.Models.AuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "microsoftAuthenticatorMethods", n => { MicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LongRunningOperation>(global::Microsoft.Graph.Beta.Models.LongRunningOperation.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -263,6 +313,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordlessMicrosoftAuthenticatorMethods", n => { PasswordlessMicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phoneMethods", n => { PhoneMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platformCredentialMethods", n => { PlatformCredentialMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "qrCodePinMethod", n => { QrCodePinMethod = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod.CreateFromDiscriminatorValue); } },
                 { "requirements", n => { Requirements = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements>(global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements.CreateFromDiscriminatorValue); } },
                 { "signInPreferences", n => { SignInPreferences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInPreferences>(global::Microsoft.Graph.Beta.Models.SignInPreferences.CreateFromDiscriminatorValue); } },
                 { "softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -276,10 +327,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>("emailMethods", EmailMethods);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod>("externalAuthenticationMethods", ExternalAuthenticationMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>("fido2Methods", Fido2Methods);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>("hardwareOathMethods", HardwareOathMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethod>("methods", Methods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>("microsoftAuthenticatorMethods", MicrosoftAuthenticatorMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LongRunningOperation>("operations", Operations);
@@ -287,6 +340,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>("passwordMethods", PasswordMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>("phoneMethods", PhoneMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>("platformCredentialMethods", PlatformCredentialMethods);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>("qrCodePinMethod", QrCodePinMethod);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements>("requirements", Requirements);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInPreferences>("signInPreferences", SignInPreferences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);

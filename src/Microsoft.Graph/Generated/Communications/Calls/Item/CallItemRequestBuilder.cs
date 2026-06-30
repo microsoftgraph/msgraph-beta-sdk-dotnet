@@ -16,6 +16,10 @@ using Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Redirect;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Reject;
 using Microsoft.Graph.Beta.Communications.Calls.Item.SendDtmfTones;
+using Microsoft.Graph.Beta.Communications.Calls.Item.StartRecording;
+using Microsoft.Graph.Beta.Communications.Calls.Item.StartTranscription;
+using Microsoft.Graph.Beta.Communications.Calls.Item.StopRecording;
+using Microsoft.Graph.Beta.Communications.Calls.Item.StopTranscription;
 using Microsoft.Graph.Beta.Communications.Calls.Item.SubscribeToTone;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Transfer;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Unmute;
@@ -35,7 +39,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item
     /// <summary>
     /// Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CallItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the addLargeGalleryView method.</summary>
@@ -117,6 +121,26 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item
         public global::Microsoft.Graph.Beta.Communications.Calls.Item.SendDtmfTones.SendDtmfTonesRequestBuilder SendDtmfTones
         {
             get => new global::Microsoft.Graph.Beta.Communications.Calls.Item.SendDtmfTones.SendDtmfTonesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startRecording method.</summary>
+        public global::Microsoft.Graph.Beta.Communications.Calls.Item.StartRecording.StartRecordingRequestBuilder StartRecording
+        {
+            get => new global::Microsoft.Graph.Beta.Communications.Calls.Item.StartRecording.StartRecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startTranscription method.</summary>
+        public global::Microsoft.Graph.Beta.Communications.Calls.Item.StartTranscription.StartTranscriptionRequestBuilder StartTranscription
+        {
+            get => new global::Microsoft.Graph.Beta.Communications.Calls.Item.StartTranscription.StartTranscriptionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopRecording method.</summary>
+        public global::Microsoft.Graph.Beta.Communications.Calls.Item.StopRecording.StopRecordingRequestBuilder StopRecording
+        {
+            get => new global::Microsoft.Graph.Beta.Communications.Calls.Item.StopRecording.StopRecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopTranscription method.</summary>
+        public global::Microsoft.Graph.Beta.Communications.Calls.Item.StopTranscription.StopTranscriptionRequestBuilder StopTranscription
+        {
+            get => new global::Microsoft.Graph.Beta.Communications.Calls.Item.StopTranscription.StopTranscriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subscribeToTone method.</summary>
         public global::Microsoft.Graph.Beta.Communications.Calls.Item.SubscribeToTone.SubscribeToToneRequestBuilder SubscribeToTone
@@ -218,7 +242,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Call> PatchAsync(global::Microsoft.Graph.Beta.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -279,7 +303,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -299,14 +323,14 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CallItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a call object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CallItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -334,7 +358,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CallItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Communications.Calls.Item.CallItemRequestBuilder.CallItemRequestBuilderGetQueryParameters>
         {
         }
@@ -342,7 +366,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CallItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

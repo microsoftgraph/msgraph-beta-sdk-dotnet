@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SensorSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The domainControllerDnsNames property</summary>
+        /// <summary>DNS names for the domain controller</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DomainControllerDnsNames
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("domainControllerDnsNames", value); }
         }
 #endif
-        /// <summary>The isDelayedDeploymentEnabled property</summary>
+        /// <summary>Indicates whether to delay updates for the sensor.</summary>
         public bool? IsDelayedDeploymentEnabled
         {
             get { return BackingStore?.Get<bool?>("isDelayedDeploymentEnabled"); }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Security.SensorSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.SensorSettings();
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("domainControllerDnsNames", DomainControllerDnsNames);
             writer.WriteBoolValue("isDelayedDeploymentEnabled", IsDelayedDeploymentEnabled);

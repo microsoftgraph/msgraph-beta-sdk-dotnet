@@ -9,14 +9,18 @@ using Microsoft.Graph.Beta.Security.AuditLog;
 using Microsoft.Graph.Beta.Security.Cases;
 using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Collaboration;
+using Microsoft.Graph.Beta.Security.DataDiscovery;
+using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
 using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
 using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Identities;
+using Microsoft.Graph.Beta.Security.IncidentTasks;
 using Microsoft.Graph.Beta.Security.Incidents;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
+using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.Partner;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
@@ -24,6 +28,7 @@ using Microsoft.Graph.Beta.Security.Rules;
 using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Beta.Security.SecureScores;
 using Microsoft.Graph.Beta.Security.SecurityActions;
+using Microsoft.Graph.Beta.Security.SecurityCopilot;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence;
 using Microsoft.Graph.Beta.Security.ThreatSubmission;
@@ -31,6 +36,7 @@ using Microsoft.Graph.Beta.Security.TiIndicators;
 using Microsoft.Graph.Beta.Security.TriggerTypes;
 using Microsoft.Graph.Beta.Security.Triggers;
 using Microsoft.Graph.Beta.Security.UserSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Zones;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -44,7 +50,7 @@ namespace Microsoft.Graph.Beta.Security
     /// <summary>
     /// Provides operations to manage the security singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecurityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
@@ -82,6 +88,16 @@ namespace Microsoft.Graph.Beta.Security
         {
             get => new global::Microsoft.Graph.Beta.Security.Collaboration.CollaborationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the dataDiscovery property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.DataDiscovery.DataDiscoveryRequestBuilder DataDiscovery
+        {
+            get => new global::Microsoft.Graph.Beta.Security.DataDiscovery.DataDiscoveryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder DataSecurityAndGovernance
+        {
+            get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder DomainSecurityProfiles
         {
@@ -107,6 +123,11 @@ namespace Microsoft.Graph.Beta.Security
         {
             get => new global::Microsoft.Graph.Beta.Security.Incidents.IncidentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the incidentTasks property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.IncidentTasks.IncidentTasksRequestBuilder IncidentTasks
+        {
+            get => new global::Microsoft.Graph.Beta.Security.IncidentTasks.IncidentTasksRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the informationProtection property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.InformationProtection.InformationProtectionRequestBuilder InformationProtection
         {
@@ -121,6 +142,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.Labels.LabelsRequestBuilder Labels
         {
             get => new global::Microsoft.Graph.Beta.Security.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getHuntingSchema method.</summary>
+        public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder MicrosoftGraphSecurityGetHuntingSchema
+        {
+            get => new global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the runHuntingQuery method.</summary>
         public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery
@@ -157,6 +183,11 @@ namespace Microsoft.Graph.Beta.Security
         {
             get => new global::Microsoft.Graph.Beta.Security.SecurityActions.SecurityActionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the securityCopilot property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.SecurityCopilot.SecurityCopilotRequestBuilder SecurityCopilot
+        {
+            get => new global::Microsoft.Graph.Beta.Security.SecurityCopilot.SecurityCopilotRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder SubjectRightsRequests
         {
@@ -191,6 +222,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder UserSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the zones property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Zones.ZonesRequestBuilder Zones
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Zones.ZonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.SecurityRequestBuilder"/> and sets the default values.
@@ -235,7 +271,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Update security
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Security"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Security singleton providing access to audit log resources.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
@@ -248,7 +284,7 @@ namespace Microsoft.Graph.Beta.Security
         public async Task<global::Microsoft.Graph.Beta.Models.Security.Security> PatchAsync(global::Microsoft.Graph.Beta.Models.Security.Security body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -279,7 +315,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Update security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Security singleton providing access to audit log resources.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -290,7 +326,7 @@ namespace Microsoft.Graph.Beta.Security
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Security.Security body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -309,7 +345,7 @@ namespace Microsoft.Graph.Beta.Security
         /// <summary>
         /// Get security
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SecurityRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -337,7 +373,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SecurityRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Security.SecurityRequestBuilder.SecurityRequestBuilderGetQueryParameters>
         {
         }
@@ -345,7 +381,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SecurityRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

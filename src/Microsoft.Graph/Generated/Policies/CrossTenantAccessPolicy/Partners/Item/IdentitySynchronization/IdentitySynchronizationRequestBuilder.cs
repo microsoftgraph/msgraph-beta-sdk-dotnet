@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -15,9 +16,14 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
     /// <summary>
     /// Provides operations to manage the identitySynchronization property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentitySynchronizationRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -35,7 +41,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         {
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
+        /// Delete the user and group synchronization policy for a partner-specific configuration.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +64,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user and group synchronization policy of a partner-specific configuration.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner"/></returns>
@@ -82,8 +88,8 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the user synchronization policy of a partner-specific configuration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-beta" />
+        /// Create a cross-tenant user and optionally group synchronization policy for a partner-specific configuration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         public async Task<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner> PutAsync(global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -108,7 +114,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
+        /// Delete the user and group synchronization policy for a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +133,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return requestInfo;
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user and group synchronization policy of a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +152,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return requestInfo;
         }
         /// <summary>
-        /// Update the user synchronization policy of a partner-specific configuration.
+        /// Create a cross-tenant user and optionally group synchronization policy for a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +166,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         public RequestInformation ToPutRequestInformation(global::Microsoft.Graph.Beta.Models.CrossTenantIdentitySyncPolicyPartner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -180,14 +186,14 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitySynchronizationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user and group synchronization policy of a partner-specific configuration.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitySynchronizationRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -215,7 +221,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitySynchronizationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder.IdentitySynchronizationRequestBuilderGetQueryParameters>
         {
         }
@@ -223,7 +229,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentitySynchronizationRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

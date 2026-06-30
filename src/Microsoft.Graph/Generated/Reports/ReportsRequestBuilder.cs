@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities;
 using Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods;
+using Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight;
 using Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsage;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageByPrinter;
@@ -13,6 +14,7 @@ using Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByPrinter;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser;
 using Microsoft.Graph.Beta.Reports.DeviceConfigurationDeviceActivity;
 using Microsoft.Graph.Beta.Reports.DeviceConfigurationUserActivity;
+using Microsoft.Graph.Beta.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage;
@@ -132,6 +134,7 @@ using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithDate;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityGroupCountsWithPeriod;
+using Microsoft.Graph.Beta.Reports.HealthMonitoring;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetails;
@@ -163,7 +166,7 @@ namespace Microsoft.Graph.Beta.Reports
     /// <summary>
     /// Provides operations to manage the reportRoot singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
@@ -180,6 +183,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder AuthenticationMethods
         {
             get => new global::Microsoft.Graph.Beta.Reports.AuthenticationMethods.AuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the azureADPremiumLicenseInsight property of the microsoft.graph.reportRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight.AzureADPremiumLicenseInsightRequestBuilder AzureADPremiumLicenseInsight
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight.AzureADPremiumLicenseInsightRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails
@@ -221,6 +229,11 @@ namespace Microsoft.Graph.Beta.Reports
         {
             get => new global::Microsoft.Graph.Beta.Reports.DeviceConfigurationUserActivity.DeviceConfigurationUserActivityRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getApiUsage method.</summary>
+        public global::Microsoft.Graph.Beta.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getAttackSimulationRepeatOffenders method.</summary>
         public global::Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders
         {
@@ -255,6 +268,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail.GetOffice365ActivationsUserDetailRequestBuilder GetOffice365ActivationsUserDetail
         {
             get => new global::Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail.GetOffice365ActivationsUserDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the healthMonitoring property of the microsoft.graph.reportRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.HealthMonitoring.HealthMonitoringRequestBuilder HealthMonitoring
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.HealthMonitoring.HealthMonitoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the managedDeviceEnrollmentFailureDetails method.</summary>
         public global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetails.ManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails
@@ -442,7 +460,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetEmailActivityUserDetailWithDate.GetEmailActivityUserDetailWithDateRequestBuilder GetEmailActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetEmailActivityUserDetailWithDate.GetEmailActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -482,7 +500,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetEmailAppUsageUserDetailWithDate.GetEmailAppUsageUserDetailWithDateRequestBuilder GetEmailAppUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetEmailAppUsageUserDetailWithDate.GetEmailAppUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -532,7 +550,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetFormsUserActivityUserDetailWithDate.GetFormsUserActivityUserDetailWithDateRequestBuilder GetFormsUserActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetFormsUserActivityUserDetailWithDate.GetFormsUserActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -554,9 +572,9 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string groupId, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(groupId)) throw new ArgumentNullException(nameof(groupId));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, groupId, startDateTime);
         }
         /// <summary>
@@ -586,7 +604,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetM365AppUserDetailWithDate.GetM365AppUserDetailWithDateRequestBuilder GetM365AppUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetM365AppUserDetailWithDate.GetM365AppUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -686,7 +704,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate.GetOffice365ActiveUserDetailWithDateRequestBuilder GetOffice365ActiveUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate.GetOffice365ActiveUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -716,7 +734,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate.GetOffice365GroupsActivityDetailWithDateRequestBuilder GetOffice365GroupsActivityDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate.GetOffice365GroupsActivityDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -796,7 +814,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetOneDriveActivityUserDetailWithDate.GetOneDriveActivityUserDetailWithDateRequestBuilder GetOneDriveActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetOneDriveActivityUserDetailWithDate.GetOneDriveActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -826,7 +844,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetOneDriveUsageAccountDetailWithDate.GetOneDriveUsageAccountDetailWithDateRequestBuilder GetOneDriveUsageAccountDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetOneDriveUsageAccountDetailWithDate.GetOneDriveUsageAccountDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -868,9 +886,9 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Beta.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string printerId, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(printerId)) throw new ArgumentNullException(nameof(printerId));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, printerId, startDateTime);
         }
         /// <summary>
@@ -920,7 +938,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetSharePointActivityUserDetailWithDate.GetSharePointActivityUserDetailWithDateRequestBuilder GetSharePointActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetSharePointActivityUserDetailWithDate.GetSharePointActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -940,7 +958,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageDetailWithDate.GetSharePointSiteUsageDetailWithDateRequestBuilder GetSharePointSiteUsageDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageDetailWithDate.GetSharePointSiteUsageDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1020,7 +1038,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetSkypeForBusinessActivityUserDetailWithDate.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder GetSkypeForBusinessActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetSkypeForBusinessActivityUserDetailWithDate.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1060,7 +1078,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder GetSkypeForBusinessDeviceUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1210,7 +1228,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetTeamsDeviceUsageUserDetailWithDate.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder GetTeamsDeviceUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetTeamsDeviceUsageUserDetailWithDate.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1240,7 +1258,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetTeamsTeamActivityDetailWithDate.GetTeamsTeamActivityDetailWithDateRequestBuilder GetTeamsTeamActivityDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetTeamsTeamActivityDetailWithDate.GetTeamsTeamActivityDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1350,7 +1368,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetTeamsUserActivityUserDetailWithDate.GetTeamsUserActivityUserDetailWithDateRequestBuilder GetTeamsUserActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetTeamsUserActivityUserDetailWithDate.GetTeamsUserActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1372,8 +1390,8 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
         public global::Microsoft.Graph.Beta.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime, string userId)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
             return new global::Microsoft.Graph.Beta.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime, userId);
         }
@@ -1404,7 +1422,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetYammerActivityUserDetailWithDate.GetYammerActivityUserDetailWithDateRequestBuilder GetYammerActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetYammerActivityUserDetailWithDate.GetYammerActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1444,7 +1462,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetYammerDeviceUsageUserDetailWithDate.GetYammerDeviceUsageUserDetailWithDateRequestBuilder GetYammerDeviceUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetYammerDeviceUsageUserDetailWithDate.GetYammerDeviceUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1474,7 +1492,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithDate.GetYammerGroupsActivityDetailWithDateRequestBuilder GetYammerGroupsActivityDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithDate.GetYammerGroupsActivityDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1508,9 +1526,9 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken(string filter, int? skip, string skipToken, int? top)
         {
             if(string.IsNullOrEmpty(filter)) throw new ArgumentNullException(nameof(filter));
-            _ = skip ?? throw new ArgumentNullException(nameof(skip));
+            if(ReferenceEquals(skip, null)) throw new ArgumentNullException(nameof(skip));
             if(string.IsNullOrEmpty(skipToken)) throw new ArgumentNullException(nameof(skipToken));
-            _ = top ?? throw new ArgumentNullException(nameof(top));
+            if(ReferenceEquals(top, null)) throw new ArgumentNullException(nameof(top));
             return new global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, filter, skip, skipToken, top);
         }
         /// <summary>
@@ -1524,9 +1542,9 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken(string filter, int? skip, string skipToken, int? top)
         {
             if(string.IsNullOrEmpty(filter)) throw new ArgumentNullException(nameof(filter));
-            _ = skip ?? throw new ArgumentNullException(nameof(skip));
+            if(ReferenceEquals(skip, null)) throw new ArgumentNullException(nameof(skip));
             if(string.IsNullOrEmpty(skipToken)) throw new ArgumentNullException(nameof(skipToken));
-            _ = top ?? throw new ArgumentNullException(nameof(top));
+            if(ReferenceEquals(top, null)) throw new ArgumentNullException(nameof(top));
             return new global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, filter, skip, skipToken, top);
         }
         /// <summary>
@@ -1540,9 +1558,9 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(string filter, int? skip, string skipToken, int? top)
         {
             if(string.IsNullOrEmpty(filter)) throw new ArgumentNullException(nameof(filter));
-            _ = skip ?? throw new ArgumentNullException(nameof(skip));
+            if(ReferenceEquals(skip, null)) throw new ArgumentNullException(nameof(skip));
             if(string.IsNullOrEmpty(skipToken)) throw new ArgumentNullException(nameof(skipToken));
-            _ = top ?? throw new ArgumentNullException(nameof(top));
+            if(ReferenceEquals(top, null)) throw new ArgumentNullException(nameof(top));
             return new global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, filter, skip, skipToken, top);
         }
         /// <summary>
@@ -1572,7 +1590,7 @@ namespace Microsoft.Graph.Beta.Reports
         public async Task<global::Microsoft.Graph.Beta.Models.ReportRoot> PatchAsync(global::Microsoft.Graph.Beta.Models.ReportRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -1614,7 +1632,7 @@ namespace Microsoft.Graph.Beta.Reports
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ReportRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -1633,7 +1651,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <summary>
         /// Get reports
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -1661,7 +1679,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>
         {
         }
@@ -1669,7 +1687,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

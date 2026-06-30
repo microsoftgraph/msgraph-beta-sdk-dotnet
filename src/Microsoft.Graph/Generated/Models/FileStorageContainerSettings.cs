@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class FileStorageContainerSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,11 +21,39 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether OCR is enabled for a given container. If OCR is enabled on a container, OCR extraction is performed for recently added or updated documents (of supported document types) and the extracted fields are added to the metadata of the document. This enables end-user search and search-driven solutions.</summary>
+        /// <summary>Indicates whether versioning is enabled for items in the container. Optional. Read-write.</summary>
+        public bool? IsItemVersioningEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
+            set { BackingStore?.Set("isItemVersioningEnabled", value); }
+        }
+        /// <summary>Indicates whether Optical Character Recognition (OCR) is enabled for the container. The default value is false. When set to true, OCR extraction is performed for new and updated documents of supported document types, and the extracted fields in the metadata of the document enable end-user search and search-driven solutions. When set to false, existing OCR metadata is not impacted. Optional. Read-write.</summary>
         public bool? IsOcrEnabled
         {
             get { return BackingStore?.Get<bool?>("isOcrEnabled"); }
             set { BackingStore?.Set("isOcrEnabled", value); }
+        }
+        /// <summary>The ID of the default sensitivity label for items in the container. Optional. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemDefaultSensitivityLabelId
+        {
+            get { return BackingStore?.Get<string?>("itemDefaultSensitivityLabelId"); }
+            set { BackingStore?.Set("itemDefaultSensitivityLabelId", value); }
+        }
+#nullable restore
+#else
+        public string ItemDefaultSensitivityLabelId
+        {
+            get { return BackingStore?.Get<string>("itemDefaultSensitivityLabelId"); }
+            set { BackingStore?.Set("itemDefaultSensitivityLabelId", value); }
+        }
+#endif
+        /// <summary>The maximum major versions allowed for items in the container. Optional. Read-write.</summary>
+        public int? ItemMajorVersionLimit
+        {
+            get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }
+            set { BackingStore?.Set("itemMajorVersionLimit", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings();
         }
         /// <summary>
@@ -69,7 +97,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
                 { "isOcrEnabled", n => { IsOcrEnabled = n.GetBoolValue(); } },
+                { "itemDefaultSensitivityLabelId", n => { ItemDefaultSensitivityLabelId = n.GetStringValue(); } },
+                { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -79,8 +110,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
             writer.WriteBoolValue("isOcrEnabled", IsOcrEnabled);
+            writer.WriteStringValue("itemDefaultSensitivityLabelId", ItemDefaultSensitivityLabelId);
+            writer.WriteIntValue("itemMajorVersionLimit", ItemMajorVersionLimit);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

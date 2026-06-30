@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosManagedAppProtection : global::Microsoft.Graph.Beta.Models.TargetedManagedAppProtection, IParsable
     {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowWidgetContentSync"); }
             set { BackingStore?.Set("allowWidgetContentSync", value); }
         }
-        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.</summary>
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
@@ -173,6 +173,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("filterOpenInToOnlyManagedApps"); }
             set { BackingStore?.Set("filterOpenInToOnlyManagedApps", value); }
         }
+        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. Possible values are: notBlocked, blocked, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.GenmojiIosManagedAppConfigurationState? GenmojiConfigurationState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.GenmojiIosManagedAppConfigurationState?>("genmojiConfigurationState"); }
+            set { BackingStore?.Set("genmojiConfigurationState", value); }
+        }
         /// <summary>A list of custom urls that are allowed to invocate a managed app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -259,11 +265,23 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("protectInboundDataFromUnknownSources"); }
             set { BackingStore?.Set("protectInboundDataFromUnknownSources", value); }
         }
+        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. Possible values are: notBlocked, blocked, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.ScreenCaptureIosManagedAppConfigurationState? ScreenCaptureConfigurationState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ScreenCaptureIosManagedAppConfigurationState?>("screenCaptureConfigurationState"); }
+            set { BackingStore?.Set("screenCaptureConfigurationState", value); }
+        }
         /// <summary>Defines if third party keyboards are allowed while accessing a managed app</summary>
         public bool? ThirdPartyKeyboardsBlocked
         {
             get { return BackingStore?.Get<bool?>("thirdPartyKeyboardsBlocked"); }
             set { BackingStore?.Set("thirdPartyKeyboardsBlocked", value); }
+        }
+        /// <summary>Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. Possible values are: notBlocked, blocked, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.WritingToolsIosManagedAppConfigurationState? WritingToolsConfigurationState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WritingToolsIosManagedAppConfigurationState?>("writingToolsConfigurationState"); }
+            set { BackingStore?.Set("writingToolsConfigurationState", value); }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IosManagedAppProtection"/> and sets the default values.
@@ -279,7 +297,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IosManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IosManagedAppProtection();
         }
         /// <summary>
@@ -305,13 +323,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "exemptedUniversalLinks", n => { ExemptedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
                 { "filterOpenInToOnlyManagedApps", n => { FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
+                { "genmojiConfigurationState", n => { GenmojiConfigurationState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.GenmojiIosManagedAppConfigurationState>(); } },
                 { "managedUniversalLinks", n => { ManagedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "messagingRedirectAppUrlScheme", n => { MessagingRedirectAppUrlScheme = n.GetStringValue(); } },
                 { "minimumRequiredSdkVersion", n => { MinimumRequiredSdkVersion = n.GetStringValue(); } },
                 { "minimumWarningSdkVersion", n => { MinimumWarningSdkVersion = n.GetStringValue(); } },
                 { "minimumWipeSdkVersion", n => { MinimumWipeSdkVersion = n.GetStringValue(); } },
                 { "protectInboundDataFromUnknownSources", n => { ProtectInboundDataFromUnknownSources = n.GetBoolValue(); } },
+                { "screenCaptureConfigurationState", n => { ScreenCaptureConfigurationState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ScreenCaptureIosManagedAppConfigurationState>(); } },
                 { "thirdPartyKeyboardsBlocked", n => { ThirdPartyKeyboardsBlocked = n.GetBoolValue(); } },
+                { "writingToolsConfigurationState", n => { WritingToolsConfigurationState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WritingToolsIosManagedAppConfigurationState>(); } },
             };
         }
         /// <summary>
@@ -320,7 +341,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("allowedIosDeviceModels", AllowedIosDeviceModels);
             writer.WriteBoolValue("allowWidgetContentSync", AllowWidgetContentSync);
@@ -337,13 +358,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("exemptedUniversalLinks", ExemptedUniversalLinks);
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);
             writer.WriteBoolValue("filterOpenInToOnlyManagedApps", FilterOpenInToOnlyManagedApps);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.GenmojiIosManagedAppConfigurationState>("genmojiConfigurationState", GenmojiConfigurationState);
             writer.WriteCollectionOfPrimitiveValues<string>("managedUniversalLinks", ManagedUniversalLinks);
             writer.WriteStringValue("messagingRedirectAppUrlScheme", MessagingRedirectAppUrlScheme);
             writer.WriteStringValue("minimumRequiredSdkVersion", MinimumRequiredSdkVersion);
             writer.WriteStringValue("minimumWarningSdkVersion", MinimumWarningSdkVersion);
             writer.WriteStringValue("minimumWipeSdkVersion", MinimumWipeSdkVersion);
             writer.WriteBoolValue("protectInboundDataFromUnknownSources", ProtectInboundDataFromUnknownSources);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ScreenCaptureIosManagedAppConfigurationState>("screenCaptureConfigurationState", ScreenCaptureConfigurationState);
             writer.WriteBoolValue("thirdPartyKeyboardsBlocked", ThirdPartyKeyboardsBlocked);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WritingToolsIosManagedAppConfigurationState>("writingToolsConfigurationState", WritingToolsConfigurationState);
         }
     }
 }

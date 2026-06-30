@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Workflow : global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowBase, IParsable
     #pragma warning restore CS1591
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
-        /// <summary>The unique identifier of the Microsoft Entra identity that last modified the workflow object.</summary>
+        /// <summary>The list of users that meet the workflowExecutionConditions of a workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>? ExecutionScope
@@ -56,6 +56,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("nextScheduleRunDateTime"); }
             set { BackingStore?.Set("nextScheduleRunDateTime", value); }
         }
+        /// <summary>A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? PreviewScope
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>?>("previewScope"); }
+            set { BackingStore?.Set("previewScope", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject> PreviewScope
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>>("previewScope"); }
+            set { BackingStore?.Set("previewScope", value); }
+        }
+#endif
         /// <summary>Workflow runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow();
         }
         /// <summary>
@@ -155,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextScheduleRunDateTime", n => { NextScheduleRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "previewScope", n => { PreviewScope = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "runs", n => { Runs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -168,12 +185,13 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>("executionScope", ExecutionScope);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextScheduleRunDateTime", NextScheduleRunDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("previewScope", PreviewScope);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>("runs", Runs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport>("taskReports", TaskReports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>("userProcessingResults", UserProcessingResults);

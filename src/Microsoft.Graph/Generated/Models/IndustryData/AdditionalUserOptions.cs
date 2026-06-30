@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AdditionalUserOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether all students should be marked as minors.</summary>
+        /// <summary>Indicates whether all students should be marked as minors. The markAllStudentsAsMinors property is deprecated and will stop returning data on October 15, 2025. Going forward, use the studentAgeGroup property.</summary>
         public bool? MarkAllStudentsAsMinors
         {
             get { return BackingStore?.Get<bool?>("markAllStudentsAsMinors"); }
@@ -49,6 +49,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Indicates the age group classification for students. The possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.</summary>
+        public global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup? StudentAgeGroup
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup?>("studentAgeGroup"); }
+            set { BackingStore?.Set("studentAgeGroup", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions"/> and sets the default values.
         /// </summary>
@@ -64,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions();
         }
         /// <summary>
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
                 { "allowStudentContactAssociation", n => { AllowStudentContactAssociation = n.GetBoolValue(); } },
                 { "markAllStudentsAsMinors", n => { MarkAllStudentsAsMinors = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "studentAgeGroup", n => { StudentAgeGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup>(); } },
             };
         }
         /// <summary>
@@ -86,10 +93,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowStudentContactAssociation", AllowStudentContactAssociation);
             writer.WriteBoolValue("markAllStudentsAsMinors", MarkAllStudentsAsMinors);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IndustryData.StudentAgeGroup>("studentAgeGroup", StudentAgeGroup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

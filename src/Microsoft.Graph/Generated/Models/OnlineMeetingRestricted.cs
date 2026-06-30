@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OnlineMeetingRestricted : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies the reason why shared content from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.</summary>
+        /// <summary>Specifies the reason why shared content from this participant is disabled. The possible values are: watermarkProtection, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OnlineMeetingContentSharingDisabledReason? ContentSharingDisabled
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingContentSharingDisabledReason?>("contentSharingDisabled"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Specifies the reason why video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.</summary>
+        /// <summary>Specifies the reason why video from this participant is disabled. The possible values are: watermarkProtection, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OnlineMeetingVideoDisabledReason? VideoDisabled
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingVideoDisabledReason?>("videoDisabled"); }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.OnlineMeetingRestricted CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OnlineMeetingRestricted();
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingContentSharingDisabledReason>("contentSharingDisabled", ContentSharingDisabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingVideoDisabledReason>("videoDisabled", VideoDisabled);

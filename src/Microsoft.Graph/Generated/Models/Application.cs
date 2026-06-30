@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Application : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appRoles", value); }
         }
 #endif
-        /// <summary>The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.</summary>
+        /// <summary>The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Requires $select to retrieve.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AuthenticationBehaviors? AuthenticationBehaviors
@@ -122,6 +122,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConnectorGroup>("connectorGroup"); }
             set { BackingStore?.Set("connectorGroup", value); }
+        }
+#endif
+        /// <summary>The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
         }
 #endif
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.</summary>
@@ -178,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).</summary>
+        /// <summary>Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisabledByMicrosoftStatus
@@ -194,7 +210,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("disabledByMicrosoftStatus", value); }
         }
 #endif
-        /// <summary>The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.</summary>
+        /// <summary>The display name for the application. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -274,7 +290,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
 #endif
-        /// <summary>Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API&apos;s code, and it must be globally unique. You can use the default value provided, which is in the form api://&lt;appId&gt;, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).</summary>
+        /// <summary>Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API&apos;s code, and it must be globally unique across Microsoft Entra ID. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IdentifierUris
@@ -312,6 +328,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isDeviceOnlyAuthSupported"); }
             set { BackingStore?.Set("isDeviceOnlyAuthSupported", value); }
         }
+        /// <summary>Deactivate an app without deleting it. This configuration specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false. Learn more in Deactivate an app registration.</summary>
+        public bool? IsDisabled
+        {
+            get { return BackingStore?.Get<bool?>("isDisabled"); }
+            set { BackingStore?.Set("isDisabled", value); }
+        }
         /// <summary>Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can&apos;t determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.</summary>
         public bool? IsFallbackPublicClient
         {
@@ -348,6 +370,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<byte[]>("logo"); }
             set { BackingStore?.Set("logo", value); }
+        }
+#endif
+        /// <summary>A collection of application IDs for applications designated as managers of this application. Manager applications can create service principals for the applications they manage. Currently, only Microsoft first-party application IDs can be set as values. Maximum of 10 values. Not nullable. Read-only for third-party (3P) callers; writes by 3P callers are rejected with a 400 Bad Request error. Requires $select to retrieve.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>?>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
         }
 #endif
         /// <summary>Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: noneand all. Default is none. For more information, see Native Authentication.</summary>
@@ -404,7 +442,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("optionalClaims", value); }
         }
 #endif
-        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.</summary>
+        /// <summary>Directory objects that are owners of this application. The owners are a set of nonadmin users or service principals allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? Owners
@@ -580,6 +618,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signInAudience", value); }
         }
 #endif
+        /// <summary>The signInAudienceRestrictions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase? SignInAudienceRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase?>("signInAudienceRestrictions"); }
+            set { BackingStore?.Set("signInAudienceRestrictions", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase SignInAudienceRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase>("signInAudienceRestrictions"); }
+            set { BackingStore?.Set("signInAudienceRestrictions", value); }
+        }
+#endif
         /// <summary>Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -744,8 +798,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Application CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Application();
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentityBlueprint" => new global::Microsoft.Graph.Beta.Models.AgentIdentityBlueprint(),
+                _ => new global::Microsoft.Graph.Beta.Models.Application(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -762,6 +821,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "authenticationBehaviors", n => { AuthenticationBehaviors = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationBehaviors>(global::Microsoft.Graph.Beta.Models.AuthenticationBehaviors.CreateFromDiscriminatorValue); } },
                 { "certification", n => { Certification = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Certification>(global::Microsoft.Graph.Beta.Models.Certification.CreateFromDiscriminatorValue); } },
                 { "connectorGroup", n => { ConnectorGroup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConnectorGroup>(global::Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "defaultRedirectUri", n => { DefaultRedirectUri = n.GetStringValue(); } },
@@ -775,9 +835,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "identifierUris", n => { IdentifierUris = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "info", n => { Info = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>(global::Microsoft.Graph.Beta.Models.InformationalUrl.CreateFromDiscriminatorValue); } },
                 { "isDeviceOnlyAuthSupported", n => { IsDeviceOnlyAuthSupported = n.GetBoolValue(); } },
+                { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "isFallbackPublicClient", n => { IsFallbackPublicClient = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logo", n => { Logo = n.GetByteArrayValue(); } },
+                { "managerApplications", n => { ManagerApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "nativeAuthenticationApisEnabled", n => { NativeAuthenticationApisEnabled = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NativeAuthenticationApisEnabled>(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "onPremisesPublishing", n => { OnPremisesPublishing = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishing>(global::Microsoft.Graph.Beta.Models.OnPremisesPublishing.CreateFromDiscriminatorValue); } },
@@ -793,6 +855,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
                 { "servicePrincipalLockConfiguration", n => { ServicePrincipalLockConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>(global::Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration.CreateFromDiscriminatorValue); } },
                 { "signInAudience", n => { SignInAudience = n.GetStringValue(); } },
+                { "signInAudienceRestrictions", n => { SignInAudienceRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase>(global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase.CreateFromDiscriminatorValue); } },
                 { "spa", n => { Spa = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SpaApplication>(global::Microsoft.Graph.Beta.Models.SpaApplication.CreateFromDiscriminatorValue); } },
                 { "synchronization", n => { Synchronization = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Synchronization>(global::Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -811,7 +874,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ApiApplication>("api", Api);
             writer.WriteStringValue("appId", AppId);
@@ -820,6 +883,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationBehaviors>("authenticationBehaviors", AuthenticationBehaviors);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Certification>("certification", Certification);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConnectorGroup>("connectorGroup", ConnectorGroup);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);
@@ -833,9 +897,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("identifierUris", IdentifierUris);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>("info", Info);
             writer.WriteBoolValue("isDeviceOnlyAuthSupported", IsDeviceOnlyAuthSupported);
+            writer.WriteBoolValue("isDisabled", IsDisabled);
             writer.WriteBoolValue("isFallbackPublicClient", IsFallbackPublicClient);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteByteArrayValue("logo", Logo);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("managerApplications", ManagerApplications);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NativeAuthenticationApisEnabled>("nativeAuthenticationApisEnabled", NativeAuthenticationApisEnabled);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishing>("onPremisesPublishing", OnPremisesPublishing);
@@ -851,6 +917,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration", ServicePrincipalLockConfiguration);
             writer.WriteStringValue("signInAudience", SignInAudience);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInAudienceRestrictionsBase>("signInAudienceRestrictions", SignInAudienceRestrictions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SpaApplication>("spa", Spa);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Synchronization>("synchronization", Synchronization);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);

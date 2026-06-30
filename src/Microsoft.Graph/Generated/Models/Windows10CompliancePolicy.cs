@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This class contains compliance settings for Windows 10.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Windows10CompliancePolicy : global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require active firewall on Windows devices.</summary>
@@ -299,6 +299,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("virtualizationBasedSecurityEnabled"); }
             set { BackingStore?.Set("virtualizationBasedSecurityEnabled", value); }
         }
+        /// <summary>The wslDistributions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>? WslDistributions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>?>("wslDistributions"); }
+            set { BackingStore?.Set("wslDistributions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration> WslDistributions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>>("wslDistributions"); }
+            set { BackingStore?.Set("wslDistributions", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Windows10CompliancePolicy"/> and sets the default values.
         /// </summary>
@@ -313,7 +329,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Windows10CompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Windows10CompliancePolicy();
         }
         /// <summary>
@@ -360,6 +376,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "tpmRequired", n => { TpmRequired = n.GetBoolValue(); } },
                 { "validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OperatingSystemVersionRange>(global::Microsoft.Graph.Beta.Models.OperatingSystemVersionRange.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "virtualizationBasedSecurityEnabled", n => { VirtualizationBasedSecurityEnabled = n.GetBoolValue(); } },
+                { "wslDistributions", n => { WslDistributions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>(global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -368,7 +385,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("activeFirewallRequired", ActiveFirewallRequired);
             writer.WriteBoolValue("antiSpywareRequired", AntiSpywareRequired);
@@ -406,6 +423,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("tpmRequired", TpmRequired);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OperatingSystemVersionRange>("validOperatingSystemBuildRanges", ValidOperatingSystemBuildRanges);
             writer.WriteBoolValue("virtualizationBasedSecurityEnabled", VirtualizationBasedSecurityEnabled);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>("wslDistributions", WslDistributions);
         }
     }
 }

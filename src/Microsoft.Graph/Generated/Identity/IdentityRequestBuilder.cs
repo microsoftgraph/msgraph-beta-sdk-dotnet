@@ -9,8 +9,11 @@ using Microsoft.Graph.Beta.Identity.ConditionalAccess;
 using Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy;
 using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions;
 using Microsoft.Graph.Beta.Identity.IdentityProviders;
+using Microsoft.Graph.Beta.Identity.RiskPrevention;
+using Microsoft.Graph.Beta.Identity.SignInIdentifiers;
 using Microsoft.Graph.Beta.Identity.UserFlowAttributes;
 using Microsoft.Graph.Beta.Identity.UserFlows;
+using Microsoft.Graph.Beta.Identity.VerifiedId;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -26,7 +29,7 @@ namespace Microsoft.Graph.Beta.Identity
     /// <summary>
     /// Provides operations to manage the identityContainer singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.</summary>
@@ -74,6 +77,16 @@ namespace Microsoft.Graph.Beta.Identity
         {
             get => new global::Microsoft.Graph.Beta.Identity.IdentityProviders.IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the riskPrevention property of the microsoft.graph.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Identity.RiskPrevention.RiskPreventionRequestBuilder RiskPrevention
+        {
+            get => new global::Microsoft.Graph.Beta.Identity.RiskPrevention.RiskPreventionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the signInIdentifiers property of the microsoft.graph.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Identity.SignInIdentifiers.SignInIdentifiersRequestBuilder SignInIdentifiers
+        {
+            get => new global::Microsoft.Graph.Beta.Identity.SignInIdentifiers.SignInIdentifiersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Identity.UserFlowAttributes.UserFlowAttributesRequestBuilder UserFlowAttributes
         {
@@ -83,6 +96,11 @@ namespace Microsoft.Graph.Beta.Identity
         public global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder UserFlows
         {
             get => new global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the verifiedId property of the microsoft.graph.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Identity.VerifiedId.VerifiedIdRequestBuilder VerifiedId
+        {
+            get => new global::Microsoft.Graph.Beta.Identity.VerifiedId.VerifiedIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Identity.IdentityRequestBuilder"/> and sets the default values.
@@ -140,7 +158,7 @@ namespace Microsoft.Graph.Beta.Identity
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityContainer> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -182,7 +200,7 @@ namespace Microsoft.Graph.Beta.Identity
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -201,7 +219,7 @@ namespace Microsoft.Graph.Beta.Identity
         /// <summary>
         /// Get identity
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentityRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -229,7 +247,7 @@ namespace Microsoft.Graph.Beta.Identity
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentityRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Identity.IdentityRequestBuilder.IdentityRequestBuilderGetQueryParameters>
         {
         }
@@ -237,7 +255,7 @@ namespace Microsoft.Graph.Beta.Identity
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdentityRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

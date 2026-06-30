@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Describes the status for a single FOTA deployment.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZebraFotaDeploymentStatus : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ZebraFotaErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>Date and time when the deployment status was updated from Zebra</summary>
+        /// <summary> Date and time when the deployment status was updated from Zebra</summary>
         public DateTimeOffset? LastUpdatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("totalCanceled"); }
             set { BackingStore?.Set("totalCanceled", value); }
         }
-        /// <summary>An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.</summary>
+        /// <summary>An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices. </summary>
         public int? TotalCreated
         {
             get { return BackingStore?.Get<int?>("totalCreated"); }
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("totalFailedInstall"); }
             set { BackingStore?.Set("totalFailedInstall", value); }
         }
-        /// <summary>An integer that indicates the total number of devices that received the json and are scheduled.</summary>
+        /// <summary>An integer that indicates the total number of devices that received the json and are scheduled. </summary>
         public int? TotalScheduled
         {
             get { return BackingStore?.Get<int?>("totalScheduled"); }
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus();
         }
         /// <summary>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("cancelRequested", CancelRequested);
             writer.WriteDateTimeOffsetValue("completeOrCanceledDateTime", CompleteOrCanceledDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ZebraFotaErrorCode>("errorCode", ErrorCode);

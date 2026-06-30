@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Call : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.</summary>
+        /// <summary>The list of active modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Modality?>? ActiveModalities
@@ -290,7 +290,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("participants", value); }
         }
 #endif
-        /// <summary>The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
+        /// <summary>The list of requested modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Modality?>? RequestedModalities
@@ -328,7 +328,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("ringingTimeoutInSeconds"); }
             set { BackingStore?.Set("ringingTimeoutInSeconds", value); }
         }
-        /// <summary>This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.</summary>
+        /// <summary>This property is applicable for peer to peer calls only. The possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.RoutingPolicy?>? RoutingPolicies
@@ -360,7 +360,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("source", value); }
         }
 #endif
-        /// <summary>The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.</summary>
+        /// <summary>The call state. The possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CallState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CallState?>("state"); }
@@ -469,7 +469,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Call CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Call();
         }
         /// <summary>
@@ -518,7 +518,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.Modality>("activeModalities", ActiveModalities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ParticipantInfo>("answeredBy", AnsweredBy);

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DriveItem : global::Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
@@ -154,6 +154,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Deleted>("deleted"); }
             set { BackingStore?.Set("deleted", value); }
+        }
+#endif
+        /// <summary>The collection of open extensions defined for this item. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Extension>? Extensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Extension> Extensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>File metadata, if the item is a file. Read-only.</summary>
@@ -624,7 +640,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DriveItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DriveItem();
         }
         /// <summary>
@@ -644,6 +660,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "content", n => { Content = n.GetByteArrayValue(); } },
                 { "contentStream", n => { ContentStream = n.GetByteArrayValue(); } },
                 { "deleted", n => { Deleted = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Deleted>(global::Microsoft.Graph.Beta.Models.Deleted.CreateFromDiscriminatorValue); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>(global::Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "file", n => { File = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileObject>(global::Microsoft.Graph.Beta.Models.FileObject.CreateFromDiscriminatorValue); } },
                 { "fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileSystemInfo>(global::Microsoft.Graph.Beta.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 { "folder", n => { Folder = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Folder>(global::Microsoft.Graph.Beta.Models.Folder.CreateFromDiscriminatorValue); } },
@@ -681,7 +698,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ItemActivityOLD>("activities", Activities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemAnalytics>("analytics", Analytics);
@@ -692,6 +709,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteByteArrayValue("contentStream", ContentStream);
             writer.WriteStringValue("cTag", CTag);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Deleted>("deleted", Deleted);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileObject>("file", File);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Folder>("folder", Folder);

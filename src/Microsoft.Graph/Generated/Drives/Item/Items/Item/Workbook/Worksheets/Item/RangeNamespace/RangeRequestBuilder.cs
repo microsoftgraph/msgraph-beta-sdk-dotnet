@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
     /// <summary>
     /// Provides operations to call the range method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RangeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the clear method.</summary>
@@ -162,8 +162,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="row">Usage: row={row}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.CellWithRowWithColumn.CellWithRowWithColumnRequestBuilder CellWithRowWithColumn(int? column, int? row)
         {
-            _ = column ?? throw new ArgumentNullException(nameof(column));
-            _ = row ?? throw new ArgumentNullException(nameof(row));
+            if(ReferenceEquals(column, null)) throw new ArgumentNullException(nameof(column));
+            if(ReferenceEquals(row, null)) throw new ArgumentNullException(nameof(row));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.CellWithRowWithColumn.CellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, column, row);
         }
         /// <summary>
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ColumnsAfterWithCount.ColumnsAfterWithCountRequestBuilder ColumnsAfterWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ColumnsAfterWithCount.ColumnsAfterWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ColumnsBeforeWithCount.ColumnsBeforeWithCountRequestBuilder ColumnsBeforeWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ColumnsBeforeWithCount.ColumnsBeforeWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="column">Usage: column={column}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ColumnWithColumn.ColumnWithColumnRequestBuilder ColumnWithColumn(int? column)
         {
-            _ = column ?? throw new ArgumentNullException(nameof(column));
+            if(ReferenceEquals(column, null)) throw new ArgumentNullException(nameof(column));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ColumnWithColumn.ColumnWithColumnRequestBuilder(PathParameters, RequestAdapter, column);
         }
         /// <summary>
@@ -253,8 +253,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="rowOffset">Usage: rowOffset={rowOffset}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.OffsetRangeWithRowOffsetWithColumnOffset.OffsetRangeWithRowOffsetWithColumnOffsetRequestBuilder OffsetRangeWithRowOffsetWithColumnOffset(int? columnOffset, int? rowOffset)
         {
-            _ = columnOffset ?? throw new ArgumentNullException(nameof(columnOffset));
-            _ = rowOffset ?? throw new ArgumentNullException(nameof(rowOffset));
+            if(ReferenceEquals(columnOffset, null)) throw new ArgumentNullException(nameof(columnOffset));
+            if(ReferenceEquals(rowOffset, null)) throw new ArgumentNullException(nameof(rowOffset));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.OffsetRangeWithRowOffsetWithColumnOffset.OffsetRangeWithRowOffsetWithColumnOffsetRequestBuilder(PathParameters, RequestAdapter, columnOffset, rowOffset);
         }
         /// <summary>
@@ -265,8 +265,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="deltaRows">Usage: deltaRows={deltaRows}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ResizedRangeWithDeltaRowsWithDeltaColumns.ResizedRangeWithDeltaRowsWithDeltaColumnsRequestBuilder ResizedRangeWithDeltaRowsWithDeltaColumns(int? deltaColumns, int? deltaRows)
         {
-            _ = deltaColumns ?? throw new ArgumentNullException(nameof(deltaColumns));
-            _ = deltaRows ?? throw new ArgumentNullException(nameof(deltaRows));
+            if(ReferenceEquals(deltaColumns, null)) throw new ArgumentNullException(nameof(deltaColumns));
+            if(ReferenceEquals(deltaRows, null)) throw new ArgumentNullException(nameof(deltaRows));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.ResizedRangeWithDeltaRowsWithDeltaColumns.ResizedRangeWithDeltaRowsWithDeltaColumnsRequestBuilder(PathParameters, RequestAdapter, deltaColumns, deltaRows);
         }
         /// <summary>
@@ -276,7 +276,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RowsAboveWithCount.RowsAboveWithCountRequestBuilder RowsAboveWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RowsAboveWithCount.RowsAboveWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -286,7 +286,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RowsBelowWithCount.RowsBelowWithCountRequestBuilder RowsBelowWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RowsBelowWithCount.RowsBelowWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -296,7 +296,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="row">Usage: row={row}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RowWithRow.RowWithRowRequestBuilder RowWithRow(int? row)
         {
-            _ = row ?? throw new ArgumentNullException(nameof(row));
+            if(ReferenceEquals(row, null)) throw new ArgumentNullException(nameof(row));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.RowWithRow.RowWithRowRequestBuilder(PathParameters, RequestAdapter, row);
         }
         /// <summary>
@@ -325,7 +325,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// <param name="valuesOnly">Usage: valuesOnly={valuesOnly}</param>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.UsedRangeWithValuesOnly.UsedRangeWithValuesOnlyRequestBuilder UsedRangeWithValuesOnly(bool? valuesOnly)
         {
-            _ = valuesOnly ?? throw new ArgumentNullException(nameof(valuesOnly));
+            if(ReferenceEquals(valuesOnly, null)) throw new ArgumentNullException(nameof(valuesOnly));
             return new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace.UsedRangeWithValuesOnly.UsedRangeWithValuesOnlyRequestBuilder(PathParameters, RequestAdapter, valuesOnly);
         }
         /// <summary>
@@ -341,7 +341,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.R
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RangeRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

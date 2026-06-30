@@ -7,11 +7,17 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SecurityGroupEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The unique group identifier assigned by the on-premises Active Directory.</summary>
+        public Guid? ActiveDirectoryObjectGuid
+        {
+            get { return BackingStore?.Get<Guid?>("activeDirectoryObjectGuid"); }
+            set { BackingStore?.Set("activeDirectoryObjectGuid", value); }
+        }
         /// <summary>The name of the security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,6 +32,38 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The distinguished name of the security group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DistinguishedName
+        {
+            get { return BackingStore?.Get<string?>("distinguishedName"); }
+            set { BackingStore?.Set("distinguishedName", value); }
+        }
+#nullable restore
+#else
+        public string DistinguishedName
+        {
+            get { return BackingStore?.Get<string>("distinguishedName"); }
+            set { BackingStore?.Set("distinguishedName", value); }
+        }
+#endif
+        /// <summary>The friendly name of the security group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FriendlyName
+        {
+            get { return BackingStore?.Get<string?>("friendlyName"); }
+            set { BackingStore?.Set("friendlyName", value); }
+        }
+#nullable restore
+#else
+        public string FriendlyName
+        {
+            get { return BackingStore?.Get<string>("friendlyName"); }
+            set { BackingStore?.Set("friendlyName", value); }
         }
 #endif
         /// <summary>Unique identifier of the security group.</summary>
@@ -44,6 +82,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("securityGroupId", value); }
         }
 #endif
+        /// <summary>The security identifier of the group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sid
+        {
+            get { return BackingStore?.Get<string?>("sid"); }
+            set { BackingStore?.Set("sid", value); }
+        }
+#nullable restore
+#else
+        public string Sid
+        {
+            get { return BackingStore?.Get<string>("sid"); }
+            set { BackingStore?.Set("sid", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.SecurityGroupEvidence"/> and sets the default values.
         /// </summary>
@@ -58,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.SecurityGroupEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.SecurityGroupEvidence();
         }
         /// <summary>
@@ -69,8 +123,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activeDirectoryObjectGuid", n => { ActiveDirectoryObjectGuid = n.GetGuidValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "distinguishedName", n => { DistinguishedName = n.GetStringValue(); } },
+                { "friendlyName", n => { FriendlyName = n.GetStringValue(); } },
                 { "securityGroupId", n => { SecurityGroupId = n.GetStringValue(); } },
+                { "sid", n => { Sid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,10 +137,14 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteGuidValue("activeDirectoryObjectGuid", ActiveDirectoryObjectGuid);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("distinguishedName", DistinguishedName);
+            writer.WriteStringValue("friendlyName", FriendlyName);
             writer.WriteStringValue("securityGroupId", SecurityGroupId);
+            writer.WriteStringValue("sid", Sid);
         }
     }
 }

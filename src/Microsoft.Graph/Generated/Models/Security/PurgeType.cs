@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum PurgeType
     #pragma warning restore CS1591
@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         #pragma warning disable CS1591
         Recoverable,
         #pragma warning restore CS1591
-        [EnumMember(Value = "permanentlyDeleted")]
-        #pragma warning disable CS1591
-        PermanentlyDeleted,
-        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "permanentlyDelete")]
+        #pragma warning disable CS1591
+        PermanentlyDelete,
         #pragma warning restore CS1591
     }
 }

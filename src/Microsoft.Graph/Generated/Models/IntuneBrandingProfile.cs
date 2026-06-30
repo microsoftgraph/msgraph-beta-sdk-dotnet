@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IntuneBrandingProfile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the branding profile</summary>
@@ -349,12 +349,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
-        /// <summary>Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate</summary>
-        public bool? SendDeviceOwnershipChangePushNotification
-        {
-            get { return BackingStore?.Get<bool?>("sendDeviceOwnershipChangePushNotification"); }
-            set { BackingStore?.Set("sendDeviceOwnershipChangePushNotification", value); }
-        }
         /// <summary>Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal</summary>
         public bool? ShowAzureADEnterpriseApps
         {
@@ -424,7 +418,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IntuneBrandingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IntuneBrandingProfile();
         }
         /// <summary>
@@ -461,7 +455,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "profileDescription", n => { ProfileDescription = n.GetStringValue(); } },
                 { "profileName", n => { ProfileName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sendDeviceOwnershipChangePushNotification", n => { SendDeviceOwnershipChangePushNotification = n.GetBoolValue(); } },
                 { "showAzureADEnterpriseApps", n => { ShowAzureADEnterpriseApps = n.GetBoolValue(); } },
                 { "showConfigurationManagerApps", n => { ShowConfigurationManagerApps = n.GetBoolValue(); } },
                 { "showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
@@ -477,7 +470,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment>("assignments", Assignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction>("companyPortalBlockedActions", CompanyPortalBlockedActions);
@@ -505,7 +498,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("profileDescription", ProfileDescription);
             writer.WriteStringValue("profileName", ProfileName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteBoolValue("sendDeviceOwnershipChangePushNotification", SendDeviceOwnershipChangePushNotification);
             writer.WriteBoolValue("showAzureADEnterpriseApps", ShowAzureADEnterpriseApps);
             writer.WriteBoolValue("showConfigurationManagerApps", ShowConfigurationManagerApps);
             writer.WriteBoolValue("showDisplayNameNextToLogo", ShowDisplayNameNextToLogo);

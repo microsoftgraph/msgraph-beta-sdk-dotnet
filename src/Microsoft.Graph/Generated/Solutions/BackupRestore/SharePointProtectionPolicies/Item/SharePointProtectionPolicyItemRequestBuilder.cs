@@ -2,8 +2,11 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -17,9 +20,19 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
     /// <summary>
     /// Provides operations to manage the sharePointProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SharePointProtectionPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the siteExclusionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder SiteExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder SiteExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the siteInclusionRules property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteInclusionRules.SiteInclusionRulesRequestBuilder SiteInclusionRules
         {
@@ -29,6 +42,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder SiteProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder SiteProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder"/> and sets the default values.
@@ -109,7 +127,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         public async Task<global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy> PatchAsync(global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -170,7 +188,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -190,14 +208,14 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointProtectionPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The list of SharePoint protection policies in the tenant.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointProtectionPolicyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -225,7 +243,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointProtectionPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder.SharePointProtectionPolicyItemRequestBuilderGetQueryParameters>
         {
         }
@@ -233,7 +251,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointProtectionPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

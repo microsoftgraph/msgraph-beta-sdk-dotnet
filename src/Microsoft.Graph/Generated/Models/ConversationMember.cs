@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ConversationMember : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ConversationMember CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -65,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.anonymousGuestConversationMember" => new global::Microsoft.Graph.Beta.Models.AnonymousGuestConversationMember(),
                 "#microsoft.graph.azureCommunicationServicesUserConversationMember" => new global::Microsoft.Graph.Beta.Models.AzureCommunicationServicesUserConversationMember(),
                 "#microsoft.graph.microsoftAccountUserConversationMember" => new global::Microsoft.Graph.Beta.Models.MicrosoftAccountUserConversationMember(),
+                "#microsoft.graph.phoneUserConversationMember" => new global::Microsoft.Graph.Beta.Models.PhoneUserConversationMember(),
                 "#microsoft.graph.skypeForBusinessUserConversationMember" => new global::Microsoft.Graph.Beta.Models.SkypeForBusinessUserConversationMember(),
                 "#microsoft.graph.skypeUserConversationMember" => new global::Microsoft.Graph.Beta.Models.SkypeUserConversationMember(),
                 _ => new global::Microsoft.Graph.Beta.Models.ConversationMember(),
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);

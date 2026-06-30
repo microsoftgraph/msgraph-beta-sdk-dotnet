@@ -2,8 +2,16 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Places.Item.CheckIns;
+using Microsoft.Graph.Beta.Places.Item.Children;
+using Microsoft.Graph.Beta.Places.Item.Descendants;
+using Microsoft.Graph.Beta.Places.Item.GraphBuilding;
+using Microsoft.Graph.Beta.Places.Item.GraphDesk;
+using Microsoft.Graph.Beta.Places.Item.GraphFloor;
 using Microsoft.Graph.Beta.Places.Item.GraphRoom;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList;
+using Microsoft.Graph.Beta.Places.Item.GraphSection;
+using Microsoft.Graph.Beta.Places.Item.GraphWorkspace;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -17,9 +25,39 @@ namespace Microsoft.Graph.Beta.Places.Item
     /// <summary>
     /// Provides operations to manage the collection of place entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlaceItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the checkIns property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.CheckIns.CheckInsRequestBuilder CheckIns
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.Children.ChildrenRequestBuilder Children
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.Children.ChildrenRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the descendants method.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.Descendants.DescendantsRequestBuilder Descendants
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.Descendants.DescendantsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to building.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.GraphBuildingRequestBuilder GraphBuilding
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphBuilding.GraphBuildingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to desk.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphDesk.GraphDeskRequestBuilder GraphDesk
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphDesk.GraphDeskRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to floor.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphFloor.GraphFloorRequestBuilder GraphFloor
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphFloor.GraphFloorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to room.</summary>
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoom.GraphRoomRequestBuilder GraphRoom
         {
@@ -29,6 +67,16 @@ namespace Microsoft.Graph.Beta.Places.Item
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder GraphRoomList
         {
             get => new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to section.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphSection.GraphSectionRequestBuilder GraphSection
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphSection.GraphSectionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to workspace.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphWorkspace.GraphWorkspaceRequestBuilder GraphWorkspace
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphWorkspace.GraphWorkspaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Places.Item.PlaceItemRequestBuilder"/> and sets the default values.
@@ -47,7 +95,8 @@ namespace Microsoft.Graph.Beta.Places.Item
         {
         }
         /// <summary>
-        /// Delete entity from places
+        /// Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,8 +118,8 @@ namespace Microsoft.Graph.Beta.Places.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta" />
+        /// Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-patch-places?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Place"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +135,7 @@ namespace Microsoft.Graph.Beta.Places.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Place> PatchAsync(global::Microsoft.Graph.Beta.Models.Place body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -95,7 +144,7 @@ namespace Microsoft.Graph.Beta.Places.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Place>(requestInfo, global::Microsoft.Graph.Beta.Models.Place.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete entity from places
+        /// Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +163,7 @@ namespace Microsoft.Graph.Beta.Places.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+        /// Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -128,7 +177,7 @@ namespace Microsoft.Graph.Beta.Places.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Place body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -148,7 +197,7 @@ namespace Microsoft.Graph.Beta.Places.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlaceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
@@ -156,7 +205,7 @@ namespace Microsoft.Graph.Beta.Places.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlaceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

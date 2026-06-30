@@ -17,8 +17,6 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Disable;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DisableLostMode;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.EnableLostMode;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.EnrollNowAction;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetFileVaultKey;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetNonCompliantSettings;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.InitiateDeviceAttestation;
@@ -36,21 +34,23 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RecoverPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Reenable;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RemoteLock;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ReprovisionCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RequestRemoteAssistance;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResetPasscode;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudPc;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RestoreCloudPc;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RestoreManagedHomeScreen;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Retire;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveDeviceLocalAdminAccountDetail;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveRecoveryLockPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RotateFileVaultKey;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RotateLocalAdminPassword;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RotateRecoveryLockPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SendCustomNotificationToCompanyPortal;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SetDeviceName;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ShutDown;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SuspendManagedHomeScreen;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SyncDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.TriggerConfigurationManagerAction;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.UpdateWindowsDeviceAccount;
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
     /// <summary>
     /// Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the activateDeviceEsim method.</summary>
@@ -162,16 +162,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.EnrollNowAction.EnrollNowActionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the getCloudPcRemoteActionResults method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResultsRequestBuilder GetCloudPcRemoteActionResults
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getCloudPcReviewStatus method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcReviewStatus.GetCloudPcReviewStatusRequestBuilder GetCloudPcReviewStatus
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcReviewStatus.GetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the getFileVaultKey method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyRequestBuilder GetFileVaultKey
         {
@@ -257,11 +247,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement.RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the reprovisionCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ReprovisionCloudPc.ReprovisionCloudPcRequestBuilder ReprovisionCloudPc
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ReprovisionCloudPc.ReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance
         {
@@ -272,20 +257,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the resizeCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudPc.ResizeCloudPcRequestBuilder ResizeCloudPc
+        /// <summary>Provides operations to call the restoreManagedHomeScreen method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RestoreManagedHomeScreen.RestoreManagedHomeScreenRequestBuilder RestoreManagedHomeScreen
         {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudPc.ResizeCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restoreCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RestoreCloudPc.RestoreCloudPcRequestBuilder RestoreCloudPc
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RestoreCloudPc.RestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RestoreManagedHomeScreen.RestoreManagedHomeScreenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retire method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Retire.RetireRequestBuilder Retire
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Retire.RetireRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveDeviceLocalAdminAccountDetail method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveDeviceLocalAdminAccountDetail.RetrieveDeviceLocalAdminAccountDetailRequestBuilder RetrieveDeviceLocalAdminAccountDetail
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveDeviceLocalAdminAccountDetail.RetrieveDeviceLocalAdminAccountDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveMacOSManagedDeviceLocalAdminAccountDetail method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail.RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder RetrieveMacOSManagedDeviceLocalAdminAccountDetail
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveMacOSManagedDeviceLocalAdminAccountDetail.RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveRecoveryLockPasscode method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveRecoveryLockPasscode.RetrieveRecoveryLockPasscodeRequestBuilder RetrieveRecoveryLockPasscode
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveRecoveryLockPasscode.RetrieveRecoveryLockPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeAppleVppLicenses method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RevokeAppleVppLicenses.RevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses
@@ -307,6 +302,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RotateLocalAdminPassword.RotateLocalAdminPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the rotateRecoveryLockPasscode method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RotateRecoveryLockPasscode.RotateRecoveryLockPasscodeRequestBuilder RotateRecoveryLockPasscode
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RotateRecoveryLockPasscode.RotateRecoveryLockPasscodeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder SecurityBaselineStates
         {
@@ -317,11 +317,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the setCloudPcReviewStatus method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SetCloudPcReviewStatus.SetCloudPcReviewStatusRequestBuilder SetCloudPcReviewStatus
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SetCloudPcReviewStatus.SetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the setDeviceName method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SetDeviceName.SetDeviceNameRequestBuilder SetDeviceName
         {
@@ -331,6 +326,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder ShutDown
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the suspendManagedHomeScreen method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SuspendManagedHomeScreen.SuspendManagedHomeScreenRequestBuilder SuspendManagedHomeScreen
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SuspendManagedHomeScreen.SuspendManagedHomeScreenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncDevice method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder SyncDevice
@@ -450,7 +450,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         public async Task<global::Microsoft.Graph.Beta.Models.ManagedDevice> PatchAsync(global::Microsoft.Graph.Beta.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -511,7 +511,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -531,14 +531,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The list of managed devices.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -566,7 +566,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>
         {
         }
@@ -574,7 +574,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

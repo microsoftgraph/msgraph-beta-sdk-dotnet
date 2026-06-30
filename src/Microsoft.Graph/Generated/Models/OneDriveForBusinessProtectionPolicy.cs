@@ -7,12 +7,44 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OneDriveForBusinessProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Contains the details of the Onedrive for Business protection rule.</summary>
+        /// <summary>The drive exclusion units associated with the OneDrive for work or school protection policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>? DriveExclusionUnits
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>?>("driveExclusionUnits"); }
+            set { BackingStore?.Set("driveExclusionUnits", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit> DriveExclusionUnits
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>>("driveExclusionUnits"); }
+            set { BackingStore?.Set("driveExclusionUnits", value); }
+        }
+#endif
+        /// <summary>The list of bulk addition jobs for drive exclusion units associated with the OneDrive for work or school protection policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>? DriveExclusionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>?>("driveExclusionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("driveExclusionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob> DriveExclusionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>>("driveExclusionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("driveExclusionUnitsBulkAdditionJobs", value); }
+        }
+#endif
+        /// <summary>Contains the details of the OneDrive for Work or School protection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveProtectionRule>? DriveInclusionRules
@@ -28,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("driveInclusionRules", value); }
         }
 #endif
-        /// <summary>Contains the protection units associated with a  OneDrive for Business protection policy.</summary>
+        /// <summary>Contains the protection units associated with a  OneDrive for Work or School protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveProtectionUnit>? DriveProtectionUnits
@@ -42,6 +74,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveProtectionUnit>>("driveProtectionUnits"); }
             set { BackingStore?.Set("driveProtectionUnits", value); }
+        }
+#endif
+        /// <summary>The driveProtectionUnitsBulkAdditionJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob>? DriveProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob>?>("driveProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("driveProtectionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob> DriveProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob>>("driveProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("driveProtectionUnitsBulkAdditionJobs", value); }
         }
 #endif
         /// <summary>
@@ -58,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OneDriveForBusinessProtectionPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OneDriveForBusinessProtectionPolicy();
         }
         /// <summary>
@@ -69,8 +117,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "driveExclusionUnits", n => { DriveExclusionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>(global::Microsoft.Graph.Beta.Models.DriveExclusionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "driveExclusionUnitsBulkAdditionJobs", n => { DriveExclusionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>(global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveInclusionRules", n => { DriveInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveProtectionRule>(global::Microsoft.Graph.Beta.Models.DriveProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveProtectionUnits", n => { DriveProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveProtectionUnit>(global::Microsoft.Graph.Beta.Models.DriveProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "driveProtectionUnitsBulkAdditionJobs", n => { DriveProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -79,10 +130,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveExclusionUnit>("driveExclusionUnits", DriveExclusionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveExclusionUnitsBulkAdditionJob>("driveExclusionUnitsBulkAdditionJobs", DriveExclusionUnitsBulkAdditionJobs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveProtectionRule>("driveInclusionRules", DriveInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveProtectionUnit>("driveProtectionUnits", DriveProtectionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob>("driveProtectionUnitsBulkAdditionJobs", DriveProtectionUnitsBulkAdditionJobs);
         }
     }
 }

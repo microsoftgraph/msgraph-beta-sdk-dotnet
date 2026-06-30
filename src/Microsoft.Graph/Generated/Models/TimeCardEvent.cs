@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class TimeCardEvent : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Indicates whether the entry was recorded at the approved location.</summary>
+        /// <summary>Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.</summary>
         public bool? AtApprovedLocation
         {
             get { return BackingStore?.Get<bool?>("atApprovedLocation"); }
@@ -32,6 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
+        }
+        /// <summary>Indicates whether this action happens at an approved location.</summary>
+        public bool? IsAtApprovedLocation
+        {
+            get { return BackingStore?.Get<bool?>("isAtApprovedLocation"); }
+            set { BackingStore?.Set("isAtApprovedLocation", value); }
         }
         /// <summary>Notes about the timeCardEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.TimeCardEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.TimeCardEvent();
         }
         /// <summary>
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
                 { "dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
+                { "isAtApprovedLocation", n => { IsAtApprovedLocation = n.GetBoolValue(); } },
                 { "notes", n => { Notes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -103,9 +110,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("atApprovedLocation", AtApprovedLocation);
             writer.WriteDateTimeOffsetValue("dateTime", DateTime);
+            writer.WriteBoolValue("isAtApprovedLocation", IsAtApprovedLocation);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("notes", Notes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

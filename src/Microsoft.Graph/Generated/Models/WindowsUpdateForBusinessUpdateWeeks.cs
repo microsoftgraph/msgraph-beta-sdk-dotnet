@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Scheduled the update installation on the weeks of the month</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     public enum WindowsUpdateForBusinessUpdateWeeks
     {
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Scheduled the update installation on every week of the month</summary>
         [EnumMember(Value = "everyWeek")]
         EveryWeek = 32,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 64,
     }

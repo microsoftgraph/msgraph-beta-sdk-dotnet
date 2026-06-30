@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Event : global::Microsoft.Graph.Beta.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("iCalUId", value); }
         }
 #endif
-        /// <summary>The importance of the event. Possible values are: low, normal, high.</summary>
+        /// <summary>The importance of the event. The possible values are: low, normal, high.</summary>
         public global::Microsoft.Graph.Beta.Models.Importance? Importance
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Importance?>("importance"); }
@@ -448,7 +448,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("responseStatus", value); }
         }
 #endif
-        /// <summary>Possible values are: normal, personal, private, confidential.</summary>
+        /// <summary>The possible values are: normal, personal, private, confidential.</summary>
         public global::Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Sensitivity?>("sensitivity"); }
@@ -470,7 +470,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("seriesMasterId", value); }
         }
 #endif
-        /// <summary>The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
+        /// <summary>The status to show. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.FreeBusyStatus? ShowAs
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FreeBusyStatus?>("showAs"); }
@@ -540,7 +540,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("transactionId", value); }
         }
 #endif
-        /// <summary>The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only</summary>
+        /// <summary>The event type. The possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only</summary>
         public global::Microsoft.Graph.Beta.Models.EventType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EventType?>("type"); }
@@ -592,7 +592,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Event CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Event();
         }
         /// <summary>
@@ -657,7 +657,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowNewTimeProposals", AllowNewTimeProposals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Attachment>("attachments", Attachments);

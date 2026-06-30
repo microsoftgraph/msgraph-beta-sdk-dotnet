@@ -3,7 +3,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Approvers;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Collaborators;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalAttachment;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalReport;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes;
@@ -21,7 +23,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
     /// <summary>
     /// Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubjectRightsRequestItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.</summary>
@@ -53,6 +55,26 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
         public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Team.TeamRequestBuilder Team
         {
             get => new global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder ApproversWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
+        /// Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder CollaboratorsWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.SubjectRightsRequestItemRequestBuilder"/> and sets the default values.
@@ -132,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
         public async Task<global::Microsoft.Graph.Beta.Models.SubjectRightsRequest> PatchAsync(global::Microsoft.Graph.Beta.Models.SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -193,7 +215,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SubjectRightsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -213,14 +235,14 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get subjectRightsRequests from security
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectRightsRequestItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -248,7 +270,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectRightsRequestItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.SubjectRightsRequestItemRequestBuilder.SubjectRightsRequestItemRequestBuilderGetQueryParameters>
         {
         }
@@ -256,7 +278,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

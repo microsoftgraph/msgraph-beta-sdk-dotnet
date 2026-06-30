@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class KeyCredentialConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -37,7 +37,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateBasedApplicationConfigurationIds", value); }
         }
 #endif
-        /// <summary>String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.</summary>
+        /// <summary>Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they&apos;re exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions? ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions?>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#endif
+        /// <summary>String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to asymmetricKeyLifetime.</summary>
         public TimeSpan? MaxLifetime
         {
             get { return BackingStore?.Get<TimeSpan?>("maxLifetime"); }
@@ -65,13 +81,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
             set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
-        /// <summary>The type of restriction being applied. Possible values are asymmetricKeyLifetime, and unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
+        /// <summary>A unique identifier key for keyCredentialConfiguration. This value also represents the type of restriction being applied. Possible values are asymmetricKeyLifetime, trustedCertificateAuthority, and unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
         public global::Microsoft.Graph.Beta.Models.AppKeyCredentialRestrictionType? RestrictionType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppKeyCredentialRestrictionType?>("restrictionType"); }
             set { BackingStore?.Set("restrictionType", value); }
         }
-        /// <summary>String value that indicates if the restriction is evaluated. The possible values are: enabled, disabled, and unknownFutureValue. If enabled, the restriction is evaluated. If disabled, the restriction isn&apos;t evaluated or enforced.</summary>
+        /// <summary>Indicates whether the restriction is evaluated. The possible values are: enabled, disabled, unknownFutureValue. If enabled, the restriction is evaluated. If disabled, the restriction isn&apos;t evaluated or enforced.</summary>
         public global::Microsoft.Graph.Beta.Models.AppManagementRestrictionState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementRestrictionState?>("state"); }
@@ -92,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.KeyCredentialConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.KeyCredentialConfiguration();
         }
         /// <summary>
@@ -104,6 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "certificateBasedApplicationConfigurationIds", n => { CertificateBasedApplicationConfigurationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "excludeActors", n => { ExcludeActors = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>(global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions.CreateFromDiscriminatorValue); } },
                 { "maxLifetime", n => { MaxLifetime = n.GetTimeSpanValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
@@ -117,8 +134,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("certificateBasedApplicationConfigurationIds", CertificateBasedApplicationConfigurationIds);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>("excludeActors", ExcludeActors);
             writer.WriteTimeSpanValue("maxLifetime", MaxLifetime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restrictForAppsCreatedAfterDateTime", RestrictForAppsCreatedAfterDateTime);

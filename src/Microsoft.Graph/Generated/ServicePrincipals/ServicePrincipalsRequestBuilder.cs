@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
     /// <summary>
     /// Provides operations to manage the collection of servicePrincipal entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServicePrincipalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
         {
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServicePrincipalCollectionResponse"/></returns>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ServicePrincipalCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new servicePrincipal object.
+        /// Create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServicePrincipal"/></returns>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
         public async Task<global::Microsoft.Graph.Beta.Models.ServicePrincipal> PostAsync(global::Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ServicePrincipal>(requestInfo, global::Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
             return requestInfo;
         }
         /// <summary>
-        /// Create a new servicePrincipal object.
+        /// Create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -178,9 +178,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
             return new global::Microsoft.Graph.Beta.ServicePrincipals.ServicePrincipalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicePrincipalsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicePrincipalsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.ServicePrincipalsRequestBuilder.ServicePrincipalsRequestBuilderGetQueryParameters>
         {
         }
@@ -255,7 +255,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicePrincipalsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

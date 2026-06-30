@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for MacOS Volume-Purchased Program (VPP) Apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOsVppApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The store URL.</summary>
@@ -133,6 +133,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("vppTokenAppleId", value); }
         }
 #endif
+        /// <summary>Display name of the VPP token associated with this app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VppTokenDisplayName
+        {
+            get { return BackingStore?.Get<string?>("vppTokenDisplayName"); }
+            set { BackingStore?.Set("vppTokenDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string VppTokenDisplayName
+        {
+            get { return BackingStore?.Get<string>("vppTokenDisplayName"); }
+            set { BackingStore?.Set("vppTokenDisplayName", value); }
+        }
+#endif
         /// <summary>Identifier of the VPP token associated with this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,7 +195,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MacOsVppApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MacOsVppApp();
         }
         /// <summary>
@@ -200,6 +216,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
                 { "vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.VppTokenAccountType>(); } },
                 { "vppTokenAppleId", n => { VppTokenAppleId = n.GetStringValue(); } },
+                { "vppTokenDisplayName", n => { VppTokenDisplayName = n.GetStringValue(); } },
                 { "vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
                 { "vppTokenOrganizationName", n => { VppTokenOrganizationName = n.GetStringValue(); } },
             };
@@ -210,7 +227,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appStoreUrl", AppStoreUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MacOsVppAppAssignedLicense>("assignedLicenses", AssignedLicenses);
@@ -222,6 +239,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("usedLicenseCount", UsedLicenseCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.VppTokenAccountType>("vppTokenAccountType", VppTokenAccountType);
             writer.WriteStringValue("vppTokenAppleId", VppTokenAppleId);
+            writer.WriteStringValue("vppTokenDisplayName", VppTokenDisplayName);
             writer.WriteStringValue("vppTokenId", VppTokenId);
             writer.WriteStringValue("vppTokenOrganizationName", VppTokenOrganizationName);
         }

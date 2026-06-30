@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WindowsAutopilotDeviceRemediationState
     {
         /// <summary>Unknown status.</summary>
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Hardware change detected on client that could not resolved automatically. Additional remediation is required.</summary>
         [EnumMember(Value = "manualRemediationRequired")]
         ManualRemediationRequired,
-        /// <summary>Marks the end of known enum values, and allows for additional values in the future.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class WorkbookCommentReply : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The content of the reply.</summary>
+        /// <summary>The content of the reply that is the displayed to end-users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The content type for the reply.</summary>
+        /// <summary>The content type for the reply. Supported values are: plain, mention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType
@@ -42,6 +42,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
+        }
+#endif
+        /// <summary>A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>? Mentions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>?>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention> Mentions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#endif
+        /// <summary>The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RichContent
+        {
+            get { return BackingStore?.Get<string?>("richContent"); }
+            set { BackingStore?.Set("richContent", value); }
+        }
+#nullable restore
+#else
+        public string RichContent
+        {
+            get { return BackingStore?.Get<string>("richContent"); }
+            set { BackingStore?.Set("richContent", value); }
         }
 #endif
         /// <summary>The task associated with the comment thread.</summary>
@@ -67,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.WorkbookCommentReply CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.WorkbookCommentReply();
         }
         /// <summary>
@@ -80,6 +112,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>(global::Microsoft.Graph.Beta.Models.WorkbookCommentMention.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "richContent", n => { RichContent = n.GetStringValue(); } },
                 { "task", n => { Task = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>(global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask.CreateFromDiscriminatorValue); } },
             };
         }
@@ -89,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("contentType", ContentType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WorkbookCommentMention>("mentions", Mentions);
+            writer.WriteStringValue("richContent", RichContent);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("task", Task);
         }
     }

@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OnPremisesDirectorySynchronizationFeature : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>The allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property</summary>
+        public bool? AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
+        {
+            get { return BackingStore?.Get<bool?>("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled"); }
+            set { BackingStore?.Set("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -103,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("passwordSyncEnabled"); }
             set { BackingStore?.Set("passwordSyncEnabled", value); }
         }
-        /// <summary>Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.</summary>
+        /// <summary>Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled. This property isn&apos;t in use and updating it isn&apos;t supported.</summary>
         public bool? PasswordWritebackEnabled
         {
             get { return BackingStore?.Get<bool?>("passwordWritebackEnabled"); }
@@ -166,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronizationFeature CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronizationFeature();
         }
         /// <summary>
@@ -177,6 +183,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled", n => { AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled = n.GetBoolValue(); } },
                 { "blockCloudObjectTakeoverThroughHardMatchEnabled", n => { BlockCloudObjectTakeoverThroughHardMatchEnabled = n.GetBoolValue(); } },
                 { "blockSoftMatchEnabled", n => { BlockSoftMatchEnabled = n.GetBoolValue(); } },
                 { "bypassDirSyncOverridesEnabled", n => { BypassDirSyncOverridesEnabled = n.GetBoolValue(); } },
@@ -205,7 +212,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled", AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled);
             writer.WriteBoolValue("blockCloudObjectTakeoverThroughHardMatchEnabled", BlockCloudObjectTakeoverThroughHardMatchEnabled);
             writer.WriteBoolValue("blockSoftMatchEnabled", BlockSoftMatchEnabled);
             writer.WriteBoolValue("bypassDirSyncOverridesEnabled", BypassDirSyncOverridesEnabled);

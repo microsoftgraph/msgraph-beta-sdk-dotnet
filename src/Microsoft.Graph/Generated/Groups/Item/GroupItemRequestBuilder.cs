@@ -25,6 +25,7 @@ using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies;
 using Microsoft.Graph.Beta.Groups.Item.MemberOf;
 using Microsoft.Graph.Beta.Groups.Item.Members;
 using Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors;
+using Microsoft.Graph.Beta.Groups.Item.OnPremisesSyncBehavior;
 using Microsoft.Graph.Beta.Groups.Item.Onenote;
 using Microsoft.Graph.Beta.Groups.Item.Owners;
 using Microsoft.Graph.Beta.Groups.Item.PermissionGrants;
@@ -62,7 +63,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
     /// <summary>
     /// Provides operations to manage the collection of group entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the acceptedSenders property of the microsoft.graph.group entity.</summary>
@@ -195,6 +196,11 @@ namespace Microsoft.Graph.Beta.Groups.Item
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.group entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder OnPremisesSyncBehavior
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.group entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Owners.OwnersRequestBuilder Owners
         {
@@ -317,7 +323,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         {
         }
         /// <summary>
-        /// Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn&apos;t applicable to Security groups and Distribution groups that are permanently deleted immediately. To learn more, see deletedItems.
+        /// Delete a group. When deleted, both Microsoft 365 and security groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This doesn&apos;t apply to Distribution groups that are permanently deleted immediately. To learn more, see deletedItems.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -381,7 +387,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Group> PatchAsync(global::Microsoft.Graph.Beta.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -390,7 +396,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Group>(requestInfo, global::Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn&apos;t applicable to Security groups and Distribution groups that are permanently deleted immediately. To learn more, see deletedItems.
+        /// Delete a group. When deleted, both Microsoft 365 and security groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This doesn&apos;t apply to Distribution groups that are permanently deleted immediately. To learn more, see deletedItems.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -442,7 +448,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -462,14 +468,14 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren&apos;t_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren&apos;t returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -497,7 +503,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>
         {
         }
@@ -505,7 +511,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

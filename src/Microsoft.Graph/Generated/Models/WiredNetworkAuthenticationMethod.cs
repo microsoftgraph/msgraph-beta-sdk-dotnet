@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Wired Network authentication method.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WiredNetworkAuthenticationMethod
     {
         /// <summary>Use an identity certificate for authentication.</summary>
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Use Derived Credential for authentication.</summary>
         [EnumMember(Value = "derivedCredential")]
         DerivedCredential,
-        /// <summary>Sentinel member for cases where the client cannot handle the new enum values.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

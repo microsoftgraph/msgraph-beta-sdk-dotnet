@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Contains value for notification status.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WinGetAppNotification
     {
         /// <summary>Show all notifications.</summary>
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Hide all notifications.</summary>
         [EnumMember(Value = "hideAll")]
         HideAll,
-        /// <summary>Unknown future value, reserved for future usage as expandable enum.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

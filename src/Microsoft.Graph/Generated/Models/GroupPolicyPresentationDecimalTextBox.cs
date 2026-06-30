@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an ADMX decimalTextBox element and an ADMX decimal element.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupPolicyPresentationDecimalTextBox : global::Microsoft.Graph.Beta.Models.GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.</summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationDecimalTextBox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationDecimalTextBox();
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("defaultValue", DefaultValue);
             writer.WriteLongValue("maxValue", MaxValue);

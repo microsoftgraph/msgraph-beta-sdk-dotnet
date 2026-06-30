@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A complex type to store the expedited quality update settings such as release date and days until forced reboot.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExpeditedWindowsQualityUpdateSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,6 +42,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
+        }
+#endif
+        /// <summary>The unique identifier for the quality update catalog item targeted by the expedite.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QualityUpdateCatalogItemId
+        {
+            get { return BackingStore?.Get<string?>("qualityUpdateCatalogItemId"); }
+            set { BackingStore?.Set("qualityUpdateCatalogItemId", value); }
+        }
+#nullable restore
+#else
+        public string QualityUpdateCatalogItemId
+        {
+            get { return BackingStore?.Get<string>("qualityUpdateCatalogItemId"); }
+            set { BackingStore?.Set("qualityUpdateCatalogItemId", value); }
         }
 #endif
         /// <summary>The release date to identify a quality update.</summary>
@@ -75,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings();
         }
         /// <summary>
@@ -88,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "qualityUpdateCatalogItemId", n => { QualityUpdateCatalogItemId = n.GetStringValue(); } },
                 { "qualityUpdateRelease", n => { QualityUpdateRelease = n.GetStringValue(); } },
             };
         }
@@ -97,9 +114,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("daysUntilForcedReboot", DaysUntilForcedReboot);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("qualityUpdateCatalogItemId", QualityUpdateCatalogItemId);
             writer.WriteStringValue("qualityUpdateRelease", QualityUpdateRelease);
             writer.WriteAdditionalData(AdditionalData);
         }

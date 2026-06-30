@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
     /// <summary>
     /// Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SensorItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the healthIssues property of the microsoft.graph.security.sensor entity.</summary>
@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         {
         }
         /// <summary>
-        /// Delete navigation property sensors for security
+        /// Delete a sensor object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensors from security
+        /// Read the properties and relationships of a sensor object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Sensor"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.Sensor>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sensors in security
+        /// Update the properties of a sensor object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Sensor"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Security.Sensor> PatchAsync(global::Microsoft.Graph.Beta.Models.Security.Sensor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.Sensor>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sensors for security
+        /// Delete a sensor object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get sensors from security
+        /// Read the properties and relationships of a sensor object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sensors in security
+        /// Update the properties of a sensor object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +166,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Security.Sensor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -183,14 +186,14 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Get sensors from security
+        /// Read the properties and relationships of a sensor object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -218,7 +221,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Security.Identities.Sensors.Item.SensorItemRequestBuilder.SensorItemRequestBuilderGetQueryParameters>
         {
         }
@@ -226,7 +229,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensorItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

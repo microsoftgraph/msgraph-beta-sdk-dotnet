@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
     /// <summary>
     /// Provides operations to manage the retentionLabel property of the microsoft.graph.driveItem entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RetentionLabelRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
         {
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Remove the retention label from a driveItem. This operation clears the retention label and all associated retention settings enforced on the item. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Information about retention label and settings enforced on the driveItem. Read-write.
+        /// Get metadata information for a retention label applied on a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-getretentionlabel?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ItemRetentionLabel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,7 +99,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
         public async Task<global::Microsoft.Graph.Beta.Models.ItemRetentionLabel> PatchAsync(global::Microsoft.Graph.Beta.Models.ItemRetentionLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ItemRetentionLabel>(requestInfo, global::Microsoft.Graph.Beta.Models.ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Remove the retention label from a driveItem. This operation clears the retention label and all associated retention settings enforced on the item. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
             return requestInfo;
         }
         /// <summary>
-        /// Information about retention label and settings enforced on the driveItem. Read-write.
+        /// Get metadata information for a retention label applied on a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +160,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ItemRetentionLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -179,14 +180,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetentionLabelRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Information about retention label and settings enforced on the driveItem. Read-write.
+        /// Get metadata information for a retention label applied on a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetentionLabelRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -214,7 +215,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetentionLabelRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel.RetentionLabelRequestBuilder.RetentionLabelRequestBuilderGetQueryParameters>
         {
         }
@@ -222,7 +223,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetentionLabelRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class VirtualEndpoint : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -42,6 +42,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcBulkAction>>("bulkActions"); }
             set { BackingStore?.Set("bulkActions", value); }
+        }
+#endif
+        /// <summary>A collection of cloud apps that are built on frontline shared options and provide Windows 365 end users with access to app-only sessions instead of a full desktop experience.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>? CloudApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>?>("cloudApps"); }
+            set { BackingStore?.Set("cloudApps", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp> CloudApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>>("cloudApps"); }
+            set { BackingStore?.Set("cloudApps", value); }
+        }
+#endif
+        /// <summary>The Cloud PC pools managed by the virtual endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool>? CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>?>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcPool> CloudPcPools
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcPool>>("cloudPcPools"); }
+            set { BackingStore?.Set("cloudPcPools", value); }
         }
 #endif
         /// <summary>Cloud managed virtual desktops.</summary>
@@ -92,6 +124,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceImages", value); }
         }
 #endif
+        /// <summary>The external partners on a Cloud PC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>? ExternalPartners
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>?>("externalPartners"); }
+            set { BackingStore?.Set("externalPartners", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner> ExternalPartners
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>>("externalPartners"); }
+            set { BackingStore?.Set("externalPartners", value); }
+        }
+#endif
         /// <summary>The external partner settings on a Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +186,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage>>("galleryImages"); }
             set { BackingStore?.Set("galleryImages", value); }
+        }
+#endif
+        /// <summary>The managed licenses for Cloud PCs in the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcManagedLicense>? ManagedLicenses
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcManagedLicense>?>("managedLicenses"); }
+            set { BackingStore?.Set("managedLicenses", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcManagedLicense> ManagedLicenses
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcManagedLicense>>("managedLicenses"); }
+            set { BackingStore?.Set("managedLicenses", value); }
         }
 #endif
         /// <summary>A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.</summary>
@@ -188,7 +252,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
 #endif
-        /// <summary>Cloud PC related reports.</summary>
+        /// <summary>Cloud PC-related reports. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcReport? Report
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcReport?>("report"); }
+            set { BackingStore?.Set("report", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcReport Report
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcReport>("report"); }
+            set { BackingStore?.Set("report", value); }
+        }
+#endif
+        /// <summary>Cloud PC-related reports. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcReports? Reports
@@ -275,7 +355,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.VirtualEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.VirtualEndpoint();
         }
         /// <summary>
@@ -288,15 +368,20 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcAuditEvent>(global::Microsoft.Graph.Beta.Models.CloudPcAuditEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bulkActions", n => { BulkActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcBulkAction>(global::Microsoft.Graph.Beta.Models.CloudPcBulkAction.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudApps", n => { CloudApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>(global::Microsoft.Graph.Beta.Models.CloudPcCloudApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>(global::Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudPcPools", n => { CloudPcPools = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>(global::Microsoft.Graph.Beta.Models.CloudPcPool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "crossCloudGovernmentOrganizationMapping", n => { CrossCloudGovernmentOrganizationMapping = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping>(global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue); } },
                 { "deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>(global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalPartnerSettings", n => { ExternalPartnerSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting>(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalPartners", n => { ExternalPartners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "frontLineServicePlans", n => { FrontLineServicePlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcFrontLineServicePlan>(global::Microsoft.Graph.Beta.Models.CloudPcFrontLineServicePlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "galleryImages", n => { GalleryImages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage>(global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "managedLicenses", n => { ManagedLicenses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcManagedLicense>(global::Microsoft.Graph.Beta.Models.CloudPcManagedLicense.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnection>(global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organizationSettings", n => { OrganizationSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOrganizationSettings>(global::Microsoft.Graph.Beta.Models.CloudPcOrganizationSettings.CreateFromDiscriminatorValue); } },
                 { "provisioningPolicies", n => { ProvisioningPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicy>(global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "report", n => { Report = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcReport>(global::Microsoft.Graph.Beta.Models.CloudPcReport.CreateFromDiscriminatorValue); } },
                 { "reports", n => { Reports = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcReports>(global::Microsoft.Graph.Beta.Models.CloudPcReports.CreateFromDiscriminatorValue); } },
                 { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcServicePlan>(global::Microsoft.Graph.Beta.Models.CloudPcServicePlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "snapshots", n => { Snapshots = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcSnapshot>(global::Microsoft.Graph.Beta.Models.CloudPcSnapshot.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -310,19 +395,24 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcAuditEvent>("auditEvents", AuditEvents);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcBulkAction>("bulkActions", BulkActions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcCloudApp>("cloudApps", CloudApps);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPool>("cloudPcPools", CloudPcPools);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcCrossCloudGovernmentOrganizationMapping>("crossCloudGovernmentOrganizationMapping", CrossCloudGovernmentOrganizationMapping);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>("deviceImages", DeviceImages);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartner>("externalPartners", ExternalPartners);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting>("externalPartnerSettings", ExternalPartnerSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcFrontLineServicePlan>("frontLineServicePlans", FrontLineServicePlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage>("galleryImages", GalleryImages);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcManagedLicense>("managedLicenses", ManagedLicenses);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnection>("onPremisesConnections", OnPremisesConnections);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOrganizationSettings>("organizationSettings", OrganizationSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicy>("provisioningPolicies", ProvisioningPolicies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcReport>("report", Report);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcReports>("reports", Reports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcServicePlan>("servicePlans", ServicePlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcSnapshot>("snapshots", Snapshots);

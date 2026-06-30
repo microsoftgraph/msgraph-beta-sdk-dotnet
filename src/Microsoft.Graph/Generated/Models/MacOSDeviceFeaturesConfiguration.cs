@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS device features configuration profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOSDeviceFeaturesConfiguration : global::Microsoft.Graph.Beta.Models.AppleDeviceFeaturesConfigurationBase, IParsable
     {
         /// <summary>Whether to show admin host information on the login window.</summary>
@@ -409,7 +409,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MacOSDeviceFeaturesConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MacOSDeviceFeaturesConfiguration();
         }
         /// <summary>
@@ -470,7 +470,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("adminShowHostInfo", AdminShowHostInfo);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MacOSAssociatedDomainsItem>("appAssociatedDomains", AppAssociatedDomains);

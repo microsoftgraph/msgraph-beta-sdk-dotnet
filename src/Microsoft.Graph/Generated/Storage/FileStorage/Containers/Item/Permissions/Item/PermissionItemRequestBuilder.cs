@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
     /// <summary>
     /// Provides operations to manage the permissions property of the microsoft.graph.fileStorageContainer entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PermissionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the grant method.</summary>
@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
         {
         }
         /// <summary>
-        /// Delete permissions from a fileStorageContainer object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-delete-permissions?view=graph-rest-beta" />
+        /// Delete navigation property permissions for storage
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,7 +69,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
+        /// The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,8 +92,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Permission>(requestInfo, global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing permission on a fileStorageContainer by making a PATCH request on the permission resource. Only the roles property can be updated.  One role per user is supported. A new ID is generated for the updated permissions object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-update-permissions?view=graph-rest-beta" />
+        /// Update the navigation property permissions in storage
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +108,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
         public async Task<global::Microsoft.Graph.Beta.Models.Permission> PatchAsync(global::Microsoft.Graph.Beta.Models.Permission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -119,7 +117,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Permission>(requestInfo, global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete permissions from a fileStorageContainer object.
+        /// Delete navigation property permissions for storage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +136,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             return requestInfo;
         }
         /// <summary>
-        /// The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
+        /// The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing permission on a fileStorageContainer by making a PATCH request on the permission resource. Only the roles property can be updated.  One role per user is supported. A new ID is generated for the updated permissions object.
+        /// Update the navigation property permissions in storage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -171,7 +169,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Permission body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -191,14 +189,14 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.
+        /// The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -226,7 +224,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>
         {
         }
@@ -234,7 +232,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

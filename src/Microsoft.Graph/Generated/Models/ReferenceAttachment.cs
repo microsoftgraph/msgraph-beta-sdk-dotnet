@@ -7,18 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ReferenceAttachment : global::Microsoft.Graph.Beta.Models.Attachment, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.</summary>
+        /// <summary>Specifies whether the attachment is a link to a folder. You must set this property to true if sourceUrl is a link to a folder. Optional.</summary>
         public bool? IsFolder
         {
             get { return BackingStore?.Get<bool?>("isFolder"); }
             set { BackingStore?.Set("isFolder", value); }
         }
-        /// <summary>Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.</summary>
+        /// <summary>Specifies the permissions granted for the attachment by the type of provider in providerType. The possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.</summary>
         public global::Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission? Permission
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission?>("permission"); }
@@ -40,13 +40,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("previewUrl", value); }
         }
 #endif
-        /// <summary>The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
+        /// <summary>The type of provider that supports an attachment of this contentType. The possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
         public global::Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider? ProviderType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider?>("providerType"); }
             set { BackingStore?.Set("providerType", value); }
         }
-        /// <summary>URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
+        /// <summary>URL to get the attachment content. If this value is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceUrl
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ReferenceAttachment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ReferenceAttachment();
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isFolder", IsFolder);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission>("permission", Permission);

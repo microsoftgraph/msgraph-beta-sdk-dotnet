@@ -2,17 +2,24 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernmentOrganizationMapping;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationAction;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Report;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveTenantEncryptionSetting;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ServicePlans;
@@ -34,7 +41,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
     /// <summary>
     /// Provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VirtualEndpointRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
@@ -46,6 +53,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder BulkActions
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudApps property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.CloudAppsRequestBuilder CloudApps
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudApps.CloudAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudPcPools property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.CloudPcPoolsRequestBuilder CloudPcPools
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPcPools.CloudPcPoolsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.CloudPCsRequestBuilder CloudPCs
@@ -61,6 +78,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.DeviceImagesRequestBuilder DeviceImages
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.DeviceImagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the externalPartners property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners.ExternalPartnersRequestBuilder ExternalPartners
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners.ExternalPartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.ExternalPartnerSettingsRequestBuilder ExternalPartnerSettings
@@ -82,10 +104,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions.GetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the managedLicenses property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses.ManagedLicensesRequestBuilder ManagedLicenses
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ManagedLicenses.ManagedLicensesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.OnPremisesConnectionsRequestBuilder OnPremisesConnections
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.OnPremisesConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the organizationAction method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationAction.OrganizationActionRequestBuilder OrganizationAction
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationAction.OrganizationActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the organizationSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings.OrganizationSettingsRequestBuilder OrganizationSettings
@@ -96,6 +128,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder ProvisioningPolicies
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Report.ReportRequestBuilder Report
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Report.ReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder Reports
@@ -210,13 +247,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public async Task<global::Microsoft.Graph.Beta.Models.VirtualEndpoint> PatchAsync(global::Microsoft.Graph.Beta.Models.VirtualEndpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEndpoint>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the retrieveOrganizationActionDetail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType.RetrieveOrganizationActionDetailWithActionTypeRequestBuilder"/></returns>
+        /// <param name="actionType">Usage: actionType=&apos;{actionType}&apos;</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType.RetrieveOrganizationActionDetailWithActionTypeRequestBuilder RetrieveOrganizationActionDetailWithActionType(string actionType)
+        {
+            if(string.IsNullOrEmpty(actionType)) throw new ArgumentNullException(nameof(actionType));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganizationActionDetailWithActionType.RetrieveOrganizationActionDetailWithActionTypeRequestBuilder(PathParameters, RequestAdapter, actionType);
         }
         /// <summary>
         /// Delete navigation property virtualEndpoint for deviceManagement
@@ -271,7 +318,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.VirtualEndpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -291,14 +338,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEndpointRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get virtualEndpoint from deviceManagement
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEndpointRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -326,7 +373,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEndpointRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder.VirtualEndpointRequestBuilderGetQueryParameters>
         {
         }
@@ -334,7 +381,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEndpointRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

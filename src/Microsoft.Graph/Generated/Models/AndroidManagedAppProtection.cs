@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidManagedAppProtection : global::Microsoft.Graph.Beta.Models.TargetedManagedAppProtection, IParsable
     {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.</summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allowedAndroidDeviceModels", value); }
         }
 #endif
-        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.</summary>
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
@@ -81,25 +81,25 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDeviceLockNotSet"); }
             set { BackingStore?.Set("appActionIfDeviceLockNotSet", value); }
         }
-        /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
+        /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanHigh"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanHigh", value); }
         }
-        /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
+        /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanLow"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanLow", value); }
         }
-        /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
+        /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanMedium"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanMedium", value); }
         }
-        /// <summary>Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block &amp; wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn.</summary>
+        /// <summary>Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block &amp; wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfSamsungKnoxAttestationRequired
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfSamsungKnoxAttestationRequired"); }
@@ -477,7 +477,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AndroidManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AndroidManagedAppProtection();
         }
         /// <summary>
@@ -541,7 +541,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("allowedAndroidDeviceManufacturers", AllowedAndroidDeviceManufacturers);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedAndroidDeviceModels", AllowedAndroidDeviceModels);

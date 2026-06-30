@@ -8,9 +8,9 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// The user experience analyte remote connection entity.
+    /// The user experience analytics remote connection entity. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://learn.microsoft.com/windows-365/enterprise/report-cloud-pc-connection-quality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsRemoteConnection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The sign in failure percentage of Cloud PC Device. Valid values 0 to 100</summary>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection();
         }
         /// <summary>
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDoubleValue("cloudPcFailurePercentage", CloudPcFailurePercentage);
             writer.WriteDoubleValue("cloudPcRoundTripTime", CloudPcRoundTripTime);

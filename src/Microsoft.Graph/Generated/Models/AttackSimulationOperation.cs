@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
+    /// <summary>
+    /// The status of a long-running operation.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttackSimulationOperation : global::Microsoft.Graph.Beta.Models.LongRunningOperation, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Percentage of completion of the respective operation.</summary>
         public int? PercentageCompleted
@@ -34,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.</summary>
+        /// <summary>The attack simulation operation type. The possible values are: createSimulation, updateSimulation, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AttackSimulationOperationType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AttackSimulationOperationType?>("type"); }
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AttackSimulationOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AttackSimulationOperation();
         }
         /// <summary>
@@ -69,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("percentageCompleted", PercentageCompleted);
             writer.WriteStringValue("tenantId", TenantId);

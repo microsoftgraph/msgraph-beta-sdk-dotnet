@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class VirtualEventRegistration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -32,6 +32,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
+        }
+#endif
+        /// <summary>The external information for a virtual event registration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation? ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation?>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
         }
 #endif
         /// <summary>First name of the registrant.</summary>
@@ -98,7 +114,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("preferredTimezone", value); }
         }
 #endif
-        /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The registrantVideoOnDemandWebUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrantVideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string?>("registrantVideoOnDemandWebUrl"); }
+            set { BackingStore?.Set("registrantVideoOnDemandWebUrl", value); }
+        }
+#nullable restore
+#else
+        public string RegistrantVideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string>("registrantVideoOnDemandWebUrl"); }
+            set { BackingStore?.Set("registrantVideoOnDemandWebUrl", value); }
+        }
+#endif
+        /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RegistrationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
@@ -120,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #endif
-        /// <summary>The sessions property</summary>
+        /// <summary>Sessions for a registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.VirtualEventSession>? Sessions
@@ -165,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.VirtualEventRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.VirtualEventRegistration();
         }
         /// <summary>
@@ -178,10 +210,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "cancelationDateTime", n => { CancelationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "externalRegistrationInformation", n => { ExternalRegistrationInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>(global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation.CreateFromDiscriminatorValue); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "preferredTimezone", n => { PreferredTimezone = n.GetStringValue(); } },
+                { "registrantVideoOnDemandWebUrl", n => { RegistrantVideoOnDemandWebUrl = n.GetStringValue(); } },
                 { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventSession>(global::Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -195,14 +229,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("cancelationDateTime", CancelationDateTime);
             writer.WriteStringValue("email", Email);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation", ExternalRegistrationInformation);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("preferredTimezone", PreferredTimezone);
+            writer.WriteStringValue("registrantVideoOnDemandWebUrl", RegistrantVideoOnDemandWebUrl);
             writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>("registrationQuestionAnswers", RegistrationQuestionAnswers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventSession>("sessions", Sessions);

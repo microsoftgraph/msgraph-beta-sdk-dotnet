@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ProfileCardProperty : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("directoryPropertyName", value); }
         }
 #endif
+        /// <summary>Indicates whether the given directory property should be shown on a user’s profile card.</summary>
+        public bool? IsVisible
+        {
+            get { return BackingStore?.Get<bool?>("isVisible"); }
+            set { BackingStore?.Set("isVisible", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ProfileCardProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ProfileCardProperty();
         }
         /// <summary>
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardAnnotation>(global::Microsoft.Graph.Beta.Models.ProfileCardAnnotation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "directoryPropertyName", n => { DirectoryPropertyName = n.GetStringValue(); } },
+                { "isVisible", n => { IsVisible = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -72,10 +79,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProfileCardAnnotation>("annotations", Annotations);
             writer.WriteStringValue("directoryPropertyName", DirectoryPropertyName);
+            writer.WriteBoolValue("isVisible", IsVisible);
         }
     }
 }

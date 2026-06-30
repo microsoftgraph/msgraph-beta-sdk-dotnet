@@ -7,11 +7,27 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RemoteDesktopSecurityConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The collection of approved client apps that are associated with the RDS configuration. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>? ApprovedClientApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>?>("approvedClientApps"); }
+            set { BackingStore?.Set("approvedClientApps", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp> ApprovedClientApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>>("approvedClientApps"); }
+            set { BackingStore?.Set("approvedClientApps", value); }
+        }
+#endif
         /// <summary>Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.</summary>
         public bool? IsRemoteDesktopProtocolEnabled
         {
@@ -41,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration();
         }
         /// <summary>
@@ -52,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "approvedClientApps", n => { ApprovedClientApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>(global::Microsoft.Graph.Beta.Models.ApprovedClientApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isRemoteDesktopProtocolEnabled", n => { IsRemoteDesktopProtocolEnabled = n.GetBoolValue(); } },
                 { "targetDeviceGroups", n => { TargetDeviceGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetDeviceGroup>(global::Microsoft.Graph.Beta.Models.TargetDeviceGroup.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -62,8 +79,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApprovedClientApp>("approvedClientApps", ApprovedClientApps);
             writer.WriteBoolValue("isRemoteDesktopProtocolEnabled", IsRemoteDesktopProtocolEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetDeviceGroup>("targetDeviceGroups", TargetDeviceGroups);
         }

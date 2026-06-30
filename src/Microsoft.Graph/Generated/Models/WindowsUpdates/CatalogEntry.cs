@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CatalogEntry : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
+        /// <summary>The date on which the content is no longer available to deploy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("deployableUntilDateTime"); }
@@ -47,13 +47,14 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.FeatureUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.recoveryUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.RecoveryUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry(),
                 _ => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry(),
             };
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("deployableUntilDateTime", DeployableUntilDateTime);
             writer.WriteStringValue("displayName", DisplayName);

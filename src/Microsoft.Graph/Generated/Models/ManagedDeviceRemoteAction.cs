@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum ManagedDeviceRemoteAction
     #pragma warning restore CS1591
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Name of action to initiate On Demand Proactive Remediation</summary>
         [EnumMember(Value = "initiateOnDemandProactiveRemediation")]
         InitiateOnDemandProactiveRemediation,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
         /// <summary>Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it</summary>

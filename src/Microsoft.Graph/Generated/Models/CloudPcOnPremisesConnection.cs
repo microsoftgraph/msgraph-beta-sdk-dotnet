@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcOnPremisesConnection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("adDomainUsername", value); }
         }
 #endif
-        /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Returned only on $select.</summary>
+        /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateResourceUrl
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
 #endif
-        /// <summary>Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.</summary>
+        /// <summary>Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant which results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType? ConnectionType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType?>("connectionType"); }
@@ -98,6 +98,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.</summary>
+        public bool? HealthCheckPaused
+        {
+            get { return BackingStore?.Get<bool?>("healthCheckPaused"); }
+            set { BackingStore?.Set("healthCheckPaused", value); }
+        }
         /// <summary>The healthCheckStatus property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatus? HealthCheckStatus
         {
@@ -142,13 +148,19 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("inUse"); }
             set { BackingStore?.Set("inUse", value); }
         }
+        /// <summary>Indicates whether a Cloud PC is using this on-premises network connection. true if at least one Cloud PC is using it. Otherwise, false. Read-only. Default is false.</summary>
+        public bool? InUseByCloudPc
+        {
+            get { return BackingStore?.Get<bool?>("inUseByCloudPc"); }
+            set { BackingStore?.Set("inUseByCloudPc", value); }
+        }
         /// <summary>The managedBy property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcManagementService? ManagedBy
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcManagementService?>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
-        /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</summary>
+        /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationalUnit
@@ -180,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceGroupId", value); }
         }
 #endif
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The scope IDs of the corresponding permission. Currently, it&apos;s the Intune scope tag ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds
@@ -210,6 +222,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("subnetId"); }
             set { BackingStore?.Set("subnetId", value); }
+        }
+#endif
+        /// <summary>Contains detailed information about the private IP addresses associated with the subnet. Returned only on $select. For an example that shows how to retrieve specific properties using $select, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail? SubnetPrivateIpDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail?>("subnetPrivateIpDetail"); }
+            set { BackingStore?.Set("subnetPrivateIpDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail SubnetPrivateIpDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail>("subnetPrivateIpDetail"); }
+            set { BackingStore?.Set("subnetPrivateIpDetail", value); }
         }
 #endif
         /// <summary>The ID of the target Azure subscription associated with your tenant.</summary>
@@ -244,7 +272,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subscriptionName", value); }
         }
 #endif
-        /// <summary>Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the connectionType property.</summary>
+        /// <summary>Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant, which results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Going forward, use the connectionType property.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType?>("type"); }
@@ -289,7 +317,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnection();
         }
         /// <summary>
@@ -306,15 +334,18 @@ namespace Microsoft.Graph.Beta.Models
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 { "connectionType", n => { ConnectionType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "healthCheckPaused", n => { HealthCheckPaused = n.GetBoolValue(); } },
                 { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatus>(); } },
                 { "healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetail>(global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
                 { "healthCheckStatusDetails", n => { HealthCheckStatusDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetails>(global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetails.CreateFromDiscriminatorValue); } },
                 { "inUse", n => { InUse = n.GetBoolValue(); } },
+                { "inUseByCloudPc", n => { InUseByCloudPc = n.GetBoolValue(); } },
                 { "managedBy", n => { ManagedBy = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>(); } },
                 { "organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
                 { "resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subnetId", n => { SubnetId = n.GetStringValue(); } },
+                { "subnetPrivateIpDetail", n => { SubnetPrivateIpDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail>(global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail.CreateFromDiscriminatorValue); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>(); } },
@@ -328,7 +359,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("adDomainName", AdDomainName);
             writer.WriteStringValue("adDomainPassword", AdDomainPassword);
@@ -336,15 +367,18 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>("connectionType", ConnectionType);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("healthCheckPaused", HealthCheckPaused);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail", HealthCheckStatusDetail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetails>("healthCheckStatusDetails", HealthCheckStatusDetails);
             writer.WriteBoolValue("inUse", InUse);
+            writer.WriteBoolValue("inUseByCloudPc", InUseByCloudPc);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteStringValue("organizationalUnit", OrganizationalUnit);
             writer.WriteStringValue("resourceGroupId", ResourceGroupId);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("subnetId", SubnetId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionSubnetIpDetail>("subnetPrivateIpDetail", SubnetPrivateIpDetail);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>("type", Type);

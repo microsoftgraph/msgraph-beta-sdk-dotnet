@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Abstract class to contain properties used to assign a mobile app to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppAssignmentSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,11 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.androidManagedStoreAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAppAssignmentSettings(),
+                "#microsoft.graph.iosDdmLobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosDdmLobAppAssignmentSettings(),
                 "#microsoft.graph.iosLobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosLobAppAssignmentSettings(),
                 "#microsoft.graph.iosStoreAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosStoreAppAssignmentSettings(),
                 "#microsoft.graph.iosVppAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosVppAppAssignmentSettings(),
@@ -67,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.win32CatalogAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.Win32CatalogAppAssignmentSettings(),
                 "#microsoft.graph.win32LobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.Win32LobAppAssignmentSettings(),
                 "#microsoft.graph.windowsAppXAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WindowsAppXAppAssignmentSettings(),
+                "#microsoft.graph.windowsAutoUpdateCatalogAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WindowsAutoUpdateCatalogAppAssignmentSettings(),
                 "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WindowsUniversalAppXAppAssignmentSettings(),
                 "#microsoft.graph.winGetAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.WinGetAppAssignmentSettings(),
                 _ => new global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings(),
@@ -89,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

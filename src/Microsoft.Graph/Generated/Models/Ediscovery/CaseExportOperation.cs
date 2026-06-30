@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CaseExportOperation : global::Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation, IParsable
     #pragma warning restore CS1591
@@ -60,13 +60,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
+        /// <summary>The options provided for the export. For more information, see reviewSet: export. The possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions? ExportOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
-        /// <summary>The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
+        /// <summary>The options provided specify the structure of the export. For more information, see reviewSet: export. The possible values are: none, directory, pst.</summary>
         public global::Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure? ExportStructure
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure?>("exportStructure"); }
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation();
         }
         /// <summary>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("azureBlobContainer", AzureBlobContainer);
             writer.WriteStringValue("azureBlobToken", AzureBlobToken);

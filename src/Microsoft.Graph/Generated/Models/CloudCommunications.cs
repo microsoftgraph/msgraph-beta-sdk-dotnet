@@ -9,10 +9,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
+    /// <summary>
+    /// Represents a container that exposes navigation properties for cloud communications resources.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudCommunications : IAdditionalDataHolder, IBackedModel, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
@@ -20,6 +21,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>A collection of ad hoc calls in Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AdhocCall>? AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AdhocCall>?>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AdhocCall> AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AdhocCall>>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callRecords property</summary>
@@ -70,6 +87,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>A collection of structured question-and-answer (Q&amp;A) threads in Teams directly associated with online meetings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>? OnlineMeetingConversations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>?>("onlineMeetingConversations"); }
+            set { BackingStore?.Set("onlineMeetingConversations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation> OnlineMeetingConversations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>>("onlineMeetingConversations"); }
+            set { BackingStore?.Set("onlineMeetingConversations", value); }
+        }
+#endif
         /// <summary>The onlineMeetings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CloudCommunications CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudCommunications();
         }
         /// <summary>
@@ -128,9 +161,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "adhocCalls", n => { AdhocCalls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdhocCall>(global::Microsoft.Graph.Beta.Models.AdhocCall.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord>(global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "calls", n => { Calls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Call>(global::Microsoft.Graph.Beta.Models.Call.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "onlineMeetingConversations", n => { OnlineMeetingConversations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>(global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeeting>(global::Microsoft.Graph.Beta.Models.OnlineMeeting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "presences", n => { Presences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Presence>(global::Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -141,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdhocCall>("adhocCalls", AdhocCalls);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallRecords.CallRecord>("callRecords", CallRecords);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Call>("calls", Calls);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingEngagementConversation>("onlineMeetingConversations", OnlineMeetingConversations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnlineMeeting>("onlineMeetings", OnlineMeetings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Presence>("presences", Presences);
             writer.WriteAdditionalData(AdditionalData);

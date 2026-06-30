@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
     /// <summary>
     /// Provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthenticationEventListenerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
         {
         }
         /// <summary>
-        /// Deletes an authenticationEventListener object.
+        /// Delete an authenticationEventListener object. The following derived types are currently supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get authenticationEventListeners from identity
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AuthenticationEventListener"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AuthenticationEventListener>(requestInfo, global::Microsoft.Graph.Beta.Models.AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. The following derived types are currently supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AuthenticationEventListener"/></returns>
@@ -98,7 +99,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
         public async Task<global::Microsoft.Graph.Beta.Models.AuthenticationEventListener> PatchAsync(global::Microsoft.Graph.Beta.Models.AuthenticationEventListener body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AuthenticationEventListener>(requestInfo, global::Microsoft.Graph.Beta.Models.AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an authenticationEventListener object.
+        /// Delete an authenticationEventListener object. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get authenticationEventListeners from identity
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +146,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +160,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.AuthenticationEventListener body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -179,14 +180,14 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuthenticationEventListenerItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Get authenticationEventListeners from identity
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuthenticationEventListenerItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -214,7 +215,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuthenticationEventListenerItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item.AuthenticationEventListenerItemRequestBuilder.AuthenticationEventListenerItemRequestBuilderGetQueryParameters>
         {
         }
@@ -222,7 +223,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuthenticationEventListenerItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

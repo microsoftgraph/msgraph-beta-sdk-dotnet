@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RelatedDestination : global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The fqdn property</summary>
+        /// <summary>Fully qualified domain name of the destination. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fqdn
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("fqdn", value); }
         }
 #endif
-        /// <summary>The ip property</summary>
+        /// <summary>IP address of the destination. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ip
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("networkingProtocol"); }
             set { BackingStore?.Set("networkingProtocol", value); }
         }
-        /// <summary>The port property</summary>
+        /// <summary>Port number used to access the destination. Required.</summary>
         public int? Port
         {
             get { return BackingStore?.Get<int?>("port"); }
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedDestination CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedDestination();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("fqdn", Fqdn);
             writer.WriteStringValue("ip", Ip);

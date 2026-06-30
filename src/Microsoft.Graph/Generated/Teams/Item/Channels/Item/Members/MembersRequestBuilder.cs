@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Add;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Count;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Item;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Remove;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,7 +19,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
     /// <summary>
     /// Provides operations to manage the members property of the microsoft.graph.channel entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the add method.</summary>
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the remove method.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Remove.RemoveRequestBuilder Remove
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of conversationMember</param>
@@ -60,7 +66,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
         {
         }
         /// <summary>
-        /// Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+        /// Get a list of members in a channel, including direct members of standard, private, and shared channels. Use the List allMembers API to retrieve both direct and indirect members of a shared channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list-members?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConversationMemberCollectionResponse"/></returns>
@@ -101,7 +107,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
         public async Task<global::Microsoft.Graph.Beta.Models.ConversationMember> PostAsync(global::Microsoft.Graph.Beta.Models.ConversationMember body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -110,7 +116,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConversationMember>(requestInfo, global::Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+        /// Get a list of members in a channel, including direct members of standard, private, and shared channels. Use the List allMembers API to retrieve both direct and indirect members of a shared channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +149,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ConversationMember body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -160,9 +166,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
             return new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+        /// Get a list of members in a channel, including direct members of standard, private, and shared channels. Use the List allMembers API to retrieve both direct and indirect members of a shared channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -229,7 +235,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>
         {
         }
@@ -237,7 +243,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class MeetingAttendanceReport : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -26,6 +26,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AttendanceRecord>>("attendanceRecords"); }
             set { BackingStore?.Set("attendanceRecords", value); }
+        }
+#endif
+        /// <summary>The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation>? ExternalEventInformation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation>?>("externalEventInformation"); }
+            set { BackingStore?.Set("externalEventInformation", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation> ExternalEventInformation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation>>("externalEventInformation"); }
+            set { BackingStore?.Set("externalEventInformation", value); }
         }
 #endif
         /// <summary>UTC time when the meeting ended. Read-only.</summary>
@@ -53,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport();
         }
         /// <summary>
@@ -65,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "attendanceRecords", n => { AttendanceRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceRecord>(global::Microsoft.Graph.Beta.Models.AttendanceRecord.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalEventInformation", n => { ExternalEventInformation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation>(global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meetingEndDateTime", n => { MeetingEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingStartDateTime", n => { MeetingStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "totalParticipantCount", n => { TotalParticipantCount = n.GetIntValue(); } },
@@ -76,9 +93,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceRecord>("attendanceRecords", AttendanceRecords);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventExternalInformation>("externalEventInformation", ExternalEventInformation);
             writer.WriteDateTimeOffsetValue("meetingEndDateTime", MeetingEndDateTime);
             writer.WriteDateTimeOffsetValue("meetingStartDateTime", MeetingStartDateTime);
             writer.WriteIntValue("totalParticipantCount", TotalParticipantCount);

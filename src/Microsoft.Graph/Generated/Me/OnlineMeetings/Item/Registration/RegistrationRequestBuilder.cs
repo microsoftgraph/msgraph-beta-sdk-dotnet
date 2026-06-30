@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
     /// <summary>
     /// Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestions.CustomQuestionsRequestBuilder CustomQuestions
         {
             get => new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestions.CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder Registrants
         {
             get => new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder(PathParameters, RequestAdapter);
@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         {
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-beta" />
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistration?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.RegistrationRequestBuilder.RegistrationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistration?> PatchAsync(global::Microsoft.Graph.Beta.Models.MeetingRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistration> PatchAsync(global::Microsoft.Graph.Beta.Models.MeetingRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MeetingRegistration>(requestInfo, global::Microsoft.Graph.Beta.Models.MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.RegistrationRequestBuilder.RegistrationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingRegistration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.RegistrationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.RegistrationRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.RegistrationRequestBuilder(rawUrl, RequestAdapter);
@@ -201,14 +201,14 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get the externalMeetingRegistration details associated with an onlineMeeting.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -236,7 +236,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.RegistrationRequestBuilder.RegistrationRequestBuilderGetQueryParameters>
         {
         }
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

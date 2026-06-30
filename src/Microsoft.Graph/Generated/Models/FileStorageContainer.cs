@@ -7,11 +7,27 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class FileStorageContainer : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Archival details of the fileStorageContainer. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SiteArchivalDetails? ArchivalDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails?>("archivalDetails"); }
+            set { BackingStore?.Set("archivalDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SiteArchivalDetails ArchivalDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails>("archivalDetails"); }
+            set { BackingStore?.Set("archivalDetails", value); }
+        }
+#endif
         /// <summary>Sensitivity label assigned to the fileStorageContainer. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,24 +142,44 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Guid?>("externalGroupId"); }
             set { BackingStore?.Set("externalGroupId", value); }
         }
-        /// <summary>Indicates whether versioning is enabled for the fileStorageContainer. The setting is applicable to all items in the fileStorageContainer. Read-Write.</summary>
-        public bool? IsItemVersioningEnabled
+        /// <summary>Information barrier of a fileStorageContainer. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.InformationBarrier? InformationBarrier
         {
-            get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
-            set { BackingStore?.Set("isItemVersioningEnabled", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InformationBarrier?>("informationBarrier"); }
+            set { BackingStore?.Set("informationBarrier", value); }
         }
-        /// <summary>Maximum number of major versions allowed for items in the fileStorageContainer. Read-write.</summary>
-        public int? ItemMajorVersionLimit
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.InformationBarrier InformationBarrier
         {
-            get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }
-            set { BackingStore?.Set("itemMajorVersionLimit", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.InformationBarrier>("informationBarrier"); }
+            set { BackingStore?.Set("informationBarrier", value); }
         }
+#endif
         /// <summary>Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.SiteLockState? LockState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteLockState?>("lockState"); }
             set { BackingStore?.Set("lockState", value); }
         }
+        /// <summary>The collection of sharePointMigrationJob objects local to the container. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>? MigrationJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>?>("migrationJobs"); }
+            set { BackingStore?.Set("migrationJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob> MigrationJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>>("migrationJobs"); }
+            set { BackingStore?.Set("migrationJobs", value); }
+        }
+#endif
         /// <summary>List of users who own the fileStorageContainer. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,13 +196,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("owners", value); }
         }
 #endif
-        /// <summary>Ownership type of the fileStorageContainer.The possible values are: tenantOwned. Read-only.</summary>
+        /// <summary>Ownership type of the fileStorageContainer. The possible values are: tenantOwned. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.FileStorageContainerOwnershipType? OwnershipType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FileStorageContainerOwnershipType?>("ownershipType"); }
             set { BackingStore?.Set("ownershipType", value); }
         }
-        /// <summary>The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.</summary>
+        /// <summary>The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Permission>? Permissions
@@ -214,6 +250,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("settings", value); }
         }
 #endif
+        /// <summary>The collection of sharePointGroup objects local to the container. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SharePointGroup>? SharePointGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharePointGroup>?>("sharePointGroups"); }
+            set { BackingStore?.Set("sharePointGroups", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SharePointGroup> SharePointGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SharePointGroup>>("sharePointGroups"); }
+            set { BackingStore?.Set("sharePointGroups", value); }
+        }
+#endif
         /// <summary>Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.FileStorageContainerStatus? Status
         {
@@ -249,7 +301,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.FileStorageContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.FileStorageContainer();
         }
         /// <summary>
@@ -260,6 +312,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "archivalDetails", n => { ArchivalDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails>(global::Microsoft.Graph.Beta.Models.SiteArchivalDetails.CreateFromDiscriminatorValue); } },
                 { "assignedSensitivityLabel", n => { AssignedSensitivityLabel = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AssignedLabel>(global::Microsoft.Graph.Beta.Models.AssignedLabel.CreateFromDiscriminatorValue); } },
                 { "columns", n => { Columns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>(global::Microsoft.Graph.Beta.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "containerTypeId", n => { ContainerTypeId = n.GetGuidValue(); } },
@@ -269,14 +322,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "externalGroupId", n => { ExternalGroupId = n.GetGuidValue(); } },
-                { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
-                { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetIntValue(); } },
+                { "informationBarrier", n => { InformationBarrier = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>(global::Microsoft.Graph.Beta.Models.InformationBarrier.CreateFromDiscriminatorValue); } },
                 { "lockState", n => { LockState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>(); } },
+                { "migrationJobs", n => { MigrationJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>(global::Microsoft.Graph.Beta.Models.SharePointMigrationJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ownershipType", n => { OwnershipType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerOwnershipType>(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>(global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recycleBin", n => { RecycleBin = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>(global::Microsoft.Graph.Beta.Models.RecycleBin.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings>(global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings.CreateFromDiscriminatorValue); } },
+                { "sharePointGroups", n => { SharePointGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointGroup>(global::Microsoft.Graph.Beta.Models.SharePointGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerStatus>(); } },
                 { "storageUsedInBytes", n => { StorageUsedInBytes = n.GetLongValue(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerViewpoint>(global::Microsoft.Graph.Beta.Models.FileStorageContainerViewpoint.CreateFromDiscriminatorValue); } },
@@ -288,8 +342,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SiteArchivalDetails>("archivalDetails", ArchivalDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AssignedLabel>("assignedSensitivityLabel", AssignedSensitivityLabel);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>("columns", Columns);
             writer.WriteGuidValue("containerTypeId", ContainerTypeId);
@@ -299,14 +354,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteGuidValue("externalGroupId", ExternalGroupId);
-            writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
-            writer.WriteIntValue("itemMajorVersionLimit", ItemMajorVersionLimit);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationBarrier>("informationBarrier", InformationBarrier);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>("lockState", LockState);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointMigrationJob>("migrationJobs", MigrationJobs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>("owners", Owners);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerOwnershipType>("ownershipType", OwnershipType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharePointGroup>("sharePointGroups", SharePointGroups);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerStatus>("status", Status);
             writer.WriteLongValue("storageUsedInBytes", StorageUsedInBytes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerViewpoint>("viewpoint", Viewpoint);

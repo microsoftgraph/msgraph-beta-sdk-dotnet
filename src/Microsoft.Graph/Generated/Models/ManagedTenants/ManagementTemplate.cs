@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ManagementTemplate : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
+        /// <summary>The management category for the management template. The possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory? Category
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory?>("category"); }
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate();
         }
         /// <summary>
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory>("category", Category);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);

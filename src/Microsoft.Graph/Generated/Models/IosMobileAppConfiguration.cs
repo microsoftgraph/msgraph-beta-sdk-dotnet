@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties, inherited properties and actions for iOS mobile app configurations.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosMobileAppConfiguration : global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration, IParsable
     {
         /// <summary>mdm app configuration Base64 binary.</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IosMobileAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IosMobileAppConfiguration();
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteByteArrayValue("encodedSettingXml", EncodedSettingXml);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppConfigurationSettingItem>("settings", Settings);

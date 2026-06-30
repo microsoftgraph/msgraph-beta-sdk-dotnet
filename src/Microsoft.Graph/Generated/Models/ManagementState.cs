@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Management state of device in Microsoft Intune.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagementState
     {
         /// <summary>The device is under management</summary>
@@ -43,5 +43,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The device is discovered but not fully enrolled.</summary>
         [EnumMember(Value = "discovered")]
         Discovered,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

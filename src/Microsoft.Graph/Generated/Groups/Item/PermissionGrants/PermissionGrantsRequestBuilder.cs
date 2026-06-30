@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
     /// <summary>
     /// Provides operations to manage the permissionGrants property of the microsoft.graph.group entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PermissionGrantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
         {
         }
         /// <summary>
-        /// List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on a group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrantCollectionResponse"/></returns>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
         public async Task<global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant> PostAsync(global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>(requestInfo, global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on a group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -153,9 +153,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
             return new global::Microsoft.Graph.Beta.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on a group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionGrantsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionGrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>
         {
         }
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionGrantsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

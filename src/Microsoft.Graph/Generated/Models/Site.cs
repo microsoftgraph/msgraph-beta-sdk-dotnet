@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Site : global::Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
@@ -157,6 +157,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("drives", value); }
         }
 #endif
+        /// <summary>The collection of open extensions defined for this site. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Extension>? Extensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Extension> Extensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#endif
         /// <summary>The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -227,6 +243,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lists", value); }
         }
 #endif
+        /// <summary>The language settings of the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Locale
+        {
+            get { return BackingStore?.Get<string?>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#nullable restore
+#else
+        public string Locale
+        {
+            get { return BackingStore?.Get<string>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#endif
+        /// <summary>The state of the site. The possible values are: unlocked, lockedReadOnly, lockedNoAccess, lockedNoAdditions, unknownFutureValue</summary>
+        public global::Microsoft.Graph.Beta.Models.SiteLockState? LockState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteLockState?>("lockState"); }
+            set { BackingStore?.Set("lockState", value); }
+        }
         /// <summary>The onenote property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -259,6 +297,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("operations", value); }
         }
 #endif
+        /// <summary>The site owner to be provided at the time of site creation only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityInput? OwnerIdentityToResolve
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityInput?>("ownerIdentityToResolve"); }
+            set { BackingStore?.Set("ownerIdentityToResolve", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityInput OwnerIdentityToResolve
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityInput>("ownerIdentityToResolve"); }
+            set { BackingStore?.Set("ownerIdentityToResolve", value); }
+        }
+#endif
         /// <summary>The collection of pages in the baseSitePages list on this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -273,6 +327,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.BaseSitePage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
+        }
+#endif
+        /// <summary>The collection of page templates on this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PageTemplate>? PageTemplates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PageTemplate>?>("pageTemplates"); }
+            set { BackingStore?.Set("pageTemplates", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PageTemplate> PageTemplates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PageTemplate>>("pageTemplates"); }
+            set { BackingStore?.Set("pageTemplates", value); }
         }
 #endif
         /// <summary>The permissions associated with the site. Nullable.</summary>
@@ -339,6 +409,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("settings", value); }
         }
 #endif
+        /// <summary>Determines whether the site and its content can be shared via email.</summary>
+        public bool? ShareByEmailEnabled
+        {
+            get { return BackingStore?.Get<bool?>("shareByEmailEnabled"); }
+            set { BackingStore?.Set("shareByEmailEnabled", value); }
+        }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -387,6 +463,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sites", value); }
         }
 #endif
+        /// <summary>Specifies the template applied to the site. The possible values are: sitepagepublishing, sts, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.SiteTemplateType? Template
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SiteTemplateType?>("template"); }
+            set { BackingStore?.Set("template", value); }
+        }
         /// <summary>The termStore under this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -417,7 +499,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Site CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Site();
         }
         /// <summary>
@@ -437,21 +519,28 @@ namespace Microsoft.Graph.Beta.Models
                 { "documentProcessingJobs", n => { DocumentProcessingJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DocumentProcessingJob>(global::Microsoft.Graph.Beta.Models.DocumentProcessingJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>(global::Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalColumns", n => { ExternalColumns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>(global::Microsoft.Graph.Beta.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "informationProtection", n => { InformationProtection = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationProtection>(global::Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue); } },
                 { "isPersonalSite", n => { IsPersonalSite = n.GetBoolValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BaseItem>(global::Microsoft.Graph.Beta.Models.BaseItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lists", n => { Lists = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.List>(global::Microsoft.Graph.Beta.Models.List.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "lockState", n => { LockState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>(global::Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RichLongRunningOperation>(global::Microsoft.Graph.Beta.Models.RichLongRunningOperation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ownerIdentityToResolve", n => { OwnerIdentityToResolve = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityInput>(global::Microsoft.Graph.Beta.Models.IdentityInput.CreateFromDiscriminatorValue); } },
+                { "pageTemplates", n => { PageTemplates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PageTemplate>(global::Microsoft.Graph.Beta.Models.PageTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BaseSitePage>(global::Microsoft.Graph.Beta.Models.BaseSitePage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>(global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recycleBin", n => { RecycleBin = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>(global::Microsoft.Graph.Beta.Models.RecycleBin.CreateFromDiscriminatorValue); } },
                 { "root", n => { Root = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Root>(global::Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SiteSettings>(global::Microsoft.Graph.Beta.Models.SiteSettings.CreateFromDiscriminatorValue); } },
+                { "shareByEmailEnabled", n => { ShareByEmailEnabled = n.GetBoolValue(); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SharepointIds>(global::Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "siteCollection", n => { SiteCollection = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SiteCollection>(global::Microsoft.Graph.Beta.Models.SiteCollection.CreateFromDiscriminatorValue); } },
                 { "sites", n => { Sites = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Site>(global::Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "template", n => { Template = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SiteTemplateType>(); } },
                 { "termStore", n => { TermStore = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TermStore.Store>(global::Microsoft.Graph.Beta.Models.TermStore.Store.CreateFromDiscriminatorValue); } },
             };
         }
@@ -461,7 +550,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemAnalytics>("analytics", Analytics);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>("columns", Columns);
@@ -472,21 +561,28 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DocumentProcessingJob>("documentProcessingJobs", DocumentProcessingJobs);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>("drives", Drives);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ColumnDefinition>("externalColumns", ExternalColumns);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationProtection>("informationProtection", InformationProtection);
             writer.WriteBoolValue("isPersonalSite", IsPersonalSite);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BaseItem>("items", Items);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.List>("lists", Lists);
+            writer.WriteStringValue("locale", Locale);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SiteLockState>("lockState", LockState);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>("onenote", Onenote);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RichLongRunningOperation>("operations", Operations);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityInput>("ownerIdentityToResolve", OwnerIdentityToResolve);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BaseSitePage>("pages", Pages);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PageTemplate>("pageTemplates", PageTemplates);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Root>("root", Root);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SiteSettings>("settings", Settings);
+            writer.WriteBoolValue("shareByEmailEnabled", ShareByEmailEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SiteCollection>("siteCollection", SiteCollection);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Site>("sites", Sites);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SiteTemplateType>("template", Template);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TermStore.Store>("termStore", TermStore);
         }
     }

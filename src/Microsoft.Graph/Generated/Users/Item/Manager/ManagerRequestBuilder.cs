@@ -16,11 +16,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
     /// <summary>
     /// Provides operations to manage the manager property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagerRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of user entities.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Manager.Ref.RefRequestBuilder Ref
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Manager.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
@@ -42,14 +41,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
         {
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta" />
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DirectoryObject?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Manager.ManagerRequestBuilder.ManagerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,11 +65,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Manager.ManagerRequestBuilder.ManagerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -91,15 +88,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Manager.ManagerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Manager.ManagerRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Manager.ManagerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagerRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -127,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagerRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Manager.ManagerRequestBuilder.ManagerRequestBuilderGetQueryParameters>
         {
         }

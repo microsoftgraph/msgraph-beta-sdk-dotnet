@@ -15,7 +15,10 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprov
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPcLaunchDetail;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveFrontlineCloudPcDetail;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveReviewStatus;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetryPartnerAgentInstallation;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.SetReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Start;
@@ -36,7 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
     /// <summary>
     /// Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudPCItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the changeUserAccountType method.</summary>
@@ -109,15 +112,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveCloudPcLaunchDetail method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder RetrieveCloudPcLaunchDetail
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retrieveCloudPCRemoteActionResults method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsRequestBuilder RetrieveCloudPCRemoteActionResults
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveFrontlineCloudPcDetail method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveFrontlineCloudPcDetail.RetrieveFrontlineCloudPcDetailRequestBuilder RetrieveFrontlineCloudPcDetail
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveFrontlineCloudPcDetail.RetrieveFrontlineCloudPcDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retrieveReviewStatus method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder RetrieveReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveSnapshots method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder RetrieveSnapshots
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetryPartnerAgentInstallation.RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation
@@ -223,7 +241,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPC> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -284,7 +302,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -304,14 +322,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a specific cloudPC object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -339,7 +357,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>
         {
         }
@@ -347,7 +365,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

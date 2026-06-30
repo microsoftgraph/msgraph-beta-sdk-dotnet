@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Delta
 {
     [Obsolete("This class is obsolete. Use DeltaGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DeltaResponse : global::Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Delta.DeltaGetResponse, IParsable
     #pragma warning restore CS1591
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Delta
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Delta.DeltaResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Delta.DeltaResponse();
         }
     }

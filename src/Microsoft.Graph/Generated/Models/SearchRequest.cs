@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SearchRequest : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("collapseProperties", value); }
         }
 #endif
-        /// <summary>Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.</summary>
+        /// <summary>Contains the connection to be targeted. Respects the following format: /external/connections/connectionid where connectionid is the ConnectionId defined in the connectors administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ContentSources
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("enableTopResults"); }
             set { BackingStore?.Set("enableTopResults", value); }
         }
-        /// <summary>One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.</summary>
+        /// <summary>One or more types of resources expected in the response. The possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.EntityType?>? EntityTypes
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("entityTypes", value); }
         }
 #endif
-        /// <summary>Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.</summary>
+        /// <summary>Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax : label_title.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Fields
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resultTemplateOptions", value); }
         }
 #endif
-        /// <summary>Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.</summary>
+        /// <summary>Indicates the kind of content to be searched when a search is performed using application permissions. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SharePointOneDriveOptions? SharePointOneDriveOptions
@@ -263,7 +263,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("stored_fields", value); }
         }
 #endif
-        /// <summary>Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.</summary>
+        /// <summary>Indicates whether to trim away the duplicate SharePoint files from search results. The default value is false. Optional.</summary>
         public bool? TrimDuplicates
         {
             get { return BackingStore?.Get<bool?>("trimDuplicates"); }
@@ -284,7 +284,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.SearchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.SearchRequest();
         }
         /// <summary>
@@ -321,7 +321,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aggregationFilters", AggregationFilters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AggregationOption>("aggregations", Aggregations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CollapseProperty>("collapseProperties", CollapseProperties);

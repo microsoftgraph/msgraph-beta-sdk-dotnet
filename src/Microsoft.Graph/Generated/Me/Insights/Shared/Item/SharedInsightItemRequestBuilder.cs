@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
     /// <summary>
     /// Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SharedInsightItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the lastSharedMethod property of the microsoft.graph.sharedInsight entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.LastSharedMethod.LastSharedMethodRequestBuilder LastSharedMethod
         {
             get => new global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.LastSharedMethod.LastSharedMethodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resource property of the microsoft.graph.sharedInsight entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.Resource.ResourceRequestBuilder Resource
         {
             get => new global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.Resource.ResourceRequestBuilder(PathParameters, RequestAdapter);
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SharedInsight?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder.SharedInsightItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SharedInsight?> PatchAsync(global::Microsoft.Graph.Beta.Models.SharedInsight body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         public async Task<global::Microsoft.Graph.Beta.Models.SharedInsight> PatchAsync(global::Microsoft.Graph.Beta.Models.SharedInsight body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder.SharedInsightItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SharedInsight body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SharedInsight body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder(rawUrl, RequestAdapter);
@@ -198,14 +198,14 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharedInsightItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Access this property from the derived type itemInsights.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharedInsightItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -233,7 +233,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharedInsightItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder.SharedInsightItemRequestBuilderGetQueryParameters>
         {
         }
@@ -241,7 +241,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Shared.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharedInsightItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

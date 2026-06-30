@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EducationAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationAddedStudentAction?>("addedStudentAction"); }
             set { BackingStore?.Set("addedStudentAction", value); }
         }
-        /// <summary>Optional field to control the assignment behavior  for adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
+        /// <summary>Optional field to control the assignment behavior  for adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: studentsOnly. The default value is none.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationAddToCalendarOptions? AddToCalendarAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationAddToCalendarOptions?>("addToCalendarAction"); }
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("gradingCategory", value); }
         }
 #endif
-        /// <summary>The gradingScheme property</summary>
+        /// <summary>When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EducationGradingScheme? GradingScheme
@@ -224,6 +224,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationItemBody>("instructions"); }
             set { BackingStore?.Set("instructions", value); }
+        }
+#endif
+        /// <summary>Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn&apos;t provided, the default language is en-US. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LanguageTag
+        {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#nullable restore
+#else
+        public string LanguageTag
+        {
+            get { return BackingStore?.Get<string>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
         }
 #endif
         /// <summary>Who last modified the assignment.</summary>
@@ -328,7 +344,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rubric", value); }
         }
 #endif
-        /// <summary>Status of the assignment. You can&apos;t PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.</summary>
+        /// <summary>Status of the assignment. You can&apos;t PATCH this value. The possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: inactive.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationAssignmentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationAssignmentStatus?>("status"); }
@@ -373,7 +389,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.EducationAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.EducationAssignment();
         }
         /// <summary>
@@ -403,6 +419,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "gradingCategory", n => { GradingCategory = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>(global::Microsoft.Graph.Beta.Models.EducationGradingCategory.CreateFromDiscriminatorValue); } },
                 { "gradingScheme", n => { GradingScheme = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>(global::Microsoft.Graph.Beta.Models.EducationGradingScheme.CreateFromDiscriminatorValue); } },
                 { "instructions", n => { Instructions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EducationItemBody>(global::Microsoft.Graph.Beta.Models.EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "moduleUrl", n => { ModuleUrl = n.GetStringValue(); } },
@@ -421,7 +438,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.EducationAddedStudentAction>("addedStudentAction", AddedStudentAction);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.EducationAddToCalendarOptions>("addToCalendarAction", AddToCalendarAction);
@@ -437,6 +454,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingCategory>("gradingCategory", GradingCategory);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EducationGradingScheme>("gradingScheme", GradingScheme);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EducationItemBody>("instructions", Instructions);
+            writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteStringValue("moduleUrl", ModuleUrl);
             writer.WriteStringValue("notificationChannelUrl", NotificationChannelUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EducationAssignmentResource>("resources", Resources);

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AccessPackageResource : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -130,6 +130,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector? ExternalOriginResourceConnector
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector?>("externalOriginResourceConnector"); }
+            set { BackingStore?.Set("externalOriginResourceConnector", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector ExternalOriginResourceConnector
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>("externalOriginResourceConnector"); }
+            set { BackingStore?.Set("externalOriginResourceConnector", value); }
+        }
+#endif
         /// <summary>True if the resource is not yet available for assignment. Read-only.</summary>
         public bool? IsPendingOnboarding
         {
@@ -152,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("originId", value); }
         }
 #endif
-        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).</summary>
+        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter and $expand (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginSystem
@@ -184,6 +200,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceType", value); }
         }
 #endif
+        /// <summary>The uploadSessions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>? UploadSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>?>("uploadSessions"); }
+            set { BackingStore?.Set("uploadSessions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession> UploadSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>>("uploadSessions"); }
+            set { BackingStore?.Set("uploadSessions", value); }
+        }
+#endif
         /// <summary>A unique resource locator for the resource, such as the URL for signing a user into an application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,8 +239,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AccessPackageResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.AccessPackageResource();
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.customDataProvidedResource" => new global::Microsoft.Graph.Beta.Models.CustomDataProvidedResource(),
+                _ => new global::Microsoft.Graph.Beta.Models.AccessPackageResource(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -226,10 +263,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>(global::Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalOriginResourceConnector", n => { ExternalOriginResourceConnector = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>(global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue); } },
                 { "isPendingOnboarding", n => { IsPendingOnboarding = n.GetBoolValue(); } },
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
                 { "resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "uploadSessions", n => { UploadSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>(global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -239,7 +278,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>("accessPackageResourceEnvironment", AccessPackageResourceEnvironment);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
@@ -249,10 +288,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>("attributes", Attributes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalOriginResourceConnector>("externalOriginResourceConnector", ExternalOriginResourceConnector);
             writer.WriteBoolValue("isPendingOnboarding", IsPendingOnboarding);
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);
             writer.WriteStringValue("resourceType", ResourceType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession>("uploadSessions", UploadSessions);
             writer.WriteStringValue("url", Url);
         }
     }

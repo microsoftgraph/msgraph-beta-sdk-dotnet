@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllMessages
     /// <summary>
     /// Provides operations to call the getAllMessages method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetAllMessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -34,14 +34,13 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllMessages
         {
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesGetResponse?> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllMessages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesGetResponse>(requestInfo, global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesResponse"/></returns>
@@ -84,11 +83,10 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllMessages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesResponse>(requestInfo, global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -108,15 +106,14 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllMessages
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetAllMessagesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllMessages
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetAllMessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>
         {
         }

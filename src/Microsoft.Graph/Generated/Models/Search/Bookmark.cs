@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Search
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Bookmark : global::Microsoft.Graph.Beta.Models.Search.SearchAnswer, IParsable
     #pragma warning restore CS1591
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models.Search
             set { BackingStore?.Set("languageTags", value); }
         }
 #endif
-        /// <summary>List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
+        /// <summary>List of devices and operating systems that are able to view this bookmark. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DevicePlatformType?>? Platforms
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models.Search
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Search.AnswerState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.</summary>
+        /// <summary>Variations of a bookmark for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Search.AnswerVariant>? TargetedVariations
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Models.Search
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Search.Bookmark CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Search.Bookmark();
         }
         /// <summary>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Models.Search
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("availabilityEndDateTime", AvailabilityEndDateTime);
             writer.WriteDateTimeOffsetValue("availabilityStartDateTime", AvailabilityStartDateTime);

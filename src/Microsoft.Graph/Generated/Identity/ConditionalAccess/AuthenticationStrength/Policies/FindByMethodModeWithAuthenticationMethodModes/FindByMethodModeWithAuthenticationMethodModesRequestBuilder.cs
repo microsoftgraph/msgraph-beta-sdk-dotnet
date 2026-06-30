@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
     /// <summary>
     /// Provides operations to call the findByMethodMode method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FindByMethodModeWithAuthenticationMethodModesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove")]
+        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse?> GetAsFindByMethodModeWithAuthenticationMethodModesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove")]
+        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove")]
+        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31")]
         public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>
         {
         }

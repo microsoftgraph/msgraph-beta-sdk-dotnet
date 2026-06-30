@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CallOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -32,6 +32,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("isContentSharingNotificationEnabled"); }
             set { BackingStore?.Set("isContentSharingNotificationEnabled", value); }
+        }
+        /// <summary>Indicates whether delta roster is enabled for the call.</summary>
+        public bool? IsDeltaRosterEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isDeltaRosterEnabled"); }
+            set { BackingStore?.Set("isDeltaRosterEnabled", value); }
+        }
+        /// <summary>Indicates whether delta roster filtering by participant interactivity is enabled.</summary>
+        public bool? IsInteractiveRosterEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isInteractiveRosterEnabled"); }
+            set { BackingStore?.Set("isInteractiveRosterEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CallOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -83,6 +95,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "hideBotAfterEscalation", n => { HideBotAfterEscalation = n.GetBoolValue(); } },
                 { "isContentSharingNotificationEnabled", n => { IsContentSharingNotificationEnabled = n.GetBoolValue(); } },
+                { "isDeltaRosterEnabled", n => { IsDeltaRosterEnabled = n.GetBoolValue(); } },
+                { "isInteractiveRosterEnabled", n => { IsInteractiveRosterEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -92,9 +106,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hideBotAfterEscalation", HideBotAfterEscalation);
             writer.WriteBoolValue("isContentSharingNotificationEnabled", IsContentSharingNotificationEnabled);
+            writer.WriteBoolValue("isDeltaRosterEnabled", IsDeltaRosterEnabled);
+            writer.WriteBoolValue("isInteractiveRosterEnabled", IsInteractiveRosterEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

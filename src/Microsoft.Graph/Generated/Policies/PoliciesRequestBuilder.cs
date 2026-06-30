@@ -10,11 +10,13 @@ using Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy;
 using Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies;
 using Microsoft.Graph.Beta.Policies.AuthorizationPolicy;
+using Microsoft.Graph.Beta.Policies.B2bManagementPolicies;
 using Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies;
 using Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies;
 using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy;
 using Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy;
+using Microsoft.Graph.Beta.Policies.DeletedItems;
 using Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy;
 using Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy;
 using Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy;
@@ -24,6 +26,8 @@ using Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolicy;
 using Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies;
 using Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies;
+using Microsoft.Graph.Beta.Policies.OnPremAuthenticationPolicies;
+using Microsoft.Graph.Beta.Policies.OwnerlessGroupPolicy;
 using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies;
 using Microsoft.Graph.Beta.Policies.PermissionGrantPreApprovalPolicies;
 using Microsoft.Graph.Beta.Policies.RoleManagementPolicies;
@@ -44,7 +48,7 @@ namespace Microsoft.Graph.Beta.Policies
     /// <summary>
     /// Provides operations to manage the policyRoot singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the accessReviewPolicy property of the microsoft.graph.policyRoot entity.</summary>
@@ -87,6 +91,11 @@ namespace Microsoft.Graph.Beta.Policies
         {
             get => new global::Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the b2bManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.B2bManagementPolicies.B2bManagementPoliciesRequestBuilder B2bManagementPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.B2bManagementPolicies.B2bManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the b2cAuthenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy
         {
@@ -111,6 +120,11 @@ namespace Microsoft.Graph.Beta.Policies
         public global::Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy.DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy
         {
             get => new global::Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy.DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.DeletedItems.DeletedItemsRequestBuilder DeletedItems
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.DeletedItems.DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy.DeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
@@ -156,6 +170,16 @@ namespace Microsoft.Graph.Beta.Policies
         public global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder MobileDeviceManagementPolicies
         {
             get => new global::Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the onPremAuthenticationPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.OnPremAuthenticationPolicies.OnPremAuthenticationPoliciesRequestBuilder OnPremAuthenticationPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.OnPremAuthenticationPolicies.OnPremAuthenticationPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the ownerlessGroupPolicy property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.OwnerlessGroupPolicy.OwnerlessGroupPolicyRequestBuilder OwnerlessGroupPolicy
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.OwnerlessGroupPolicy.OwnerlessGroupPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.PermissionGrantPoliciesRequestBuilder PermissionGrantPolicies
@@ -248,7 +272,7 @@ namespace Microsoft.Graph.Beta.Policies
         public async Task<global::Microsoft.Graph.Beta.Models.PolicyRoot> PatchAsync(global::Microsoft.Graph.Beta.Models.PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -290,7 +314,7 @@ namespace Microsoft.Graph.Beta.Policies
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -309,7 +333,7 @@ namespace Microsoft.Graph.Beta.Policies
         /// <summary>
         /// Get policies
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -337,7 +361,7 @@ namespace Microsoft.Graph.Beta.Policies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>
         {
         }
@@ -345,7 +369,7 @@ namespace Microsoft.Graph.Beta.Policies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

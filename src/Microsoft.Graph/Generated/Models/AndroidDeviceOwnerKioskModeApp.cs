@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An application on the Android Device Owner Managed Home Screen
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidDeviceOwnerKioskModeApp : global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem, IParsable
     {
         /// <summary>Class name of application</summary>
@@ -29,6 +29,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("className", value); }
         }
 #endif
+        /// <summary>Indicates whether the application can be used when sign in fails due to network issues in Managed Home Screen. When TRUE, indicates the application can be used when sign in fails due to network issues in Managed Home Screen. When FALSE, indicates the application cannot be used when sign in fails due to network issues in Managed Home Screen. Default value is FALSE.</summary>
+        public bool? OfflineAppAccessEnabled
+        {
+            get { return BackingStore?.Get<bool?>("offlineAppAccessEnabled"); }
+            set { BackingStore?.Set("offlineAppAccessEnabled", value); }
+        }
         /// <summary>Package name of application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +51,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("package", value); }
         }
 #endif
+        /// <summary>Indicates whether the application can be used prior to signing in to the Managed Home Screen. When TRUE, indicates the app can be used prior to sign in for Managed Home Screen. When FALSE, indicates the app cannot be used prior to sign in for Managed Home Screen. Default value is FALSE.</summary>
+        public bool? PreSignInAppAccessEnabled
+        {
+            get { return BackingStore?.Get<bool?>("preSignInAppAccessEnabled"); }
+            set { BackingStore?.Set("preSignInAppAccessEnabled", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp"/> and sets the default values.
         /// </summary>
@@ -59,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp();
         }
         /// <summary>
@@ -71,7 +83,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "className", n => { ClassName = n.GetStringValue(); } },
+                { "offlineAppAccessEnabled", n => { OfflineAppAccessEnabled = n.GetBoolValue(); } },
                 { "package", n => { Package = n.GetStringValue(); } },
+                { "preSignInAppAccessEnabled", n => { PreSignInAppAccessEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -80,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("className", ClassName);
+            writer.WriteBoolValue("offlineAppAccessEnabled", OfflineAppAccessEnabled);
             writer.WriteStringValue("package", Package);
+            writer.WriteBoolValue("preSignInAppAccessEnabled", PreSignInAppAccessEnabled);
         }
     }
 }

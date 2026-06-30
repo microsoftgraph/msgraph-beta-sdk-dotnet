@@ -2,8 +2,11 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxInclusionRules;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -17,9 +20,19 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
     /// <summary>
     /// Provides operations to manage the exchangeProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExchangeProtectionPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder MailboxExclusionUnits
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder MailboxExclusionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxInclusionRules.MailboxInclusionRulesRequestBuilder MailboxInclusionRules
         {
@@ -29,6 +42,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder MailboxProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder MailboxProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder"/> and sets the default values.
@@ -109,7 +127,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         public async Task<global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy> PatchAsync(global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -170,7 +188,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -190,14 +208,14 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExchangeProtectionPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The list of Exchange protection policies in the tenant.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExchangeProtectionPolicyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -225,7 +243,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExchangeProtectionPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder.ExchangeProtectionPolicyItemRequestBuilderGetQueryParameters>
         {
         }
@@ -233,7 +251,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExchangeProtectionPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

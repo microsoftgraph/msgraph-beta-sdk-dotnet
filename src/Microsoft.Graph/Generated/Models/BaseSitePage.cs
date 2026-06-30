@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class BaseSitePage : global::Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.</summary>
+        /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: newsLink.</summary>
         public global::Microsoft.Graph.Beta.Models.PageLayoutType? PageLayout
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PageLayoutType?>("pageLayout"); }
@@ -64,11 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.BaseSitePage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.newsLinkPage" => new global::Microsoft.Graph.Beta.Models.NewsLinkPage(),
+                "#microsoft.graph.pageTemplate" => new global::Microsoft.Graph.Beta.Models.PageTemplate(),
                 "#microsoft.graph.sitePage" => new global::Microsoft.Graph.Beta.Models.SitePage(),
                 "#microsoft.graph.videoNewsLinkPage" => new global::Microsoft.Graph.Beta.Models.VideoNewsLinkPage(),
                 _ => new global::Microsoft.Graph.Beta.Models.BaseSitePage(),
@@ -93,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PageLayoutType>("pageLayout", PageLayout);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicationFacet>("publishingState", PublishingState);

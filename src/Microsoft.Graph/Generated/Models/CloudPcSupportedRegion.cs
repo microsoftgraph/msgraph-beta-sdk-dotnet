@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcSupportedRegion : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -28,13 +28,35 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The geographic location where the region is located. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType? GeographicLocationType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }
+            set { BackingStore?.Set("geographicLocationType", value); }
+        }
         /// <summary>The regionGroup property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup? RegionGroup
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
-        /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
+        /// <summary>When the region isn&apos;t available, all region restrictions are set to true. These restrictions apply to four properties: cPURestricted, gPURestricted, nestedVirtualizationRestricted and availabilityZoneRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, nestedVirtualizationRestricted indicates whether the region is available for nested virtualization, and availabilityZoneRestricted indicates whether the region is available for availability zone support. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail? RegionRestrictionDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail?>("regionRestrictionDetail"); }
+            set { BackingStore?.Set("regionRestrictionDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail RegionRestrictionDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>("regionRestrictionDetail"); }
+            set { BackingStore?.Set("regionRestrictionDetail", value); }
+        }
+#endif
+        /// <summary>The status of the supported region. The possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus? RegionStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus?>("regionStatus"); }
@@ -53,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegion();
         }
         /// <summary>
@@ -65,7 +87,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "geographicLocationType", n => { GeographicLocationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>(); } },
                 { "regionGroup", n => { RegionGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
+                { "regionRestrictionDetail", n => { RegionRestrictionDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>(global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail.CreateFromDiscriminatorValue); } },
                 { "regionStatus", n => { RegionStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>(); } },
                 { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>(); } },
             };
@@ -76,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>("geographicLocationType", GeographicLocationType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionRestrictionDetail>("regionRestrictionDetail", RegionRestrictionDetail);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcManagementService>("supportedSolution", SupportedSolution);
         }

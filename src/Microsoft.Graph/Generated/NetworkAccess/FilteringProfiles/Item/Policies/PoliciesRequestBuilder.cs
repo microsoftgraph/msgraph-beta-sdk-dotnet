@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
     /// <summary>
     /// Provides operations to manage the policies property of the microsoft.graph.networkaccess.profile entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
         {
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Get a list of the filteringPolicyLink objects and their properties. The response can include one or more of the following objects:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink objects
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to policies for networkAccess
+        /// Add a Global Secure Access network policy to a filteringProfile. The policy can be one of the following types:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink"/></returns>
         /// <param name="body">The request body</param>
@@ -93,7 +95,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
         public async Task<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink> PostAsync(global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Get a list of the filteringPolicyLink objects and their properties. The response can include one or more of the following objects:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink objects
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to policies for networkAccess
+        /// Add a Global Secure Access network policy to a filteringProfile. The policy can be one of the following types:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +137,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -152,9 +154,9 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
             return new global::Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Get a list of the filteringPolicyLink objects and their properties. The response can include one or more of the following objects:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink objects
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -221,7 +223,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>
         {
         }
@@ -229,7 +231,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.Policies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

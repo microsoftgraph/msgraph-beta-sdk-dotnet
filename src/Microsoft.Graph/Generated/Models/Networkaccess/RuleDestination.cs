@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RuleDestination : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -52,12 +52,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.networkaccess.fqdn" => new global::Microsoft.Graph.Beta.Models.Networkaccess.Fqdn(),
                 "#microsoft.graph.networkaccess.ipAddress" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpAddress(),
+                "#microsoft.graph.networkaccess.ipDestination" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpDestination(),
                 "#microsoft.graph.networkaccess.ipRange" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpRange(),
                 "#microsoft.graph.networkaccess.ipSubnet" => new global::Microsoft.Graph.Beta.Models.Networkaccess.IpSubnet(),
                 "#microsoft.graph.networkaccess.url" => new global::Microsoft.Graph.Beta.Models.Networkaccess.Url(),
@@ -82,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

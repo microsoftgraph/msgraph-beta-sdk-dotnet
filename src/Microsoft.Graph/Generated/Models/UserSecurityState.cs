@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class UserSecurityState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>For email-related alerts - user account&apos;s email &apos;role&apos;. Possible values are: unknown, sender, recipient.</summary>
+        /// <summary>For email-related alerts - user account&apos;s email &apos;role&apos;. The possible values are: unknown, sender, recipient.</summary>
         public global::Microsoft.Graph.Beta.Models.EmailRole? EmailRole
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailRole?>("emailRole"); }
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("logonLocation", value); }
         }
 #endif
-        /// <summary>Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
+        /// <summary>Method of user sign in. The possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
         public global::Microsoft.Graph.Beta.Models.LogonType? LogonType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LogonType?>("logonType"); }
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("riskScore", value); }
         }
 #endif
-        /// <summary>User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
+        /// <summary>User account type (group membership), per Windows definition. The possible values are: unknown, standard, power, administrator.</summary>
         public global::Microsoft.Graph.Beta.Models.UserAccountSecurityType? UserAccountType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserAccountSecurityType?>("userAccountType"); }
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.UserSecurityState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.UserSecurityState();
         }
         /// <summary>
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("aadUserId", AadUserId);
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteStringValue("domainName", DomainName);

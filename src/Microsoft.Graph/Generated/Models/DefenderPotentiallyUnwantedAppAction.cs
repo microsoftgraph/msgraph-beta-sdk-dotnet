@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Defender’s action to take on detected Potentially Unwanted Application (PUA).</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DefenderPotentiallyUnwantedAppAction
     {
         /// <summary>PUA Protection is off. Defender will not protect against potentially unwanted applications.</summary>

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Device : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
@@ -18,6 +18,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
+        /// <summary>List of alternative names for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AlternativeNames
+        {
+            get { return BackingStore?.Get<List<string>?>("alternativeNames"); }
+            set { BackingStore?.Set("alternativeNames", value); }
+        }
+#nullable restore
+#else
+        public List<string> AlternativeNames
+        {
+            get { return BackingStore?.Get<List<string>>("alternativeNames"); }
+            set { BackingStore?.Set("alternativeNames", value); }
+        }
+#endif
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceCategory", value); }
         }
 #endif
-        /// <summary>Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).</summary>
+        /// <summary>Unique identifier set by Azure Device Registration Service at the time of registration. This ID is an alternate key that can be used to reference the device object. Also supports $filter (eq, ne, not, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId
@@ -110,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceMetadata", value); }
         }
 #endif
-        /// <summary>Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.</summary>
+        /// <summary>Ownership of the device. Intune sets this property. The possible values are: unknown, company, personal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceOwnership
@@ -126,13 +142,29 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceOwnership", value); }
         }
 #endif
+        /// <summary>Device template used to instantiate this device. Nullable. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>? DeviceTemplate
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>?>("deviceTemplate"); }
+            set { BackingStore?.Set("deviceTemplate", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DeviceTemplate> DeviceTemplate
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceTemplate>>("deviceTemplate"); }
+            set { BackingStore?.Set("deviceTemplate", value); }
+        }
+#endif
         /// <summary>For internal use only.</summary>
         public int? DeviceVersion
         {
             get { return BackingStore?.Get<int?>("deviceVersion"); }
             set { BackingStore?.Set("deviceVersion", value); }
         }
-        /// <summary>The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.</summary>
+        /// <summary>The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -148,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.</summary>
+        /// <summary>The on-premises domain name of Microsoft Entra hybrid joined devices. Intune sets this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -164,7 +196,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.</summary>
+        /// <summary>Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. Intune sets this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrollmentProfileName
@@ -180,7 +212,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
 #endif
-        /// <summary>Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.</summary>
+        /// <summary>Enrollment type of the device. Intune sets this property. The possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrollmentType
@@ -256,7 +288,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isManaged"); }
             set { BackingStore?.Set("isManaged", value); }
         }
-        /// <summary>Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that&apos;s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.</summary>
+        /// <summary>Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that&apos;s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.</summary>
         public bool? IsManagementRestricted
         {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
@@ -284,7 +316,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kind", value); }
         }
 #endif
-        /// <summary>Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.</summary>
+        /// <summary>Management channel of the device. Intune sets this property. The possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagementType
@@ -386,7 +418,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
-        /// <summary>The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).</summary>
+        /// <summary>The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Requires $select to retrieve. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSecurityIdentifier
@@ -574,7 +606,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
-        /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.</summary>
+        /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID. Supports $filter (eq, ne, not, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrustType
@@ -620,7 +652,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Device CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Device();
         }
         /// <summary>
@@ -632,6 +664,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
+                { "alternativeNames", n => { AlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "alternativeSecurityIds", n => { AlternativeSecurityIds = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AlternativeSecurityId>(global::Microsoft.Graph.Beta.Models.AlternativeSecurityId.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "approximateLastSignInDateTime", n => { ApproximateLastSignInDateTime = n.GetDateTimeOffsetValue(); } },
                 { "commands", n => { Commands = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Command>(global::Microsoft.Graph.Beta.Models.Command.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -640,6 +673,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceMetadata", n => { DeviceMetadata = n.GetStringValue(); } },
                 { "deviceOwnership", n => { DeviceOwnership = n.GetStringValue(); } },
+                { "deviceTemplate", n => { DeviceTemplate = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceTemplate>(global::Microsoft.Graph.Beta.Models.DeviceTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceVersion", n => { DeviceVersion = n.GetIntValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
@@ -683,9 +717,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("alternativeNames", AlternativeNames);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AlternativeSecurityId>("alternativeSecurityIds", AlternativeSecurityIds);
             writer.WriteDateTimeOffsetValue("approximateLastSignInDateTime", ApproximateLastSignInDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Command>("commands", Commands);
@@ -694,6 +729,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceMetadata", DeviceMetadata);
             writer.WriteStringValue("deviceOwnership", DeviceOwnership);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceTemplate>("deviceTemplate", DeviceTemplate);
             writer.WriteIntValue("deviceVersion", DeviceVersion);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("domainName", DomainName);

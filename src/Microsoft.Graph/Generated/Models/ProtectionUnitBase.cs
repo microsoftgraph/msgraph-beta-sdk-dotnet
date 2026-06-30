@@ -7,11 +7,33 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ProtectionUnitBase : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The retention period of the backup, in days.</summary>
+        public int? BackupRetentionPeriodInDays
+        {
+            get { return BackingStore?.Get<int?>("backupRetentionPeriodInDays"); }
+            set { BackingStore?.Set("backupRetentionPeriodInDays", value); }
+        }
+        /// <summary>The unique identifier of the billing policy assigned to the protection unit for cost allocation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingPolicyId
+        {
+            get { return BackingStore?.Get<string?>("billingPolicyId"); }
+            set { BackingStore?.Set("billingPolicyId", value); }
+        }
+#nullable restore
+#else
+        public string BillingPolicyId
+        {
+            get { return BackingStore?.Get<string>("billingPolicyId"); }
+            set { BackingStore?.Set("billingPolicyId", value); }
+        }
+#endif
         /// <summary>The identity of person who created the protection unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +94,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The time when protection unit offboard was requested.</summary>
+        public DateTimeOffset? OffboardRequestedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
+            set { BackingStore?.Set("offboardRequestedDateTime", value); }
+        }
+        /// <summary>The pendingRetentionPeriodChange property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RetentionPeriodChange? PendingRetentionPeriodChange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RetentionPeriodChange?>("pendingRetentionPeriodChange"); }
+            set { BackingStore?.Set("pendingRetentionPeriodChange", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RetentionPeriodChange PendingRetentionPeriodChange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RetentionPeriodChange>("pendingRetentionPeriodChange"); }
+            set { BackingStore?.Set("pendingRetentionPeriodChange", value); }
+        }
+#endif
         /// <summary>The unique identifier of the protection policy based on which protection unit was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +132,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
+        /// <summary>The protectionSources property</summary>
+        public global::Microsoft.Graph.Beta.Models.ProtectionSource? ProtectionSources
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionSource?>("protectionSources"); }
+            set { BackingStore?.Set("protectionSources", value); }
+        }
         /// <summary>The status of the protection unit. The possible values are: protectRequested, protected, unprotectRequested, unprotected, removeRequested, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus? Status
         {
@@ -101,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ProtectionUnitBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -119,12 +169,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "backupRetentionPeriodInDays", n => { BackupRetentionPeriodInDays = n.GetIntValue(); } },
+                { "billingPolicyId", n => { BillingPolicyId = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>(global::Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "offboardRequestedDateTime", n => { OffboardRequestedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "pendingRetentionPeriodChange", n => { PendingRetentionPeriodChange = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RetentionPeriodChange>(global::Microsoft.Graph.Beta.Models.RetentionPeriodChange.CreateFromDiscriminatorValue); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "protectionSources", n => { ProtectionSources = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus>(); } },
             };
         }
@@ -134,14 +189,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteIntValue("backupRetentionPeriodInDays", BackupRetentionPeriodInDays);
+            writer.WriteStringValue("billingPolicyId", BillingPolicyId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>("error", Error);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("offboardRequestedDateTime", OffboardRequestedDateTime);
             writer.WriteStringValue("policyId", PolicyId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionSource>("protectionSources", ProtectionSources);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ProtectionUnitStatus>("status", Status);
         }
     }

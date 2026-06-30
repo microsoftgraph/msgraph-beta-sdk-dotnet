@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android Fully Managed device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidDeviceOwnerVpnConfiguration : global::Microsoft.Graph.Beta.Models.VpnConfiguration, IParsable
     {
         /// <summary>Whether or not to enable always-on VPN connection.</summary>
@@ -93,6 +93,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
+        }
+#endif
+        /// <summary>List of app package names that will be able to access the network directly when VPN is in lockdown mode but not connected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? LockdownExclusionList
+        {
+            get { return BackingStore?.Get<List<string>?>("lockdownExclusionList"); }
+            set { BackingStore?.Set("lockdownExclusionList", value); }
+        }
+#nullable restore
+#else
+        public List<string> LockdownExclusionList
+        {
+            get { return BackingStore?.Get<List<string>>("lockdownExclusionList"); }
+            set { BackingStore?.Set("lockdownExclusionList", value); }
         }
 #endif
         /// <summary>Microsoft Tunnel site ID.</summary>
@@ -189,7 +205,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVpnConfiguration();
         }
         /// <summary>
@@ -207,6 +223,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyValuePair>(global::Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>(global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
                 { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "lockdownExclusionList", n => { LockdownExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
                 { "proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "proxyServer", n => { ProxyServer = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VpnProxyServer>(global::Microsoft.Graph.Beta.Models.VpnProxyServer.CreateFromDiscriminatorValue); } },
@@ -220,7 +237,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("alwaysOn", AlwaysOn);
             writer.WriteBoolValue("alwaysOnLockdown", AlwaysOnLockdown);
@@ -229,6 +246,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyValuePair>("customKeyValueData", CustomKeyValueData);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteCollectionOfPrimitiveValues<string>("lockdownExclusionList", LockdownExclusionList);
             writer.WriteStringValue("microsoftTunnelSiteId", MicrosoftTunnelSiteId);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyExclusionList", ProxyExclusionList);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VpnProxyServer>("proxyServer", ProxyServer);

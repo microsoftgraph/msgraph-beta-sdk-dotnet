@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Enrollment Configuration that restricts the types of devices a user can enroll for a single platform
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceEnrollmentPlatformRestrictionConfiguration : global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Restrictions based on platform, platform operating system version, and device ownership</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionConfiguration();
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("platformRestriction", PlatformRestriction);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType>("platformType", PlatformType);

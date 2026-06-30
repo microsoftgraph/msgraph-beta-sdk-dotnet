@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Alert : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -92,7 +92,23 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
-        /// <summary>The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.</summary>
+        /// <summary>The attack kill-chain categories that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Categories
+        {
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#nullable restore
+#else
+        public List<string> Categories
+        {
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#endif
+        /// <summary>The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework. This property is in the process of being deprecated. Use the categories property instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category
@@ -108,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("category", value); }
         }
 #endif
-        /// <summary>Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
+        /// <summary>Specifies whether the alert represents a true threat. The possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.AlertClassification? Classification
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AlertClassification?>("classification"); }
@@ -136,6 +152,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>User defined custom fields with string values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.Dictionary? CustomDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.Dictionary?>("customDetails"); }
+            set { BackingStore?.Set("customDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.Dictionary CustomDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.Dictionary>("customDetails"); }
+            set { BackingStore?.Set("customDetails", value); }
+        }
+#endif
         /// <summary>String value describing each alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,7 +184,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.</summary>
+        /// <summary>Detection technology or sensor that identified the notable component or activity.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.DetectionSource? DetectionSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetectionSource?>("detectionSource"); }
@@ -174,7 +206,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("detectorId", value); }
         }
 #endif
-        /// <summary>Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
+        /// <summary>Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.AlertDetermination? Determination
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AlertDetermination?>("determination"); }
@@ -234,6 +266,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
 #endif
+        /// <summary>Information on the current status of the investigation. The possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.InvestigationState? InvestigationState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.InvestigationState?>("investigationState"); }
+            set { BackingStore?.Set("investigationState", value); }
+        }
         /// <summary>The oldest activity associated with the alert.</summary>
         public DateTimeOffset? LastActivityDateTime
         {
@@ -421,7 +459,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.Alert CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.Alert();
         }
         /// <summary>
@@ -437,10 +475,12 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "alertPolicyId", n => { AlertPolicyId = n.GetStringValue(); } },
                 { "alertWebUrl", n => { AlertWebUrl = n.GetStringValue(); } },
                 { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "classification", n => { Classification = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AlertClassification>(); } },
                 { "comments", n => { Comments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AlertComment>(global::Microsoft.Graph.Beta.Models.Security.AlertComment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "customDetails", n => { CustomDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.Dictionary>(global::Microsoft.Graph.Beta.Models.Security.Dictionary.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "detectionSource", n => { DetectionSource = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DetectionSource>(); } },
                 { "detectorId", n => { DetectorId = n.GetStringValue(); } },
@@ -449,6 +489,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "firstActivityDateTime", n => { FirstActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "incidentId", n => { IncidentId = n.GetStringValue(); } },
                 { "incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
+                { "investigationState", n => { InvestigationState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.InvestigationState>(); } },
                 { "lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 { "mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -472,17 +513,19 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.Dictionary>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("alertPolicyId", AlertPolicyId);
             writer.WriteStringValue("alertWebUrl", AlertWebUrl);
             writer.WriteStringValue("assignedTo", AssignedTo);
+            writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("category", Category);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AlertClassification>("classification", Classification);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.AlertComment>("comments", Comments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.Dictionary>("customDetails", CustomDetails);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DetectionSource>("detectionSource", DetectionSource);
             writer.WriteStringValue("detectorId", DetectorId);
@@ -491,6 +534,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteDateTimeOffsetValue("firstActivityDateTime", FirstActivityDateTime);
             writer.WriteStringValue("incidentId", IncidentId);
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.InvestigationState>("investigationState", InvestigationState);
             writer.WriteDateTimeOffsetValue("lastActivityDateTime", LastActivityDateTime);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreTechniques", MitreTechniques);

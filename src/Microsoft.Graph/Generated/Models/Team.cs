@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Team : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>An optional description for the team. Maximum length: 1024 characters.</summary>
+        /// <summary>An optional description for the team. Maximum length: 1,024 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -112,6 +112,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The name of the first channel in the team. This is an optional property, only used during team creation and isn&apos;t returned in methods to get and list teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FirstChannelName
+        {
+            get { return BackingStore?.Get<string?>("firstChannelName"); }
+            set { BackingStore?.Set("firstChannelName", value); }
+        }
+#nullable restore
+#else
+        public string FirstChannelName
+        {
+            get { return BackingStore?.Get<string>("firstChannelName"); }
+            set { BackingStore?.Set("firstChannelName", value); }
         }
 #endif
         /// <summary>Settings to configure the use of Giphy, memes, and stickers in the team.</summary>
@@ -458,7 +474,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamVisibilityType?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
-        /// <summary>A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
+        /// <summary>A hyperlink that goes to the team in the Microsoft Teams client. It&apos;s the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl
@@ -481,7 +497,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Team CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Team();
         }
         /// <summary>
@@ -499,6 +515,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "discoverySettings", n => { DiscoverySettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamDiscoverySettings>(global::Microsoft.Graph.Beta.Models.TeamDiscoverySettings.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "firstChannelName", n => { FirstChannelName = n.GetStringValue(); } },
                 { "funSettings", n => { FunSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamFunSettings>(global::Microsoft.Graph.Beta.Models.TeamFunSettings.CreateFromDiscriminatorValue); } },
                 { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Group>(global::Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
                 { "guestSettings", n => { GuestSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamGuestSettings>(global::Microsoft.Graph.Beta.Models.TeamGuestSettings.CreateFromDiscriminatorValue); } },
@@ -532,7 +549,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Channel>("allChannels", AllChannels);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Channel>("channels", Channels);
@@ -541,6 +558,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamDiscoverySettings>("discoverySettings", DiscoverySettings);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("firstChannelName", FirstChannelName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamFunSettings>("funSettings", FunSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Group>("group", Group);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamGuestSettings>("guestSettings", GuestSettings);

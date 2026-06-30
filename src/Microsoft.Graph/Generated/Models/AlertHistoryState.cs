@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AlertHistoryState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("comments", value); }
         }
 #endif
-        /// <summary>Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.</summary>
+        /// <summary>Analyst feedback on the alert in this update. The possible values are: unknown, truePositive, falsePositive, benignPositive.</summary>
         public global::Microsoft.Graph.Beta.Models.AlertFeedback? Feedback
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AlertFeedback?>("feedback"); }
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.</summary>
+        /// <summary>Alert status value (if updated). The possible values are: unknown, newAlert, inProgress, resolved, dismissed.</summary>
         public global::Microsoft.Graph.Beta.Models.AlertStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AlertStatus?>("status"); }
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.AlertHistoryState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AlertHistoryState();
         }
         /// <summary>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("assignedTo", AssignedTo);
             writer.WriteCollectionOfPrimitiveValues<string>("comments", Comments);

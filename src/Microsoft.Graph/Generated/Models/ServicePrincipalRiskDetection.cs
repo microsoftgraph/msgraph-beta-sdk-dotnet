@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ServicePrincipalRiskDetection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.</summary>
+        /// <summary>Indicates the activity type the detected risk is linked to.</summary>
         public global::Microsoft.Graph.Beta.Models.ActivityType? Activity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActivityType?>("activity"); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.</summary>
+        /// <summary>Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection isn&apos;t associated with a sign-in activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CorrelationId
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
             set { BackingStore?.Set("detectedDateTime", value); }
         }
-        /// <summary>Timing of the detected risk , whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.</summary>
+        /// <summary>Timing of the detected risk, whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType? DetectionTimingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType?>("detectionTimingType"); }
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mitreTechniqueId", value); }
         }
 #endif
-        /// <summary>Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).</summary>
+        /// <summary>Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection isn&apos;t associated with a sign-in activity. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestId
@@ -170,13 +170,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requestId", value); }
         }
 #endif
-        /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
+        /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
         }
-        /// <summary>The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.</summary>
+        /// <summary>The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication, suspiciousAPITraffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RiskEventType
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("riskEventType", value); }
         }
 #endif
-        /// <summary>Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.</summary>
+        /// <summary>Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: low, medium, high, hidden, none.</summary>
         public global::Microsoft.Graph.Beta.Models.RiskLevel? RiskLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
@@ -265,7 +265,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ServicePrincipalRiskDetection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ServicePrincipalRiskDetection();
         }
         /// <summary>
@@ -305,7 +305,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ActivityType>("activity", Activity);
             writer.WriteDateTimeOffsetValue("activityDateTime", ActivityDateTime);

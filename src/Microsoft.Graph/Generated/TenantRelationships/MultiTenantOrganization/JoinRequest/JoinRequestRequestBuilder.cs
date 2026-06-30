@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
     /// <summary>
     /// Provides operations to manage the joinRequest property of the microsoft.graph.multiTenantOrganization entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JoinRequestRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationJoinRequestRecord>(requestInfo, global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
+        /// Join a multi-tenant organization, after the owner of the multi-tenant organization adds your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationJoinRequestRecord"/></returns>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         public async Task<global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationJoinRequestRecord> PatchAsync(global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
             return requestInfo;
         }
         /// <summary>
-        /// Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
+        /// Join a multi-tenant organization, after the owner of the multi-tenant organization adds your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// <summary>
         /// Get the status of a tenant joining a multi-tenant organization.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JoinRequestRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JoinRequestRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinRequest.JoinRequestRequestBuilder.JoinRequestRequestBuilderGetQueryParameters>
         {
         }
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JoinRequestRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

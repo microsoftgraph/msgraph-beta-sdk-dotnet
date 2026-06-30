@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
+    /// <summary>
+    /// Represents a community in Viva Engage that is a central place for conversations,files, events, and updates for people sharing a common interest or goal.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Community : global::Microsoft.Graph.Beta.Models.Entity, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The description of the community. The maximum length is 1,024 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("owners", value); }
         }
 #endif
-        /// <summary>The privacy property</summary>
+        /// <summary>Types of communityPrivacy.</summary>
         public global::Microsoft.Graph.Beta.Models.CommunityPrivacy? Privacy
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CommunityPrivacy?>("privacy"); }
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Community CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Community();
         }
         /// <summary>
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

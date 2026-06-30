@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EdiscoveryExportOperation : global::Microsoft.Graph.Beta.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.</summary>
+        /// <summary>The name of the Azure storage location where the export is stored. This name only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and stopped returning data on April 30, 2023.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureBlobContainer
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
 #endif
-        /// <summary>The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and will stop returning data on April 30, 2023.</summary>
+        /// <summary>The SAS token for the Azure storage location. This token only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and stopped returning data on April 30, 2023.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureBlobToken
@@ -76,19 +76,19 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.</summary>
+        /// <summary>The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. The possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
-        /// <summary>The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
+        /// <summary>The options that specify the structure of the export. For more information, see reviewSet: export. The possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: msg. The directory member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ExportFileStructure? ExportStructure
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
-        /// <summary>The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.</summary>
+        /// <summary>The output folder ID. The outputFolderId property is deprecated and stopped returning data on April 30, 2023.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutputFolderId
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryExportOperation();
         }
         /// <summary>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("azureBlobContainer", AzureBlobContainer);
             writer.WriteStringValue("azureBlobToken", AzureBlobToken);

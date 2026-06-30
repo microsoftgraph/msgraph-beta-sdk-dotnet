@@ -3,7 +3,11 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.DeleteTargetedMessage;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.GetAllRetainedTargetedMessages;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.GetAllTargetedMessages;
 using Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.Sections;
 using Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -18,23 +22,40 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
     /// <summary>
     /// Provides operations to manage the teamwork property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamworkRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder AssociatedTeams
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the deleteTargetedMessage method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Teamwork.DeleteTargetedMessage.DeleteTargetedMessageRequestBuilder DeleteTargetedMessage
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.DeleteTargetedMessage.DeleteTargetedMessageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllRetainedTargetedMessages method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesRequestBuilder GetAllRetainedTargetedMessages
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllTargetedMessages method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Teamwork.GetAllTargetedMessages.GetAllTargetedMessagesRequestBuilder GetAllTargetedMessages
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.GetAllTargetedMessages.GetAllTargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.InstalledAppsRequestBuilder InstalledApps
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the sections property of the microsoft.graph.userTeamwork entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.SectionsRequestBuilder Sections
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.SectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the sendActivityNotification method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification.SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
@@ -61,7 +82,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,7 +106,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UserTeamwork?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Teamwork.TeamworkRequestBuilder.TeamworkRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -111,7 +130,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UserTeamwork?> PatchAsync(global::Microsoft.Graph.Beta.Models.UserTeamwork body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -121,7 +139,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         public async Task<global::Microsoft.Graph.Beta.Models.UserTeamwork> PatchAsync(global::Microsoft.Graph.Beta.Models.UserTeamwork body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -134,7 +152,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -154,7 +171,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Teamwork.TeamworkRequestBuilder.TeamworkRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -175,7 +191,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UserTeamwork body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -185,7 +200,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UserTeamwork body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -197,7 +212,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Teamwork.TeamworkRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.TeamworkRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Teamwork.TeamworkRequestBuilder(rawUrl, RequestAdapter);
@@ -206,14 +220,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamworkRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamworkRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -241,7 +255,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamworkRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Teamwork.TeamworkRequestBuilder.TeamworkRequestBuilderGetQueryParameters>
         {
         }
@@ -249,7 +263,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamworkRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

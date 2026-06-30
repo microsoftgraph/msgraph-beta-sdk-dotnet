@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Different Windows&apos; versions have Edition specific support timelines. This complex type defines the date until which a particular edition is supported in a Windows&apos; version.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceWindowsOperatingSystemEdition : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.ManagedDeviceWindowsOperatingSystemEdition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ManagedDeviceWindowsOperatingSystemEdition();
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedDeviceWindowsOperatingSystemEditionType>("editionType", EditionType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateValue("supportEndDate", SupportEndDate);

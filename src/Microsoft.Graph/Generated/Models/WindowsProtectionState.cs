@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device protection status entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsProtectionState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Current anti malware version</summary>
@@ -29,6 +29,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
 #endif
+        /// <summary>When TRUE indicates the Windows Defender controlled configuration feature is enabled, when FALSE indicates the Windows Defender controlled configuration feature is not enabled. Defaults to setting on client device.</summary>
+        public bool? ControlledConfigurationEnabled
+        {
+            get { return BackingStore?.Get<bool?>("controlledConfigurationEnabled"); }
+            set { BackingStore?.Set("controlledConfigurationEnabled", value); }
+        }
         /// <summary>Device malware list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,7 +212,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.WindowsProtectionState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.WindowsProtectionState();
         }
         /// <summary>
@@ -218,6 +224,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "antiMalwareVersion", n => { AntiMalwareVersion = n.GetStringValue(); } },
+                { "controlledConfigurationEnabled", n => { ControlledConfigurationEnabled = n.GetBoolValue(); } },
                 { "detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsDeviceMalwareState>(global::Microsoft.Graph.Beta.Models.WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceState", n => { DeviceState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsDeviceHealthState>(); } },
                 { "engineVersion", n => { EngineVersion = n.GetStringValue(); } },
@@ -246,9 +253,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("antiMalwareVersion", AntiMalwareVersion);
+            writer.WriteBoolValue("controlledConfigurationEnabled", ControlledConfigurationEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsDeviceMalwareState>("detectedMalwareState", DetectedMalwareState);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsDeviceHealthState>("deviceState", DeviceState);
             writer.WriteStringValue("engineVersion", EngineVersion);

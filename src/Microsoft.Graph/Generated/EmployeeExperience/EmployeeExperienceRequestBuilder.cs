@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.EmployeeExperience.Goals;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivities;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivitiesWithExternalcourseActivityId;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningProviders;
+using Microsoft.Graph.Beta.EmployeeExperience.Roles;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
     /// <summary>
     /// Provides operations to manage the employeeExperience singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmployeeExperienceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the communities property of the microsoft.graph.employeeExperience entity.</summary>
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         public global::Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.LearningProvidersRequestBuilder LearningProviders
         {
             get => new global::Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.LearningProvidersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the roles property of the microsoft.graph.employeeExperience entity.</summary>
+        public global::Microsoft.Graph.Beta.EmployeeExperience.Roles.RolesRequestBuilder Roles
+        {
+            get => new global::Microsoft.Graph.Beta.EmployeeExperience.Roles.RolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.EmployeeExperience.EmployeeExperienceRequestBuilder"/> and sets the default values.
@@ -102,7 +108,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         /// Update employeeExperience
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.EmployeeExperience"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a container that exposes navigation properties for employee experience resources.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
@@ -115,7 +121,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         public async Task<global::Microsoft.Graph.Beta.Models.EmployeeExperience> PatchAsync(global::Microsoft.Graph.Beta.Models.EmployeeExperience body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -146,7 +152,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         /// Update employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a container that exposes navigation properties for employee experience resources.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,7 +163,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.EmployeeExperience body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -176,7 +182,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         /// <summary>
         /// Get employeeExperience
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmployeeExperienceRequestBuilderGetQueryParameters 
         {
             /// <summary>Select properties to be returned</summary>
@@ -194,7 +200,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmployeeExperienceRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.EmployeeExperience.EmployeeExperienceRequestBuilder.EmployeeExperienceRequestBuilderGetQueryParameters>
         {
         }
@@ -202,7 +208,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmployeeExperienceRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

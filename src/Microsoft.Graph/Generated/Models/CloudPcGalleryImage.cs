@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcGalleryImage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offer", value); }
         }
 #endif
-        /// <summary>The official display offer name of this gallery image. For example, Windows 10 Enterprise + OS Optimizations. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.</summary>
+        /// <summary>The official display offer name of this gallery image. For example, Windows 11 Enterprise. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfferDisplayName
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offerName", value); }
         }
 #endif
-        /// <summary>The osVersionNumber property</summary>
+        /// <summary>The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersionNumber
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
-        /// <summary>The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.</summary>
+        /// <summary>The status of the gallery image on the Cloud PC. The possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcGalleryImageStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGalleryImageStatus?>("status"); }
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcGalleryImage();
         }
         /// <summary>
@@ -261,7 +261,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateValue("endDate", EndDate);

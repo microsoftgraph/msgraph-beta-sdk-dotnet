@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An enum representing possible values for delegated app scope.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AndroidDeviceOwnerDelegatedAppScopeType
     {
         /// <summary>Unspecified; this value defaults to DELEGATED_SCOPE_UNSPECIFIED.</summary>
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specified that the admin has given permission to capture security logs on device. More info on Security logs: https://developer.android.com/work/dpc/security#log_enterprise_device_activity</summary>
         [EnumMember(Value = "captureSecurityLog")]
         CaptureSecurityLog,
-        /// <summary>Unknown future value (reserved, not used right now)</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

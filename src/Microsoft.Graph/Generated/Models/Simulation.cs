@@ -7,18 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Simulation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.</summary>
+        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant, phishTraining. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant, phishTraining. For more information on the types of social engineering attack techniques, see simulations.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationAttackTechnique? AttackTechnique
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationAttackTechnique?>("attackTechnique"); }
             set { BackingStore?.Set("attackTechnique", value); }
         }
-        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
+        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationAttackType? AttackType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationAttackType?>("attackType"); }
@@ -252,7 +252,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("payload", value); }
         }
 #endif
-        /// <summary>Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
+        /// <summary>Method of delivery of the phishing payload used in the attack simulation and training campaign. The possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform? PayloadDeliveryPlatform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform?>("payloadDeliveryPlatform"); }
@@ -274,7 +274,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("report", value); }
         }
 #endif
-        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
+        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationStatus?>("status"); }
@@ -303,7 +303,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Simulation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Simulation();
         }
         /// <summary>
@@ -346,7 +346,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SimulationAttackTechnique>("attackTechnique", AttackTechnique);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SimulationAttackType>("attackType", AttackType);

@@ -2,10 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultTvOSEnrollmentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultVisionOSEnrollmentProfile;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ReleaseAppleDevices;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService;
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
     /// <summary>
     /// Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DepOnboardingSettingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the defaultIosEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
@@ -37,6 +40,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder DefaultMacOsEnrollmentProfile
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the defaultTvOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultTvOSEnrollmentProfile.DefaultTvOSEnrollmentProfileRequestBuilder DefaultTvOSEnrollmentProfile
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultTvOSEnrollmentProfile.DefaultTvOSEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the defaultVisionOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultVisionOSEnrollmentProfile.DefaultVisionOSEnrollmentProfileRequestBuilder DefaultVisionOSEnrollmentProfile
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultVisionOSEnrollmentProfile.DefaultVisionOSEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.EnrollmentProfilesRequestBuilder EnrollmentProfiles
@@ -57,6 +70,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder ImportedAppleDeviceIdentities
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the releaseAppleDevices method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ReleaseAppleDevices.ReleaseAppleDevicesRequestBuilder ReleaseAppleDevices
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ReleaseAppleDevices.ReleaseAppleDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the shareForSchoolDataSyncService method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService.ShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService
@@ -156,7 +174,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         public async Task<global::Microsoft.Graph.Beta.Models.DepOnboardingSetting> PatchAsync(global::Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -217,7 +235,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -237,14 +255,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DepOnboardingSettingItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -272,7 +290,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DepOnboardingSettingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>
         {
         }
@@ -280,7 +298,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

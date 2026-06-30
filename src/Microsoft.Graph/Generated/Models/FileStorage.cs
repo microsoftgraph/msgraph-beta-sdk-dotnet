@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class FileStorage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The containers property</summary>
+        /// <summary>The collection of active fileStorageContainer resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.FileStorageContainer>? Containers
@@ -28,7 +28,39 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("containers", value); }
         }
 #endif
-        /// <summary>The deletedContainers property</summary>
+        /// <summary>The collection of fileStorageContainerTypeRegistration resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>? ContainerTypeRegistrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>?>("containerTypeRegistrations"); }
+            set { BackingStore?.Set("containerTypeRegistrations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration> ContainerTypeRegistrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>>("containerTypeRegistrations"); }
+            set { BackingStore?.Set("containerTypeRegistrations", value); }
+        }
+#endif
+        /// <summary>The collection of fileStorageContainerType resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>? ContainerTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>?>("containerTypes"); }
+            set { BackingStore?.Set("containerTypes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType> ContainerTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>>("containerTypes"); }
+            set { BackingStore?.Set("containerTypes", value); }
+        }
+#endif
+        /// <summary>The collection of deleted fileStorageContainer resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.FileStorageContainer>? DeletedContainers
@@ -51,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.FileStorage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.FileStorage();
         }
         /// <summary>
@@ -62,6 +94,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "containerTypeRegistrations", n => { ContainerTypeRegistrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>(global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "containerTypes", n => { ContainerTypes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>(global::Microsoft.Graph.Beta.Models.FileStorageContainerType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>(global::Microsoft.Graph.Beta.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deletedContainers", n => { DeletedContainers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>(global::Microsoft.Graph.Beta.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -72,9 +106,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>("containers", Containers);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeRegistration>("containerTypeRegistrations", ContainerTypeRegistrations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainerType>("containerTypes", ContainerTypes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FileStorageContainer>("deletedContainers", DeletedContainers);
         }
     }

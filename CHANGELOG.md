@@ -6,6 +6,455 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does NOT adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and packages shipped from the beta service library will always be in `preview` as changes to the API are for non production use and commonly ship breaking changes.
 
 
+## [6.2.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/6.1.0-preview...6.2.0-preview) (2026-06-06)
+
+
+### Features
+
+* **generation:** update request builders and models ([f6f1dba](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/f6f1dba5f50c2bbefae0c0d153c66e7ca707606c))
+
+
+### Bug Fixes
+
+* daily CI pipeline configuration ([#1125](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1125)) ([d231302](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/d2313028a62e3a95881a4ea6baf8aaa65419ca0f))
+
+## [6.1.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/6.0.0-preview...6.1.0-preview) (2026-05-19)
+
+
+### Features
+
+* **generation:** update request builders and models ([#1118](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1118)) ([2cccab1](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/2cccab1f8c2e9efed23420f98acc379faeae6ff1))
+
+## [6.0.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.135.0-preview...6.0.0-preview) (2026-05-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update microsoft-graph-core to 4.x
+* Dropped net5.0 target framework. The SDK now targets netstandard2.0, netstandard2.1, net8.0, and net10.0.
+
+### Features
+
+* **generation:** update request builders and models ([35d1941](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/35d1941b9d8e0ee638f719142c9765ef4869a30d))
+* update target frameworks to net8.0 and net10.0, drop net5.0 ([#1111](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1111)) ([402ffb9](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/402ffb920f029b6588aa643252d45a6484e79929))
+
+
+### Miscellaneous Chores
+
+* **deps:** update microsoft-graph-core to 4.x ([5899861](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/5899861d74081f7cba7d78d0fd6a0007d8f897cb))
+
+## [5.135.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.134.0-preview...5.135.0-preview) (2026-04-24)
+
+
+### Features
+
+* **generation:** update request builders and models ([ff10587](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/ff10587627b8d553bc9dea37239b64148551e6b8))
+
+## [5.134.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.133.0-preview...5.134.0-preview) (2026-04-16)
+
+
+### Features
+
+* **generation:** update request builders and models ([157e580](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/157e58054ed8b5141dcece70d3f849490c9b00e4))
+
+## [5.133.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.132.0-preview...5.133.0-preview) (2026-04-08)
+
+
+### Features
+
+* **generation:** update request builders and models ([8313e0a](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/8313e0a12c9b540ced765663168edc4007ad6406))
+
+## [5.132.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.131.0-preview...5.132.0-preview) (2026-03-19)
+
+
+### Features
+
+* **generation:** update request builders and models ([472c9e1](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/472c9e1098bdec1d00da88c6ef5a43bd69f9ab2a))
+
+## [5.131.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.130.0-preview...5.131.0-preview) (2026-02-19)
+
+
+### Features
+
+* **generation:** update request builders and models ([a1439ae](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/a1439ae63bb5fed0afb99577ac6b677a10117d4a))
+
+## [5.130.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.129.0-preview...5.130.0-preview) (2026-01-22)
+
+
+### Features
+
+* **generation:** update request builders and models ([#1086](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1086)) ([9be868c](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/9be868c3f5cbe4e5761b6796a46fbfdff537d4a9))
+
+
+### Bug Fixes
+
+* **enums:** add missing GraphErrorCode values ([#1078](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1078)) ([b5a2e36](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/b5a2e36987c2b62ddb04678fac2be79ed395d724))
+
+## [5.129.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.128.0-preview...5.129.0-preview) (2026-01-06)
+
+
+### Features
+
+* **generation:** update request builders and models ([fce11a7](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/fce11a7e111afd27b606b5789a0cc509f30dbccf))
+
+## [5.128.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.127.0-preview...5.128.0-preview) (2025-12-17)
+
+
+### Features
+
+* **generation:** update request builders and models ([cfd6e62](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/cfd6e626f0adc07d08d1ecb51f600b907ca99bb2))
+
+## [5.127.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.126.0-preview...5.127.0-preview) (2025-12-03)
+
+
+### Features
+
+* **generation:** update request builders and models ([#1071](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1071)) ([501496c](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/501496ccdad098b7953bd682ef95850daae2ba19))
+
+## [5.126.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.125.0-preview...5.126.0-preview) (2025-11-19)
+
+
+### Features
+
+* **generation:** update request builders and models ([a030dc0](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/a030dc0af966b22f2c09f78c3fdb775840e3744e))
+
+## [5.125.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.124.0-preview...5.125.0-preview) (2025-11-06)
+
+
+### Features
+
+* latest generation ([#1062](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1062)) ([ba12c47](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/ba12c4700baa22d677c7accc1b20691c6f3c7a6f))
+
+## [5.124.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.123.0-preview...5.124.0-preview) (2025-10-21)
+
+
+### Features
+
+* **generation:** update request builders and models ([9ef412e](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/9ef412e324c911682c19e734a78d4d440724769d))
+* **generation:** update request builders and models ([2b52a89](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/2b52a89a05684364efb35b3a75e95ee35f408b64))
+
+## [5.123.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.122.0-preview...5.123.0-preview) (2025-10-03)
+
+
+### Features
+
+* **generation:** update request builders and models ([08b4974](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/08b4974608c68738ef9eebcfb49bac7790386e96))
+
+## [5.122.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.121.0-preview...5.122.0-preview) (2025-09-16)
+
+
+### Features
+
+* **generation:** update request builders and models ([0ae7a0c](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/0ae7a0cf9928c7dc88ebffa1d3cf95213f8ecc7e))
+
+## [5.121.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.120.0-preview...5.121.0-preview) (2025-09-09)
+
+
+### Features
+
+* **generation:** update request builders and models ([#1045](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1045)) ([93b9dc5](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/93b9dc53fdfc194f06c2f9c7a3f7381b4bf6c15c))
+
+## [5.120.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.119.0-preview...5.120.0-preview) (2025-08-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([7838b72](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/7838b726d03d9a1d04831673e00089497e6c6c46))
+
+## [5.119.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.118.0-preview...5.119.0-preview) (2025-08-12)
+
+
+### Features
+
+* **generation:** update request builders and models ([96dfc92](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/96dfc923aa26647b7f50ef99a9e0423470356315))
+
+## [5.118.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.117.0-preview...5.118.0-preview) (2025-08-05)
+
+
+### Features
+
+* **generation:** update request builders and models ([2425016](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/2425016094960a550aecbcbf5b1733fe15aced0f))
+
+## [5.117.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.116.0-preview...5.117.0-preview) (2025-07-29)
+
+
+### Features
+
+* **generation:** update request builders and models ([72fcd5a](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/72fcd5a4005b002ba945b9a2810463de2d0a92a8))
+
+## [5.116.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.115.0-preview...5.116.0-preview) (2025-07-22)
+
+
+### Features
+
+* **generation:** update request builders and models ([64b6ec1](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/64b6ec13eaefd3135202ca7dcd0814d757547d37))
+* **generation:** update request builders and models ([5b35f8c](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/5b35f8c033e41f60a99a043f014f827f62b9d9e8))
+
+## [5.115.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.114.0-preview...5.115.0-preview) (2025-07-08)
+
+
+### Features
+
+* **generation:** update request builders and models ([b4312da](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/b4312da36229dace2f366580d9196fb38383cf56))
+
+## [5.114.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.113.0-preview...5.114.0-preview) (2025-07-02)
+
+
+### Features
+
+* **generation:** update request builders and models ([f5fbbab](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/f5fbbab7c17d86331760f947c10db9e534b61f93))
+
+## [5.113.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.112.0-preview...5.113.0-preview) (2025-06-24)
+
+
+### Features
+
+* **generation:** update request builders and models ([aa9715d](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/aa9715d416c49e18531991170e0d53b07625b977))
+
+## [5.112.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.111.0-preview...5.112.0-preview) (2025-06-17)
+
+
+### Features
+
+* **generation:** update request builders and models ([8613042](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/8613042d7d57cdb720984e0c321bd42ffc9c87b8))
+
+## [5.111.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.110.0-preview...5.111.0-preview) (2025-06-10)
+
+
+### Features
+
+* **generation:** update request builders and models ([3a1de03](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/3a1de03e30787f0c88c92eed0e5da8af532fd2ba))
+
+## [5.110.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.109.0-preview...5.110.0-preview) (2025-06-03)
+
+
+### Features
+
+* **generation:** update request builders and models ([1aa1030](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/1aa10304a7244e277b1c9905f4418aed090e9f35))
+
+## [5.109.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.108.0-preview...5.109.0-preview) (2025-05-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([9d0e8a7](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/9d0e8a73f5e27f7a04790f0c33564ef11b6d9991))
+
+
+### Bug Fixes
+
+* drive item version pointed to list item versions ([cc39d11](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/cc39d11a15bbd4eb15fb57c90f84cb280771a3dc))
+* drive item version pointed to list item versions ([301cb87](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/301cb87348fe37d15a97edc1148b74fb2bbf81af))
+
+## [5.108.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.107.0-preview...5.108.0-preview) (2025-05-13)
+
+
+### Features
+
+* **generation:** update request builders and models ([e3ff6dc](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/e3ff6dc7d708a83f583eddecd68def03fbdbd99d))
+
+## [5.107.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.106.0-preview...5.107.0-preview) (2025-05-07)
+
+
+### Features
+
+* **generation:** update request builders and models ([a7c8cd5](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/a7c8cd544e22822b4a843573a3c1488ff5772449))
+
+## [5.106.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.105.0-preview...5.106.0-preview) (2025-04-29)
+
+
+### Features
+
+* **generation:** update request builders and models ([b98edbb](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/b98edbb7a868354992812b5555f1777e76831d5b))
+
+## [5.105.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.104.0-preview...5.105.0-preview) (2025-04-15)
+
+
+### Features
+
+* **generation:** update request builders and models ([8f26075](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/8f260755f75d659b065d320e10846642b4552e09))
+
+## [5.104.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.103.0-preview...5.104.0-preview) (2025-04-09)
+
+
+### Features
+
+* **generation:** update request builders and models ([2c34e19](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/2c34e19c25b978ced424bd983bb4dd71f5ba387a))
+
+## [5.103.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.102.0-preview...5.103.0-preview) (2025-04-01)
+
+
+### Features
+
+* **generation:** update request builders and models ([73ca04c](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/73ca04cc95b754d021e7f8718245055bca865ea8))
+
+## [5.102.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.101.0-preview...5.102.0-preview) (2025-03-25)
+
+
+### Features
+
+* **generation:** update request builders and models ([2d58deb](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/2d58deba037866c8fcb796421cea63a48c9a2502))
+
+## [5.101.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.100.0-preview...5.101.0-preview) (2025-03-18)
+
+
+### Features
+
+* **generation:** update request builders and models ([c10e536](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/c10e536f1eb4e647594cb56eb9f3c67f0b009e12))
+
+## [5.100.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.99.0-preview...5.100.0-preview) (2025-03-11)
+
+
+### Features
+
+* **generation:** update request builders and models ([9d86639](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/9d866396e0f42fefa1665d1ebec2537e2bd85ec7))
+
+## [5.99.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.98.1-preview...5.99.0-preview) (2025-03-05)
+
+
+### Features
+
+* **generation:** update request builders and models ([c0033f7](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/c0033f712ca85e2c59ea9eae60aeff981049f800))
+
+## [5.98.1-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.98.0-preview...5.98.1-preview) (2025-02-28)
+
+
+### Bug Fixes
+
+* switch CI to PS agent ([3944ea2](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/3944ea27a08f96d7625029a7ae63376a52c3a348))
+
+## [5.98.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.97.0-preview...5.98.0-preview) (2025-02-25)
+
+
+### Features
+
+* **generation:** update request builders and models ([4f253b3](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/4f253b3c18b3d815b43ad23e4c8271a5adc768a7))
+
+## [5.97.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.96.0-preview...5.97.0-preview) (2025-02-18)
+
+
+### Features
+
+* **generation:** update request builders and models ([faf0074](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/faf007439c4cb51be4940f7a438e28e225d8ff91))
+
+## [5.96.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.95.0-preview...5.96.0-preview) (2025-02-13)
+
+
+### Features
+
+* **generation:** update request builders and models ([fbf02b6](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/fbf02b66f907470acdeef8c0cf087696d4f859da))
+
+## [5.95.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.94.0-preview...5.95.0-preview) (2025-01-31)
+
+
+### Features
+
+* **generation:** update request builders and models ([3fc3d16](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/3fc3d164af49b653de80714bd7ab07b479070206))
+
+## [5.94.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.93.0-preview...5.94.0-preview) (2025-01-22)
+
+
+### Features
+
+* **generation:** update request builders and models ([eb50b87](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/eb50b8762665038fd19cc52226838bf6f856006d))
+
+## [5.93.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.92.0-preview...5.93.0-preview) (2025-01-08)
+
+
+### Features
+
+* **generation:** update request builders and models ([8b960a6](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/8b960a6eb84acd0c5be52d95cbba910cb1cb52db))
+
+## [5.92.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.91.0-preview...5.92.0-preview) (2025-01-02)
+
+
+### Features
+
+* **generation:** update request builders and models ([b5a4eeb](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/b5a4eebb97e36dfe349b8d462d4786f412088fed))
+
+## [5.91.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.90.0-preview...5.91.0-preview) (2024-12-18)
+
+
+### Features
+
+* **generation:** update request builders and models ([f2a6de6](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/f2a6de6292b4bf0c7cc7a8128df0b69e89f7acd5))
+
+## [5.90.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.89.0-preview...5.90.0-preview) (2024-12-11)
+
+
+### Features
+
+* **generation:** update request builders and models ([83b0c6e](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/83b0c6ed8aa4f887a6ed8b2f308f32e1d4174786))
+
+## [5.89.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.88.0-preview...5.89.0-preview) (2024-12-05)
+
+
+### Features
+
+* **generation:** update request builders and models ([012620a](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/012620accef14acb26107aeaa82e5b28173d0376))
+
+## [5.88.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.87.0-preview...5.88.0-preview) (2024-11-28)
+
+
+### Features
+
+* **generation:** update request builders and models ([3ac72b2](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/3ac72b2f3d7f435ded419998630cb195317bca9f))
+
+## [5.87.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.86.0-preview...5.87.0-preview) (2024-11-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([749e040](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/749e04077ee1b9a41859b9b97866813b441b8db8))
+
+## [5.86.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.85.0-preview...5.86.0-preview) (2024-11-07)
+
+
+### Features
+
+* **generation:** update request builders and models ([ae0af3b](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/ae0af3b3882de1029e580c0bdebf1557448561b5))
+
+## [5.85.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.84.0-preview...5.85.0-preview) (2024-10-17)
+
+
+### Features
+
+* **generation:** update request builders and models ([8ef1687](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/8ef16873020dbf51f2099f6daefe2a37e488917e))
+
+## [5.84.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.83.0-preview...5.84.0-preview) (2024-10-09)
+
+
+### Features
+
+* **generation:** update request builders and models ([a962be9](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/a962be91d3c61e0bb7a904d91c2da51429b60bf8))
+
+## [5.83.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.82.1-preview...5.83.0-preview) (2024-10-02)
+
+
+### Features
+
+* **generation:** update request builders and models ([a7fb186](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/a7fb186f2c7b8966176471688e116d17c3a7578a))
+
+## [5.82.1-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.82.0-preview...5.82.1-preview) (2024-09-30)
+
+
+### Bug Fixes
+
+* Fixed incorrect trimming expression to use `IsTargetFrameworkCompatible` ([7100741](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/7100741459bbee2a22d0120242f09401bfc47681))
+
+## [5.82.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.81.0-preview...5.82.0-preview) (2024-09-26)
+
+
+### Features
+
+* **generation:** update request builders and models ([9caebb1](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/9caebb1538e11bc193a380f66d6be236923000d5))
+
+## [5.81.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.80.0-preview...5.81.0-preview) (2024-09-18)
+
+
+### Features
+
+* **generation:** update request builders and models ([ecdf460](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/ecdf4605d57518d4e5a3a5a69b92aa5a4b39c0b9))
+
 ## [5.80.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.79.0-preview...5.80.0-preview) (2024-09-12)
 
 

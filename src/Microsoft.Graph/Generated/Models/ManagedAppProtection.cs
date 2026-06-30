@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings for a specified set of apps
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedAppProtection : global::Microsoft.Graph.Beta.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>Data storage locations where a user may store managed data.</summary>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
             set { BackingStore?.Set("allowedInboundDataTransferSources", value); }
         }
-        /// <summary>Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of &apos;0&apos; means no exception is allowed.</summary>
+        /// <summary>Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of &apos;0&apos; means no exception is allowed. Valid values 0 to 65535</summary>
         public int? AllowedOutboundClipboardSharingExceptionLength
         {
             get { return BackingStore?.Get<int?>("allowedOutboundClipboardSharingExceptionLength"); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfMaximumPinRetriesExceeded"); }
             set { BackingStore?.Set("appActionIfMaximumPinRetriesExceeded", value); }
         }
-        /// <summary>If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn.</summary>
+        /// <summary>If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfUnableToAuthenticateUser"); }
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppDeviceThreatLevel?>("maximumAllowedDeviceThreatLevel"); }
             set { BackingStore?.Set("maximumAllowedDeviceThreatLevel", value); }
         }
-        /// <summary>Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.</summary>
+        /// <summary>Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped. Valid values 1 to 65535</summary>
         public int? MaximumPinRetries
         {
             get { return BackingStore?.Get<int?>("maximumPinRetries"); }
@@ -375,7 +375,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<TimeSpan?>("pinRequiredInsteadOfBiometricTimeout"); }
             set { BackingStore?.Set("pinRequiredInsteadOfBiometricTimeout", value); }
         }
-        /// <summary>Requires a pin to be unique from the number specified in this property.</summary>
+        /// <summary>Requires a pin to be unique from the number specified in this property. Valid values 0 to 24</summary>
         public int? PreviousPinBlockCount
         {
             get { return BackingStore?.Get<int?>("previousPinBlockCount"); }
@@ -419,7 +419,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -493,7 +493,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.ManagedAppDataIngestionLocation>("allowedDataIngestionLocations", AllowedDataIngestionLocations);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.ManagedAppDataStorageLocation>("allowedDataStorageLocations", AllowedDataStorageLocations);

@@ -11,10 +11,14 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceRequests;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceRoleScopes;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageSuggestions;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackagesWithUniqueName;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId;
@@ -33,7 +37,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
     /// <summary>
     /// Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntitlementManagementRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.</summary>
@@ -91,15 +95,35 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.AccessPackagesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageSuggestions.AccessPackageSuggestionsRequestBuilder AccessPackageSuggestions
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageSuggestions.AccessPackageSuggestionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests.AssignmentRequestsRequestBuilder AssignmentRequests
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests.AssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages.AvailableAccessPackagesRequestBuilder AvailableAccessPackages
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AvailableAccessPackages.AvailableAccessPackagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.ConnectedOrganizationsRequestBuilder ConnectedOrganizations
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.ConnectedOrganizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder ControlConfigurations
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder ExternalOriginResourceConnectors
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings.SettingsRequestBuilder Settings
@@ -116,7 +140,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogsWithUniqueName.AccessPackageCatalogsWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of accessPackageCatalog</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions")]
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogsWithUniqueName.AccessPackageCatalogsWithUniqueNameRequestBuilder AccessPackageCatalogsWithUniqueName(string uniqueName)
         {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
@@ -210,7 +234,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         public async Task<global::Microsoft.Graph.Beta.Models.EntitlementManagement> PatchAsync(global::Microsoft.Graph.Beta.Models.EntitlementManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -281,7 +305,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.EntitlementManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -301,14 +325,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntitlementManagementRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get entitlementManagement from identityGovernance
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntitlementManagementRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -336,7 +360,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntitlementManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder.EntitlementManagementRequestBuilderGetQueryParameters>
         {
         }
@@ -344,7 +368,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntitlementManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

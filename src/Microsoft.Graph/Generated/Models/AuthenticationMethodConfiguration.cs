@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AuthenticationMethodConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
-        /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
+        /// <summary>The state of the policy. The possible values are: enabled, disabled.</summary>
         public global::Microsoft.Graph.Beta.Models.AuthenticationMethodState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationMethodState?>("state"); }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -50,9 +50,11 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethodConfiguration(),
                 "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
+                "#microsoft.graph.qrCodePinAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethodConfiguration(),
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SmsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethodConfiguration(),
+                "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.VerifiableCredentialsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.voiceAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodConfiguration(),
                 "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMethodConfiguration(),
                 _ => new global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration(),
@@ -76,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ExcludeTarget>("excludeTargets", ExcludeTargets);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodState>("state", State);

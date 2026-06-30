@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class UserAccount : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -29,6 +29,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("accountName", value); }
         }
 #endif
+        /// <summary>The unique user identifier assigned by the on-premises Active Directory.</summary>
+        public Guid? ActiveDirectoryObjectGuid
+        {
+            get { return BackingStore?.Get<Guid?>("activeDirectoryObjectGuid"); }
+            set { BackingStore?.Set("activeDirectoryObjectGuid", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
         {
@@ -101,6 +107,38 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Information on resource access attempts made by the user account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>? ResourceAccessEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>?>("resourceAccessEvents"); }
+            set { BackingStore?.Set("resourceAccessEvents", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent> ResourceAccessEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>>("resourceAccessEvents"); }
+            set { BackingStore?.Set("resourceAccessEvents", value); }
+        }
+#endif
+        /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenantId
+        {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#nullable restore
+#else
+        public string TenantId
+        {
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#endif
         /// <summary>The user principal name of the account in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,7 +186,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Security.UserAccount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.UserAccount();
         }
         /// <summary>
@@ -160,10 +198,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
+                { "activeDirectoryObjectGuid", n => { ActiveDirectoryObjectGuid = n.GetGuidValue(); } },
                 { "azureAdUserId", n => { AzureAdUserId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceAccessEvents", n => { ResourceAccessEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>(global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "userSid", n => { UserSid = n.GetStringValue(); } },
             };
@@ -174,12 +215,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountName", AccountName);
+            writer.WriteGuidValue("activeDirectoryObjectGuid", ActiveDirectoryObjectGuid);
             writer.WriteStringValue("azureAdUserId", AzureAdUserId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>("resourceAccessEvents", ResourceAccessEvents);
+            writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteStringValue("userSid", UserSid);
             writer.WriteAdditionalData(AdditionalData);

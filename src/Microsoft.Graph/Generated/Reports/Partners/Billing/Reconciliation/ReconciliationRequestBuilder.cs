@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Billed;
+using Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Unbilled;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -16,13 +17,18 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
     /// <summary>
     /// Provides operations to manage the reconciliation property of the microsoft.graph.partners.billing.billing entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReconciliationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the billed property of the microsoft.graph.partners.billing.billingReconciliation entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Billed.BilledRequestBuilder Billed
         {
             get => new global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Billed.BilledRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the unbilled property of the microsoft.graph.partners.billing.billingReconciliation entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Unbilled.UnbilledRequestBuilder Unbilled
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.Unbilled.UnbilledRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.ReconciliationRequestBuilder"/> and sets the default values.
@@ -63,7 +69,7 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents details for billed invoice reconciliation data.
+        /// Represents details for billed and unbilled invoice reconciliation data.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Partners.Billing.BillingReconciliation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +108,7 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
         public async Task<global::Microsoft.Graph.Beta.Models.Partners.Billing.BillingReconciliation> PatchAsync(global::Microsoft.Graph.Beta.Models.Partners.Billing.BillingReconciliation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -130,7 +136,7 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
             return requestInfo;
         }
         /// <summary>
-        /// Represents details for billed invoice reconciliation data.
+        /// Represents details for billed and unbilled invoice reconciliation data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +169,7 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Partners.Billing.BillingReconciliation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -183,14 +189,14 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReconciliationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Represents details for billed invoice reconciliation data.
+        /// Represents details for billed and unbilled invoice reconciliation data.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReconciliationRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -218,7 +224,7 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReconciliationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation.ReconciliationRequestBuilder.ReconciliationRequestBuilderGetQueryParameters>
         {
         }
@@ -226,7 +232,7 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReconciliationRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

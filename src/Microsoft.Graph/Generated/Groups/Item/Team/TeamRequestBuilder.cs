@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.InstalledApps;
 using Microsoft.Graph.Beta.Groups.Item.Team.Members;
 using Microsoft.Graph.Beta.Groups.Item.Team.Operations;
 using Microsoft.Graph.Beta.Groups.Item.Team.Owners;
+using Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName;
 using Microsoft.Graph.Beta.Groups.Item.Team.PermissionGrants;
 using Microsoft.Graph.Beta.Groups.Item.Team.Photo;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel;
@@ -35,7 +36,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
     /// <summary>
     /// Provides operations to manage the team property of the microsoft.graph.group entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the allChannels property of the microsoft.graph.team entity.</summary>
@@ -200,7 +201,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Team>(requestInfo, global::Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new team from a group. In order to create a team, the group must have a least one owner. If the creation of the team call is delayed, you can retry the call up to three times before you have to wait for 15 minutes due to a propagation delay. If the group was created less than 15 minutes ago, the call might fail with a 404 error code due to replication delays. If the group was created less than 15 minutes ago, it&apos;s possible for a call to create a team to fail with a 404 error code, due to ongoing replication delays.The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
+        /// Provides operations to manage the owners property of the microsoft.graph.team entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder OwnersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
+        /// Create a new team from a group. In order to create a team, the group must have at least one owner. If the group was created less than 15 minutes ago, calls to create a team might fail with a 404 Not Found error because the group information didn&apos;t fully replicate.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-put-teams?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Team"/></returns>
@@ -217,7 +228,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
         public async Task<global::Microsoft.Graph.Beta.Models.Team> PutAsync(global::Microsoft.Graph.Beta.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -264,7 +275,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
             return requestInfo;
         }
         /// <summary>
-        /// Create a new team from a group. In order to create a team, the group must have a least one owner. If the creation of the team call is delayed, you can retry the call up to three times before you have to wait for 15 minutes due to a propagation delay. If the group was created less than 15 minutes ago, the call might fail with a 404 error code due to replication delays. If the group was created less than 15 minutes ago, it&apos;s possible for a call to create a team to fail with a 404 error code, due to ongoing replication delays.The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
+        /// Create a new team from a group. In order to create a team, the group must have at least one owner. If the group was created less than 15 minutes ago, calls to create a team might fail with a 404 Not Found error because the group information didn&apos;t fully replicate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -278,7 +289,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
         public RequestInformation ToPutRequestInformation(global::Microsoft.Graph.Beta.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -298,14 +309,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The team associated with this group.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -333,7 +344,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Groups.Item.Team.TeamRequestBuilder.TeamRequestBuilderGetQueryParameters>
         {
         }
@@ -341,7 +352,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

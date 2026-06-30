@@ -8,9 +8,9 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// Devices that are managed or pre-enrolled through Intune
+    /// Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use &apos;and&apos;, not &apos;or&apos;.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
@@ -355,7 +355,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceHealthScriptStates", value); }
         }
 #endif
-        /// <summary>Name of the device. This property is read-only.</summary>
+        /// <summary>Name of the device. Supports $filter operator &apos;eq&apos; and &apos;contains&apos;. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName
@@ -1134,7 +1134,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -1252,7 +1252,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails>("assignmentFilterEvaluationStatusDetails", AssignmentFilterEvaluationStatusDetails);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChassisType>("chassisType", ChassisType);

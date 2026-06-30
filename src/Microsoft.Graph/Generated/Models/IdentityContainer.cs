@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class IdentityContainer : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -181,6 +181,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RiskPreventionContainer? RiskPrevention
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer?>("riskPrevention"); }
+            set { BackingStore?.Set("riskPrevention", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RiskPreventionContainer RiskPrevention
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>("riskPrevention"); }
+            set { BackingStore?.Set("riskPrevention", value); }
+        }
+#endif
+        /// <summary>The signInIdentifiers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>? SignInIdentifiers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>?>("signInIdentifiers"); }
+            set { BackingStore?.Set("signInIdentifiers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase> SignInIdentifiers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>>("signInIdentifiers"); }
+            set { BackingStore?.Set("signInIdentifiers", value); }
+        }
+#endif
         /// <summary>Represents entry point for identity userflow attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,6 +245,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userFlows", value); }
         }
 #endif
+        /// <summary>The verifiedId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot? VerifiedId
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot?>("verifiedId"); }
+            set { BackingStore?.Set("verifiedId", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot VerifiedId
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot>("verifiedId"); }
+            set { BackingStore?.Set("verifiedId", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IdentityContainer"/> and sets the default values.
         /// </summary>
@@ -228,7 +276,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.IdentityContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IdentityContainer();
         }
         /// <summary>
@@ -249,8 +297,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "customAuthenticationExtensions", n => { CustomAuthenticationExtensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension>(global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityProviderBase>(global::Microsoft.Graph.Beta.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "riskPrevention", n => { RiskPrevention = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>(global::Microsoft.Graph.Beta.Models.RiskPreventionContainer.CreateFromDiscriminatorValue); } },
+                { "signInIdentifiers", n => { SignInIdentifiers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>(global::Microsoft.Graph.Beta.Models.SignInIdentifierBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>(global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userFlows", n => { UserFlows = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>(global::Microsoft.Graph.Beta.Models.IdentityUserFlow.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "verifiedId", n => { VerifiedId = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot>(global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -259,7 +310,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityApiConnector>("apiConnectors", ApiConnectors);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationEventListener>("authenticationEventListeners", AuthenticationEventListeners);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationEventsFlow>("authenticationEventsFlows", AuthenticationEventsFlows);
@@ -270,8 +321,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension>("customAuthenticationExtensions", CustomAuthenticationExtensions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityProviderBase>("identityProviders", IdentityProviders);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RiskPreventionContainer>("riskPrevention", RiskPrevention);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInIdentifierBase>("signInIdentifiers", SignInIdentifiers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>("userFlows", UserFlows);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerifiedIdRoot>("verifiedId", VerifiedId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

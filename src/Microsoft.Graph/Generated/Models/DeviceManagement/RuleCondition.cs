@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RuleCondition : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The property that the rule condition monitors. Possible values are:  provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue.</summary>
+        /// <summary>The property that the rule condition monitors. The possible values are: provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue, frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagement.ConditionCategory? ConditionCategory
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.ConditionCategory?>("conditionCategory"); }
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.OperatorType?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
-        /// <summary>The relationship type.  Possible values are: and, or.</summary>
+        /// <summary>The relationship type.  The possible values are: and, or.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagement.RelationshipType? RelationshipType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.RelationshipType?>("relationshipType"); }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition();
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType>("aggregation", Aggregation);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagement.ConditionCategory>("conditionCategory", ConditionCategory);
             writer.WriteStringValue("@odata.type", OdataType);

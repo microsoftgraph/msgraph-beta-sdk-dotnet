@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class MailboxConfigurationEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configurationId property</summary>
+        /// <summary>The unique identifier of the mailbox configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfigurationId
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("configurationId", value); }
         }
 #endif
-        /// <summary>The configurationType property</summary>
+        /// <summary>The type of mailbox configuration. The possible values are: mailForwardingRule, owaSettings, ewsSettings, mailDelegation, userInboxRule, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.MailboxConfigurationType? ConfigurationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.MailboxConfigurationType?>("configurationType"); }
             set { BackingStore?.Set("configurationType", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The externalDirectoryObjectId property</summary>
+        /// <summary>The external directory object identifier of the mailbox.</summary>
         public Guid? ExternalDirectoryObjectId
         {
             get { return BackingStore?.Get<Guid?>("externalDirectoryObjectId"); }
             set { BackingStore?.Set("externalDirectoryObjectId", value); }
         }
-        /// <summary>The mailboxPrimaryAddress property</summary>
+        /// <summary>The primary email address of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MailboxPrimaryAddress
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("mailboxPrimaryAddress", value); }
         }
 #endif
-        /// <summary>The upn property</summary>
+        /// <summary>The user principal name (UPN) of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Upn
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.MailboxConfigurationEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.MailboxConfigurationEvidence();
         }
         /// <summary>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("configurationId", ConfigurationId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.MailboxConfigurationType>("configurationType", ConfigurationType);

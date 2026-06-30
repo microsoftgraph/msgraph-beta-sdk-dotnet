@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum AlertRuleTemplate
     #pragma warning restore CS1591
@@ -35,6 +35,18 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         [EnumMember(Value = "cloudPcInaccessibleScenario")]
         #pragma warning disable CS1591
         CloudPcInaccessibleScenario,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcFrontlineConcurrencyScenario")]
+        #pragma warning disable CS1591
+        CloudPcFrontlineConcurrencyScenario,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcUserSettingsPersistenceScenario")]
+        #pragma warning disable CS1591
+        CloudPcUserSettingsPersistenceScenario,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcDeprovisionFailedScenario")]
+        #pragma warning disable CS1591
+        CloudPcDeprovisionFailedScenario,
         #pragma warning restore CS1591
     }
 }

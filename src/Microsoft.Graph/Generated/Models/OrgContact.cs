@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OrgContact : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("directReports", value); }
         }
 #endif
-        /// <summary>Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.</summary>
+        /// <summary>Display name for this organizational contact. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -210,6 +210,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #endif
+        /// <summary>Indicates the state of synchronization for an orgContact between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&amp;$count=true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior? OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior?>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#endif
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).</summary>
         public bool? OnPremisesSyncEnabled
         {
@@ -326,7 +342,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OrgContact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OrgContact();
         }
         /// <summary>
@@ -350,6 +366,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "onPremisesSyncBehavior", n => { OnPremisesSyncBehavior = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>(global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior.CreateFromDiscriminatorValue); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Phone>(global::Microsoft.Graph.Beta.Models.Phone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "proxyAddresses", n => { ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -365,7 +382,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PhysicalOfficeAddress>("addresses", Addresses);
             writer.WriteStringValue("companyName", CompanyName);
@@ -380,6 +397,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("memberOf", MemberOf);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior", OnPremisesSyncBehavior);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Phone>("phones", Phones);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);

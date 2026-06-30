@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class TeamsAppDefinition : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data. personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
+        /// <summary>A collection of scopes where the Teams app can be installed. The possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data. personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes? AllowedInstallationScopes
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes?>("allowedInstallationScopes"); }
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("outlineIcon", value); }
         }
 #endif
-        /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published - The request to publish the specific version of the Teams app has been approved by the admin and the app is published. rejected - The request to publish the specific version of the Teams app was rejected by the admin.</summary>
+        /// <summary>The published status of a specific version of a Teams app. The possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published - The request to publish the specific version of the Teams app has been approved by the admin and the app is published. rejected - The request to publish the specific version of the Teams app was rejected by the admin.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamsAppPublishingState? PublishingState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamsAppPublishingState?>("publishingState"); }
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.TeamsAppDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.TeamsAppDefinition();
         }
         /// <summary>
@@ -263,7 +263,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes>("allowedInstallationScopes", AllowedInstallationScopes);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAppAuthorization>("authorization", Authorization);

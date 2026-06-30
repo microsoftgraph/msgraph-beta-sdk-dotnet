@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DeviceManagementConfigurationSettingApplicability : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -86,12 +86,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.deviceManagementConfigurationAndroidSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationAndroidSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationApplicationSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationApplicationSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationEdgeSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationEdgeSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationExchangeOnlineSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationIosSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIosSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationLinuxSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationLinuxSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability" => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSettingApplicability(),
                 _ => new global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability(),
             };
@@ -117,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDeviceMode>("deviceMode", DeviceMode);
             writer.WriteStringValue("@odata.type", OdataType);

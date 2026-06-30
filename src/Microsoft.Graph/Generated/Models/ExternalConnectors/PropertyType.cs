@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum PropertyType
     #pragma warning restore CS1591
@@ -47,6 +47,14 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "principal")]
+        #pragma warning disable CS1591
+        Principal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "principalCollection")]
+        #pragma warning disable CS1591
+        PrincipalCollection,
         #pragma warning restore CS1591
     }
 }

@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EmailAuthenticationMethodConfiguration : global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn&apos;t use the beta API automatically have email OTP enabled beginning in October 2021.</summary>
+        /// <summary>Determines whether email OTP is usable by external users for authentication. The possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn&apos;t use the beta API automatically have email OTP enabled beginning in October 2021.</summary>
         public global::Microsoft.Graph.Beta.Models.ExternalEmailOtpState? AllowExternalIdToUseEmailOtp
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalEmailOtpState?>("allowExternalIdToUseEmailOtp"); }
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethodConfiguration();
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ExternalEmailOtpState>("allowExternalIdToUseEmailOtp", AllowExternalIdToUseEmailOtp);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethodTarget>("includeTargets", IncludeTargets);

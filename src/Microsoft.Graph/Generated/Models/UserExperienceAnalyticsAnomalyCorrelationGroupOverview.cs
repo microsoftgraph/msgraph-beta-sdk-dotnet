@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsAnomalyCorrelationGroupOverview : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the number of correlation groups in the anomaly. Valid values -2147483648 to 2147483647</summary>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview();
         }
         /// <summary>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("anomalyCorrelationGroupCount", AnomalyCorrelationGroupCount);
             writer.WriteStringValue("anomalyId", AnomalyId);

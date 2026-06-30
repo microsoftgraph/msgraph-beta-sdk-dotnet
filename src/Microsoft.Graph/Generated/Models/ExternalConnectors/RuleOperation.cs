@@ -3,11 +3,15 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum RuleOperation
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "null")]
+        #pragma warning disable CS1591
+        Null,
+        #pragma warning restore CS1591
         [EnumMember(Value = "equals")]
         #pragma warning disable CS1591
         Equals,

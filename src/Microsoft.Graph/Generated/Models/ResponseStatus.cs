@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ResponseStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The response type. Possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer&apos;s perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendee&apos;s perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn&apos;t responded to a meeting request, getting Alex&apos; response status for that event in Alex&apos; calendar returns notResponded. Getting Alex&apos; response from the calendar of any other attendee or the organizer&apos;s returns none. Getting the organizer&apos;s response for the event in anybody&apos;s calendar also returns none.</summary>
+        /// <summary>The response type. The possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer&apos;s perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendee&apos;s perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn&apos;t responded to a meeting request, getting Alex&apos; response status for that event in Alex&apos; calendar returns notResponded. Getting Alex&apos; response from the calendar of any other attendee or the organizer&apos;s returns none. Getting the organizer&apos;s response for the event in anybody&apos;s calendar also returns none.</summary>
         public global::Microsoft.Graph.Beta.Models.ResponseType? Response
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ResponseType?>("response"); }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.ResponseStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ResponseStatus();
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ResponseType>("response", Response);
             writer.WriteDateTimeOffsetValue("time", Time);

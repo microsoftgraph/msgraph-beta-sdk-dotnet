@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Supported setting types</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     public enum DeviceManagementConfigurationSettingUsage
     {
@@ -17,8 +17,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Compliance setting type.</summary>
         [EnumMember(Value = "compliance")]
         Compliance = 4,
+        /// <summary>Reusable Setting</summary>
+        [EnumMember(Value = "reusableSetting")]
+        ReusableSetting = 8,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue = 8,
+        UnknownFutureValue = 16,
     }
 }

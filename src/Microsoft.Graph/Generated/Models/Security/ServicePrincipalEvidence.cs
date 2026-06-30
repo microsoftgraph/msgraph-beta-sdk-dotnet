@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ServicePrincipalEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appId property</summary>
+        /// <summary>The unique identifier for the associated application, represented by its appId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>The appOwnerTenantId property</summary>
+        /// <summary>Contains the tenant ID where the application is registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppOwnerTenantId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("appOwnerTenantId", value); }
         }
 #endif
-        /// <summary>The servicePrincipalName property</summary>
+        /// <summary>The display name for the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalName
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
 #endif
-        /// <summary>The servicePrincipalObjectId property</summary>
+        /// <summary>The unique identifier for the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalObjectId
@@ -76,13 +76,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("servicePrincipalObjectId", value); }
         }
 #endif
-        /// <summary>The servicePrincipalType property</summary>
+        /// <summary>Type of the service principal. Possible values are: unknown, application, managedIdentity, legacy, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.ServicePrincipalType? ServicePrincipalType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ServicePrincipalType?>("servicePrincipalType"); }
             set { BackingStore?.Set("servicePrincipalType", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.ServicePrincipalEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.ServicePrincipalEvidence();
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appOwnerTenantId", AppOwnerTenantId);

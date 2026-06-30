@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class UserProcessingResult : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -30,13 +30,29 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
+        /// <summary>The related reprocessed workflow run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>? ReprocessedRuns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>?>("reprocessedRuns"); }
+            set { BackingStore?.Set("reprocessedRuns", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run> ReprocessedRuns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>>("reprocessedRuns"); }
+            set { BackingStore?.Set("reprocessedRuns", value); }
+        }
+#endif
         /// <summary>The date time that the workflow is scheduled to be executed for a user.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? ScheduledDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("scheduledDateTime"); }
             set { BackingStore?.Set("scheduledDateTime", value); }
         }
-        /// <summary>The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
+        /// <summary>The date time that the workflow execution started. Value is null if the workflow execution hasn&apos;t started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? StartedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
@@ -105,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult();
         }
         /// <summary>
@@ -119,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "failedTasksCount", n => { FailedTasksCount = n.GetIntValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>(); } },
+                { "reprocessedRuns", n => { ReprocessedRuns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
@@ -135,11 +152,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteIntValue("failedTasksCount", FailedTasksCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>("reprocessedRuns", ReprocessedRuns);
             writer.WriteDateTimeOffsetValue("scheduledDateTime", ScheduledDateTime);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("subject", Subject);

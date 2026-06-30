@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcDomainJoinConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,11 +21,17 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
+        /// <summary>Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType? DomainJoinType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType?>("domainJoinType"); }
             set { BackingStore?.Set("domainJoinType", value); }
+        }
+        /// <summary>The geographic location where the region is located. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType? GeographicLocationType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType?>("geographicLocationType"); }
+            set { BackingStore?.Set("geographicLocationType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesConnectionId", value); }
         }
 #endif
-        /// <summary>The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, and southKorea. Read-only.</summary>
+        /// <summary>The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup? RegionGroup
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup?>("regionGroup"); }
@@ -102,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration();
         }
         /// <summary>
@@ -114,6 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domainJoinType", n => { DomainJoinType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>(); } },
+                { "geographicLocationType", n => { GeographicLocationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
                 { "regionGroup", n => { RegionGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
@@ -127,8 +134,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>("domainJoinType", DomainJoinType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcGeographicLocationType>("geographicLocationType", GeographicLocationType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);

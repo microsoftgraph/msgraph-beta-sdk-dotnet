@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class IdentifierUriConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The nonDefaultUriAddition property</summary>
+        /// <summary>Block new identifier URIs for applications, unless they are the &apos;default&apos; URI of the format api://{appId} or api://{tenantId}/{appId}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction? NonDefaultUriAddition
@@ -53,6 +53,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction? UriAdditionWithoutUniqueTenantIdentifier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction?>("uriAdditionWithoutUniqueTenantIdentifier"); }
+            set { BackingStore?.Set("uriAdditionWithoutUniqueTenantIdentifier", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction UriAdditionWithoutUniqueTenantIdentifier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>("uriAdditionWithoutUniqueTenantIdentifier"); }
+            set { BackingStore?.Set("uriAdditionWithoutUniqueTenantIdentifier", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration"/> and sets the default values.
         /// </summary>
@@ -68,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration();
         }
         /// <summary>
@@ -81,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "nonDefaultUriAddition", n => { NonDefaultUriAddition = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>(global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "uriAdditionWithoutUniqueTenantIdentifier", n => { UriAdditionWithoutUniqueTenantIdentifier = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>(global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +106,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>("nonDefaultUriAddition", NonDefaultUriAddition);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction>("uriAdditionWithoutUniqueTenantIdentifier", UriAdditionWithoutUniqueTenantIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

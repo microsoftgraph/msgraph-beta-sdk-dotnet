@@ -17,17 +17,15 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User
     /// <summary>
     /// Provides operations to manage the user property of the microsoft.graph.networkaccess.networkAccessTraffic entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The mailboxSettings property</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
@@ -49,13 +47,12 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User
         {
         }
         /// <summary>
-        /// Get user from networkAccess
+        /// Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.User?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.UserRequestBuilder.UserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -73,11 +70,10 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.User>(requestInfo, global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get user from networkAccess
+        /// Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.UserRequestBuilder.UserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -97,15 +93,14 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.UserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.UserRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.UserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get user from networkAccess
+        /// Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -133,7 +128,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic.Item.User.UserRequestBuilder.UserRequestBuilderGetQueryParameters>
         {
         }

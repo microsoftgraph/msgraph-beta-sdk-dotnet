@@ -8,7 +8,6 @@ using Microsoft.Graph.Beta.Users.Item.Events.Item.Calendar;
 using Microsoft.Graph.Beta.Users.Item.Events.Item.Cancel;
 using Microsoft.Graph.Beta.Users.Item.Events.Item.Decline;
 using Microsoft.Graph.Beta.Users.Item.Events.Item.DismissReminder;
-using Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences;
 using Microsoft.Graph.Beta.Users.Item.Events.Item.Extensions;
 using Microsoft.Graph.Beta.Users.Item.Events.Item.Forward;
 using Microsoft.Graph.Beta.Users.Item.Events.Item.Instances;
@@ -28,83 +27,65 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
     /// <summary>
     /// Provides operations to manage the events property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the accept method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Accept.AcceptRequestBuilder Accept
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Accept.AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Attachments.AttachmentsRequestBuilder Attachments
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Calendar.CalendarRequestBuilder Calendar
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancel method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decline method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Decline.DeclineRequestBuilder Decline
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Decline.DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismissReminder method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
-        public global::Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder ExceptionOccurrences
-        {
-            get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Forward.ForwardRequestBuilder Forward
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.Instances.InstancesRequestBuilder Instances
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.SnoozeReminder.SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tentativelyAccept method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.TentativelyAccept.TentativelyAcceptRequestBuilder TentativelyAccept
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Events.Item.TentativelyAccept.TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
@@ -131,7 +112,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -155,7 +135,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Event?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Events.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -180,7 +159,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Event?> PatchAsync(global::Microsoft.Graph.Beta.Models.Event body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -190,7 +168,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Event> PatchAsync(global::Microsoft.Graph.Beta.Models.Event body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -203,7 +181,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -223,7 +200,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Events.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -244,7 +220,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Event body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -254,7 +229,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Event body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -266,7 +241,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Events.Item.EventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Events.Item.EventItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Events.Item.EventItemRequestBuilder(rawUrl, RequestAdapter);
@@ -275,14 +249,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The user&apos;s events. The default is to show events under the Default Calendar. Read-only. Nullable.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -310,7 +284,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Events.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>
         {
         }
@@ -318,7 +292,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

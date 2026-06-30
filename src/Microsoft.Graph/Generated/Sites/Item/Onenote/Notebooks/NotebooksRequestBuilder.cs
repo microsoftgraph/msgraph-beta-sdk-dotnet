@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
     /// <summary>
     /// Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotebooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
         {
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.NotebookCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
         /// <param name="includePersonalNotebooks">Usage: includePersonalNotebooks={includePersonalNotebooks}</param>
         public global::Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder GetRecentNotebooksWithIncludePersonalNotebooks(bool? includePersonalNotebooks)
         {
-            _ = includePersonalNotebooks ?? throw new ArgumentNullException(nameof(includePersonalNotebooks));
+            if(ReferenceEquals(includePersonalNotebooks, null)) throw new ArgumentNullException(nameof(includePersonalNotebooks));
             return new global::Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
         public async Task<global::Microsoft.Graph.Beta.Models.Notebook> PostAsync(global::Microsoft.Graph.Beta.Models.Notebook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Notebook>(requestInfo, global::Microsoft.Graph.Beta.Models.Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Notebook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -169,9 +169,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
             return new global::Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.NotebooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NotebooksRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NotebooksRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.NotebooksRequestBuilder.NotebooksRequestBuilderGetQueryParameters>
         {
         }
@@ -246,7 +246,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NotebooksRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

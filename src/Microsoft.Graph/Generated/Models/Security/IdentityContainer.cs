@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class IdentityContainer : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -28,7 +28,71 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
-        /// <summary>The sensors property</summary>
+        /// <summary>Represents an identity&apos;s details in the context of Microsoft Defender for Identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>? IdentityAccounts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>?>("identityAccounts"); }
+            set { BackingStore?.Set("identityAccounts", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts> IdentityAccounts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>>("identityAccounts"); }
+            set { BackingStore?.Set("identityAccounts", value); }
+        }
+#endif
+        /// <summary>The sensorCandidateActivationConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration? SensorCandidateActivationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration?>("sensorCandidateActivationConfiguration"); }
+            set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration SensorCandidateActivationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration"); }
+            set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
+        }
+#endif
+        /// <summary>The sensorCandidates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>? SensorCandidates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>?>("sensorCandidates"); }
+            set { BackingStore?.Set("sensorCandidates", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate> SensorCandidates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>>("sensorCandidates"); }
+            set { BackingStore?.Set("sensorCandidates", value); }
+        }
+#endif
+        /// <summary>Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>? SensorMigration
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>?>("sensorMigration"); }
+            set { BackingStore?.Set("sensorMigration", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration> SensorMigration
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>>("sensorMigration"); }
+            set { BackingStore?.Set("sensorMigration", value); }
+        }
+#endif
+        /// <summary>Represents a customer&apos;s Microsoft Defender for Identity sensors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.Sensor>? Sensors
@@ -44,6 +108,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sensors", value); }
         }
 #endif
+        /// <summary>Represents a container for security identities settings APIs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.SettingsContainer? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.SettingsContainer Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.IdentityContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.IdentityContainer();
         }
         /// <summary>
@@ -63,7 +143,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>(global::Microsoft.Graph.Beta.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "identityAccounts", n => { IdentityAccounts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>(global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sensorCandidateActivationConfiguration", n => { SensorCandidateActivationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration.CreateFromDiscriminatorValue); } },
+                { "sensorCandidates", n => { SensorCandidates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>(global::Microsoft.Graph.Beta.Models.Security.SensorCandidate.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sensorMigration", n => { SensorMigration = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>(global::Microsoft.Graph.Beta.Models.Security.SensorMigration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>(global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>(global::Microsoft.Graph.Beta.Models.Security.SettingsContainer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,10 +157,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>("healthIssues", HealthIssues);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.IdentityAccounts>("identityAccounts", IdentityAccounts);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", SensorCandidateActivationConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorCandidate>("sensorCandidates", SensorCandidates);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.SensorMigration>("sensorMigration", SensorMigration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.Sensor>("sensors", Sensors);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.SettingsContainer>("settings", Settings);
         }
     }
 }

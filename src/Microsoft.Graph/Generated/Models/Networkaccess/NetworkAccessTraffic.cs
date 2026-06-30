@@ -8,12 +8,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates what action to take based on filtering policies. The possible values are: block, allow.</summary>
+        /// <summary>Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: bypass , alert.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction?>("action"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.</summary>
+        /// <summary>Represents the version of the Global Secure Access (GSA) client agent software. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentVersion
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("agentVersion", value); }
         }
 #endif
-        /// <summary>The applicationSnapshot property</summary>
+        /// <summary>Destination Application ID accessed in Azure AD during the transaction. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot? ApplicationSnapshot
@@ -59,6 +59,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Contains metadata about the cloud application involved in the network transaction, such as application name, category, and risk level. Supports $filter (eq) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata? CloudApplicationMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata?>("cloudApplicationMetadata"); }
+            set { BackingStore?.Set("cloudApplicationMetadata", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata CloudApplicationMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata>("cloudApplicationMetadata"); }
+            set { BackingStore?.Set("cloudApplicationMetadata", value); }
+        }
+#endif
         /// <summary>Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Informational error message. For example: &apos;Threat intelligence detected a transaction and triggered an alert.&apos; or &apos;The Global Secure Access (GSA) policy blocked the destination and triggered an alert.&apos; Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -135,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
-        /// <summary>The destinationUrl property</summary>
+        /// <summary>Represents the URL of the destination in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationUrl
@@ -151,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("destinationUrl", value); }
         }
 #endif
-        /// <summary>The destinationWebCategory property</summary>
+        /// <summary>The destination FQDN&apos;s Web Category (e.g., Gambling). Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory? DestinationWebCategory
@@ -167,7 +183,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("destinationWebCategory", value); }
         }
 #endif
-        /// <summary>The device property</summary>
+        /// <summary>Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Device? Device
@@ -237,7 +253,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("deviceOperatingSystemVersion", value); }
         }
 #endif
-        /// <summary>The filteringProfileId property</summary>
+        /// <summary>The ID of the Filtering Profile associated with the action performed on traffic. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilteringProfileId
@@ -253,7 +269,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("filteringProfileId", value); }
         }
 #endif
-        /// <summary>The filteringProfileName property</summary>
+        /// <summary>The name of the Filtering Profile associated with the action performed on traffic. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilteringProfileName
@@ -285,7 +301,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("headers", value); }
         }
 #endif
-        /// <summary>The initiatingProcessName property</summary>
+        /// <summary>The HTTP method inspected in the intercepted HTTP traffic. Supports $filter (eq) and $orderby.</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod? HttpMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod?>("httpMethod"); }
+            set { BackingStore?.Set("httpMethod", value); }
+        }
+        /// <summary>The process initiating the traffic transaction. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InitiatingProcessName
@@ -301,7 +323,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("initiatingProcessName", value); }
         }
 #endif
-        /// <summary>Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
+        /// <summary>Represents the networking protocol used for communication. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? NetworkProtocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("networkProtocol"); }
@@ -323,6 +345,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Indication if traffic was successfully processed. The possible values are: success, failure, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus? OperationStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus?>("operationStatus"); }
+            set { BackingStore?.Set("operationStatus", value); }
+        }
         /// <summary>Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -339,7 +367,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The policyName property</summary>
+        /// <summary>The name of the filtering policy associated with the action performed on traffic. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyName
@@ -371,7 +399,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("policyRuleId", value); }
         }
 #endif
-        /// <summary>The policyRuleName property</summary>
+        /// <summary>The name of the rule associated with the action performed on traffic. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyRuleName
@@ -387,7 +415,23 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("policyRuleName", value); }
         }
 #endif
-        /// <summary>The privateAccessDetails property</summary>
+        /// <summary>The Point-of-Presence processing region of the traffic. Supports $filter (eq) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PopProcessingRegion
+        {
+            get { return BackingStore?.Get<string?>("popProcessingRegion"); }
+            set { BackingStore?.Set("popProcessingRegion", value); }
+        }
+#nullable restore
+#else
+        public string PopProcessingRegion
+        {
+            get { return BackingStore?.Get<string>("popProcessingRegion"); }
+            set { BackingStore?.Set("popProcessingRegion", value); }
+        }
+#endif
+        /// <summary>Details about private access traffic. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails? PrivateAccessDetails
@@ -409,7 +453,23 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<long?>("receivedBytes"); }
             set { BackingStore?.Set("receivedBytes", value); }
         }
-        /// <summary>The resourceTenantId property</summary>
+        /// <summary>The ID from which traffic was sent or received, providing visibility into the origin of the traffic. Supports $filter (eq) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RemoteNetworkId
+        {
+            get { return BackingStore?.Get<string?>("remoteNetworkId"); }
+            set { BackingStore?.Set("remoteNetworkId", value); }
+        }
+#nullable restore
+#else
+        public string RemoteNetworkId
+        {
+            get { return BackingStore?.Get<string>("remoteNetworkId"); }
+            set { BackingStore?.Set("remoteNetworkId", value); }
+        }
+#endif
+        /// <summary>Tenant ID that owns the resource. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceTenantId
@@ -425,6 +485,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #endif
+        /// <summary>The HTTP response code inspected in the intercepted HTTP traffic. Supports $filter (eq) and $orderby.</summary>
+        public int? ResponseCode
+        {
+            get { return BackingStore?.Get<int?>("responseCode"); }
+            set { BackingStore?.Set("responseCode", value); }
+        }
         /// <summary>Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
         public long? SentBytes
         {
@@ -485,7 +551,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The threatType property</summary>
+        /// <summary>The type of threat detected in the traffic. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreatType
@@ -523,13 +589,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("transactionId", value); }
         }
 #endif
-        /// <summary>Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
+        /// <summary>Represents the transport protocol used for communication. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? TransportProtocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
-        /// <summary>The user property</summary>
+        /// <summary>Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.User? User
@@ -577,7 +643,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
-        /// <summary>The vendorNames property</summary>
+        /// <summary>The name of the vendors who detected the threat. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? VendorNames
@@ -608,7 +674,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic();
         }
         /// <summary>
@@ -622,6 +688,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>(); } },
                 { "agentVersion", n => { AgentVersion = n.GetStringValue(); } },
                 { "applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
+                { "cloudApplicationMetadata", n => { CloudApplicationMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata>(global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata.CreateFromDiscriminatorValue); } },
                 { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -638,16 +705,21 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "filteringProfileId", n => { FilteringProfileId = n.GetStringValue(); } },
                 { "filteringProfileName", n => { FilteringProfileName = n.GetStringValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Headers>(global::Microsoft.Graph.Beta.Models.Networkaccess.Headers.CreateFromDiscriminatorValue); } },
+                { "httpMethod", n => { HttpMethod = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod>(); } },
                 { "initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
                 { "networkProtocol", n => { NetworkProtocol = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operationStatus", n => { OperationStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus>(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "policyName", n => { PolicyName = n.GetStringValue(); } },
                 { "policyRuleId", n => { PolicyRuleId = n.GetStringValue(); } },
                 { "policyRuleName", n => { PolicyRuleName = n.GetStringValue(); } },
+                { "popProcessingRegion", n => { PopProcessingRegion = n.GetStringValue(); } },
                 { "privateAccessDetails", n => { PrivateAccessDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>(global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails.CreateFromDiscriminatorValue); } },
                 { "receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
+                { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
                 { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
+                { "responseCode", n => { ResponseCode = n.GetIntValue(); } },
                 { "sentBytes", n => { SentBytes = n.GetLongValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "sourceIp", n => { SourceIp = n.GetStringValue(); } },
@@ -669,10 +741,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>("action", Action);
             writer.WriteStringValue("agentVersion", AgentVersion);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot", ApplicationSnapshot);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.CloudApplicationMetadata>("cloudApplicationMetadata", CloudApplicationMetadata);
             writer.WriteStringValue("connectionId", ConnectionId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
@@ -689,16 +762,21 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("filteringProfileId", FilteringProfileId);
             writer.WriteStringValue("filteringProfileName", FilteringProfileName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Headers>("headers", Headers);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod>("httpMethod", HttpMethod);
             writer.WriteStringValue("initiatingProcessName", InitiatingProcessName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("networkProtocol", NetworkProtocol);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus>("operationStatus", OperationStatus);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("policyName", PolicyName);
             writer.WriteStringValue("policyRuleId", PolicyRuleId);
             writer.WriteStringValue("policyRuleName", PolicyRuleName);
+            writer.WriteStringValue("popProcessingRegion", PopProcessingRegion);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>("privateAccessDetails", PrivateAccessDetails);
             writer.WriteLongValue("receivedBytes", ReceivedBytes);
+            writer.WriteStringValue("remoteNetworkId", RemoteNetworkId);
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
+            writer.WriteIntValue("responseCode", ResponseCode);
             writer.WriteLongValue("sentBytes", SentBytes);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteStringValue("sourceIp", SourceIp);

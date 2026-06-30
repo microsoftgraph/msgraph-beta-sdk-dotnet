@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AccessReviewReviewerScope : global::Microsoft.Graph.Beta.Models.AccessReviewScope, IParsable
     #pragma warning restore CS1591
@@ -60,6 +60,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("queryType", value); }
         }
 #endif
+        /// <summary>The reviewerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReviewerId
+        {
+            get { return BackingStore?.Get<string?>("reviewerId"); }
+            set { BackingStore?.Set("reviewerId", value); }
+        }
+#nullable restore
+#else
+        public string ReviewerId
+        {
+            get { return BackingStore?.Get<string>("reviewerId"); }
+            set { BackingStore?.Set("reviewerId", value); }
+        }
+#endif
+        /// <summary>The scopeType property</summary>
+        public global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScopeType? ScopeType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScopeType?>("scopeType"); }
+            set { BackingStore?.Set("scopeType", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScope"/> and sets the default values.
         /// </summary>
@@ -74,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScope();
         }
         /// <summary>
@@ -88,6 +110,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryRoot", n => { QueryRoot = n.GetStringValue(); } },
                 { "queryType", n => { QueryType = n.GetStringValue(); } },
+                { "reviewerId", n => { ReviewerId = n.GetStringValue(); } },
+                { "scopeType", n => { ScopeType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScopeType>(); } },
             };
         }
         /// <summary>
@@ -96,11 +120,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("queryRoot", QueryRoot);
             writer.WriteStringValue("queryType", QueryType);
+            writer.WriteStringValue("reviewerId", ReviewerId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScopeType>("scopeType", ScopeType);
         }
     }
 }

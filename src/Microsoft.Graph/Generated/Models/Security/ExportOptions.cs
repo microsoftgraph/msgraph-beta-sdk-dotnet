@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     #pragma warning disable CS1591
     public enum ExportOptions
@@ -32,6 +32,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue = 32,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "splitSource")]
+        #pragma warning disable CS1591
+        SplitSource = 64,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "includeFolderAndPath")]
+        #pragma warning disable CS1591
+        IncludeFolderAndPath = 128,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "friendlyName")]
+        #pragma warning disable CS1591
+        FriendlyName = 256,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "condensePaths")]
+        #pragma warning disable CS1591
+        CondensePaths = 512,
         #pragma warning restore CS1591
     }
 }

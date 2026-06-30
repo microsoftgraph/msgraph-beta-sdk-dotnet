@@ -2,10 +2,10 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Places.Item.GraphRoomList.CheckIns;
+using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Children;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Rooms;
-using Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces;
-using Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,9 +19,19 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
     /// <summary>
     /// Casts the previous resource to roomList.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GraphRoomListRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the checkIns property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.CheckIns.CheckInsRequestBuilder CheckIns
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Children.ChildrenRequestBuilder Children
+        {
+            get => new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Children.ChildrenRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the rooms property of the microsoft.graph.roomList entity.</summary>
         public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder Rooms
         {
@@ -49,7 +59,8 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
         {
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RoomList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,17 +83,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RoomList>(requestInfo, global::Microsoft.Graph.Beta.Models.RoomList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides operations to manage the rooms property of the microsoft.graph.roomList entity.
-        /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId.RoomsWithPlaceIdRequestBuilder"/></returns>
-        /// <param name="placeId">Alternate key of room</param>
-        public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId.RoomsWithPlaceIdRequestBuilder RoomsWithPlaceId(string placeId)
-        {
-            if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
-            return new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId.RoomsWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
-        }
-        /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,19 +111,9 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
             return new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId.WorkspacesWithPlaceIdRequestBuilder"/></returns>
-        /// <param name="placeId">Alternate key of workspace</param>
-        public global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId.WorkspacesWithPlaceIdRequestBuilder WorkspacesWithPlaceId(string placeId)
-        {
-            if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
-            return new global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId.WorkspacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
-        }
-        /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphRoomListRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -150,7 +141,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphRoomListRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder.GraphRoomListRequestBuilderGetQueryParameters>
         {
         }

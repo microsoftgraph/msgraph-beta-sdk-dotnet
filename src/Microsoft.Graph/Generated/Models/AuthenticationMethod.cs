@@ -7,16 +7,22 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AuthenticationMethod : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn&apos;t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn&apos;t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? LastUsedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUsedDateTime"); }
+            set { BackingStore?.Set("lastUsedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -25,17 +31,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.emailAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod(),
+                "#microsoft.graph.externalAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.ExternalAuthenticationMethod(),
                 "#microsoft.graph.fido2AuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod(),
+                "#microsoft.graph.hardwareOathAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.passwordAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod(),
                 "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.phoneAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod(),
                 "#microsoft.graph.platformCredentialAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod(),
+                "#microsoft.graph.qrCodePinAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod(),
                 "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod(),
@@ -51,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -59,9 +69,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteDateTimeOffsetValue("lastUsedDateTime", LastUsedDateTime);
         }
     }
 }

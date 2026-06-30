@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class UserAccountInformation : global::Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
@@ -44,7 +44,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("countryCode", value); }
         }
 #endif
-        /// <summary>The preferredLanguageTag property</summary>
+        /// <summary>Contains the identifiers of the user and the origin tenant that provisioned the user. This property is populated when the user is invited as a guest to the host tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.OriginTenantInfo? OriginTenantInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OriginTenantInfo?>("originTenantInfo"); }
+            set { BackingStore?.Set("originTenantInfo", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.OriginTenantInfo OriginTenantInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OriginTenantInfo>("originTenantInfo"); }
+            set { BackingStore?.Set("originTenantInfo", value); }
+        }
+#endif
+        /// <summary>Contains the language that the user associated as preferred for their account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.LocaleInfo? PreferredLanguageTag
@@ -60,6 +76,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("preferredLanguageTag", value); }
         }
 #endif
+        /// <summary>Represents the user&apos;s persona. The possible values are: unknown, externalMember, externalGuest, internalMember, internalGuest, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.UserPersona? UserPersona
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserPersona?>("userPersona"); }
+            set { BackingStore?.Set("userPersona", value); }
+        }
         /// <summary>The user principal name (UPN) of the user associated with the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.UserAccountInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.UserAccountInformation();
         }
         /// <summary>
@@ -103,7 +125,9 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "ageGroup", n => { AgeGroup = n.GetStringValue(); } },
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
+                { "originTenantInfo", n => { OriginTenantInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OriginTenantInfo>(global::Microsoft.Graph.Beta.Models.OriginTenantInfo.CreateFromDiscriminatorValue); } },
                 { "preferredLanguageTag", n => { PreferredLanguageTag = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LocaleInfo>(global::Microsoft.Graph.Beta.Models.LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "userPersona", n => { UserPersona = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.UserPersona>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -113,11 +137,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("ageGroup", AgeGroup);
             writer.WriteStringValue("countryCode", CountryCode);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OriginTenantInfo>("originTenantInfo", OriginTenantInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LocaleInfo>("preferredLanguageTag", PreferredLanguageTag);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.UserPersona>("userPersona", UserPersona);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AccessReviewInstanceDecisionItemServicePrincipalResource : global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource, IParsable
     #pragma warning restore CS1591
@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
+        /// <summary>The display name of the app role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppRoleDisplayName
+        {
+            get { return BackingStore?.Get<string?>("appRoleDisplayName"); }
+            set { BackingStore?.Set("appRoleDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string AppRoleDisplayName
+        {
+            get { return BackingStore?.Get<string>("appRoleDisplayName"); }
+            set { BackingStore?.Set("appRoleDisplayName", value); }
+        }
+#endif
+        /// <summary>The identifier of the app role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppRoleId
+        {
+            get { return BackingStore?.Get<string?>("appRoleId"); }
+            set { BackingStore?.Set("appRoleId", value); }
+        }
+#nullable restore
+#else
+        public string AppRoleId
+        {
+            get { return BackingStore?.Get<string>("appRoleId"); }
+            set { BackingStore?.Set("appRoleId", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemServicePrincipalResource"/> and sets the default values.
         /// </summary>
@@ -42,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemServicePrincipalResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemServicePrincipalResource();
         }
         /// <summary>
@@ -54,6 +86,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appRoleDisplayName", n => { AppRoleDisplayName = n.GetStringValue(); } },
+                { "appRoleId", n => { AppRoleId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,9 +96,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appId", AppId);
+            writer.WriteStringValue("appRoleDisplayName", AppRoleDisplayName);
+            writer.WriteStringValue("appRoleId", AppRoleId);
         }
     }
 }

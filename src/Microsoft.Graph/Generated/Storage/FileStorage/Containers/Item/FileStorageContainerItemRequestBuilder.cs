@@ -3,12 +3,19 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Activate;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Archive;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Columns;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Lock;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.MigrationJobs;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.PermanentDelete;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.ProvisionMigrationContainers;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.RecycleBin;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Restore;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.SharePointGroups;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Unarchive;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -22,13 +29,18 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
     /// <summary>
     /// Provides operations to manage the containers property of the microsoft.graph.fileStorage entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FileStorageContainerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the activate method.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Activate.ActivateRequestBuilder Activate
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Columns.ColumnsRequestBuilder Columns
@@ -40,6 +52,16 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the lock method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Lock.LockRequestBuilder Lock
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Lock.LockRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the migrationJobs property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.MigrationJobs.MigrationJobsRequestBuilder MigrationJobs
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.MigrationJobs.MigrationJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
@@ -50,6 +72,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the provisionMigrationContainers method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.ProvisionMigrationContainers.ProvisionMigrationContainersRequestBuilder ProvisionMigrationContainers
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.ProvisionMigrationContainers.ProvisionMigrationContainersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.RecycleBin.RecycleBinRequestBuilder RecycleBin
         {
@@ -59,6 +86,21 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.SharePointGroups.SharePointGroupsRequestBuilder SharePointGroups
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.SharePointGroups.SharePointGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unlock method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Unlock.UnlockRequestBuilder Unlock
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Unlock.UnlockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder"/> and sets the default values.
@@ -123,8 +165,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainer>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a fileStorageContainer object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-update?view=graph-rest-beta" />
+        /// Update the navigation property containers in storage
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainer"/></returns>
         /// <param name="body">The request body</param>
@@ -140,7 +181,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         public async Task<global::Microsoft.Graph.Beta.Models.FileStorageContainer> PatchAsync(global::Microsoft.Graph.Beta.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -187,7 +228,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a fileStorageContainer object.
+        /// Update the navigation property containers in storage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -201,7 +242,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -221,14 +262,14 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the properties of a fileStorageContainer.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -256,7 +297,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder.FileStorageContainerItemRequestBuilderGetQueryParameters>
         {
         }
@@ -264,7 +305,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FileStorageContainerItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

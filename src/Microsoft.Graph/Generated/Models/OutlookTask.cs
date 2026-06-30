@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OutlookTask : global::Microsoft.Graph.Beta.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
-        /// <summary>The importance of the event. Possible values are: low, normal, high.</summary>
+        /// <summary>The importance of the event. The possible values are: low, normal, high.</summary>
         public global::Microsoft.Graph.Beta.Models.Importance? Importance
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Importance?>("importance"); }
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #endif
-        /// <summary>Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.</summary>
+        /// <summary>Indicates the level of privacy for the task. The possible values are: normal, personal, private, confidential.</summary>
         public global::Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Sensitivity?>("sensitivity"); }
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
-        /// <summary>Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
+        /// <summary>Indicates the state or progress of the task. The possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
         public global::Microsoft.Graph.Beta.Models.TaskStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TaskStatus?>("status"); }
@@ -264,7 +264,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OutlookTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OutlookTask();
         }
         /// <summary>
@@ -301,7 +301,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assignedTo", AssignedTo);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Attachment>("attachments", Attachments);

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AuthenticationEventListener : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
+        /// <summary>The display name of the listener.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
         /// <summary>The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).</summary>
         public int? Priority
         {
@@ -57,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AuthenticationEventListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -65,9 +81,14 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.onAttributeCollectionStartListener" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionStartListener(),
                 "#microsoft.graph.onAttributeCollectionSubmitListener" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitListener(),
                 "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartListener(),
+                "#microsoft.graph.onEmailOtpSendListener" => new global::Microsoft.Graph.Beta.Models.OnEmailOtpSendListener(),
+                "#microsoft.graph.onFraudProtectionLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnFraudProtectionLoadStartListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new global::Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartListener(),
+                "#microsoft.graph.onPasswordSubmitListener" => new global::Microsoft.Graph.Beta.Models.OnPasswordSubmitListener(),
+                "#microsoft.graph.onPhoneMethodLoadStartListener" => new global::Microsoft.Graph.Beta.Models.OnPhoneMethodLoadStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartListener(),
                 "#microsoft.graph.onUserCreateStartListener" => new global::Microsoft.Graph.Beta.Models.OnUserCreateStartListener(),
+                "#microsoft.graph.onVerifiedIdClaimValidationListener" => new global::Microsoft.Graph.Beta.Models.OnVerifiedIdClaimValidationListener(),
                 _ => new global::Microsoft.Graph.Beta.Models.AuthenticationEventListener(),
             };
         }
@@ -81,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
                 { "conditions", n => { Conditions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationConditions>(global::Microsoft.Graph.Beta.Models.AuthenticationConditions.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
             };
         }
@@ -90,10 +112,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("authenticationEventsFlowId", AuthenticationEventsFlowId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationConditions>("conditions", Conditions);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("priority", Priority);
         }
     }

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile&apos;s configurations at enrollment of the corresponding device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnrollmentProfile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Configuration endpoint url to use for Enrollment</summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.EnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -94,6 +94,8 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.depEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepEnrollmentProfile(),
                 "#microsoft.graph.depIOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile(),
                 "#microsoft.graph.depMacOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile(),
+                "#microsoft.graph.depTvOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepTvOSEnrollmentProfile(),
+                "#microsoft.graph.depVisionOSEnrollmentProfile" => new global::Microsoft.Graph.Beta.Models.DepVisionOSEnrollmentProfile(),
                 _ => new global::Microsoft.Graph.Beta.Models.EnrollmentProfile(),
             };
         }
@@ -119,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("configurationEndpointUrl", ConfigurationEndpointUrl);
             writer.WriteStringValue("description", Description);

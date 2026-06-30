@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>VPN connection types.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Windows10VpnConnectionType
     {
         /// <summary>Pulse Secure.</summary>
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Cisco AnyConnect</summary>
         [EnumMember(Value = "ciscoAnyConnect")]
         CiscoAnyConnect,
-        /// <summary>Sentinel member for cases where the client cannot handle the new enum values.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
         /// <summary>Microsoft Tunnel connection type</summary>

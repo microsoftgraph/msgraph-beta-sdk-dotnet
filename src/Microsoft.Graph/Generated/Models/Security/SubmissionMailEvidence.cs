@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SubmissionMailEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The networkMessageId property</summary>
+        /// <summary>The network message ID of the email to which submission belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetworkMessageId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("networkMessageId", value); }
         }
 #endif
-        /// <summary>The recipient property</summary>
+        /// <summary>The recipient of the mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Recipient
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("recipient", value); }
         }
 #endif
-        /// <summary>The reportType property</summary>
+        /// <summary>The submission type for the specified instance that maps to Junk, Phish, Malware, or NotJunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportType
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("reportType", value); }
         }
 #endif
-        /// <summary>The sender property</summary>
+        /// <summary>The sender of the mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sender
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sender", value); }
         }
 #endif
-        /// <summary>The senderIp property</summary>
+        /// <summary>The sender&apos;s IP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderIp
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("senderIp", value); }
         }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>The subject of the submission mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject
@@ -108,13 +108,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The submissionDateTime property</summary>
+        /// <summary>The reported date and time for this submission. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SubmissionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("submissionDateTime"); }
             set { BackingStore?.Set("submissionDateTime", value); }
         }
-        /// <summary>The submissionId property</summary>
+        /// <summary>The submission ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmissionId
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("submissionId", value); }
         }
 #endif
-        /// <summary>The submitter property</summary>
+        /// <summary>The submitter&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Submitter
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.SubmissionMailEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.SubmissionMailEvidence();
         }
         /// <summary>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("networkMessageId", NetworkMessageId);
             writer.WriteStringValue("recipient", Recipient);

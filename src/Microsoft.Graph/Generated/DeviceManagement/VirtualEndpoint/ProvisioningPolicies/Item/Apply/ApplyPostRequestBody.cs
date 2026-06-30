@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType?>("policySettings"); }
             set { BackingStore?.Set("policySettings", value); }
         }
+        /// <summary>The reservePercentage property</summary>
+        public int? ReservePercentage
+        {
+            get { return BackingStore?.Get<int?>("reservePercentage"); }
+            set { BackingStore?.Set("reservePercentage", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -43,7 +49,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody();
         }
         /// <summary>
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "policySettings", n => { PolicySettings = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>(); } },
+                { "reservePercentage", n => { ReservePercentage = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -63,8 +70,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>("policySettings", PolicySettings);
+            writer.WriteIntValue("reservePercentage", ReservePercentage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

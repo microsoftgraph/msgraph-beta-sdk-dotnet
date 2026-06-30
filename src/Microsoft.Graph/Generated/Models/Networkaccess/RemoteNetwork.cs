@@ -7,9 +7,9 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RemoteNetwork : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class RemoteNetwork : global::Microsoft.Graph.Beta.Models.Networkaccess.BaseEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the connectivity details of all device links associated with a remote network.</summary>
@@ -66,22 +66,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
         /// <summary>The region property</summary>
         public global::Microsoft.Graph.Beta.Models.Networkaccess.Region? Region
         {
@@ -105,13 +89,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork"/> and sets the default values.
+        /// </summary>
+        public RemoteNetwork() : base()
+        {
+            OdataType = "#microsoft.graph.networkaccess.remoteNetwork";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork();
         }
         /// <summary>
@@ -126,7 +117,6 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>(global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>(global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Region>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -137,13 +127,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", ConnectivityConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>("deviceLinks", DeviceLinks);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>("forwardingProfiles", ForwardingProfiles);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Region>("region", Region);
             writer.WriteStringValue("version", Version);
         }

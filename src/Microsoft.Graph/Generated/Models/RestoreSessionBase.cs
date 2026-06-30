@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RestoreSessionBase : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -78,7 +78,29 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.</summary>
+        /// <summary>Indicates whether the restore session was created normally or by a bulk job.</summary>
+        public global::Microsoft.Graph.Beta.Models.RestoreJobType? RestoreJobType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreJobType?>("restoreJobType"); }
+            set { BackingStore?.Set("restoreJobType", value); }
+        }
+        /// <summary>The number of metadata artifacts that belong to this restore session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount? RestoreSessionArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount?>("restoreSessionArtifactCount"); }
+            set { BackingStore?.Set("restoreSessionArtifactCount", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount RestoreSessionArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount>("restoreSessionArtifactCount"); }
+            set { BackingStore?.Set("restoreSessionArtifactCount", value); }
+        }
+#endif
+        /// <summary>Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: failed.</summary>
         public global::Microsoft.Graph.Beta.Models.RestoreSessionStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus?>("status"); }
@@ -91,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.RestoreSessionBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -115,6 +137,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>(global::Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "restoreJobType", n => { RestoreJobType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestoreJobType>(); } },
+                { "restoreSessionArtifactCount", n => { RestoreSessionArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount>(global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus>(); } },
             };
         }
@@ -124,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
@@ -132,6 +156,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>("error", Error);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestoreJobType>("restoreJobType", RestoreJobType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount>("restoreSessionArtifactCount", RestoreSessionArtifactCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus>("status", Status);
         }
     }

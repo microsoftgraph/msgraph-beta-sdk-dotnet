@@ -3,11 +3,13 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions;
+using Microsoft.Graph.Beta.Users.Item.Settings.Exchange;
 using Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings;
 using Microsoft.Graph.Beta.Users.Item.Settings.ShiftPreferences;
 using Microsoft.Graph.Beta.Users.Item.Settings.Storage;
 using Microsoft.Graph.Beta.Users.Item.Settings.Windows;
+using Microsoft.Graph.Beta.Users.Item.Settings.WorkHoursAndLocations;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -21,44 +23,48 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
     /// <summary>
     /// Provides operations to manage the settings property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions.ContactMergeSuggestionsRequestBuilder ContactMergeSuggestions
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions.ContactMergeSuggestionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the exchange property of the microsoft.graph.userSettings entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Settings.Exchange.ExchangeRequestBuilder Exchange
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Settings.Exchange.ExchangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights.ItemInsightsRequestBuilder ItemInsights
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights.ItemInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings.RegionalAndLanguageSettingsRequestBuilder RegionalAndLanguageSettings
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings.RegionalAndLanguageSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Settings.ShiftPreferences.ShiftPreferencesRequestBuilder ShiftPreferences
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.ShiftPreferences.ShiftPreferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the storage property of the microsoft.graph.userSettings entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Settings.Storage.StorageRequestBuilder Storage
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.Storage.StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windows property of the microsoft.graph.userSettings entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Settings.Windows.WindowsRequestBuilder Windows
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Settings.Windows.WindowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the workHoursAndLocations property of the microsoft.graph.userSettings entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Settings.WorkHoursAndLocations.WorkHoursAndLocationsRequestBuilder WorkHoursAndLocations
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Settings.WorkHoursAndLocations.WorkHoursAndLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder"/> and sets the default values.
@@ -82,7 +88,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,7 +111,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UserSettings?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -131,7 +135,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UserSettings?> PatchAsync(global::Microsoft.Graph.Beta.Models.UserSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -141,7 +144,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         public async Task<global::Microsoft.Graph.Beta.Models.UserSettings> PatchAsync(global::Microsoft.Graph.Beta.Models.UserSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -154,7 +157,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -174,7 +176,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -195,7 +196,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UserSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.UserSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -217,7 +217,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder(rawUrl, RequestAdapter);
@@ -226,14 +225,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get settings from users
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -261,7 +260,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Settings.SettingsRequestBuilder.SettingsRequestBuilderGetQueryParameters>
         {
         }
@@ -269,7 +268,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

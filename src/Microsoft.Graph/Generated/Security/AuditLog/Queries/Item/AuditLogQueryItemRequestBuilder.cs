@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
     /// <summary>
     /// Provides operations to manage the queries property of the microsoft.graph.security.auditCoreRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditLogQueryItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.</summary>
@@ -87,31 +87,6 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property queries in security
-        /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery?> PatchAsync(global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery> PatchAsync(global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
         /// Delete navigation property queries for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -150,28 +125,6 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property queries in security
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            return requestInfo;
-        }
-        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder"/></returns>
@@ -184,14 +137,14 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditLogQueryItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of an auditLogQuery object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditLogQueryItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -219,16 +172,8 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditLogQueryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder.AuditLogQueryItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-        public partial class AuditLogQueryItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

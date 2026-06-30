@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Contact : global::Microsoft.Graph.Beta.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
@@ -425,6 +425,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("postalAddresses", value); }
         }
 #endif
+        /// <summary>The primary email address of the contact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.EmailAddress? PrimaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailAddress?>("primaryEmailAddress"); }
+            set { BackingStore?.Set("primaryEmailAddress", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.EmailAddress PrimaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailAddress>("primaryEmailAddress"); }
+            set { BackingStore?.Set("primaryEmailAddress", value); }
+        }
+#endif
         /// <summary>The contact&apos;s profession.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -439,6 +455,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("profession"); }
             set { BackingStore?.Set("profession", value); }
+        }
+#endif
+        /// <summary>The secondary email address of the contact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.EmailAddress? SecondaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailAddress?>("secondaryEmailAddress"); }
+            set { BackingStore?.Set("secondaryEmailAddress", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.EmailAddress SecondaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailAddress>("secondaryEmailAddress"); }
+            set { BackingStore?.Set("secondaryEmailAddress", value); }
         }
 #endif
         /// <summary>The collection of single-value extended properties defined for the contact. Read-only. Nullable.</summary>
@@ -487,6 +519,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
+        }
+#endif
+        /// <summary>The tertiary email address of the contact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.EmailAddress? TertiaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailAddress?>("tertiaryEmailAddress"); }
+            set { BackingStore?.Set("tertiaryEmailAddress", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.EmailAddress TertiaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EmailAddress>("tertiaryEmailAddress"); }
+            set { BackingStore?.Set("tertiaryEmailAddress", value); }
         }
 #endif
         /// <summary>The contact&apos;s title.</summary>
@@ -589,7 +637,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Contact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Contact();
         }
         /// <summary>
@@ -627,10 +675,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Phone>(global::Microsoft.Graph.Beta.Models.Phone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "photo", n => { Photo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ProfilePhoto>(global::Microsoft.Graph.Beta.Models.ProfilePhoto.CreateFromDiscriminatorValue); } },
                 { "postalAddresses", n => { PostalAddresses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PhysicalAddress>(global::Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "primaryEmailAddress", n => { PrimaryEmailAddress = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EmailAddress>(global::Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "profession", n => { Profession = n.GetStringValue(); } },
+                { "secondaryEmailAddress", n => { SecondaryEmailAddress = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EmailAddress>(global::Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>(global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "spouseName", n => { SpouseName = n.GetStringValue(); } },
                 { "surname", n => { Surname = n.GetStringValue(); } },
+                { "tertiaryEmailAddress", n => { TertiaryEmailAddress = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EmailAddress>(global::Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "websites", n => { Websites = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Website>(global::Microsoft.Graph.Beta.Models.Website.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "weddingAnniversary", n => { WeddingAnniversary = n.GetDateValue(); } },
@@ -645,7 +696,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assistantName", AssistantName);
             writer.WriteDateTimeOffsetValue("birthday", Birthday);
@@ -674,10 +725,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Phone>("phones", Phones);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ProfilePhoto>("photo", Photo);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PhysicalAddress>("postalAddresses", PostalAddresses);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EmailAddress>("primaryEmailAddress", PrimaryEmailAddress);
             writer.WriteStringValue("profession", Profession);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EmailAddress>("secondaryEmailAddress", SecondaryEmailAddress);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteStringValue("spouseName", SpouseName);
             writer.WriteStringValue("surname", Surname);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EmailAddress>("tertiaryEmailAddress", TertiaryEmailAddress);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Website>("websites", Websites);
             writer.WriteDateValue("weddingAnniversary", WeddingAnniversary);

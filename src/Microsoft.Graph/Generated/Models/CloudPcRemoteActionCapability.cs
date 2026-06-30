@@ -8,18 +8,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcRemoteActionCapability : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.</summary>
+        /// <summary>Indicates the state of the supported action capability to perform a Cloud PC remote action. The possible values are: enabled, disabled. Default value is enabled.</summary>
         public global::Microsoft.Graph.Beta.Models.ActionCapability? ActionCapability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActionCapability?>("actionCapability"); }
             set { BackingStore?.Set("actionCapability", value); }
         }
-        /// <summary>The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
+        /// <summary>The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionName? ActionName
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionName?>("actionName"); }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionCapability();
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ActionCapability>("actionCapability", ActionCapability);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionName>("actionName", ActionName);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
     /// <summary>
     /// Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudPcExternalPartnerSettingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -40,6 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,6 +65,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.Item.CloudPcExternalPartnerSettingItemRequestBuilder.CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,6 +91,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting?> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,7 +101,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -111,6 +114,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -130,6 +134,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.Item.CloudPcExternalPartnerSettingItemRequestBuilder.CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -150,6 +155,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -159,7 +165,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -171,6 +177,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.Item.CloudPcExternalPartnerSettingItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.Item.CloudPcExternalPartnerSettingItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.Item.CloudPcExternalPartnerSettingItemRequestBuilder(rawUrl, RequestAdapter);
@@ -179,14 +186,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcExternalPartnerSettingItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a cloudPcExternalPartnerSetting object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -214,7 +221,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcExternalPartnerSettingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.Item.CloudPcExternalPartnerSettingItemRequestBuilder.CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters>
         {
         }
@@ -222,7 +229,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPcExternalPartnerSettingItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

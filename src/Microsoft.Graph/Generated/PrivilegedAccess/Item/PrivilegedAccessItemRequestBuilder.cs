@@ -20,30 +20,35 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
     /// <summary>
     /// Provides operations to manage the collection of privilegedAccess entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PrivilegedAccessItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.</summary>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.ResourcesRequestBuilder Resources
         {
             get => new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.</summary>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.RoleAssignmentRequestsRequestBuilder RoleAssignmentRequests
         {
             get => new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.RoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.</summary>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
         {
             get => new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.</summary>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
         {
             get => new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.</summary>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder RoleSettings
         {
             get => new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -70,6 +75,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrivilegedAccess?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -117,6 +124,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrivilegedAccess?> PatchAsync(global::Microsoft.Graph.Beta.Models.PrivilegedAccess body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -126,7 +134,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         public async Task<global::Microsoft.Graph.Beta.Models.PrivilegedAccess> PatchAsync(global::Microsoft.Graph.Beta.Models.PrivilegedAccess body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -139,6 +147,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -158,6 +167,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -178,6 +188,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.PrivilegedAccess body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -187,7 +198,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.PrivilegedAccess body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -199,6 +210,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder(rawUrl, RequestAdapter);
@@ -207,14 +219,14 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get entity from privilegedAccess by key
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PrivilegedAccessItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -242,7 +254,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PrivilegedAccessItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>
         {
         }
@@ -250,7 +262,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PrivilegedAccessItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

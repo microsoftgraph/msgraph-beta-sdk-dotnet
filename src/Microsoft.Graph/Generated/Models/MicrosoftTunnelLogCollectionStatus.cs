@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Enum type that represent the status of log collection</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MicrosoftTunnelLogCollectionStatus
     {
         /// <summary>Indicates that the log collection is in progress</summary>
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the log collection has failed</summary>
         [EnumMember(Value = "failed")]
         Failed,
-        /// <summary>Placeholder value for future expansion enums</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

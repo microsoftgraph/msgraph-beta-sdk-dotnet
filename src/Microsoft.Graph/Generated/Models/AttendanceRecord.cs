@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AttendanceRecord : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -44,6 +44,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
+        /// <summary>The list of real-time participant interaction behaviors during a meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MeetingEngagement>? Engagements
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingEngagement>?>("engagements"); }
+            set { BackingStore?.Set("engagements", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MeetingEngagement> Engagements
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MeetingEngagement>>("engagements"); }
+            set { BackingStore?.Set("engagements", value); }
+        }
+#endif
+        /// <summary>The external information for a virtual event registration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation? ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation?>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#endif
         /// <summary>Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +108,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registrantId", value); }
         }
 #endif
-        /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
+        /// <summary>Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationId
+        {
+            get { return BackingStore?.Get<string?>("registrationId"); }
+            set { BackingStore?.Set("registrationId", value); }
+        }
+#nullable restore
+#else
+        public string RegistrationId
+        {
+            get { return BackingStore?.Get<string>("registrationId"); }
+            set { BackingStore?.Set("registrationId", value); }
+        }
+#endif
+        /// <summary>Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Role
@@ -105,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AttendanceRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AttendanceRecord();
         }
         /// <summary>
@@ -118,8 +166,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "attendanceIntervals", n => { AttendanceIntervals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceInterval>(global::Microsoft.Graph.Beta.Models.AttendanceInterval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "engagements", n => { Engagements = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingEngagement>(global::Microsoft.Graph.Beta.Models.MeetingEngagement.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalRegistrationInformation", n => { ExternalRegistrationInformation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>(global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "registrantId", n => { RegistrantId = n.GetStringValue(); } },
+                { "registrationId", n => { RegistrationId = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "totalAttendanceInSeconds", n => { TotalAttendanceInSeconds = n.GetIntValue(); } },
             };
@@ -130,12 +181,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingEngagement>("engagements", Engagements);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation", ExternalRegistrationInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("identity", Identity);
             writer.WriteStringValue("registrantId", RegistrantId);
+            writer.WriteStringValue("registrationId", RegistrationId);
             writer.WriteStringValue("role", Role);
             writer.WriteIntValue("totalAttendanceInSeconds", TotalAttendanceInSeconds);
         }

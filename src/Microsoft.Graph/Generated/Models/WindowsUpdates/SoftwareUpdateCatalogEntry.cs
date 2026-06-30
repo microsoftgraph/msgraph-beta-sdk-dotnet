@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SoftwareUpdateCatalogEntry : global::Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry, IParsable
     #pragma warning restore CS1591
@@ -26,13 +26,14 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
                 "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.FeatureUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.recoveryUpdateCatalogEntry" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.RecoveryUpdateCatalogEntry(),
                 _ => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry(),
             };
         }
@@ -52,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }
     }

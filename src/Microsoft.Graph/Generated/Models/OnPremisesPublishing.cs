@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OnPremisesPublishing : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.</summary>
+        /// <summary>If you&apos;re configuring a traffic manager in front of multiple app proxy applications, this user-friendly URL points to the traffic manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateUrl
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applicationServerTimeout", value); }
         }
 #endif
-        /// <summary>Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.</summary>
+        /// <summary>System-defined value that indicates whether this application is an application proxy configured application. The possible values are quickaccessapp and nonwebapp. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationType
@@ -69,13 +69,13 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn&apos;t require authentication. Possible values are: passthru, aadPreAuthentication.</summary>
+        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn&apos;t require authentication. The possible values are: passthru, aadPreAuthentication.</summary>
         public global::Microsoft.Graph.Beta.Models.ExternalAuthenticationType? ExternalAuthenticationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalAuthenticationType?>("externalAuthenticationType"); }
             set { BackingStore?.Set("externalAuthenticationType", value); }
         }
-        /// <summary>The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.</summary>
+        /// <summary>The published external URL for the application. For example, https://intranet-contoso.msappproxy.net/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalUrl
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("internalUrl", value); }
         }
 #endif
-        /// <summary>The isAccessibleViaZTNAClient property</summary>
+        /// <summary>Indicates whether the application is accessible via a Global Secure Access client on a managed device.</summary>
         public bool? IsAccessibleViaZTNAClient
         {
             get { return BackingStore?.Get<bool?>("isAccessibleViaZTNAClient"); }
@@ -119,7 +119,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isBackendCertificateValidationEnabled"); }
             set { BackingStore?.Set("isBackendCertificateValidationEnabled", value); }
         }
-        /// <summary>The isDnsResolutionEnabled property</summary>
+        /// <summary>Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.</summary>
+        public bool? IsContinuousAccessEvaluationEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isContinuousAccessEvaluationEnabled"); }
+            set { BackingStore?.Set("isContinuousAccessEvaluationEnabled", value); }
+        }
+        /// <summary>Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.</summary>
         public bool? IsDnsResolutionEnabled
         {
             get { return BackingStore?.Get<bool?>("isDnsResolutionEnabled"); }
@@ -231,7 +237,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
 #endif
-        /// <summary>The useAlternateUrlForTranslationAndRedirect property</summary>
+        /// <summary>The trafficRoutingMethod property</summary>
+        public global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod? TrafficRoutingMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod?>("trafficRoutingMethod"); }
+            set { BackingStore?.Set("trafficRoutingMethod", value); }
+        }
+        /// <summary>Indicates whether the application should use alternateUrl instead of externalUrl.</summary>
         public bool? UseAlternateUrlForTranslationAndRedirect
         {
             get { return BackingStore?.Get<bool?>("useAlternateUrlForTranslationAndRedirect"); }
@@ -285,6 +297,54 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("verifiedCustomDomainPasswordCredential", value); }
         }
 #endif
+        /// <summary>The wafAllowedHeaders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary? WafAllowedHeaders
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary?>("wafAllowedHeaders"); }
+            set { BackingStore?.Set("wafAllowedHeaders", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary WafAllowedHeaders
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary>("wafAllowedHeaders"); }
+            set { BackingStore?.Set("wafAllowedHeaders", value); }
+        }
+#endif
+        /// <summary>The wafIpRanges property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IpRange>? WafIpRanges
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IpRange>?>("wafIpRanges"); }
+            set { BackingStore?.Set("wafIpRanges", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IpRange> WafIpRanges
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IpRange>>("wafIpRanges"); }
+            set { BackingStore?.Set("wafIpRanges", value); }
+        }
+#endif
+        /// <summary>The wafProvider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WafProvider
+        {
+            get { return BackingStore?.Get<string?>("wafProvider"); }
+            set { BackingStore?.Set("wafProvider", value); }
+        }
+#nullable restore
+#else
+        public string WafProvider
+        {
+            get { return BackingStore?.Get<string>("wafProvider"); }
+            set { BackingStore?.Set("wafProvider", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.OnPremisesPublishing"/> and sets the default values.
         /// </summary>
@@ -300,7 +360,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.OnPremisesPublishing CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OnPremisesPublishing();
         }
         /// <summary>
@@ -319,6 +379,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "internalUrl", n => { InternalUrl = n.GetStringValue(); } },
                 { "isAccessibleViaZTNAClient", n => { IsAccessibleViaZTNAClient = n.GetBoolValue(); } },
                 { "isBackendCertificateValidationEnabled", n => { IsBackendCertificateValidationEnabled = n.GetBoolValue(); } },
+                { "isContinuousAccessEvaluationEnabled", n => { IsContinuousAccessEvaluationEnabled = n.GetBoolValue(); } },
                 { "isDnsResolutionEnabled", n => { IsDnsResolutionEnabled = n.GetBoolValue(); } },
                 { "isHttpOnlyCookieEnabled", n => { IsHttpOnlyCookieEnabled = n.GetBoolValue(); } },
                 { "isOnPremPublishingEnabled", n => { IsOnPremPublishingEnabled = n.GetBoolValue(); } },
@@ -331,10 +392,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>(global::Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "segmentsConfiguration", n => { SegmentsConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SegmentConfiguration>(global::Microsoft.Graph.Beta.Models.SegmentConfiguration.CreateFromDiscriminatorValue); } },
                 { "singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn>(global::Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
+                { "trafficRoutingMethod", n => { TrafficRoutingMethod = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod>(); } },
                 { "useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
                 { "verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
                 { "verifiedCustomDomainKeyCredential", n => { VerifiedCustomDomainKeyCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue); } },
                 { "verifiedCustomDomainPasswordCredential", n => { VerifiedCustomDomainPasswordCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PasswordCredential>(global::Microsoft.Graph.Beta.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
+                { "wafAllowedHeaders", n => { WafAllowedHeaders = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary>(global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary.CreateFromDiscriminatorValue); } },
+                { "wafIpRanges", n => { WafIpRanges = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IpRange>(global::Microsoft.Graph.Beta.Models.IpRange.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "wafProvider", n => { WafProvider = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -343,7 +408,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alternateUrl", AlternateUrl);
             writer.WriteStringValue("applicationServerTimeout", ApplicationServerTimeout);
             writer.WriteStringValue("applicationType", ApplicationType);
@@ -352,6 +417,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("internalUrl", InternalUrl);
             writer.WriteBoolValue("isAccessibleViaZTNAClient", IsAccessibleViaZTNAClient);
             writer.WriteBoolValue("isBackendCertificateValidationEnabled", IsBackendCertificateValidationEnabled);
+            writer.WriteBoolValue("isContinuousAccessEvaluationEnabled", IsContinuousAccessEvaluationEnabled);
             writer.WriteBoolValue("isDnsResolutionEnabled", IsDnsResolutionEnabled);
             writer.WriteBoolValue("isHttpOnlyCookieEnabled", IsHttpOnlyCookieEnabled);
             writer.WriteBoolValue("isOnPremPublishingEnabled", IsOnPremPublishingEnabled);
@@ -364,10 +430,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>("onPremisesApplicationSegments", OnPremisesApplicationSegments);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SegmentConfiguration>("segmentsConfiguration", SegmentsConfiguration);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TrafficRoutingMethod>("trafficRoutingMethod", TrafficRoutingMethod);
             writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", UseAlternateUrlForTranslationAndRedirect);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.KeyCredential>("verifiedCustomDomainKeyCredential", VerifiedCustomDomainKeyCredential);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PasswordCredential>("verifiedCustomDomainPasswordCredential", VerifiedCustomDomainPasswordCredential);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary>("wafAllowedHeaders", WafAllowedHeaders);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IpRange>("wafIpRanges", WafIpRanges);
+            writer.WriteStringValue("wafProvider", WafProvider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

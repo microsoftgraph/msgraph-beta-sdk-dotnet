@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies;
@@ -18,7 +19,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
     /// <summary>
     /// Builds and executes requests for operations under \identity\conditionalAccess
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConditionalAccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
@@ -35,6 +36,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
         public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder AuthenticationStrengths
         {
             get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.DeletedItemsRequestBuilder DeletedItems
+        {
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems.DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluate method.</summary>
         public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder Evaluate

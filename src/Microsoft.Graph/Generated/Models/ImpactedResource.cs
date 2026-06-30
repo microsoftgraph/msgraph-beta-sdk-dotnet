@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ImpactedResource : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -83,21 +83,11 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The date and time when the status was last updated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastModifiedDateTime
+        public DateTimeOffset? LastModifiedDateTime
         {
-            get { return BackingStore?.Get<string?>("lastModifiedDateTime"); }
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-#nullable restore
-#else
-        public string LastModifiedDateTime
-        {
-            get { return BackingStore?.Get<string>("lastModifiedDateTime"); }
-            set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-#endif
         /// <summary>The user responsible for maintaining the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,7 +193,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ImpactedResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.ImpactedResource();
         }
         /// <summary>
@@ -219,7 +209,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "apiUrl", n => { ApiUrl = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
-                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "portalUrl", n => { PortalUrl = n.GetStringValue(); } },
                 { "postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
@@ -236,14 +226,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("addedDateTime", AddedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyValue>("additionalDetails", AdditionalDetails);
             writer.WriteStringValue("apiUrl", ApiUrl);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
-            writer.WriteStringValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("portalUrl", PortalUrl);
             writer.WriteDateTimeOffsetValue("postponeUntilDateTime", PostponeUntilDateTime);

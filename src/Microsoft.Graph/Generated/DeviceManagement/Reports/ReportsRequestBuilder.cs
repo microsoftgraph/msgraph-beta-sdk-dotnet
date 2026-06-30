@@ -29,7 +29,6 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonCo
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicySettingsSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport;
@@ -71,8 +70,14 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlert
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleDeviceOSUpdateStatus;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailures;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveEnrollmentTimeGroupingFailureReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveSecurityTaskAppsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveWin32CatalogAppsUpdateReport;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -89,7 +94,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
     /// <summary>
     /// Provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.</summary>
@@ -236,11 +241,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder GetDeviceConfigurationPolicyStatusSummary
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getDeviceInstallStatusReport method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder GetDeviceInstallStatusReport
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles.GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles
@@ -447,15 +447,45 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport.GetWindowsUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the getZebraFotaDeploymentReport method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport
+        /// <summary>Provides operations to call the retrieveAndroidWorkProfileDeviceMigrationStatuses method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses.RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder RetrieveAndroidWorkProfileDeviceMigrationStatuses
         {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAndroidWorkProfileDeviceMigrationStatuses.RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the retrieveAssignedApplicationsReport method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport.RetrieveAssignedApplicationsReportRequestBuilder RetrieveAssignedApplicationsReport
+        /// <summary>Provides operations to call the retrieveAppleDeviceOSUpdateStatus method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleDeviceOSUpdateStatus.RetrieveAppleDeviceOSUpdateStatusRequestBuilder RetrieveAppleDeviceOSUpdateStatus
         {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport.RetrieveAssignedApplicationsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleDeviceOSUpdateStatus.RetrieveAppleDeviceOSUpdateStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveAppleOSUpdateFailures method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailures.RetrieveAppleOSUpdateFailuresRequestBuilder RetrieveAppleOSUpdateFailures
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAppleOSUpdateFailures.RetrieveAppleOSUpdateFailuresRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPkiLeafCertificateReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateReport.RetrieveCloudPkiLeafCertificateReportRequestBuilder RetrieveCloudPkiLeafCertificateReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateReport.RetrieveCloudPkiLeafCertificateReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPkiLeafCertificateSummaryReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateSummaryReport.RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder RetrieveCloudPkiLeafCertificateSummaryReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveCloudPkiLeafCertificateSummaryReport.RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveDeviceAppInstallationStatusReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder RetrieveDeviceAppInstallationStatusReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveEnrollmentTimeGroupingFailureReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveEnrollmentTimeGroupingFailureReport.RetrieveEnrollmentTimeGroupingFailureReportRequestBuilder RetrieveEnrollmentTimeGroupingFailureReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveEnrollmentTimeGroupingFailureReport.RetrieveEnrollmentTimeGroupingFailureReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveSecurityTaskAppsReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveSecurityTaskAppsReport.RetrieveSecurityTaskAppsReportRequestBuilder RetrieveSecurityTaskAppsReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveSecurityTaskAppsReport.RetrieveSecurityTaskAppsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveWin32CatalogAppsUpdateReport method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveWin32CatalogAppsUpdateReport.RetrieveWin32CatalogAppsUpdateReportRequestBuilder RetrieveWin32CatalogAppsUpdateReport
@@ -501,7 +531,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reports singleton
+        /// Get reports from deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagementReports"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -540,7 +570,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementReports> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -568,7 +598,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
             return requestInfo;
         }
         /// <summary>
-        /// Reports singleton
+        /// Get reports from deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -601,7 +631,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -621,14 +651,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Reports singleton
+        /// Get reports from deviceManagement
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -656,7 +686,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>
         {
         }
@@ -664,7 +694,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

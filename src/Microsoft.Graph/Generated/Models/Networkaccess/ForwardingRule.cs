@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ForwardingRule : global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule, IParsable
     #pragma warning restore CS1591
@@ -17,6 +17,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction?>("action"); }
             set { BackingStore?.Set("action", value); }
+        }
+        /// <summary>The clientFallbackAction property</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction? ClientFallbackAction
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction?>("clientFallbackAction"); }
+            set { BackingStore?.Set("clientFallbackAction", value); }
         }
         /// <summary>Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction>(); } },
+                { "clientFallbackAction", n => { ClientFallbackAction = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction>(); } },
                 { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>(global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ruleType", n => { RuleType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>(); } },
             };
@@ -83,9 +90,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction>("action", Action);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ClientFallbackAction>("clientFallbackAction", ClientFallbackAction);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>("destinations", Destinations);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>("ruleType", RuleType);
         }

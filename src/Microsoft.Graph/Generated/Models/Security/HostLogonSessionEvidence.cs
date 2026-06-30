@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class HostLogonSessionEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account property</summary>
+        /// <summary>The account that is associated with the sign-in session ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.UserEvidence? Account
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("account", value); }
         }
 #endif
-        /// <summary>The endUtcDateTime property</summary>
+        /// <summary>The session end time, if known. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EndUtcDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("endUtcDateTime"); }
             set { BackingStore?.Set("endUtcDateTime", value); }
         }
-        /// <summary>The host property</summary>
+        /// <summary>The host for the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.DeviceEvidence? Host
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("host", value); }
         }
 #endif
-        /// <summary>The sessionId property</summary>
+        /// <summary>The session ID for the account reported in the alert, for example, 0x3e7.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("sessionId", value); }
         }
 #endif
-        /// <summary>The startUtcDateTime property</summary>
+        /// <summary>The session start time, if known. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartUtcDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startUtcDateTime"); }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.HostLogonSessionEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.HostLogonSessionEvidence();
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.UserEvidence>("account", Account);
             writer.WriteDateTimeOffsetValue("endUtcDateTime", EndUtcDateTime);

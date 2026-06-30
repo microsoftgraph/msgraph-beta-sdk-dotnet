@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcDeviceImage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.</summary>
+        /// <summary>The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation, sourceImageWithDataDiskNotSupported, sourceImageWithDiskEncryptionSetNotSupported, sourceImageWithAzureDiskEncryptionNotSupported. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation, sourceImageWithDataDiskNotSupported, sourceImageWithDiskEncryptionSetNotSupported, sourceImageWithAzureDiskEncryptionNotSupported, fSLogixInstalledSourceImageNotSupported, startMenuAppLimitExceeded. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageErrorCode? ErrorCode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageErrorCode?>("errorCode"); }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The operating system of the image. For example, Windows 10 Enterprise. Read-only.</summary>
+        /// <summary>The operating system of the image. For example, Windows 11 Enterprise. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem
@@ -79,13 +79,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("osBuildNumber", value); }
         }
 #endif
-        /// <summary>The OS status of this image. Possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.</summary>
+        /// <summary>The OS status of this image. The possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus? OsStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus?>("osStatus"); }
             set { BackingStore?.Set("osStatus", value); }
         }
-        /// <summary>The osVersionNumber property</summary>
+        /// <summary>The operating system version of this image. For example, 10.0.22000.296. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersionNumber
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("osVersionNumber", value); }
         }
 #endif
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The scope IDs of the corresponding permission. Currently, it&apos;s the Intune scope tag ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds
@@ -117,6 +117,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
+        /// <summary>The size of the image in GB. For example, 64. Read-only.</summary>
+        public int? SizeInGB
+        {
+            get { return BackingStore?.Get<int?>("sizeInGB"); }
+            set { BackingStore?.Set("sizeInGB", value); }
+        }
         /// <summary>The unique identifier (ID) of the source image resource on Azure. The required ID format is: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,13 +139,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceImageResourceId", value); }
         }
 #endif
-        /// <summary>The status of the image on the Cloud PC. Possible values are: pending, ready, failed, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the image on the Cloud PC. The possible values are: pending, ready, warning, failed, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only. The statusDetails property is deprecated and will stop returning data on January 31, 2024. Going forward, use the errorCode property.</summary>
+        /// <summary>The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only. The statusDetails property is deprecated and will stop returning data on January 31, 2024. Going forward, use the errorCode property.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatusDetails? StatusDetails
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatusDetails?>("statusDetails"); }
@@ -168,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage();
         }
         /// <summary>
@@ -188,6 +194,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "osStatus", n => { OsStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>(); } },
                 { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
                 { "sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus>(); } },
                 { "statusDetails", n => { StatusDetails = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatusDetails>(); } },
@@ -200,7 +207,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageErrorCode>("errorCode", ErrorCode);
@@ -211,6 +218,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>("osStatus", OsStatus);
             writer.WriteStringValue("osVersionNumber", OsVersionNumber);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
+            writer.WriteIntValue("sizeInGB", SizeInGB);
             writer.WriteStringValue("sourceImageResourceId", SourceImageResourceId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus>("status", Status);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatusDetails>("statusDetails", StatusDetails);

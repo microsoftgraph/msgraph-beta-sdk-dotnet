@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ApprovalStage : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -24,6 +24,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<int?>("approvalStageTimeOutInDays"); }
             set { BackingStore?.Set("approvalStageTimeOutInDays", value); }
+        }
+        /// <summary>The approverInformationVisibility property</summary>
+        public global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility? ApproverInformationVisibility
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility?>("approverInformationVisibility"); }
+            set { BackingStore?.Set("approverInformationVisibility", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -108,8 +114,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.ApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.ApprovalStage();
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.accessPackageDynamicApprovalStage" => new global::Microsoft.Graph.Beta.Models.AccessPackageDynamicApprovalStage(),
+                _ => new global::Microsoft.Graph.Beta.Models.ApprovalStage(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approvalStageTimeOutInDays", n => { ApprovalStageTimeOutInDays = n.GetIntValue(); } },
+                { "approverInformationVisibility", n => { ApproverInformationVisibility = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility>(); } },
                 { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSet>(global::Microsoft.Graph.Beta.Models.UserSet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "escalationTimeInMinutes", n => { EscalationTimeInMinutes = n.GetIntValue(); } },
                 { "isApproverJustificationRequired", n => { IsApproverJustificationRequired = n.GetBoolValue(); } },
@@ -134,8 +146,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("approvalStageTimeOutInDays", ApprovalStageTimeOutInDays);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ApproverInformationVisibility>("approverInformationVisibility", ApproverInformationVisibility);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSet>("escalationApprovers", EscalationApprovers);
             writer.WriteIntValue("escalationTimeInMinutes", EscalationTimeInMinutes);
             writer.WriteBoolValue("isApproverJustificationRequired", IsApproverJustificationRequired);

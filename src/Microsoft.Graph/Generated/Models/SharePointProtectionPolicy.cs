@@ -7,11 +7,43 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SharePointProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The site exclusion units associated with the SharePoint protection policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>? SiteExclusionUnits
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>?>("siteExclusionUnits"); }
+            set { BackingStore?.Set("siteExclusionUnits", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit> SiteExclusionUnits
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>>("siteExclusionUnits"); }
+            set { BackingStore?.Set("siteExclusionUnits", value); }
+        }
+#endif
+        /// <summary>The list of bulk addition jobs for site exclusion units associated with the SharePoint protection policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob>? SiteExclusionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob>?>("siteExclusionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("siteExclusionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob> SiteExclusionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob>>("siteExclusionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("siteExclusionUnitsBulkAdditionJobs", value); }
+        }
+#endif
         /// <summary>The rules associated with the SharePoint Protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteProtectionUnits", value); }
         }
 #endif
+        /// <summary>The siteProtectionUnitsBulkAdditionJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>? SiteProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>?>("siteProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("siteProtectionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob> SiteProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>>("siteProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("siteProtectionUnitsBulkAdditionJobs", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy"/> and sets the default values.
         /// </summary>
@@ -58,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy();
         }
         /// <summary>
@@ -69,8 +117,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "siteExclusionUnits", n => { SiteExclusionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>(global::Microsoft.Graph.Beta.Models.SiteExclusionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "siteExclusionUnitsBulkAdditionJobs", n => { SiteExclusionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob>(global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "siteInclusionRules", n => { SiteInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionRule>(global::Microsoft.Graph.Beta.Models.SiteProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "siteProtectionUnits", n => { SiteProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnit>(global::Microsoft.Graph.Beta.Models.SiteProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "siteProtectionUnitsBulkAdditionJobs", n => { SiteProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -79,10 +130,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteExclusionUnit>("siteExclusionUnits", SiteExclusionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteExclusionUnitsBulkAdditionJob>("siteExclusionUnitsBulkAdditionJobs", SiteExclusionUnitsBulkAdditionJobs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionRule>("siteInclusionRules", SiteInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnit>("siteProtectionUnits", SiteProtectionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>("siteProtectionUnitsBulkAdditionJobs", SiteProtectionUnitsBulkAdditionJobs);
         }
     }
 }

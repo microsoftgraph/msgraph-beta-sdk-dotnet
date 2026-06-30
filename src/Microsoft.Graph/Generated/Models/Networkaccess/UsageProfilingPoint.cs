@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class UsageProfilingPoint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The internetAccessTrafficCount property</summary>
+        /// <summary>The count of traffic requests directed to general internet destinations.</summary>
         public long? InternetAccessTrafficCount
         {
             get { return BackingStore?.Get<long?>("internetAccessTrafficCount"); }
             set { BackingStore?.Set("internetAccessTrafficCount", value); }
         }
-        /// <summary>The microsoft365AccessTrafficCount property</summary>
+        /// <summary>The count of traffic requests directed to Microsoft 365 services.</summary>
         public long? Microsoft365AccessTrafficCount
         {
             get { return BackingStore?.Get<long?>("microsoft365AccessTrafficCount"); }
@@ -49,19 +49,19 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The privateAccessTrafficCount property</summary>
+        /// <summary>The count of traffic requests directed to internal private network destinations.</summary>
         public long? PrivateAccessTrafficCount
         {
             get { return BackingStore?.Get<long?>("privateAccessTrafficCount"); }
             set { BackingStore?.Set("privateAccessTrafficCount", value); }
         }
-        /// <summary>The timeStampDateTime property</summary>
+        /// <summary>The date and time of this data point.</summary>
         public DateTimeOffset? TimeStampDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("timeStampDateTime"); }
             set { BackingStore?.Set("timeStampDateTime", value); }
         }
-        /// <summary>The totalTrafficCount property</summary>
+        /// <summary>The total count of all traffic requests across all access types.</summary>
         public long? TotalTrafficCount
         {
             get { return BackingStore?.Get<long?>("totalTrafficCount"); }
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Networkaccess.UsageProfilingPoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Networkaccess.UsageProfilingPoint();
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("internetAccessTrafficCount", InternetAccessTrafficCount);
             writer.WriteLongValue("microsoft365AccessTrafficCount", Microsoft365AccessTrafficCount);
             writer.WriteStringValue("@odata.type", OdataType);

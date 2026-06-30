@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits;
 using Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets;
+using Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices;
 using Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities;
 using Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinitions;
 using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems;
@@ -14,11 +15,16 @@ using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles;
+using Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure;
+using Microsoft.Graph.Beta.DirectoryNamespace.RecommendationConfiguration;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recovery;
 using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
 using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
 using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscriptionId;
+using Microsoft.Graph.Beta.DirectoryNamespace.Templates;
+using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -34,7 +40,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
     /// <summary>
     /// Provides operations to manage the directory singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DirectoryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.</summary>
@@ -46,6 +52,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public global::Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets.AttributeSetsRequestBuilder AttributeSets
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets.AttributeSetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the authenticationMethodDevices property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder AuthenticationMethodDevices
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateAuthoritiesRequestBuilder CertificateAuthorities
@@ -107,10 +118,25 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.PendingExternalUserProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the publicKeyInfrastructure property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.PublicKeyInfrastructureRequestBuilder PublicKeyInfrastructure
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.PublicKeyInfrastructureRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the recommendationConfiguration property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.RecommendationConfiguration.RecommendationConfigurationRequestBuilder RecommendationConfiguration
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.RecommendationConfiguration.RecommendationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the recommendations property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.RecommendationsRequestBuilder Recommendations
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.RecommendationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the recovery property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.Recovery.RecoveryRequestBuilder Recovery
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Recovery.RecoveryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains.SharedEmailDomainsRequestBuilder SharedEmailDomains
@@ -121,6 +147,16 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public global::Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the templates property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.TemplatesRequestBuilder Templates
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tenantGovernance property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder TenantGovernance
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.DirectoryRequestBuilder"/> and sets the default values.
@@ -178,7 +214,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public async Task<global::Microsoft.Graph.Beta.Models.DirectoryObject1> PatchAsync(global::Microsoft.Graph.Beta.Models.DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -240,7 +276,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -259,7 +295,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         /// <summary>
         /// Get directory
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DirectoryRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -287,7 +323,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DirectoryRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.DirectoryRequestBuilder.DirectoryRequestBuilderGetQueryParameters>
         {
         }
@@ -295,7 +331,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DirectoryRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

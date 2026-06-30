@@ -7,17 +7,33 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class TeamworkUserIdentity : global::Microsoft.Graph.Beta.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, emailUser and azureCommunicationServicesUser.</summary>
+        /// <summary>Type of user. The possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, emailUser and azureCommunicationServicesUser.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamworkUserIdentityType? UserIdentityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkUserIdentityType?>("userIdentityType"); }
             set { BackingStore?.Set("userIdentityType", value); }
         }
+        /// <summary>User principal name (UPN) of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserPrincipalName
+        {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#nullable restore
+#else
+        public string UserPrincipalName
+        {
+            get { return BackingStore?.Get<string>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.TeamworkUserIdentity"/> and sets the default values.
         /// </summary>
@@ -32,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.TeamworkUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.TeamworkUserIdentity();
         }
         /// <summary>
@@ -44,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "userIdentityType", n => { UserIdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TeamworkUserIdentityType>(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,9 +69,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TeamworkUserIdentityType>("userIdentityType", UserIdentityType);
+            writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }
 }

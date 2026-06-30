@@ -7,11 +7,17 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EdiscoveryCaseSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The caseType property</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.CaseType? CaseType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CaseType?>("caseType"); }
+            set { BackingStore?.Set("caseType", value); }
+        }
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("redundancyDetection", value); }
         }
 #endif
+        /// <summary>The settings of the review set for the case. The possible values are: none, disableGrouping, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.ReviewSetSettings? ReviewSetSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.ReviewSetSettings?>("reviewSetSettings"); }
+            set { BackingStore?.Set("reviewSetSettings", value); }
+        }
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.EdiscoveryCaseSettings();
         }
         /// <summary>
@@ -78,8 +90,10 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "caseType", n => { CaseType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.CaseType>(); } },
                 { "ocr", n => { Ocr = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.OcrSettings>(global::Microsoft.Graph.Beta.Models.Security.OcrSettings.CreateFromDiscriminatorValue); } },
                 { "redundancyDetection", n => { RedundancyDetection = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.RedundancyDetectionSettings>(global::Microsoft.Graph.Beta.Models.Security.RedundancyDetectionSettings.CreateFromDiscriminatorValue); } },
+                { "reviewSetSettings", n => { ReviewSetSettings = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.ReviewSetSettings>(); } },
                 { "topicModeling", n => { TopicModeling = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.TopicModelingSettings>(global::Microsoft.Graph.Beta.Models.Security.TopicModelingSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -89,10 +103,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.CaseType>("caseType", CaseType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.OcrSettings>("ocr", Ocr);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.RedundancyDetectionSettings>("redundancyDetection", RedundancyDetection);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.ReviewSetSettings>("reviewSetSettings", ReviewSetSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.TopicModelingSettings>("topicModeling", TopicModeling);
         }
     }

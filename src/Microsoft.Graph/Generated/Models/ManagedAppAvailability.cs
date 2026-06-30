@@ -4,13 +4,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>A managed (MAM) application&apos;s availability.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagedAppAvailability
     {
         /// <summary>A globally available app to all tenants.</summary>
         [EnumMember(Value = "global")]
         Global,
-        /// <summary>A line of business apps private to an organization.</summary>
+        /// <summary>A line-of-business apps private to an organization.</summary>
         [EnumMember(Value = "lineOfBusiness")]
         LineOfBusiness,
     }

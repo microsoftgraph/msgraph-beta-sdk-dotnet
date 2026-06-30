@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SharePointIdentitySet : global::Microsoft.Graph.Beta.Models.IdentitySet, IParsable
     #pragma warning restore CS1591
@@ -28,7 +28,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The SharePoint group associated with this action. Optional.</summary>
+        /// <summary>The SharePoint group associated with this action, identified by a globally unique ID. Use this property instead of siteGroup when available. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity? SharePointGroup
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity?>("sharePointGroup"); }
+            set { BackingStore?.Set("sharePointGroup", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity SharePointGroup
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity>("sharePointGroup"); }
+            set { BackingStore?.Set("sharePointGroup", value); }
+        }
+#endif
+        /// <summary>The SharePoint group associated with this action, identified by a principal ID that is unique only within the site. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SharePointIdentity? SiteGroup
@@ -74,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.SharePointIdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.SharePointIdentitySet();
         }
         /// <summary>
@@ -86,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "sharePointGroup", n => { SharePointGroup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity>(global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity.CreateFromDiscriminatorValue); } },
                 { "siteGroup", n => { SiteGroup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SharePointIdentity>(global::Microsoft.Graph.Beta.Models.SharePointIdentity.CreateFromDiscriminatorValue); } },
                 { "siteUser", n => { SiteUser = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SharePointIdentity>(global::Microsoft.Graph.Beta.Models.SharePointIdentity.CreateFromDiscriminatorValue); } },
             };
@@ -96,9 +113,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("group", Group);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SharePointGroupIdentity>("sharePointGroup", SharePointGroup);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SharePointIdentity>("siteGroup", SiteGroup);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SharePointIdentity>("siteUser", SiteUser);
         }

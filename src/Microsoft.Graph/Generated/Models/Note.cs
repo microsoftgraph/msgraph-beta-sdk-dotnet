@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Note : global::Microsoft.Graph.Beta.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The attachments property</summary>
+        /// <summary>The file attachments for the note. Only inline image attachments (image/png, image/jpeg, image/gif, or image/bmp) are supported, with a maximum size of 3 MB per attachment. Use $expand to retrieve attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Attachment>? Attachments
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
-        /// <summary>The body property</summary>
+        /// <summary>The content of the note. Supports text or html content types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ItemBody? Body
@@ -44,7 +44,23 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("body", value); }
         }
 #endif
-        /// <summary>The extensions property</summary>
+        /// <summary>Auto-generated preview of the note body content (first ~255 characters, plain text). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BodyPreview
+        {
+            get { return BackingStore?.Get<string?>("bodyPreview"); }
+            set { BackingStore?.Set("bodyPreview", value); }
+        }
+#nullable restore
+#else
+        public string BodyPreview
+        {
+            get { return BackingStore?.Get<string>("bodyPreview"); }
+            set { BackingStore?.Set("bodyPreview", value); }
+        }
+#endif
+        /// <summary>The collection of open extensions defined for the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Extension>? Extensions
@@ -60,19 +76,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
-        /// <summary>The hasAttachments property</summary>
+        /// <summary>Indicates whether the note has file attachments. Supports $filter (eq). Read-only.</summary>
         public bool? HasAttachments
         {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
-        /// <summary>The isDeleted property</summary>
+        /// <summary>Indicates whether the note is soft-deleted. Read-only.</summary>
         public bool? IsDeleted
         {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
             set { BackingStore?.Set("isDeleted", value); }
         }
-        /// <summary>The multiValueExtendedProperties property</summary>
+        /// <summary>The collection of multi-value extended properties defined for the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
@@ -88,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>The collection of single-value extended properties defined for the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
@@ -104,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>The title of the note. Supports $filter (eq, ne, startsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject
@@ -134,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Note CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Note();
         }
         /// <summary>
@@ -147,6 +163,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Attachment>(global::Microsoft.Graph.Beta.Models.Attachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "bodyPreview", n => { BodyPreview = n.GetStringValue(); } },
                 { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>(global::Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
                 { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
@@ -161,13 +178,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Attachment>("attachments", Attachments);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
-            writer.WriteBoolValue("hasAttachments", HasAttachments);
-            writer.WriteBoolValue("isDeleted", IsDeleted);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteStringValue("subject", Subject);

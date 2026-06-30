@@ -2,11 +2,44 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -20,7 +53,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
     /// <summary>
     /// Provides operations to manage the serviceActivity property of the microsoft.graph.reportRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServiceActivityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -62,6 +95,150 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForDesktopMailByReadEmail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForDesktopMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForEmailByModernAuthentication method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForEmailByModernAuthenticationWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForExcelWeb method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForExcelWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForiOSOrAndroidMailByReadEmail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForiOSOrAndroidMailByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForOneNoteWeb method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOneNoteWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForOutlookMacByReadEmail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookMacByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForOutlookMobileByReadEmail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookMobileByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForOutlookWebByAppOpening method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookWebByAppOpeningWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForOutlookWebByReadEmail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForOutlookWebByReadEmailWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForPowerPointWeb method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForPowerPointWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForVisioWeb method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForVisioWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getActiveUserMetricsForWordWeb method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetActiveUserMetricsForWordWebWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
         /// Reports that relate to tenant-level authentication activities in Microsoft Entra.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServiceActivity"/></returns>
@@ -85,6 +262,78 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ServiceActivity>(requestInfo, global::Microsoft.Graph.Beta.Models.ServiceActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to call the getAudioStreamQoEMetricsForTeams method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamQoEMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getAudioStreamsOverUdpMetricsForTeams method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetAudioStreamsOverUdpMetricsForTeamsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getConnectivityMetricsForExchange method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMessageVolumeMetricsForEmailDelivery method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMessageVolumeMetricsForTeamsChat method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForConditionalAccessBlockedSignIn method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
         /// Provides operations to call the getMetricsForConditionalAccessCompliantDevicesSignInSuccess method.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
@@ -92,8 +341,8 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
         {
-            _ = exclusiveIntervalEndDateTime ?? throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
-            _ = inclusiveIntervalStartDateTime ?? throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
@@ -104,8 +353,8 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
         {
-            _ = exclusiveIntervalEndDateTime ?? throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
-            _ = inclusiveIntervalStartDateTime ?? throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
@@ -116,8 +365,8 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
         {
-            _ = exclusiveIntervalEndDateTime ?? throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
-            _ = inclusiveIntervalStartDateTime ?? throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
@@ -128,9 +377,165 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
         {
-            _ = exclusiveIntervalEndDateTime ?? throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
-            _ = inclusiveIntervalStartDateTime ?? throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyAllowedApps method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyAllowedUsers method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyAllowedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyBlockedApps method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedAppsWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessInternetAppPolicyBlockedUsers method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessInternetAppPolicyBlockedUsersWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppsAllowedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppsBlockedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppsBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppUsersAllowedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersAllowedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessPrivateAppUsersBlockedByConnector method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessPrivateAppUsersBlockedByConnectorWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesAlive method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesAliveWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesBGPConnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesBGPDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnected method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForNetworkAccessRemoteNetworkBranchesTunnelDisconnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
         /// Provides operations to call the getMetricsForSamlSignInSuccess method.
@@ -140,9 +545,33 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
         {
-            _ = exclusiveIntervalEndDateTime ?? throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
-            _ = inclusiveIntervalStartDateTime ?? throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getUsageMetricsForTeamsByLaunch method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetUsageMetricsForTeamsByLaunchWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getUsageMetricsForTeamsByMeetingsJoined method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetUsageMetricsForTeamsByMeetingsJoinedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
         /// Update the navigation property serviceActivity in reports
@@ -161,7 +590,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         public async Task<global::Microsoft.Graph.Beta.Models.ServiceActivity> PatchAsync(global::Microsoft.Graph.Beta.Models.ServiceActivity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -222,7 +651,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ServiceActivity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -242,14 +671,14 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceActivityRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Reports that relate to tenant-level authentication activities in Microsoft Entra.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceActivityRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -277,7 +706,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceActivityRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Reports.ServiceActivity.ServiceActivityRequestBuilder.ServiceActivityRequestBuilderGetQueryParameters>
         {
         }
@@ -285,7 +714,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceActivityRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

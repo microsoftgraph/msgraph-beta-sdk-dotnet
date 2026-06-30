@@ -7,11 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Partner.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AdditionalDataDictionary : global::Microsoft.Graph.Beta.Models.Dictionary, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary"/> and sets the default values.
+        /// </summary>
+        public AdditionalDataDictionary() : base()
+        {
+            OdataType = "#microsoft.graph.partner.security.additionalDataDictionary";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -19,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary();
         }
         /// <summary>
@@ -38,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }
     }

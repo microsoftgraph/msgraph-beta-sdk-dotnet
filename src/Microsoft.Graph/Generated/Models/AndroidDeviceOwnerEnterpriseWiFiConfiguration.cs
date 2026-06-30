@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android Device Owner device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidDeviceOwnerEnterpriseWiFiConfiguration : global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiConfiguration, IParsable
     {
         /// <summary>Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
@@ -101,6 +101,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rootCertificateForServerValidation", value); }
         }
 #endif
+        /// <summary>Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>? RootCertificatesForServerValidation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>?>("rootCertificatesForServerValidation"); }
+            set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate> RootCertificatesForServerValidation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>>("rootCertificatesForServerValidation"); }
+            set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
+        }
+#endif
         /// <summary>Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users&apos; devices when they connect to this Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,7 +147,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnterpriseWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnterpriseWiFiConfiguration();
         }
         /// <summary>
@@ -150,6 +166,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "innerAuthenticationProtocolForPeap", n => { InnerAuthenticationProtocolForPeap = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap>(); } },
                 { "outerIdentityPrivacyTemporaryValue", n => { OuterIdentityPrivacyTemporaryValue = n.GetStringValue(); } },
                 { "rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -159,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
@@ -169,6 +186,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap>("innerAuthenticationProtocolForPeap", InnerAuthenticationProtocolForPeap);
             writer.WriteStringValue("outerIdentityPrivacyTemporaryValue", OuterIdentityPrivacyTemporaryValue);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>("rootCertificateForServerValidation", RootCertificateForServerValidation);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>("rootCertificatesForServerValidation", RootCertificatesForServerValidation);
             writer.WriteCollectionOfPrimitiveValues<string>("trustedServerCertificateNames", TrustedServerCertificateNames);
         }
     }

@@ -17,11 +17,11 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
     /// <summary>
     /// Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.</summary>
         /// <param name="position">The unique identifier of authoredNote</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.Item.AuthoredNoteItemRequestBuilder"/></returns>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.Item.AuthoredNoteItemRequestBuilder this[string position]
         {
             get
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AuthoredNoteCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.NotesRequestBuilder.NotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AuthoredNote?> PostAsync(global::Microsoft.Graph.Beta.Models.AuthoredNote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         public async Task<global::Microsoft.Graph.Beta.Models.AuthoredNote> PostAsync(global::Microsoft.Graph.Beta.Models.AuthoredNote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.NotesRequestBuilder.NotesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.AuthoredNote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.AuthoredNote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.NotesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.NotesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.NotesRequestBuilder(rawUrl, RequestAdapter);
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// <summary>
         /// Get the list of authored notes associated with a subject rights request. 
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NotesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NotesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes.NotesRequestBuilder.NotesRequestBuilderGetQueryParameters>
         {
         }
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NotesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

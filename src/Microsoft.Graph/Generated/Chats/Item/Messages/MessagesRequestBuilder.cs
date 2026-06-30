@@ -2,7 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Chats.Item.Messages.Count;
 using Microsoft.Graph.Beta.Chats.Item.Messages.Delta;
+using Microsoft.Graph.Beta.Chats.Item.Messages.ForwardToChat;
 using Microsoft.Graph.Beta.Chats.Item.Messages.Item;
+using Microsoft.Graph.Beta.Chats.Item.Messages.ReplyWithQuote;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -18,7 +20,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
     /// <summary>
     /// Provides operations to manage the messages property of the microsoft.graph.chat entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -30,6 +32,16 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
         public global::Microsoft.Graph.Beta.Chats.Item.Messages.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Beta.Chats.Item.Messages.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the forwardToChat method.</summary>
+        public global::Microsoft.Graph.Beta.Chats.Item.Messages.ForwardToChat.ForwardToChatRequestBuilder ForwardToChat
+        {
+            get => new global::Microsoft.Graph.Beta.Chats.Item.Messages.ForwardToChat.ForwardToChatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Beta.Chats.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Beta.Chats.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.chat entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>
@@ -84,8 +96,8 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ChatMessageCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel or a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-beta" />
+        /// Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +113,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
         public async Task<global::Microsoft.Graph.Beta.Models.ChatMessage> PostAsync(global::Microsoft.Graph.Beta.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -129,7 +141,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel or a chat.
+        /// Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -143,7 +155,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -162,7 +174,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
         /// <summary>
         /// Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessagesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -229,7 +241,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Chats.Item.Messages.MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters>
         {
         }
@@ -237,7 +249,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessagesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

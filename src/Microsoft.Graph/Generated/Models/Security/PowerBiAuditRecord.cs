@@ -7,27 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
-    public partial class PowerBiAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
-    #pragma warning restore CS1591
+    /// <summary>
+    /// Audit data for Power BI events.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    public partial class PowerBIAuditRecord : global::Microsoft.Graph.Beta.Models.Security.AuditData, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.PowerBiAuditRecord"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.PowerBIAuditRecord"/> and sets the default values.
         /// </summary>
-        public PowerBiAuditRecord() : base()
+        public PowerBIAuditRecord() : base()
         {
-            OdataType = "#microsoft.graph.security.powerBiAuditRecord";
+            OdataType = "#microsoft.graph.security.powerBIAuditRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.PowerBiAuditRecord"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.PowerBIAuditRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.Security.PowerBiAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Beta.Models.Security.PowerBIAuditRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.PowerBiAuditRecord();
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            return new global::Microsoft.Graph.Beta.Models.Security.PowerBIAuditRecord();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }
     }

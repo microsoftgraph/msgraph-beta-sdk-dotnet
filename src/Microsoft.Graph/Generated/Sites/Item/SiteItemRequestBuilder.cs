@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Analytics;
+using Microsoft.Graph.Beta.Sites.Item.Archive;
 using Microsoft.Graph.Beta.Sites.Item.Columns;
 using Microsoft.Graph.Beta.Sites.Item.ContentModels;
 using Microsoft.Graph.Beta.Sites.Item.ContentTypes;
@@ -10,6 +11,7 @@ using Microsoft.Graph.Beta.Sites.Item.CreatedByUser;
 using Microsoft.Graph.Beta.Sites.Item.DocumentProcessingJobs;
 using Microsoft.Graph.Beta.Sites.Item.Drive;
 using Microsoft.Graph.Beta.Sites.Item.Drives;
+using Microsoft.Graph.Beta.Sites.Item.Extensions;
 using Microsoft.Graph.Beta.Sites.Item.ExternalColumns;
 using Microsoft.Graph.Beta.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithListId;
@@ -20,11 +22,13 @@ using Microsoft.Graph.Beta.Sites.Item.LastModifiedByUser;
 using Microsoft.Graph.Beta.Sites.Item.Lists;
 using Microsoft.Graph.Beta.Sites.Item.Onenote;
 using Microsoft.Graph.Beta.Sites.Item.Operations;
+using Microsoft.Graph.Beta.Sites.Item.PageTemplates;
 using Microsoft.Graph.Beta.Sites.Item.Pages;
 using Microsoft.Graph.Beta.Sites.Item.Permissions;
 using Microsoft.Graph.Beta.Sites.Item.RecycleBin;
 using Microsoft.Graph.Beta.Sites.Item.Sites;
 using Microsoft.Graph.Beta.Sites.Item.TermStore;
+using Microsoft.Graph.Beta.Sites.Item.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -38,13 +42,18 @@ namespace Microsoft.Graph.Beta.Sites.Item
     /// <summary>
     /// Provides operations to manage the collection of site entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SiteItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the analytics property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.Columns.ColumnsRequestBuilder Columns
@@ -80,6 +89,11 @@ namespace Microsoft.Graph.Beta.Sites.Item
         public global::Microsoft.Graph.Beta.Sites.Item.Drives.DrivesRequestBuilder Drives
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.site entity.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.Extensions.ExtensionsRequestBuilder Extensions
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.ExternalColumns.ExternalColumnsRequestBuilder ExternalColumns
@@ -121,6 +135,11 @@ namespace Microsoft.Graph.Beta.Sites.Item
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the pageTemplates property of the microsoft.graph.site entity.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.PageTemplates.PageTemplatesRequestBuilder PageTemplates
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.PageTemplates.PageTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Sites.Item.Permissions.PermissionsRequestBuilder Permissions
         {
@@ -140,6 +159,11 @@ namespace Microsoft.Graph.Beta.Sites.Item
         public global::Microsoft.Graph.Beta.Sites.Item.TermStore.TermStoreRequestBuilder TermStore
         {
             get => new global::Microsoft.Graph.Beta.Sites.Item.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Sites.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Sites.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Sites.Item.SiteItemRequestBuilder"/> and sets the default values.
@@ -232,7 +256,7 @@ namespace Microsoft.Graph.Beta.Sites.Item
         public async Task<global::Microsoft.Graph.Beta.Models.Site> PatchAsync(global::Microsoft.Graph.Beta.Models.Site body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -274,7 +298,7 @@ namespace Microsoft.Graph.Beta.Sites.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Site body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -293,7 +317,7 @@ namespace Microsoft.Graph.Beta.Sites.Item
         /// <summary>
         /// Retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -321,7 +345,7 @@ namespace Microsoft.Graph.Beta.Sites.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Sites.Item.SiteItemRequestBuilder.SiteItemRequestBuilderGetQueryParameters>
         {
         }
@@ -329,7 +353,7 @@ namespace Microsoft.Graph.Beta.Sites.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

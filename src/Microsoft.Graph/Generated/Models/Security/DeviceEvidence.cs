@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DeviceEvidence : global::Microsoft.Graph.Beta.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
 #endif
-        /// <summary>State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.</summary>
+        /// <summary>State of the Defender anti-malware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.DefenderAvStatus? DefenderAvStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DefenderAvStatus?>("defenderAvStatus"); }
@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("deviceDnsName", value); }
         }
 #endif
+        /// <summary>The DNS domain that this computer belongs to. A sequence of labels separated by dots.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DnsDomain
+        {
+            get { return BackingStore?.Get<string?>("dnsDomain"); }
+            set { BackingStore?.Set("dnsDomain", value); }
+        }
+#nullable restore
+#else
+        public string DnsDomain
+        {
+            get { return BackingStore?.Get<string>("dnsDomain"); }
+            set { BackingStore?.Set("dnsDomain", value); }
+        }
+#endif
         /// <summary>The date and time when the device was first seen.</summary>
         public DateTimeOffset? FirstSeenDateTime
         {
@@ -62,6 +78,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
+        /// <summary>The hostname without the domain suffix.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HostName
+        {
+            get { return BackingStore?.Get<string?>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#nullable restore
+#else
+        public string HostName
+        {
+            get { return BackingStore?.Get<string>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#endif
         /// <summary>Ip interfaces of the device during the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +174,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
 #endif
+        /// <summary>A logical grouping of computers within a Microsoft Windows network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NtDomain
+        {
+            get { return BackingStore?.Get<string?>("ntDomain"); }
+            set { BackingStore?.Set("ntDomain", value); }
+        }
+#nullable restore
+#else
+        public string NtDomain
+        {
+            get { return BackingStore?.Get<string>("ntDomain"); }
+            set { BackingStore?.Set("ntDomain", value); }
+        }
+#endif
         /// <summary>The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.OnboardingStatus? OnboardingStatus
         {
@@ -190,6 +238,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("rbacGroupName"); }
             set { BackingStore?.Set("rbacGroupName", value); }
+        }
+#endif
+        /// <summary>Information on resource access attempts made by the user account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>? ResourceAccessEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>?>("resourceAccessEvents"); }
+            set { BackingStore?.Set("resourceAccessEvents", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent> ResourceAccessEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>>("resourceAccessEvents"); }
+            set { BackingStore?.Set("resourceAccessEvents", value); }
         }
 #endif
         /// <summary>Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.</summary>
@@ -244,7 +308,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Security.DeviceEvidence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.DeviceEvidence();
         }
         /// <summary>
@@ -258,18 +322,22 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "azureAdDeviceId", n => { AzureAdDeviceId = n.GetStringValue(); } },
                 { "defenderAvStatus", n => { DefenderAvStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DefenderAvStatus>(); } },
                 { "deviceDnsName", n => { DeviceDnsName = n.GetStringValue(); } },
+                { "dnsDomain", n => { DnsDomain = n.GetStringValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeviceHealthStatus>(); } },
+                { "hostName", n => { HostName = n.GetStringValue(); } },
                 { "ipInterfaces", n => { IpInterfaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "lastExternalIpAddress", n => { LastExternalIpAddress = n.GetStringValue(); } },
                 { "lastIpAddress", n => { LastIpAddress = n.GetStringValue(); } },
                 { "loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.LoggedOnUser>(global::Microsoft.Graph.Beta.Models.Security.LoggedOnUser.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
+                { "ntDomain", n => { NtDomain = n.GetStringValue(); } },
                 { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.OnboardingStatus>(); } },
                 { "osBuild", n => { OsBuild = n.GetLongValue(); } },
                 { "osPlatform", n => { OsPlatform = n.GetStringValue(); } },
                 { "rbacGroupId", n => { RbacGroupId = n.GetIntValue(); } },
                 { "rbacGroupName", n => { RbacGroupName = n.GetStringValue(); } },
+                { "resourceAccessEvents", n => { ResourceAccessEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>(global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "riskScore", n => { RiskScore = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeviceRiskScore>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
                 { "vmMetadata", n => { VmMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.VmMetadata>(global::Microsoft.Graph.Beta.Models.Security.VmMetadata.CreateFromDiscriminatorValue); } },
@@ -281,23 +349,27 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("azureAdDeviceId", AzureAdDeviceId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DefenderAvStatus>("defenderAvStatus", DefenderAvStatus);
             writer.WriteStringValue("deviceDnsName", DeviceDnsName);
+            writer.WriteStringValue("dnsDomain", DnsDomain);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeviceHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteStringValue("hostName", HostName);
             writer.WriteCollectionOfPrimitiveValues<string>("ipInterfaces", IpInterfaces);
             writer.WriteStringValue("lastExternalIpAddress", LastExternalIpAddress);
             writer.WriteStringValue("lastIpAddress", LastIpAddress);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.LoggedOnUser>("loggedOnUsers", LoggedOnUsers);
             writer.WriteStringValue("mdeDeviceId", MdeDeviceId);
+            writer.WriteStringValue("ntDomain", NtDomain);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.OnboardingStatus>("onboardingStatus", OnboardingStatus);
             writer.WriteLongValue("osBuild", OsBuild);
             writer.WriteStringValue("osPlatform", OsPlatform);
             writer.WriteIntValue("rbacGroupId", RbacGroupId);
             writer.WriteStringValue("rbacGroupName", RbacGroupName);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ResourceAccessEvent>("resourceAccessEvents", ResourceAccessEvents);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DeviceRiskScore>("riskScore", RiskScore);
             writer.WriteStringValue("version", Version);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.VmMetadata>("vmMetadata", VmMetadata);

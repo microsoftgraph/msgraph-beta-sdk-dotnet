@@ -3,6 +3,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -16,13 +18,23 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
     /// <summary>
     /// Provides operations to manage the oneDriveForBusinessRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OneDriveForBusinessRestoreSessionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the driveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts.DriveRestoreArtifactsRequestBuilder DriveRestoreArtifacts
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts.DriveRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the driveRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder DriveRestoreArtifactsBulkAdditionRequests
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the granularDriveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts.GranularDriveRestoreArtifactsRequestBuilder GranularDriveRestoreArtifacts
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts.GranularDriveRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder"/> and sets the default values.
@@ -103,7 +115,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         public async Task<global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession> PatchAsync(global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -164,7 +176,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -184,14 +196,14 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OneDriveForBusinessRestoreSessionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The list of OneDrive for Business restore sessions available in the tenant.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OneDriveForBusinessRestoreSessionItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -219,7 +231,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OneDriveForBusinessRestoreSessionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder.OneDriveForBusinessRestoreSessionItemRequestBuilderGetQueryParameters>
         {
         }
@@ -227,7 +239,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OneDriveForBusinessRestoreSessionItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts;
+using Microsoft.Graph.Beta.NetworkAccess.CloudFirewallPolicies;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity;
 using Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies;
 using Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles;
@@ -13,6 +14,9 @@ using Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard;
 using Microsoft.Graph.Beta.NetworkAccess.Reports;
 using Microsoft.Graph.Beta.NetworkAccess.Settings;
 using Microsoft.Graph.Beta.NetworkAccess.TenantStatus;
+using Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies;
+using Microsoft.Graph.Beta.NetworkAccess.Tls;
+using Microsoft.Graph.Beta.NetworkAccess.TlsInspectionPolicies;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -26,13 +30,18 @@ namespace Microsoft.Graph.Beta.NetworkAccess
     /// <summary>
     /// Provides operations to manage the networkAccessRoot singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NetworkAccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Alerts.AlertsRequestBuilder Alerts
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudFirewallPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.CloudFirewallPolicies.CloudFirewallPoliciesRequestBuilder CloudFirewallPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.CloudFirewallPolicies.CloudFirewallPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
         public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.ConnectivityRequestBuilder Connectivity
@@ -83,6 +92,21 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         public global::Microsoft.Graph.Beta.NetworkAccess.TenantStatus.TenantStatusRequestBuilder TenantStatus
         {
             get => new global::Microsoft.Graph.Beta.NetworkAccess.TenantStatus.TenantStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the threatIntelligencePolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.ThreatIntelligencePoliciesRequestBuilder ThreatIntelligencePolicies
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.ThreatIntelligencePolicies.ThreatIntelligencePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tls property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.Tls.TlsRequestBuilder Tls
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.Tls.TlsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tlsInspectionPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.NetworkAccess.TlsInspectionPolicies.TlsInspectionPoliciesRequestBuilder TlsInspectionPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.TlsInspectionPolicies.TlsInspectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder"/> and sets the default values.
@@ -140,7 +164,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         public async Task<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot> PatchAsync(global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -182,7 +206,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -201,7 +225,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// <summary>
         /// Get networkAccess
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NetworkAccessRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -229,7 +253,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NetworkAccessRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder.NetworkAccessRequestBuilderGetQueryParameters>
         {
         }
@@ -237,7 +261,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NetworkAccessRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

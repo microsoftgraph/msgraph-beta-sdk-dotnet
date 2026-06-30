@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class OneDriveForBusinessRestoreSession : global::Microsoft.Graph.Beta.Models.RestoreSessionBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.</summary>
+        /// <summary>A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact>? DriveRestoreArtifacts
@@ -26,6 +26,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact>>("driveRestoreArtifacts"); }
             set { BackingStore?.Set("driveRestoreArtifacts", value); }
+        }
+#endif
+        /// <summary>A collection of user mailboxes and destination details that can be used to restore a OneDrive for work or school drive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>? DriveRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>?>("driveRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("driveRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest> DriveRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>>("driveRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("driveRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#endif
+        /// <summary>A collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>? GranularDriveRestoreArtifacts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>?>("granularDriveRestoreArtifacts"); }
+            set { BackingStore?.Set("granularDriveRestoreArtifacts", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact> GranularDriveRestoreArtifacts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>>("granularDriveRestoreArtifacts"); }
+            set { BackingStore?.Set("granularDriveRestoreArtifacts", value); }
         }
 #endif
         /// <summary>
@@ -42,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession();
         }
         /// <summary>
@@ -54,6 +86,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "driveRestoreArtifacts", n => { DriveRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact>(global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "driveRestoreArtifactsBulkAdditionRequests", n => { DriveRestoreArtifactsBulkAdditionRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>(global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "granularDriveRestoreArtifacts", n => { GranularDriveRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>(global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -62,9 +96,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact>("driveRestoreArtifacts", DriveRestoreArtifacts);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveRestoreArtifactsBulkAdditionRequest>("driveRestoreArtifactsBulkAdditionRequests", DriveRestoreArtifactsBulkAdditionRequests);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GranularDriveRestoreArtifact>("granularDriveRestoreArtifacts", GranularDriveRestoreArtifacts);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EventQuery : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Represents unique identification for the  query. &apos;Asset ID&apos; for SharePoint Online and OneDrive for Business, &apos;keywords&apos; for Exchange Online.</summary>
+        /// <summary>Represents unique identification for the  query. &apos;Asset ID&apos; for SharePoint in Microsoft 365 and OneDrive for work or school, &apos;keywords&apos; for Exchange Online.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("query", value); }
         }
 #endif
-        /// <summary>Represents the type of query associated with an event. &apos;files&apos; for SPO and ODB and &apos;messages&apos; for EXO.The possible values are: files, messages, unknownFutureValue.</summary>
+        /// <summary>Represents the type of query associated with an event. &apos;files&apos; for SharePoint in Microsoft 365 and OneDrive for work or school, and &apos;messages&apos; for Exchange Online. The possible values are: files, messages, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.QueryType? QueryType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.QueryType?>("queryType"); }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Security.EventQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.EventQuery();
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("query", Query);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.QueryType>("queryType", QueryType);

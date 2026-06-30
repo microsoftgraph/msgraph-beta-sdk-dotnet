@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class PlannerTask : global::Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
@@ -235,7 +235,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.</summary>
+        /// <summary>Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.</summary>
+        public bool? HasChat
+        {
+            get { return BackingStore?.Get<bool?>("hasChat"); }
+            set { BackingStore?.Set("hasChat", value); }
+        }
+        /// <summary>Read-only. This value is true if the details object of the task has a nonempty description. Otherwise, false.</summary>
         public bool? HasDescription
         {
             get { return BackingStore?.Get<bool?>("hasDescription"); }
@@ -259,7 +265,45 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("isOnMyDayLastModifiedDate"); }
             set { BackingStore?.Set("isOnMyDayLastModifiedDate", value); }
         }
-        /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.</summary>
+        /// <summary>Read-only. User ID by which this is last modified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>Read-only. Date and time at which this is last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>Read-only. Nullable. Chat messages associated with the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>? Messages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>?>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage> Messages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#endif
+        /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in planner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderHint
@@ -297,7 +341,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("planId", value); }
         }
 #endif
-        /// <summary>The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.</summary>
+        /// <summary>The type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerPreviewType? PreviewType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }
@@ -347,7 +391,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("referenceCount"); }
             set { BackingStore?.Set("referenceCount", value); }
         }
-        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
+        /// <summary>Indicates all the requirements specified on the plannerTask. The possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
         public global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
@@ -382,7 +426,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.PlannerTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -415,10 +459,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "creationSource", n => { CreationSource = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCreation>(global::Microsoft.Graph.Beta.Models.PlannerTaskCreation.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskDetails>(global::Microsoft.Graph.Beta.Models.PlannerTaskDetails.CreateFromDiscriminatorValue); } },
                 { "dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                { "hasChat", n => { HasChat = n.GetBoolValue(); } },
                 { "hasDescription", n => { HasDescription = n.GetBoolValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isOnMyDay", n => { IsOnMyDay = n.GetBoolValue(); } },
                 { "isOnMyDayLastModifiedDate", n => { IsOnMyDayLastModifiedDate = n.GetDateValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>(global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "orderHint", n => { OrderHint = n.GetStringValue(); } },
                 { "percentComplete", n => { PercentComplete = n.GetIntValue(); } },
                 { "planId", n => { PlanId = n.GetStringValue(); } },
@@ -438,7 +486,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("activeChecklistItemCount", ActiveChecklistItemCount);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerAppliedCategories>("appliedCategories", AppliedCategories);
@@ -457,10 +505,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCreation>("creationSource", CreationSource);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskDetails>("details", Details);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
+            writer.WriteBoolValue("hasChat", HasChat);
             writer.WriteBoolValue("hasDescription", HasDescription);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isOnMyDay", IsOnMyDay);
             writer.WriteDateValue("isOnMyDayLastModifiedDate", IsOnMyDayLastModifiedDate);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTaskChatMessage>("messages", Messages);
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteIntValue("percentComplete", PercentComplete);
             writer.WriteStringValue("planId", PlanId);

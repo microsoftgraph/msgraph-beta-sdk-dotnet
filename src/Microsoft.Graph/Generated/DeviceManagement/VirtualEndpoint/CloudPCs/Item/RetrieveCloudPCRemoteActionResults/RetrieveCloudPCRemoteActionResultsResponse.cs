@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults
 {
     [Obsolete("This class is obsolete. Use RetrieveCloudPCRemoteActionResultsGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RetrieveCloudPCRemoteActionResultsResponse : global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsGetResponse, IParsable
     #pragma warning restore CS1591
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsResponse();
         }
     }

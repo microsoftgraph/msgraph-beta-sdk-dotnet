@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ThreatAssessmentRequest : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The content type of threat assessment. Possible values are: mail, url, file.</summary>
+        /// <summary>The content type of threat assessment. The possible values are: mail, url, file.</summary>
         public global::Microsoft.Graph.Beta.Models.ThreatAssessmentContentType? ContentType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatAssessmentContentType?>("contentType"); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatExpectedAssessment?>("expectedAssessment"); }
             set { BackingStore?.Set("expectedAssessment", value); }
         }
-        /// <summary>The source of the threat assessment request. Possible values are: user, administrator.</summary>
+        /// <summary>The source of the threat assessment request. The possible values are: user, administrator.</summary>
         public global::Microsoft.Graph.Beta.Models.ThreatAssessmentRequestSource? RequestSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatAssessmentRequestSource?>("requestSource"); }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("results", value); }
         }
 #endif
-        /// <summary>The assessment process status. Possible values are: pending, completed.</summary>
+        /// <summary>The assessment process status. The possible values are: pending, completed.</summary>
         public global::Microsoft.Graph.Beta.Models.ThreatAssessmentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ThreatAssessmentStatus?>("status"); }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.ThreatAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ThreatCategory>("category", Category);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ThreatAssessmentContentType>("contentType", ContentType);

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for a single installer file that is associated with a given mobileAppContent version.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppContentFile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only. This property is read-only.</summary>
@@ -91,29 +91,17 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The size of the file prior to encryption. To be deprecated, please use sizeInBytes property instead.</summary>
+        /// <summary>Indicates the original size of the file, in bytes.</summary>
         public long? Size
         {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>The size of the file after encryption. To be deprecated, please use sizeEncryptedInBytes property instead.</summary>
+        /// <summary>Indicates the size of the file after encryption, in bytes.</summary>
         public long? SizeEncrypted
         {
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }
             set { BackingStore?.Set("sizeEncrypted", value); }
-        }
-        /// <summary>Indicates the size of the file after encryption, in bytes. Valid values 0 to 9.22337203685478E+18</summary>
-        public long? SizeEncryptedInBytes
-        {
-            get { return BackingStore?.Get<long?>("sizeEncryptedInBytes"); }
-            set { BackingStore?.Set("sizeEncryptedInBytes", value); }
-        }
-        /// <summary>Indicates the original size of the file, in bytes. Valid values 0 to 9.22337203685478E+18</summary>
-        public long? SizeInBytes
-        {
-            get { return BackingStore?.Get<long?>("sizeInBytes"); }
-            set { BackingStore?.Set("sizeInBytes", value); }
         }
         /// <summary>Contains properties for upload request states.</summary>
         public global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState? UploadState
@@ -128,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.MobileAppContentFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.MobileAppContentFile();
         }
         /// <summary>
@@ -149,8 +137,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
                 { "sizeEncrypted", n => { SizeEncrypted = n.GetLongValue(); } },
-                { "sizeEncryptedInBytes", n => { SizeEncryptedInBytes = n.GetLongValue(); } },
-                { "sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
                 { "uploadState", n => { UploadState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState>(); } },
             };
         }
@@ -160,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isDependency", IsDependency);
             writer.WriteBoolValue("isFrameworkFile", IsFrameworkFile);
@@ -168,8 +154,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("size", Size);
             writer.WriteLongValue("sizeEncrypted", SizeEncrypted);
-            writer.WriteLongValue("sizeEncryptedInBytes", SizeEncryptedInBytes);
-            writer.WriteLongValue("sizeInBytes", SizeInBytes);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState>("uploadState", UploadState);
         }
     }

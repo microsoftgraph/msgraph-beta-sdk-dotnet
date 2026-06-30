@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphAppRoleAssignment;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphEndpoint;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphServicePrincipal;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphUser;
@@ -21,13 +22,18 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners
     /// <summary>
     /// Provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OwnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
@@ -78,7 +84,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners
         {
         }
         /// <summary>
-        /// Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +107,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,9 +135,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners
             return new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.OwnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OwnersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -198,7 +204,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OwnersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>
         {
         }

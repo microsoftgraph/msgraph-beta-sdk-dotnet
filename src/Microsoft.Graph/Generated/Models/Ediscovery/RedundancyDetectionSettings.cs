@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RedundancyDetectionSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Ediscovery.RedundancyDetectionSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Ediscovery.RedundancyDetectionSettings();
         }
         /// <summary>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteIntValue("maxWords", MaxWords);
             writer.WriteIntValue("minWords", MinWords);

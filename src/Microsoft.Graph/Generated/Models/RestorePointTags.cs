@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     #pragma warning disable CS1591
     public enum RestorePointTags
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue = 4,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "includeNewerItems")]
+        #pragma warning disable CS1591
+        IncludeNewerItems = 8,
         #pragma warning restore CS1591
     }
 }

@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AssignmentReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -38,6 +38,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("isAccessRecommendationEnabled"); }
             set { BackingStore?.Set("isAccessRecommendationEnabled", value); }
+        }
+        /// <summary>The isAgenticExperienceEnabled property</summary>
+        public bool? IsAgenticExperienceEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isAgenticExperienceEnabled"); }
+            set { BackingStore?.Set("isAgenticExperienceEnabled", value); }
         }
         /// <summary>Specifies whether the reviewer must provide justification for the approval. The default value is true.</summary>
         public bool? IsApprovalJustificationRequired
@@ -136,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.AssignmentReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AssignmentReviewSettings();
         }
         /// <summary>
@@ -150,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "accessReviewTimeoutBehavior", n => { AccessReviewTimeoutBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior>(); } },
                 { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
                 { "isAccessRecommendationEnabled", n => { IsAccessRecommendationEnabled = n.GetBoolValue(); } },
+                { "isAgenticExperienceEnabled", n => { IsAgenticExperienceEnabled = n.GetBoolValue(); } },
                 { "isApprovalJustificationRequired", n => { IsApprovalJustificationRequired = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -165,10 +172,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior>("accessReviewTimeoutBehavior", AccessReviewTimeoutBehavior);
             writer.WriteIntValue("durationInDays", DurationInDays);
             writer.WriteBoolValue("isAccessRecommendationEnabled", IsAccessRecommendationEnabled);
+            writer.WriteBoolValue("isAgenticExperienceEnabled", IsAgenticExperienceEnabled);
             writer.WriteBoolValue("isApprovalJustificationRequired", IsApprovalJustificationRequired);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);

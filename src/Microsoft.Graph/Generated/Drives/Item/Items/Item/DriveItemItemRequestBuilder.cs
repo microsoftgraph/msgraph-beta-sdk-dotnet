@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Activities;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Archive;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.AssignSensitivityLabel;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkin;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkout;
@@ -15,6 +16,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.CreatedByUser;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Delta;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.DeltaWithToken;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.DiscardCheckout;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.ExtractSensitivityLabels;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Follow;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
@@ -29,6 +31,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.SearchWithQ;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Subscriptions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Unarchive;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Unfollow;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.ValidatePermission;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions;
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
     /// <summary>
     /// Provides operations to manage the items property of the microsoft.graph.drive entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DriveItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.driveItem entity.</summary>
@@ -60,6 +63,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the assignSensitivityLabel method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.AssignSensitivityLabel.AssignSensitivityLabelRequestBuilder AssignSensitivityLabel
@@ -121,6 +129,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.DiscardCheckout.DiscardCheckoutRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.driveItem entity.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions.ExtensionsRequestBuilder Extensions
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the extractSensitivityLabels method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.ExtractSensitivityLabels.ExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels
         {
@@ -180,6 +193,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder Thumbnails
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails.ThumbnailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unfollow method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Unfollow.UnfollowRequestBuilder Unfollow
@@ -303,7 +321,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public async Task<global::Microsoft.Graph.Beta.Models.DriveItem> PatchAsync(global::Microsoft.Graph.Beta.Models.DriveItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -374,7 +392,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DriveItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -394,14 +412,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveItemItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// All items contained in the drive. Read-only. Nullable.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveItemItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -429,7 +447,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveItemItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Drives.Item.Items.Item.DriveItemItemRequestBuilder.DriveItemItemRequestBuilderGetQueryParameters>
         {
         }
@@ -437,7 +455,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveItemItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

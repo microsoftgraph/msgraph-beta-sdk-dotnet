@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Fido2AuthenticationMethod : global::Microsoft.Graph.Beta.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("attestationCertificates", value); }
         }
 #endif
-        /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.</summary>
+        /// <summary>The attestation level of this FIDO2 security key. The possible values are: attested, notAttested, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AttestationLevel? AttestationLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AttestationLevel?>("attestationLevel"); }
@@ -82,6 +82,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("model", value); }
         }
 #endif
+        /// <summary>The type of passkey allowed in the passkey profile. The possible values are: deviceBound, synced, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Beta.Models.PasskeyType? PasskeyType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PasskeyType?>("passkeyType"); }
+            set { BackingStore?.Set("passkeyType", value); }
+        }
         /// <summary>Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn&apos;t returned on read operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod();
         }
         /// <summary>
@@ -128,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "attestationLevel", n => { AttestationLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AttestationLevel>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
+                { "passkeyType", n => { PasskeyType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PasskeyType>(); } },
                 { "publicKeyCredential", n => { PublicKeyCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WebauthnPublicKeyCredential>(global::Microsoft.Graph.Beta.Models.WebauthnPublicKeyCredential.CreateFromDiscriminatorValue); } },
             };
         }
@@ -137,13 +144,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("aaGuid", AaGuid);
             writer.WriteCollectionOfPrimitiveValues<string>("attestationCertificates", AttestationCertificates);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AttestationLevel>("attestationLevel", AttestationLevel);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("model", Model);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PasskeyType>("passkeyType", PasskeyType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WebauthnPublicKeyCredential>("publicKeyCredential", PublicKeyCredential);
         }
     }

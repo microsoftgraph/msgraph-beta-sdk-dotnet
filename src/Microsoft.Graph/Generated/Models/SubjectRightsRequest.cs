@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SubjectRightsRequest : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dataSubject", value); }
         }
 #endif
-        /// <summary>The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.</summary>
+        /// <summary>The type of the data subject. The possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.DataSubjectType? DataSubjectType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DataSubjectType?>("dataSubjectType"); }
@@ -332,7 +332,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("stages", value); }
         }
 #endif
-        /// <summary>The status of the request. Possible values are: active, closed, unknownFutureValue.</summary>
+        /// <summary>The status of the request. The possible values are: active, closed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SubjectRightsRequestStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectRightsRequestStatus?>("status"); }
@@ -354,7 +354,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("team", value); }
         }
 #endif
-        /// <summary>The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
+        /// <summary>The type of the request. The possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SubjectRightsRequestType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SubjectRightsRequestType?>("type"); }
@@ -367,7 +367,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.SubjectRightsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.SubjectRightsRequest();
         }
         /// <summary>
@@ -414,7 +414,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.User>("approvers", Approvers);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("assignedTo", AssignedTo);

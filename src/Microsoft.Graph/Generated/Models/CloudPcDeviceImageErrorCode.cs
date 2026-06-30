@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum CloudPcDeviceImageErrorCode
     #pragma warning restore CS1591
@@ -47,6 +47,26 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "sourceImageSizeExceedsLimitation")]
         #pragma warning disable CS1591
         SourceImageSizeExceedsLimitation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sourceImageWithDataDiskNotSupported")]
+        #pragma warning disable CS1591
+        SourceImageWithDataDiskNotSupported,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sourceImageWithDiskEncryptionSetNotSupported")]
+        #pragma warning disable CS1591
+        SourceImageWithDiskEncryptionSetNotSupported,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sourceImageWithAzureDiskEncryptionNotSupported")]
+        #pragma warning disable CS1591
+        SourceImageWithAzureDiskEncryptionNotSupported,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "fSLogixInstalledSourceImageNotSupported")]
+        #pragma warning disable CS1591
+        FSLogixInstalledSourceImageNotSupported,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "startMenuAppLimitExceeded")]
+        #pragma warning disable CS1591
+        StartMenuAppLimitExceeded,
         #pragma warning restore CS1591
     }
 }

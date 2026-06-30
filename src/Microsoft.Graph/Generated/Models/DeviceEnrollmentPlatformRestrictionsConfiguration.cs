@@ -8,12 +8,12 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>
-    /// Device Enrollment Configuration that restricts the types of devices a user can enroll
+    /// Default Device Enrollment Platform Restrictions Configuration that restricts the types of devices a user can enroll
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceEnrollmentPlatformRestrictionsConfiguration : global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
-        /// <summary>Android for work restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Android For Work platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? AndroidForWorkRestriction
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("androidForWorkRestriction", value); }
         }
 #endif
-        /// <summary>Android restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Android platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? AndroidRestriction
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("androidRestriction", value); }
         }
 #endif
-        /// <summary>Ios restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for IOS platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? IosRestriction
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("iosRestriction", value); }
         }
 #endif
-        /// <summary>Mac restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for MacOS platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? MacOSRestriction
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("macOSRestriction", value); }
         }
 #endif
-        /// <summary>Mac restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Mac platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? MacRestriction
@@ -93,7 +93,39 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("macRestriction", value); }
         }
 #endif
-        /// <summary>Windows Home Sku restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for TvOS platform.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? TvosRestriction
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction?>("tvosRestriction"); }
+            set { BackingStore?.Set("tvosRestriction", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction TvosRestriction
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("tvosRestriction"); }
+            set { BackingStore?.Set("tvosRestriction", value); }
+        }
+#endif
+        /// <summary>Indicates restrictions for VisionOS platform.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? VisionOSRestriction
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction?>("visionOSRestriction"); }
+            set { BackingStore?.Set("visionOSRestriction", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction VisionOSRestriction
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("visionOSRestriction"); }
+            set { BackingStore?.Set("visionOSRestriction", value); }
+        }
+#endif
+        /// <summary>Indicates restrictions for Windows HomeSku platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? WindowsHomeSkuRestriction
@@ -109,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("windowsHomeSkuRestriction", value); }
         }
 #endif
-        /// <summary>Windows mobile restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Windows Mobile platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? WindowsMobileRestriction
@@ -125,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("windowsMobileRestriction", value); }
         }
 #endif
-        /// <summary>Windows restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Windows platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? WindowsRestriction
@@ -155,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionsConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionsConfiguration();
         }
         /// <summary>
@@ -171,6 +203,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "iosRestriction", n => { IosRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
                 { "macOSRestriction", n => { MacOSRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
                 { "macRestriction", n => { MacRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "tvosRestriction", n => { TvosRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "visionOSRestriction", n => { VisionOSRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
                 { "windowsHomeSkuRestriction", n => { WindowsHomeSkuRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
                 { "windowsMobileRestriction", n => { WindowsMobileRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
                 { "windowsRestriction", n => { WindowsRestriction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
@@ -182,13 +216,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("androidForWorkRestriction", AndroidForWorkRestriction);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("androidRestriction", AndroidRestriction);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("iosRestriction", IosRestriction);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("macOSRestriction", MacOSRestriction);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("macRestriction", MacRestriction);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("tvosRestriction", TvosRestriction);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("visionOSRestriction", VisionOSRestriction);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("windowsHomeSkuRestriction", WindowsHomeSkuRestriction);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("windowsMobileRestriction", WindowsMobileRestriction);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("windowsRestriction", WindowsRestriction);

@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class WorkflowBase : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -19,6 +19,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The administrative units in the scope of the workflow. Optional. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject>? AdministrationScopeTargets
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>?>("administrationScopeTargets"); }
+            set { BackingStore?.Set("administrationScopeTargets", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DirectoryObject> AdministrationScopeTargets
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DirectoryObject>>("administrationScopeTargets"); }
+            set { BackingStore?.Set("administrationScopeTargets", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The category property</summary>
@@ -178,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -195,6 +211,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "administrationScopeTargets", n => { AdministrationScopeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory>(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -215,7 +232,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("administrationScopeTargets", AdministrationScopeTargets);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory>("category", Category);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

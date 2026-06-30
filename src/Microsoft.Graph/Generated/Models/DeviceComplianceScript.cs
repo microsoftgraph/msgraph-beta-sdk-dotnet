@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Intune will provide customer the ability to run their Powershell Compliance scripts (detection) on the enrolled windows 10 Azure Active Directory joined devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceComplianceScript : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the device compliance script</summary>
@@ -111,6 +111,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Indicates the operating system platform type that this compliance script targets.</summary>
+        public global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType? Platform
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
+        }
         /// <summary>Name of the device compliance script publisher</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,7 +200,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.DeviceComplianceScript CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceComplianceScript();
         }
         /// <summary>
@@ -213,6 +219,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "platform", n => { Platform = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType>(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
@@ -227,7 +234,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceHealthScriptAssignment>("assignments", Assignments);
             writer.WriteStringValue("description", Description);
@@ -235,6 +242,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState>("deviceRunStates", DeviceRunStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enforceSignatureCheck", EnforceSignatureCheck);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType>("platform", Platform);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteBoolValue("runAs32Bit", RunAs32Bit);

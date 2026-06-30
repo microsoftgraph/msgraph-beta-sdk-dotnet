@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enrollment Profile used to enroll Android Enterprise devices using Google&apos;s Cloud Management.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidDeviceOwnerEnrollmentProfile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
@@ -55,6 +55,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
+        }
+#endif
+        /// <summary>Indicates the device name template used for the enrolled Android devices. The maximum length allowed for this property is 63 characters. The template expression contains normal text and tokens, including the serial number of the device, user name, device type, upn prefix, or a randomly generated number. Supported Tokens for device name templates are: (for device naming template expression): {{SERIAL}}, {{SERIALLAST4DIGITS}}, {{ENROLLMENTDATETIME}}, {{USERNAME}}, {{DEVICETYPE}}, {{UPNPREFIX}}, {{rand:x}}. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeviceNameTemplate
+        {
+            get { return BackingStore?.Get<string?>("deviceNameTemplate"); }
+            set { BackingStore?.Set("deviceNameTemplate", value); }
+        }
+#nullable restore
+#else
+        public string DeviceNameTemplate
+        {
+            get { return BackingStore?.Get<string>("deviceNameTemplate"); }
+            set { BackingStore?.Set("deviceNameTemplate", value); }
         }
 #endif
         /// <summary>Display name for the enrollment profile.</summary>
@@ -236,7 +252,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile();
         }
         /// <summary>
@@ -251,6 +267,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "configureWifi", n => { ConfigureWifi = n.GetBoolValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceNameTemplate", n => { DeviceNameTemplate = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enrolledDeviceCount", n => { EnrolledDeviceCount = n.GetIntValue(); } },
                 { "enrollmentMode", n => { EnrollmentMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentMode>(); } },
@@ -276,12 +293,13 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteBoolValue("configureWifi", ConfigureWifi);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("deviceNameTemplate", DeviceNameTemplate);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("enrolledDeviceCount", EnrolledDeviceCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentMode>("enrollmentMode", EnrollmentMode);

@@ -7,12 +7,28 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AppManagementApplicationConfiguration : global::Microsoft.Graph.Beta.Models.AppManagementConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identifierUris property</summary>
+        /// <summary>Property to restrict creation or update of apps based on their target signInAudience types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AudiencesConfiguration? Audiences
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration?>("audiences"); }
+            set { BackingStore?.Set("audiences", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AudiencesConfiguration Audiences
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>("audiences"); }
+            set { BackingStore?.Set("audiences", value); }
+        }
+#endif
+        /// <summary>Configuration object for restrictions on identifierUris property for an application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration? IdentifierUris
@@ -26,6 +42,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>("identifierUris"); }
             set { BackingStore?.Set("identifierUris", value); }
+        }
+#endif
+        /// <summary>The redirectUris property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration? RedirectUris
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration?>("redirectUris"); }
+            set { BackingStore?.Set("redirectUris", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration RedirectUris
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration>("redirectUris"); }
+            set { BackingStore?.Set("redirectUris", value); }
         }
 #endif
         /// <summary>
@@ -42,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.AppManagementApplicationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.AppManagementApplicationConfiguration();
         }
         /// <summary>
@@ -53,7 +85,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "audiences", n => { Audiences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>(global::Microsoft.Graph.Beta.Models.AudiencesConfiguration.CreateFromDiscriminatorValue); } },
                 { "identifierUris", n => { IdentifierUris = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>(global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration.CreateFromDiscriminatorValue); } },
+                { "redirectUris", n => { RedirectUris = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration>(global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,9 +96,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AudiencesConfiguration>("audiences", Audiences);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>("identifierUris", IdentifierUris);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RedirectUriConfiguration>("redirectUris", RedirectUris);
         }
     }
 }

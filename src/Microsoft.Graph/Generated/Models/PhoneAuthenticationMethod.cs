@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class PhoneAuthenticationMethod : global::Microsoft.Graph.Beta.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #endif
-        /// <summary>The type of this phone. Possible values are: mobile, alternateMobile, or office.</summary>
+        /// <summary>The type of this phone. The possible values are: mobile, alternateMobile, or office.</summary>
         public global::Microsoft.Graph.Beta.Models.AuthenticationPhoneType? PhoneType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationPhoneType?>("phoneType"); }
             set { BackingStore?.Set("phoneType", value); }
         }
-        /// <summary>Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.</summary>
+        /// <summary>Whether a phone is ready to be used for SMS sign-in or not. The possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AuthenticationMethodSignInState? SmsSignInState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationMethodSignInState?>("smsSignInState"); }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod();
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationPhoneType>("phoneType", PhoneType);

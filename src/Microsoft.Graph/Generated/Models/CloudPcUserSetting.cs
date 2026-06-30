@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcUserSetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("localAdminEnabled"); }
             set { BackingStore?.Set("localAdminEnabled", value); }
         }
-        /// <summary>The notificationSetting property</summary>
+        /// <summary>Defines the setting of the Cloud PC notification prompts for the Cloud PC user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcNotificationSetting? NotificationSetting
@@ -94,6 +94,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("notificationSetting", value); }
         }
 #endif
+        /// <summary>Indicates the provisioning source of the Cloud PC prepared for an end user. The possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn&apos;t set or set to null, its functionality is the same as setting it to image.</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningSourceType? ProvisioningSourceType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningSourceType?>("provisioningSourceType"); }
+            set { BackingStore?.Set("provisioningSourceType", value); }
+        }
         /// <summary>Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset isn&apos;t allowed. The default value is false.</summary>
         public bool? ResetEnabled
         {
@@ -116,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("restorePointSetting", value); }
         }
 #endif
-        /// <summary>Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.</summary>
+        /// <summary>Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and stopped returning data on December 1, 2023.</summary>
         public bool? SelfServiceEnabled
         {
             get { return BackingStore?.Get<bool?>("selfServiceEnabled"); }
@@ -129,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.CloudPcUserSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.CloudPcUserSetting();
         }
         /// <summary>
@@ -147,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
                 { "notificationSetting", n => { NotificationSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcNotificationSetting>(global::Microsoft.Graph.Beta.Models.CloudPcNotificationSetting.CreateFromDiscriminatorValue); } },
+                { "provisioningSourceType", n => { ProvisioningSourceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningSourceType>(); } },
                 { "resetEnabled", n => { ResetEnabled = n.GetBoolValue(); } },
                 { "restorePointSetting", n => { RestorePointSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting>(global::Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting.CreateFromDiscriminatorValue); } },
                 { "selfServiceEnabled", n => { SelfServiceEnabled = n.GetBoolValue(); } },
@@ -158,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
@@ -167,6 +174,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcNotificationSetting>("notificationSetting", NotificationSetting);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningSourceType>("provisioningSourceType", ProvisioningSourceType);
             writer.WriteBoolValue("resetEnabled", ResetEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting>("restorePointSetting", RestorePointSetting);
             writer.WriteBoolValue("selfServiceEnabled", SelfServiceEnabled);

@@ -8,12 +8,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
+        /// <summary>The action triggered when the threshold for the given signal is reached. The possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction?>("action"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.</summary>
+        /// <summary>The signal to monitor. The possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal? Signal
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal?>("signal"); }
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringRule();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal>("signal", Signal);

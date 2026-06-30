@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     #pragma warning disable CS1591
     public enum CloudPcManagementService
@@ -24,6 +24,14 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "rpaBox")]
         #pragma warning disable CS1591
         RpaBox = 8,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "microsoft365Opal")]
+        #pragma warning disable CS1591
+        Microsoft365Opal = 16,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "microsoft365BizChat")]
+        #pragma warning disable CS1591
+        Microsoft365BizChat = 32,
         #pragma warning restore CS1591
     }
 }

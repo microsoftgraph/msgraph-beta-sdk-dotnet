@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum RiskDetail
     #pragma warning restore CS1591
@@ -79,6 +79,22 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "adminConfirmedAccountSafe")]
         #pragma warning disable CS1591
         AdminConfirmedAccountSafe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "adminConfirmedAgentSafe")]
+        #pragma warning disable CS1591
+        AdminConfirmedAgentSafe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "adminConfirmedAgentCompromised")]
+        #pragma warning disable CS1591
+        AdminConfirmedAgentCompromised,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "adminDismissedRiskForAgent")]
+        #pragma warning disable CS1591
+        AdminDismissedRiskForAgent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftRevokedSessions")]
+        #pragma warning disable CS1591
+        MicrosoftRevokedSessions,
         #pragma warning restore CS1591
     }
 }

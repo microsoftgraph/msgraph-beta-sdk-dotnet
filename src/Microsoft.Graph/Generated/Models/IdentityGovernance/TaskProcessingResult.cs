@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class TaskProcessingResult : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Describes why the taskProcessingResult has failed.</summary>
+        /// <summary>Describes why the taskProcessingResult failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason
@@ -40,13 +40,29 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
+        /// <summary>Additional human-readable context about the task processing outcome. This property contains information about edge cases where the task completed successfully but the expected action wasn&apos;t performed because the target was already in the desired state, such as when the user was already a member of the specified group. Returns null when no additional context is needed. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProcessingInfo
+        {
+            get { return BackingStore?.Get<string?>("processingInfo"); }
+            set { BackingStore?.Set("processingInfo", value); }
+        }
+#nullable restore
+#else
+        public string ProcessingInfo
+        {
+            get { return BackingStore?.Get<string>("processingInfo"); }
+            set { BackingStore?.Set("processingInfo", value); }
+        }
+#endif
         /// <summary>The processingStatus property</summary>
         public global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus? ProcessingStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
-        /// <summary>The date time when taskProcessingResult execution started. Value is null if task execution has not yet started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
+        /// <summary>The date time when taskProcessingResult execution started. Value is null if task execution hasn&apos;t started yet.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? StartedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
@@ -91,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult();
         }
         /// <summary>
@@ -105,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "failureReason", n => { FailureReason = n.GetStringValue(); } },
+                { "processingInfo", n => { ProcessingInfo = n.GetStringValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
@@ -117,11 +134,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("failureReason", FailureReason);
+            writer.WriteStringValue("processingInfo", ProcessingInfo);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("subject", Subject);

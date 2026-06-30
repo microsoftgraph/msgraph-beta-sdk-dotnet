@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// win32MobileAppCatalogPackage extends mobileAppCatalogPackage by providing information necessary for the creation of a win32CatalogApp instance.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32MobileAppCatalogPackage : global::Microsoft.Graph.Beta.Models.MobileAppCatalogPackage, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
@@ -33,6 +33,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("branchDisplayName"); }
             set { BackingStore?.Set("branchDisplayName", value); }
+        }
+#endif
+        /// <summary>The identifier of a specific branch irrespective of version, or other attributes. This id is associated with the branchDisplayName. Read-only. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BranchId
+        {
+            get { return BackingStore?.Get<string?>("branchId"); }
+            set { BackingStore?.Set("branchId", value); }
+        }
+#nullable restore
+#else
+        public string BranchId
+        {
+            get { return BackingStore?.Get<string>("branchId"); }
+            set { BackingStore?.Set("branchId", value); }
         }
 #endif
         /// <summary>One or more locale(s) supported by the branch. Value is a two-letter ISO 639 language tags with optional two-letter subtags (example: en-US, ko, de, de-DE), or mul to indicate multi-language. Read-only. This property is read-only.</summary>
@@ -71,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Win32MobileAppCatalogPackage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Win32MobileAppCatalogPackage();
         }
         /// <summary>
@@ -84,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
                 { "branchDisplayName", n => { BranchDisplayName = n.GetStringValue(); } },
+                { "branchId", n => { BranchId = n.GetStringValue(); } },
                 { "locales", n => { Locales = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "packageAutoUpdateCapable", n => { PackageAutoUpdateCapable = n.GetBoolValue(); } },
             };
@@ -94,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
         }

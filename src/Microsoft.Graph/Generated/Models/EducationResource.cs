@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EducationResource : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.EducationResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
@@ -124,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.educationLinkResource" => new global::Microsoft.Graph.Beta.Models.EducationLinkResource(),
                 "#microsoft.graph.educationMediaResource" => new global::Microsoft.Graph.Beta.Models.EducationMediaResource(),
                 "#microsoft.graph.educationPowerPointResource" => new global::Microsoft.Graph.Beta.Models.EducationPowerPointResource(),
+                "#microsoft.graph.educationSpeakerProgressResource" => new global::Microsoft.Graph.Beta.Models.EducationSpeakerProgressResource(),
                 "#microsoft.graph.educationTeamsAppResource" => new global::Microsoft.Graph.Beta.Models.EducationTeamsAppResource(),
                 "#microsoft.graph.educationWordResource" => new global::Microsoft.Graph.Beta.Models.EducationWordResource(),
                 _ => new global::Microsoft.Graph.Beta.Models.EducationResource(),
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

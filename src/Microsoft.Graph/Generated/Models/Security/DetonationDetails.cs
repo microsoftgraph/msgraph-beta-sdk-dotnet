@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DetonationDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -27,6 +27,54 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Represents indicators and its associated verdict that suggests whether an email is compromised.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>? CompromiseIndicators
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>?>("compromiseIndicators"); }
+            set { BackingStore?.Set("compromiseIndicators", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator> CompromiseIndicators
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>>("compromiseIndicators"); }
+            set { BackingStore?.Set("compromiseIndicators", value); }
+        }
+#endif
+        /// <summary>Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation. This property is deprecated and still stop returning data in March 2026. Use the detonationBehaviourDetailsV2 property instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails? DetonationBehaviourDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails?>("detonationBehaviourDetails"); }
+            set { BackingStore?.Set("detonationBehaviourDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails DetonationBehaviourDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails>("detonationBehaviourDetails"); }
+            set { BackingStore?.Set("detonationBehaviourDetails", value); }
+        }
+#endif
+        /// <summary>Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation in a JSON format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetonationBehaviourDetailsV2
+        {
+            get { return BackingStore?.Get<string?>("detonationBehaviourDetailsV2"); }
+            set { BackingStore?.Set("detonationBehaviourDetailsV2", value); }
+        }
+#nullable restore
+#else
+        public string DetonationBehaviourDetailsV2
+        {
+            get { return BackingStore?.Get<string>("detonationBehaviourDetailsV2"); }
+            set { BackingStore?.Set("detonationBehaviourDetailsV2", value); }
+        }
+#endif
         /// <summary>The chain of detonation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +105,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetonationObservables>("detonationObservables"); }
             set { BackingStore?.Set("detonationObservables", value); }
+        }
+#endif
+        /// <summary>Show any screenshots that were captured during detonation. No screenshots are captured if the URL opens into a link that directly downloads a file. However, you see the downloaded file in the detonation chain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetonationScreenshotUri
+        {
+            get { return BackingStore?.Get<string?>("detonationScreenshotUri"); }
+            set { BackingStore?.Set("detonationScreenshotUri", value); }
+        }
+#nullable restore
+#else
+        public string DetonationScreenshotUri
+        {
+            get { return BackingStore?.Get<string>("detonationScreenshotUri"); }
+            set { BackingStore?.Set("detonationScreenshotUri", value); }
         }
 #endif
         /// <summary>The verdict of the detonation.</summary>
@@ -91,6 +155,38 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("detonationVerdictReason", value); }
         }
 #endif
+        /// <summary>Additional metadata about the entity in JSON format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EntityMetadata
+        {
+            get { return BackingStore?.Get<string?>("entityMetadata"); }
+            set { BackingStore?.Set("entityMetadata", value); }
+        }
+#nullable restore
+#else
+        public string EntityMetadata
+        {
+            get { return BackingStore?.Get<string>("entityMetadata"); }
+            set { BackingStore?.Set("entityMetadata", value); }
+        }
+#endif
+        /// <summary>The attack techniques, as aligned with the MITRE ATT&amp;CK framework.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MitreTechniques
+        {
+            get { return BackingStore?.Get<string?>("mitreTechniques"); }
+            set { BackingStore?.Set("mitreTechniques", value); }
+        }
+#nullable restore
+#else
+        public string MitreTechniques
+        {
+            get { return BackingStore?.Get<string>("mitreTechniques"); }
+            set { BackingStore?.Set("mitreTechniques", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +201,38 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
+        }
+#endif
+        /// <summary>The results of static analysis performed on the file or URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StaticAnalysis
+        {
+            get { return BackingStore?.Get<string?>("staticAnalysis"); }
+            set { BackingStore?.Set("staticAnalysis", value); }
+        }
+#nullable restore
+#else
+        public string StaticAnalysis
+        {
+            get { return BackingStore?.Get<string>("staticAnalysis"); }
+            set { BackingStore?.Set("staticAnalysis", value); }
+        }
+#endif
+        /// <summary>The source of the submission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubmissionSource
+        {
+            get { return BackingStore?.Get<string?>("submissionSource"); }
+            set { BackingStore?.Set("submissionSource", value); }
+        }
+#nullable restore
+#else
+        public string SubmissionSource
+        {
+            get { return BackingStore?.Get<string>("submissionSource"); }
+            set { BackingStore?.Set("submissionSource", value); }
         }
 #endif
         /// <summary>
@@ -122,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.Security.DetonationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Security.DetonationDetails();
         }
         /// <summary>
@@ -134,11 +262,19 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "analysisDateTime", n => { AnalysisDateTime = n.GetDateTimeOffsetValue(); } },
+                { "compromiseIndicators", n => { CompromiseIndicators = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>(global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "detonationBehaviourDetails", n => { DetonationBehaviourDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails>(global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails.CreateFromDiscriminatorValue); } },
+                { "detonationBehaviourDetailsV2", n => { DetonationBehaviourDetailsV2 = n.GetStringValue(); } },
                 { "detonationChain", n => { DetonationChain = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationChain>(global::Microsoft.Graph.Beta.Models.Security.DetonationChain.CreateFromDiscriminatorValue); } },
                 { "detonationObservables", n => { DetonationObservables = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationObservables>(global::Microsoft.Graph.Beta.Models.Security.DetonationObservables.CreateFromDiscriminatorValue); } },
+                { "detonationScreenshotUri", n => { DetonationScreenshotUri = n.GetStringValue(); } },
                 { "detonationVerdict", n => { DetonationVerdict = n.GetStringValue(); } },
                 { "detonationVerdictReason", n => { DetonationVerdictReason = n.GetStringValue(); } },
+                { "entityMetadata", n => { EntityMetadata = n.GetStringValue(); } },
+                { "mitreTechniques", n => { MitreTechniques = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "staticAnalysis", n => { StaticAnalysis = n.GetStringValue(); } },
+                { "submissionSource", n => { SubmissionSource = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -147,13 +283,21 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("analysisDateTime", AnalysisDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CompromiseIndicator>("compromiseIndicators", CompromiseIndicators);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationBehaviourDetails>("detonationBehaviourDetails", DetonationBehaviourDetails);
+            writer.WriteStringValue("detonationBehaviourDetailsV2", DetonationBehaviourDetailsV2);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationChain>("detonationChain", DetonationChain);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetonationObservables>("detonationObservables", DetonationObservables);
+            writer.WriteStringValue("detonationScreenshotUri", DetonationScreenshotUri);
             writer.WriteStringValue("detonationVerdict", DetonationVerdict);
             writer.WriteStringValue("detonationVerdictReason", DetonationVerdictReason);
+            writer.WriteStringValue("entityMetadata", EntityMetadata);
+            writer.WriteStringValue("mitreTechniques", MitreTechniques);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("staticAnalysis", StaticAnalysis);
+            writer.WriteStringValue("submissionSource", SubmissionSource);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

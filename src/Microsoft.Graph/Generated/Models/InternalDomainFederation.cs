@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class InternalDomainFederation : global::Microsoft.Graph.Beta.Models.SamlOrWsFedProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</summary>
+        /// <summary>URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActiveSignInUri
@@ -26,6 +26,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("activeSignInUri"); }
             set { BackingStore?.Set("activeSignInUri", value); }
+        }
+#endif
+        /// <summary>The defaultInteractiveAuthenticationMethod property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultInteractiveAuthenticationMethod
+        {
+            get { return BackingStore?.Get<string?>("defaultInteractiveAuthenticationMethod"); }
+            set { BackingStore?.Set("defaultInteractiveAuthenticationMethod", value); }
+        }
+#nullable restore
+#else
+        public string DefaultInteractiveAuthenticationMethod
+        {
+            get { return BackingStore?.Get<string>("defaultInteractiveAuthenticationMethod"); }
+            set { BackingStore?.Set("defaultInteractiveAuthenticationMethod", value); }
         }
 #endif
         /// <summary>Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.</summary>
@@ -56,7 +72,39 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("nextSigningCertificate", value); }
         }
 #endif
-        /// <summary>The passwordResetUri property</summary>
+        /// <summary>The openIdConnectDiscoveryEndpoint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OpenIdConnectDiscoveryEndpoint
+        {
+            get { return BackingStore?.Get<string?>("openIdConnectDiscoveryEndpoint"); }
+            set { BackingStore?.Set("openIdConnectDiscoveryEndpoint", value); }
+        }
+#nullable restore
+#else
+        public string OpenIdConnectDiscoveryEndpoint
+        {
+            get { return BackingStore?.Get<string>("openIdConnectDiscoveryEndpoint"); }
+            set { BackingStore?.Set("openIdConnectDiscoveryEndpoint", value); }
+        }
+#endif
+        /// <summary>The passwordChangeUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PasswordChangeUri
+        {
+            get { return BackingStore?.Get<string?>("passwordChangeUri"); }
+            set { BackingStore?.Set("passwordChangeUri", value); }
+        }
+#nullable restore
+#else
+        public string PasswordChangeUri
+        {
+            get { return BackingStore?.Get<string>("passwordChangeUri"); }
+            set { BackingStore?.Set("passwordChangeUri", value); }
+        }
+#endif
+        /// <summary>URI that clients are redirected to for resetting their password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PasswordResetUri
@@ -94,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signingCertificateUpdateStatus", value); }
         }
 #endif
-        /// <summary>URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</summary>
+        /// <summary>URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignOutUri
@@ -124,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.InternalDomainFederation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.InternalDomainFederation();
         }
         /// <summary>
@@ -136,9 +184,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "activeSignInUri", n => { ActiveSignInUri = n.GetStringValue(); } },
+                { "defaultInteractiveAuthenticationMethod", n => { DefaultInteractiveAuthenticationMethod = n.GetStringValue(); } },
                 { "federatedIdpMfaBehavior", n => { FederatedIdpMfaBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FederatedIdpMfaBehavior>(); } },
                 { "isSignedAuthenticationRequestRequired", n => { IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
                 { "nextSigningCertificate", n => { NextSigningCertificate = n.GetStringValue(); } },
+                { "openIdConnectDiscoveryEndpoint", n => { OpenIdConnectDiscoveryEndpoint = n.GetStringValue(); } },
+                { "passwordChangeUri", n => { PasswordChangeUri = n.GetStringValue(); } },
                 { "passwordResetUri", n => { PasswordResetUri = n.GetStringValue(); } },
                 { "promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PromptLoginBehavior>(); } },
                 { "signOutUri", n => { SignOutUri = n.GetStringValue(); } },
@@ -151,12 +202,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("activeSignInUri", ActiveSignInUri);
+            writer.WriteStringValue("defaultInteractiveAuthenticationMethod", DefaultInteractiveAuthenticationMethod);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FederatedIdpMfaBehavior>("federatedIdpMfaBehavior", FederatedIdpMfaBehavior);
             writer.WriteBoolValue("isSignedAuthenticationRequestRequired", IsSignedAuthenticationRequestRequired);
             writer.WriteStringValue("nextSigningCertificate", NextSigningCertificate);
+            writer.WriteStringValue("openIdConnectDiscoveryEndpoint", OpenIdConnectDiscoveryEndpoint);
+            writer.WriteStringValue("passwordChangeUri", PasswordChangeUri);
             writer.WriteStringValue("passwordResetUri", PasswordResetUri);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);

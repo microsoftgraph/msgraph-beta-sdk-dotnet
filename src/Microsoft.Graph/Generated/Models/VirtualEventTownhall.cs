@@ -7,16 +7,22 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class VirtualEventTownhall : global::Microsoft.Graph.Beta.Models.VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The audience to whom the town hall is visible. Possible values are: everyone, organization, unknownFutureValue.</summary>
+        /// <summary>The audience to whom the town hall is visible. The possible values are: everyone, organization, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.MeetingAudience? Audience
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
+        }
+        /// <summary>The capacity property</summary>
+        public int? Capacity
+        {
+            get { return BackingStore?.Get<int?>("capacity"); }
+            set { BackingStore?.Set("capacity", value); }
         }
         /// <summary>Identity information of the coorganizers of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,6 +62,38 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isInviteOnly"); }
             set { BackingStore?.Set("isInviteOnly", value); }
         }
+        /// <summary>Registration configuration of the town hall.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration? RegistrationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration?>("registrationConfiguration"); }
+            set { BackingStore?.Set("registrationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration RegistrationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration>("registrationConfiguration"); }
+            set { BackingStore?.Set("registrationConfiguration", value); }
+        }
+#endif
+        /// <summary>Registration records of the town hall.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>? Registrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>?>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration> Registrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventTownhall"/> and sets the default values.
         /// </summary>
@@ -70,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.VirtualEventTownhall CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.VirtualEventTownhall();
         }
         /// <summary>
@@ -82,9 +120,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "audience", n => { Audience = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingAudience>(); } },
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
                 { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>(global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
+                { "registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration>(global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration.CreateFromDiscriminatorValue); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>(global::Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -93,12 +134,15 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingAudience>("audience", Audience);
+            writer.WriteIntValue("capacity", Capacity);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Identity>("invitedAttendees", InvitedAttendees);
             writer.WriteBoolValue("isInviteOnly", IsInviteOnly);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VirtualEventTownhallRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration>("registrations", Registrations);
         }
     }
 }

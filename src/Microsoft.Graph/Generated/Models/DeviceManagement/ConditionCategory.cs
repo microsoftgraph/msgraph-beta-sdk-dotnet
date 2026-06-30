@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum ConditionCategory
     #pragma warning restore CS1591
@@ -43,6 +43,26 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "frontlineBufferUsageDuration")]
+        #pragma warning disable CS1591
+        FrontlineBufferUsageDuration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "frontlineBufferUsageThreshold")]
+        #pragma warning disable CS1591
+        FrontlineBufferUsageThreshold,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcUserSettingsPersistenceUsageThreshold")]
+        #pragma warning disable CS1591
+        CloudPcUserSettingsPersistenceUsageThreshold,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcDeprovisionedThreshold")]
+        #pragma warning disable CS1591
+        CloudPcDeprovisionedThreshold,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcReserveDeprovisionFailedThreshold")]
+        #pragma warning disable CS1591
+        CloudPcReserveDeprovisionFailedThreshold,
         #pragma warning restore CS1591
     }
 }

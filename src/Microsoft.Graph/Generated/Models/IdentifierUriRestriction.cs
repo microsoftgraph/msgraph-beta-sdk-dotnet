@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class IdentifierUriRestriction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,17 +21,39 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The excludeAppsReceivingV2Tokens property</summary>
+        /// <summary>Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they&apos;re exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions? ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions?>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#endif
+        /// <summary>If true, the restriction isn&apos;t enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction is enforced for those applications.</summary>
         public bool? ExcludeAppsReceivingV2Tokens
         {
             get { return BackingStore?.Get<bool?>("excludeAppsReceivingV2Tokens"); }
             set { BackingStore?.Set("excludeAppsReceivingV2Tokens", value); }
         }
-        /// <summary>The excludeSaml property</summary>
+        /// <summary>If true, the restriction isn&apos;t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.</summary>
         public bool? ExcludeSaml
         {
             get { return BackingStore?.Get<bool?>("excludeSaml"); }
             set { BackingStore?.Set("excludeSaml", value); }
+        }
+        /// <summary>If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.</summary>
+        public bool? IsStateSetByMicrosoft
+        {
+            get { return BackingStore?.Get<bool?>("isStateSetByMicrosoft"); }
+            set { BackingStore?.Set("isStateSetByMicrosoft", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The restrictForAppsCreatedAfterDateTime property</summary>
+        /// <summary>Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.</summary>
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
@@ -76,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.IdentifierUriRestriction();
         }
         /// <summary>
@@ -87,8 +109,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "excludeActors", n => { ExcludeActors = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>(global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions.CreateFromDiscriminatorValue); } },
                 { "excludeAppsReceivingV2Tokens", n => { ExcludeAppsReceivingV2Tokens = n.GetBoolValue(); } },
                 { "excludeSaml", n => { ExcludeSaml = n.GetBoolValue(); } },
+                { "isStateSetByMicrosoft", n => { IsStateSetByMicrosoft = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppManagementRestrictionState>(); } },
@@ -100,7 +124,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions>("excludeActors", ExcludeActors);
             writer.WriteBoolValue("excludeAppsReceivingV2Tokens", ExcludeAppsReceivingV2Tokens);
             writer.WriteBoolValue("excludeSaml", ExcludeSaml);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Sites.Add;
 using Microsoft.Graph.Beta.Sites.Count;
 using Microsoft.Graph.Beta.Sites.Delta;
 using Microsoft.Graph.Beta.Sites.GetAllSites;
+using Microsoft.Graph.Beta.Sites.GetOperationStatusWithOperationId;
 using Microsoft.Graph.Beta.Sites.Item;
 using Microsoft.Graph.Beta.Sites.Remove;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Sites
     /// <summary>
     /// Provides operations to manage the collection of site entities.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the add method.</summary>
@@ -78,8 +79,8 @@ namespace Microsoft.Graph.Beta.Sites
         {
         }
         /// <summary>
-        /// Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-search?view=graph-rest-beta" />
+        /// List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,43 @@ namespace Microsoft.Graph.Beta.Sites
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
+        /// Provides operations to call the getOperationStatus method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Sites.GetOperationStatusWithOperationId.GetOperationStatusWithOperationIdRequestBuilder"/></returns>
+        /// <param name="operationId">Usage: operationId=&apos;{operationId}&apos;</param>
+        public global::Microsoft.Graph.Beta.Sites.GetOperationStatusWithOperationId.GetOperationStatusWithOperationIdRequestBuilder GetOperationStatusWithOperationId(string operationId)
+        {
+            if(string.IsNullOrEmpty(operationId)) throw new ArgumentNullException(nameof(operationId));
+            return new global::Microsoft.Graph.Beta.Sites.GetOperationStatusWithOperationId.GetOperationStatusWithOperationIdRequestBuilder(PathParameters, RequestAdapter, operationId);
+        }
+        /// <summary>
+        /// Create a new SharePoint site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-post-sites?view=graph-rest-beta" />
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Site"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Microsoft.Graph.Beta.Models.Site?> PostAsync(global::Microsoft.Graph.Beta.Models.Site body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Microsoft.Graph.Beta.Models.Site> PostAsync(global::Microsoft.Graph.Beta.Models.Site body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Site>(requestInfo, global::Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,6 +158,28 @@ namespace Microsoft.Graph.Beta.Sites
             return requestInfo;
         }
         /// <summary>
+        /// Create a new SharePoint site.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Site body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Site body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Sites.SitesRequestBuilder"/></returns>
@@ -130,9 +189,9 @@ namespace Microsoft.Graph.Beta.Sites
             return new global::Microsoft.Graph.Beta.Sites.SitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
+        /// List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SitesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -199,8 +258,16 @@ namespace Microsoft.Graph.Beta.Sites
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SitesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Sites.SitesRequestBuilder.SitesRequestBuilderGetQueryParameters>
+        {
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SitesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

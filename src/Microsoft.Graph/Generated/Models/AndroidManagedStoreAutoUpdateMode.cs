@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Prioritization for automatic updates of Android Managed Store apps set on assignment.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AndroidManagedStoreAutoUpdateMode
     {
         /// <summary>Default update behavior (device must be connected to Wifi, charging and not actively used).</summary>
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The app is updated as soon as possible by the developer. If device is online, it will be updated within minutes.</summary>
         [EnumMember(Value = "priority")]
         Priority,
-        /// <summary>Unknown future mode (reserved, not used right now).</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -7,18 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Payload : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.</summary>
+        /// <summary>The branch of a payload. The possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PayloadBrand? Brand
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PayloadBrand?>("brand"); }
             set { BackingStore?.Set("brand", value); }
         }
-        /// <summary>The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.</summary>
+        /// <summary>The complexity of a payload. The possible values are: unknown, low, medium, high, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PayloadComplexity? Complexity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PayloadComplexity?>("complexity"); }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Additional details about the payload.</summary>
+        /// <summary>More details about the payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PayloadDetail? Detail
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.</summary>
+        /// <summary>Industry of a payload. The possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PayloadIndustry? Industry
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PayloadIndustry?>("industry"); }
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("payloadTags", value); }
         }
 #endif
-        /// <summary>The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
+        /// <summary>The payload delivery platform for a simulation. The possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform? Platform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform?>("platform"); }
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<double?>("predictedCompromiseRate"); }
             set { BackingStore?.Set("predictedCompromiseRate", value); }
         }
-        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
+        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationAttackType? SimulationAttackType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationAttackType?>("simulationAttackType"); }
@@ -196,19 +196,19 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
+        /// <summary>Simulation content status. Supports $filter and $orderby. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationContentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationContentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.</summary>
+        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant, phishTraining. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant, phishTraining. For more information on the types of social engineering attack techniques, see simulations.</summary>
         public global::Microsoft.Graph.Beta.Models.SimulationAttackTechnique? Technique
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SimulationAttackTechnique?>("technique"); }
             set { BackingStore?.Set("technique", value); }
         }
-        /// <summary>The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.</summary>
+        /// <summary>The theme of a payload. The possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.PayloadTheme? Theme
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PayloadTheme?>("theme"); }
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Beta.Models.Payload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.Payload();
         }
         /// <summary>
@@ -262,7 +262,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PayloadBrand>("brand", Brand);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PayloadComplexity>("complexity", Complexity);
