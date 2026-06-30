@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new crossTenantMigrationJob.
+        /// Create a new crossTenantMigrationJob. A job defines the migration batch but doesn&apos;t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/migrationsroot-post-crosstenantmigrationjobs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob"/></returns>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
             return requestInfo;
         }
         /// <summary>
-        /// Create a new crossTenantMigrationJob.
+        /// Create a new crossTenantMigrationJob. A job defines the migration batch but doesn&apos;t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

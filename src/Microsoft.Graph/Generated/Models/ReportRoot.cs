@@ -78,6 +78,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("azureADPremiumLicenseInsight", value); }
         }
 #endif
+        /// <summary>The identity correlation reports in the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IdentityCorrelation>? Correlations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityCorrelation>?>("correlations"); }
+            set { BackingStore?.Set("correlations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IdentityCorrelation> Correlations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityCorrelation>>("correlations"); }
+            set { BackingStore?.Set("correlations", value); }
+        }
+#endif
         /// <summary>Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +204,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot>("healthMonitoring"); }
             set { BackingStore?.Set("healthMonitoring", value); }
+        }
+#endif
+        /// <summary>Microsoft Entra identity analytics for the tenant, including its groups.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot? IdentityAnalytics
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot?>("identityAnalytics"); }
+            set { BackingStore?.Set("identityAnalytics", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot IdentityAnalytics
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot>("identityAnalytics"); }
+            set { BackingStore?.Set("identityAnalytics", value); }
         }
 #endif
         /// <summary>Retrieve a list of monthly print usage summaries, grouped by printer.</summary>
@@ -388,6 +420,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "applicationSignInDetailedSummary", n => { ApplicationSignInDetailedSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(global::Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "authenticationMethods", n => { AuthenticationMethods = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot>(global::Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot.CreateFromDiscriminatorValue); } },
                 { "azureADPremiumLicenseInsight", n => { AzureADPremiumLicenseInsight = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight>(global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight.CreateFromDiscriminatorValue); } },
+                { "correlations", n => { Correlations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityCorrelation>(global::Microsoft.Graph.Beta.Models.IdentityCorrelation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "credentialUserRegistrationDetails", n => { CredentialUserRegistrationDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(global::Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dailyPrintUsage", n => { DailyPrintUsage = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsage>(global::Microsoft.Graph.Beta.Models.PrintUsage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dailyPrintUsageByPrinter", n => { DailyPrintUsageByPrinter = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -395,6 +428,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "dailyPrintUsageSummariesByPrinter", n => { DailyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dailyPrintUsageSummariesByUser", n => { DailyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>(global::Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "healthMonitoring", n => { HealthMonitoring = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot>(global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot.CreateFromDiscriminatorValue); } },
+                { "identityAnalytics", n => { IdentityAnalytics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot>(global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot.CreateFromDiscriminatorValue); } },
                 { "monthlyPrintUsageByPrinter", n => { MonthlyPrintUsageByPrinter = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "monthlyPrintUsageByUser", n => { MonthlyPrintUsageByUser = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>(global::Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "monthlyPrintUsageSummariesByPrinter", n => { MonthlyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -420,6 +454,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>("applicationSignInDetailedSummary", ApplicationSignInDetailedSummary);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot>("authenticationMethods", AuthenticationMethods);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AzureADPremiumLicenseInsight>("azureADPremiumLicenseInsight", AzureADPremiumLicenseInsight);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityCorrelation>("correlations", Correlations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>("credentialUserRegistrationDetails", CredentialUserRegistrationDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsage>("dailyPrintUsage", DailyPrintUsage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("dailyPrintUsageByPrinter", DailyPrintUsageByPrinter);
@@ -427,6 +462,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("dailyPrintUsageSummariesByPrinter", DailyPrintUsageSummariesByPrinter);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>("dailyPrintUsageSummariesByUser", DailyPrintUsageSummariesByUser);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot>("healthMonitoring", HealthMonitoring);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot>("identityAnalytics", IdentityAnalytics);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("monthlyPrintUsageByPrinter", MonthlyPrintUsageByPrinter);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>("monthlyPrintUsageByUser", MonthlyPrintUsageByUser);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("monthlyPrintUsageSummariesByPrinter", MonthlyPrintUsageSummariesByPrinter);

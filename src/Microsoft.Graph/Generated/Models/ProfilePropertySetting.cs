@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProfilePropertySetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Name of the property-level setting.</summary>
+        /// <summary>Name of the property associated with this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>A collection of prioritized profile source URLs ordered by data precedence within an organization.</summary>
+        /// <summary>A collection of prioritized profile source URLs ordered by data precedence within an organization. For details, see Manage profile source precedence in Microsoft 365.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PrioritizedSourceUrls

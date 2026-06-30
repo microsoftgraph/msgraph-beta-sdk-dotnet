@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Tenant has enabled the connection</summary>
         [EnumMember(Value = "enabled")]
         Enabled,
-        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        /// <summary>Future authentication method to be added here.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

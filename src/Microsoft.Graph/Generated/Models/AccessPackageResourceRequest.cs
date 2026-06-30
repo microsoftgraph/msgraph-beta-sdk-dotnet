@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requestor", value); }
         }
 #endif
-        /// <summary>The outcome of whether the service was able to add the resource to the catalog. The value is Delivered if the resource was added or removed. Read-Only.</summary>
+        /// <summary>The outcome of whether the service was able to add the resource to the catalog. The value is Delivered if the resource was added or removed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestState

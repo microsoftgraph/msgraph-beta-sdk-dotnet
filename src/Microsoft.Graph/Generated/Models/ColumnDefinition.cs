@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("hyperlinkOrPicture", value); }
         }
 #endif
-        /// <summary>Specifies whether the column values can used for sorting and searching.</summary>
+        /// <summary>Specifies whether the column values can be used for sorting and searching.</summary>
         public bool? Indexed
         {
             get { return BackingStore?.Get<bool?>("indexed"); }
@@ -239,6 +239,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("isSealed"); }
             set { BackingStore?.Set("isSealed", value); }
+        }
+        /// <summary>Specifies whether the column values can be used for searching. Currently supported only for columns in a fileStorageContainer.</summary>
+        public bool? IsSearchable
+        {
+            get { return BackingStore?.Get<bool?>("isSearchable"); }
+            set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>This column&apos;s data is looked up from another source in the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -460,6 +466,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isDeletable", n => { IsDeletable = n.GetBoolValue(); } },
                 { "isReorderable", n => { IsReorderable = n.GetBoolValue(); } },
                 { "isSealed", n => { IsSealed = n.GetBoolValue(); } },
+                { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
                 { "lookup", n => { Lookup = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LookupColumn>(global::Microsoft.Graph.Beta.Models.LookupColumn.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.NumberColumn>(global::Microsoft.Graph.Beta.Models.NumberColumn.CreateFromDiscriminatorValue); } },
@@ -502,6 +509,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isDeletable", IsDeletable);
             writer.WriteBoolValue("isReorderable", IsReorderable);
             writer.WriteBoolValue("isSealed", IsSealed);
+            writer.WriteBoolValue("isSearchable", IsSearchable);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LookupColumn>("lookup", Lookup);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.NumberColumn>("number", Number);

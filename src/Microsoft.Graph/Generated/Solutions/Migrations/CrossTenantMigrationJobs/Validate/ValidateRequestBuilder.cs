@@ -35,8 +35,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Val
         {
         }
         /// <summary>
-        /// Validate the configuration of a crossTenantMigrationJob. This function doesn&apos;t migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that would affect an actual migration job. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta" />
+        /// Invoke action validate
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob"/></returns>
         /// <param name="body">The request body</param>
@@ -62,7 +61,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Val
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate the configuration of a crossTenantMigrationJob. This function doesn&apos;t migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that would affect an actual migration job. 
+        /// Invoke action validate
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -726,6 +726,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The personal distribution lists in the user&apos;s mailbox. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DistributionList>? DistributionLists
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DistributionList>?>("distributionLists"); }
+            set { BackingStore?.Set("distributionLists", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DistributionList> DistributionLists
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DistributionList>>("distributionLists"); }
+            set { BackingStore?.Set("distributionLists", value); }
+        }
+#endif
         /// <summary>The user&apos;s OneDrive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2555,6 +2571,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "devices", n => { Devices = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Device>(global::Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "directReports", n => { DirectReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "distributionLists", n => { DistributionLists = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionList>(global::Microsoft.Graph.Beta.Models.DistributionList.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "employeeExperience", n => { EmployeeExperience = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser>(global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser.CreateFromDiscriminatorValue); } },
@@ -2729,6 +2746,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Device>("devices", Devices);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("directReports", DirectReports);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionList>("distributionLists", DistributionLists);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>("drives", Drives);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser>("employeeExperience", EmployeeExperience);

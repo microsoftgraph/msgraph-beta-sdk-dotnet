@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>List of device groups to which the custom detection rule applies.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? DeviceGroups
+        {
+            get { return BackingStore?.Get<List<string>?>("deviceGroups"); }
+            set { BackingStore?.Set("deviceGroups", value); }
+        }
+#nullable restore
+#else
+        public List<string> DeviceGroups
+        {
+            get { return BackingStore?.Get<List<string>>("deviceGroups"); }
+            set { BackingStore?.Set("deviceGroups", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>List of groups to which the custom detection rule applies.</summary>
+        /// <summary>List of groups to which the custom detection rule applies. Deprecated. Use deviceGroups instead. This property will be removed from this resource on October 1, 2026.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeNames
@@ -85,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "deviceGroups", n => { DeviceGroups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "scopeNames", n => { ScopeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "scopeType", n => { ScopeType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.ScopeType>(); } },
@@ -97,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("deviceGroups", DeviceGroups);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeNames", ScopeNames);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.ScopeType>("scopeType", ScopeType);

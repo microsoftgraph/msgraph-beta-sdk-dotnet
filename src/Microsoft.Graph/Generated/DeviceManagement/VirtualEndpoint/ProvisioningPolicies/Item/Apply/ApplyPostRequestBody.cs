@@ -22,6 +22,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The isForceUserLogoffEnabled property</summary>
+        public bool? IsForceUserLogoffEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isForceUserLogoffEnabled"); }
+            set { BackingStore?.Set("isForceUserLogoffEnabled", value); }
+        }
         /// <summary>The policySettings property</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType? PolicySettings
         {
@@ -41,6 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            IsForceUserLogoffEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "isForceUserLogoffEnabled", n => { IsForceUserLogoffEnabled = n.GetBoolValue(); } },
                 { "policySettings", n => { PolicySettings = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>(); } },
                 { "reservePercentage", n => { ReservePercentage = n.GetIntValue(); } },
             };
@@ -71,6 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("isForceUserLogoffEnabled", IsForceUserLogoffEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>("policySettings", PolicySettings);
             writer.WriteIntValue("reservePercentage", ReservePercentage);
             writer.WriteAdditionalData(AdditionalData);
