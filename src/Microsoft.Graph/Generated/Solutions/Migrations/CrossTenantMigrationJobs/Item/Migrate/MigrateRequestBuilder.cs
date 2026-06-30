@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Ite
         {
         }
         /// <summary>
-        /// Invoke action migrate
+        /// Migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantmigrationjob-migrate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action migrate
+        /// Migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

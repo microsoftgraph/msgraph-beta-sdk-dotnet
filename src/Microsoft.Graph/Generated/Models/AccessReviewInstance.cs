@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("definition", value); }
         }
 #endif
+        /// <summary>The identities of users who delegated this review instance to the current reviewer. Null if the instance wasn&apos;t delegated. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.UserIdentity>? DelegatedBy
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserIdentity>?>("delegatedBy"); }
+            set { BackingStore?.Set("delegatedBy", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.UserIdentity> DelegatedBy
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserIdentity>>("delegatedBy"); }
+            set { BackingStore?.Set("delegatedBy", value); }
+        }
+#endif
         /// <summary>DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
         public DateTimeOffset? EndDateTime
         {
@@ -189,6 +205,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "contactedReviewers", n => { ContactedReviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewReviewer>(global::Microsoft.Graph.Beta.Models.AccessReviewReviewer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>(global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "definition", n => { Definition = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>(global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition.CreateFromDiscriminatorValue); } },
+                { "delegatedBy", n => { DelegatedBy = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewError>(global::Microsoft.Graph.Beta.Models.AccessReviewError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>(global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -210,6 +227,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewReviewer>("contactedReviewers", ContactedReviewers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>("decisions", Decisions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>("definition", Definition);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>("delegatedBy", DelegatedBy);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewError>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);

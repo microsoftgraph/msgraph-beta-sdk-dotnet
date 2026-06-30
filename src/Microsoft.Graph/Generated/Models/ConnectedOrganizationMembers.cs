@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ConnectedOrganizationMembers : global::Microsoft.Graph.Beta.Models.UserSet, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the connected organization. Read only.</summary>
+        /// <summary>The name of the connected organization. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description

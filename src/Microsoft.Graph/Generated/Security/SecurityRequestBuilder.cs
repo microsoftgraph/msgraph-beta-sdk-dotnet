@@ -21,6 +21,7 @@ using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema;
+using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.Partner;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
@@ -266,6 +267,16 @@ namespace Microsoft.Graph.Beta.Security
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.Security>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.Security.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the getRunHuntingQuery method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder"/></returns>
+        /// <param name="query">Usage: query=&apos;{query}&apos;</param>
+        public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId(string query)
+        {
+            if(string.IsNullOrEmpty(query)) throw new ArgumentNullException(nameof(query));
+            return new global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder(PathParameters, RequestAdapter, query);
         }
         /// <summary>
         /// Update security

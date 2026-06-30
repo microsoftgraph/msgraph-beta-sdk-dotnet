@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>suspended for corresponding catalog item</summary>
         [EnumMember(Value = "suspended")]
         Suspended,
-        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

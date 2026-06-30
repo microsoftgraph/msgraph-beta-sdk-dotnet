@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
-        /// <summary>The cloudVideoInteropInfo property</summary>
+        /// <summary>Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudVideoInteropInfo? CloudVideoInteropInfo
@@ -306,6 +306,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("meetingSpokenLanguageTag", value); }
         }
 #endif
+        /// <summary>The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.OnlineMeetingType? MeetingType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OnlineMeetingType?>("meetingType"); }
+            set { BackingStore?.Set("meetingType", value); }
+        }
         /// <summary>Indicates whether to record the meeting automatically.</summary>
         public bool? RecordAutomatically
         {
@@ -435,6 +441,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LobbyBypassSettings>(global::Microsoft.Graph.Beta.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
                 { "meetingOptionsWebUrl", n => { MeetingOptionsWebUrl = n.GetStringValue(); } },
                 { "meetingSpokenLanguageTag", n => { MeetingSpokenLanguageTag = n.GetStringValue(); } },
+                { "meetingType", n => { MeetingType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingType>(); } },
                 { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
                 { "sensitivityLabelAssignment", n => { SensitivityLabelAssignment = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>(global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode>(); } },
@@ -480,6 +487,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
             writer.WriteStringValue("meetingOptionsWebUrl", MeetingOptionsWebUrl);
             writer.WriteStringValue("meetingSpokenLanguageTag", MeetingSpokenLanguageTag);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingType>("meetingType", MeetingType);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment", SensitivityLabelAssignment);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);

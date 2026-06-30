@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The blockedDomains property</summary>
+        /// <summary>Collection of domain names that are blocked for this specific platform. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BlockedDomains

@@ -21,7 +21,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Timestamp of the custom detection rule&apos;s next scheduled run.</summary>
+        /// <summary>The recurring time interval at which the rule runs (ISO 8601 duration, for example P1D for daily, PT1H for hourly).</summary>
+        public TimeSpan? Frequency
+        {
+            get { return BackingStore?.Get<TimeSpan?>("frequency"); }
+            set { BackingStore?.Set("frequency", value); }
+        }
+        /// <summary>Timestamp of the custom detection rule&apos;s next scheduled run. Deprecated. This property will be removed from this resource on 2026-10-01.</summary>
         public DateTimeOffset? NextRunDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("nextRunDateTime"); }
@@ -43,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. &apos;0&apos; signifies the rule is run continuously.</summary>
+        /// <summary>How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. 0 signifies the rule is run continuously. Deprecated. Use frequency instead. This property will be removed from this resource on 2026-10-01.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Period
@@ -85,6 +91,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "frequency", n => { Frequency = n.GetTimeSpanValue(); } },
                 { "nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "period", n => { Period = n.GetStringValue(); } },
@@ -97,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteTimeSpanValue("frequency", Frequency);
             writer.WriteDateTimeOffsetValue("nextRunDateTime", NextRunDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("period", Period);

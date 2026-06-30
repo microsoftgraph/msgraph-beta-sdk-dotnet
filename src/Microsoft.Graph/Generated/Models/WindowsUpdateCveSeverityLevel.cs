@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Severity of Moderate</summary>
         [EnumMember(Value = "moderate")]
         Moderate,
-        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        /// <summary>Reserved value of UnknownFutureValue</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

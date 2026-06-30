@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Teamwork.DeletedChats;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams;
 using Microsoft.Graph.Beta.Teamwork.DetermineIfInteractionIsAllowed;
 using Microsoft.Graph.Beta.Teamwork.Devices;
+using Microsoft.Graph.Beta.Teamwork.Messaging;
 using Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates;
 using Microsoft.Graph.Beta.Teamwork.TeamsAppSettings;
@@ -45,6 +46,11 @@ namespace Microsoft.Graph.Beta.Teamwork
         public global::Microsoft.Graph.Beta.Teamwork.Devices.DevicesRequestBuilder Devices
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the messaging property of the microsoft.graph.teamwork entity.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.Messaging.MessagingRequestBuilder Messaging
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.Messaging.MessagingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendActivityNotificationToRecipients method.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients.SendActivityNotificationToRecipientsRequestBuilder SendActivityNotificationToRecipients

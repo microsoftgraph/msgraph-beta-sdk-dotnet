@@ -62,12 +62,15 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.addLargeGalleryViewOperation" => new global::Microsoft.Graph.Beta.Models.AddLargeGalleryViewOperation(),
+                "#microsoft.graph.admitAllFromLobbyOperation" => new global::Microsoft.Graph.Beta.Models.AdmitAllFromLobbyOperation(),
+                "#microsoft.graph.admitFromLobbyOperation" => new global::Microsoft.Graph.Beta.Models.AdmitFromLobbyOperation(),
                 "#microsoft.graph.cancelMediaProcessingOperation" => new global::Microsoft.Graph.Beta.Models.CancelMediaProcessingOperation(),
                 "#microsoft.graph.inviteParticipantsOperation" => new global::Microsoft.Graph.Beta.Models.InviteParticipantsOperation(),
                 "#microsoft.graph.muteParticipantOperation" => new global::Microsoft.Graph.Beta.Models.MuteParticipantOperation(),
                 "#microsoft.graph.muteParticipantsOperation" => new global::Microsoft.Graph.Beta.Models.MuteParticipantsOperation(),
                 "#microsoft.graph.playPromptOperation" => new global::Microsoft.Graph.Beta.Models.PlayPromptOperation(),
                 "#microsoft.graph.recordOperation" => new global::Microsoft.Graph.Beta.Models.RecordOperation(),
+                "#microsoft.graph.removeFromLobbyOperation" => new global::Microsoft.Graph.Beta.Models.RemoveFromLobbyOperation(),
                 "#microsoft.graph.sendDtmfTonesOperation" => new global::Microsoft.Graph.Beta.Models.SendDtmfTonesOperation(),
                 "#microsoft.graph.startHoldMusicOperation" => new global::Microsoft.Graph.Beta.Models.StartHoldMusicOperation(),
                 "#microsoft.graph.startRecordingOperation" => new global::Microsoft.Graph.Beta.Models.StartRecordingOperation(),

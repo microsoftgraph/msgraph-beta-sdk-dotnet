@@ -65,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.win32LobAppFileSystemRule" => new global::Microsoft.Graph.Beta.Models.Win32LobAppFileSystemRule(),
                 "#microsoft.graph.win32LobAppPowerShellScriptRule" => new global::Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptRule(),
+                "#microsoft.graph.win32LobAppProcessRule" => new global::Microsoft.Graph.Beta.Models.Win32LobAppProcessRule(),
                 "#microsoft.graph.win32LobAppProductCodeRule" => new global::Microsoft.Graph.Beta.Models.Win32LobAppProductCodeRule(),
                 "#microsoft.graph.win32LobAppRegistryRule" => new global::Microsoft.Graph.Beta.Models.Win32LobAppRegistryRule(),
                 _ => new global::Microsoft.Graph.Beta.Models.Win32LobAppRule(),

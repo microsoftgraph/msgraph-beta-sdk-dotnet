@@ -69,6 +69,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rulesContent", value); }
         }
 #endif
+        /// <summary>Indicates the interval, in minutes, at which the custom compliance script is evaluated on the device. Allowed range from 1 to 480. Nullable.</summary>
+        public int? RunIntervalInMinutes
+        {
+            get { return BackingStore?.Get<int?>("runIntervalInMinutes"); }
+            set { BackingStore?.Set("runIntervalInMinutes", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript"/> and sets the default values.
         /// </summary>
@@ -98,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceComplianceScriptId", n => { DeviceComplianceScriptId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "rulesContent", n => { RulesContent = n.GetByteArrayValue(); } },
+                { "runIntervalInMinutes", n => { RunIntervalInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -110,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceComplianceScriptId", DeviceComplianceScriptId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteByteArrayValue("rulesContent", RulesContent);
+            writer.WriteIntValue("runIntervalInMinutes", RunIntervalInMinutes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

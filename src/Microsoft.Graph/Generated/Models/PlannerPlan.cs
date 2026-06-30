@@ -146,6 +146,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("details", value); }
         }
 #endif
+        /// <summary>The historyItems property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>? HistoryItems
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>?>("historyItems"); }
+            set { BackingStore?.Set("historyItems", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem> HistoryItems
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>>("historyItems"); }
+            set { BackingStore?.Set("historyItems", value); }
+        }
+#endif
         /// <summary>Read-only. If set to true, the plan is archived. An archived plan is read-only.</summary>
         public bool? IsArchived
         {
@@ -243,6 +259,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "creationSource", n => { CreationSource = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanCreation>(global::Microsoft.Graph.Beta.Models.PlannerPlanCreation.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanDetails>(global::Microsoft.Graph.Beta.Models.PlannerPlanDetails.CreateFromDiscriminatorValue); } },
+                { "historyItems", n => { HistoryItems = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>(global::Microsoft.Graph.Beta.Models.PlannerHistoryItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "sharedWithContainers", n => { SharedWithContainers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerSharedWithContainer>(global::Microsoft.Graph.Beta.Models.PlannerSharedWithContainer.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -267,6 +284,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanCreation>("creationSource", CreationSource);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanDetails>("details", Details);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>("historyItems", HistoryItems);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteStringValue("owner", Owner);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerSharedWithContainer>("sharedWithContainers", SharedWithContainers);

@@ -58,11 +58,10 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.accessPackageAssignmentRequestCallbackData" => new global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestCallbackData(),
-                "#microsoft.graph.accessReviewDataUploadTriggerCallbackData" => new global::Microsoft.Graph.Beta.Models.AccessReviewDataUploadTriggerCallbackData(),
-                "#microsoft.graph.accessReviewResourceDataUploadSessionContextData" => new global::Microsoft.Graph.Beta.Models.AccessReviewResourceDataUploadSessionContextData(),
                 "#microsoft.graph.assignmentRequestApprovalStageCallbackData" => new global::Microsoft.Graph.Beta.Models.AssignmentRequestApprovalStageCallbackData(),
                 "#microsoft.graph.identityGovernance.customTaskExtensionCallbackData" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCallbackData(),
                 "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCalloutData(),
+                "#microsoft.graph.identityGovernance.customTaskExtensionResponseData" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionResponseData(),
                 _ => new global::Microsoft.Graph.Beta.Models.CustomExtensionData(),
             };
         }

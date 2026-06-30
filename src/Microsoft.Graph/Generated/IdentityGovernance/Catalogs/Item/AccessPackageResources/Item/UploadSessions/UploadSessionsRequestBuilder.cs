@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageRes
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
+        /// Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one. The following table lists the derived types of customDataProvidedResourceUploadSession that can be created. Specify the @odata.type in the request body to indicate the derived type.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/customdataprovidedresource-post-uploadsessions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CustomDataProvidedResourceUploadSession"/></returns>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.Catalogs.Item.AccessPackageRes
             return requestInfo;
         }
         /// <summary>
-        /// Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
+        /// Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one. The following table lists the derived types of customDataProvidedResourceUploadSession that can be created. Specify the @odata.type in the request body to indicate the derived type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

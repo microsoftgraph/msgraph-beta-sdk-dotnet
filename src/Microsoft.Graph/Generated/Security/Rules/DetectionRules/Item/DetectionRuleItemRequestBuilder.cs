@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules.Item
         {
         }
         /// <summary>
-        /// Delete navigation property detectionRules for security
+        /// Delete a detectionRule object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-rulesroot-delete-detectionrules?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get detectionRules from security
+        /// The custom detection rules configured for the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.DetectionRule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.DetectionRule>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.DetectionRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property detectionRules for security
+        /// Delete a detectionRule object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get detectionRules from security
+        /// The custom detection rules configured for the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +183,7 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules.Item
         {
         }
         /// <summary>
-        /// Get detectionRules from security
+        /// The custom detection rules configured for the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DetectionRuleItemRequestBuilderGetQueryParameters 

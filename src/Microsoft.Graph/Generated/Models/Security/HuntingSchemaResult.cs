@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The functions property</summary>
+        /// <summary>Object containing the built-in functions and saved functions available to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaFunctions? Functions
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The tables property</summary>
+        /// <summary>Collection of advanced hunting tables the user is authorized to query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaTable>? Tables
