@@ -460,7 +460,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         public static new global::Microsoft.Graph.Beta.Models.Security.Alert CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.Security.Alert();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.security.manualAlert" => new global::Microsoft.Graph.Beta.Models.Security.ManualAlert(),
+                _ => new global::Microsoft.Graph.Beta.Models.Security.Alert(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

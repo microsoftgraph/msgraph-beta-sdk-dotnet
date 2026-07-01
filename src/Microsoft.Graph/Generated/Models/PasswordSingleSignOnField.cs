@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customizedLabel", value); }
         }
 #endif
-        /// <summary>Label that would be used if no customizedLabel is provided. Read only.</summary>
+        /// <summary>Label that would be used if no customizedLabel is provided. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultLabel

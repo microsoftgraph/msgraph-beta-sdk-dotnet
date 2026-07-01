@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Win32LobAppRestartBehavior?>("deviceRestartBehavior"); }
             set { BackingStore?.Set("deviceRestartBehavior", value); }
         }
+        /// <summary>Indicates whether app-in-use detection is enabled before app enforcement, and if enabled, the action to take when the app is detected to be in-use. Null indicates the feature is not enabled. Possible values are: `notEnabled`, `fail`, `terminateWithoutUserInteraction`, `terminateWithUserInteraction`.</summary>
+        public global::Microsoft.Graph.Beta.Models.Win32LobAppInUseActionType? InUseBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Win32LobAppInUseActionType?>("inUseBehavior"); }
+            set { BackingStore?.Set("inUseBehavior", value); }
+        }
         /// <summary>The number of minutes the system will wait for install program to finish. Default value is 60 minutes.</summary>
         public int? MaxRunTimeInMinutes
         {
@@ -83,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deviceRestartBehavior", n => { DeviceRestartBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppRestartBehavior>(); } },
+                { "inUseBehavior", n => { InUseBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppInUseActionType>(); } },
                 { "maxRunTimeInMinutes", n => { MaxRunTimeInMinutes = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RunAsAccountType>(); } },
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppRestartBehavior>("deviceRestartBehavior", DeviceRestartBehavior);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppInUseActionType>("inUseBehavior", InUseBehavior);
             writer.WriteIntValue("maxRunTimeInMinutes", MaxRunTimeInMinutes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RunAsAccountType>("runAsAccount", RunAsAccount);

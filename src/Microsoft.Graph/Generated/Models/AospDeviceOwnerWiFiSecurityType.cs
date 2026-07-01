@@ -19,5 +19,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>WPA-Enterprise/WPA2-Enterprise. Must use AOSPDeviceOwnerEnterpriseWifiConfiguration type to configure enterprise options.</summary>
         [EnumMember(Value = "wpaEnterprise")]
         WpaEnterprise,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

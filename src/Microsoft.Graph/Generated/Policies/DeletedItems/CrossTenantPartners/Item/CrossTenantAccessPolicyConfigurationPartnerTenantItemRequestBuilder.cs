@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.IdentitySynchronization;
 using Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.M365Capabilities;
 using Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.Restore;
+using Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.ServiceProviderConstraints;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -35,6 +36,11 @@ namespace Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item
         public global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the serviceProviderConstraints property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder ServiceProviderConstraints
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder"/> and sets the default values.

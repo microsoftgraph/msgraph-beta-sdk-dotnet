@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Specifies criteria to retrieve artifacts.</summary>
+        /// <summary>Deprecated. Going forward, use the structuredQueryExpression property instead. Specifies criteria to retrieve artifacts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QueryExpression
@@ -57,6 +57,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("queryExpression"); }
             set { BackingStore?.Set("queryExpression", value); }
+        }
+#endif
+        /// <summary>Contains a structured query expression for searching artifacts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RestoreSearchArtifactQueryExpression? StructuredQueryExpression
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSearchArtifactQueryExpression?>("structuredQueryExpression"); }
+            set { BackingStore?.Set("structuredQueryExpression", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RestoreSearchArtifactQueryExpression StructuredQueryExpression
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSearchArtifactQueryExpression>("structuredQueryExpression"); }
+            set { BackingStore?.Set("structuredQueryExpression", value); }
         }
 #endif
         /// <summary>
@@ -88,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "artifactType", n => { ArtifactType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestorableArtifact>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "queryExpression", n => { QueryExpression = n.GetStringValue(); } },
+                { "structuredQueryExpression", n => { StructuredQueryExpression = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RestoreSearchArtifactQueryExpression>(global::Microsoft.Graph.Beta.Models.RestoreSearchArtifactQueryExpression.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -100,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestorableArtifact>("artifactType", ArtifactType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("queryExpression", QueryExpression);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RestoreSearchArtifactQueryExpression>("structuredQueryExpression", StructuredQueryExpression);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -268,6 +268,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("location", value); }
         }
 #endif
+        /// <summary>Lock metadata for the item, including the lock type, when it was created, when it expires, and which users currently hold the lock. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.LockInfo? LockInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LockInfo?>("lockInfo"); }
+            set { BackingStore?.Set("lockInfo", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.LockInfo LockInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LockInfo>("lockInfo"); }
+            set { BackingStore?.Set("lockInfo", value); }
+        }
+#endif
         /// <summary>Malware metadata, if the item was detected to contain malware. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -667,6 +683,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "image", n => { Image = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Image>(global::Microsoft.Graph.Beta.Models.Image.CreateFromDiscriminatorValue); } },
                 { "listItem", n => { ListItem = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ListItem>(global::Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue); } },
                 { "location", n => { Location = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.GeoCoordinates>(global::Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "lockInfo", n => { LockInfo = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LockInfo>(global::Microsoft.Graph.Beta.Models.LockInfo.CreateFromDiscriminatorValue); } },
                 { "malware", n => { Malware = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Malware>(global::Microsoft.Graph.Beta.Models.Malware.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Media>(global::Microsoft.Graph.Beta.Models.Media.CreateFromDiscriminatorValue); } },
                 { "package", n => { Package = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Package>(global::Microsoft.Graph.Beta.Models.Package.CreateFromDiscriminatorValue); } },
@@ -716,6 +733,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Image>("image", Image);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ListItem>("listItem", ListItem);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.GeoCoordinates>("location", Location);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LockInfo>("lockInfo", LockInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Malware>("malware", Malware);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Media>("media", Media);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Package>("package", Package);

@@ -22,6 +22,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The dynamicProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.AuditRecordTypeDictionary? DynamicProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AuditRecordTypeDictionary?>("dynamicProperties"); }
+            set { BackingStore?.Set("dynamicProperties", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.AuditRecordTypeDictionary DynamicProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AuditRecordTypeDictionary>("dynamicProperties"); }
+            set { BackingStore?.Set("dynamicProperties", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +97,9 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.airAdminActionInvestigationData" => new global::Microsoft.Graph.Beta.Models.Security.AirAdminActionInvestigationData(),
                 "#microsoft.graph.security.airInvestigationData" => new global::Microsoft.Graph.Beta.Models.Security.AirInvestigationData(),
                 "#microsoft.graph.security.airManualInvestigationData" => new global::Microsoft.Graph.Beta.Models.Security.AirManualInvestigationData(),
+                "#microsoft.graph.security.aISpanOutputsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AISpanOutputsAuditRecord(),
+                "#microsoft.graph.security.alertSubmissionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AlertSubmissionAuditRecord(),
+                "#microsoft.graph.security.alertSubmissionResultDetailAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AlertSubmissionResultDetailAuditRecord(),
                 "#microsoft.graph.security.attackSimAdminAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AttackSimAdminAuditRecord(),
                 "#microsoft.graph.security.attackSimAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AttackSimAuditRecord(),
                 "#microsoft.graph.security.auditConfigAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AuditConfigAuditRecord(),
@@ -91,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.azureActiveDirectoryAccountLogonAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AzureActiveDirectoryAccountLogonAuditRecord(),
                 "#microsoft.graph.security.azureActiveDirectoryAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AzureActiveDirectoryAuditRecord(),
                 "#microsoft.graph.security.azureActiveDirectoryStsLogonAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AzureActiveDirectoryStsLogonAuditRecord(),
+                "#microsoft.graph.security.azureAISearchAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.AzureAISearchAuditRecord(),
                 "#microsoft.graph.security.campaignAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CampaignAuditRecord(),
                 "#microsoft.graph.security.ccraiPolicyViolationRecord" => new global::Microsoft.Graph.Beta.Models.Security.CcraiPolicyViolationRecord(),
                 "#microsoft.graph.security.cdpClassifierHealthRecord" => new global::Microsoft.Graph.Beta.Models.Security.CdpClassifierHealthRecord(),
@@ -123,7 +143,9 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.complianceDLPSharePointClassificationExtendedAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ComplianceDLPSharePointClassificationExtendedAuditRecord(),
                 "#microsoft.graph.security.complianceExchangeOcrAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ComplianceExchangeOcrAuditRecord(),
                 "#microsoft.graph.security.complianceManagerActionRecord" => new global::Microsoft.Graph.Beta.Models.Security.ComplianceManagerActionRecord(),
+                "#microsoft.graph.security.compliancePolicyGradingSharePointAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CompliancePolicyGradingSharePointAuditRecord(),
                 "#microsoft.graph.security.complianceSettingsChangeAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ComplianceSettingsChangeAuditRecord(),
+                "#microsoft.graph.security.complianceSitGradingSharePointAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ComplianceSitGradingSharePointAuditRecord(),
                 "#microsoft.graph.security.complianceSupervisionExchangeAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ComplianceSupervisionExchangeAuditRecord(),
                 "#microsoft.graph.security.connectedAIAppInteractionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ConnectedAIAppInteractionAuditRecord(),
                 "#microsoft.graph.security.consumptionResourceAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ConsumptionResourceAuditRecord(),
@@ -134,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.copilotInteractionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CopilotInteractionAuditRecord(),
                 "#microsoft.graph.security.copilotPluginSettingAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CopilotPluginSettingAuditRecord(),
                 "#microsoft.graph.security.copilotPromptBookSettingAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CopilotPromptBookSettingAuditRecord(),
+                "#microsoft.graph.security.copilotSessionSharingAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CopilotSessionSharingAuditRecord(),
                 "#microsoft.graph.security.copilotSettingAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CopilotSettingAuditRecord(),
                 "#microsoft.graph.security.copilotWorkspaceSettingAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CopilotWorkspaceSettingAuditRecord(),
                 "#microsoft.graph.security.coreReportingSettingsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.CoreReportingSettingsAuditRecord(),
@@ -151,6 +174,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.defaultAuditData" => new global::Microsoft.Graph.Beta.Models.Security.DefaultAuditData(),
                 "#microsoft.graph.security.defenderCaseManagementAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.DefenderCaseManagementAuditRecord(),
                 "#microsoft.graph.security.defenderPreviewFeaturesRecord" => new global::Microsoft.Graph.Beta.Models.Security.DefenderPreviewFeaturesRecord(),
+                "#microsoft.graph.security.defenderSecurityForAIConfigurationAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.DefenderSecurityForAIConfigurationAuditRecord(),
                 "#microsoft.graph.security.deployFeatureActivityRecord" => new global::Microsoft.Graph.Beta.Models.Security.DeployFeatureActivityRecord(),
                 "#microsoft.graph.security.deviceDiscoverySettingsAuthenticatedScansRecord" => new global::Microsoft.Graph.Beta.Models.Security.DeviceDiscoverySettingsAuthenticatedScansRecord(),
                 "#microsoft.graph.security.deviceDiscoverySettingsExclusionRecord" => new global::Microsoft.Graph.Beta.Models.Security.DeviceDiscoverySettingsExclusionRecord(),
@@ -159,14 +183,20 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.dlpEndpointAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.DlpEndpointAuditRecord(),
                 "#microsoft.graph.security.dlpImportResultAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.DlpImportResultAuditRecord(),
                 "#microsoft.graph.security.dlpSensitiveInformationTypeRulePackageCmdletRecord" => new global::Microsoft.Graph.Beta.Models.Security.DlpSensitiveInformationTypeRulePackageCmdletRecord(),
+                "#microsoft.graph.security.dragonCopilotAccessRecord" => new global::Microsoft.Graph.Beta.Models.Security.DragonCopilotAccessRecord(),
+                "#microsoft.graph.security.dragonCopilotAdminRecord" => new global::Microsoft.Graph.Beta.Models.Security.DragonCopilotAdminRecord(),
+                "#microsoft.graph.security.dragonCopilotClinicalDataRecord" => new global::Microsoft.Graph.Beta.Models.Security.DragonCopilotClinicalDataRecord(),
+                "#microsoft.graph.security.dragonCopilotSessionRecord" => new global::Microsoft.Graph.Beta.Models.Security.DragonCopilotSessionRecord(),
                 "#microsoft.graph.security.dynamics365BusinessCentralAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.Dynamics365BusinessCentralAuditRecord(),
                 "#microsoft.graph.security.ehrConnectorAuditBaseRecord" => new global::Microsoft.Graph.Beta.Models.Security.EhrConnectorAuditBaseRecord(),
+                "#microsoft.graph.security.eopSubmissionFeedEntityAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.EopSubmissionFeedEntityAuditRecord(),
                 "#microsoft.graph.security.exchangeAdminAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ExchangeAdminAuditRecord(),
                 "#microsoft.graph.security.exchangeAggregatedMailboxAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ExchangeAggregatedMailboxAuditRecord(),
                 "#microsoft.graph.security.exchangeAggregatedOperationRecord" => new global::Microsoft.Graph.Beta.Models.Security.ExchangeAggregatedOperationRecord(),
                 "#microsoft.graph.security.exchangeMailboxAuditGroupRecord" => new global::Microsoft.Graph.Beta.Models.Security.ExchangeMailboxAuditGroupRecord(),
                 "#microsoft.graph.security.exchangeMailboxAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.ExchangeMailboxAuditRecord(),
                 "#microsoft.graph.security.fabricAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.FabricAuditRecord(),
+                "#microsoft.graph.security.fabricPolicyRecord" => new global::Microsoft.Graph.Beta.Models.Security.FabricPolicyRecord(),
                 "#microsoft.graph.security.healthcareSignalRecord" => new global::Microsoft.Graph.Beta.Models.Security.HealthcareSignalRecord(),
                 "#microsoft.graph.security.hostedRpaAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.HostedRpaAuditRecord(),
                 "#microsoft.graph.security.hrSignalAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.HrSignalAuditRecord(),
@@ -197,6 +227,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.mcasAlertsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.McasAlertsAuditRecord(),
                 "#microsoft.graph.security.mdaAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MdaAuditRecord(),
                 "#microsoft.graph.security.mdaDataSecuritySignalRecord" => new global::Microsoft.Graph.Beta.Models.Security.MdaDataSecuritySignalRecord(),
+                "#microsoft.graph.security.mDASHAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MDASHAuditRecord(),
                 "#microsoft.graph.security.mdatpAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MdatpAuditRecord(),
                 "#microsoft.graph.security.mdcEventsRecord" => new global::Microsoft.Graph.Beta.Models.Security.MdcEventsRecord(),
                 "#microsoft.graph.security.mdiAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MdiAuditRecord(),
@@ -226,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.microsoftTeamsRetentionLabelActionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MicrosoftTeamsRetentionLabelActionAuditRecord(),
                 "#microsoft.graph.security.microsoftTeamsSensitivityLabelActionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MicrosoftTeamsSensitivityLabelActionAuditRecord(),
                 "#microsoft.graph.security.microsoftTeamsShiftsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MicrosoftTeamsShiftsAuditRecord(),
+                "#microsoft.graph.security.microsoftTeamsUserConcernAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MicrosoftTeamsUserConcernAuditRecord(),
                 "#microsoft.graph.security.mipAutoLabelExchangeItemAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MipAutoLabelExchangeItemAuditRecord(),
                 "#microsoft.graph.security.mipAutoLabelProgressFeedbackAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MipAutoLabelProgressFeedbackAuditRecord(),
                 "#microsoft.graph.security.mipAutoLabelSharePointItemAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MipAutoLabelSharePointItemAuditRecord(),
@@ -237,6 +269,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.mipLabelAnalyticsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MipLabelAnalyticsAuditRecord(),
                 "#microsoft.graph.security.mipLabelAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MipLabelAuditRecord(),
                 "#microsoft.graph.security.mosAgentInfoRecord" => new global::Microsoft.Graph.Beta.Models.Security.MosAgentInfoRecord(),
+                "#microsoft.graph.security.mosAgentInfoRecordV2" => new global::Microsoft.Graph.Beta.Models.Security.MosAgentInfoRecordV2(),
                 "#microsoft.graph.security.ms365dCustomDetectionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.Ms365dCustomDetectionAuditRecord(),
                 "#microsoft.graph.security.ms365dIncidentAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.Ms365dIncidentAuditRecord(),
                 "#microsoft.graph.security.ms365dSuppressionRuleAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.Ms365dSuppressionRuleAuditRecord(),
@@ -245,6 +278,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.msdeIndicatorsSettingsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MsdeIndicatorsSettingsAuditRecord(),
                 "#microsoft.graph.security.msdeResponseActionsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MsdeResponseActionsAuditRecord(),
                 "#microsoft.graph.security.msdeRolesSettingsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MsdeRolesSettingsAuditRecord(),
+                "#microsoft.graph.security.mspVectorSearchContentMetadataAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MspVectorSearchContentMetadataAuditRecord(),
                 "#microsoft.graph.security.msticNationStateNotificationRecord" => new global::Microsoft.Graph.Beta.Models.Security.MsticNationStateNotificationRecord(),
                 "#microsoft.graph.security.multiStageDispositionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MultiStageDispositionAuditRecord(),
                 "#microsoft.graph.security.myAnalyticsSettingsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.MyAnalyticsSettingsAuditRecord(),
@@ -262,6 +296,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.p4aiAssessmentFabricScannerRecord" => new global::Microsoft.Graph.Beta.Models.Security.P4aiAssessmentFabricScannerRecord(),
                 "#microsoft.graph.security.p4aiAssessmentLocationResultRecord" => new global::Microsoft.Graph.Beta.Models.Security.P4aiAssessmentLocationResultRecord(),
                 "#microsoft.graph.security.p4aiAssessmentRecord" => new global::Microsoft.Graph.Beta.Models.Security.P4aiAssessmentRecord(),
+                "#microsoft.graph.security.p4AIRiskScoreRecord" => new global::Microsoft.Graph.Beta.Models.Security.P4AIRiskScoreRecord(),
                 "#microsoft.graph.security.peopleAdminSettingsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.PeopleAdminSettingsAuditRecord(),
                 "#microsoft.graph.security.physicalBadgingSignalAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.PhysicalBadgingSignalAuditRecord(),
                 "#microsoft.graph.security.placesDirectoryAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.PlacesDirectoryAuditRecord(),
@@ -332,6 +367,8 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.securityComplianceInsightsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SecurityComplianceInsightsAuditRecord(),
                 "#microsoft.graph.security.securityComplianceRBACAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SecurityComplianceRBACAuditRecord(),
                 "#microsoft.graph.security.securityComplianceUserChangeAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SecurityComplianceUserChangeAuditRecord(),
+                "#microsoft.graph.security.securityCopilotIdentityManagementAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SecurityCopilotIdentityManagementAuditRecord(),
+                "#microsoft.graph.security.securityDevelopmentLifecycleAILogAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SecurityDevelopmentLifecycleAILogAuditRecord(),
                 "#microsoft.graph.security.sensitiveInfoRemediationAgentDataRecord" => new global::Microsoft.Graph.Beta.Models.Security.SensitiveInfoRemediationAgentDataRecord(),
                 "#microsoft.graph.security.sensitivityLabelActionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SensitivityLabelActionAuditRecord(),
                 "#microsoft.graph.security.sensitivityLabeledFileActionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SensitivityLabeledFileActionAuditRecord(),
@@ -360,6 +397,12 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.skypeForBusinessPSTNUsageAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SkypeForBusinessPSTNUsageAuditRecord(),
                 "#microsoft.graph.security.skypeForBusinessUsersBlockedAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SkypeForBusinessUsersBlockedAuditRecord(),
                 "#microsoft.graph.security.sonarDetonationContentMetadata" => new global::Microsoft.Graph.Beta.Models.Security.SonarDetonationContentMetadata(),
+                "#microsoft.graph.security.sonarDetonationEntityAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SonarDetonationEntityAuditRecord(),
+                "#microsoft.graph.security.sonarFileDetonationEntityAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SonarFileDetonationEntityAuditRecord(),
+                "#microsoft.graph.security.sonarSubmissionEntityAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SonarSubmissionEntityAuditRecord(),
+                "#microsoft.graph.security.sonarUrlDetonationEntityAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SonarUrlDetonationEntityAuditRecord(),
+                "#microsoft.graph.security.sparkCoreCustomLivePoolRecord" => new global::Microsoft.Graph.Beta.Models.Security.SparkCoreCustomLivePoolRecord(),
+                "#microsoft.graph.security.submissionEntityAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SubmissionEntityAuditRecord(),
                 "#microsoft.graph.security.supervisoryReviewDayXInsightsAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SupervisoryReviewDayXInsightsAuditRecord(),
                 "#microsoft.graph.security.syntheticProbeAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.SyntheticProbeAuditRecord(),
                 "#microsoft.graph.security.teamCopilotInteractionAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.TeamCopilotInteractionAuditRecord(),
@@ -397,6 +440,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 "#microsoft.graph.security.vivaEngageNetworkAssociationAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.VivaEngageNetworkAssociationAuditRecord(),
                 "#microsoft.graph.security.vivaEngageSegmentAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.VivaEngageSegmentAuditRecord(),
                 "#microsoft.graph.security.vivaGlintAdvancedConfigurationAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.VivaGlintAdvancedConfigurationAuditRecord(),
+                "#microsoft.graph.security.vivaGlintAgenticCampaignAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.VivaGlintAgenticCampaignAuditRecord(),
                 "#microsoft.graph.security.vivaGlintFeedbackProgramAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.VivaGlintFeedbackProgramAuditRecord(),
                 "#microsoft.graph.security.vivaGlintOrganizationalDataAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.VivaGlintOrganizationalDataAuditRecord(),
                 "#microsoft.graph.security.vivaGlintPulseProgramAuditRecord" => new global::Microsoft.Graph.Beta.Models.Security.VivaGlintPulseProgramAuditRecord(),
@@ -432,6 +476,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "dynamicProperties", n => { DynamicProperties = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AuditRecordTypeDictionary>(global::Microsoft.Graph.Beta.Models.Security.AuditRecordTypeDictionary.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -442,6 +487,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AuditRecordTypeDictionary>("dynamicProperties", DynamicProperties);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

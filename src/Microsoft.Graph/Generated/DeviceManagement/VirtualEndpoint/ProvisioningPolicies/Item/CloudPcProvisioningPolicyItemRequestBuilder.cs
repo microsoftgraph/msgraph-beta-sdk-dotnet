@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplyActionResult;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyUpdateStatusResult;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Retry;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.SchedulePolicyApplyTask;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -49,6 +50,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule.RetrievePolicyApplyScheduleRequestBuilder RetrievePolicyApplySchedule
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyApplySchedule.RetrievePolicyApplyScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrievePolicyUpdateStatusResult method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyUpdateStatusResult.RetrievePolicyUpdateStatusResultRequestBuilder RetrievePolicyUpdateStatusResult
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.RetrievePolicyUpdateStatusResult.RetrievePolicyUpdateStatusResultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retry method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Retry.RetryRequestBuilder Retry

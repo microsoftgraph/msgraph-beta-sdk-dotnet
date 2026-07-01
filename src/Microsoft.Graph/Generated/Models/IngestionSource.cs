@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the category is ingested through system ingestion process</summary>
         [EnumMember(Value = "builtIn")]
         BuiltIn,
-        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        /// <summary>Unknown future enum value</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

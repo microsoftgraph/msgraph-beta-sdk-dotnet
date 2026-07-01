@@ -34,6 +34,7 @@ using Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Beta.Me.Devices;
 using Microsoft.Graph.Beta.Me.DevicesWithDeviceId;
 using Microsoft.Graph.Beta.Me.DirectReports;
+using Microsoft.Graph.Beta.Me.DistributionLists;
 using Microsoft.Graph.Beta.Me.Drive;
 using Microsoft.Graph.Beta.Me.Drives;
 using Microsoft.Graph.Beta.Me.EmployeeExperience;
@@ -299,6 +300,11 @@ namespace Microsoft.Graph.Beta.Me
         public global::Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder DirectReports
         {
             get => new global::Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the distributionLists property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.DistributionLists.DistributionListsRequestBuilder DistributionLists
+        {
+            get => new global::Microsoft.Graph.Beta.Me.DistributionLists.DistributionListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Me.Drive.DriveRequestBuilder Drive
