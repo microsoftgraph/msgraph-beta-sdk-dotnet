@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requests", value); }
         }
 #endif
-        /// <summary>The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.</summary>
+        /// <summary>The status of the relationship. Read-only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.</summary>
         public global::Microsoft.Graph.Beta.Models.DelegatedAdminRelationshipStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DelegatedAdminRelationshipStatus?>("status"); }

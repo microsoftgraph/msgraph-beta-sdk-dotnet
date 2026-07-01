@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosStoreApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
+        /// <summary>The appleDeviceAppDeliveryProtocolType property</summary>
+        public global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol? AppleDeviceAppDeliveryProtocolType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol?>("appleDeviceAppDeliveryProtocolType"); }
+            set { BackingStore?.Set("appleDeviceAppDeliveryProtocolType", value); }
+        }
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
+                { "appleDeviceAppDeliveryProtocolType", n => { AppleDeviceAppDeliveryProtocolType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>(); } },
                 { "applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IosDeviceType>(global::Microsoft.Graph.Beta.Models.IosDeviceType.CreateFromDiscriminatorValue); } },
                 { "bundleId", n => { BundleId = n.GetStringValue(); } },
                 { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IosMinimumOperatingSystem>(global::Microsoft.Graph.Beta.Models.IosMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
@@ -116,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>("appleDeviceAppDeliveryProtocolType", AppleDeviceAppDeliveryProtocolType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IosDeviceType>("applicableDeviceType", ApplicableDeviceType);
             writer.WriteStringValue("appStoreUrl", AppStoreUrl);
             writer.WriteStringValue("bundleId", BundleId);

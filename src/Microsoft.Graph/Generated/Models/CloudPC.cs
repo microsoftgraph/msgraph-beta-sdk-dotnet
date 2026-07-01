@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allotmentDisplayName", value); }
         }
 #endif
-        /// <summary>The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read Only.</summary>
+        /// <summary>The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcConnectionSetting? ConnectionSetting
@@ -190,6 +190,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("imageDisplayName", value); }
         }
 #endif
+        /// <summary>The isDisasterRecoveryActive property</summary>
+        public bool? IsDisasterRecoveryActive
+        {
+            get { return BackingStore?.Get<bool?>("isDisasterRecoveryActive"); }
+            set { BackingStore?.Set("isDisasterRecoveryActive", value); }
+        }
         /// <summary>The last login result of the Cloud PC. For example, { &apos;time&apos;: &apos;2014-01-01T00:00:00Z&apos;}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -537,6 +543,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "groupDetail", n => { GroupDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>(global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail.CreateFromDiscriminatorValue); } },
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
+                { "isDisasterRecoveryActive", n => { IsDisasterRecoveryActive = n.GetBoolValue(); } },
                 { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>(global::Microsoft.Graph.Beta.Models.CloudPcLoginResult.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastRemoteActionResult", n => { LastRemoteActionResult = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>(global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
@@ -586,6 +593,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcEntraGroupDetail>("groupDetail", GroupDetail);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
+            writer.WriteBoolValue("isDisasterRecoveryActive", IsDisasterRecoveryActive);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>("lastLoginResult", LastLoginResult);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>("lastRemoteActionResult", LastRemoteActionResult);

@@ -40,5 +40,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         #pragma warning disable CS1591
         Disabled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "creating")]
+        #pragma warning disable CS1591
+        Creating,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "revoked")]
+        #pragma warning disable CS1591
+        Revoked,
+        #pragma warning restore CS1591
     }
 }

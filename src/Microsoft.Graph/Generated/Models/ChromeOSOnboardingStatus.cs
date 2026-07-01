@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Offboarding</summary>
         [EnumMember(Value = "offboarding")]
         Offboarding,
-        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        /// <summary>UnknownFutureValue</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The display name of the security group identified by groupId at the time the snapshot was created. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupDisplayName
+        {
+            get { return BackingStore?.Get<string?>("groupDisplayName"); }
+            set { BackingStore?.Set("groupDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string GroupDisplayName
+        {
+            get { return BackingStore?.Get<string>("groupDisplayName"); }
+            set { BackingStore?.Set("groupDisplayName", value); }
+        }
+#endif
         /// <summary>The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "groupDisplayName", n => { GroupDisplayName = n.GetStringValue(); } },
                 { "groupId", n => { GroupId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "roleTemplates", n => { RoleTemplates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RoleTemplate>(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RoleTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -107,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("groupDisplayName", GroupDisplayName);
             writer.WriteStringValue("groupId", GroupId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RoleTemplate>("roleTemplates", RoleTemplates);

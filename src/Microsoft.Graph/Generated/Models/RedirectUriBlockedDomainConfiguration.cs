@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The blockedDomains property</summary>
+        /// <summary>Collection of domain names that are blocked globally across all platforms. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BlockedDomains
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("blockedDomains", value); }
         }
 #endif
-        /// <summary>The excludeActors property</summary>
+        /// <summary>Applications or service principals that are exempt from this restriction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions? ExcludeActors
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeActors", value); }
         }
 #endif
-        /// <summary>The isStateSetByMicrosoft property</summary>
+        /// <summary>Indicates whether the restriction state was set by Microsoft.</summary>
         public bool? IsStateSetByMicrosoft
         {
             get { return BackingStore?.Get<bool?>("isStateSetByMicrosoft"); }
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The publicClient property</summary>
+        /// <summary>Platform-specific blocked domain configuration for public client applications (native/mobile apps).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriPlatformBlockedDomainConfiguration? PublicClient
@@ -91,13 +91,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publicClient", value); }
         }
 #endif
-        /// <summary>The restrictForAppsCreatedAfterDateTime property</summary>
+        /// <summary>Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.</summary>
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
             set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
-        /// <summary>The spa property</summary>
+        /// <summary>Platform-specific blocked domain configuration for single-page applications (SPAs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriPlatformBlockedDomainConfiguration? Spa
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementRestrictionState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>The web property</summary>
+        /// <summary>Platform-specific blocked domain configuration for web applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriPlatformBlockedDomainConfiguration? Web

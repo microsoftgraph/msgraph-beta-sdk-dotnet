@@ -59,9 +59,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.androidManagedStoreAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.AndroidManagedStoreAppAssignmentSettings(),
                 "#microsoft.graph.iosDdmLobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosDdmLobAppAssignmentSettings(),
+                "#microsoft.graph.iosDdmStoreAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosDdmStoreAppAssignmentSettings(),
+                "#microsoft.graph.iosDdmVppAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosDdmVppAppAssignmentSettings(),
                 "#microsoft.graph.iosLobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosLobAppAssignmentSettings(),
                 "#microsoft.graph.iosStoreAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosStoreAppAssignmentSettings(),
                 "#microsoft.graph.iosVppAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.IosVppAppAssignmentSettings(),
+                "#microsoft.graph.macOsDdmVppAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.MacOsDdmVppAppAssignmentSettings(),
                 "#microsoft.graph.macOsLobAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.MacOsLobAppAssignmentSettings(),
                 "#microsoft.graph.macOsVppAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.MacOsVppAppAssignmentSettings(),
                 "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings" => new global::Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessAppAssignmentSettings(),

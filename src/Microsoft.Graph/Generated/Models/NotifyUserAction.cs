@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NotifyUserAction : global::Microsoft.Graph.Beta.Models.DlpActionInfo, IParsable
+    public partial class NotifyUserAction : global::Microsoft.Graph.Beta.Models.PolicyTipAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Timestamp when the notification action configuration was last modified.</summary>
@@ -32,22 +32,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("emailText"); }
             set { BackingStore?.Set("emailText", value); }
-        }
-#endif
-        /// <summary>The text of the policy tip displayed to the user within the application (For example, Outlook, Word).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PolicyTip
-        {
-            get { return BackingStore?.Get<string?>("policyTip"); }
-            set { BackingStore?.Set("policyTip", value); }
-        }
-#nullable restore
-#else
-        public string PolicyTip
-        {
-            get { return BackingStore?.Get<string>("policyTip"); }
-            set { BackingStore?.Set("policyTip", value); }
         }
 #endif
         /// <summary>List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.</summary>
@@ -86,7 +70,6 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "actionLastModifiedDateTime", n => { ActionLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "emailText", n => { EmailText = n.GetStringValue(); } },
-                { "policyTip", n => { PolicyTip = n.GetStringValue(); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -100,7 +83,6 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("actionLastModifiedDateTime", ActionLastModifiedDateTime);
             writer.WriteStringValue("emailText", EmailText);
-            writer.WriteStringValue("policyTip", PolicyTip);
             writer.WriteCollectionOfPrimitiveValues<string>("recipients", Recipients);
         }
     }

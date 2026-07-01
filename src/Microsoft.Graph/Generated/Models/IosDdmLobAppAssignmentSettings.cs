@@ -35,12 +35,76 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("associatedDomainsDirectDownloadAllowed"); }
             set { BackingStore?.Set("associatedDomainsDirectDownloadAllowed", value); }
         }
+        /// <summary>The cellularSliceConfigurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CellularSliceConfigurationId
+        {
+            get { return BackingStore?.Get<string?>("cellularSliceConfigurationId"); }
+            set { BackingStore?.Set("cellularSliceConfigurationId", value); }
+        }
+#nullable restore
+#else
+        public string CellularSliceConfigurationId
+        {
+            get { return BackingStore?.Get<string>("cellularSliceConfigurationId"); }
+            set { BackingStore?.Set("cellularSliceConfigurationId", value); }
+        }
+#endif
+        /// <summary>The contentFilterConfigurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentFilterConfigurationId
+        {
+            get { return BackingStore?.Get<string?>("contentFilterConfigurationId"); }
+            set { BackingStore?.Set("contentFilterConfigurationId", value); }
+        }
+#nullable restore
+#else
+        public string ContentFilterConfigurationId
+        {
+            get { return BackingStore?.Get<string>("contentFilterConfigurationId"); }
+            set { BackingStore?.Set("contentFilterConfigurationId", value); }
+        }
+#endif
+        /// <summary>The dnsProxyConfigurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DnsProxyConfigurationId
+        {
+            get { return BackingStore?.Get<string?>("dnsProxyConfigurationId"); }
+            set { BackingStore?.Set("dnsProxyConfigurationId", value); }
+        }
+#nullable restore
+#else
+        public string DnsProxyConfigurationId
+        {
+            get { return BackingStore?.Get<string>("dnsProxyConfigurationId"); }
+            set { BackingStore?.Set("dnsProxyConfigurationId", value); }
+        }
+#endif
         /// <summary>When true, indicates that the app should not be backed up to iCloud. When false, indicates that the app may be backed up to iCloud. Default is false.</summary>
         public bool? PreventManagedAppBackup
         {
             get { return BackingStore?.Get<bool?>("preventManagedAppBackup"); }
             set { BackingStore?.Set("preventManagedAppBackup", value); }
         }
+        /// <summary>The relayConfigurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RelayConfigurationId
+        {
+            get { return BackingStore?.Get<string?>("relayConfigurationId"); }
+            set { BackingStore?.Set("relayConfigurationId", value); }
+        }
+#nullable restore
+#else
+        public string RelayConfigurationId
+        {
+            get { return BackingStore?.Get<string>("relayConfigurationId"); }
+            set { BackingStore?.Set("relayConfigurationId", value); }
+        }
+#endif
         /// <summary>When true, the device locks its screen after every transaction that requires a customer’s card PIN. When false, the user can choose the behavior. Default value is false.</summary>
         public bool? TapToPayScreenLockEnabled
         {
@@ -90,7 +154,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "associatedDomains", n => { AssociatedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "associatedDomainsDirectDownloadAllowed", n => { AssociatedDomainsDirectDownloadAllowed = n.GetBoolValue(); } },
+                { "cellularSliceConfigurationId", n => { CellularSliceConfigurationId = n.GetStringValue(); } },
+                { "contentFilterConfigurationId", n => { ContentFilterConfigurationId = n.GetStringValue(); } },
+                { "dnsProxyConfigurationId", n => { DnsProxyConfigurationId = n.GetStringValue(); } },
                 { "preventManagedAppBackup", n => { PreventManagedAppBackup = n.GetBoolValue(); } },
+                { "relayConfigurationId", n => { RelayConfigurationId = n.GetStringValue(); } },
                 { "tapToPayScreenLockEnabled", n => { TapToPayScreenLockEnabled = n.GetBoolValue(); } },
                 { "vpnConfigurationId", n => { VpnConfigurationId = n.GetStringValue(); } },
             };
@@ -105,7 +173,11 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("associatedDomains", AssociatedDomains);
             writer.WriteBoolValue("associatedDomainsDirectDownloadAllowed", AssociatedDomainsDirectDownloadAllowed);
+            writer.WriteStringValue("cellularSliceConfigurationId", CellularSliceConfigurationId);
+            writer.WriteStringValue("contentFilterConfigurationId", ContentFilterConfigurationId);
+            writer.WriteStringValue("dnsProxyConfigurationId", DnsProxyConfigurationId);
             writer.WriteBoolValue("preventManagedAppBackup", PreventManagedAppBackup);
+            writer.WriteStringValue("relayConfigurationId", RelayConfigurationId);
             writer.WriteBoolValue("tapToPayScreenLockEnabled", TapToPayScreenLockEnabled);
             writer.WriteStringValue("vpnConfigurationId", VpnConfigurationId);
         }

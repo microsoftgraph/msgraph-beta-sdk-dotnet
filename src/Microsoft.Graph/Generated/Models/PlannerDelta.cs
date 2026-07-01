@@ -27,12 +27,14 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new global::Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat(),
                 "#microsoft.graph.plannerBucket" => new global::Microsoft.Graph.Beta.Models.PlannerBucket(),
                 "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new global::Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerHistoryItem" => new global::Microsoft.Graph.Beta.Models.PlannerHistoryItem(),
                 "#microsoft.graph.plannerPlan" => new global::Microsoft.Graph.Beta.Models.PlannerPlan(),
                 "#microsoft.graph.plannerPlanDetails" => new global::Microsoft.Graph.Beta.Models.PlannerPlanDetails(),
                 "#microsoft.graph.plannerProgressTaskBoardTaskFormat" => new global::Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat(),
                 "#microsoft.graph.plannerTask" => new global::Microsoft.Graph.Beta.Models.PlannerTask(),
                 "#microsoft.graph.plannerTaskDetails" => new global::Microsoft.Graph.Beta.Models.PlannerTaskDetails(),
                 "#microsoft.graph.plannerUser" => new global::Microsoft.Graph.Beta.Models.PlannerUser(),
+                "#microsoft.graph.taskHistoryItem" => new global::Microsoft.Graph.Beta.Models.TaskHistoryItem(),
                 _ => new global::Microsoft.Graph.Beta.Models.PlannerDelta(),
             };
         }

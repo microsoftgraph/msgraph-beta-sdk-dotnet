@@ -206,6 +206,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("m365CollaborationOutbound", value); }
         }
 #endif
+        /// <summary>The serviceProviderConstraints property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ServiceProviderConstraints? ServiceProviderConstraints
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ServiceProviderConstraints?>("serviceProviderConstraints"); }
+            set { BackingStore?.Set("serviceProviderConstraints", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ServiceProviderConstraints ServiceProviderConstraints
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ServiceProviderConstraints>("serviceProviderConstraints"); }
+            set { BackingStore?.Set("serviceProviderConstraints", value); }
+        }
+#endif
         /// <summary>The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -277,6 +293,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "m365Capabilities", n => { M365Capabilities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>(global::Microsoft.Graph.Beta.Models.M365CapabilityBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "m365CollaborationInbound", n => { M365CollaborationInbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting.CreateFromDiscriminatorValue); } },
                 { "m365CollaborationOutbound", n => { M365CollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting.CreateFromDiscriminatorValue); } },
+                { "serviceProviderConstraints", n => { ServiceProviderConstraints = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ServiceProviderConstraints>(global::Microsoft.Graph.Beta.Models.ServiceProviderConstraints.CreateFromDiscriminatorValue); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTenantRestrictions>(global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
             };
@@ -303,6 +320,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>("m365Capabilities", M365Capabilities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>("m365CollaborationInbound", M365CollaborationInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>("m365CollaborationOutbound", M365CollaborationOutbound);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ServiceProviderConstraints>("serviceProviderConstraints", ServiceProviderConstraints);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);
         }

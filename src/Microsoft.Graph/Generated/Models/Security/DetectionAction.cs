@@ -35,6 +35,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("alertTemplate", value); }
         }
 #endif
+        /// <summary>The set of automated actions to run against entities that match the detection. Replaces the deprecated responseActions property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.AutomatedActionSet? AutomatedActions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AutomatedActionSet?>("automatedActions"); }
+            set { BackingStore?.Set("automatedActions", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.AutomatedActionSet AutomatedActions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AutomatedActionSet>("automatedActions"); }
+            set { BackingStore?.Set("automatedActions", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
@@ -53,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Groups to which the custom detection rule applies.</summary>
+        /// <summary>The set of groups (for example, device groups) to which the parent custom detection rule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.OrganizationalScope? OrganizationalScope
@@ -69,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("organizationalScope", value); }
         }
 #endif
-        /// <summary>Actions taken on impacted assets as set in the custom detection rule.</summary>
+        /// <summary>Actions taken on impacted assets as set in the custom detection rule. Deprecated. Use automatedActions instead. This property will be removed from this resource on 2026-10-01.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.ResponseAction>? ResponseActions
@@ -112,6 +128,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alertTemplate", n => { AlertTemplate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AlertTemplate>(global::Microsoft.Graph.Beta.Models.Security.AlertTemplate.CreateFromDiscriminatorValue); } },
+                { "automatedActions", n => { AutomatedActions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AutomatedActionSet>(global::Microsoft.Graph.Beta.Models.Security.AutomatedActionSet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "organizationalScope", n => { OrganizationalScope = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.OrganizationalScope>(global::Microsoft.Graph.Beta.Models.Security.OrganizationalScope.CreateFromDiscriminatorValue); } },
                 { "responseActions", n => { ResponseActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ResponseAction>(global::Microsoft.Graph.Beta.Models.Security.ResponseAction.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -125,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AlertTemplate>("alertTemplate", AlertTemplate);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AutomatedActionSet>("automatedActions", AutomatedActions);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.OrganizationalScope>("organizationalScope", OrganizationalScope);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ResponseAction>("responseActions", ResponseActions);
