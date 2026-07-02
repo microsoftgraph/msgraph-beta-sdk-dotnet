@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization;
 using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.M365Capabilities;
 using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Restore;
+using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -35,6 +36,11 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item
         public global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the serviceProviderConstraints property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.</summary>
+        public global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder ServiceProviderConstraints
+        {
+            get => new global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder"/> and sets the default values.

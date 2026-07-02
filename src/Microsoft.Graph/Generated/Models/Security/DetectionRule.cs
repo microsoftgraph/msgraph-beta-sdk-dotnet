@@ -9,10 +9,48 @@ namespace Microsoft.Graph.Beta.Models.Security
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DetectionRule : global::Microsoft.Graph.Beta.Models.Security.ProtectionRule, IParsable
+    public partial class DetectionRule : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Complex type representing the actions taken when a detection is made by this rule.</summary>
+        /// <summary>Name of the user or application that created the rule. Read-only. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy
+        {
+            get { return BackingStore?.Get<string?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#nullable restore
+#else
+        public string CreatedBy
+        {
+            get { return BackingStore?.Get<string>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#endif
+        /// <summary>Timestamp of rule creation. Read-only. Supports $filter (eq, ne, not, le, ge, lt, gt) and $orderby.</summary>
+        public DateTimeOffset? CreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>A user-supplied description of the detection rule. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description
+        {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#nullable restore
+#else
+        public string Description
+        {
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#endif
+        /// <summary>The detectionAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.DetectionAction? DetectionAction
@@ -28,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("detectionAction", value); }
         }
 #endif
-        /// <summary>The ID of the detector that triggered the alert. Also see the &apos;detectorId&apos; field in microsoft.graph.security.alert.</summary>
+        /// <summary>Internal detector identifier. Deprecated. This property will be removed from this resource on 2026-10-01.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DetectorId
@@ -44,7 +82,51 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("detectorId", value); }
         }
 #endif
-        /// <summary>Complex type holding details about the last run of this rule.</summary>
+        /// <summary>The display name of the rule. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>Indicates whether the rule is turned on for the tenant. Supports $filter (eq, ne, not). Deprecated. Use status instead. This property will be removed from this resource on 2026-10-01.</summary>
+        public bool? IsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
+        }
+        /// <summary>Name of the user or application that last updated the rule. Read-only. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastModifiedBy
+        {
+            get { return BackingStore?.Get<string?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public string LastModifiedBy
+        {
+            get { return BackingStore?.Get<string>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>Timestamp of when the rule was last updated. Read-only. Supports $filter (eq, ne, not, le, ge, lt, gt) and $orderby.</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>Runtime execution details for the most recent rule run. Supports $filter on the following nested properties:String: lastRunDetails/failureReason  supports eq, ne, not, in, startsWith, endsWith, contains.DateTimeOffset: lastRunDetails/lastRunDateTime  supports eq, ne, not, le, ge, lt, gt.Enum: lastRunDetails/status, lastRunDetails/errorCode  each supports eq, ne, not, in.Deprecated. This property will be removed from this resource on 2026-10-01. Runtime execution details aren&apos;t exposed in the v1.0 API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.RunDetails? LastRunDetails
@@ -60,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("lastRunDetails", value); }
         }
 #endif
-        /// <summary>Complex type holding data about the advanced hunting query of this rule.</summary>
+        /// <summary>The queryCondition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.QueryCondition? QueryCondition
@@ -76,7 +158,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("queryCondition", value); }
         }
 #endif
-        /// <summary>Complex type holding data about the triggering schedule of this rule.</summary>
+        /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.RuleSchedule? Schedule
@@ -92,12 +174,11 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Security.DetectionRule"/> and sets the default values.
-        /// </summary>
-        public DetectionRule() : base()
+        /// <summary>The status property</summary>
+        public global::Microsoft.Graph.Beta.Models.Security.DetectionRuleStatus? Status
         {
-            OdataType = "#microsoft.graph.security.detectionRule";
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DetectionRuleStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -117,11 +198,19 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "detectionAction", n => { DetectionAction = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetectionAction>(global::Microsoft.Graph.Beta.Models.Security.DetectionAction.CreateFromDiscriminatorValue); } },
                 { "detectorId", n => { DetectorId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastRunDetails", n => { LastRunDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.RunDetails>(global::Microsoft.Graph.Beta.Models.Security.RunDetails.CreateFromDiscriminatorValue); } },
                 { "queryCondition", n => { QueryCondition = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.QueryCondition>(global::Microsoft.Graph.Beta.Models.Security.QueryCondition.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.RuleSchedule>(global::Microsoft.Graph.Beta.Models.Security.RuleSchedule.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.DetectionRuleStatus>(); } },
             };
         }
         /// <summary>
@@ -132,11 +221,19 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.DetectionAction>("detectionAction", DetectionAction);
             writer.WriteStringValue("detectorId", DetectorId);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.RunDetails>("lastRunDetails", LastRunDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.QueryCondition>("queryCondition", QueryCondition);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.RuleSchedule>("schedule", Schedule);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.DetectionRuleStatus>("status", Status);
         }
     }
 }

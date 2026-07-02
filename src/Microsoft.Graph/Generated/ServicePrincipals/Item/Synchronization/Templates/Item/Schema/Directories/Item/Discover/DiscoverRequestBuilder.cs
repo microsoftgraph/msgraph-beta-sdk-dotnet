@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         {
         }
         /// <summary>
-        /// Discover the latest schema definition for provisioning to an application. 
+        /// Discover the latest schema for a directoryDefinition to provision to an application. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryDefinition"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryDefinition>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Discover the latest schema definition for provisioning to an application. 
+        /// Discover the latest schema for a directoryDefinition to provision to an application. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

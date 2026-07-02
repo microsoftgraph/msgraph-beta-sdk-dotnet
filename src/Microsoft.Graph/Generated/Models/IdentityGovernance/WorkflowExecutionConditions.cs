@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             return mappingValue switch
             {
                 "#microsoft.graph.identityGovernance.onDemandExecutionOnly" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.OnDemandExecutionOnly(),
+                "#microsoft.graph.identityGovernance.provisioningAttributeMapping" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.ProvisioningAttributeMapping(),
                 "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAndScopeBasedConditions(),
                 _ => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionConditions(),
             };

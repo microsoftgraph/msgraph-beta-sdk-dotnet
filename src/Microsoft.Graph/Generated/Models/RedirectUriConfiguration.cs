@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The uriWithBlockedDomain property</summary>
+        /// <summary>Configuration that specifies blocked domains for redirect URIs with global and platform-specific settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriBlockedDomainConfiguration? UriWithBlockedDomain
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uriWithBlockedDomain", value); }
         }
 #endif
-        /// <summary>The uriWithBlockedScheme property</summary>
+        /// <summary>Configuration that specifies blocked URI schemes for redirect URIs with global and platform-specific settings and exempt format patterns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriBlockedSchemeConfiguration? UriWithBlockedScheme
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uriWithBlockedScheme", value); }
         }
 #endif
-        /// <summary>The uriWithoutAllowedDomain property</summary>
+        /// <summary>Configuration that specifies allowed domains for redirect URIs with global and platform-specific settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriAllowedDomainConfiguration? UriWithoutAllowedDomain
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uriWithoutAllowedDomain", value); }
         }
 #endif
-        /// <summary>The uriWithoutAllowedScheme property</summary>
+        /// <summary>Configuration that specifies allowed URI schemes for redirect URIs with global and platform-specific settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriAllowedSchemeConfiguration? UriWithoutAllowedScheme
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uriWithoutAllowedScheme", value); }
         }
 #endif
-        /// <summary>The uriWithWildcard property</summary>
+        /// <summary>Configuration that controls the use of wildcard patterns in redirect URIs with configurable exceptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriWildcardConfiguration? UriWithWildcard

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property</summary>
+        /// <summary>When true, allows clients to update the onPremisesObjectIdentifier property for on-premises Active Directory synced objects.</summary>
         public bool? AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
         {
             get { return BackingStore?.Get<bool?>("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled"); }

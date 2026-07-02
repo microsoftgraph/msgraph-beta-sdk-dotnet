@@ -33,9 +33,21 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         CopyToClipboard = 32,
         #pragma warning restore CS1591
+        [EnumMember(Value = "pasteFromClipboard")]
+        #pragma warning disable CS1591
+        PasteFromClipboard = 64,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "print")]
+        #pragma warning disable CS1591
+        Print = 128,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accessDebugTools")]
+        #pragma warning disable CS1591
+        AccessDebugTools = 256,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
-        UnknownFutureValue = 64,
+        UnknownFutureValue = 512,
         #pragma warning restore CS1591
     }
 }

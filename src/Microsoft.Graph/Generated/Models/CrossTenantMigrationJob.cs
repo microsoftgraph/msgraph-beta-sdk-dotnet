@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CrossTenantMigrationJob : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>DateTime after which the migration should be performed</summary>
+        /// <summary>Date and time after which the migration should be performed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CompleteAfterDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completeAfterDateTime"); }
             set { BackingStore?.Set("completeAfterDateTime", value); }
         }
-        /// <summary>ID of the user that created the job</summary>
+        /// <summary>User principal name (UPN) of the user who created the job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>When the job what created</summary>
+        /// <summary>When the job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Display name of the job. Must be unique per tenant</summary>
+        /// <summary>Display name of the job. Must be unique per tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Settings to use for migration of Exchange workload</summary>
+        /// <summary>Settings to use for migration of Exchange workload. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ExchangeOnlineCrossTenantMigrationSettings? ExchangeSettings
@@ -78,13 +78,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobType?>("jobType"); }
             set { BackingStore?.Set("jobType", value); }
         }
-        /// <summary>When this migration job was last updated</summary>
+        /// <summary>When this migration job was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastUpdatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
-        /// <summary>Status message of the migration job</summary>
+        /// <summary>Status message of the migration job. Nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("message", value); }
         }
 #endif
-        /// <summary>IDs (GUID) of the resources being migrated with the migration job</summary>
+        /// <summary>IDs (GUID) of the resources that are migrated with the migration job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Resources
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resources", value); }
         }
 #endif
-        /// <summary>Type of resource being migrated. Only Users is currently supported</summary>
+        /// <summary>Type of resource being migrated. Only Users is currently supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceType
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceType", value); }
         }
 #endif
-        /// <summary>ID (GUID) of the tenant that content is being migrated from</summary>
+        /// <summary>ID (GUID) of the tenant that content is migrated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceTenantId
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>ID of the tenant that content is being migrated to</summary>
+        /// <summary>ID of the tenant that content is migrated to. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetTenantId
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetTenantId", value); }
         }
 #endif
-        /// <summary>Details and status of the users being migrated in this migration job</summary>
+        /// <summary>Details and status of the users migrated in this migration job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationTask>? Users
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("users", value); }
         }
 #endif
-        /// <summary>Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint)</summary>
+        /// <summary>Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Workloads

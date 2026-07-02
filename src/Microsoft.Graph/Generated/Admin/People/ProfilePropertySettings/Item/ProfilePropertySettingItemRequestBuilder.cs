@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings.Item
         {
         }
         /// <summary>
-        /// Delete a profilePropertySetting object.
+        /// Delete a profilePropertySetting object. You shouldn&apos;t delete a profilePropertySetting that includes a source precedence configuration. Instead, patch it to a default state that contains only the Microsoft Entra ID source reference. This delete operation is supported but fails unless the prioritizedSourceUrls property contains only the Entra ID source reference.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilepropertysetting-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>(requestInfo, global::Microsoft.Graph.Beta.Models.ProfilePropertySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a profilePropertySetting object.
+        /// Delete a profilePropertySetting object. You shouldn&apos;t delete a profilePropertySetting that includes a source precedence configuration. Instead, patch it to a default state that contains only the Microsoft Entra ID source reference. This delete operation is supported but fails unless the prioritizedSourceUrls property contains only the Entra ID source reference.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

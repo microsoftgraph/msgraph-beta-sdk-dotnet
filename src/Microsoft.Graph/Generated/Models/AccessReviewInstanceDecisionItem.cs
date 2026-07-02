@@ -98,6 +98,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("decision", value); }
         }
 #endif
+        /// <summary>The identities of users who delegated this decision item to the current reviewer. Null if the item wasn&apos;t delegated. A collection because multiple reviewers can delegate to the same user. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.UserIdentity>? DelegatedBy
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserIdentity>?>("delegatedBy"); }
+            set { BackingStore?.Set("delegatedBy", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.UserIdentity> DelegatedBy
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.UserIdentity>>("delegatedBy"); }
+            set { BackingStore?.Set("delegatedBy", value); }
+        }
+#endif
         /// <summary>Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -320,6 +336,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "applyDescription", n => { ApplyDescription = n.GetStringValue(); } },
                 { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
+                { "delegatedBy", n => { DelegatedBy = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "insights", n => { Insights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceInsight>(global::Microsoft.Graph.Beta.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "instance", n => { Instance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>(global::Microsoft.Graph.Beta.Models.AccessReviewInstance.CreateFromDiscriminatorValue); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
@@ -349,6 +366,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("applyDescription", ApplyDescription);
             writer.WriteStringValue("applyResult", ApplyResult);
             writer.WriteStringValue("decision", Decision);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserIdentity>("delegatedBy", DelegatedBy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GovernanceInsight>("insights", Insights);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>("instance", Instance);
             writer.WriteStringValue("justification", Justification);
