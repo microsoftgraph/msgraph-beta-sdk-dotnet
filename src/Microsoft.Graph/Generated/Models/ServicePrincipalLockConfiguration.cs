@@ -39,6 +39,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("credentialsWithUsageVerify"); }
             set { BackingStore?.Set("credentialsWithUsageVerify", value); }
         }
+        /// <summary>The enforcementScope property</summary>
+        public global::Microsoft.Graph.Beta.Models.ServicePrincipalLockScope? EnforcementScope
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ServicePrincipalLockScope?>("enforcementScope"); }
+            set { BackingStore?.Set("enforcementScope", value); }
+        }
         /// <summary>Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.</summary>
         public bool? IsEnabled
         {
@@ -96,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "allProperties", n => { AllProperties = n.GetBoolValue(); } },
                 { "credentialsWithUsageSign", n => { CredentialsWithUsageSign = n.GetBoolValue(); } },
                 { "credentialsWithUsageVerify", n => { CredentialsWithUsageVerify = n.GetBoolValue(); } },
+                { "enforcementScope", n => { EnforcementScope = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ServicePrincipalLockScope>(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "tokenEncryptionKeyId", n => { TokenEncryptionKeyId = n.GetBoolValue(); } },
@@ -111,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("allProperties", AllProperties);
             writer.WriteBoolValue("credentialsWithUsageSign", CredentialsWithUsageSign);
             writer.WriteBoolValue("credentialsWithUsageVerify", CredentialsWithUsageVerify);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ServicePrincipalLockScope>("enforcementScope", EnforcementScope);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("tokenEncryptionKeyId", TokenEncryptionKeyId);

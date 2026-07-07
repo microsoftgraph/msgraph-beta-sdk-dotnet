@@ -300,6 +300,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
+        /// <summary>The snapshotResetMode property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcSnapshotResetMode? SnapshotResetMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotResetMode?>("snapshotResetMode"); }
+            set { BackingStore?.Set("snapshotResetMode", value); }
+        }
         /// <summary>Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can&apos;t be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType? UserExperienceType
         {
@@ -395,6 +401,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "snapshotResetMode", n => { SnapshotResetMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotResetMode>(); } },
                 { "userExperienceType", n => { UserExperienceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>(); } },
                 { "userSettingsPersistenceConfiguration", n => { UserSettingsPersistenceConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration.CreateFromDiscriminatorValue); } },
                 { "windowsSetting", n => { WindowsSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>(global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
@@ -432,6 +439,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotResetMode>("snapshotResetMode", SnapshotResetMode);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcUserExperienceType>("userExperienceType", UserExperienceType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceConfiguration>("userSettingsPersistenceConfiguration", UserSettingsPersistenceConfiguration);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcWindowsSetting>("windowsSetting", WindowsSetting);

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Category assigned to the alert triggered by the custom detection rule.</summary>
+        /// <summary>Indicates the category assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category
@@ -35,6 +35,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
+        }
+#endif
+        /// <summary>Custom key-value detail pairs to include in the alert. Each value identifies the detection query column that supplies the corresponding custom detail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.AlertCustomDetails? CustomDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AlertCustomDetails?>("customDetails"); }
+            set { BackingStore?.Set("customDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.AlertCustomDetails CustomDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AlertCustomDetails>("customDetails"); }
+            set { BackingStore?.Set("customDetails", value); }
         }
 #endif
         /// <summary>Description of the alert triggered by the custom detection rule.</summary>
@@ -53,7 +69,23 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Which asset or assets were impacted based on the alert triggered by the custom detection rule.</summary>
+        /// <summary>The entityMappings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Security.EntityMappingConfiguration? EntityMappings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.EntityMappingConfiguration?>("entityMappings"); }
+            set { BackingStore?.Set("entityMappings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Security.EntityMappingConfiguration EntityMappings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.EntityMappingConfiguration>("entityMappings"); }
+            set { BackingStore?.Set("entityMappings", value); }
+        }
+#endif
+        /// <summary>Indicates the impacted assets for the alert triggered by the custom detection rule. Deprecated. Use entityMappings instead. This property will be removed from this resource on 2026-10-01.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.ImpactedAsset>? ImpactedAssets
@@ -69,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("impactedAssets", value); }
         }
 #endif
-        /// <summary>MITRE technique assigned to the alert triggered by the custom detection rule.</summary>
+        /// <summary>Indicates the MITRE techniques assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MitreTechniques
@@ -123,6 +155,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
+        /// <summary>The MITRE ATT&amp;CK tactics framing for this alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.MitreTactic>? Tactics
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.MitreTactic>?>("tactics"); }
+            set { BackingStore?.Set("tactics", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.MitreTactic> Tactics
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.MitreTactic>>("tactics"); }
+            set { BackingStore?.Set("tactics", value); }
+        }
+#endif
         /// <summary>Name of the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,12 +214,15 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "category", n => { Category = n.GetStringValue(); } },
+                { "customDetails", n => { CustomDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.AlertCustomDetails>(global::Microsoft.Graph.Beta.Models.Security.AlertCustomDetails.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "entityMappings", n => { EntityMappings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.EntityMappingConfiguration>(global::Microsoft.Graph.Beta.Models.Security.EntityMappingConfiguration.CreateFromDiscriminatorValue); } },
                 { "impactedAssets", n => { ImpactedAssets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ImpactedAsset>(global::Microsoft.Graph.Beta.Models.Security.ImpactedAsset.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
                 { "severity", n => { Severity = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Security.AlertSeverity>(); } },
+                { "tactics", n => { Tactics = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.MitreTactic>(global::Microsoft.Graph.Beta.Models.Security.MitreTactic.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -183,12 +234,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.AlertCustomDetails>("customDetails", CustomDetails);
             writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Security.EntityMappingConfiguration>("entityMappings", EntityMappings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.ImpactedAsset>("impactedAssets", ImpactedAssets);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreTechniques", MitreTechniques);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("recommendedActions", RecommendedActions);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Security.AlertSeverity>("severity", Severity);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.MitreTactic>("tactics", Tactics);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

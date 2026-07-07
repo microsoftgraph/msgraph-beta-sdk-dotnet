@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The excludeActors property</summary>
+        /// <summary>Applications or service principals that are exempt from this restriction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions? ExcludeActors
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeActors", value); }
         }
 #endif
-        /// <summary>The excludeFormats property</summary>
+        /// <summary>Configuration that specifies exceptions to the wildcard restriction, such as allowing wildcards for specific trusted domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RedirectUriWildcardExcludeFormats? ExcludeFormats
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeFormats", value); }
         }
 #endif
-        /// <summary>The isStateSetByMicrosoft property</summary>
+        /// <summary>Indicates whether the restriction state was set by Microsoft.</summary>
         public bool? IsStateSetByMicrosoft
         {
             get { return BackingStore?.Get<bool?>("isStateSetByMicrosoft"); }
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The restrictForAppsCreatedAfterDateTime property</summary>
+        /// <summary>Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.</summary>
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }

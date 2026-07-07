@@ -64,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.blockAccessAction" => new global::Microsoft.Graph.Beta.Models.BlockAccessAction(),
                 "#microsoft.graph.notifyUserAction" => new global::Microsoft.Graph.Beta.Models.NotifyUserAction(),
+                "#microsoft.graph.policyTipAction" => new global::Microsoft.Graph.Beta.Models.PolicyTipAction(),
                 "#microsoft.graph.restrictAccessAction" => new global::Microsoft.Graph.Beta.Models.RestrictAccessAction(),
                 "#microsoft.graph.restrictAccessActionBase" => new global::Microsoft.Graph.Beta.Models.RestrictAccessActionBase(),
                 _ => new global::Microsoft.Graph.Beta.Models.DlpActionInfo(),

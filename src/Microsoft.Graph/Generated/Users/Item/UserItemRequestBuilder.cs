@@ -36,6 +36,7 @@ using Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Beta.Users.Item.Devices;
 using Microsoft.Graph.Beta.Users.Item.DevicesWithDeviceId;
 using Microsoft.Graph.Beta.Users.Item.DirectReports;
+using Microsoft.Graph.Beta.Users.Item.DistributionLists;
 using Microsoft.Graph.Beta.Users.Item.Drive;
 using Microsoft.Graph.Beta.Users.Item.Drives;
 using Microsoft.Graph.Beta.Users.Item.EmployeeExperience;
@@ -299,6 +300,11 @@ namespace Microsoft.Graph.Beta.Users.Item
         public global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder DirectReports
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the distributionLists property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.DistributionLists.DistributionListsRequestBuilder DistributionLists
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.DistributionLists.DistributionListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Drive.DriveRequestBuilder Drive
@@ -836,7 +842,7 @@ namespace Microsoft.Graph.Beta.Users.Item
             return new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
-        /// Update the properties of a user or agentUser object.
+        /// Update the properties of a user. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
@@ -912,7 +918,7 @@ namespace Microsoft.Graph.Beta.Users.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a user or agentUser object.
+        /// Update the properties of a user. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

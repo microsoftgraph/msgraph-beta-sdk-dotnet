@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows
         {
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows.
+        /// Get a list of workflow resources that are associated with Lifecycle Workflows.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows.
+        /// Get a list of workflow resources that are associated with Lifecycle Workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.WorkflowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows.
+        /// Get a list of workflow resources that are associated with Lifecycle Workflows.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkflowsRequestBuilderGetQueryParameters 
