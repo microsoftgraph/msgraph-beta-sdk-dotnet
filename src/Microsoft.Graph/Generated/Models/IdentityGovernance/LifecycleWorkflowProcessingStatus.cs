@@ -40,5 +40,9 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         #pragma warning disable CS1591
         Canceling,
         #pragma warning restore CS1591
+        [EnumMember(Value = "quarantined")]
+        #pragma warning disable CS1591
+        Quarantined,
+        #pragma warning restore CS1591
     }
 }

@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isRegistrationEnabled"); }
             set { BackingStore?.Set("isRegistrationEnabled", value); }
         }
-        /// <summary>The isRegistrationRequired property</summary>
+        /// <summary>Indicates whether attendee registration is enabled for the virtual event.</summary>
         public bool? IsRegistrationRequired
         {
             get { return BackingStore?.Get<bool?>("isRegistrationRequired"); }

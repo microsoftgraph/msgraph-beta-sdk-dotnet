@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema
         {
         }
         /// <summary>
-        /// Invoke function getHuntingSchema
+        /// Retrieve the advanced hunting schema accessible to the signed-in user, including the tables and functions the user is authorized to query and invoke in advanced hunting with Microsoft Defender XDR. The returned schema reflects the user&apos;s effective permissions. Each user within a tenant may have a different effective schema depending on their role and access level. Common use cases include:
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaResult>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getHuntingSchema
+        /// Retrieve the advanced hunting schema accessible to the signed-in user, including the tables and functions the user is authorized to query and invoke in advanced hunting with Microsoft Defender XDR. The returned schema reflects the user&apos;s effective permissions. Each user within a tenant may have a different effective schema depending on their role and access level. Common use cases include:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

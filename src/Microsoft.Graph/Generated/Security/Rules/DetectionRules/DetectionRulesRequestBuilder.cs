@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules
         {
         }
         /// <summary>
-        /// Get a list of custom detection rules.With custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in their organization network.Custom detection rules, which are written in Kusto query language (KQL), automatically trigger alerts and response actions once there are events matching their KQL queries.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-detectionrule-list?view=graph-rest-beta" />
+        /// Get a list of detectionRule objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-rulesroot-list-detectionrules?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.DetectionRuleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,8 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.DetectionRuleCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.DetectionRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to detectionRules for security
+        /// Create a new detectionRule object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-rulesroot-post-detectionrules?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.DetectionRule"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +104,7 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.DetectionRule>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.DetectionRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of custom detection rules.With custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in their organization network.Custom detection rules, which are written in Kusto query language (KQL), automatically trigger alerts and response actions once there are events matching their KQL queries.
+        /// Get a list of detectionRule objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to detectionRules for security
+        /// Create a new detectionRule object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.Rules.DetectionRules
             return new global::Microsoft.Graph.Beta.Security.Rules.DetectionRules.DetectionRulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of custom detection rules.With custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in their organization network.Custom detection rules, which are written in Kusto query language (KQL), automatically trigger alerts and response actions once there are events matching their KQL queries.
+        /// Get a list of detectionRule objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DetectionRulesRequestBuilderGetQueryParameters 

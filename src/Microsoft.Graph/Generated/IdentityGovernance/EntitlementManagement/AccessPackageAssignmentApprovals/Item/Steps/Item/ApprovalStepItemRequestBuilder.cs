@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ApprovalStep>(requestInfo, global::Microsoft.Graph.Beta.Models.ApprovalStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Apply approve or deny decision on an approvalStep object.
+        /// Apply an approve or deny decision on an approvalStep object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ApprovalStep"/></returns>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Apply approve or deny decision on an approvalStep object.
+        /// Apply an approve or deny decision on an approvalStep object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

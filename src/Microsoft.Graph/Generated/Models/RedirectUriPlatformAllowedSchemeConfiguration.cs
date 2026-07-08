@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The allowedSchemes property</summary>
+        /// <summary>Collection of URI schemes that are allowed for this specific platform. Schemes refer to URI schemes as defined in RFC 3986 §3.1. The value &apos;*&apos; can be used to allow any scheme for this platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedSchemes

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class VoiceAuthenticationMethodConfiguration : global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The phone number used as the caller ID when voice call authentication is initiated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallerIdNumber
+        {
+            get { return BackingStore?.Get<string?>("callerIdNumber"); }
+            set { BackingStore?.Set("callerIdNumber", value); }
+        }
+#nullable restore
+#else
+        public string CallerIdNumber
+        {
+            get { return BackingStore?.Get<string>("callerIdNumber"); }
+            set { BackingStore?.Set("callerIdNumber", value); }
+        }
+#endif
         /// <summary>A collection of groups that are enabled to use the authentication method. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "callerIdNumber", n => { CallerIdNumber = n.GetStringValue(); } },
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodTarget>(global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isOfficePhoneAllowed", n => { IsOfficePhoneAllowed = n.GetBoolValue(); } },
             };
@@ -71,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("callerIdNumber", CallerIdNumber);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isOfficePhoneAllowed", IsOfficePhoneAllowed);
         }

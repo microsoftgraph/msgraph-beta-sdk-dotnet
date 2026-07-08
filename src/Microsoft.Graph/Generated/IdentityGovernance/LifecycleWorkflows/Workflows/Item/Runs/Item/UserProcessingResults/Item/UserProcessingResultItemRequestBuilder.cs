@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         {
         }
         /// <summary>
-        /// Get the user processing result of a user processing result of a run.
+        /// Get a userProcessingResult for a run.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult"/></returns>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user processing result of a user processing result of a run.
+        /// Get a userProcessingResult for a run.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the user processing result of a user processing result of a run.
+        /// Get a userProcessingResult for a run.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserProcessingResultItemRequestBuilderGetQueryParameters 

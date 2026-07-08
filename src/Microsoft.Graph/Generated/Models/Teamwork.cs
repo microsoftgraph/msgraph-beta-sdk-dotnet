@@ -66,6 +66,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isTeamsEnabled"); }
             set { BackingStore?.Set("isTeamsEnabled", value); }
         }
+        /// <summary>The messaging property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TeamworkMessaging? Messaging
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkMessaging?>("messaging"); }
+            set { BackingStore?.Set("messaging", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TeamworkMessaging Messaging
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkMessaging>("messaging"); }
+            set { BackingStore?.Set("messaging", value); }
+        }
+#endif
         /// <summary>Represents the region of the organization or the tenant. The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,6 +168,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeletedTeam>(global::Microsoft.Graph.Beta.Models.DeletedTeam.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "devices", n => { Devices = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamworkDevice>(global::Microsoft.Graph.Beta.Models.TeamworkDevice.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isTeamsEnabled", n => { IsTeamsEnabled = n.GetBoolValue(); } },
+                { "messaging", n => { Messaging = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamworkMessaging>(global::Microsoft.Graph.Beta.Models.TeamworkMessaging.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "teamTemplates", n => { TeamTemplates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamTemplate>(global::Microsoft.Graph.Beta.Models.TeamTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "teamsAppSettings", n => { TeamsAppSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAppSettings>(global::Microsoft.Graph.Beta.Models.TeamsAppSettings.CreateFromDiscriminatorValue); } },
@@ -170,6 +187,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeletedTeam>("deletedTeams", DeletedTeams);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamworkDevice>("devices", Devices);
             writer.WriteBoolValue("isTeamsEnabled", IsTeamsEnabled);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamworkMessaging>("messaging", Messaging);
             writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings", TeamsAppSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamTemplate>("teamTemplates", TeamTemplates);

@@ -76,5 +76,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         Preparing,
         #pragma warning restore CS1591
+        [EnumMember(Value = "failoverInProgress")]
+        #pragma warning disable CS1591
+        FailoverInProgress,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "failbackInProgress")]
+        #pragma warning disable CS1591
+        FailbackInProgress,
+        #pragma warning restore CS1591
     }
 }

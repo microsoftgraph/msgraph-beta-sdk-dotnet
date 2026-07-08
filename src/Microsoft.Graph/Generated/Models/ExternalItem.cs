@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
+        /// <summary>The informationProtectionLabel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ExternalItemInformationProtectionLabel? InformationProtectionLabel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalItemInformationProtectionLabel?>("informationProtectionLabel"); }
+            set { BackingStore?.Set("informationProtectionLabel", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ExternalItemInformationProtectionLabel InformationProtectionLabel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExternalItemInformationProtectionLabel>("informationProtectionLabel"); }
+            set { BackingStore?.Set("informationProtectionLabel", value); }
+        }
+#endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "acl", n => { Acl = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Acl>(global::Microsoft.Graph.Beta.Models.Acl.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExternalItemContent>(global::Microsoft.Graph.Beta.Models.ExternalItemContent.CreateFromDiscriminatorValue); } },
+                { "informationProtectionLabel", n => { InformationProtectionLabel = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExternalItemInformationProtectionLabel>(global::Microsoft.Graph.Beta.Models.ExternalItemInformationProtectionLabel.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Properties>(global::Microsoft.Graph.Beta.Models.Properties.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Acl>("acl", Acl);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalItemContent>("content", Content);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExternalItemInformationProtectionLabel>("informationProtectionLabel", InformationProtectionLabel);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Properties>("properties", Properties);
         }
     }

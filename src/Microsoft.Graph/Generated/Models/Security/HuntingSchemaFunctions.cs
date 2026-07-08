@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The builtInFunctions property</summary>
+        /// <summary>Prebuilt functions included with Microsoft Defender XDR advanced hunting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaBuiltInFunction>? BuiltInFunctions
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The savedFunctions property</summary>
+        /// <summary>Custom functions created by users, including shared functions accessible to all tenant users and personal functions visible only to their creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaSavedFunction>? SavedFunctions

@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SynchronizationTemplate>(requestInfo, global::Microsoft.Graph.Beta.Models.SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update (override) the synchronization template associated with a given application.
+        /// Update (override) the synchronizationTemplate associated with a given application.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SynchronizationTemplate"/></returns>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update (override) the synchronization template associated with a given application.
+        /// Update (override) the synchronizationTemplate associated with a given application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

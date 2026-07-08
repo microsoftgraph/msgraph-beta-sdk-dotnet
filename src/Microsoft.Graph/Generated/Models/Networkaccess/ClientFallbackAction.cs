@@ -16,6 +16,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         #pragma warning disable CS1591
         Block,
         #pragma warning restore CS1591
+        [EnumMember(Value = "default")]
+        #pragma warning disable CS1591
+        Default,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,

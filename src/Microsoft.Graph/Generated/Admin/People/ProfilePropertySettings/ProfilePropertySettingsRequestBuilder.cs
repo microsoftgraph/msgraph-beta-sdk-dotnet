@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings
         {
         }
         /// <summary>
-        /// Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+        /// Get a collection of profilePropertySetting objects that define the configuration for user profile property settings in an organization. The id property identifies each resource object uniquely.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilepropertysettings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ProfilePropertySettingCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ProfilePropertySetting>(requestInfo, global::Microsoft.Graph.Beta.Models.ProfilePropertySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+        /// Get a collection of profilePropertySetting objects that define the configuration for user profile property settings in an organization. The id property identifies each resource object uniquely.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings
             return new global::Microsoft.Graph.Beta.Admin.People.ProfilePropertySettings.ProfilePropertySettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+        /// Get a collection of profilePropertySetting objects that define the configuration for user profile property settings in an organization. The id property identifies each resource object uniquely.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfilePropertySettingsRequestBuilderGetQueryParameters 

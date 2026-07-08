@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities;
 using Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods;
 using Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight;
+using Microsoft.Graph.Beta.Reports.Correlations;
 using Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsage;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageByPrinter;
@@ -135,6 +136,7 @@ using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithDate;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityGroupCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.HealthMonitoring;
+using Microsoft.Graph.Beta.Reports.IdentityAnalytics;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetails;
@@ -188,6 +190,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight.AzureADPremiumLicenseInsightRequestBuilder AzureADPremiumLicenseInsight
         {
             get => new global::Microsoft.Graph.Beta.Reports.AzureADPremiumLicenseInsight.AzureADPremiumLicenseInsightRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the correlations property of the microsoft.graph.reportRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.Correlations.CorrelationsRequestBuilder Correlations
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.Correlations.CorrelationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails
@@ -273,6 +280,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.HealthMonitoring.HealthMonitoringRequestBuilder HealthMonitoring
         {
             get => new global::Microsoft.Graph.Beta.Reports.HealthMonitoring.HealthMonitoringRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the identityAnalytics property of the microsoft.graph.reportRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.IdentityAnalytics.IdentityAnalyticsRequestBuilder IdentityAnalytics
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.IdentityAnalytics.IdentityAnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the managedDeviceEnrollmentFailureDetails method.</summary>
         public global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetails.ManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails
