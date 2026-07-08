@@ -232,6 +232,54 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resource", value); }
         }
 #endif
+        /// <summary>The vapidPublicKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VapidPublicKey
+        {
+            get { return BackingStore?.Get<string?>("vapidPublicKey"); }
+            set { BackingStore?.Set("vapidPublicKey", value); }
+        }
+#nullable restore
+#else
+        public string VapidPublicKey
+        {
+            get { return BackingStore?.Get<string>("vapidPublicKey"); }
+            set { BackingStore?.Set("vapidPublicKey", value); }
+        }
+#endif
+        /// <summary>The webPushEncryptionP256dhPublicKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebPushEncryptionP256dhPublicKey
+        {
+            get { return BackingStore?.Get<string?>("webPushEncryptionP256dhPublicKey"); }
+            set { BackingStore?.Set("webPushEncryptionP256dhPublicKey", value); }
+        }
+#nullable restore
+#else
+        public string WebPushEncryptionP256dhPublicKey
+        {
+            get { return BackingStore?.Get<string>("webPushEncryptionP256dhPublicKey"); }
+            set { BackingStore?.Set("webPushEncryptionP256dhPublicKey", value); }
+        }
+#endif
+        /// <summary>The webPushEncryptionSecret property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebPushEncryptionSecret
+        {
+            get { return BackingStore?.Get<string?>("webPushEncryptionSecret"); }
+            set { BackingStore?.Set("webPushEncryptionSecret", value); }
+        }
+#nullable restore
+#else
+        public string WebPushEncryptionSecret
+        {
+            get { return BackingStore?.Get<string>("webPushEncryptionSecret"); }
+            set { BackingStore?.Set("webPushEncryptionSecret", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -265,6 +313,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "notificationUrl", n => { NotificationUrl = n.GetStringValue(); } },
                 { "notificationUrlAppId", n => { NotificationUrlAppId = n.GetStringValue(); } },
                 { "resource", n => { Resource = n.GetStringValue(); } },
+                { "vapidPublicKey", n => { VapidPublicKey = n.GetStringValue(); } },
+                { "webPushEncryptionP256dhPublicKey", n => { WebPushEncryptionP256dhPublicKey = n.GetStringValue(); } },
+                { "webPushEncryptionSecret", n => { WebPushEncryptionSecret = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -290,6 +341,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("notificationUrl", NotificationUrl);
             writer.WriteStringValue("notificationUrlAppId", NotificationUrlAppId);
             writer.WriteStringValue("resource", Resource);
+            writer.WriteStringValue("vapidPublicKey", VapidPublicKey);
+            writer.WriteStringValue("webPushEncryptionP256dhPublicKey", WebPushEncryptionP256dhPublicKey);
+            writer.WriteStringValue("webPushEncryptionSecret", WebPushEncryptionSecret);
         }
     }
 }

@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    /// <summary>
-    /// Represents a container that exposes navigation properties for employee experience user resources.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class EmployeeExperienceUser : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Represents the collection of Viva Engage roles assigned to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

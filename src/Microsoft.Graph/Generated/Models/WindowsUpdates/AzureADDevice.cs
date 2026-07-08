@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
     public partial class AzureADDevice : global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The enrollment property</summary>
+        /// <summary>Specifies the update management enrollment for the device. Read-only. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment? Enrollment
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("enrollment", value); }
         }
 #endif
-        /// <summary>Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.</summary>
+        /// <summary>Specifies any errors that prevent the device from being enrolled in update management or receiving deployed content. Read-only. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError>? Errors

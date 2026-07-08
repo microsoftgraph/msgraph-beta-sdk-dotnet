@@ -1779,13 +1779,117 @@ namespace Microsoft.Graph.Beta.Models.Security
         #pragma warning disable CS1591
         VivaGlintOrganizationalData,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ReportSubmission")]
+        [EnumMember(Value = "AlertSubmission")]
         #pragma warning disable CS1591
-        ReportSubmission,
+        AlertSubmission,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ReportSubmissionResultDetail")]
+        [EnumMember(Value = "AlertSubmissionResultDetail")]
         #pragma warning disable CS1591
-        ReportSubmissionResultDetail,
+        AlertSubmissionResultDetail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceSitGradingSharePoint")]
+        #pragma warning disable CS1591
+        ComplianceSitGradingSharePoint,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CompliancePolicyGradingSharePoint")]
+        #pragma warning disable CS1591
+        CompliancePolicyGradingSharePoint,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AzureAISearchAudit")]
+        #pragma warning disable CS1591
+        AzureAISearchAudit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "P4AIRiskScoreRecord")]
+        #pragma warning disable CS1591
+        P4AIRiskScoreRecord,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DragonCopilotAdmin")]
+        #pragma warning disable CS1591
+        DragonCopilotAdmin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AISpanOutputs")]
+        #pragma warning disable CS1591
+        AISpanOutputs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EopSubmissionFeedEntity")]
+        #pragma warning disable CS1591
+        EopSubmissionFeedEntity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SonarFileDetonationEntity")]
+        #pragma warning disable CS1591
+        SonarFileDetonationEntity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SonarSubmissionEntity")]
+        #pragma warning disable CS1591
+        SonarSubmissionEntity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SonarUrlDetonationEntity")]
+        #pragma warning disable CS1591
+        SonarUrlDetonationEntity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SubmissionEntity")]
+        #pragma warning disable CS1591
+        SubmissionEntity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SonarDetonationEntity")]
+        #pragma warning disable CS1591
+        SonarDetonationEntity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MicrosoftTeamsUserConcern")]
+        #pragma warning disable CS1591
+        MicrosoftTeamsUserConcern,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaGlintAgenticCampaign")]
+        #pragma warning disable CS1591
+        VivaGlintAgenticCampaign,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MSPVectorSearchContentMetadata")]
+        #pragma warning disable CS1591
+        MSPVectorSearchContentMetadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FabricPolicy")]
+        #pragma warning disable CS1591
+        FabricPolicy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SecurityCopilotAgentIdentityManagement")]
+        #pragma warning disable CS1591
+        SecurityCopilotAgentIdentityManagement,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CopilotSessionSharing")]
+        #pragma warning disable CS1591
+        CopilotSessionSharing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DragonCopilotAccess")]
+        #pragma warning disable CS1591
+        DragonCopilotAccess,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DragonCopilotClinicalData")]
+        #pragma warning disable CS1591
+        DragonCopilotClinicalData,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DragonCopilotSession")]
+        #pragma warning disable CS1591
+        DragonCopilotSession,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MosAgentInfoRecordV2")]
+        #pragma warning disable CS1591
+        MosAgentInfoRecordV2,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SecurityDevelopmentLifecycleAILog")]
+        #pragma warning disable CS1591
+        SecurityDevelopmentLifecycleAILog,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MDASH")]
+        #pragma warning disable CS1591
+        MDASH,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DefenderSecurityForAIConfiguration")]
+        #pragma warning disable CS1591
+        DefenderSecurityForAIConfiguration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SparkCoreCustomLivePool")]
+        #pragma warning disable CS1591
+        SparkCoreCustomLivePool,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591

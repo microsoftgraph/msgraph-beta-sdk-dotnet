@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("aboutMe", value); }
         }
 #endif
-        /// <summary>true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).</summary>
+        /// <summary>true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</summary>
         public bool? AccountEnabled
         {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("birthday"); }
             set { BackingStore?.Set("birthday", value); }
         }
-        /// <summary>The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).</summary>
+        /// <summary>The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BusinessPhones
@@ -724,6 +724,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The personal distribution lists in the user&apos;s mailbox. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.DistributionList>? DistributionLists
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DistributionList>?>("distributionLists"); }
+            set { BackingStore?.Set("distributionLists", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.DistributionList> DistributionLists
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DistributionList>>("distributionLists"); }
+            set { BackingStore?.Set("distributionLists", value); }
         }
 #endif
         /// <summary>The user&apos;s OneDrive. Read-only.</summary>
@@ -1424,7 +1440,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
 #endif
-        /// <summary>The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.</summary>
+        /// <summary>The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MobilePhone
@@ -1584,7 +1600,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
         }
 #endif
-        /// <summary>This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you&apos;re using a federated domain for the user&apos;s userPrincipalName (UPN) property. Note: The $ and _ characters can&apos;t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).</summary>
+        /// <summary>This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you&apos;re using a federated domain for the user&apos;s userPrincipalName (UPN) property. Note: The $ and _ characters can&apos;t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesImmutableId
@@ -1708,7 +1724,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesUserPrincipalName", value); }
         }
 #endif
-        /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;]. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can&apos;t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
+        /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;]. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can&apos;t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OtherMails
@@ -1788,7 +1804,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordPolicies", value); }
         }
 #endif
-        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Supports $filter (eq, ne, not, in, and eq on null values).  User-PasswordProfile.ReadWrite.All is the least privileged permission to update this property.  In delegated scenarios, the User Administrator Microsoft Entra role is the least privileged admin role supported to update this property for nonadmin users. Privileged Authentication Administrator is the least privileged role that&apos;s allowed to update this property for all administrators in the tenant. In general, the signed-in user must have a higher privileged administrator role as indicated in Who can reset passwords.  In app-only scenarios, the calling app must be assigned a supported permission and at least the User Administrator Microsoft Entra role.</summary>
+        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Supports $filter (eq, ne, not, in, and eq on null values).  User-PasswordProfile.ReadWrite.All is the least privileged permission to update this property.  In delegated scenarios, the User Administrator Microsoft Entra role is the least privileged admin role supported to update this property for nonadmin users. Privileged Authentication Administrator is the least privileged role that&apos;s allowed to update this property for all administrators in the tenant. In general, the signed-in user must have a higher privileged administrator role as indicated in Who can reset passwords.  In app-only scenarios, the calling app must be assigned a supported permission and at least the User Administrator Microsoft Entra role.This property is also subject to sensitive action restrictions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile
@@ -2414,7 +2430,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("usageRights", value); }
         }
 #endif
-        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where the domain must be present in the tenant&apos;s verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can&apos;t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, &apos; . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.</summary>
+        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where the domain must be present in the tenant&apos;s verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can&apos;t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, &apos; . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName
@@ -2555,6 +2571,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "devices", n => { Devices = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Device>(global::Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "directReports", n => { DirectReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "distributionLists", n => { DistributionLists = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionList>(global::Microsoft.Graph.Beta.Models.DistributionList.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "employeeExperience", n => { EmployeeExperience = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser>(global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser.CreateFromDiscriminatorValue); } },
@@ -2729,6 +2746,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Device>("devices", Devices);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("directReports", DirectReports);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionList>("distributionLists", DistributionLists);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Drive>("drives", Drives);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser>("employeeExperience", EmployeeExperience);

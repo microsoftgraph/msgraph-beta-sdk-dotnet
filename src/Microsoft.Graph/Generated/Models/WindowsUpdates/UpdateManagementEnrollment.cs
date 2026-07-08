@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The driver property</summary>
+        /// <summary>Information about the enrollment state of the device in driver update management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategoryEnrollmentInformation? Driver
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("driver", value); }
         }
 #endif
-        /// <summary>The feature property</summary>
+        /// <summary>Information about the enrollment state of the device in feature update management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategoryEnrollmentInformation? Feature
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The quality property</summary>
+        /// <summary>Information about the enrollment state of the device in quality update management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategoryEnrollmentInformation? Quality

@@ -72,6 +72,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("previewScope", value); }
         }
 #endif
+        /// <summary>The quarantineDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernance.QuarantineDetails? QuarantineDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.QuarantineDetails?>("quarantineDetails"); }
+            set { BackingStore?.Set("quarantineDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernance.QuarantineDetails QuarantineDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.QuarantineDetails>("quarantineDetails"); }
+            set { BackingStore?.Set("quarantineDetails", value); }
+        }
+#endif
         /// <summary>Workflow runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +102,38 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>>("runs"); }
             set { BackingStore?.Set("runs", value); }
+        }
+#endif
+        /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSetting? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSetting?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSetting Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSetting>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
+        /// <summary>The subjectProcessingResults property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResult>? SubjectProcessingResults
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResult>?>("subjectProcessingResults"); }
+            set { BackingStore?.Set("subjectProcessingResults", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResult> SubjectProcessingResults
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResult>>("subjectProcessingResults"); }
+            set { BackingStore?.Set("subjectProcessingResults", value); }
         }
 #endif
         /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
@@ -172,7 +220,10 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextScheduleRunDateTime", n => { NextScheduleRunDateTime = n.GetDateTimeOffsetValue(); } },
                 { "previewScope", n => { PreviewScope = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "quarantineDetails", n => { QuarantineDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.QuarantineDetails>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.QuarantineDetails.CreateFromDiscriminatorValue); } },
                 { "runs", n => { Runs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSetting>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSetting.CreateFromDiscriminatorValue); } },
+                { "subjectProcessingResults", n => { SubjectProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResult>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -192,7 +243,10 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextScheduleRunDateTime", NextScheduleRunDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("previewScope", PreviewScope);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.QuarantineDetails>("quarantineDetails", QuarantineDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Run>("runs", Runs);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSetting>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResult>("subjectProcessingResults", SubjectProcessingResults);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport>("taskReports", TaskReports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserProcessingResult>("userProcessingResults", UserProcessingResults);
             writer.WriteIntValue("version", Version);

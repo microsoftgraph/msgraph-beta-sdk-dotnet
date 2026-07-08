@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
+        /// <summary>The externalServiceIdentifier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalServiceIdentifier
+        {
+            get { return BackingStore?.Get<string?>("externalServiceIdentifier"); }
+            set { BackingStore?.Set("externalServiceIdentifier", value); }
+        }
+#nullable restore
+#else
+        public string ExternalServiceIdentifier
+        {
+            get { return BackingStore?.Get<string>("externalServiceIdentifier"); }
+            set { BackingStore?.Set("externalServiceIdentifier", value); }
+        }
+#endif
         /// <summary>Information about the services associated with the usageRight. Not nullable. Read-only. Supports $filter on the planId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
             {
                 { "allotments", n => { Allotments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalServiceIdentifier", n => { ExternalServiceIdentifier = n.GetStringValue(); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Service>(global::Microsoft.Graph.Beta.Models.CloudLicensing.Service.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "skuId", n => { SkuId = n.GetGuidValue(); } },
                 { "skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
@@ -117,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models.CloudLicensing
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Allotment>("allotments", Allotments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Assignment>("assignments", Assignments);
+            writer.WriteStringValue("externalServiceIdentifier", ExternalServiceIdentifier);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudLicensing.Service>("services", Services);
             writer.WriteGuidValue("skuId", SkuId);
             writer.WriteStringValue("skuPartNumber", SkuPartNumber);

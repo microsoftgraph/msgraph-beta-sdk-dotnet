@@ -393,6 +393,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MessagingRedirectAppType?>("protectedMessagingRedirectAppType"); }
             set { BackingStore?.Set("protectedMessagingRedirectAppType", value); }
         }
+        /// <summary>Specifies whether Microsoft Purview Data Loss Prevention (DLP) content evaluation is required before data sharing.</summary>
+        public global::Microsoft.Graph.Beta.Models.ManagedAppPurviewEvaluationRequirement? PurviewContentEvaluationRequired
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppPurviewEvaluationRequirement?>("purviewContentEvaluationRequired"); }
+            set { BackingStore?.Set("purviewContentEvaluationRequired", value); }
+        }
         /// <summary>Indicates whether users may use the &apos;Save As&apos; menu item to save a copy of protected files.</summary>
         public bool? SaveAsBlocked
         {
@@ -483,6 +489,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "previousPinBlockCount", n => { PreviousPinBlockCount = n.GetIntValue(); } },
                 { "printBlocked", n => { PrintBlocked = n.GetBoolValue(); } },
                 { "protectedMessagingRedirectAppType", n => { ProtectedMessagingRedirectAppType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MessagingRedirectAppType>(); } },
+                { "purviewContentEvaluationRequired", n => { PurviewContentEvaluationRequired = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppPurviewEvaluationRequirement>(); } },
                 { "saveAsBlocked", n => { SaveAsBlocked = n.GetBoolValue(); } },
                 { "simplePinBlocked", n => { SimplePinBlocked = n.GetBoolValue(); } },
             };
@@ -540,6 +547,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("previousPinBlockCount", PreviousPinBlockCount);
             writer.WriteBoolValue("printBlocked", PrintBlocked);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MessagingRedirectAppType>("protectedMessagingRedirectAppType", ProtectedMessagingRedirectAppType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppPurviewEvaluationRequirement>("purviewContentEvaluationRequired", PurviewContentEvaluationRequired);
             writer.WriteBoolValue("saveAsBlocked", SaveAsBlocked);
             writer.WriteBoolValue("simplePinBlocked", SimplePinBlocked);
         }

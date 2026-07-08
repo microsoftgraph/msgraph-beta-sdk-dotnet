@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The createdBy property</summary>
+        /// <summary>Identity of the user who created the function.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Description of the function purpose and usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -53,13 +53,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The huntingFunctionId property</summary>
+        /// <summary>Unique identifier for the function. Required.</summary>
         public long? HuntingFunctionId
         {
             get { return BackingStore?.Get<long?>("huntingFunctionId"); }
             set { BackingStore?.Set("huntingFunctionId", value); }
         }
-        /// <summary>The inputParameters property</summary>
+        /// <summary>Collection of input parameters accepted by the function.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaFunctionParameter>? InputParameters
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("inputParameters", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Identity of the user who last modified the function.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastModifiedBy
@@ -91,13 +91,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Date and time when the function was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the function. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The outputColumns property</summary>
+        /// <summary>Collection of columns returned by the function.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.HuntingSchemaTableColumn>? OutputColumns
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("outputColumns", value); }
         }
 #endif
-        /// <summary>The path property</summary>
+        /// <summary>Folder path where the function is saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path

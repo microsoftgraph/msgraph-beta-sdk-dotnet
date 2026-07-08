@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.calendarSharingMessage" => new global::Microsoft.Graph.Beta.Models.CalendarSharingMessage(),
                 "#microsoft.graph.contact" => new global::Microsoft.Graph.Beta.Models.Contact(),
+                "#microsoft.graph.distributionList" => new global::Microsoft.Graph.Beta.Models.DistributionList(),
                 "#microsoft.graph.event" => new global::Microsoft.Graph.Beta.Models.Event(),
                 "#microsoft.graph.eventMessage" => new global::Microsoft.Graph.Beta.Models.EventMessage(),
                 "#microsoft.graph.eventMessageRequest" => new global::Microsoft.Graph.Beta.Models.EventMessageRequest(),

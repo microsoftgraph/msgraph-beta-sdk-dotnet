@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.Mi
         {
         }
         /// <summary>
-        /// Provide a summary of workflows processed, by category, in a tenant. This allows you to quickly get category information, by numerical value, bypassing other information found in the WorkflowsProcessedSummary call.
+        /// Provide a summary from the insights resource of workflow objects processed by category in a tenant. This allows you to quickly get category information, by numerical value, without retrieving the other information included in the workflowsProcessedSummary call.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedbycategory?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowsInsightsByCategory"/></returns>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.Mi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowsInsightsByCategory>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowsInsightsByCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provide a summary of workflows processed, by category, in a tenant. This allows you to quickly get category information, by numerical value, bypassing other information found in the WorkflowsProcessedSummary call.
+        /// Provide a summary from the insights resource of workflow objects processed by category in a tenant. This allows you to quickly get category information, by numerical value, without retrieving the other information included in the workflowsProcessedSummary call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

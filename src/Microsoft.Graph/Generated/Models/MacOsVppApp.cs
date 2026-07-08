@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOsVppApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
+        /// <summary>Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices</summary>
+        public global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol? AppleDeviceAppDeliveryProtocolType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol?>("appleDeviceAppDeliveryProtocolType"); }
+            set { BackingStore?.Set("appleDeviceAppDeliveryProtocolType", value); }
+        }
         /// <summary>The store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,6 +213,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
+                { "appleDeviceAppDeliveryProtocolType", n => { AppleDeviceAppDeliveryProtocolType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>(); } },
                 { "assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MacOsVppAppAssignedLicense>(global::Microsoft.Graph.Beta.Models.MacOsVppAppAssignedLicense.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bundleId", n => { BundleId = n.GetStringValue(); } },
                 { "licensingType", n => { LicensingType = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VppLicensingType>(global::Microsoft.Graph.Beta.Models.VppLicensingType.CreateFromDiscriminatorValue); } },
@@ -229,6 +236,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>("appleDeviceAppDeliveryProtocolType", AppleDeviceAppDeliveryProtocolType);
             writer.WriteStringValue("appStoreUrl", AppStoreUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MacOsVppAppAssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteStringValue("bundleId", BundleId);

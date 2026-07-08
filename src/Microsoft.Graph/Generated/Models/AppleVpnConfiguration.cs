@@ -135,6 +135,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludedDomains", value); }
         }
 #endif
+        /// <summary>Indicates whether local network traffic is excluded from the VPN tunnel. When TRUE, local network traffic bypasses the VPN tunnel. Default value is null. Only takes effect when includeAllNetworks is TRUE or enforceVpnRouting is TRUE. Not applicable when enablePerApp is TRUE.</summary>
+        public bool? ExcludeLocalNetworks
+        {
+            get { return BackingStore?.Get<bool?>("excludeLocalNetworks"); }
+            set { BackingStore?.Set("excludeLocalNetworks", value); }
+        }
         /// <summary>Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +157,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identifier", value); }
         }
 #endif
+        /// <summary>Indicates whether most network traffic is routed through the VPN tunnel. When TRUE, most network traffic is sent through the VPN tunnel. Default value is null. Not applicable when enablePerApp is TRUE.</summary>
+        public bool? IncludeAllNetworks
+        {
+            get { return BackingStore?.Get<bool?>("includeAllNetworks"); }
+            set { BackingStore?.Set("includeAllNetworks", value); }
+        }
         /// <summary>Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -318,8 +330,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "disconnectOnIdleTimerInSeconds", n => { DisconnectOnIdleTimerInSeconds = n.GetIntValue(); } },
                 { "enablePerApp", n => { EnablePerApp = n.GetBoolValue(); } },
                 { "enableSplitTunneling", n => { EnableSplitTunneling = n.GetBoolValue(); } },
+                { "excludeLocalNetworks", n => { ExcludeLocalNetworks = n.GetBoolValue(); } },
                 { "excludedDomains", n => { ExcludedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "includeAllNetworks", n => { IncludeAllNetworks = n.GetBoolValue(); } },
                 { "loginGroupOrDomain", n => { LoginGroupOrDomain = n.GetStringValue(); } },
                 { "onDemandRules", n => { OnDemandRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VpnOnDemandRule>(global::Microsoft.Graph.Beta.Models.VpnOnDemandRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "optInToDeviceIdSharing", n => { OptInToDeviceIdSharing = n.GetBoolValue(); } },
@@ -351,7 +365,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("enablePerApp", EnablePerApp);
             writer.WriteBoolValue("enableSplitTunneling", EnableSplitTunneling);
             writer.WriteCollectionOfPrimitiveValues<string>("excludedDomains", ExcludedDomains);
+            writer.WriteBoolValue("excludeLocalNetworks", ExcludeLocalNetworks);
             writer.WriteStringValue("identifier", Identifier);
+            writer.WriteBoolValue("includeAllNetworks", IncludeAllNetworks);
             writer.WriteStringValue("loginGroupOrDomain", LoginGroupOrDomain);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VpnOnDemandRule>("onDemandRules", OnDemandRules);
             writer.WriteBoolValue("optInToDeviceIdSharing", OptInToDeviceIdSharing);

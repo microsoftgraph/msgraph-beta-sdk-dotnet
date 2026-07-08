@@ -123,6 +123,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
+        /// <summary>Indicates whether devices connecting with this Wi-Fi profile must use their physical MAC address instead of a randomized MAC address. When TRUE, it uses the actual Wi-Fi MAC address. When FALSE, it enables the MAC address randomization. Applies to macOS 15 and later. Default is false.</summary>
+        public bool? WifiRequirePhysicalMacAddressEnabled
+        {
+            get { return BackingStore?.Get<bool?>("wifiRequirePhysicalMacAddressEnabled"); }
+            set { BackingStore?.Set("wifiRequirePhysicalMacAddressEnabled", value); }
+        }
         /// <summary>Wi-Fi Security Types.</summary>
         public global::Microsoft.Graph.Beta.Models.WiFiSecurityType? WiFiSecurityType
         {
@@ -170,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "proxySettings", n => { ProxySettings = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WiFiProxySetting>(); } },
                 { "ssid", n => { Ssid = n.GetStringValue(); } },
                 { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WiFiSecurityType>(); } },
+                { "wifiRequirePhysicalMacAddressEnabled", n => { WifiRequirePhysicalMacAddressEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -190,6 +197,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("proxyManualPort", ProxyManualPort);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WiFiProxySetting>("proxySettings", ProxySettings);
             writer.WriteStringValue("ssid", Ssid);
+            writer.WriteBoolValue("wifiRequirePhysicalMacAddressEnabled", WifiRequirePhysicalMacAddressEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
         }
     }

@@ -82,6 +82,12 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>Indicates whether this tenant is a Microsoft infrastructure tenant.</summary>
+        public bool? IsMicrosoftInfrastructure
+        {
+            get { return BackingStore?.Get<bool?>("isMicrosoftInfrastructure"); }
+            set { BackingStore?.Set("isMicrosoftInfrastructure", value); }
+        }
         /// <summary>Multi-tenant application usage metrics for this related tenant. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
                 { "b2BSignInActivityMetrics", n => { B2BSignInActivityMetrics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BSignInActivityMetrics>(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.B2BSignInActivityMetrics.CreateFromDiscriminatorValue); } },
                 { "billingMetrics", n => { BillingMetrics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.BillingMetrics>(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.BillingMetrics.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isMicrosoftInfrastructure", n => { IsMicrosoftInfrastructure = n.GetBoolValue(); } },
                 { "multiTenantApplicationMetrics", n => { MultiTenantApplicationMetrics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetrics>(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetrics.CreateFromDiscriminatorValue); } },
             };
         }

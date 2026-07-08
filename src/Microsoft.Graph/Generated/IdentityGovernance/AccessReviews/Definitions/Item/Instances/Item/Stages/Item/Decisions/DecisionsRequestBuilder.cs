@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.Item.Decisions.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
+        /// Get the accessReviewInstanceDecisionItem objects from an accessReviewStage in a multi-stage access review.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewstage-list-decisions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemCollectionResponse"/></returns>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>(requestInfo, global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
+        /// Get the accessReviewInstanceDecisionItem objects from an accessReviewStage in a multi-stage access review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.Item.Decisions.DecisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
+        /// Get the accessReviewInstanceDecisionItem objects from an accessReviewStage in a multi-stage access review.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DecisionsRequestBuilderGetQueryParameters 

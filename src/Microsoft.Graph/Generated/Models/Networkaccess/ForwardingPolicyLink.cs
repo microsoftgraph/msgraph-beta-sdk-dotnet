@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public partial class ForwardingPolicyLink : global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The priority property</summary>
+        /// <summary>Priority of the policy within the forwarding profile.</summary>
         public long? Priority
         {
             get { return BackingStore?.Get<long?>("priority"); }

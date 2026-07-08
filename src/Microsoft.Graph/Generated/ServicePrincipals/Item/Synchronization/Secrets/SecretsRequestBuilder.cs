@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets
         {
         }
         /// <summary>
-        /// Provide credentials for establishing connectivity with the target system.
+        /// Provide credentials for establishing connectivity with the target system and store them in the synchronization resource.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsPutResponse"/></returns>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsPutResponse>(requestInfo, global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provide credentials for establishing connectivity with the target system.
+        /// Provide credentials for establishing connectivity with the target system and store them in the synchronization resource.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsResponse"/></returns>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsResponse>(requestInfo, global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provide credentials for establishing connectivity with the target system.
+        /// Provide credentials for establishing connectivity with the target system and store them in the synchronization resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

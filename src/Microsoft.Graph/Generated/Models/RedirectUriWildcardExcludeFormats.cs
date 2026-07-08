@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The excludeWildcardsInPath property</summary>
+        /// <summary>When true, blocks the use of wildcards in the path portion of redirect URIs. When false, allows wildcards in paths.</summary>
         public bool? ExcludeWildcardsInPath
         {
             get { return BackingStore?.Get<bool?>("excludeWildcardsInPath"); }
             set { BackingStore?.Set("excludeWildcardsInPath", value); }
         }
-        /// <summary>The excludeWildcardsInPathWithDomains property</summary>
+        /// <summary>Collection of domain names where wildcards in the path portion of redirect URIs are blocked. Accepts only valid host names (no wildcards) as defined in RFC 3986 §3.2.2. For example, login.microsoft.com or contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExcludeWildcardsInPathWithDomains

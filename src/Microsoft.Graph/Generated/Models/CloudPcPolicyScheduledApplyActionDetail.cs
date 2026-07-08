@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
+        /// <summary>Indicates whether active Cloud PC sessions are forcibly signed out when reprovisioning begins. When true, connected users are immediately signed out and reprovisioning starts right away; reservePercentage must be set to 0 when this property is true, otherwise the request fails. When false, reprovisioning waits until the user disconnects. The default value is false. Optional. Frontline shared only.</summary>
+        public bool? IsForceUserLogoffEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isForceUserLogoffEnabled"); }
+            set { BackingStore?.Set("isForceUserLogoffEnabled", value); }
+        }
         /// <summary>Indicates IT Admins can see when the next automatic regular apply is executed. It needs to be coordinated with timezone, for example, &apos;2025-01-01 00:00:00&apos; with &apos;China Standard Time&apos; means the next task executes at Jan 01 2025 00:00:00 GMT+0800 (China Standard Time). Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "cronScheduleExpression", n => { CronScheduleExpression = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetStringValue(); } },
+                { "isForceUserLogoffEnabled", n => { IsForceUserLogoffEnabled = n.GetBoolValue(); } },
                 { "nextRunDateTime", n => { NextRunDateTime = n.GetStringValue(); } },
                 { "reservePercentage", n => { ReservePercentage = n.GetIntValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetStringValue(); } },
@@ -124,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("cronScheduleExpression", CronScheduleExpression);
             writer.WriteStringValue("endDateTime", EndDateTime);
+            writer.WriteBoolValue("isForceUserLogoffEnabled", IsForceUserLogoffEnabled);
             writer.WriteStringValue("nextRunDateTime", NextRunDateTime);
             writer.WriteIntValue("reservePercentage", ReservePercentage);
             writer.WriteStringValue("startDateTime", StartDateTime);

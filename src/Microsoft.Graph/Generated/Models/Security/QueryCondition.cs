@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Timestamp of when the query in the custom detection rule was last updated.</summary>
+        /// <summary>Timestamp of when the query in the custom detection rule was last updated. Deprecated. This property will be removed from this resource on 2026-10-01.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
