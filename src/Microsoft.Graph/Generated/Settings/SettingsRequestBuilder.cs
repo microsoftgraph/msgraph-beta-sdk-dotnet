@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Settings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectorySettingCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectorySettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. The following setting templates are available for groups:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectorySetting"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+        /// Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. The following setting templates are available for groups:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
