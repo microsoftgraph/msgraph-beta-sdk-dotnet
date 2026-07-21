@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PlannerTaskData : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activeChecklistItemCount property</summary>
+        /// <summary>The number of incomplete checklist items whose value is set to false.</summary>
         public int? ActiveChecklistItemCount
         {
             get { return BackingStore?.Get<int?>("activeChecklistItemCount"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The appliedCategories property</summary>
+        /// <summary>The categories to which the task is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerAppliedCategories? AppliedCategories
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appliedCategories", value); }
         }
 #endif
-        /// <summary>The archivalInfo property</summary>
+        /// <summary>Information about who archived or unarchived the task and why.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerArchivalInfo? ArchivalInfo
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("archivalInfo", value); }
         }
 #endif
-        /// <summary>The assignments property</summary>
+        /// <summary>The set of assignees the task is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerAssignments? Assignments
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The bucketId property</summary>
+        /// <summary>Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BucketId
@@ -91,13 +91,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("bucketId", value); }
         }
 #endif
-        /// <summary>The checklistItemCount property</summary>
+        /// <summary>The number of checklist items that are present on the task.</summary>
         public int? ChecklistItemCount
         {
             get { return BackingStore?.Get<int?>("checklistItemCount"); }
             set { BackingStore?.Set("checklistItemCount", value); }
         }
-        /// <summary>The completedBy property</summary>
+        /// <summary>The identity of the user that completed the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? CompletedBy
@@ -113,13 +113,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("completedBy", value); }
         }
 #endif
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>The date and time at which the percentComplete of the task is set to 100. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CompletedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The conversationThreadId property</summary>
+        /// <summary>The thread ID of the conversation on the task that corresponds to the ID of the conversation thread object created in the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationThreadId
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("conversationThreadId", value); }
         }
 #endif
-        /// <summary>The createdBy property</summary>
+        /// <summary>The identity of the user who created the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
@@ -151,13 +151,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time at which the task was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The creationSource property</summary>
+        /// <summary>Information about the origin of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerTaskCreation? CreationSource
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("creationSource", value); }
         }
 #endif
-        /// <summary>The details property</summary>
+        /// <summary>Additional details about the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerTaskDetailsData? Details
@@ -189,25 +189,25 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The dueDateTime property</summary>
+        /// <summary>The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? DueDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>The hasChat property</summary>
+        /// <summary>Set to true if the task has a chat associated with it; otherwise, false.</summary>
         public bool? HasChat
         {
             get { return BackingStore?.Get<bool?>("hasChat"); }
             set { BackingStore?.Set("hasChat", value); }
         }
-        /// <summary>The hasDescription property</summary>
+        /// <summary>Set to true if the details object of the task has a nonempty description; otherwise, false.</summary>
         public bool? HasDescription
         {
             get { return BackingStore?.Get<bool?>("hasDescription"); }
             set { BackingStore?.Set("hasDescription", value); }
         }
-        /// <summary>The isArchived property</summary>
+        /// <summary>Set to true if the task is archived; otherwise, false.</summary>
         public bool? IsArchived
         {
             get { return BackingStore?.Get<bool?>("isArchived"); }
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The orderHint property</summary>
+        /// <summary>Hint used to order items of this type in a list view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderHint
@@ -245,7 +245,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("orderHint", value); }
         }
 #endif
-        /// <summary>The percentComplete property</summary>
+        /// <summary>Percentage of task completion. When set to 100, the task is considered completed.</summary>
         public int? PercentComplete
         {
             get { return BackingStore?.Get<int?>("percentComplete"); }
@@ -257,13 +257,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
         }
-        /// <summary>The priority property</summary>
+        /// <summary>The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority.</summary>
         public int? Priority
         {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
-        /// <summary>The recurrence property</summary>
+        /// <summary>Defines active or inactive recurrence for the task. A null value indicates that the recurrence was never defined for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerTaskRecurrence? Recurrence
@@ -279,7 +279,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
-        /// <summary>The referenceCount property</summary>
+        /// <summary>Number of external references that exist on the task.</summary>
         public int? ReferenceCount
         {
             get { return BackingStore?.Get<int?>("referenceCount"); }
@@ -291,13 +291,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
             set { BackingStore?.Set("specifiedCompletionRequirements", value); }
         }
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The date and time at which the task starts. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>The title property</summary>
+        /// <summary>Title of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title

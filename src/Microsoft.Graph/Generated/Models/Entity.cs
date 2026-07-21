@@ -15,6 +15,7 @@ using Microsoft.Graph.Beta.Models.Partner.Security;
 using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Models.Partners;
 using Microsoft.Graph.Beta.Models.Search;
+using Microsoft.Graph.Beta.Models.Security.CaseManagement;
 using Microsoft.Graph.Beta.Models.Security.Dlp;
 using Microsoft.Graph.Beta.Models.Security.SecurityCopilot;
 using Microsoft.Graph.Beta.Models.Security;
@@ -1736,6 +1737,21 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.security.authorityTemplate" => new global::Microsoft.Graph.Beta.Models.Security.AuthorityTemplate(),
                 "#microsoft.graph.security.autoAuditingConfiguration" => new global::Microsoft.Graph.Beta.Models.Security.AutoAuditingConfiguration(),
                 "#microsoft.graph.security.case" => new global::Microsoft.Graph.Beta.Models.Security.Case(),
+                "#microsoft.graph.security.caseManagement.activity" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Activity(),
+                "#microsoft.graph.security.caseManagement.attachment" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Attachment(),
+                "#microsoft.graph.security.caseManagement.auditLog" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.AuditLog(),
+                "#microsoft.graph.security.caseManagement.case" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Case(),
+                "#microsoft.graph.security.caseManagement.caseManagementEntity" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseManagementEntity(),
+                "#microsoft.graph.security.caseManagement.comment" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Comment(),
+                "#microsoft.graph.security.caseManagement.exposureCase" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.ExposureCase(),
+                "#microsoft.graph.security.caseManagement.genericCase" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.GenericCase(),
+                "#microsoft.graph.security.caseManagement.incidentCase" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.IncidentCase(),
+                "#microsoft.graph.security.caseManagement.incidentRelation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.IncidentRelation(),
+                "#microsoft.graph.security.caseManagement.recommendationRelation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.RecommendationRelation(),
+                "#microsoft.graph.security.caseManagement.relation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation(),
+                "#microsoft.graph.security.caseManagement.task" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.TaskObject(),
+                "#microsoft.graph.security.caseManagement.workspaceIndicatorRelation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.WorkspaceIndicatorRelation(),
+                "#microsoft.graph.security.caseManagementRoot" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagementRoot(),
                 "#microsoft.graph.security.caseOperation" => new global::Microsoft.Graph.Beta.Models.Security.CaseOperation(),
                 "#microsoft.graph.security.casesRoot" => new global::Microsoft.Graph.Beta.Models.Security.CasesRoot(),
                 "#microsoft.graph.security.categoryTemplate" => new global::Microsoft.Graph.Beta.Models.Security.CategoryTemplate(),

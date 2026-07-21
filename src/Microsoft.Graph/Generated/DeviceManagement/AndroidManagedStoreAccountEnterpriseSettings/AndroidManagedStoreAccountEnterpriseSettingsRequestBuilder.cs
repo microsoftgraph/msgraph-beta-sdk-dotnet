@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterprise
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateZeroTouchWebToken;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl;
 using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RetrieveStoreLayout;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenRequestBuilder CreateGooglePlayWebToken
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createZeroTouchWebToken method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateZeroTouchWebToken.CreateZeroTouchWebTokenRequestBuilder CreateZeroTouchWebToken
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateZeroTouchWebToken.CreateZeroTouchWebTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the requestEnterpriseUpgradeUrl method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl.RequestEnterpriseUpgradeUrlRequestBuilder RequestEnterpriseUpgradeUrl

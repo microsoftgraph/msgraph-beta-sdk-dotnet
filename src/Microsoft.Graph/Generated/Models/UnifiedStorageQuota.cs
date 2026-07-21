@@ -18,6 +18,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<long?>("deleted"); }
             set { BackingStore?.Set("deleted", value); }
         }
+        /// <summary>The familyMembersUsage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.FamilyMemberStorageQuota>? FamilyMembersUsage
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FamilyMemberStorageQuota>?>("familyMembersUsage"); }
+            set { BackingStore?.Set("familyMembersUsage", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.FamilyMemberStorageQuota> FamilyMembersUsage
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.FamilyMemberStorageQuota>>("familyMembersUsage"); }
+            set { BackingStore?.Set("familyMembersUsage", value); }
+        }
+#endif
+        /// <summary>The isPooledStorageEnabled property</summary>
+        public bool? IsPooledStorageEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isPooledStorageEnabled"); }
+            set { BackingStore?.Set("isPooledStorageEnabled", value); }
+        }
         /// <summary>A URL that can be used in a browser to manage the breakdown. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +125,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "deleted", n => { Deleted = n.GetLongValue(); } },
+                { "familyMembersUsage", n => { FamilyMembersUsage = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FamilyMemberStorageQuota>(global::Microsoft.Graph.Beta.Models.FamilyMemberStorageQuota.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isPooledStorageEnabled", n => { IsPooledStorageEnabled = n.GetBoolValue(); } },
                 { "manageWebUrl", n => { ManageWebUrl = n.GetStringValue(); } },
                 { "remaining", n => { Remaining = n.GetLongValue(); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceStorageQuotaBreakdown>(global::Microsoft.Graph.Beta.Models.ServiceStorageQuotaBreakdown.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -120,6 +144,8 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("deleted", Deleted);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FamilyMemberStorageQuota>("familyMembersUsage", FamilyMembersUsage);
+            writer.WriteBoolValue("isPooledStorageEnabled", IsPooledStorageEnabled);
             writer.WriteStringValue("manageWebUrl", ManageWebUrl);
             writer.WriteLongValue("remaining", Remaining);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ServiceStorageQuotaBreakdown>("services", Services);

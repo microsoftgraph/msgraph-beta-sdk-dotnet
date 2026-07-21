@@ -47,9 +47,9 @@ using Microsoft.Graph.Beta.Reports.GetMailboxUsageDetailWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageMailboxCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageQuotaStatusMailboxCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageStorageWithPeriod;
-using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod;
-using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod;
-using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail;
@@ -672,32 +672,38 @@ namespace Microsoft.Graph.Beta.Reports
         /// <summary>
         /// Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder"/></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder GetMicrosoft365CopilotUsageUserDetailWithPeriod(string period)
+        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion(string period, string version)
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+            if(string.IsNullOrEmpty(version)) throw new ArgumentNullException(nameof(version));
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder(PathParameters, RequestAdapter, period, version);
         }
         /// <summary>
         /// Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder"/></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder GetMicrosoft365CopilotUserCountSummaryWithPeriod(string period)
+        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion(string period, string version)
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+            if(string.IsNullOrEmpty(version)) throw new ArgumentNullException(nameof(version));
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder(PathParameters, RequestAdapter, period, version);
         }
         /// <summary>
         /// Provides operations to call the getMicrosoft365CopilotUserCountTrend method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod.GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder"/></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod.GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder GetMicrosoft365CopilotUserCountTrendWithPeriod(string period)
+        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion(string period, string version)
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod.GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+            if(string.IsNullOrEmpty(version)) throw new ArgumentNullException(nameof(version));
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder(PathParameters, RequestAdapter, period, version);
         }
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserCounts method.

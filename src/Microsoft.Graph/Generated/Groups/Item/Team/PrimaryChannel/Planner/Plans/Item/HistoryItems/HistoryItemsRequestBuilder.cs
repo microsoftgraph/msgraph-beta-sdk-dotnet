@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner.Plans.Ite
         {
         }
         /// <summary>
-        /// Get historyItems from groups
+        /// Collection of history items for entities in the plan. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlannerHistoryItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner.Plans.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>(requestInfo, global::Microsoft.Graph.Beta.Models.PlannerHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get historyItems from groups
+        /// Collection of history items for entities in the plan. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner.Plans.Ite
             return new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Planner.Plans.Item.HistoryItems.HistoryItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get historyItems from groups
+        /// Collection of history items for entities in the plan. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HistoryItemsRequestBuilderGetQueryParameters 

@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             return mappingValue switch
             {
                 "#microsoft.graph.identityGovernance.attributeChangeTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.AttributeChangeTrigger(),
+                "#microsoft.graph.identityGovernance.guestSponsorTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.GuestSponsorTrigger(),
                 "#microsoft.graph.identityGovernance.membershipChangeTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.MembershipChangeTrigger(),
                 "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.TimeBasedAttributeTrigger(),
                 "#microsoft.graph.identityGovernance.userInactivityTrigger" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.UserInactivityTrigger(),

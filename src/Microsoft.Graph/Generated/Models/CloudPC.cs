@@ -212,6 +212,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastLoginResult", value); }
         }
 #endif
+        /// <summary>The date and time when the user last logged off from the Cloud PC session. Returns null if the user has never established a session or if a session is currently active. The timestamp is shown in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only when explicitly selected with $select.</summary>
+        public DateTimeOffset? LastLogoffDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastLogoffDateTime"); }
+            set { BackingStore?.Set("lastLogoffDateTime", value); }
+        }
         /// <summary>The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
@@ -545,6 +551,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 { "isDisasterRecoveryActive", n => { IsDisasterRecoveryActive = n.GetBoolValue(); } },
                 { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>(global::Microsoft.Graph.Beta.Models.CloudPcLoginResult.CreateFromDiscriminatorValue); } },
+                { "lastLogoffDateTime", n => { LastLogoffDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastRemoteActionResult", n => { LastRemoteActionResult = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>(global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
                 { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
@@ -595,6 +602,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteBoolValue("isDisasterRecoveryActive", IsDisasterRecoveryActive);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcLoginResult>("lastLoginResult", LastLoginResult);
+            writer.WriteDateTimeOffsetValue("lastLogoffDateTime", LastLogoffDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>("lastRemoteActionResult", LastRemoteActionResult);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);

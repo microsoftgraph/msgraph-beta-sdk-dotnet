@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sensitivityLabelId property</summary>
+        /// <summary>The GUID of the Purview sensitivity label. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SensitivityLabelId

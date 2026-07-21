@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityDisablePolicy;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityEnablePolicy;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityRetryPolicy;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.SiteSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.UserSources;
@@ -21,6 +23,16 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EdiscoveryHoldPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the disablePolicy method.</summary>
+        public global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityDisablePolicy.MicrosoftGraphSecurityDisablePolicyRequestBuilder MicrosoftGraphSecurityDisablePolicy
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityDisablePolicy.MicrosoftGraphSecurityDisablePolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the enablePolicy method.</summary>
+        public global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityEnablePolicy.MicrosoftGraphSecurityEnablePolicyRequestBuilder MicrosoftGraphSecurityEnablePolicy
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityEnablePolicy.MicrosoftGraphSecurityEnablePolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retryPolicy method.</summary>
         public global::Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.MicrosoftGraphSecurityRetryPolicy.MicrosoftGraphSecurityRetryPolicyRequestBuilder MicrosoftGraphSecurityRetryPolicy
         {

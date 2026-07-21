@@ -120,22 +120,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("nickname", value); }
         }
 #endif
-        /// <summary>The placeId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlaceId
-        {
-            get { return BackingStore?.Get<string?>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
-        }
-#nullable restore
-#else
-        public string PlaceId
-        {
-            get { return BackingStore?.Get<string>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
-        }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Workspace"/> and sets the default values.
         /// </summary>
@@ -169,7 +153,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>(global::Microsoft.Graph.Beta.Models.PlaceMode.CreateFromDiscriminatorValue); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
-                { "placeId", n => { PlaceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -188,7 +171,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("floorNumber", FloorNumber);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>("mode", Mode);
             writer.WriteStringValue("nickname", Nickname);
-            writer.WriteStringValue("placeId", PlaceId);
         }
     }
 }

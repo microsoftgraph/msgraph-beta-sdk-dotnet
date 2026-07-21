@@ -19,6 +19,7 @@ using Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnrollNowAction;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings;
+using Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetSyncStatus;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.InitiateDeviceAttestation;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.InitiateMobileDeviceManagementKeyRecovery;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.InitiateOnDemandProactiveRemediation;
@@ -33,6 +34,7 @@ using Microsoft.Graph.Beta.Me.ManagedDevices.Item.RebootNow;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.RecoverPasscode;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.Reenable;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoteLock;
+using Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoveDeviceEsim;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.RequestRemoteAssistance;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.ResetPasscode;
@@ -172,6 +174,11 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getSyncStatus method.</summary>
+        public global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetSyncStatus.GetSyncStatusRequestBuilder GetSyncStatus
+        {
+            get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetSyncStatus.GetSyncStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the initiateDeviceAttestation method.</summary>
         public global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.InitiateDeviceAttestation.InitiateDeviceAttestationRequestBuilder InitiateDeviceAttestation
         {
@@ -241,6 +248,11 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item
         public global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder RemoteLock
         {
             get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeDeviceEsim method.</summary>
+        public global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoveDeviceEsim.RemoveDeviceEsimRequestBuilder RemoveDeviceEsim
+        {
+            get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoveDeviceEsim.RemoveDeviceEsimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeDeviceFirmwareConfigurationInterfaceManagement method.</summary>
         public global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement.RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder RemoveDeviceFirmwareConfigurationInterfaceManagement
