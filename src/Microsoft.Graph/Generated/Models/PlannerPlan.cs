@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The historyItems property</summary>
+        /// <summary>Collection of history items for entities in the plan. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>? HistoryItems

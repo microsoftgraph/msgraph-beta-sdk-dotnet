@@ -66,6 +66,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mode", value); }
         }
 #endif
+        /// <summary>Service plans associated with the desk.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PlaceServicePlanInfo>? ServicePlans
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlaceServicePlanInfo>?>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PlaceServicePlanInfo> ServicePlans
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlaceServicePlanInfo>>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Desk"/> and sets the default values.
         /// </summary>
@@ -95,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "heightAdjustableState", n => { HeightAdjustableState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement>(); } },
                 { "mailboxDetails", n => { MailboxDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MailboxDetails>(global::Microsoft.Graph.Beta.Models.MailboxDetails.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>(global::Microsoft.Graph.Beta.Models.PlaceMode.CreateFromDiscriminatorValue); } },
+                { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlaceServicePlanInfo>(global::Microsoft.Graph.Beta.Models.PlaceServicePlanInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -109,6 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PlaceFeatureEnablement>("heightAdjustableState", HeightAdjustableState);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MailboxDetails>("mailboxDetails", MailboxDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlaceMode>("mode", Mode);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlaceServicePlanInfo>("servicePlans", ServicePlans);
         }
     }
 }

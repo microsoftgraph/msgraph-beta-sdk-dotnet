@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("ramInGB"); }
             set { BackingStore?.Set("ramInGB", value); }
         }
-        /// <summary>The size of the OS Disk in GB. Read-only.</summary>
+        /// <summary>The size of the operating system disk in GB. Read-only.</summary>
         public int? StorageInGB
         {
             get { return BackingStore?.Get<int?>("storageInGB"); }

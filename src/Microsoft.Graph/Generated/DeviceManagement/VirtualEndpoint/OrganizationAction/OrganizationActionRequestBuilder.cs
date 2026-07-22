@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationActi
         {
         }
         /// <summary>
-        /// Invoke action organizationAction
+        /// Trigger a Cloud PC organization action.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-organizationaction?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcOrganizationActionDetail"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationActi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcOrganizationActionDetail>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcOrganizationActionDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action organizationAction
+        /// Trigger a Cloud PC organization action.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

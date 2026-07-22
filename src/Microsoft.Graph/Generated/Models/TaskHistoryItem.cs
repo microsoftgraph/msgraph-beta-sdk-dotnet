@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TaskHistoryItem : global::Microsoft.Graph.Beta.Models.PlannerHistoryItem, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The newData property</summary>
+        /// <summary>A snapshot of the task state after the change. This property is null for deletion events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerTaskData? NewData
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("newData", value); }
         }
 #endif
-        /// <summary>The oldData property</summary>
+        /// <summary>A snapshot of the task state before the change. This property is null for creation and undeletion events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerTaskData? OldData

@@ -37,7 +37,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganiza
         {
         }
         /// <summary>
-        /// Invoke function retrieveOrganizationActionDetail
+        /// Retrieve the details of a cloudPcOrganizationActionDetail.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-retrieveorganizationactiondetail?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcOrganizationActionDetail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveOrganiza
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcOrganizationActionDetail>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcOrganizationActionDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveOrganizationActionDetail
+        /// Retrieve the details of a cloudPcOrganizationActionDetail.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

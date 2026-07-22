@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PlannerHistoryItem : global::Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actor property</summary>
+        /// <summary>The identity of the user or application that performed the change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? Actor
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("actor", value); }
         }
 #endif
-        /// <summary>The entityId property</summary>
+        /// <summary>The ID of the entity that was changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EntityId
@@ -56,13 +56,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HistoryEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
-        /// <summary>The occurredDateTime property</summary>
+        /// <summary>The date and time when the change occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? OccurredDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("occurredDateTime"); }
             set { BackingStore?.Set("occurredDateTime", value); }
         }
-        /// <summary>The planId property</summary>
+        /// <summary>The ID of the plan that contains the changed entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlanId

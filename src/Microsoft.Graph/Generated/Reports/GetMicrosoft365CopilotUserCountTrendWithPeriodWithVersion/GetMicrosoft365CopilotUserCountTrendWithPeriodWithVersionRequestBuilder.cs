@@ -9,35 +9,37 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod
+namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion
 {
     /// <summary>
-    /// Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
+    /// Provides operations to call the getMicrosoft365CopilotUserCountTrend method.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder : BaseRequestBuilder
+    public partial class GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUsageUserDetail(period='{period}')", pathParameters)
+        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
+        public GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "", string version = "") : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUserCountTrend(period='{period}',version='{version}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
+            if (!string.IsNullOrWhiteSpace(version)) PathParameters.Add("version", version);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUsageUserDetail(period='{period}')", rawUrl)
+        public GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUserCountTrend(period='{period}',version='{version}')", rawUrl)
         {
         }
         /// <summary>
-        /// Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta" />
+        /// Get the trend in the daily number of active and enabled users of Microsoft 365 Copilot for a specified time period.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercounttrend?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +62,7 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWith
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
+        /// Get the trend in the daily number of active and enabled users of Microsoft 365 Copilot for a specified time period.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,18 +83,18 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWith
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -9,30 +9,32 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod
+namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion
 {
     /// <summary>
     /// Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder : BaseRequestBuilder
+    public partial class GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUserCountSummary(period='{period}')", pathParameters)
+        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
+        public GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "", string version = "") : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUserCountSummary(period='{period}',version='{version}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
+            if (!string.IsNullOrWhiteSpace(version)) PathParameters.Add("version", version);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUserCountSummary(period='{period}')", rawUrl)
+        public GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getMicrosoft365CopilotUserCountSummary(period='{period}',version='{version}')", rawUrl)
         {
         }
         /// <summary>
@@ -81,18 +83,18 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWit
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

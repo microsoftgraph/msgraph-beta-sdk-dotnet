@@ -146,6 +146,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("phone", value); }
         }
 #endif
+        /// <summary>A stable service-level identifier for the place object used by Places workloads.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlaceId
+        {
+            get { return BackingStore?.Get<string?>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#nullable restore
+#else
+        public string PlaceId
+        {
+            get { return BackingStore?.Get<string>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#endif
         /// <summary>Custom tags that are associated with the place for categorization or filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -200,6 +216,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
+                { "placeId", n => { PlaceId = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -220,6 +237,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("phone", Phone);
+            writer.WriteStringValue("placeId", PlaceId);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
         }
     }

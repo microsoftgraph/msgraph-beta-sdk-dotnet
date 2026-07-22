@@ -3,6 +3,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Count;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName;
+using Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalNameWithRole;
 using Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -76,6 +78,28 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the getByUser method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameRequestBuilder GetByUserWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
+        /// Provides operations to call the getByUser method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalNameWithRole.GetByUserWithUserPrincipalNameWithRoleRequestBuilder"/></returns>
+        /// <param name="role">Usage: role=&apos;{role}&apos;</param>
+        /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalNameWithRole.GetByUserWithUserPrincipalNameWithRoleRequestBuilder GetByUserWithUserPrincipalNameWithRole(string role, string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalNameWithRole.GetByUserWithUserPrincipalNameWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userPrincipalName);
         }
         /// <summary>
         /// Create a new fileStorageContainer object.  The respective container type identified by containerTypeId must be enabled in the tenant.  For delegated calls, the calling user is set as the owner of the fileStorageContainer. 

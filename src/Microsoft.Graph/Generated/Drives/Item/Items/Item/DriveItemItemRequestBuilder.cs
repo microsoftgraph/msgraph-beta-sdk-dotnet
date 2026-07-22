@@ -23,9 +23,11 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWithSta
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.LastModifiedByUser;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Lock;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.PermanentDelete;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ReleaseLock;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Restore;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.SearchWithQ;
@@ -159,6 +161,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.ListItemRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the lock method.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Lock.LockRequestBuilder Lock
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Lock.LockRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
@@ -173,6 +180,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview.PreviewRequestBuilder Preview
         {
             get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the releaseLock method.</summary>
+        public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.ReleaseLock.ReleaseLockRequestBuilder ReleaseLock
+        {
+            get => new global::Microsoft.Graph.Beta.Drives.Item.Items.Item.ReleaseLock.ReleaseLockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
         public global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Restore.RestoreRequestBuilder Restore

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings.SharePoint.ApiUsageReportMet
         {
         }
         /// <summary>
-        /// Get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+        /// Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointreportsettings-list-apiusagereportmetrics?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ApiUsageReportEnablementStatusCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings.SharePoint.ApiUsageReportMet
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ApiUsageReportEnablementStatus>(requestInfo, global::Microsoft.Graph.Beta.Models.ApiUsageReportEnablementStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+        /// Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings.SharePoint.ApiUsageReportMet
             return new global::Microsoft.Graph.Beta.Admin.ReportSettings.SharePoint.ApiUsageReportMetrics.ApiUsageReportMetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+        /// Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApiUsageReportMetricsRequestBuilderGetQueryParameters 

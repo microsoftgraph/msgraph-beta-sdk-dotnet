@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VppToken : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
+        /// <summary>Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices</summary>
+        public global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol? AppleDeviceAppDeliveryProtocolType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol?>("appleDeviceAppDeliveryProtocolType"); }
+            set { BackingStore?.Set("appleDeviceAppDeliveryProtocolType", value); }
+        }
         /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,6 +219,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "appleDeviceAppDeliveryProtocolType", n => { AppleDeviceAppDeliveryProtocolType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>(); } },
                 { "appleId", n => { AppleId = n.GetStringValue(); } },
                 { "automaticallyUpdateApps", n => { AutomaticallyUpdateApps = n.GetBoolValue(); } },
                 { "claimTokenManagementFromExternalMdm", n => { ClaimTokenManagementFromExternalMdm = n.GetBoolValue(); } },
@@ -240,6 +247,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AppleDeviceDeliveryProtocol>("appleDeviceAppDeliveryProtocolType", AppleDeviceAppDeliveryProtocolType);
             writer.WriteStringValue("appleId", AppleId);
             writer.WriteBoolValue("automaticallyUpdateApps", AutomaticallyUpdateApps);
             writer.WriteBoolValue("claimTokenManagementFromExternalMdm", ClaimTokenManagementFromExternalMdm);

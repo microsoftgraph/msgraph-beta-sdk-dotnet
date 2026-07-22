@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Security.Alerts;
 using Microsoft.Graph.Beta.Security.Alerts_v2;
 using Microsoft.Graph.Beta.Security.AttackSimulation;
 using Microsoft.Graph.Beta.Security.AuditLog;
+using Microsoft.Graph.Beta.Security.CaseManagement;
 using Microsoft.Graph.Beta.Security.Cases;
 using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Collaboration;
@@ -73,6 +74,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.AuditLog.AuditLogRequestBuilder AuditLog
         {
             get => new global::Microsoft.Graph.Beta.Security.AuditLog.AuditLogRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the caseManagement property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.CaseManagement.CaseManagementRequestBuilder CaseManagement
+        {
+            get => new global::Microsoft.Graph.Beta.Security.CaseManagement.CaseManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cases property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.Cases.CasesRequestBuilder Cases

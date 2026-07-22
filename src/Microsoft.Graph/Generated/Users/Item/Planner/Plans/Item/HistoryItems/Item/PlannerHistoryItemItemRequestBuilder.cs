@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.HistoryItems.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get historyItems from users
+        /// Collection of history items for entities in the plan. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlannerHistoryItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.HistoryItems.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get historyItems from users
+        /// Collection of history items for entities in the plan. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.HistoryItems.Item
         {
         }
         /// <summary>
-        /// Get historyItems from users
+        /// Collection of history items for entities in the plan. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerHistoryItemItemRequestBuilderGetQueryParameters 
