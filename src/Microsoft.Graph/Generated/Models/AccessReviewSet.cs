@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policy", value); }
         }
 #endif
+        /// <summary>Entry point for the unified (vNext) access reviews API surface. Requests under this path are routed to the vNext service through the dedicated accessReviews/unified path segment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.UnifiedRoot? Unified
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UnifiedRoot?>("unified"); }
+            set { BackingStore?.Set("unified", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.UnifiedRoot Unified
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UnifiedRoot>("unified"); }
+            set { BackingStore?.Set("unified", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -115,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>(global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "instances", n => { Instances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>(global::Microsoft.Graph.Beta.Models.AccessReviewInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewPolicy>(global::Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue); } },
+                { "unified", n => { Unified = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UnifiedRoot>(global::Microsoft.Graph.Beta.Models.UnifiedRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,6 +147,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AccessReviewInstance>("instances", Instances);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessReviewPolicy>("policy", Policy);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UnifiedRoot>("unified", Unified);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("additionalInfo", value); }
         }
 #endif
-        /// <summary>Name of the agent.  Supports $filter (eq, startsWith).</summary>
+        /// <summary>Name of the agent. Deprecated. Use displayName instead. This property will be removed after 2027-04-28.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentDisplayName
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentDisplayName", value); }
         }
 #endif
-        /// <summary>The unique identifier for the agent. This is equivalent to &apos;id&apos; to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).</summary>
+        /// <summary>The unique identifier for the agent. Deprecated. Use identityId instead. This property will be removed after 2027-04-28. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentId
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskDetectionTimingType?>("detectionTimingType"); }
             set { BackingStore?.Set("detectionTimingType", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Human-readable name of the identity associated with this risk detection.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The identityId property</summary>
+        /// <summary>Unique identifier of the identity associated with this risk detection.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityId

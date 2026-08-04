@@ -80,7 +80,8 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.M365Capa
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>(requestInfo, global::Microsoft.Graph.Beta.Models.M365CapabilityBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property m365Capabilities in policies
+        /// Update an existing Microsoft 365 cross-tenant capability for the default cross-tenant access policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-update-m365capabilities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.M365CapabilityBase"/></returns>
         /// <param name="body">The request body</param>
@@ -143,7 +144,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.M365Capa
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property m365Capabilities in policies
+        /// Update an existing Microsoft 365 cross-tenant capability for the default cross-tenant access policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

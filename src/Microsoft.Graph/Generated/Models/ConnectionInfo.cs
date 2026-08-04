@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.externalSapAcConnectionInfo" => new global::Microsoft.Graph.Beta.Models.ExternalSapAcConnectionInfo(),
                 "#microsoft.graph.externalTokenBasedSapIagConnectionInfo" => new global::Microsoft.Graph.Beta.Models.ExternalTokenBasedSapIagConnectionInfo(),
                 _ => new global::Microsoft.Graph.Beta.Models.ConnectionInfo(),
             };

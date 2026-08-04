@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.Brows
             set { BackingStore?.Set("filter", value); }
         }
 #endif
+        /// <summary>The optimizedBrowse property</summary>
+        public bool? OptimizedBrowse
+        {
+            get { return BackingStore?.Get<bool?>("optimizedBrowse"); }
+            set { BackingStore?.Set("optimizedBrowse", value); }
+        }
         /// <summary>The orderBy property</summary>
         public global::Microsoft.Graph.Beta.Models.BrowseQueryOrder? OrderBy
         {
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.Brows
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OptimizedBrowse = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.Brows
                 { "browseLocationItemKey", n => { BrowseLocationItemKey = n.GetStringValue(); } },
                 { "browseResourceType", n => { BrowseResourceType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.BrowsableResourceType>(); } },
                 { "filter", n => { Filter = n.GetStringValue(); } },
+                { "optimizedBrowse", n => { OptimizedBrowse = n.GetBoolValue(); } },
                 { "orderBy", n => { OrderBy = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.BrowseQueryOrder>(); } },
             };
         }
@@ -108,6 +116,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.Brows
             writer.WriteStringValue("browseLocationItemKey", BrowseLocationItemKey);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.BrowsableResourceType>("browseResourceType", BrowseResourceType);
             writer.WriteStringValue("filter", Filter);
+            writer.WriteBoolValue("optimizedBrowse", OptimizedBrowse);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.BrowseQueryOrder>("orderBy", OrderBy);
             writer.WriteAdditionalData(AdditionalData);
         }

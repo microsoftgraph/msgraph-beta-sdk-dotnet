@@ -109,6 +109,7 @@ using Microsoft.Graph.Beta.Me.SendMail;
 using Microsoft.Graph.Beta.Me.ServiceProvisioningErrors;
 using Microsoft.Graph.Beta.Me.Settings;
 using Microsoft.Graph.Beta.Me.Solutions;
+using Microsoft.Graph.Beta.Me.SponsorOf;
 using Microsoft.Graph.Beta.Me.Sponsors;
 using Microsoft.Graph.Beta.Me.Teamwork;
 using Microsoft.Graph.Beta.Me.Todo;
@@ -655,6 +656,11 @@ namespace Microsoft.Graph.Beta.Me
         public global::Microsoft.Graph.Beta.Me.Solutions.SolutionsRequestBuilder Solutions
         {
             get => new global::Microsoft.Graph.Beta.Me.Solutions.SolutionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sponsorOf property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.SponsorOf.SponsorOfRequestBuilder SponsorOf
+        {
+            get => new global::Microsoft.Graph.Beta.Me.SponsorOf.SponsorOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Me.Sponsors.SponsorsRequestBuilder Sponsors

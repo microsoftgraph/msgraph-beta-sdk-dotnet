@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
             set { BackingStore?.Set("initial", value); }
         }
 #endif
+        /// <summary>Ordered drill-in guidance for investigating multitenant application counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=multiTenantApplicationMetrics($expand=investigationHints).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.ActionStep>? InvestigationHints
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.ActionStep>?>("investigationHints"); }
+            set { BackingStore?.Set("investigationHints", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.ActionStep> InvestigationHints
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.ActionStep>>("investigationHints"); }
+            set { BackingStore?.Set("investigationHints", value); }
+        }
+#endif
         /// <summary>The recent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "initial", n => { Initial = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsInitial>(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsInitial.CreateFromDiscriminatorValue); } },
+                { "investigationHints", n => { InvestigationHints = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.ActionStep>(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.ActionStep.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recent", n => { Recent = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsRecent>(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsRecent.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsInitial>("initial", Initial);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.ActionStep>("investigationHints", InvestigationHints);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.MultiTenantApplicationMetricsRecent>("recent", Recent);
         }
     }

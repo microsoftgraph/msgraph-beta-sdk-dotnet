@@ -222,6 +222,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identityAnalytics", value); }
         }
 #endif
+        /// <summary>The microsoftAppsFileStorageContainerUsageSummary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.MicrosoftAppsFileStorageContainerUsage? MicrosoftAppsFileStorageContainerUsageSummary
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftAppsFileStorageContainerUsage?>("microsoftAppsFileStorageContainerUsageSummary"); }
+            set { BackingStore?.Set("microsoftAppsFileStorageContainerUsageSummary", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.MicrosoftAppsFileStorageContainerUsage MicrosoftAppsFileStorageContainerUsageSummary
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MicrosoftAppsFileStorageContainerUsage>("microsoftAppsFileStorageContainerUsageSummary"); }
+            set { BackingStore?.Set("microsoftAppsFileStorageContainerUsageSummary", value); }
+        }
+#endif
         /// <summary>Retrieve a list of monthly print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -429,6 +445,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "dailyPrintUsageSummariesByUser", n => { DailyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>(global::Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "healthMonitoring", n => { HealthMonitoring = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot>(global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot.CreateFromDiscriminatorValue); } },
                 { "identityAnalytics", n => { IdentityAnalytics = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot>(global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot.CreateFromDiscriminatorValue); } },
+                { "microsoftAppsFileStorageContainerUsageSummary", n => { MicrosoftAppsFileStorageContainerUsageSummary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftAppsFileStorageContainerUsage>(global::Microsoft.Graph.Beta.Models.MicrosoftAppsFileStorageContainerUsage.CreateFromDiscriminatorValue); } },
                 { "monthlyPrintUsageByPrinter", n => { MonthlyPrintUsageByPrinter = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "monthlyPrintUsageByUser", n => { MonthlyPrintUsageByUser = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>(global::Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "monthlyPrintUsageSummariesByPrinter", n => { MonthlyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -463,6 +480,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>("dailyPrintUsageSummariesByUser", DailyPrintUsageSummariesByUser);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot>("healthMonitoring", HealthMonitoring);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityAnalyticsRoot>("identityAnalytics", IdentityAnalytics);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftAppsFileStorageContainerUsage>("microsoftAppsFileStorageContainerUsageSummary", MicrosoftAppsFileStorageContainerUsageSummary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("monthlyPrintUsageByPrinter", MonthlyPrintUsageByPrinter);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByUser>("monthlyPrintUsageByUser", MonthlyPrintUsageByUser);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("monthlyPrintUsageSummariesByPrinter", MonthlyPrintUsageSummariesByPrinter);

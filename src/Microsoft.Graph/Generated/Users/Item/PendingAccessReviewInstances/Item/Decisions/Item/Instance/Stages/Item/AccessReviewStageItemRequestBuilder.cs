@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.AcceptRecommendations;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.BatchRecordDecisions;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Stop;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +22,16 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Deci
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessReviewStageItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the acceptRecommendations method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.AcceptRecommendations.AcceptRecommendationsRequestBuilder AcceptRecommendations
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.AcceptRecommendations.AcceptRecommendationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder BatchRecordDecisions
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.DecisionsRequestBuilder Decisions
         {

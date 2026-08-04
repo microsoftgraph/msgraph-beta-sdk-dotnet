@@ -12,6 +12,38 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PolicyTipAction : global::Microsoft.Graph.Beta.Models.DlpActionInfo, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The complianceUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComplianceUrl
+        {
+            get { return BackingStore?.Get<string?>("complianceUrl"); }
+            set { BackingStore?.Set("complianceUrl", value); }
+        }
+#nullable restore
+#else
+        public string ComplianceUrl
+        {
+            get { return BackingStore?.Get<string>("complianceUrl"); }
+            set { BackingStore?.Set("complianceUrl", value); }
+        }
+#endif
+        /// <summary>The matchedConditionsDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MatchedConditionsDescription
+        {
+            get { return BackingStore?.Get<string?>("matchedConditionsDescription"); }
+            set { BackingStore?.Set("matchedConditionsDescription", value); }
+        }
+#nullable restore
+#else
+        public string MatchedConditionsDescription
+        {
+            get { return BackingStore?.Get<string>("matchedConditionsDescription"); }
+            set { BackingStore?.Set("matchedConditionsDescription", value); }
+        }
+#endif
         /// <summary>The text of the policy tip that explains what triggered the DLP policy. Developers can display this information to users in the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +83,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "complianceUrl", n => { ComplianceUrl = n.GetStringValue(); } },
+                { "matchedConditionsDescription", n => { MatchedConditionsDescription = n.GetStringValue(); } },
                 { "policyTip", n => { PolicyTip = n.GetStringValue(); } },
             };
         }
@@ -62,6 +96,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("complianceUrl", ComplianceUrl);
+            writer.WriteStringValue("matchedConditionsDescription", MatchedConditionsDescription);
             writer.WriteStringValue("policyTip", PolicyTip);
         }
     }

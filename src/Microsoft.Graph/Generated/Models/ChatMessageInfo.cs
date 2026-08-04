@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn&apos;t return @mentions and attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.ItemBody? Body
+        public global::Microsoft.Graph.Beta.Models.ChatMessageBody? Body
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody?>("body"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChatMessageBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.ItemBody Body
+        public global::Microsoft.Graph.Beta.Models.ChatMessageBody Body
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody>("body"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChatMessageBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>(global::Microsoft.Graph.Beta.Models.ChatMessageBody.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "eventDetail", n => { EventDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EventMessageDetail>(global::Microsoft.Graph.Beta.Models.EventMessageDetail.CreateFromDiscriminatorValue); } },
                 { "from", n => { From = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageFromIdentitySet>(global::Microsoft.Graph.Beta.Models.ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>("body", Body);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EventMessageDetail>("eventDetail", EventDetail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageFromIdentitySet>("from", From);

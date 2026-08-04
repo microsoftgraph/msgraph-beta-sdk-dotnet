@@ -28,22 +28,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DistributionListMember>? DistributionListMembers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DistributionListMember>?>("distributionListMembers"); }
-            set { BackingStore?.Set("distributionListMembers", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.DistributionListMember> DistributionListMembers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DistributionListMember>>("distributionListMembers"); }
-            set { BackingStore?.Set("distributionListMembers", value); }
-        }
-#endif
         /// <summary>The list of members in the distribution list. Not returned by default; use $select=members to include.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,7 +118,6 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "distributionListMembers", n => { DistributionListMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionListMember>(global::Microsoft.Graph.Beta.Models.DistributionListMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Member>(global::Microsoft.Graph.Beta.Models.Member.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "personIdentifier", n => { PersonIdentifier = n.GetStringValue(); } },
@@ -150,7 +133,6 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionListMember>("distributionListMembers", DistributionListMembers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Member>("members", Members);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("personIdentifier", PersonIdentifier);

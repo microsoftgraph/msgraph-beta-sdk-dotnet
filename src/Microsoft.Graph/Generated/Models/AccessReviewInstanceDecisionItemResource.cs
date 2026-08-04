@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.</summary>
+        /// <summary>Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type
@@ -121,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource" => new global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(),
+                "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource" => new global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemAccessPackageResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource" => new global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemAzureRoleResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource" => new global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemCustomDataProvidedResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource" => new global::Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemServicePrincipalResource(),

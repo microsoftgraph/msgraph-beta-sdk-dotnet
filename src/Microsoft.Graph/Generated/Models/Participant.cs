@@ -148,6 +148,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<long?>("rosterSequenceNumber"); }
             set { BackingStore?.Set("rosterSequenceNumber", value); }
         }
+        /// <summary>The syntheticMediaDetection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo? SyntheticMediaDetection
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo?>("syntheticMediaDetection"); }
+            set { BackingStore?.Set("syntheticMediaDetection", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo SyntheticMediaDetection
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo>("syntheticMediaDetection"); }
+            set { BackingStore?.Set("syntheticMediaDetection", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -177,6 +193,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "removedState", n => { RemovedState = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RemovedState>(global::Microsoft.Graph.Beta.Models.RemovedState.CreateFromDiscriminatorValue); } },
                 { "restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingRestricted>(global::Microsoft.Graph.Beta.Models.OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
                 { "rosterSequenceNumber", n => { RosterSequenceNumber = n.GetLongValue(); } },
+                { "syntheticMediaDetection", n => { SyntheticMediaDetection = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo>(global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -198,6 +215,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RemovedState>("removedState", RemovedState);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingRestricted>("restrictedExperience", RestrictedExperience);
             writer.WriteLongValue("rosterSequenceNumber", RosterSequenceNumber);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo>("syntheticMediaDetection", SyntheticMediaDetection);
         }
     }
 }

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis
         {
         }
         /// <summary>
-        /// Get customEmojis from teamwork
+        /// Get a list of custom emojis available in the teamwork messaging of the organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkmessaging-list-customemojis?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkCustomEmojiCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkCustomEmojiCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkCustomEmojiCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to customEmojis for teamwork
+        /// Create a new custom emoji in the teamwork messaging of the organization, which adds the custom emoji to Teams for the tenant. The emoji image is provided as base64-encoded content bytes.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkmessaging-post-customemojis?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get customEmojis from teamwork
+        /// Get a list of custom emojis available in the teamwork messaging of the organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customEmojis for teamwork
+        /// Create a new custom emoji in the teamwork messaging of the organization, which adds the custom emoji to Teams for the tenant. The emoji image is provided as base64-encoded content bytes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis
             return new global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.CustomEmojisRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get customEmojis from teamwork
+        /// Get a list of custom emojis available in the teamwork messaging of the organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomEmojisRequestBuilderGetQueryParameters 

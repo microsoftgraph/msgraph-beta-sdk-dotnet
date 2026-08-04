@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("verifiedIdProfileConfiguration", value); }
         }
 #endif
-        /// <summary>Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue. Required.</summary>
+        /// <summary>Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue, verification. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: verification. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.VerifiedIdUsageConfiguration>? VerifiedIdUsageConfigurations

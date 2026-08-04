@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitions;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Instances;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Unified;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy.PolicyRequestBuilder Policy
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the unified property of the microsoft.graph.accessReviewSet entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Unified.UnifiedRequestBuilder Unified
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Unified.UnifiedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.AccessReviewsRequestBuilder"/> and sets the default values.

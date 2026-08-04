@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
             set { BackingStore?.Set("deviceMetadata", value); }
         }
 #endif
+        /// <summary>The evaluationScope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.EvaluationScope? EvaluationScope
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EvaluationScope?>("evaluationScope"); }
+            set { BackingStore?.Set("evaluationScope", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.EvaluationScope EvaluationScope
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EvaluationScope>("evaluationScope"); }
+            set { BackingStore?.Set("evaluationScope", value); }
+        }
+#endif
         /// <summary>The integratedAppMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +126,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
             {
                 { "activities", n => { Activities = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.UserActivityTypes>(); } },
                 { "deviceMetadata", n => { DeviceMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceMetadata>(global::Microsoft.Graph.Beta.Models.DeviceMetadata.CreateFromDiscriminatorValue); } },
+                { "evaluationScope", n => { EvaluationScope = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EvaluationScope>(global::Microsoft.Graph.Beta.Models.EvaluationScope.CreateFromDiscriminatorValue); } },
                 { "integratedAppMetadata", n => { IntegratedAppMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata>(global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata.CreateFromDiscriminatorValue); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>(global::Microsoft.Graph.Beta.Models.PolicyLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pivotOn", n => { PivotOn = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PolicyPivotProperty>(); } },
@@ -124,6 +141,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.UserActivityTypes>("activities", Activities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceMetadata>("deviceMetadata", DeviceMetadata);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EvaluationScope>("evaluationScope", EvaluationScope);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata>("integratedAppMetadata", IntegratedAppMetadata);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>("locations", Locations);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PolicyPivotProperty>("pivotOn", PivotOn);

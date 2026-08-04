@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.TenantGovernanceServices
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Indicates whether this tenant is a Microsoft infrastructure tenant.</summary>
+        /// <summary>Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.</summary>
         public bool? IsMicrosoftInfrastructure
         {
             get { return BackingStore?.Get<bool?>("isMicrosoftInfrastructure"); }
