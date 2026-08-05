@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations;
 using Microsoft.Graph.Beta.Security.CaseManagement.Cases;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement
         public global::Microsoft.Graph.Beta.Security.CaseManagement.Cases.CasesRequestBuilder Cases
         {
             get => new global::Microsoft.Graph.Beta.Security.CaseManagement.Cases.CasesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the caseTypeConfigurations property of the microsoft.graph.security.caseManagementRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.CaseTypeConfigurationsRequestBuilder CaseTypeConfigurations
+        {
+            get => new global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.CaseTypeConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.CaseManagement.CaseManagementRequestBuilder"/> and sets the default values.

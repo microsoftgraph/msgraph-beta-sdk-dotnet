@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.ItemBody? Body
+        public global::Microsoft.Graph.Beta.Models.ChatMessageBody? Body
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody?>("body"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChatMessageBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.ItemBody Body
+        public global::Microsoft.Graph.Beta.Models.ChatMessageBody Body
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody>("body"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChatMessageBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -236,7 +236,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "appClass", n => { AppClass = n.GetStringValue(); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiInteractionAttachment>(global::Microsoft.Graph.Beta.Models.AiInteractionAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>(global::Microsoft.Graph.Beta.Models.ChatMessageBody.CreateFromDiscriminatorValue); } },
                 { "contexts", n => { Contexts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiInteractionContext>(global::Microsoft.Graph.Beta.Models.AiInteractionContext.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversationType", n => { ConversationType = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("appClass", AppClass);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiInteractionAttachment>("attachments", Attachments);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>("body", Body);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AiInteractionContext>("contexts", Contexts);
             writer.WriteStringValue("conversationType", ConversationType);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

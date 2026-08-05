@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class VerifiedIdProfileConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Trusted Verified ID issuer.</summary>
+        /// <summary>Trusted Verified ID issuer. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AcceptedIssuer
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Claim bindings from Verified ID to source attributes.</summary>
+        /// <summary>Claim bindings from Verified ID to source attributes. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ClaimBinding>? ClaimBindings
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Verified ID type.</summary>
+        /// <summary>Verified ID type. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

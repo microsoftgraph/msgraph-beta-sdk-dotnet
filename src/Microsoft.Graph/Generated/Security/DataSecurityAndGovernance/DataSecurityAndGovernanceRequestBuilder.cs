@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.PolicyFiles;
+using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContent;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContentAsync;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.SensitivityLabels;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance
         public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.PolicyFiles.PolicyFilesRequestBuilder PolicyFiles
         {
             get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.PolicyFiles.PolicyFilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the processContent method.</summary>
+        public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContent.ProcessContentRequestBuilder ProcessContent
+        {
+            get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContent.ProcessContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the processContentAsync method.</summary>
         public global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContentAsync.ProcessContentAsyncRequestBuilder ProcessContentAsync

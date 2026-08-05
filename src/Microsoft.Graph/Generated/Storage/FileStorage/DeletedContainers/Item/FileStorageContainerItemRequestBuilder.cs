@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.ProvisionM
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.RecycleBin;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Restore;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.TransferPrincipalOwnership;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -91,6 +92,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder SharePointGroups
         {
             get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the transferPrincipalOwnership method.</summary>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.TransferPrincipalOwnership.TransferPrincipalOwnershipRequestBuilder TransferPrincipalOwnership
+        {
+            get => new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.TransferPrincipalOwnership.TransferPrincipalOwnershipRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
         public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Unarchive.UnarchiveRequestBuilder Unarchive

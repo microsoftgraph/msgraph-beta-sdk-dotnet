@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
         {
         }
         /// <summary>
-        /// Invoke action disablePolicy
+        /// Disable an eDiscovery hold policy (legal hold) to release the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-disablepolicy?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action disablePolicy
+        /// Disable an eDiscovery hold policy (legal hold) to release the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

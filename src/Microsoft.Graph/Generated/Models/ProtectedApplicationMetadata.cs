@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applicationLocation", value); }
         }
 #endif
+        /// <summary>The sourceLocation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.PolicyLocation? SourceLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PolicyLocation?>("sourceLocation"); }
+            set { BackingStore?.Set("sourceLocation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.PolicyLocation SourceLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PolicyLocation>("sourceLocation"); }
+            set { BackingStore?.Set("sourceLocation", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ProtectedApplicationMetadata"/> and sets the default values.
         /// </summary>
@@ -54,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "applicationLocation", n => { ApplicationLocation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PolicyLocation>(global::Microsoft.Graph.Beta.Models.PolicyLocation.CreateFromDiscriminatorValue); } },
+                { "sourceLocation", n => { SourceLocation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PolicyLocation>(global::Microsoft.Graph.Beta.Models.PolicyLocation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PolicyLocation>("applicationLocation", ApplicationLocation);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PolicyLocation>("sourceLocation", SourceLocation);
         }
     }
 }

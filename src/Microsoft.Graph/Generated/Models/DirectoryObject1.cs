@@ -318,6 +318,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("recovery", value); }
         }
 #endif
+        /// <summary>Collection of groups in remote Microsoft Entra tenants that are available in the directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.RemoteTenantGroup>? RemoteTenantGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RemoteTenantGroup>?>("remoteTenantGroups"); }
+            set { BackingStore?.Set("remoteTenantGroups", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.RemoteTenantGroup> RemoteTenantGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RemoteTenantGroup>>("remoteTenantGroups"); }
+            set { BackingStore?.Set("remoteTenantGroups", value); }
+        }
+#endif
         /// <summary>The sharedEmailDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -419,6 +435,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "recommendationConfiguration", n => { RecommendationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecommendationConfiguration>(global::Microsoft.Graph.Beta.Models.RecommendationConfiguration.CreateFromDiscriminatorValue); } },
                 { "recommendations", n => { Recommendations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Recommendation>(global::Microsoft.Graph.Beta.Models.Recommendation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recovery", n => { Recovery = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.Recovery>(global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.Recovery.CreateFromDiscriminatorValue); } },
+                { "remoteTenantGroups", n => { RemoteTenantGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RemoteTenantGroup>(global::Microsoft.Graph.Beta.Models.RemoteTenantGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sharedEmailDomains", n => { SharedEmailDomains = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedEmailDomain>(global::Microsoft.Graph.Beta.Models.SharedEmailDomain.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CompanySubscription>(global::Microsoft.Graph.Beta.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templates", n => { Templates = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Template>(global::Microsoft.Graph.Beta.Models.Template.CreateFromDiscriminatorValue); } },
@@ -452,6 +469,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecommendationConfiguration>("recommendationConfiguration", RecommendationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Recommendation>("recommendations", Recommendations);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EntraRecoveryServices.Recovery>("recovery", Recovery);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RemoteTenantGroup>("remoteTenantGroups", RemoteTenantGroups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedEmailDomain>("sharedEmailDomains", SharedEmailDomains);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CompanySubscription>("subscriptions", Subscriptions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Template>("templates", Templates);

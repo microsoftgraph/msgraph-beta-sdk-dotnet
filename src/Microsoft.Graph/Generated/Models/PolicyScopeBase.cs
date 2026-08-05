@@ -33,6 +33,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExecutionMode?>("executionMode"); }
             set { BackingStore?.Set("executionMode", value); }
         }
+        /// <summary>The locationExclusions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PolicyLocation>? LocationExclusions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PolicyLocation>?>("locationExclusions"); }
+            set { BackingStore?.Set("locationExclusions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PolicyLocation> LocationExclusions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PolicyLocation>>("locationExclusions"); }
+            set { BackingStore?.Set("locationExclusions", value); }
+        }
+#endif
         /// <summary>The locations (like domains or URLs) to be protected. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "activities", n => { Activities = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.UserActivityTypes>(); } },
                 { "executionMode", n => { ExecutionMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ExecutionMode>(); } },
+                { "locationExclusions", n => { LocationExclusions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>(global::Microsoft.Graph.Beta.Models.PolicyLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>(global::Microsoft.Graph.Beta.Models.PolicyLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyActions", n => { PolicyActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DlpActionInfo>(global::Microsoft.Graph.Beta.Models.DlpActionInfo.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -129,6 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.UserActivityTypes>("activities", Activities);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ExecutionMode>("executionMode", ExecutionMode);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>("locationExclusions", LocationExclusions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>("locations", Locations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DlpActionInfo>("policyActions", PolicyActions);

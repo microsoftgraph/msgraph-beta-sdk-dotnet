@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Defines if Face Check is required. Currently must always be true.</summary>
+        /// <summary>Indicates whether Face Check is required. Currently must be true.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Source of photo to validate Face Check against. Currently must always be portrait</summary>
+        /// <summary>The source claim name for the photo used to validate Face Check. Currently must be portrait.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourcePhotoClaimName

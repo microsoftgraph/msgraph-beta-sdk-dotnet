@@ -31,16 +31,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Beta.Models.ItemBody? Body
+        public global::Microsoft.Graph.Beta.Models.ChatMessageBody? Body
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody?>("body"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChatMessageBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Beta.Models.ItemBody Body
+        public global::Microsoft.Graph.Beta.Models.ChatMessageBody Body
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ItemBody>("body"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChatMessageBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -376,7 +376,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessageAttachment>(global::Microsoft.Graph.Beta.Models.ChatMessageAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>(global::Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>(global::Microsoft.Graph.Beta.Models.ChatMessageBody.CreateFromDiscriminatorValue); } },
                 { "channelIdentity", n => { ChannelIdentity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChannelIdentity>(global::Microsoft.Graph.Beta.Models.ChannelIdentity.CreateFromDiscriminatorValue); } },
                 { "chatId", n => { ChatId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -411,7 +411,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessageAttachment>("attachments", Attachments);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>("body", Body);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChannelIdentity>("channelIdentity", ChannelIdentity);
             writer.WriteStringValue("chatId", ChatId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

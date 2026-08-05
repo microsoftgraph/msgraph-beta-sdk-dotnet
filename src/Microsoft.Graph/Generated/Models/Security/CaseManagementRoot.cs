@@ -29,6 +29,22 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("cases", value); }
         }
 #endif
+        /// <summary>The collection of case type configurations that define the statuses and custom fields available for each case type. Read-only. Supports $select, $count, and $expand of the statuses and customFields relationships.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTypeConfiguration>? CaseTypeConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTypeConfiguration>?>("caseTypeConfigurations"); }
+            set { BackingStore?.Set("caseTypeConfigurations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTypeConfiguration> CaseTypeConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTypeConfiguration>>("caseTypeConfigurations"); }
+            set { BackingStore?.Set("caseTypeConfigurations", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "caseTypeConfigurations", n => { CaseTypeConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTypeConfiguration>(global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTypeConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cases", n => { Cases = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Case>(global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Case.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -59,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Case>("cases", Cases);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTypeConfiguration>("caseTypeConfigurations", CaseTypeConfigurations);
         }
     }
 }

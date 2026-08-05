@@ -47,9 +47,9 @@ using Microsoft.Graph.Beta.Reports.GetMailboxUsageDetailWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageMailboxCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageQuotaStatusMailboxCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageStorageWithPeriod;
-using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion;
-using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion;
-using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail;
@@ -79,6 +79,10 @@ using Microsoft.Graph.Beta.Reports.GetSharePointActivityPagesWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetSharePointActivityUserCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetSharePointActivityUserDetailWithDate;
 using Microsoft.Graph.Beta.Reports.GetSharePointActivityUserDetailWithPeriod;
+using Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDateWithAppIdreportTypeReportType;
+using Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDatereportTypeReportType;
+using Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportType;
+using Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodreportTypeReportType;
 using Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageDetailWithDate;
 using Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageDetailWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageFileCountsWithPeriod;
@@ -144,6 +148,7 @@ using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetailsWithSkip
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureTrends;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentTopFailures;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod;
+using Microsoft.Graph.Beta.Reports.MicrosoftAppsFileStorageContainerUsageSummary;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter;
@@ -300,6 +305,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentTopFailures.ManagedDeviceEnrollmentTopFailuresRequestBuilder ManagedDeviceEnrollmentTopFailures
         {
             get => new global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentTopFailures.ManagedDeviceEnrollmentTopFailuresRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the microsoftAppsFileStorageContainerUsageSummary property of the microsoft.graph.reportRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.MicrosoftAppsFileStorageContainerUsageSummary.MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilder MicrosoftAppsFileStorageContainerUsageSummary
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.MicrosoftAppsFileStorageContainerUsageSummary.MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter.MonthlyPrintUsageByPrinterRequestBuilder MonthlyPrintUsageByPrinter
@@ -672,38 +682,32 @@ namespace Microsoft.Graph.Beta.Reports
         /// <summary>
         /// Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder"/></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion(string period, string version)
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion(string period)
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            if(string.IsNullOrEmpty(version)) throw new ArgumentNullException(nameof(version));
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder(PathParameters, RequestAdapter, period, version);
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder"/></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion(string period, string version)
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion(string period)
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            if(string.IsNullOrEmpty(version)) throw new ArgumentNullException(nameof(version));
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder(PathParameters, RequestAdapter, period, version);
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Provides operations to call the getMicrosoft365CopilotUserCountTrend method.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder"/></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        /// <param name="version">Usage: version=&apos;{version}&apos;</param>
-        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion(string period, string version)
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion(string period)
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            if(string.IsNullOrEmpty(version)) throw new ArgumentNullException(nameof(version));
-            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder(PathParameters, RequestAdapter, period, version);
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserCounts method.
@@ -968,6 +972,50 @@ namespace Microsoft.Graph.Beta.Reports
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
             return new global::Microsoft.Graph.Beta.Reports.GetSharePointActivityUserDetailWithPeriod.GetSharePointActivityUserDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the getSharePointApiUsage method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDatereportTypeReportType.GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder"/></returns>
+        /// <param name="date">Usage: date={date}</param>
+        public global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDatereportTypeReportType.GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder GetSharePointApiUsageWithDatereportTypeReportType(DateTimeOffset? date)
+        {
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
+            return new global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDatereportTypeReportType.GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder(PathParameters, RequestAdapter, date);
+        }
+        /// <summary>
+        /// Provides operations to call the getSharePointApiUsage method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDateWithAppIdreportTypeReportType.GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder"/></returns>
+        /// <param name="appId">Usage: appId=&apos;{appId}&apos;</param>
+        /// <param name="date">Usage: date={date}</param>
+        public global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDateWithAppIdreportTypeReportType.GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder GetSharePointApiUsageWithDateWithAppIdreportTypeReportType(string appId, DateTimeOffset? date)
+        {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
+            return new global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithDateWithAppIdreportTypeReportType.GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder(PathParameters, RequestAdapter, appId, date);
+        }
+        /// <summary>
+        /// Provides operations to call the getSharePointApiUsage method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodreportTypeReportType.GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder"/></returns>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodreportTypeReportType.GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder GetSharePointApiUsageWithPeriodreportTypeReportType(string period)
+        {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodreportTypeReportType.GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the getSharePointApiUsage method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportType.GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder"/></returns>
+        /// <param name="appId">Usage: appId=&apos;{appId}&apos;</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportType.GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportType(string appId, string period)
+        {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new global::Microsoft.Graph.Beta.Reports.GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportType.GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder(PathParameters, RequestAdapter, appId, period);
         }
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageDetail method.

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get messaging from teamwork
+        /// The messaging functionality, including custom emojis.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkMessaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging
             return requestInfo;
         }
         /// <summary>
-        /// Get messaging from teamwork
+        /// The messaging functionality, including custom emojis.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging
         {
         }
         /// <summary>
-        /// Get messaging from teamwork
+        /// The messaging functionality, including custom emojis.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessagingRequestBuilderGetQueryParameters 

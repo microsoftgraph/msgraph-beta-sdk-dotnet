@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.AdmitFromLobby;
 using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.Mute;
 using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.RemoveFromLobby;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.ReportSyntheticMedia;
 using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StartHoldMusic;
 using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StopHoldMusic;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -37,6 +38,11 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item
         public global::Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.RemoveFromLobby.RemoveFromLobbyRequestBuilder RemoveFromLobby
         {
             get => new global::Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.RemoveFromLobby.RemoveFromLobbyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reportSyntheticMedia method.</summary>
+        public global::Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.ReportSyntheticMedia.ReportSyntheticMediaRequestBuilder ReportSyntheticMedia
+        {
+            get => new global::Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.ReportSyntheticMedia.ReportSyntheticMediaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the startHoldMusic method.</summary>
         public global::Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StartHoldMusic.StartHoldMusicRequestBuilder StartHoldMusic

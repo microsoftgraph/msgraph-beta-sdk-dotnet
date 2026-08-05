@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.permissionGrantPolicy" => new global::Microsoft.Graph.Beta.Models.PermissionGrantPolicy(),
                 "#microsoft.graph.permissionGrantPreApprovalPolicy" => new global::Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy(),
                 "#microsoft.graph.policyBase" => new global::Microsoft.Graph.Beta.Models.PolicyBase(),
+                "#microsoft.graph.remoteTenantGroup" => new global::Microsoft.Graph.Beta.Models.RemoteTenantGroup(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.servicePrincipal" => new global::Microsoft.Graph.Beta.Models.ServicePrincipal(),
                 "#microsoft.graph.servicePrincipalCreationPolicy" => new global::Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy(),

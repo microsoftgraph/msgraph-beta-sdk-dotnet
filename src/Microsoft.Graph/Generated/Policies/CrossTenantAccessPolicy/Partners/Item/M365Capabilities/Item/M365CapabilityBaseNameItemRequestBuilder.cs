@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.M3
         {
         }
         /// <summary>
-        /// Delete navigation property m365Capabilities for policies
+        /// Delete a Microsoft 365 cross-tenant capability from a partner organization in the cross-tenant access policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-delete-m365capabilities?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.M3
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>(requestInfo, global::Microsoft.Graph.Beta.Models.M365CapabilityBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property m365Capabilities in policies
+        /// Update an existing Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-update-m365capabilities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.M365CapabilityBase"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.M3
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.M365CapabilityBase>(requestInfo, global::Microsoft.Graph.Beta.Models.M365CapabilityBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property m365Capabilities for policies
+        /// Delete a Microsoft 365 cross-tenant capability from a partner organization in the cross-tenant access policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.M3
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property m365Capabilities in policies
+        /// Update an existing Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

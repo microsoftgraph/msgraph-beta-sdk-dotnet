@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isTeamsEnabled"); }
             set { BackingStore?.Set("isTeamsEnabled", value); }
         }
-        /// <summary>The messaging property</summary>
+        /// <summary>The messaging functionality, including custom emojis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.TeamworkMessaging? Messaging

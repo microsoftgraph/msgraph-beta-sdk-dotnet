@@ -74,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.policyLocationApplication" => new global::Microsoft.Graph.Beta.Models.PolicyLocationApplication(),
                 "#microsoft.graph.policyLocationDomain" => new global::Microsoft.Graph.Beta.Models.PolicyLocationDomain(),
+                "#microsoft.graph.policyLocationTool" => new global::Microsoft.Graph.Beta.Models.PolicyLocationTool(),
                 "#microsoft.graph.policyLocationUrl" => new global::Microsoft.Graph.Beta.Models.PolicyLocationUrl(),
                 _ => new global::Microsoft.Graph.Beta.Models.PolicyLocation(),
             };
