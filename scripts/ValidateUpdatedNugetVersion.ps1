@@ -16,6 +16,12 @@
 
 .Parameter projectPath
     Specifies the path to the project file.
+
+.Parameter nugetConfigPath
+    Specifies the path to the nuget.config file that points at the organization's Central
+    Feed Service (CFS) NuGet feed. The feed is used (instead of calling the public NuGet.org
+    API directly) so this check stays compliant with the SFI-ES4.2.4 / CFSClean network
+    isolation policy enforced on the build agents.
 #>
 
 Param(
@@ -23,7 +29,10 @@ Param(
     [string]$packageName,
 
     [parameter(Mandatory = $true)]
-    [string]$projectPath
+    [string]$projectPath,
+
+    [parameter(Mandatory = $true)]
+    [string]$nugetConfigPath
 )
 
 [xml]$xmlDoc = Get-Content $projectPath
@@ -34,25 +43,31 @@ $versionString = $xmlDoc.Project.PropertyGroup[0].Version
 # System.Version, get the version prefix.
 $currentProjectVersion = [System.Management.Automation.SemanticVersion]"$versionString"
 
-# API is case-sensitive
-$packageName = $packageName.ToLower()
-$url = "https://azuresearch-usnc.nuget.org/query?q=packageid:$packageName&prerelease=true&semVerLevel=2.0.0"
-
-# Call the NuGet API for the package and get the current published version.
+# Look up the package's published versions through the CFS feed configured in
+# $nugetConfigPath (see the 'Create nuget.config (central feed)' pipeline step) rather than
+# calling the public NuGet.org search API directly. The feed has NuGet.org configured as an
+# upstream source, so it transparently proxies searches for packages -- including this one --
+# that live upstream, keeping this check both functional and CFSClean-compliant.
 Try {
-    $nugetIndex = Invoke-RestMethod -Uri $url -Method Get
+    $searchResultJson = dotnet package search $packageName --configfile $nugetConfigPath --exact-match --prerelease --format json
+    if ($LASTEXITCODE -ne 0) {
+        throw "dotnet package search exited with code $LASTEXITCODE"
+    }
+
+    $searchResult = $searchResultJson | ConvertFrom-Json
+    $matchingPackages = $searchResult.searchResult | ForEach-Object { $_.packages } | Where-Object { $_.id -ieq $packageName }
 }
 Catch {
-    if ($_.ErrorDetails.Message && $_.ErrorDetails.Message.Contains("The specified blob does not exist.")) {
-        Write-Host "No package exists. You will probably be publishing $packageName for the first time."
-        Exit # exit gracefully
-    }
-    
     Write-Host $_
     Exit 1
 }
 
-$currentPublishedVersion = [System.Management.Automation.SemanticVersion]$nugetIndex.data[0].version
+if (-not $matchingPackages) {
+    Write-Host "No package exists. You will probably be publishing $packageName for the first time."
+    Exit # exit gracefully
+}
+
+$currentPublishedVersion = ($matchingPackages | ForEach-Object { [System.Management.Automation.SemanticVersion]$_.version } | Sort-Object)[-1]
 
 # Validate that the version number has been updated.
 if ($currentProjectVersion -le $currentPublishedVersion) {
