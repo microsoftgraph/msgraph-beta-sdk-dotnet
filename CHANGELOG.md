@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does NOT adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and packages shipped from the beta service library will always be in `preview` as changes to the API are for non production use and commonly ship breaking changes.
 
 
+## [6.5.1-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/6.5.0-preview...6.5.1-preview) (2026-08-05)
+
+
+### Bug Fixes
+
+* **pipelines:** route NuGet version check through CFS feed to resolve CFSClean violation ([#1146](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/1146)) ([cc5f8e8](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/cc5f8e8a1b890dfc2e0fa0d1971dd9de0f17b15f))
+
 ## [6.5.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/6.4.0-preview...6.5.0-preview) (2026-08-05)
 
 
