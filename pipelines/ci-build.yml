@@ -142,7 +142,7 @@ extends:
           inputs:
             command: 'test'
             arguments: '--configuration $(BuildConfiguration) --no-build --verbosity normal'
-        - task: EsrpCodeSigning@5
+        - task: EsrpCodeSigning@6
           displayName: 'ESRP DLL Strong Name (Microsoft.Graph.Beta)'
           inputs:
             ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
@@ -175,7 +175,7 @@ extends:
             MaxConcurrency: 50
             MaxRetryAttempts: 5
             PendingAnalysisWaitTimeoutMinutes: 5
-        - task: EsrpCodeSigning@5
+        - task: EsrpCodeSigning@6
           displayName: 'ESRP DLL CodeSigning (Microsoft.Graph.Beta)'
           inputs:
             ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
@@ -235,7 +235,7 @@ extends:
           env:
             BUILD_CONFIGURATION: $(BuildConfiguration)
           displayName: 'dotnet pack'
-        - task: EsrpCodeSigning@5
+        - task: EsrpCodeSigning@6
           displayName: 'ESRP NuGet CodeSigning'
           inputs:
             ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
