@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Planner.Buckets;
+using Microsoft.Graph.Beta.Planner.Goals;
 using Microsoft.Graph.Beta.Planner.Plans;
 using Microsoft.Graph.Beta.Planner.Rosters;
 using Microsoft.Graph.Beta.Planner.Tasks;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Beta.Planner
         public global::Microsoft.Graph.Beta.Planner.Buckets.BucketsRequestBuilder Buckets
         {
             get => new global::Microsoft.Graph.Beta.Planner.Buckets.BucketsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the goals property of the microsoft.graph.planner entity.</summary>
+        public global::Microsoft.Graph.Beta.Planner.Goals.GoalsRequestBuilder Goals
+        {
+            get => new global::Microsoft.Graph.Beta.Planner.Goals.GoalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the plans property of the microsoft.graph.planner entity.</summary>
         public global::Microsoft.Graph.Beta.Planner.Plans.PlansRequestBuilder Plans

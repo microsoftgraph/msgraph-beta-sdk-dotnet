@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new global::Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat(),
                 "#microsoft.graph.plannerBucket" => new global::Microsoft.Graph.Beta.Models.PlannerBucket(),
                 "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new global::Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerGoal" => new global::Microsoft.Graph.Beta.Models.PlannerGoal(),
                 "#microsoft.graph.plannerHistoryItem" => new global::Microsoft.Graph.Beta.Models.PlannerHistoryItem(),
                 "#microsoft.graph.plannerPlan" => new global::Microsoft.Graph.Beta.Models.PlannerPlan(),
                 "#microsoft.graph.plannerPlanDetails" => new global::Microsoft.Graph.Beta.Models.PlannerPlanDetails(),

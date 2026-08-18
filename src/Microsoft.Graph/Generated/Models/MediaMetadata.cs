@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The audioMetadata property</summary>
+        /// <summary>Audio-specific encoding details. Nullable. Set when the analyzed content is audio or multimodal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AudioMetadata? AudioMetadata
@@ -37,25 +37,25 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The byteSize property</summary>
+        /// <summary>Size of the content in bytes. Set this value to 0 for live streams where the total size is unknown; for recorded files, specify the actual size.</summary>
         public long? ByteSize
         {
             get { return BackingStore?.Get<long?>("byteSize"); }
             set { BackingStore?.Set("byteSize", value); }
         }
-        /// <summary>The duration property</summary>
+        /// <summary>Duration of the analyzed content in whole seconds. Sub-second or millisecond windows are rounded to the nearest second. For a continuous live stream, set this value to the length of the analysis window.</summary>
         public int? Duration
         {
             get { return BackingStore?.Get<int?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
-        /// <summary>The isRealTime property</summary>
+        /// <summary>Indicates whether the analysis was performed in real time on a live stream.</summary>
         public bool? IsRealTime
         {
             get { return BackingStore?.Get<bool?>("isRealTime"); }
             set { BackingStore?.Set("isRealTime", value); }
         }
-        /// <summary>The mimeType property</summary>
+        /// <summary>MIME type of the analyzed content. Common values for Teams media include audio/pcm, video/mp4, and video/h264.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MimeType
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The streamingMetadata property</summary>
+        /// <summary>Network and real-time streaming quality metrics. Nullable. Set when the analyzed content was streamed in real time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.StreamingMetadata? StreamingMetadata
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("streamingMetadata", value); }
         }
 #endif
-        /// <summary>The videoMetadata property</summary>
+        /// <summary>Video-specific encoding and quality details. Nullable. Set when the analyzed content is video or multimodal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.VideoMetadata? VideoMetadata

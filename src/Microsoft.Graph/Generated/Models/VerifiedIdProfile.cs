@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Configuration for accepting mobile driver&apos;s licenses. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.MobileDriversLicenseConfiguration? MobileDriversLicenseConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileDriversLicenseConfiguration?>("mobileDriversLicenseConfiguration"); }
+            set { BackingStore?.Set("mobileDriversLicenseConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.MobileDriversLicenseConfiguration MobileDriversLicenseConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileDriversLicenseConfiguration>("mobileDriversLicenseConfiguration"); }
+            set { BackingStore?.Set("mobileDriversLicenseConfiguration", value); }
+        }
+#endif
         /// <summary>Display name for the verified ID profile. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +88,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
+        /// <summary>Configuration for self-service issuance. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.VerifiedIdSelfServiceIssuance? SelfServiceIssuance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VerifiedIdSelfServiceIssuance?>("selfServiceIssuance"); }
+            set { BackingStore?.Set("selfServiceIssuance", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.VerifiedIdSelfServiceIssuance SelfServiceIssuance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VerifiedIdSelfServiceIssuance>("selfServiceIssuance"); }
+            set { BackingStore?.Set("selfServiceIssuance", value); }
+        }
+#endif
         /// <summary>The state property</summary>
         public global::Microsoft.Graph.Beta.Models.VerifiedIdProfileState? State
         {
@@ -147,8 +179,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "faceCheckConfiguration", n => { FaceCheckConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FaceCheckConfiguration>(global::Microsoft.Graph.Beta.Models.FaceCheckConfiguration.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "mobileDriversLicenseConfiguration", n => { MobileDriversLicenseConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MobileDriversLicenseConfiguration>(global::Microsoft.Graph.Beta.Models.MobileDriversLicenseConfiguration.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
+                { "selfServiceIssuance", n => { SelfServiceIssuance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedIdSelfServiceIssuance>(global::Microsoft.Graph.Beta.Models.VerifiedIdSelfServiceIssuance.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.VerifiedIdProfileState>(); } },
                 { "verifiedIdProfileConfiguration", n => { VerifiedIdProfileConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedIdProfileConfiguration>(global::Microsoft.Graph.Beta.Models.VerifiedIdProfileConfiguration.CreateFromDiscriminatorValue); } },
                 { "verifiedIdUsageConfigurations", n => { VerifiedIdUsageConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VerifiedIdUsageConfiguration>(global::Microsoft.Graph.Beta.Models.VerifiedIdUsageConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -166,8 +200,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FaceCheckConfiguration>("faceCheckConfiguration", FaceCheckConfiguration);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MobileDriversLicenseConfiguration>("mobileDriversLicenseConfiguration", MobileDriversLicenseConfiguration);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("priority", Priority);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedIdSelfServiceIssuance>("selfServiceIssuance", SelfServiceIssuance);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.VerifiedIdProfileState>("state", State);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.VerifiedIdProfileConfiguration>("verifiedIdProfileConfiguration", VerifiedIdProfileConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VerifiedIdUsageConfiguration>("verifiedIdUsageConfigurations", VerifiedIdUsageConfigurations);

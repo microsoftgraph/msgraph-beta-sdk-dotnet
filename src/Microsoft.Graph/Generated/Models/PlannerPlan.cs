@@ -146,6 +146,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("details", value); }
         }
 #endif
+        /// <summary>Collection of goals in the plan. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PlannerGoal>? Goals
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerGoal>?>("goals"); }
+            set { BackingStore?.Set("goals", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PlannerGoal> Goals
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerGoal>>("goals"); }
+            set { BackingStore?.Set("goals", value); }
+        }
+#endif
         /// <summary>Collection of history items for entities in the plan. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -259,6 +275,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "creationSource", n => { CreationSource = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanCreation>(global::Microsoft.Graph.Beta.Models.PlannerPlanCreation.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanDetails>(global::Microsoft.Graph.Beta.Models.PlannerPlanDetails.CreateFromDiscriminatorValue); } },
+                { "goals", n => { Goals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerGoal>(global::Microsoft.Graph.Beta.Models.PlannerGoal.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "historyItems", n => { HistoryItems = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>(global::Microsoft.Graph.Beta.Models.PlannerHistoryItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
@@ -284,6 +301,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanCreation>("creationSource", CreationSource);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerPlanDetails>("details", Details);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerGoal>("goals", Goals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerHistoryItem>("historyItems", HistoryItems);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteStringValue("owner", Owner);

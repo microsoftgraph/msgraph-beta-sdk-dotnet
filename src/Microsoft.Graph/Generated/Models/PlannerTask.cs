@@ -235,6 +235,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
+        /// <summary>Read-only. The IDs of the goals associated with the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? GoalIds
+        {
+            get { return BackingStore?.Get<List<string>?>("goalIds"); }
+            set { BackingStore?.Set("goalIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> GoalIds
+        {
+            get { return BackingStore?.Get<List<string>>("goalIds"); }
+            set { BackingStore?.Set("goalIds", value); }
+        }
+#endif
         /// <summary>Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.</summary>
         public bool? HasChat
         {
@@ -459,6 +475,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "creationSource", n => { CreationSource = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCreation>(global::Microsoft.Graph.Beta.Models.PlannerTaskCreation.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskDetails>(global::Microsoft.Graph.Beta.Models.PlannerTaskDetails.CreateFromDiscriminatorValue); } },
                 { "dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                { "goalIds", n => { GoalIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hasChat", n => { HasChat = n.GetBoolValue(); } },
                 { "hasDescription", n => { HasDescription = n.GetBoolValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
@@ -505,6 +522,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskCreation>("creationSource", CreationSource);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerTaskDetails>("details", Details);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
+            writer.WriteCollectionOfPrimitiveValues<string>("goalIds", GoalIds);
             writer.WriteBoolValue("hasChat", HasChat);
             writer.WriteBoolValue("hasDescription", HasDescription);
             writer.WriteBoolValue("isArchived", IsArchived);

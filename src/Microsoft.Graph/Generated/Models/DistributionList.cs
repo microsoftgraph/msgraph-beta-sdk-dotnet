@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The list of members in the distribution list. Not returned by default; use $select=members to include.</summary>
+        /// <summary>The members property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Member>? Members
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The notes property</summary>
+        /// <summary>Notes about the distribution list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("notes", value); }
         }
 #endif
-        /// <summary>The personIdentifier property</summary>
+        /// <summary>The unique identifier of the distribution list in the mailbox. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PersonIdentifier
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("personIdentifier", value); }
         }
 #endif
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>The collection of single-value extended properties defined for the distribution list. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties

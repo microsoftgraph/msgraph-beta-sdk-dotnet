@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.Me.Authentication.PhoneMethods;
 using Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods;
 using Microsoft.Graph.Beta.Me.Authentication.QrCodePinMethod;
 using Microsoft.Graph.Beta.Me.Authentication.Requirements;
+using Microsoft.Graph.Beta.Me.Authentication.ResourceAccountKeyAuthenticationMethods;
 using Microsoft.Graph.Beta.Me.Authentication.SignInPreferences;
 using Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods;
 using Microsoft.Graph.Beta.Me.Authentication.TemporaryAccessPassMethods;
@@ -99,6 +100,11 @@ namespace Microsoft.Graph.Beta.Me.Authentication
         public global::Microsoft.Graph.Beta.Me.Authentication.Requirements.RequirementsRequestBuilder Requirements
         {
             get => new global::Microsoft.Graph.Beta.Me.Authentication.Requirements.RequirementsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceAccountKeyAuthenticationMethods property of the microsoft.graph.authentication entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder ResourceAccountKeyAuthenticationMethods
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The signInPreferences property</summary>
         public global::Microsoft.Graph.Beta.Me.Authentication.SignInPreferences.SignInPreferencesRequestBuilder SignInPreferences

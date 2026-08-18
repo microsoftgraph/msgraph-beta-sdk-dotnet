@@ -21,19 +21,19 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The frameDropRate property</summary>
+        /// <summary>Percentage of frames dropped during streaming, expressed as a value between 0.0 and 1.0.</summary>
         public double? FrameDropRate
         {
             get { return BackingStore?.Get<double?>("frameDropRate"); }
             set { BackingStore?.Set("frameDropRate", value); }
         }
-        /// <summary>The latencyMs property</summary>
+        /// <summary>Network latency in milliseconds.</summary>
         public int? LatencyMs
         {
             get { return BackingStore?.Get<int?>("latencyMs"); }
             set { BackingStore?.Set("latencyMs", value); }
         }
-        /// <summary>The networkJitterMs property</summary>
+        /// <summary>Network jitter in milliseconds.</summary>
         public int? NetworkJitterMs
         {
             get { return BackingStore?.Get<int?>("networkJitterMs"); }

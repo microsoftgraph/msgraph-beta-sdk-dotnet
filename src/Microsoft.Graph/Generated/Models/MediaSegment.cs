@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The endTimeSec property</summary>
+        /// <summary>End time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn&apos;t apply.</summary>
         public int? EndTimeSec
         {
             get { return BackingStore?.Get<int?>("endTimeSec"); }
             set { BackingStore?.Set("endTimeSec", value); }
         }
-        /// <summary>The frameIndices property</summary>
+        /// <summary>Frame indices that identify the video frames in the segment. Applies only to video analysis; pass an empty array for audio-only segments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<int?>? FrameIndices
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The startTimeSec property</summary>
+        /// <summary>Start time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn&apos;t apply.</summary>
         public int? StartTimeSec
         {
             get { return BackingStore?.Get<int?>("startTimeSec"); }
