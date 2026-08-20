@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The detectionId property</summary>
+        /// <summary>Unique identifier for the detection event. This property correlates with the id parameter that the detection bot passed to reportSyntheticMedia.</summary>
         public Guid? DetectionId
         {
             get { return BackingStore?.Get<Guid?>("detectionId"); }
             set { BackingStore?.Set("detectionId", value); }
         }
-        /// <summary>The detectorBot property</summary>
+        /// <summary>Identifier of the detection bot that produced this result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DetectorBot
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("detectorBot", value); }
         }
 #endif
-        /// <summary>The isParticipantTrusted property</summary>
+        /// <summary>Set to true if the participant is classified as trusted or reliable (for example, a known internal user); otherwise, false.</summary>
         public bool? IsParticipantTrusted
         {
             get { return BackingStore?.Get<bool?>("isParticipantTrusted"); }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The syntheticConfidence property</summary>
+        /// <summary>Confidence score (0.0 to 1.0) that the participant&apos;s media is synthetic.</summary>
         public double? SyntheticConfidence
         {
             get { return BackingStore?.Get<double?>("syntheticConfidence"); }

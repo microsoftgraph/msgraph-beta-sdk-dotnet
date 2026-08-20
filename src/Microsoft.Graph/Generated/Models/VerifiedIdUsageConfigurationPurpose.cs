@@ -24,5 +24,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "verification")]
+        #pragma warning disable CS1591
+        Verification,
+        #pragma warning restore CS1591
     }
 }

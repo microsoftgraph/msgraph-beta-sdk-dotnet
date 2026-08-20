@@ -75,6 +75,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("claimValidation", value); }
         }
 #endif
+        /// <summary>The URL where the credential issuer&apos;s manifest can be found. The manifest defines the credential schema and issuer details. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ManifestUrl
+        {
+            get { return BackingStore?.Get<string?>("manifestUrl"); }
+            set { BackingStore?.Set("manifestUrl", value); }
+        }
+#nullable restore
+#else
+        public string ManifestUrl
+        {
+            get { return BackingStore?.Get<string>("manifestUrl"); }
+            set { BackingStore?.Set("manifestUrl", value); }
+        }
+#endif
+        /// <summary>The methodType property</summary>
+        public global::Microsoft.Graph.Beta.Models.VerifiedIdMethodType? MethodType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.VerifiedIdMethodType?>("methodType"); }
+            set { BackingStore?.Set("methodType", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +159,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "claimBindingSource", n => { ClaimBindingSource = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ClaimBindingSource>(); } },
                 { "claimBindings", n => { ClaimBindings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimBinding>(global::Microsoft.Graph.Beta.Models.ClaimBinding.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "claimValidation", n => { ClaimValidation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ClaimValidation>(global::Microsoft.Graph.Beta.Models.ClaimValidation.CreateFromDiscriminatorValue); } },
+                { "manifestUrl", n => { ManifestUrl = n.GetStringValue(); } },
+                { "methodType", n => { MethodType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.VerifiedIdMethodType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -152,6 +176,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ClaimBinding>("claimBindings", ClaimBindings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ClaimBindingSource>("claimBindingSource", ClaimBindingSource);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ClaimValidation>("claimValidation", ClaimValidation);
+            writer.WriteStringValue("manifestUrl", ManifestUrl);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.VerifiedIdMethodType>("methodType", MethodType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

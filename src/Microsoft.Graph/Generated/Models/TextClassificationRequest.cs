@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TextClassificationRequest : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The contentMetaData property</summary>
+        /// <summary>Metadata that describes the content being classified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData? ContentMetaData
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentMetaData", value); }
         }
 #endif
-        /// <summary>The fileExtension property</summary>
+        /// <summary>The file extension of the content being classified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileExtension
@@ -44,19 +44,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileExtension", value); }
         }
 #endif
-        /// <summary>The matchTolerancesToInclude property</summary>
+        /// <summary>The match tolerance levels to include in the classification results. The possible values are: exact, near.</summary>
         public global::Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance? MatchTolerancesToInclude
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance?>("matchTolerancesToInclude"); }
             set { BackingStore?.Set("matchTolerancesToInclude", value); }
         }
-        /// <summary>The scopesToRun property</summary>
+        /// <summary>The document scopes over which to run classification. The possible values are: fullDocument, partialDocument.</summary>
         public global::Microsoft.Graph.Beta.Models.SensitiveTypeScope? ScopesToRun
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SensitiveTypeScope?>("scopesToRun"); }
             set { BackingStore?.Set("scopesToRun", value); }
         }
-        /// <summary>The sensitiveTypeIds property</summary>
+        /// <summary>The identifiers of the sensitive information types to evaluate against the text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SensitiveTypeIds
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
 #endif
-        /// <summary>The text property</summary>
+        /// <summary>The text to classify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text

@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The bitDepth property</summary>
+        /// <summary>Bit depth of the audio samples (for example, 16, 24).</summary>
         public int? BitDepth
         {
             get { return BackingStore?.Get<int?>("bitDepth"); }
             set { BackingStore?.Set("bitDepth", value); }
         }
-        /// <summary>The channels property</summary>
+        /// <summary>Number of audio channels (for example, 1 for mono, 2 for stereo).</summary>
         public int? Channels
         {
             get { return BackingStore?.Get<int?>("channels"); }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sampleRateHz property</summary>
+        /// <summary>Sample rate in Hertz (for example, 16000, 48000).</summary>
         public int? SampleRateHz
         {
             get { return BackingStore?.Get<int?>("sampleRateHz"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
     public partial class GuestSponsorTrigger : global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The minimumRequiredSponsors property</summary>
+        /// <summary>The minimum number of sponsors required for a guest user. When a guest has fewer sponsors than this value, the workflow is triggered.</summary>
         public int? MinimumRequiredSponsors
         {
             get { return BackingStore?.Get<int?>("minimumRequiredSponsors"); }

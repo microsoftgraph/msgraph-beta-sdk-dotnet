@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The bitrateKbps property</summary>
+        /// <summary>Video bitrate in kilobits per second.</summary>
         public int? BitrateKbps
         {
             get { return BackingStore?.Get<int?>("bitrateKbps"); }
             set { BackingStore?.Set("bitrateKbps", value); }
         }
-        /// <summary>The codec property</summary>
+        /// <summary>The video codec used (for example, H.264 or VP9).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Codec
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("codec", value); }
         }
 #endif
-        /// <summary>The frameRate property</summary>
+        /// <summary>Frame rate in frames per second.</summary>
         public double? FrameRate
         {
             get { return BackingStore?.Get<double?>("frameRate"); }

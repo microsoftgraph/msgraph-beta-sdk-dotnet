@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tabs", value); }
         }
 #endif
-        /// <summary>A collection of targeted messages in the chat that are visible only to specific users. Nullable.</summary>
+        /// <summary>A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can&apos;t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.TargetedChatMessage>? TargetedMessages

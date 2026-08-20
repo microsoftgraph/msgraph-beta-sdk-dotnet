@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ClientCredentialAuthenticationInfo : global::Microsoft.Graph.Beta.Models.AuthenticationInfo, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessTokenUrl property</summary>
+        /// <summary>The URL endpoint used to obtain access tokens for authentication with the external system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessTokenUrl
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessTokenUrl", value); }
         }
 #endif
-        /// <summary>The clientId property</summary>
+        /// <summary>The client identifier used for authentication with the external system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientId", value); }
         }
 #endif
-        /// <summary>The secretName property</summary>
+        /// <summary>The name of the secret in Azure Key Vault that contains the client secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecretName

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("buckets", value); }
         }
 #endif
+        /// <summary>Read-only. Nullable. Returns a collection of the specified goals</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PlannerGoal>? Goals
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerGoal>?>("goals"); }
+            set { BackingStore?.Set("goals", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PlannerGoal> Goals
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PlannerGoal>>("goals"); }
+            set { BackingStore?.Set("goals", value); }
+        }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified plans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerBucket>(global::Microsoft.Graph.Beta.Models.PlannerBucket.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "goals", n => { Goals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerGoal>(global::Microsoft.Graph.Beta.Models.PlannerGoal.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rosters", n => { Rosters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerRoster>(global::Microsoft.Graph.Beta.Models.PlannerRoster.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>(global::Microsoft.Graph.Beta.Models.PlannerTask.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -109,6 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerBucket>("buckets", Buckets);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerGoal>("goals", Goals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("plans", Plans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerRoster>("rosters", Rosters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>("tasks", Tasks);

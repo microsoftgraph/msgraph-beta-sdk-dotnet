@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationInfo", value); }
         }
 #endif
-        /// <summary>The keyVaultName property</summary>
+        /// <summary>The name of the Azure Key Vault that stores the credentials used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KeyVaultName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("keyVaultName", value); }
         }
 #endif
-        /// <summary>The resourceGroup property</summary>
+        /// <summary>The Azure resource group that contains the Key Vault.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceGroup
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceGroup", value); }
         }
 #endif
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The Azure subscription ID that contains the Key Vault.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionId
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #endif
-        /// <summary>The systemId property</summary>
+        /// <summary>The identifier of the target SAP AC system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SystemId
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("systemId", value); }
         }
 #endif
-        /// <summary>The userIdentifier property</summary>
+        /// <summary>The user identifier used to connect to the SAP AC system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserIdentifier

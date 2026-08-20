@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<long?>("rosterSequenceNumber"); }
             set { BackingStore?.Set("rosterSequenceNumber", value); }
         }
-        /// <summary>The syntheticMediaDetection property</summary>
+        /// <summary>The latest synthetic media detection result reported for this participant by an in-call detection bot. Nullable. Set to null when no detection is reported. Populated asynchronously after a successful call to reportSyntheticMedia.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SyntheticMediaDetectionInfo? SyntheticMediaDetection

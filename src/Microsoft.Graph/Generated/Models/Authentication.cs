@@ -220,6 +220,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requirements", value); }
         }
 #endif
+        /// <summary>Represents the resource account key credentials registered to a user for authentication on shared devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ResourceAccountKeyAuthenticationMethod>? ResourceAccountKeyAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourceAccountKeyAuthenticationMethod>?>("resourceAccountKeyAuthenticationMethods"); }
+            set { BackingStore?.Set("resourceAccountKeyAuthenticationMethods", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ResourceAccountKeyAuthenticationMethod> ResourceAccountKeyAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourceAccountKeyAuthenticationMethod>>("resourceAccountKeyAuthenticationMethods"); }
+            set { BackingStore?.Set("resourceAccountKeyAuthenticationMethods", value); }
+        }
+#endif
         /// <summary>The settings and preferences for the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -315,6 +331,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "platformCredentialMethods", n => { PlatformCredentialMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "qrCodePinMethod", n => { QrCodePinMethod = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod.CreateFromDiscriminatorValue); } },
                 { "requirements", n => { Requirements = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements>(global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements.CreateFromDiscriminatorValue); } },
+                { "resourceAccountKeyAuthenticationMethods", n => { ResourceAccountKeyAuthenticationMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceAccountKeyAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.ResourceAccountKeyAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signInPreferences", n => { SignInPreferences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInPreferences>(global::Microsoft.Graph.Beta.Models.SignInPreferences.CreateFromDiscriminatorValue); } },
                 { "softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "temporaryAccessPassMethods", n => { TemporaryAccessPassMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -342,6 +359,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>("platformCredentialMethods", PlatformCredentialMethods);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.QrCodePinAuthenticationMethod>("qrCodePinMethod", QrCodePinMethod);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.StrongAuthenticationRequirements>("requirements", Requirements);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceAccountKeyAuthenticationMethod>("resourceAccountKeyAuthenticationMethods", ResourceAccountKeyAuthenticationMethods);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInPreferences>("signInPreferences", SignInPreferences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod>("temporaryAccessPassMethods", TemporaryAccessPassMethods);

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The confidence property</summary>
+        /// <summary>Confidence score for this specific detection, expressed as a value between 0.0 and 1.0.</summary>
         public double? Confidence
         {
             get { return BackingStore?.Get<double?>("confidence"); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ContentModality?>("modality"); }
             set { BackingStore?.Set("modality", value); }
         }
-        /// <summary>The modelName property</summary>
+        /// <summary>Name of the detection model used (for example, DeepfakeDetector-v2, VoiceAuthenticator-v1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModelName
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("modelName", value); }
         }
 #endif
-        /// <summary>The modelTasks property</summary>
+        /// <summary>Detection tasks that the model performed. This value is free-form text. The bot can specify any task names that describe its analysis. Common examples include faceSwap, lipSync, and voiceClone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ModelTasks

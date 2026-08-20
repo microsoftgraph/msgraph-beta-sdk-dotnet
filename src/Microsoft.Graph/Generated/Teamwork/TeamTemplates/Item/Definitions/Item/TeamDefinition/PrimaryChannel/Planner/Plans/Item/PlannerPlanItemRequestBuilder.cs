@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefi
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Buckets;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Details;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.GetUsageRights;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Goals;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.HistoryItems;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.MoveToContainer;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Tasks;
@@ -45,6 +46,11 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder GetUsageRights
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the goals property of the microsoft.graph.plannerPlan entity.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Goals.GoalsRequestBuilder Goals
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Goals.GoalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the historyItems property of the microsoft.graph.plannerPlan entity.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.HistoryItems.HistoryItemsRequestBuilder HistoryItems
