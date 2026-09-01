@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Admin
         {
             get => new global::Microsoft.Graph.Beta.Admin.CloudLicensing.CloudLicensingRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.</summary>
+        /// <summary>The configurationManagement property</summary>
         public global::Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationManagementRequestBuilder ConfigurationManagement
         {
             get => new global::Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationManagementRequestBuilder(PathParameters, RequestAdapter);

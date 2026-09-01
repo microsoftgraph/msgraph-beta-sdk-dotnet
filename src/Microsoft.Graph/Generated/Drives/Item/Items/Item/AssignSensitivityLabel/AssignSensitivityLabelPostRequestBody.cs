@@ -20,6 +20,22 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.AssignSensitivityLabel
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The appliedByUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.UserIdentity? AppliedByUser
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserIdentity?>("appliedByUser"); }
+            set { BackingStore?.Set("appliedByUser", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.UserIdentity AppliedByUser
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.UserIdentity>("appliedByUser"); }
+            set { BackingStore?.Set("appliedByUser", value); }
+        }
+#endif
         /// <summary>The assignmentMethod property</summary>
         public global::Microsoft.Graph.Beta.Models.SensitivityLabelAssignmentMethod? AssignmentMethod
         {
@@ -86,6 +102,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.AssignSensitivityLabel
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "appliedByUser", n => { AppliedByUser = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.UserIdentity>(global::Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SensitivityLabelAssignmentMethod>(); } },
                 { "justificationText", n => { JustificationText = n.GetStringValue(); } },
                 { "sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
@@ -98,6 +115,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.AssignSensitivityLabel
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.UserIdentity>("appliedByUser", AppliedByUser);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SensitivityLabelAssignmentMethod>("assignmentMethod", AssignmentMethod);
             writer.WriteStringValue("justificationText", JustificationText);
             writer.WriteStringValue("sensitivityLabelId", SensitivityLabelId);

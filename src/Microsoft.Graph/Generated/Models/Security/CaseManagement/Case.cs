@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
-        /// <summary>Tenant-defined custom field values keyed by custom field identifier.</summary>
+        /// <summary>Tenant-defined custom field values keyed by the exact displayName of each custom field definition. The property and its dynamic fields don&apos;t support $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CustomFieldValues? CustomFields
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("customFields", value); }
         }
 #endif
-        /// <summary>The display name of the case. Supports $filter (eq, ne) and $orderby.</summary>
+        /// <summary>The display name of the case. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("relations", value); }
         }
 #endif
-        /// <summary>The lifecycle status of the case, such as open, in progress, or closed. Supports $filter (eq, ne) and $orderby.</summary>
+        /// <summary>The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
     public partial class AlertIncidentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
         /// <summary>Provides operations to manage the alertIncidents property of the microsoft.graph.unifiedRoleManagementAlert entity.</summary>
         /// <param name="position">The unique identifier of unifiedRoleManagementAlertIncident</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.Item.UnifiedRoleManagementAlertIncidentItemRequestBuilder"/></returns>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.Item.UnifiedRoleManagementAlertIncidentItemRequestBuilder this[string position]
         {
             get
@@ -60,6 +62,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncidentCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.AlertIncidentsRequestBuilder.AlertIncidentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,6 +87,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident?> PostAsync(global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,6 +110,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.AlertIncidentsRequestBuilder.AlertIncidentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -126,6 +131,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -147,6 +153,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.AlertIncidentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.AlertIncidentsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.Item.AlertIncidents.AlertIncidentsRequestBuilder(rawUrl, RequestAdapter);

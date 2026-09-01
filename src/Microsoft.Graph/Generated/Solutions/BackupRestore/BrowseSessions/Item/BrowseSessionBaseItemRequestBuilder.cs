@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
     public partial class BrowseSessionBaseItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the browse method.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.Browse.BrowseRequestBuilder Browse
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.Browse.BrowseRequestBuilder(PathParameters, RequestAdapter);
@@ -30,6 +31,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.BrowseWithNextFetchToken.BrowseWithNextFetchTokenRequestBuilder"/></returns>
         /// <param name="nextFetchToken">Usage: nextFetchToken=&apos;{nextFetchToken}&apos;</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.BrowseWithNextFetchToken.BrowseWithNextFetchTokenRequestBuilder BrowseWithNextFetchToken(string nextFetchToken)
         {
             if(string.IsNullOrEmpty(nextFetchToken)) throw new ArgumentNullException(nameof(nextFetchToken));
@@ -57,6 +59,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,6 +83,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.BrowseSessionBase?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.BrowseSessionBaseItemRequestBuilder.BrowseSessionBaseItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -104,6 +108,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.BrowseSessionBase?> PatchAsync(global::Microsoft.Graph.Beta.Models.BrowseSessionBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -126,6 +131,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -145,6 +151,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.BrowseSessionBaseItemRequestBuilder.BrowseSessionBaseItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -165,6 +172,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.BrowseSessionBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -186,6 +194,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.BrowseSessionBaseItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.BrowseSessionBaseItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.Item.BrowseSessionBaseItemRequestBuilder(rawUrl, RequestAdapter);

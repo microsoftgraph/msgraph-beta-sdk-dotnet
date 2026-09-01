@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DdmAppAutomaticAppUpdates?>("automaticAppUpdates"); }
             set { BackingStore?.Set("automaticAppUpdates", value); }
         }
+        /// <summary>The unique identifier of the DDM app configuration to associate with the app.</summary>
+        public Guid? DdmAppConfigId
+        {
+            get { return BackingStore?.Get<Guid?>("ddmAppConfigId"); }
+            set { BackingStore?.Set("ddmAppConfigId", value); }
+        }
         /// <summary>If true, the device installs an iOS or iPadOS app that runs on a Mac with Apple Silicon. This is only used when the app is a VPP app. Default is false.</summary>
         public bool? IsIosApp
         {
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "automaticAppUpdates", n => { AutomaticAppUpdates = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DdmAppAutomaticAppUpdates>(); } },
+                { "ddmAppConfigId", n => { DdmAppConfigId = n.GetGuidValue(); } },
                 { "isIosApp", n => { IsIosApp = n.GetBoolValue(); } },
                 { "useDeviceLicensing", n => { UseDeviceLicensing = n.GetBoolValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -77,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DdmAppAutomaticAppUpdates>("automaticAppUpdates", AutomaticAppUpdates);
+            writer.WriteGuidValue("ddmAppConfigId", DdmAppConfigId);
             writer.WriteBoolValue("isIosApp", IsIosApp);
             writer.WriteBoolValue("useDeviceLicensing", UseDeviceLicensing);
             writer.WriteIntValue("version", Version);

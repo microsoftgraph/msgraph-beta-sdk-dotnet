@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.Count;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.Item;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -21,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
     public partial class SubjectProcessingResultsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +30,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// <summary>Provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.run entity.</summary>
         /// <param name="position">The unique identifier of subjectProcessingResult</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.Item.SubjectProcessingResultItemRequestBuilder"/></returns>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.Item.SubjectProcessingResultItemRequestBuilder this[string position]
         {
             get
@@ -61,6 +64,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResultCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.SubjectProcessingResultsRequestBuilder.SubjectProcessingResultsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,10 +82,24 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResultCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectProcessingResultCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to call the summary method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        {
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+        }
+        /// <summary>
         /// Get a list of the subjectProcessingResult objects for a specific workflow run. Each result represents the processing outcome for a single subject.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.SubjectProcessingResultsRequestBuilder.SubjectProcessingResultsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -101,6 +119,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.SubjectProcessingResultsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.SubjectProcessingResultsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.SubjectProcessingResults.SubjectProcessingResultsRequestBuilder(rawUrl, RequestAdapter);

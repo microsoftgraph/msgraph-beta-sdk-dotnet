@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
     public partial class Attachment : global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseManagementEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The binary content stream for the attachment.</summary>
+        /// <summary>The binary content stream for the attachment. Use the Upload content and Download content methods to access it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Content
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The file extension of the attachment.</summary>
+        /// <summary>The file extension of the attachment. The service normalizes the value to include a leading period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileExtension
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("fileExtension", value); }
         }
 #endif
-        /// <summary>The size of the attachment in bytes.</summary>
+        /// <summary>The size of the attachment in bytes. The maximum file size is 100 MB.</summary>
         public long? FileSize
         {
             get { return BackingStore?.Get<long?>("fileSize"); }

@@ -24,26 +24,31 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
     public partial class SharePointProtectionPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the siteExclusionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder SiteExclusionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder SiteExclusionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteInclusionRules property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteInclusionRules.SiteInclusionRulesRequestBuilder SiteInclusionRules
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteInclusionRules.SiteInclusionRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteProtectionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder SiteProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder SiteProtectionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
@@ -70,6 +75,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder.SharePointProtectionPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -118,6 +125,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy?> PatchAsync(global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -140,6 +148,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -159,6 +168,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder.SharePointProtectionPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -179,6 +189,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -200,6 +211,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolic
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder(rawUrl, RequestAdapter);

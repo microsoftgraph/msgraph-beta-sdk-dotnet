@@ -27,41 +27,49 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
     public partial class GroupRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignmentApprovals property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentApprovals.AssignmentApprovalsRequestBuilder AssignmentApprovals
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentApprovals.AssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.AssignmentScheduleInstancesRequestBuilder AssignmentScheduleInstances
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.AssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.AssignmentScheduleRequestsRequestBuilder AssignmentScheduleRequests
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.AssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder AssignmentSchedules
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules.AssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder EligibilityScheduleInstances
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the eligibilityScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.EligibilityScheduleRequestsRequestBuilder EligibilityScheduleRequests
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.EligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the eligibilitySchedules property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder EligibilitySchedules
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Resources.ResourcesRequestBuilder Resources
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
@@ -88,6 +96,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -111,6 +120,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroup?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder.GroupRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -135,6 +145,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroup?> PatchAsync(global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -157,6 +168,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -176,6 +188,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder.GroupRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -196,6 +209,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -217,6 +231,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder(rawUrl, RequestAdapter);

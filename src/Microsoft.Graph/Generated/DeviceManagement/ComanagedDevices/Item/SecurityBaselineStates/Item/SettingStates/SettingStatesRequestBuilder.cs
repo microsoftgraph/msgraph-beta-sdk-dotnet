@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
     public partial class SettingStatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
         /// <summary>Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.</summary>
         /// <param name="position">The unique identifier of securityBaselineSettingState</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item.SecurityBaselineSettingStateItemRequestBuilder"/></returns>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item.SecurityBaselineSettingStateItemRequestBuilder this[string position]
         {
             get
@@ -60,6 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SecurityBaselineSettingStateCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder.SettingStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,6 +87,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SecurityBaselineSettingState?> PostAsync(global::Microsoft.Graph.Beta.Models.SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,6 +110,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder.SettingStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -126,6 +131,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -147,6 +153,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder(rawUrl, RequestAdapter);

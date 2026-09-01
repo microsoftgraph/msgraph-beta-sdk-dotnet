@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsManagedAppProtection : global::Microsoft.Graph.Beta.Models.ManagedAppPolicy, IParsable
     {
+        /// <summary>Windows MAM data transfer locations</summary>
+        public global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations? AllowedInboundDataTransferSourceApps
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations?>("allowedInboundDataTransferSourceApps"); }
+            set { BackingStore?.Set("allowedInboundDataTransferSourceApps", value); }
+        }
         /// <summary>Data can be transferred from/to these classes of apps</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel? AllowedInboundDataTransferSources
         {
@@ -24,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel?>("allowedOutboundClipboardSharingLevel"); }
             set { BackingStore?.Set("allowedOutboundClipboardSharingLevel", value); }
+        }
+        /// <summary>Windows MAM data transfer locations</summary>
+        public global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations? AllowedOutboundDataTransferDestinationApps
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations?>("allowedOutboundDataTransferDestinationApps"); }
+            set { BackingStore?.Set("allowedOutboundDataTransferDestinationApps", value); }
         }
         /// <summary>Data can be transferred from/to these classes of apps</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations
@@ -328,8 +340,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allowedInboundDataTransferSourceApps", n => { AllowedInboundDataTransferSourceApps = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations>(); } },
                 { "allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>(); } },
                 { "allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel>(); } },
+                { "allowedOutboundDataTransferDestinationApps", n => { AllowedOutboundDataTransferDestinationApps = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations>(); } },
                 { "allowedOutboundDataTransferDestinations", n => { AllowedOutboundDataTransferDestinations = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>(); } },
                 { "appActionIfUnableToAuthenticateUser", n => { AppActionIfUnableToAuthenticateUser = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
                 { "apps", n => { Apps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedMobileApp>(global::Microsoft.Graph.Beta.Models.ManagedMobileApp.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -363,8 +377,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations>("allowedInboundDataTransferSourceApps", AllowedInboundDataTransferSourceApps);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>("allowedInboundDataTransferSources", AllowedInboundDataTransferSources);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel>("allowedOutboundClipboardSharingLevel", AllowedOutboundClipboardSharingLevel);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLocations>("allowedOutboundDataTransferDestinationApps", AllowedOutboundDataTransferDestinationApps);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>("allowedOutboundDataTransferDestinations", AllowedOutboundDataTransferDestinations);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfUnableToAuthenticateUser", AppActionIfUnableToAuthenticateUser);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedMobileApp>("apps", Apps);

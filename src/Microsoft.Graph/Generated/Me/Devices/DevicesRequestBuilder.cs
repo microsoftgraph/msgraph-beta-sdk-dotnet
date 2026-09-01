@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Me.Devices.Count;
 using Microsoft.Graph.Beta.Me.Devices.Delta;
 using Microsoft.Graph.Beta.Me.Devices.Item;
+using Microsoft.Graph.Beta.Me.Devices.Provision;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.Me.Devices
         public global::Microsoft.Graph.Beta.Me.Devices.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Beta.Me.Devices.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the provision method.</summary>
+        public global::Microsoft.Graph.Beta.Me.Devices.Provision.ProvisionRequestBuilder Provision
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Devices.Provision.ProvisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the devices property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of device</param>

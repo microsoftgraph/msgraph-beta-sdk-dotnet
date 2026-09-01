@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isNotificationEnabled"); }
             set { BackingStore?.Set("isNotificationEnabled", value); }
         }
+        /// <summary>The lastRefreshedDateTime property</summary>
+        public DateTimeOffset? LastRefreshedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
+            set { BackingStore?.Set("lastRefreshedDateTime", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "isNotificationEnabled", n => { IsNotificationEnabled = n.GetBoolValue(); } },
+                { "lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

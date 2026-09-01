@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
     public partial class DefinitionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,6 +30,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
         /// <summary>Provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.</summary>
         /// <param name="position">The unique identifier of accessReviewScheduleDefinition</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.AccessReviewScheduleDefinitionItemRequestBuilder"/></returns>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.AccessReviewScheduleDefinitionItemRequestBuilder this[string position]
         {
             get
@@ -59,6 +61,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
@@ -72,6 +75,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.DefinitionsRequestBuilder.DefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -97,6 +101,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition?> PostAsync(global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -119,6 +124,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.DefinitionsRequestBuilder.DefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -139,6 +145,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -160,6 +167,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.DefinitionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.DefinitionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.DefinitionsRequestBuilder(rawUrl, RequestAdapter);

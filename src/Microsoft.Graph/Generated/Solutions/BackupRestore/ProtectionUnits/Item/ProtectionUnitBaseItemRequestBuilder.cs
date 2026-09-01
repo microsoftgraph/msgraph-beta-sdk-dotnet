@@ -24,26 +24,31 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item
     public partial class ProtectionUnitBaseItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the cancelOffboard method.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.CancelOffboard.CancelOffboardRequestBuilder CancelOffboard
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.CancelOffboard.CancelOffboardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to driveProtectionUnit.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphDriveProtectionUnit.GraphDriveProtectionUnitRequestBuilder GraphDriveProtectionUnit
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphDriveProtectionUnit.GraphDriveProtectionUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to mailboxProtectionUnit.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphMailboxProtectionUnit.GraphMailboxProtectionUnitRequestBuilder GraphMailboxProtectionUnit
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphMailboxProtectionUnit.GraphMailboxProtectionUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to siteProtectionUnit.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphSiteProtectionUnit.GraphSiteProtectionUnitRequestBuilder GraphSiteProtectionUnit
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.GraphSiteProtectionUnit.GraphSiteProtectionUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the offboard method.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.Offboard.OffboardRequestBuilder Offboard
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.Offboard.OffboardRequestBuilder(PathParameters, RequestAdapter);
@@ -72,6 +77,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ProtectionUnitBase?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.ProtectionUnitBaseItemRequestBuilder.ProtectionUnitBaseItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.ProtectionUnitBaseItemRequestBuilder.ProtectionUnitBaseItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -112,6 +119,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.ProtectionUnitBaseItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.ProtectionUnitBaseItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.Item.ProtectionUnitBaseItemRequestBuilder(rawUrl, RequestAdapter);

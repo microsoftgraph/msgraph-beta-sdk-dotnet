@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.Re
         {
         }
         /// <summary>
-        /// Restore a deleted crossTenantAccessPolicyConfigurationPartner object. 
+        /// Restore a deleted crossTenantAccessPolicyConfigurationPartner object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-restore?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyConfigurationPartner"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Policies.DeletedItems.CrossTenantPartners.Item.Re
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyConfigurationPartner>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a deleted crossTenantAccessPolicyConfigurationPartner object. 
+        /// Restore a deleted crossTenantAccessPolicyConfigurationPartner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

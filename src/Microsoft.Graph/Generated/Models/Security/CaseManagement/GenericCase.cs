@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
     public partial class GenericCase : global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Case, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The user assigned to the generic case.</summary>
+        /// <summary>The user assigned to the generic case. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
-        /// <summary>Notes recorded when the generic case is closed.</summary>
+        /// <summary>Notes recorded when the generic case is closed. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClosingNotes
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("closingNotes", value); }
         }
 #endif
-        /// <summary>The description of the generic case.</summary>
+        /// <summary>The description of the generic case. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -60,13 +60,13 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The target completion date and time for the generic case.</summary>
+        /// <summary>The target completion date and time for the generic case. Supports $filter.</summary>
         public DateTimeOffset? DueDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>The priority assigned to the generic case.</summary>
+        /// <summary>The priority assigned to the generic case. Possible values are: veryLow, low, medium, high, and critical. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Priority

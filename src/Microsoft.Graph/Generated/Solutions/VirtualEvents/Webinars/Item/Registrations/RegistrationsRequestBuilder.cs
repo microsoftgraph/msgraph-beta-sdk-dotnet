@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
     public partial class RegistrationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         /// <summary>Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.</summary>
         /// <param name="position">The unique identifier of virtualEventRegistration</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.Item.VirtualEventRegistrationItemRequestBuilder"/></returns>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.Item.VirtualEventRegistrationItemRequestBuilder this[string position]
         {
             get
@@ -61,6 +63,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventRegistrationCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,6 +89,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventRegistration?> PostAsync(global::Microsoft.Graph.Beta.Models.VirtualEventRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -108,6 +112,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -128,6 +133,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.VirtualEventRegistration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -149,6 +155,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder(rawUrl, RequestAdapter);

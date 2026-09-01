@@ -49,5 +49,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         AccessDebugTools = 512,
         #pragma warning restore CS1591
+        [EnumMember(Value = "contentFiltering")]
+        #pragma warning disable CS1591
+        ContentFiltering = 1024,
+        #pragma warning restore CS1591
     }
 }

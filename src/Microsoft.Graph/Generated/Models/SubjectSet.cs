@@ -57,8 +57,11 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.AllExcludingGroupsSubjectSet(),
+                "#microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.AllExcludingSpecificObjectsSubjectSet(),
                 "#microsoft.graph.identityGovernance.groupBasedSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.GroupBasedSubjectSet(),
                 "#microsoft.graph.identityGovernance.ruleBasedSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.RuleBasedSubjectSet(),
+                "#microsoft.graph.identityGovernance.selectedObjectsSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.SelectedObjectsSubjectSet(),
                 _ => new global::Microsoft.Graph.Beta.Models.SubjectSet(),
             };
         }

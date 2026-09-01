@@ -74,6 +74,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("subject", value); }
         }
 #endif
+        /// <summary>The subjectType property</summary>
+        public global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectType? SubjectType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectType?>("subjectType"); }
+            set { BackingStore?.Set("subjectType", value); }
+        }
         /// <summary>The task-level processing results for this subject. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +145,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSubject>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSubject.CreateFromDiscriminatorValue); } },
+                { "subjectType", n => { SubjectType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectType>(); } },
                 { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
                 { "totalUnprocessedTasksCount", n => { TotalUnprocessedTasksCount = n.GetIntValue(); } },
@@ -161,6 +168,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             writer.WriteDateTimeOffsetValue("scheduledDateTime", ScheduledDateTime);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSubject>("subject", Subject);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.SubjectType>("subjectType", SubjectType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingResults", TaskProcessingResults);
             writer.WriteIntValue("totalTasksCount", TotalTasksCount);
             writer.WriteIntValue("totalUnprocessedTasksCount", TotalUnprocessedTasksCount);

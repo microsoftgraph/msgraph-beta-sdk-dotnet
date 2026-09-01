@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -11,8 +12,14 @@ namespace Microsoft.Graph.Beta.Models
     /// Singleton entity that acts as a container for all device app management functionality.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DeviceAppManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class DeviceAppManagement : IAdditionalDataHolder, IBackedModel, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
         /// <summary>Android managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +36,8 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("androidManagedAppProtections", value); }
         }
 #endif
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>Default managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -325,6 +334,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobileApps", value); }
         }
 #endif
+        /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OdataType
+        {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#nullable restore
+#else
+        public string OdataType
+        {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#endif
         /// <summary>The PolicySet of Policies and Applications</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -486,11 +511,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.DeviceAppManagement"/> and sets the default values.
+        /// </summary>
+        public DeviceAppManagement()
+        {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceAppManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Beta.Models.DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.Beta.Models.DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Beta.Models.DeviceAppManagement();
@@ -499,9 +532,9 @@ namespace Microsoft.Graph.Beta.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
                 { "androidManagedAppProtections", n => { AndroidManagedAppProtections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>(global::Microsoft.Graph.Beta.Models.AndroidManagedAppProtection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "defaultManagedAppProtections", n => { DefaultManagedAppProtections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>(global::Microsoft.Graph.Beta.Models.DefaultManagedAppProtection.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -525,6 +558,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>(global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileAppRelationships", n => { MobileAppRelationships = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>(global::Microsoft.Graph.Beta.Models.MobileAppRelationship.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileApp>(global::Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policySets", n => { PolicySets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicySet>(global::Microsoft.Graph.Beta.Models.PolicySet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "symantecCodeSigningCertificate", n => { SymantecCodeSigningCertificate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>(global::Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate.CreateFromDiscriminatorValue); } },
                 { "targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration>(global::Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -541,10 +575,9 @@ namespace Microsoft.Graph.Beta.Models
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>("androidManagedAppProtections", AndroidManagedAppProtections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>("defaultManagedAppProtections", DefaultManagedAppProtections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceAppManagementTask>("deviceAppManagementTasks", DeviceAppManagementTasks);
@@ -567,6 +600,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>("mobileAppRelationships", MobileAppRelationships);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileApp>("mobileApps", MobileApps);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicySet>("policySets", PolicySets);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>("symantecCodeSigningCertificate", SymantecCodeSigningCertificate);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
@@ -577,6 +611,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction>("windowsInformationProtectionWipeActions", WindowsInformationProtectionWipeActions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsManagedAppProtection>("windowsManagedAppProtections", WindowsManagedAppProtections);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsManagementApp>("windowsManagementApp", WindowsManagementApp);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

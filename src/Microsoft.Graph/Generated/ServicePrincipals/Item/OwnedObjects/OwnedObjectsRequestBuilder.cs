@@ -26,31 +26,37 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects
     public partial class OwnedObjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
@@ -58,6 +64,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects
         /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
@@ -91,6 +98,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,6 +120,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -131,6 +140,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);

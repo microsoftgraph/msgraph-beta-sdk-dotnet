@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The createdBy property</summary>
+        /// <summary>The identity of the user or application that created the item. Returned only when type is file or folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the item was created. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("itemsCount"); }
             set { BackingStore?.Set("itemsCount", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>The identity of the user or application that last modified the item. Returned only when type is file or folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the item was last modified. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

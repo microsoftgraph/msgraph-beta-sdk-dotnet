@@ -40,5 +40,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         Aatp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftEntraSuite")]
+        #pragma warning disable CS1591
+        MicrosoftEntraSuite,
+        #pragma warning restore CS1591
     }
 }

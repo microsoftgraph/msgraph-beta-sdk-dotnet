@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
     public partial class TaskObject : global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseManagementEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The user assigned to the task.</summary>
+        /// <summary>The user assigned to the task. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>Notes recorded when the task is completed.</summary>
+        /// <summary>Notes recorded when the task is completed. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClosingNotes
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("closingNotes", value); }
         }
 #endif
-        /// <summary>The description of the task.</summary>
+        /// <summary>The description of the task. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The title of the task.</summary>
+        /// <summary>The title of the task. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The target completion date and time for the task.</summary>
+        /// <summary>The target completion date and time for the task. Supports $filter.</summary>
         public DateTimeOffset? DueDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }

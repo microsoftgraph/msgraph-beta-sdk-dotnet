@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
     public partial class EligibilityScheduleInstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,6 +30,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// <summary>Provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.</summary>
         /// <param name="position">The unique identifier of privilegedAccessGroupEligibilityScheduleInstance</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.Item.PrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilder"/></returns>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.Item.PrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilder this[string position]
         {
             get
@@ -59,6 +61,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
@@ -72,6 +75,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder.EligibilityScheduleInstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,6 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstance?> PostAsync(global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -118,6 +123,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder.EligibilityScheduleInstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -138,6 +144,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroupEligibilityScheduleInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -159,6 +166,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances.EligibilityScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);

@@ -30,51 +30,61 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
     public partial class IdentityGovernanceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.AccessReviewsRequestBuilder AccessReviews
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.AccessReviewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appConsent property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequestBuilder AppConsent
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder Catalogs
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder EntitlementManagement
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lifecycleWorkflows property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder LifecycleWorkflows
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionsAnalytics property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.PermissionsAnalyticsRequestBuilder PermissionsAnalytics
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.PermissionsAnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionsManagement property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder PermissionsManagement
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.PrivilegedAccessRequestBuilder PrivilegedAccess
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleManagementAlerts property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.RoleManagementAlertsRequestBuilder RoleManagementAlerts
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.RoleManagementAlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.TermsOfUseRequestBuilder TermsOfUse
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.TermsOfUseRequestBuilder(PathParameters, RequestAdapter);
@@ -113,6 +123,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder.IdentityGovernanceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -137,6 +148,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance?> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -159,6 +171,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder.IdentityGovernanceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -179,6 +192,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -200,6 +214,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder(rawUrl, RequestAdapter);

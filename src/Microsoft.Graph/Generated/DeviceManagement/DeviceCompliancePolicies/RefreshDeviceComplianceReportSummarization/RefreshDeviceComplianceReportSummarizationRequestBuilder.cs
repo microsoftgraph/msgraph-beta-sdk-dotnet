@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Refresh
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Refresh
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -79,6 +81,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Refresh
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization.RefreshDeviceComplianceReportSummarizationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
         public global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization.RefreshDeviceComplianceReportSummarizationRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization.RefreshDeviceComplianceReportSummarizationRequestBuilder(rawUrl, RequestAdapter);

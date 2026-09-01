@@ -22,20 +22,20 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists.Item.DeleteMembers
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The members property</summary>
+        /// <summary>The Members property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Member>? Members
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Member>?>("members"); }
-            set { BackingStore?.Set("members", value); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Member>?>("Members"); }
+            set { BackingStore?.Set("Members", value); }
         }
 #nullable restore
 #else
         public List<global::Microsoft.Graph.Beta.Models.Member> Members
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Member>>("members"); }
-            set { BackingStore?.Set("members", value); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Member>>("Members"); }
+            set { BackingStore?.Set("Members", value); }
         }
 #endif
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists.Item.DeleteMembers
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Member>(global::Microsoft.Graph.Beta.Models.Member.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Member>(global::Microsoft.Graph.Beta.Models.Member.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists.Item.DeleteMembers
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Member>("members", Members);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Member>("Members", Members);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

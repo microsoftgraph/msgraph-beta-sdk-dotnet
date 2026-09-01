@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.Item
         {
         }
         /// <summary>
-        /// Delete navigation property relations for security
+        /// Delete a concrete relation from a case.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-relation-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Links from the case to related security resources. Supports $expand.
+        /// Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-relation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a relation object.
+        /// Update the properties of a concrete relation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-relation-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation"/></returns>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property relations for security
+        /// Delete a concrete relation from a case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +127,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Links from the case to related security resources. Supports $expand.
+        /// Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +146,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a relation object.
+        /// Update the properties of a concrete relation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -183,7 +185,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.Item
         {
         }
         /// <summary>
-        /// Links from the case to related security resources. Supports $expand.
+        /// Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelationItemRequestBuilderGetQueryParameters 

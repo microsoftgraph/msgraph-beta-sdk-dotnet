@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.AddMembers;
 using Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.DeleteMembers;
+using Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.Members;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Beta.Users.Item.DistributionLists.Item
         public global::Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.DeleteMembers.DeleteMembersRequestBuilder DeleteMembers
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.DeleteMembers.DeleteMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the members property of the microsoft.graph.distributionList entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.Members.MembersRequestBuilder Members
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.DistributionLists.Item.DistributionListItemRequestBuilder"/> and sets the default values.

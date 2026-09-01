@@ -28,41 +28,49 @@ namespace Microsoft.Graph.Beta.Solutions
     public partial class SolutionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the approval property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.Approval.ApprovalRequestBuilder Approval
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Approval.ApprovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the backupRestore property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.BackupRestoreRequestBuilder BackupRestore
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.BackupRestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BookingBusinesses.BookingBusinessesRequestBuilder BookingBusinesses
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BookingBusinesses.BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BookingCurrencies.BookingCurrenciesRequestBuilder BookingCurrencies
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BookingCurrencies.BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder BusinessScenarios
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the migrations property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.MigrationsRequestBuilder Migrations
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.MigrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharePoint property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SharePoint.SharePointRequestBuilder SharePoint
         {
             get => new global::Microsoft.Graph.Beta.Solutions.SharePoint.SharePointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.VirtualEventsRequestBuilder VirtualEvents
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
@@ -72,6 +80,7 @@ namespace Microsoft.Graph.Beta.Solutions
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName.BusinessScenariosWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of businessScenario</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName.BusinessScenariosWithUniqueNameRequestBuilder BusinessScenariosWithUniqueName(string uniqueName)
         {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
@@ -100,6 +109,7 @@ namespace Microsoft.Graph.Beta.Solutions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SolutionsRoot?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.SolutionsRequestBuilder.SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -124,6 +134,7 @@ namespace Microsoft.Graph.Beta.Solutions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SolutionsRoot?> PatchAsync(global::Microsoft.Graph.Beta.Models.SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -146,6 +157,7 @@ namespace Microsoft.Graph.Beta.Solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.SolutionsRequestBuilder.SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -166,6 +178,7 @@ namespace Microsoft.Graph.Beta.Solutions
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -187,6 +200,7 @@ namespace Microsoft.Graph.Beta.Solutions
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.SolutionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SolutionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.SolutionsRequestBuilder(rawUrl, RequestAdapter);

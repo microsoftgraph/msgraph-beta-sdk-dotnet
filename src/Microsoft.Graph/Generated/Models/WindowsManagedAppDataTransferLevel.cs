@@ -13,5 +13,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>No apps.</summary>
         [EnumMember(Value = "none")]
         None,
+        /// <summary>Selected apps only. Allowed locations are specified by the child property.</summary>
+        [EnumMember(Value = "selectedApps")]
+        SelectedApps,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

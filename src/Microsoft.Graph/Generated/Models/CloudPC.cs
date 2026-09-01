@@ -328,6 +328,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("provisionedDateTime"); }
             set { BackingStore?.Set("provisionedDateTime", value); }
         }
+        /// <summary>The provisioningConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration? ProvisioningConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration?>("provisioningConfiguration"); }
+            set { BackingStore?.Set("provisioningConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration ProvisioningConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration>("provisioningConfiguration"); }
+            set { BackingStore?.Set("provisioningConfiguration", value); }
+        }
+#endif
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -562,6 +578,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "powerState", n => { PowerState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>(); } },
                 { "productType", n => { ProductType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>(); } },
                 { "provisionedDateTime", n => { ProvisionedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "provisioningConfiguration", n => { ProvisioningConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration.CreateFromDiscriminatorValue); } },
                 { "provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 { "provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
@@ -613,6 +630,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPowerState>("powerState", PowerState);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProductType>("productType", ProductType);
             writer.WriteDateTimeOffsetValue("provisionedDateTime", ProvisionedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration>("provisioningConfiguration", ProvisioningConfiguration);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);

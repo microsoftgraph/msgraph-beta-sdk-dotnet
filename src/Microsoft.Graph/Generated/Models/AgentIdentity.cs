@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentIdentityBlueprintId", value); }
         }
 #endif
+        /// <summary>The effective communication configuration for this agent identity. Represents the agent identity-level override that resolves on top of the configuration inherited from the agent identity blueprint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration? CommunicationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration?>("communicationConfiguration"); }
+            set { BackingStore?.Set("communicationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration CommunicationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration>("communicationConfiguration"); }
+            set { BackingStore?.Set("communicationConfiguration", value); }
+        }
+#endif
         /// <summary>The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -64,6 +80,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>>("inheritedOauth2PermissionGrants"); }
             set { BackingStore?.Set("inheritedOauth2PermissionGrants", value); }
+        }
+#endif
+        /// <summary>The collection of application IDs designated as managers of this agent identity&apos;s backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it&apos;s registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can&apos;t make this change — they must ask an owner or administrator in the blueprint&apos;s home tenant. Not nullable. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>?>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
         }
 #endif
         /// <summary>The sponsors for this agent identity.</summary>
@@ -108,9 +140,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "agentIdentityBlueprintId", n => { AgentIdentityBlueprintId = n.GetStringValue(); } },
+                { "communicationConfiguration", n => { CommunicationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration>(global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "inheritedAppRoleAssignments", n => { InheritedAppRoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>(global::Microsoft.Graph.Beta.Models.AppRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inheritedOauth2PermissionGrants", n => { InheritedOauth2PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>(global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "managerApplications", n => { ManagerApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -123,6 +157,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("agentIdentityBlueprintId", AgentIdentityBlueprintId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration>("communicationConfiguration", CommunicationConfiguration);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>("inheritedAppRoleAssignments", InheritedAppRoleAssignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>("inheritedOauth2PermissionGrants", InheritedOauth2PermissionGrants);

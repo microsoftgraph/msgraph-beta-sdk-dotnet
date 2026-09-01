@@ -22,16 +22,19 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
     public partial class OneDriveForBusinessRestoreSessionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the driveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts.DriveRestoreArtifactsRequestBuilder DriveRestoreArtifacts
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts.DriveRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driveRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder DriveRestoreArtifactsBulkAdditionRequests
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the granularDriveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts.GranularDriveRestoreArtifactsRequestBuilder GranularDriveRestoreArtifacts
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.GranularDriveRestoreArtifacts.GranularDriveRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
@@ -58,6 +61,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,6 +85,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder.OneDriveForBusinessRestoreSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,6 +111,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession?> PatchAsync(global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -128,6 +134,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -147,6 +154,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder.OneDriveForBusinessRestoreSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -167,6 +175,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.OneDriveForBusinessRestoreSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -188,6 +197,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder(rawUrl, RequestAdapter);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
     public partial class CustomTaskExtensionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
         /// <summary>Provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
         /// <param name="position">The unique identifier of customTaskExtension</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.Item.CustomTaskExtensionItemRequestBuilder"/></returns>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.Item.CustomTaskExtensionItemRequestBuilder this[string position]
         {
             get
@@ -61,6 +63,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder.CustomTaskExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,6 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtension?> PostAsync(global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtension body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -108,6 +112,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder.CustomTaskExtensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -128,6 +133,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtension body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -149,6 +155,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder(rawUrl, RequestAdapter);

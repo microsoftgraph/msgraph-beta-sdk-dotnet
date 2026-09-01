@@ -25,26 +25,31 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
     public partial class VirtualEventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the cancel method.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.PresentersRequestBuilder Presenters
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.PresentersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Publish.PublishRequestBuilder Publish
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Publish.PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.SessionsRequestBuilder Sessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setExternalEventInformation method.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SetExternalEventInformation.SetExternalEventInformationRequestBuilder SetExternalEventInformation
         {
             get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SetExternalEventInformation.SetExternalEventInformationRequestBuilder(PathParameters, RequestAdapter);
@@ -71,6 +76,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,6 +100,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.VirtualEvent?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.VirtualEventItemRequestBuilder.VirtualEventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -118,6 +125,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.VirtualEvent?> PatchAsync(global::Microsoft.Graph.Beta.Models.VirtualEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -140,6 +148,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="joinWebUrl">Alternate key of virtualEventSession</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder SessionsWithJoinWebUrl(string joinWebUrl)
         {
             if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
@@ -150,6 +159,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -169,6 +179,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.VirtualEventItemRequestBuilder.VirtualEventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -189,6 +200,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.VirtualEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -210,6 +222,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.VirtualEventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.VirtualEventItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.VirtualEventItemRequestBuilder(rawUrl, RequestAdapter);

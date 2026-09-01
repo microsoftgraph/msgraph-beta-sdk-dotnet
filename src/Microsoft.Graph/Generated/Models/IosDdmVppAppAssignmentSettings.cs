@@ -79,6 +79,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentFilterConfigurationId", value); }
         }
 #endif
+        /// <summary>The unique identifier of the DDM app configuration to associate with the app.</summary>
+        public Guid? DdmAppConfigId
+        {
+            get { return BackingStore?.Get<Guid?>("ddmAppConfigId"); }
+            set { BackingStore?.Set("ddmAppConfigId", value); }
+        }
         /// <summary>The unique identifier of the DNS proxy to associate with the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,6 +188,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "automaticAppUpdates", n => { AutomaticAppUpdates = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DdmAppAutomaticAppUpdates>(); } },
                 { "cellularSliceConfigurationId", n => { CellularSliceConfigurationId = n.GetStringValue(); } },
                 { "contentFilterConfigurationId", n => { ContentFilterConfigurationId = n.GetStringValue(); } },
+                { "ddmAppConfigId", n => { DdmAppConfigId = n.GetGuidValue(); } },
                 { "dnsProxyConfigurationId", n => { DnsProxyConfigurationId = n.GetStringValue(); } },
                 { "preventManagedAppBackup", n => { PreventManagedAppBackup = n.GetBoolValue(); } },
                 { "relayConfigurationId", n => { RelayConfigurationId = n.GetStringValue(); } },
@@ -205,6 +212,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DdmAppAutomaticAppUpdates>("automaticAppUpdates", AutomaticAppUpdates);
             writer.WriteStringValue("cellularSliceConfigurationId", CellularSliceConfigurationId);
             writer.WriteStringValue("contentFilterConfigurationId", ContentFilterConfigurationId);
+            writer.WriteGuidValue("ddmAppConfigId", DdmAppConfigId);
             writer.WriteStringValue("dnsProxyConfigurationId", DnsProxyConfigurationId);
             writer.WriteBoolValue("preventManagedAppBackup", PreventManagedAppBackup);
             writer.WriteStringValue("relayConfigurationId", RelayConfigurationId);

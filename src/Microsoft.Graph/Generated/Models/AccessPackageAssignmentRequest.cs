@@ -148,6 +148,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("justification", value); }
         }
 #endif
+        /// <summary>Additional parameters that control how the request is processed, such as bypassing the approval requirement configured on the access package policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestParameters? Parameters
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestParameters?>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestParameters Parameters
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestParameters>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#endif
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -273,6 +289,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "history", n => { History = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RequestActivity>(global::Microsoft.Graph.Beta.Models.RequestActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestParameters>(global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestParameters.CreateFromDiscriminatorValue); } },
                 { "requestState", n => { RequestState = n.GetStringValue(); } },
                 { "requestStatus", n => { RequestStatus = n.GetStringValue(); } },
                 { "requestType", n => { RequestType = n.GetStringValue(); } },
@@ -300,6 +317,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RequestActivity>("history", History);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestParameters>("parameters", Parameters);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessPackageSubject>("requestor", Requestor);
             writer.WriteStringValue("requestState", RequestState);
             writer.WriteStringValue("requestStatus", RequestStatus);

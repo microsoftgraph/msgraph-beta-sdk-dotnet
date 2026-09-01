@@ -88,6 +88,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customProperties", value); }
         }
 #endif
+        /// <summary>The geographic location of the data for multi-geo tenants. This property is only returned when explicitly selected by using $select. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DataLocationCode
+        {
+            get { return BackingStore?.Get<string?>("dataLocationCode"); }
+            set { BackingStore?.Set("dataLocationCode", value); }
+        }
+#nullable restore
+#else
+        public string DataLocationCode
+        {
+            get { return BackingStore?.Get<string>("dataLocationCode"); }
+            set { BackingStore?.Set("dataLocationCode", value); }
+        }
+#endif
         /// <summary>Provides a user-visible description of the fileStorageContainer. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -318,6 +334,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "containerTypeId", n => { ContainerTypeId = n.GetGuidValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customProperties", n => { CustomProperties = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerCustomPropertyDictionary>(global::Microsoft.Graph.Beta.Models.FileStorageContainerCustomPropertyDictionary.CreateFromDiscriminatorValue); } },
+                { "dataLocationCode", n => { DataLocationCode = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Drive>(global::Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
@@ -350,6 +367,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteGuidValue("containerTypeId", ContainerTypeId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerCustomPropertyDictionary>("customProperties", CustomProperties);
+            writer.WriteStringValue("dataLocationCode", DataLocationCode);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Drive>("drive", Drive);

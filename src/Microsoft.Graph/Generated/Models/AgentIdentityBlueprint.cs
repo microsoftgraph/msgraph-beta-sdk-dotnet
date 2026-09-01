@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AgentIdentityBlueprint : global::Microsoft.Graph.Beta.Models.Application, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The default communication configuration for agent identities created from this agent identity blueprint. Agent identities inherit this configuration unless they define their own override.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration? CommunicationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration?>("communicationConfiguration"); }
+            set { BackingStore?.Set("communicationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration CommunicationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration>("communicationConfiguration"); }
+            set { BackingStore?.Set("communicationConfiguration", value); }
+        }
+#endif
         /// <summary>Defines scopes of a resource application that may be automatically granted to agent identities without additional consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "communicationConfiguration", n => { CommunicationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration>(global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration.CreateFromDiscriminatorValue); } },
                 { "inheritablePermissions", n => { InheritablePermissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InheritablePermission>(global::Microsoft.Graph.Beta.Models.InheritablePermission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -81,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AgentCommunicationConfiguration>("communicationConfiguration", CommunicationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InheritablePermission>("inheritablePermissions", InheritablePermissions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("sponsors", Sponsors);
         }
