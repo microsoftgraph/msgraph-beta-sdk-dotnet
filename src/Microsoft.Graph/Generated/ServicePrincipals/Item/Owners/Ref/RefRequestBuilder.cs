@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref.RefRequestBuilder.RefRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,6 +65,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.StringCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref.RefRequestBuilder.RefRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,6 +90,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(global::Microsoft.Graph.Beta.Models.ReferenceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,6 +113,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref.RefRequestBuilder.RefRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
@@ -129,6 +133,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref.RefRequestBuilder.RefRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -149,6 +154,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ReferenceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -170,6 +176,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref.RefRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref.RefRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref.RefRequestBuilder(rawUrl, RequestAdapter);

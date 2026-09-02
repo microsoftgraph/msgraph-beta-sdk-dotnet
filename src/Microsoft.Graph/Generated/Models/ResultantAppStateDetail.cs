@@ -103,6 +103,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>App was removed in order to install a superseding app.</summary>
         [EnumMember(Value = "appRemovedBySupersedence")]
         AppRemovedBySupersedence,
+        /// <summary>App cannot be installed. One or more of the application&apos;s dependencies are in use.</summary>
+        [EnumMember(Value = "dependencyAppInUse")]
+        DependencyAppInUse,
         /// <summary>Application failed to uninstall. See error code property for more details.</summary>
         [EnumMember(Value = "seeUninstallErrorCode")]
         SeeUninstallErrorCode,
@@ -115,5 +118,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Application content was downloaded to the device.</summary>
         [EnumMember(Value = "contentDownloaded")]
         ContentDownloaded,
+        /// <summary>App enforcement is pending because the app is currently in use.</summary>
+        [EnumMember(Value = "inUse")]
+        InUse,
+        /// <summary>App enforcement was deferred by the user because the app is currently in use.</summary>
+        [EnumMember(Value = "deferred")]
+        Deferred,
+        /// <summary>App enforcement was automatically deferred because the app is currently in use and a user response was not available.</summary>
+        [EnumMember(Value = "autoDeferred")]
+        AutoDeferred,
     }
 }

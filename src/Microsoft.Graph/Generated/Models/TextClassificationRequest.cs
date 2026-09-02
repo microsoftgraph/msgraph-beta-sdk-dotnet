@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentMetaData", value); }
         }
 #endif
+        /// <summary>Optional caller-supplied precomputed embeddings for the text, so the service can skip recomputing them. Embeddings for models outside the allow-list are rejected with a 400.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.EmbeddingInput>? Embeddings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EmbeddingInput>?>("embeddings"); }
+            set { BackingStore?.Set("embeddings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.EmbeddingInput> Embeddings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.EmbeddingInput>>("embeddings"); }
+            set { BackingStore?.Set("embeddings", value); }
+        }
+#endif
         /// <summary>The file extension of the content being classified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "contentMetaData", n => { ContentMetaData = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData>(global::Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData.CreateFromDiscriminatorValue); } },
+                { "embeddings", n => { Embeddings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmbeddingInput>(global::Microsoft.Graph.Beta.Models.EmbeddingInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fileExtension", n => { FileExtension = n.GetStringValue(); } },
                 { "matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance>(); } },
                 { "scopesToRun", n => { ScopesToRun = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.SensitiveTypeScope>(); } },
@@ -123,6 +140,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData>("contentMetaData", ContentMetaData);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmbeddingInput>("embeddings", Embeddings);
             writer.WriteStringValue("fileExtension", FileExtension);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance>("matchTolerancesToInclude", MatchTolerancesToInclude);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.SensitiveTypeScope>("scopesToRun", ScopesToRun);

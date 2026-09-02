@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Indicates the operating system platform type that this compliance script targets.</summary>
+        /// <summary>Indicates the device platform on which the device compliance script will be executed. Possible values are: windows10AndLater (default), linux. The default value is windows10AndLater.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType? Platform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceComplianceScriptPlatformType?>("platform"); }

@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Tasks.Item
         {
         }
         /// <summary>
-        /// Delete navigation property tasks for security
+        /// Delete a task from a case.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-task-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Tasks.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.TaskObject>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.TaskObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tasks for security
+        /// Delete a task from a case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

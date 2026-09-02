@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.identityGovernance.directoryObjectWorkflowSubject" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.DirectoryObjectWorkflowSubject(),
                 "#microsoft.graph.identityGovernance.provisioningObjectWorkflowSubject" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.ProvisioningObjectWorkflowSubject(),
                 _ => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowSubject(),
             };

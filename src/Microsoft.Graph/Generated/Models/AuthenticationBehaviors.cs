@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("blockAzureADGraphAccess"); }
             set { BackingStore?.Set("blockAzureADGraphAccess", value); }
         }
+        /// <summary>Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.</summary>
+        public bool? CoopEnforcement
+        {
+            get { return BackingStore?.Get<bool?>("coopEnforcement"); }
+            set { BackingStore?.Set("coopEnforcement", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blockAzureADGraphAccess", n => { BlockAzureADGraphAccess = n.GetBoolValue(); } },
+                { "coopEnforcement", n => { CoopEnforcement = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "removeUnverifiedEmailClaim", n => { RemoveUnverifiedEmailClaim = n.GetBoolValue(); } },
                 { "requireClientServicePrincipal", n => { RequireClientServicePrincipal = n.GetBoolValue(); } },
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("blockAzureADGraphAccess", BlockAzureADGraphAccess);
+            writer.WriteBoolValue("coopEnforcement", CoopEnforcement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("removeUnverifiedEmailClaim", RemoveUnverifiedEmailClaim);
             writer.WriteBoolValue("requireClientServicePrincipal", RequireClientServicePrincipal);

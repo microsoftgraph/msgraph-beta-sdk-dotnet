@@ -186,6 +186,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subjectId", value); }
         }
 #endif
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.RecommendationTag>? Tags
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RecommendationTag>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.RecommendationTag> Tags
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RecommendationTag>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -218,6 +234,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "resourceType", n => { ResourceType = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationStatus>(); } },
                 { "subjectId", n => { SubjectId = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecommendationTag>(global::Microsoft.Graph.Beta.Models.RecommendationTag.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -242,6 +259,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("resourceType", ResourceType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationStatus>("status", Status);
             writer.WriteStringValue("subjectId", SubjectId);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecommendationTag>("tags", Tags);
         }
     }
 }

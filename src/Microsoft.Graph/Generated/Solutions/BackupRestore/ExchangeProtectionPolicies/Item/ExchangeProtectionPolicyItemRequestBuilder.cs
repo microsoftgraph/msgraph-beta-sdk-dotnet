@@ -24,26 +24,31 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
     public partial class ExchangeProtectionPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder MailboxExclusionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder MailboxExclusionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxInclusionRules.MailboxInclusionRulesRequestBuilder MailboxInclusionRules
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxInclusionRules.MailboxInclusionRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxProtectionUnits property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder MailboxProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder MailboxProtectionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
@@ -70,6 +75,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder.ExchangeProtectionPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -118,6 +125,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy?> PatchAsync(global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -140,6 +148,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -159,6 +168,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder.ExchangeProtectionPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -179,6 +189,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -200,6 +211,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder(rawUrl, RequestAdapter);

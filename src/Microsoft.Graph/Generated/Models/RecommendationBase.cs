@@ -50,6 +50,24 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecommendationCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+        /// <summary>The categoryGroup property</summary>
+        public global::Microsoft.Graph.Beta.Models.RecommendationCategoryGroup? CategoryGroup
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecommendationCategoryGroup?>("categoryGroup"); }
+            set { BackingStore?.Set("categoryGroup", value); }
+        }
+        /// <summary>The completedBySystemDateTime property</summary>
+        public DateTimeOffset? CompletedBySystemDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("completedBySystemDateTime"); }
+            set { BackingStore?.Set("completedBySystemDateTime", value); }
+        }
+        /// <summary>The completedByUserDateTime property</summary>
+        public DateTimeOffset? CompletedByUserDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("completedByUserDateTime"); }
+            set { BackingStore?.Set("completedByUserDateTime", value); }
+        }
         /// <summary>The date and time when the recommendation was detected as applicable to your directory.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -78,6 +96,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The failedReviewDateTime property</summary>
+        public DateTimeOffset? FailedReviewDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("failedReviewDateTime"); }
+            set { BackingStore?.Set("failedReviewDateTime", value); }
+        }
         /// <summary>The directory feature that the recommendation is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,6 +206,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<double?>("maxScore"); }
             set { BackingStore?.Set("maxScore", value); }
         }
+        /// <summary>The needsMoreActionResourceCount property</summary>
+        public int? NeedsMoreActionResourceCount
+        {
+            get { return BackingStore?.Get<int?>("needsMoreActionResourceCount"); }
+            set { BackingStore?.Set("needsMoreActionResourceCount", value); }
+        }
+        /// <summary>The nistClassifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.NistClassification>? NistClassifications
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.NistClassification>?>("nistClassifications"); }
+            set { BackingStore?.Set("nistClassifications", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.NistClassification> NistClassifications
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.NistClassification>>("nistClassifications"); }
+            set { BackingStore?.Set("nistClassifications", value); }
+        }
+#endif
         /// <summary>The future date and time when the status of a postponed recommendation will be active again.</summary>
         public DateTimeOffset? PostponeUntilDateTime
         {
@@ -216,6 +262,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("releaseType", value); }
         }
 #endif
+        /// <summary>The remediatedDateTime property</summary>
+        public DateTimeOffset? RemediatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("remediatedDateTime"); }
+            set { BackingStore?.Set("remediatedDateTime", value); }
+        }
         /// <summary>Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -244,6 +296,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecommendationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>The statusModifiedDateTime property</summary>
+        public DateTimeOffset? StatusModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("statusModifiedDateTime"); }
+            set { BackingStore?.Set("statusModifiedDateTime", value); }
+        }
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.RecommendationTag>? Tags
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RecommendationTag>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.RecommendationTag> Tags
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RecommendationTag>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -270,9 +344,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "actionSteps", n => { ActionSteps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ActionStep>(global::Microsoft.Graph.Beta.Models.ActionStep.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "benefits", n => { Benefits = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationCategory>(); } },
+                { "categoryGroup", n => { CategoryGroup = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationCategoryGroup>(); } },
+                { "completedBySystemDateTime", n => { CompletedBySystemDateTime = n.GetDateTimeOffsetValue(); } },
+                { "completedByUserDateTime", n => { CompletedByUserDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "currentScore", n => { CurrentScore = n.GetDoubleValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "failedReviewDateTime", n => { FailedReviewDateTime = n.GetDateTimeOffsetValue(); } },
                 { "featureAreas", n => { FeatureAreas = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas>()?.AsList(); } },
                 { "impactStartDateTime", n => { ImpactStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "impactType", n => { ImpactType = n.GetStringValue(); } },
@@ -282,13 +360,18 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "maxScore", n => { MaxScore = n.GetDoubleValue(); } },
+                { "needsMoreActionResourceCount", n => { NeedsMoreActionResourceCount = n.GetIntValue(); } },
+                { "nistClassifications", n => { NistClassifications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NistClassification>(global::Microsoft.Graph.Beta.Models.NistClassification.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
                 { "priority", n => { Priority = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationPriority>(); } },
                 { "recommendationType", n => { RecommendationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationType>(); } },
                 { "releaseType", n => { ReleaseType = n.GetStringValue(); } },
+                { "remediatedDateTime", n => { RemediatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "remediationImpact", n => { RemediationImpact = n.GetStringValue(); } },
                 { "requiredLicenses", n => { RequiredLicenses = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RequiredLicenses>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationStatus>(); } },
+                { "statusModifiedDateTime", n => { StatusModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecommendationTag>(global::Microsoft.Graph.Beta.Models.RecommendationTag.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -302,9 +385,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ActionStep>("actionSteps", ActionSteps);
             writer.WriteStringValue("benefits", Benefits);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationCategory>("category", Category);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationCategoryGroup>("categoryGroup", CategoryGroup);
+            writer.WriteDateTimeOffsetValue("completedBySystemDateTime", CompletedBySystemDateTime);
+            writer.WriteDateTimeOffsetValue("completedByUserDateTime", CompletedByUserDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDoubleValue("currentScore", CurrentScore);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("failedReviewDateTime", FailedReviewDateTime);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.RecommendationFeatureAreas>("featureAreas", FeatureAreas);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ImpactedResource>("impactedResources", ImpactedResources);
             writer.WriteDateTimeOffsetValue("impactStartDateTime", ImpactStartDateTime);
@@ -314,13 +401,18 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDoubleValue("maxScore", MaxScore);
+            writer.WriteIntValue("needsMoreActionResourceCount", NeedsMoreActionResourceCount);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NistClassification>("nistClassifications", NistClassifications);
             writer.WriteDateTimeOffsetValue("postponeUntilDateTime", PostponeUntilDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationPriority>("priority", Priority);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationType>("recommendationType", RecommendationType);
             writer.WriteStringValue("releaseType", ReleaseType);
+            writer.WriteDateTimeOffsetValue("remediatedDateTime", RemediatedDateTime);
             writer.WriteStringValue("remediationImpact", RemediationImpact);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RequiredLicenses>("requiredLicenses", RequiredLicenses);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecommendationStatus>("status", Status);
+            writer.WriteDateTimeOffsetValue("statusModifiedDateTime", StatusModifiedDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecommendationTag>("tags", Tags);
         }
     }
 }

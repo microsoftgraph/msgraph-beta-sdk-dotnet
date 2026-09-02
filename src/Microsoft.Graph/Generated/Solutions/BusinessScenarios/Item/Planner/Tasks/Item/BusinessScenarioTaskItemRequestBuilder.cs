@@ -24,26 +24,31 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
     public partial class BusinessScenarioTaskItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.AssignedToTaskBoardFormat.AssignedToTaskBoardFormatRequestBuilder AssignedToTaskBoardFormat
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.AssignedToTaskBoardFormat.AssignedToTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BucketTaskBoardFormat.BucketTaskBoardFormatRequestBuilder BucketTaskBoardFormat
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BucketTaskBoardFormat.BucketTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the details property of the microsoft.graph.plannerTask entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.Details.DetailsRequestBuilder Details
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.plannerTask entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.ProgressTaskBoardFormat.ProgressTaskBoardFormatRequestBuilder ProgressTaskBoardFormat
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.ProgressTaskBoardFormat.ProgressTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
@@ -71,6 +76,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,6 +101,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder.BusinessScenarioTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -120,6 +127,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.BusinessScenarioTask?> PatchAsync(global::Microsoft.Graph.Beta.Models.BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -142,6 +150,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -161,6 +170,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder.BusinessScenarioTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -181,6 +191,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -202,6 +213,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder(rawUrl, RequestAdapter);

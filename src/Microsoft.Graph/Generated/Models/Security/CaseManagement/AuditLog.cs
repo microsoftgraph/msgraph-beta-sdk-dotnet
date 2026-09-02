@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The collection of property changes recorded in the audit log.</summary>
+        /// <summary>The collection of property changes recorded in the audit log. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.ModifiedProperty>? ModifiedProperties

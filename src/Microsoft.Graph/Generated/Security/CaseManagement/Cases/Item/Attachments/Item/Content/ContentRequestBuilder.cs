@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments.It
         {
         }
         /// <summary>
-        /// The binary content stream for the attachment.
+        /// The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The binary content stream for the attachment.
+        /// Download the binary content of an attachment. After an upload completes, the service asynchronously scans the attachment for malware. Poll the attachment metadata by using Get attachment. If scanResult is unscanned, wait and try again later. Download the content only when scanResult is noThreatsFound. Don&apos;t download content when scanResult is malicious.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-attachment-download-content?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments.It
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The binary content stream for the attachment.
+        /// Upload binary content for an attachment. Create the attachment metadata first by using Create case attachment. The maximum file size is 100 MB. Upload files in chunks of no more than 1 MB. For files larger than 1 MB, send one PUT request for each chunk until all byte ranges are uploaded.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-attachment-upload-content?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Attachment"/></returns>
         /// <param name="body">Binary request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Attachment>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The binary content stream for the attachment.
+        /// The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments.It
             return requestInfo;
         }
         /// <summary>
-        /// The binary content stream for the attachment.
+        /// Download the binary content of an attachment. After an upload completes, the service asynchronously scans the attachment for malware. Poll the attachment metadata by using Get attachment. If scanResult is unscanned, wait and try again later. Download the content only when scanResult is noThreatsFound. Don&apos;t download content when scanResult is malicious.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments.It
             return requestInfo;
         }
         /// <summary>
-        /// The binary content stream for the attachment.
+        /// Upload binary content for an attachment. Create the attachment metadata first by using Create case attachment. The maximum file size is 100 MB. Upload files in chunks of no more than 1 MB. For files larger than 1 MB, send one PUT request for each chunk until all byte ranges are uploaded.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

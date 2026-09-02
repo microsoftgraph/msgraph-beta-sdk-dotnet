@@ -19,22 +19,6 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Contains agent-related settings.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAgentSettings? Agent
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAgentSettings?>("agent"); }
-            set { BackingStore?.Set("agent", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAgentSettings Agent
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAgentSettings>("agent"); }
-            set { BackingStore?.Set("agent", value); }
-        }
-#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether items from containers are surfaced in experiences such as My Activity or Microsoft 365.</summary>
@@ -48,6 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
             set { BackingStore?.Set("isItemVersioningEnabled", value); }
+        }
+        /// <summary>Indicates whether Office apps (Word, Excel, and PowerPoint) for desktop and web are restricted for containers of this container type.</summary>
+        public bool? IsOfficeRestricted
+        {
+            get { return BackingStore?.Get<bool?>("isOfficeRestricted"); }
+            set { BackingStore?.Set("isOfficeRestricted", value); }
         }
         /// <summary>Indicates whether search is enabled.</summary>
         public bool? IsSearchEnabled
@@ -137,9 +127,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent", n => { Agent = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAgentSettings>(global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAgentSettings.CreateFromDiscriminatorValue); } },
                 { "isDiscoverabilityEnabled", n => { IsDiscoverabilityEnabled = n.GetBoolValue(); } },
                 { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
+                { "isOfficeRestricted", n => { IsOfficeRestricted = n.GetBoolValue(); } },
                 { "isSearchEnabled", n => { IsSearchEnabled = n.GetBoolValue(); } },
                 { "isSharingRestricted", n => { IsSharingRestricted = n.GetBoolValue(); } },
                 { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetLongValue(); } },
@@ -156,9 +146,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.FileStorageContainerTypeAgentSettings>("agent", Agent);
             writer.WriteBoolValue("isDiscoverabilityEnabled", IsDiscoverabilityEnabled);
             writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
+            writer.WriteBoolValue("isOfficeRestricted", IsOfficeRestricted);
             writer.WriteBoolValue("isSearchEnabled", IsSearchEnabled);
             writer.WriteBoolValue("isSharingRestricted", IsSharingRestricted);
             writer.WriteLongValue("itemMajorVersionLimit", ItemMajorVersionLimit);

@@ -156,6 +156,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("root", value); }
         }
 #endif
+        /// <summary>The settings associated with the drive. Read-only. This property isn&apos;t returned by default and must be selected using the $select query parameter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DriveSettings? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DriveSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DriveSettings Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DriveSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>The sharePointIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -238,6 +254,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "owner", n => { Owner = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "quota", n => { Quota = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Quota>(global::Microsoft.Graph.Beta.Models.Quota.CreateFromDiscriminatorValue); } },
                 { "root", n => { Root = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>(global::Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DriveSettings>(global::Microsoft.Graph.Beta.Models.DriveSettings.CreateFromDiscriminatorValue); } },
                 { "sharePointIds", n => { SharePointIds = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SharepointIds>(global::Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "special", n => { Special = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveItem>(global::Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "system", n => { System = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SystemFacet>(global::Microsoft.Graph.Beta.Models.SystemFacet.CreateFromDiscriminatorValue); } },
@@ -260,6 +277,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("owner", Owner);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Quota>("quota", Quota);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DriveItem>("root", Root);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DriveSettings>("settings", Settings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SharepointIds>("sharePointIds", SharePointIds);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DriveItem>("special", Special);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SystemFacet>("system", System);

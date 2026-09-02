@@ -2,10 +2,10 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Count;
 using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Item;
-using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.MicrosoftGraphTenantGovernanceServicesRefresh;
-using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.MicrosoftGraphTenantGovernanceServicesRefreshStatus;
+using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh;
+using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Models.TenantGovernanceServices;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -17,7 +17,7 @@ using System;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants
 {
     /// <summary>
-    /// Provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+    /// Provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernance entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedTenantsRequestBuilder : BaseRequestBuilder
@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the refresh method.</summary>
-        public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.MicrosoftGraphTenantGovernanceServicesRefresh.MicrosoftGraphTenantGovernanceServicesRefreshRequestBuilder MicrosoftGraphTenantGovernanceServicesRefresh
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder Refresh
         {
-            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.MicrosoftGraphTenantGovernanceServicesRefresh.MicrosoftGraphTenantGovernanceServicesRefreshRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the refreshStatus method.</summary>
-        public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.MicrosoftGraphTenantGovernanceServicesRefreshStatus.MicrosoftGraphTenantGovernanceServicesRefreshStatusRequestBuilder MicrosoftGraphTenantGovernanceServicesRefreshStatus
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder RefreshStatus
         {
-            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.MicrosoftGraphTenantGovernanceServicesRefreshStatus.MicrosoftGraphTenantGovernanceServicesRefreshStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.</summary>
+        /// <summary>Provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernance entity.</summary>
         /// <param name="position">The unique identifier of relatedTenant</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Item.RelatedTenantItemRequestBuilder"/></returns>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Item.RelatedTenantItemRequestBuilder this[string position]
@@ -69,17 +69,17 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
         /// Get a list of relatedTenant objects and their properties, including relationship metrics.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-relatedtenants?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenantCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RelatedTenantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenantCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder.RelatedTenantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RelatedTenantCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder.RelatedTenantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenantCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder.RelatedTenantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RelatedTenantCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder.RelatedTenantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -87,23 +87,23 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenantCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RelatedTenantCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.RelatedTenantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to relatedTenants for directory
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RelatedTenant"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant?> PostAsync(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RelatedTenant?> PostAsync(global::Microsoft.Graph.Beta.Models.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant> PostAsync(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RelatedTenant> PostAsync(global::Microsoft.Graph.Beta.Models.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RelatedTenant>(requestInfo, global::Microsoft.Graph.Beta.Models.RelatedTenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of relatedTenant objects and their properties, including relationship metrics.
@@ -141,11 +141,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.RelatedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -75,6 +75,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAndroidSafetyNetDeviceAttestationFailed"); }
             set { BackingStore?.Set("appActionIfAndroidSafetyNetDeviceAttestationFailed", value); }
         }
+        /// <summary>Defines a managed app behavior, either warn, block, or wipe, if Developer Options are enabled on the Android device. If the admin does not set this action, the default is null, which indicates this setting is not configured.</summary>
+        public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDeveloperOptionsEnabled
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDeveloperOptionsEnabled"); }
+            set { BackingStore?.Set("appActionIfDeveloperOptionsEnabled", value); }
+        }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDeviceLockNotSet
         {
@@ -495,6 +501,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "appActionIfAndroidDeviceModelNotAllowed", n => { AppActionIfAndroidDeviceModelNotAllowed = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
                 { "appActionIfAndroidSafetyNetAppsVerificationFailed", n => { AppActionIfAndroidSafetyNetAppsVerificationFailed = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
                 { "appActionIfAndroidSafetyNetDeviceAttestationFailed", n => { AppActionIfAndroidSafetyNetDeviceAttestationFailed = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfDeveloperOptionsEnabled", n => { AppActionIfDeveloperOptionsEnabled = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
                 { "appActionIfDeviceLockNotSet", n => { AppActionIfDeviceLockNotSet = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
                 { "appActionIfDevicePasscodeComplexityLessThanHigh", n => { AppActionIfDevicePasscodeComplexityLessThanHigh = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
                 { "appActionIfDevicePasscodeComplexityLessThanLow", n => { AppActionIfDevicePasscodeComplexityLessThanLow = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
@@ -550,6 +557,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAndroidDeviceModelNotAllowed", AppActionIfAndroidDeviceModelNotAllowed);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAndroidSafetyNetAppsVerificationFailed", AppActionIfAndroidSafetyNetAppsVerificationFailed);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAndroidSafetyNetDeviceAttestationFailed", AppActionIfAndroidSafetyNetDeviceAttestationFailed);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDeveloperOptionsEnabled", AppActionIfDeveloperOptionsEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDeviceLockNotSet", AppActionIfDeviceLockNotSet);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanHigh", AppActionIfDevicePasscodeComplexityLessThanHigh);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanLow", AppActionIfDevicePasscodeComplexityLessThanLow);

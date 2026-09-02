@@ -103,6 +103,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }
             set { BackingStore?.Set("sizeEncrypted", value); }
         }
+        /// <summary>Indicates optional error details when uploadState is indicating an error. For example, when uploadState has commitFileFailed value, this field may have the error code of apkIsInvalid. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadErrorCode? UploadErrorCode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadErrorCode?>("uploadErrorCode"); }
+            set { BackingStore?.Set("uploadErrorCode", value); }
+        }
         /// <summary>Contains properties for upload request states.</summary>
         public global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState? UploadState
         {
@@ -137,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
                 { "sizeEncrypted", n => { SizeEncrypted = n.GetLongValue(); } },
+                { "uploadErrorCode", n => { UploadErrorCode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadErrorCode>(); } },
                 { "uploadState", n => { UploadState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState>(); } },
             };
         }

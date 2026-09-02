@@ -53,171 +53,205 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
     public partial class BackupRestoreRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activityLogs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ActivityLogs.ActivityLogsRequestBuilder ActivityLogs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ActivityLogs.ActivityLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the browseSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.BrowseSessionsRequestBuilder BrowseSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.BrowseSessions.BrowseSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driveExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder DriveExclusionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnits.DriveExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder DriveExclusionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveExclusionUnitsBulkAdditionJobs.DriveExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driveInclusionRules property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveInclusionRules.DriveInclusionRulesRequestBuilder DriveInclusionRules
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveInclusionRules.DriveInclusionRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driveProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnits.DriveProtectionUnitsRequestBuilder DriveProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnits.DriveProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder DriveProtectionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the emailNotificationsSetting property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting.EmailNotificationsSettingRequestBuilder EmailNotificationsSetting
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting.EmailNotificationsSettingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enable method.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.Enable.EnableRequestBuilder Enable
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.ExchangeProtectionPoliciesRequestBuilder ExchangeProtectionPolicies
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.ExchangeProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.ExchangeRestoreSessionsRequestBuilder ExchangeRestoreSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.ExchangeRestoreSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.ExclusionUnitsRequestBuilder ExclusionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits.ExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder MailboxExclusionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnits.MailboxExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder MailboxExclusionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxExclusionUnitsBulkAdditionJobs.MailboxExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxInclusionRules.MailboxInclusionRulesRequestBuilder MailboxInclusionRules
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxInclusionRules.MailboxInclusionRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder MailboxProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder MailboxProtectionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oneDriveForBusinessBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessBrowseSessions.OneDriveForBusinessBrowseSessionsRequestBuilder OneDriveForBusinessBrowseSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessBrowseSessions.OneDriveForBusinessBrowseSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.OneDriveForBusinessProtectionPoliciesRequestBuilder OneDriveForBusinessProtectionPolicies
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.OneDriveForBusinessProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oneDriveForBusinessRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.OneDriveForBusinessRestoreSessionsRequestBuilder OneDriveForBusinessRestoreSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.OneDriveForBusinessRestoreSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the protectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionPolicies.ProtectionPoliciesRequestBuilder ProtectionPolicies
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionPolicies.ProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the protectionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.ProtectionUnitsRequestBuilder ProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ProtectionUnits.ProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reports property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.ReportsRequestBuilder Reports
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder RestorePoints
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the restoreSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestoreSessions.RestoreSessionsRequestBuilder RestoreSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestoreSessions.RestoreSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceApps property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.ServiceAppsRequestBuilder ServiceApps
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.ServiceAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharePointBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointBrowseSessions.SharePointBrowseSessionsRequestBuilder SharePointBrowseSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointBrowseSessions.SharePointBrowseSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharePointProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.SharePointProtectionPoliciesRequestBuilder SharePointProtectionPolicies
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointProtectionPolicies.SharePointProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharePointRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.SharePointRestoreSessionsRequestBuilder SharePointRestoreSessions
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.SharePointRestoreSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder SiteExclusionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnits.SiteExclusionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder SiteExclusionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteExclusionUnitsBulkAdditionJobs.SiteExclusionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteInclusionRules property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteInclusionRules.SiteInclusionRulesRequestBuilder SiteInclusionRules
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteInclusionRules.SiteInclusionRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder SiteProtectionUnits
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder SiteProtectionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
@@ -244,6 +278,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -268,6 +303,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.BackupRestoreRoot?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.BackupRestoreRequestBuilder.BackupRestoreRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -292,6 +328,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.BackupRestoreRoot?> PatchAsync(global::Microsoft.Graph.Beta.Models.BackupRestoreRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -314,6 +351,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -333,6 +371,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.BackupRestoreRequestBuilder.BackupRestoreRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -353,6 +392,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.BackupRestoreRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -374,6 +414,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.BackupRestoreRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.BackupRestoreRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.BackupRestoreRequestBuilder(rawUrl, RequestAdapter);

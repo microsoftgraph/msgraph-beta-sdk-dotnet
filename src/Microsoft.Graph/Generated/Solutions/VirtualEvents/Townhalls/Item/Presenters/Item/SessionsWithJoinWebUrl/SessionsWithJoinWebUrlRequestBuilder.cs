@@ -43,6 +43,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventSession?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder.SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,6 +65,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder.SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder(rawUrl, RequestAdapter);

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
     public partial class IncidentCase : global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Case, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of AI agent identifiers associated with the incident.</summary>
+        /// <summary>The list of AI agent identifiers associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AiAgentIds
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("aiAgentIds", value); }
         }
 #endif
-        /// <summary>A summary of alert counts grouped by severity and status.</summary>
+        /// <summary>A summary of alert counts grouped by severity and status. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.CaseManagement.AlertCounts? AlertCounts
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("alertCounts", value); }
         }
 #endif
-        /// <summary>The list of alert policy identifiers associated with the incident.</summary>
+        /// <summary>The list of alert policy identifiers associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AlertPolicyIds
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("alertPolicyIds", value); }
         }
 #endif
-        /// <summary>The user assigned to investigate the incident case.</summary>
+        /// <summary>The user assigned to investigate the incident case. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
-        /// <summary>The list of threat identifiers associated with the incident.</summary>
+        /// <summary>The list of threat identifiers associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AssociatedThreatIds
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("associatedThreatIds", value); }
         }
 #endif
-        /// <summary>The incident categories.</summary>
+        /// <summary>The incident categories. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Categories
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.IncidentClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
-        /// <summary>The cloud scopes associated with the incident.</summary>
+        /// <summary>The cloud scopes associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CloudScopes
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("cloudScopes", value); }
         }
 #endif
-        /// <summary>The data sensitivity labels associated with the incident.</summary>
+        /// <summary>The data sensitivity labels associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DataSensitivityLabels
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("dataSensitivityLabels", value); }
         }
 #endif
-        /// <summary>The data streams associated with the incident.</summary>
+        /// <summary>The data streams associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DataStreams
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("dataStreams", value); }
         }
 #endif
-        /// <summary>The detection sources that identified the incident.</summary>
+        /// <summary>The detection sources that identified the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DetectionSources
@@ -184,13 +184,13 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.IncidentDetermination?>("determination"); }
             set { BackingStore?.Set("determination", value); }
         }
-        /// <summary>The target completion date and time for the incident case.</summary>
+        /// <summary>The target completion date and time for the incident case. Supports $filter.</summary>
         public DateTimeOffset? DueDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>The email notification recipients for the incident case.</summary>
+        /// <summary>The email notification recipients for the incident case. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EmailNotificationRecipients
@@ -206,13 +206,13 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("emailNotificationRecipients", value); }
         }
 #endif
-        /// <summary>The date and time of the first event in the incident.</summary>
+        /// <summary>The date and time of the first event in the incident. Supports $filter.</summary>
         public DateTimeOffset? FirstEventTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("firstEventTime"); }
             set { BackingStore?.Set("firstEventTime", value); }
         }
-        /// <summary>A summary of impacted asset counts for the incident.</summary>
+        /// <summary>A summary of impacted asset counts for the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.CaseManagement.ImpactedAssetsCounts? ImpactedAssets
@@ -228,13 +228,13 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("impactedAssets", value); }
         }
 #endif
-        /// <summary>The Microsoft Security incident identifier.</summary>
+        /// <summary>The Microsoft Security incident identifier. Supports $filter.</summary>
         public long? IncidentId
         {
             get { return BackingStore?.Get<long?>("incidentId"); }
             set { BackingStore?.Set("incidentId", value); }
         }
-        /// <summary>The URL for the incident in the Microsoft Defender portal.</summary>
+        /// <summary>The URL for the incident in the Microsoft Defender portal. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IncidentWebUrl
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
 #endif
-        /// <summary>A summary of investigation details associated with the incident.</summary>
+        /// <summary>A summary of investigation details associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Investigation? Investigation
@@ -266,7 +266,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("investigation", value); }
         }
 #endif
-        /// <summary>The list of investigation identifiers associated with the incident.</summary>
+        /// <summary>The list of investigation identifiers associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? InvestigationIds
@@ -282,7 +282,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("investigationIds", value); }
         }
 #endif
-        /// <summary>The list of investigation states associated with the incident.</summary>
+        /// <summary>The list of investigation states associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? InvestigationStates
@@ -298,13 +298,13 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("investigationStates", value); }
         }
 #endif
-        /// <summary>The date and time of the most recent event in the incident.</summary>
+        /// <summary>The date and time of the most recent event in the incident. Supports $filter.</summary>
         public DateTimeOffset? LastEventTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastEventTime"); }
             set { BackingStore?.Set("lastEventTime", value); }
         }
-        /// <summary>The list of machine group identifiers associated with the incident.</summary>
+        /// <summary>The list of machine group identifiers associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MachineGroupIds
@@ -320,7 +320,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("machineGroupIds", value); }
         }
 #endif
-        /// <summary>The operating system platforms associated with the incident.</summary>
+        /// <summary>The operating system platforms associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OsPlatforms
@@ -336,7 +336,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("osPlatforms", value); }
         }
 #endif
-        /// <summary>The policy names associated with the incident.</summary>
+        /// <summary>The policy names associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PolicyNames
@@ -352,13 +352,13 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("policyNames", value); }
         }
 #endif
-        /// <summary>The priority score assigned to the incident.</summary>
+        /// <summary>The priority score assigned to the incident. Supports $filter.</summary>
         public int? PriorityScore
         {
             get { return BackingStore?.Get<int?>("priorityScore"); }
             set { BackingStore?.Set("priorityScore", value); }
         }
-        /// <summary>The product names associated with the incident.</summary>
+        /// <summary>The product names associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProductNames
@@ -374,19 +374,19 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("productNames", value); }
         }
 #endif
-        /// <summary>The case identifier to which this case redirects when merged.</summary>
+        /// <summary>The redirectCaseId property</summary>
         public long? RedirectCaseId
         {
             get { return BackingStore?.Get<long?>("redirectCaseId"); }
             set { BackingStore?.Set("redirectCaseId", value); }
         }
-        /// <summary>The incident identifier to which this incident redirects when merged.</summary>
+        /// <summary>The redirectIncidentId property</summary>
         public long? RedirectIncidentId
         {
             get { return BackingStore?.Get<long?>("redirectIncidentId"); }
             set { BackingStore?.Set("redirectIncidentId", value); }
         }
-        /// <summary>The service sources associated with the incident.</summary>
+        /// <summary>The service sources associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ServiceSources
@@ -408,7 +408,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.IncidentSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>A summary of the incident.</summary>
+        /// <summary>A summary of the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary
@@ -424,7 +424,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("summary", value); }
         }
 #endif
-        /// <summary>The system tags associated with the incident.</summary>
+        /// <summary>The system tags associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SystemTags
@@ -440,13 +440,13 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("systemTags", value); }
         }
 #endif
-        /// <summary>The top risk score associated with the incident.</summary>
+        /// <summary>The top risk score associated with the incident. Supports $filter.</summary>
         public int? TopRiskScore
         {
             get { return BackingStore?.Get<int?>("topRiskScore"); }
             set { BackingStore?.Set("topRiskScore", value); }
         }
-        /// <summary>The list of workspace identifiers associated with the incident.</summary>
+        /// <summary>The list of workspace identifiers associated with the incident. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WorkspaceIds

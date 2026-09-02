@@ -3,6 +3,8 @@
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicies;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicyPriorityConfigurations;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinitions;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates;
@@ -26,36 +28,55 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
     public partial class LifecycleWorkflowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder CustomTaskExtensions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.DeletedItemsRequestBuilder DeletedItems
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the insights property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder Insights
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the lifecyclePolicies property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicies.LifecyclePoliciesRequestBuilder LifecyclePolicies
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicies.LifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lifecyclePolicyPriorityConfigurations property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicyPriorityConfigurations.LifecyclePolicyPriorityConfigurationsRequestBuilder LifecyclePolicyPriorityConfigurations
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicyPriorityConfigurations.LifecyclePolicyPriorityConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinitions.TaskDefinitionsRequestBuilder TaskDefinitions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinitions.TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.WorkflowsRequestBuilder Workflows
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.WorkflowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.WorkflowTemplatesRequestBuilder WorkflowTemplates
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.WorkflowTemplatesRequestBuilder(PathParameters, RequestAdapter);
@@ -82,6 +103,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -105,6 +127,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder.LifecycleWorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -129,6 +152,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer?> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -151,6 +175,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -170,6 +195,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder.LifecycleWorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -190,6 +216,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -211,6 +238,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder(rawUrl, RequestAdapter);

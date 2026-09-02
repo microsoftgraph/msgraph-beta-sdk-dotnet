@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PolicyTipAction : global::Microsoft.Graph.Beta.Models.DlpActionInfo, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The complianceUrl property</summary>
+        /// <summary>A URL that points users to additional compliance guidance or remediation details for the policy tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceUrl
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("complianceUrl", value); }
         }
 #endif
-        /// <summary>The matchedConditionsDescription property</summary>
+        /// <summary>A user-friendly summary of the matched DLP conditions that triggered the policy tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MatchedConditionsDescription

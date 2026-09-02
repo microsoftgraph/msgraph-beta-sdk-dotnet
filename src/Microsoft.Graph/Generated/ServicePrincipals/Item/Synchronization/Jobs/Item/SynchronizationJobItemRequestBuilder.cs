@@ -26,36 +26,43 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
     public partial class SynchronizationJobItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the bulkUpload property of the microsoft.graph.synchronizationJob entity.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.BulkUpload.BulkUploadRequestBuilder BulkUpload
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.BulkUpload.BulkUploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pause method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause.PauseRequestBuilder Pause
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause.PauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the provisionOnDemand method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand.ProvisionOnDemandRequestBuilder ProvisionOnDemand
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand.ProvisionOnDemandRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restart method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart.RestartRequestBuilder Restart
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart.RestartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.SchemaRequestBuilder Schema
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.SchemaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the start method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Start.StartRequestBuilder Start
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Start.StartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateCredentials method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsRequestBuilder ValidateCredentials
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ValidateCredentials.ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -107,6 +115,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SynchronizationJob?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder.SynchronizationJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -131,6 +140,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SynchronizationJob?> PatchAsync(global::Microsoft.Graph.Beta.Models.SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -153,6 +163,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -172,6 +183,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder.SynchronizationJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -192,6 +204,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SynchronizationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -213,6 +226,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.SynchronizationJobItemRequestBuilder(rawUrl, RequestAdapter);

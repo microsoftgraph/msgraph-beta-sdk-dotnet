@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ActivateDeviceEsim;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.AssignmentFilterEvaluationStatusDetails;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.BypassActivationLock;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.CancelEnhancedLogCollection;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ChangeAssignments;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.CleanWindowsDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.CreateDeviceLogCollectionRequest;
@@ -55,6 +56,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ShutDown;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SuspendManagedHomeScreen;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SyncDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.TriggerConfigurationManagerAction;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.TriggerEnhancedLogCollection;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.UpdateWindowsDeviceAccount;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Users;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.WindowsDefenderScan;
@@ -93,6 +95,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder BypassActivationLock
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the cancelEnhancedLogCollection method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.CancelEnhancedLogCollection.CancelEnhancedLogCollectionRequestBuilder CancelEnhancedLogCollection
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.CancelEnhancedLogCollection.CancelEnhancedLogCollectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changeAssignments method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ChangeAssignments.ChangeAssignmentsRequestBuilder ChangeAssignments
@@ -353,6 +360,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the triggerEnhancedLogCollection method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.TriggerEnhancedLogCollection.TriggerEnhancedLogCollectionRequestBuilder TriggerEnhancedLogCollection
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.TriggerEnhancedLogCollection.TriggerEnhancedLogCollectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateWindowsDeviceAccount method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.UpdateWindowsDeviceAccount.UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount

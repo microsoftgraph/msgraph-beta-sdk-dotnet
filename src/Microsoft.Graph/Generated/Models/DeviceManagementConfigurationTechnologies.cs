@@ -59,5 +59,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the settings that can be deployed through the Android channel.</summary>
         [EnumMember(Value = "android")]
         Android = 65536,
+        /// <summary>Setting can be deployed through the Intune Open Extensibility channel for scenarios such as Windows Recovery Environment (WinRE) configuration policies.</summary>
+        [EnumMember(Value = "intuneOpenExtensibility")]
+        IntuneOpenExtensibility = 131072,
     }
 }

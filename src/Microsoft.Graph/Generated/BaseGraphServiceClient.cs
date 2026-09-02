@@ -822,6 +822,7 @@ namespace Microsoft.Graph.Beta
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of servicePrincipal</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId)
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));

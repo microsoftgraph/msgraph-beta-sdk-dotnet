@@ -48,5 +48,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         AlternateMitigation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "needsMoreAction")]
+        #pragma warning disable CS1591
+        NeedsMoreAction,
+        #pragma warning restore CS1591
     }
 }

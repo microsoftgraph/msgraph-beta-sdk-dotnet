@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations
         {
         }
         /// <summary>
-        /// Get a list of external resource relation objects for a case.
+        /// Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-case-list-relations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.CaseManagement.RelationCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.RelationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.RelationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an external resource relation for a case.
+        /// Create a concrete external resource relation for a case.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-case-post-relations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of external resource relation objects for a case.
+        /// Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations
             return requestInfo;
         }
         /// <summary>
-        /// Create an external resource relation for a case.
+        /// Create a concrete external resource relation for a case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations
             return new global::Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Relations.RelationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of external resource relation objects for a case.
+        /// Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelationsRequestBuilderGetQueryParameters 

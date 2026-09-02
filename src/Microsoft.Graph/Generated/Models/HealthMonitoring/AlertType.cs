@@ -36,5 +36,21 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         #pragma warning disable CS1591
         SamlSignInFailure,
         #pragma warning restore CS1591
+        [EnumMember(Value = "internetAppBlockedByPolicy")]
+        #pragma warning disable CS1591
+        InternetAppBlockedByPolicy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "privateAppBlockedByConnector")]
+        #pragma warning disable CS1591
+        PrivateAppBlockedByConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "remoteNetworkTunnelConnectivity")]
+        #pragma warning disable CS1591
+        RemoteNetworkTunnelConnectivity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "remoteNetworkBgpConnectivity")]
+        #pragma warning disable CS1591
+        RemoteNetworkBgpConnectivity,
+        #pragma warning restore CS1591
     }
 }

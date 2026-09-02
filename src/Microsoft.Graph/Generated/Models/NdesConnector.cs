@@ -51,6 +51,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("enrolledDateTime"); }
             set { BackingStore?.Set("enrolledDateTime", value); }
         }
+        /// <summary>The collection of individual health check results for this connector. Each entry represents an independent health metric with its current status. Empty when the connector is disconnected or when health has not been evaluated yet. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ConnectorHealthCheck>? HealthChecks
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConnectorHealthCheck>?>("healthChecks"); }
+            set { BackingStore?.Set("healthChecks", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ConnectorHealthCheck> HealthChecks
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ConnectorHealthCheck>>("healthChecks"); }
+            set { BackingStore?.Set("healthChecks", value); }
+        }
+#endif
+        /// <summary>The overall health status of the connector, representing the worst status across all individual health checks. This value is pre-computed on each connector upload and may be overridden to disconnected at read time if the connector has not connected recently. Read-only.</summary>
+        public global::Microsoft.Graph.Beta.Models.NdesConnectorHealthStatus? HealthStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.NdesConnectorHealthStatus?>("healthStatus"); }
+            set { BackingStore?.Set("healthStatus", value); }
+        }
         /// <summary>Last connection time for the Ndes Connector</summary>
         public DateTimeOffset? LastConnectionDateTime
         {
@@ -116,6 +138,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enrolledDateTime", n => { EnrolledDateTime = n.GetDateTimeOffsetValue(); } },
+                { "healthChecks", n => { HealthChecks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConnectorHealthCheck>(global::Microsoft.Graph.Beta.Models.ConnectorHealthCheck.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NdesConnectorHealthStatus>(); } },
                 { "lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "machineName", n => { MachineName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

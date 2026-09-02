@@ -125,6 +125,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isContinuousAccessEvaluationEnabled"); }
             set { BackingStore?.Set("isContinuousAccessEvaluationEnabled", value); }
         }
+        /// <summary>The isDeviceAccessEnabled property</summary>
+        public bool? IsDeviceAccessEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isDeviceAccessEnabled"); }
+            set { BackingStore?.Set("isDeviceAccessEnabled", value); }
+        }
         /// <summary>Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.</summary>
         public bool? IsDnsResolutionEnabled
         {
@@ -380,6 +386,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isAccessibleViaZTNAClient", n => { IsAccessibleViaZTNAClient = n.GetBoolValue(); } },
                 { "isBackendCertificateValidationEnabled", n => { IsBackendCertificateValidationEnabled = n.GetBoolValue(); } },
                 { "isContinuousAccessEvaluationEnabled", n => { IsContinuousAccessEvaluationEnabled = n.GetBoolValue(); } },
+                { "isDeviceAccessEnabled", n => { IsDeviceAccessEnabled = n.GetBoolValue(); } },
                 { "isDnsResolutionEnabled", n => { IsDnsResolutionEnabled = n.GetBoolValue(); } },
                 { "isHttpOnlyCookieEnabled", n => { IsHttpOnlyCookieEnabled = n.GetBoolValue(); } },
                 { "isOnPremPublishingEnabled", n => { IsOnPremPublishingEnabled = n.GetBoolValue(); } },
@@ -418,6 +425,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isAccessibleViaZTNAClient", IsAccessibleViaZTNAClient);
             writer.WriteBoolValue("isBackendCertificateValidationEnabled", IsBackendCertificateValidationEnabled);
             writer.WriteBoolValue("isContinuousAccessEvaluationEnabled", IsContinuousAccessEvaluationEnabled);
+            writer.WriteBoolValue("isDeviceAccessEnabled", IsDeviceAccessEnabled);
             writer.WriteBoolValue("isDnsResolutionEnabled", IsDnsResolutionEnabled);
             writer.WriteBoolValue("isHttpOnlyCookieEnabled", IsHttpOnlyCookieEnabled);
             writer.WriteBoolValue("isOnPremPublishingEnabled", IsOnPremPublishingEnabled);

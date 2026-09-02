@@ -22,16 +22,19 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
     public partial class TaskReportItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the task property of the microsoft.graph.identityGovernance.taskReport entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskNamespace.TaskRequestBuilder Task
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskDefinition property of the microsoft.graph.identityGovernance.taskReport entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskDefinition.TaskDefinitionRequestBuilder TaskDefinition
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskDefinition.TaskDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskProcessingResults.TaskProcessingResultsRequestBuilder TaskProcessingResults
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskProcessingResults.TaskProcessingResultsRequestBuilder(PathParameters, RequestAdapter);
@@ -59,6 +62,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskReport?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder.TaskReportItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,6 +84,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder.TaskReportItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -99,6 +104,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskReportItemRequestBuilder(rawUrl, RequestAdapter);

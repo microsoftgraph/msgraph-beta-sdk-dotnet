@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("chatId", value); }
         }
 #endif
+        /// <summary>Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ChatMessageCitation>? Citations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ChatMessageCitation>?>("citations"); }
+            set { BackingStore?.Set("citations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ChatMessageCitation> Citations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ChatMessageCitation>>("citations"); }
+            set { BackingStore?.Set("citations", value); }
+        }
+#endif
         /// <summary>Timestamp of when the chat message was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -136,6 +152,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("from", value); }
         }
 #endif
+        /// <summary>The hasReplies property</summary>
+        public bool? HasReplies
+        {
+            get { return BackingStore?.Get<bool?>("hasReplies"); }
+            set { BackingStore?.Set("hasReplies", value); }
+        }
         /// <summary>Content in a message hosted by Microsoft Teams - for example, images or code snippets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -379,11 +401,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>(global::Microsoft.Graph.Beta.Models.ChatMessageBody.CreateFromDiscriminatorValue); } },
                 { "channelIdentity", n => { ChannelIdentity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChannelIdentity>(global::Microsoft.Graph.Beta.Models.ChannelIdentity.CreateFromDiscriminatorValue); } },
                 { "chatId", n => { ChatId = n.GetStringValue(); } },
+                { "citations", n => { Citations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessageCitation>(global::Microsoft.Graph.Beta.Models.ChatMessageCitation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "etag", n => { Etag = n.GetStringValue(); } },
                 { "eventDetail", n => { EventDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.EventMessageDetail>(global::Microsoft.Graph.Beta.Models.EventMessageDetail.CreateFromDiscriminatorValue); } },
                 { "from", n => { From = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageFromIdentitySet>(global::Microsoft.Graph.Beta.Models.ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
+                { "hasReplies", n => { HasReplies = n.GetBoolValue(); } },
                 { "hostedContents", n => { HostedContents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessageHostedContent>(global::Microsoft.Graph.Beta.Models.ChatMessageHostedContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "importance", n => { Importance = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ChatMessageImportance>(); } },
                 { "lastEditedDateTime", n => { LastEditedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -414,11 +438,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageBody>("body", Body);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChannelIdentity>("channelIdentity", ChannelIdentity);
             writer.WriteStringValue("chatId", ChatId);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessageCitation>("citations", Citations);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
             writer.WriteStringValue("etag", Etag);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.EventMessageDetail>("eventDetail", EventDetail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageFromIdentitySet>("from", From);
+            writer.WriteBoolValue("hasReplies", HasReplies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChatMessageHostedContent>("hostedContents", HostedContents);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ChatMessageImportance>("importance", Importance);
             writer.WriteDateTimeOffsetValue("lastEditedDateTime", LastEditedDateTime);

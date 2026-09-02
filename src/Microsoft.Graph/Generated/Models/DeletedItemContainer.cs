@@ -13,6 +13,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DeletedItemContainer : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The lifecyclePolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>? LifecyclePolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>?>("lifecyclePolicies"); }
+            set { BackingStore?.Set("lifecyclePolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy> LifecyclePolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>>("lifecyclePolicies"); }
+            set { BackingStore?.Set("lifecyclePolicies", value); }
+        }
+#endif
         /// <summary>Deleted workflows that end up in the deletedItemsContainer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "lifecyclePolicies", n => { LifecyclePolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "workflows", n => { Workflows = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>("lifecyclePolicies", LifecyclePolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>("workflows", Workflows);
         }
     }

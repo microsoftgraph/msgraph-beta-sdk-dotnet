@@ -22,16 +22,19 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
     public partial class PermissionsAnalyticsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the aws property of the microsoft.graph.permissionsAnalyticsAggregation entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder Aws
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the azure property of the microsoft.graph.permissionsAnalyticsAggregation entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.AzureRequestBuilder Azure
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.AzureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the gcp property of the microsoft.graph.permissionsAnalyticsAggregation entity.</summary>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.GcpRequestBuilder Gcp
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.GcpRequestBuilder(PathParameters, RequestAdapter);
@@ -58,6 +61,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,6 +85,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.PermissionsAnalyticsRequestBuilder.PermissionsAnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -105,6 +110,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation?> PatchAsync(global::Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -127,6 +133,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -146,6 +153,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.PermissionsAnalyticsRequestBuilder.PermissionsAnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -166,6 +174,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -187,6 +196,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.PermissionsAnalyticsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.PermissionsAnalyticsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.PermissionsAnalyticsRequestBuilder(rawUrl, RequestAdapter);

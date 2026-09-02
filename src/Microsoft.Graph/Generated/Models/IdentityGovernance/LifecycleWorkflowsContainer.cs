@@ -60,6 +60,38 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("insights", value); }
         }
 #endif
+        /// <summary>The lifecyclePolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>? LifecyclePolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>?>("lifecyclePolicies"); }
+            set { BackingStore?.Set("lifecyclePolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy> LifecyclePolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>>("lifecyclePolicies"); }
+            set { BackingStore?.Set("lifecyclePolicies", value); }
+        }
+#endif
+        /// <summary>The lifecyclePolicyPriorityConfigurations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration>? LifecyclePolicyPriorityConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration>?>("lifecyclePolicyPriorityConfigurations"); }
+            set { BackingStore?.Set("lifecyclePolicyPriorityConfigurations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration> LifecyclePolicyPriorityConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration>>("lifecyclePolicyPriorityConfigurations"); }
+            set { BackingStore?.Set("lifecyclePolicyPriorityConfigurations", value); }
+        }
+#endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,6 +177,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtension>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deletedItems", n => { DeletedItems = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeletedItemContainer>(global::Microsoft.Graph.Beta.Models.DeletedItemContainer.CreateFromDiscriminatorValue); } },
                 { "insights", n => { Insights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights.CreateFromDiscriminatorValue); } },
+                { "lifecyclePolicies", n => { LifecyclePolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "lifecyclePolicyPriorityConfigurations", n => { LifecyclePolicyPriorityConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleManagementSettings>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
                 { "taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowTemplate>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -162,6 +196,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtension>("customTaskExtensions", CustomTaskExtensions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeletedItemContainer>("deletedItems", DeletedItems);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>("insights", Insights);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicy>("lifecyclePolicies", LifecyclePolicies);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration>("lifecyclePolicyPriorityConfigurations", LifecyclePolicyPriorityConfigurations);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleManagementSettings>("settings", Settings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition>("taskDefinitions", TaskDefinitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>("workflows", Workflows);

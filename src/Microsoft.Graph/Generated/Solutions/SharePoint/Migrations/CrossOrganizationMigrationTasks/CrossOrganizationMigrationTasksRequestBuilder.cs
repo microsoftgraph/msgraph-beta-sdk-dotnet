@@ -24,6 +24,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
     public partial class CrossOrganizationMigrationTasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -31,6 +32,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// <summary>Provides operations to manage the crossOrganizationMigrationTasks property of the microsoft.graph.sharePointMigrationsRoot entity.</summary>
         /// <param name="position">The unique identifier of sharePointMigrationTask</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.Item.SharePointMigrationTaskItemRequestBuilder"/></returns>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.Item.SharePointMigrationTaskItemRequestBuilder this[string position]
         {
             get
@@ -63,6 +65,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SharePointMigrationTaskCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.CrossOrganizationMigrationTasksRequestBuilder.CrossOrganizationMigrationTasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,6 +87,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.GetBySourceGroupMailNicknameWithSourceGroupMailNickname.GetBySourceGroupMailNicknameWithSourceGroupMailNicknameRequestBuilder"/></returns>
         /// <param name="sourceGroupMailNickname">Usage: sourceGroupMailNickname=&apos;{sourceGroupMailNickname}&apos;</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.GetBySourceGroupMailNicknameWithSourceGroupMailNickname.GetBySourceGroupMailNicknameWithSourceGroupMailNicknameRequestBuilder GetBySourceGroupMailNicknameWithSourceGroupMailNickname(string sourceGroupMailNickname)
         {
             if(string.IsNullOrEmpty(sourceGroupMailNickname)) throw new ArgumentNullException(nameof(sourceGroupMailNickname));
@@ -94,6 +98,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.GetBySourceSiteUrlWithSourceSiteUrl.GetBySourceSiteUrlWithSourceSiteUrlRequestBuilder"/></returns>
         /// <param name="sourceSiteUrl">Usage: sourceSiteUrl=&apos;{sourceSiteUrl}&apos;</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.GetBySourceSiteUrlWithSourceSiteUrl.GetBySourceSiteUrlWithSourceSiteUrlRequestBuilder GetBySourceSiteUrlWithSourceSiteUrl(string sourceSiteUrl)
         {
             if(string.IsNullOrEmpty(sourceSiteUrl)) throw new ArgumentNullException(nameof(sourceSiteUrl));
@@ -104,6 +109,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.GetBySourceUserPrincipalNameWithSourcePrincipalName.GetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder"/></returns>
         /// <param name="sourcePrincipalName">Usage: sourcePrincipalName=&apos;{sourcePrincipalName}&apos;</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.GetBySourceUserPrincipalNameWithSourcePrincipalName.GetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder GetBySourceUserPrincipalNameWithSourcePrincipalName(string sourcePrincipalName)
         {
             if(string.IsNullOrEmpty(sourcePrincipalName)) throw new ArgumentNullException(nameof(sourcePrincipalName));
@@ -118,6 +124,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SharePointMigrationTask?> PostAsync(global::Microsoft.Graph.Beta.Models.SharePointMigrationTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -140,6 +147,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.CrossOrganizationMigrationTasksRequestBuilder.CrossOrganizationMigrationTasksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -160,6 +168,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.SharePointMigrationTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -181,6 +190,7 @@ namespace Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganization
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.CrossOrganizationMigrationTasksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.CrossOrganizationMigrationTasksRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.SharePoint.Migrations.CrossOrganizationMigrationTasks.CrossOrganizationMigrationTasksRequestBuilder(rawUrl, RequestAdapter);

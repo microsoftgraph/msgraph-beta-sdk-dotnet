@@ -32,5 +32,9 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         #pragma warning disable CS1591
         Saml,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gsa")]
+        #pragma warning disable CS1591
+        Gsa,
+        #pragma warning restore CS1591
     }
 }

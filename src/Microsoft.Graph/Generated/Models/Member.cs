@@ -21,22 +21,6 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The contactId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContactId
-        {
-            get { return BackingStore?.Get<string?>("contactId"); }
-            set { BackingStore?.Set("contactId", value); }
-        }
-#nullable restore
-#else
-        public string ContactId
-        {
-            get { return BackingStore?.Get<string>("contactId"); }
-            set { BackingStore?.Set("contactId", value); }
-        }
-#endif
         /// <summary>The display name of the member. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +53,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("key", value); }
         }
 #endif
+        /// <summary>A unique identifier system-generated for contact, privateDL, and mailbox members. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MemberId
+        {
+            get { return BackingStore?.Get<string?>("memberId"); }
+            set { BackingStore?.Set("memberId", value); }
+        }
+#nullable restore
+#else
+        public string MemberId
+        {
+            get { return BackingStore?.Get<string>("memberId"); }
+            set { BackingStore?.Set("memberId", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,28 +85,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The recipientType property</summary>
-        public global::Microsoft.Graph.Beta.Models.RecipientType? RecipientType
+        /// <summary>The type property</summary>
+        public global::Microsoft.Graph.Beta.Models.RecipientType? Type
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecipientType?>("recipientType"); }
-            set { BackingStore?.Set("recipientType", value); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecipientType?>("type"); }
+            set { BackingStore?.Set("type", value); }
         }
-        /// <summary>The routingType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RoutingType
-        {
-            get { return BackingStore?.Get<string?>("routingType"); }
-            set { BackingStore?.Set("routingType", value); }
-        }
-#nullable restore
-#else
-        public string RoutingType
-        {
-            get { return BackingStore?.Get<string>("routingType"); }
-            set { BackingStore?.Set("routingType", value); }
-        }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Member"/> and sets the default values.
         /// </summary>
@@ -133,12 +117,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contactId", n => { ContactId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
+                { "memberId", n => { MemberId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recipientType", n => { RecipientType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecipientType>(); } },
-                { "routingType", n => { RoutingType = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RecipientType>(); } },
             };
         }
         /// <summary>
@@ -148,12 +131,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("contactId", ContactId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("key", Key);
+            writer.WriteStringValue("memberId", MemberId);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecipientType>("recipientType", RecipientType);
-            writer.WriteStringValue("routingType", RoutingType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RecipientType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

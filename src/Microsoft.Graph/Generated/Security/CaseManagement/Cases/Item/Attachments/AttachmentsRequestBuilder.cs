@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.AttachmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an attachment for a case.
+        /// Create attachment metadata for a case. This method doesn&apos;t upload the file content. After creating the attachment, use Upload attachment content.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casemanagement-case-post-attachments?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Attachment"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.Cases.Item.Attachments
             return requestInfo;
         }
         /// <summary>
-        /// Create an attachment for a case.
+        /// Create attachment metadata for a case. This method doesn&apos;t upload the file content. After creating the attachment, use Upload attachment content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -3,7 +3,7 @@
 using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.Count;
 using Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Models.TenantGovernanceServices;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -15,7 +15,7 @@ using System;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests
 {
     /// <summary>
-    /// Provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+    /// Provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernance entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GovernanceRequestsRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceReq
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.</summary>
+        /// <summary>Provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernance entity.</summary>
         /// <param name="position">The unique identifier of governanceRequest</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.Item.GovernanceRequestItemRequestBuilder"/></returns>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.Item.GovernanceRequestItemRequestBuilder this[string position]
@@ -57,17 +57,17 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceReq
         /// Get a list of the governanceRequest objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancerequests?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GovernanceRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.GovernanceRequestsRequestBuilder.GovernanceRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GovernanceRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.GovernanceRequestsRequestBuilder.GovernanceRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequestCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.GovernanceRequestsRequestBuilder.GovernanceRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GovernanceRequestCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceRequests.GovernanceRequestsRequestBuilder.GovernanceRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -75,24 +75,24 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceReq
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GovernanceRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.GovernanceRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new governanceRequest to establish a governance relationship with a governed tenant. The governed tenant can then accept or reject the request.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governancerequests?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GovernanceRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest?> PostAsync(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GovernanceRequest?> PostAsync(global::Microsoft.Graph.Beta.Models.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest> PostAsync(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GovernanceRequest> PostAsync(global::Microsoft.Graph.Beta.Models.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceReq
             {
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GovernanceRequest>(requestInfo, global::Microsoft.Graph.Beta.Models.GovernanceRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the governanceRequest objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernanceReq
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TenantGovernanceServices.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.GovernanceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

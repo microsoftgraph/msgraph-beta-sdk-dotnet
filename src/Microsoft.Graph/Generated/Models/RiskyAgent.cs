@@ -103,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.riskyAgentDiscoveredAgentIdentity" => new global::Microsoft.Graph.Beta.Models.RiskyAgentDiscoveredAgentIdentity(),
                 "#microsoft.graph.riskyAgentIdentity" => new global::Microsoft.Graph.Beta.Models.RiskyAgentIdentity(),
                 "#microsoft.graph.riskyAgentIdentityBlueprintPrincipal" => new global::Microsoft.Graph.Beta.Models.RiskyAgentIdentityBlueprintPrincipal(),
                 "#microsoft.graph.riskyAgentUser" => new global::Microsoft.Graph.Beta.Models.RiskyAgentUser(),

@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Devices.Delta;
 using Microsoft.Graph.Beta.Devices.GetByIds;
 using Microsoft.Graph.Beta.Devices.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Devices.Item;
+using Microsoft.Graph.Beta.Devices.Provision;
 using Microsoft.Graph.Beta.Devices.ValidateProperties;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -43,6 +44,11 @@ namespace Microsoft.Graph.Beta.Devices
         public global::Microsoft.Graph.Beta.Devices.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects
         {
             get => new global::Microsoft.Graph.Beta.Devices.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the provision method.</summary>
+        public global::Microsoft.Graph.Beta.Devices.Provision.ProvisionRequestBuilder Provision
+        {
+            get => new global::Microsoft.Graph.Beta.Devices.Provision.ProvisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
         public global::Microsoft.Graph.Beta.Devices.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties

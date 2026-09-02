@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Count;
 using Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Reorder;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reorder method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Reorder.ReorderRequestBuilder Reorder
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Reorder.ReorderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sections property of the microsoft.graph.userTeamwork entity.</summary>
         /// <param name="position">The unique identifier of teamworkSection</param>

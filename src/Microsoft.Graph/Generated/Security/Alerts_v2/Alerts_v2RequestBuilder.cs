@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Alerts_v2.Count;
 using Microsoft.Graph.Beta.Security.Alerts_v2.Item;
+using Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityCreateAlert;
 using Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -25,6 +26,11 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2
         public global::Microsoft.Graph.Beta.Security.Alerts_v2.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Security.Alerts_v2.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createAlert method.</summary>
+        public global::Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityCreateAlert.MicrosoftGraphSecurityCreateAlertRequestBuilder MicrosoftGraphSecurityCreateAlert
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityCreateAlert.MicrosoftGraphSecurityCreateAlertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the moveAlerts method.</summary>
         public global::Microsoft.Graph.Beta.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts.MicrosoftGraphSecurityMoveAlertsRequestBuilder MicrosoftGraphSecurityMoveAlerts

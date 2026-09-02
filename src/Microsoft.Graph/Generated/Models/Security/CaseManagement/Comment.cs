@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
     public partial class Comment : global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Activity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The comment body.</summary>
+        /// <summary>The comment body. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message

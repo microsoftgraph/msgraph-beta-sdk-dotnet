@@ -23,21 +23,25 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
     public partial class SchemaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder Directories
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories.DirectoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the filterOperators method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder FilterOperators
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the functions method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsRequestBuilder Functions
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Functions.FunctionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the parseExpression method.</summary>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.ParseExpression.ParseExpressionRequestBuilder ParseExpression
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.ParseExpression.ParseExpressionRequestBuilder(PathParameters, RequestAdapter);
@@ -64,6 +68,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,6 +92,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SynchronizationSchema?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.SchemaRequestBuilder.SchemaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -111,6 +117,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.SynchronizationSchema?> PatchAsync(global::Microsoft.Graph.Beta.Models.SynchronizationSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -133,6 +140,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -152,6 +160,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.SchemaRequestBuilder.SchemaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -172,6 +181,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.SynchronizationSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -193,6 +203,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.SchemaRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.SchemaRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.SchemaRequestBuilder(rawUrl, RequestAdapter);
