@@ -31,73 +31,61 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
     public partial class InstanceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the acceptRecommendations method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.AcceptRecommendations.AcceptRecommendationsRequestBuilder AcceptRecommendations
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.AcceptRecommendations.AcceptRecommendationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyDecisions method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ApplyDecisions.ApplyDecisionsRequestBuilder ApplyDecisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ApplyDecisions.ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder BatchApplyCustomDataProvidedResourceDecisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder BatchRecordDecisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder ContactedReviewers
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.DecisionsRequestBuilder Decisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.DecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition.DefinitionRequestBuilder Definition
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition.DefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetDecisions method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ResetDecisions.ResetDecisionsRequestBuilder ResetDecisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ResetDecisions.ResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendReminder method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.SendReminder.SendReminderRequestBuilder SendReminder
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.SendReminder.SendReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.StagesRequestBuilder Stages
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.StagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stop method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stop.StopRequestBuilder Stop
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stop.StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stopApplyDecisions method.</summary>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.StopApplyDecisions.StopApplyDecisionsRequestBuilder StopApplyDecisions
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.StopApplyDecisions.StopApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
@@ -124,7 +112,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -148,7 +135,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AccessReviewInstance?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.InstanceRequestBuilder.InstanceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -173,7 +159,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AccessReviewInstance?> PatchAsync(global::Microsoft.Graph.Beta.Models.AccessReviewInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -196,7 +181,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -216,7 +200,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.InstanceRequestBuilder.InstanceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -237,7 +220,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.AccessReviewInstance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -259,7 +241,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.InstanceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.InstanceRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.InstanceRequestBuilder(rawUrl, RequestAdapter);

@@ -143,6 +143,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
+        /// <summary>The rootActorId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RootActorId
+        {
+            get { return BackingStore?.Get<string?>("rootActorId"); }
+            set { BackingStore?.Set("rootActorId", value); }
+        }
+#nullable restore
+#else
+        public string RootActorId
+        {
+            get { return BackingStore?.Get<string>("rootActorId"); }
+            set { BackingStore?.Set("rootActorId", value); }
+        }
+#endif
         /// <summary>The application identifier of the specific service principal instance of the application identifier used for sign-in. This field is populated when you&apos;re signing in using an application and is different than the appId property. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -263,6 +279,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "managedServiceIdentity", n => { ManagedServiceIdentity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ManagedIdentity>(global::Microsoft.Graph.Beta.Models.ManagedIdentity.CreateFromDiscriminatorValue); } },
                 { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "rootActorId", n => { RootActorId = n.GetStringValue(); } },
                 { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
                 { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
                 { "signInCount", n => { SignInCount = n.GetLongValue(); } },
@@ -290,6 +307,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ManagedIdentity>("managedServiceIdentity", ManagedServiceIdentity);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("rootActorId", RootActorId);
             writer.WriteStringValue("servicePrincipalId", ServicePrincipalId);
             writer.WriteStringValue("servicePrincipalName", ServicePrincipalName);
             writer.WriteLongValue("signInCount", SignInCount);

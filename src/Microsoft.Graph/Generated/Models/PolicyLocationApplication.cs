@@ -27,7 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.PolicyLocationApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.PolicyLocationApplication();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.policyLocationAgent" => new global::Microsoft.Graph.Beta.Models.PolicyLocationAgent(),
+                _ => new global::Microsoft.Graph.Beta.Models.PolicyLocationApplication(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

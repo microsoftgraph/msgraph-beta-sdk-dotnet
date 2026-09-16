@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isFirstRefresh"); }
             set { BackingStore?.Set("isFirstRefresh", value); }
         }
+        /// <summary>The mostRecentRefreshDateTime property</summary>
+        public DateTimeOffset? MostRecentRefreshDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("mostRecentRefreshDateTime"); }
+            set { BackingStore?.Set("mostRecentRefreshDateTime", value); }
+        }
         /// <summary>The mostRecentRefreshRequestStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,22 +47,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("mostRecentRefreshRequestStatus"); }
             set { BackingStore?.Set("mostRecentRefreshRequestStatus", value); }
-        }
-#endif
-        /// <summary>The mostRecentRefreshTime property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MostRecentRefreshTime
-        {
-            get { return BackingStore?.Get<string?>("mostRecentRefreshTime"); }
-            set { BackingStore?.Set("mostRecentRefreshTime", value); }
-        }
-#nullable restore
-#else
-        public string MostRecentRefreshTime
-        {
-            get { return BackingStore?.Get<string>("mostRecentRefreshTime"); }
-            set { BackingStore?.Set("mostRecentRefreshTime", value); }
         }
 #endif
         /// <summary>The OdataType property</summary>
@@ -102,8 +92,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "isFirstRefresh", n => { IsFirstRefresh = n.GetBoolValue(); } },
+                { "mostRecentRefreshDateTime", n => { MostRecentRefreshDateTime = n.GetDateTimeOffsetValue(); } },
                 { "mostRecentRefreshRequestStatus", n => { MostRecentRefreshRequestStatus = n.GetStringValue(); } },
-                { "mostRecentRefreshTime", n => { MostRecentRefreshTime = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -115,8 +105,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isFirstRefresh", IsFirstRefresh);
+            writer.WriteDateTimeOffsetValue("mostRecentRefreshDateTime", MostRecentRefreshDateTime);
             writer.WriteStringValue("mostRecentRefreshRequestStatus", MostRecentRefreshRequestStatus);
-            writer.WriteStringValue("mostRecentRefreshTime", MostRecentRefreshTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

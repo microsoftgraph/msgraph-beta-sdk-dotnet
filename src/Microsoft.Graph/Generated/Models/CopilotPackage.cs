@@ -110,6 +110,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("elementTypes", value); }
         }
 #endif
+        /// <summary>The governanceMetadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? GovernanceMetadata
+        {
+            get { return BackingStore?.Get<UntypedNode?>("governanceMetadata"); }
+            set { BackingStore?.Set("governanceMetadata", value); }
+        }
+#nullable restore
+#else
+        public UntypedNode GovernanceMetadata
+        {
+            get { return BackingStore?.Get<UntypedNode>("governanceMetadata"); }
+            set { BackingStore?.Set("governanceMetadata", value); }
+        }
+#endif
         /// <summary>The isBlocked property</summary>
         public bool? IsBlocked
         {
@@ -202,6 +218,18 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
+        /// <summary>The requestStatus property</summary>
+        public global::Microsoft.Graph.Beta.Models.CopilotPackageRequestStatus? RequestStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestStatus?>("requestStatus"); }
+            set { BackingStore?.Set("requestStatus", value); }
+        }
+        /// <summary>The requestType property</summary>
+        public global::Microsoft.Graph.Beta.Models.CopilotPackageRequestType? RequestType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestType?>("requestType"); }
+            set { BackingStore?.Set("requestType", value); }
+        }
         /// <summary>The shortDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -303,6 +331,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deployedTo", n => { DeployedTo = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PackageStatus>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "elementTypes", n => { ElementTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "governanceMetadata", n => { GovernanceMetadata = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "isBlocked", n => { IsBlocked = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "manifestId", n => { ManifestId = n.GetStringValue(); } },
@@ -310,6 +339,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "requestStatus", n => { RequestStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestStatus>(); } },
+                { "requestType", n => { RequestType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestType>(); } },
                 { "shortDescription", n => { ShortDescription = n.GetStringValue(); } },
                 { "supportedHosts", n => { SupportedHosts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PackageType>(); } },
@@ -333,6 +364,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PackageStatus>("deployedTo", DeployedTo);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("elementTypes", ElementTypes);
+            writer.WriteObjectValue<UntypedNode>("governanceMetadata", GovernanceMetadata);
             writer.WriteBoolValue("isBlocked", IsBlocked);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("manifestId", ManifestId);
@@ -340,6 +372,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("platform", Platform);
             writer.WriteStringValue("publisher", Publisher);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestStatus>("requestStatus", RequestStatus);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestType>("requestType", RequestType);
             writer.WriteStringValue("shortDescription", ShortDescription);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedHosts", SupportedHosts);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PackageType>("type", Type);

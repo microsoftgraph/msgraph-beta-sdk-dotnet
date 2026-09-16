@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceMetadata", value); }
         }
 #endif
-        /// <summary>The evaluationScope property</summary>
+        /// <summary>Specifies the evaluation context for the request. Optional generally; required for the tenant-scoped processContent action, where type must be agent. When omitted from other actions, the request uses the default tenant evaluation context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.EvaluationScope? EvaluationScope

@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("children", value); }
         }
 #endif
+        /// <summary>Custom properties for the place. Each property has a string key and a string value. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.StringDictionary? CustomProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.StringDictionary?>("customProperties"); }
+            set { BackingStore?.Set("customProperties", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.StringDictionary CustomProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.StringDictionary>("customProperties"); }
+            set { BackingStore?.Set("customProperties", value); }
+        }
+#endif
         /// <summary>The name that is associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +130,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("label", value); }
         }
 #endif
+        /// <summary>The date and time when the place was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable.</summary>
+        public DateTimeOffset? LastUpdatedTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedTime"); }
+            set { BackingStore?.Set("lastUpdatedTime", value); }
+        }
         /// <summary>The ID of a parent place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -210,10 +232,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "address", n => { Address = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>(global::Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "checkIns", n => { CheckIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CheckInClaim>(global::Microsoft.Graph.Beta.Models.CheckInClaim.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Place>(global::Microsoft.Graph.Beta.Models.Place.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "customProperties", n => { CustomProperties = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.StringDictionary>(global::Microsoft.Graph.Beta.Models.StringDictionary.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>(global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "lastUpdatedTime", n => { LastUpdatedTime = n.GetDateTimeOffsetValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "placeId", n => { PlaceId = n.GetStringValue(); } },
@@ -231,6 +255,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PhysicalAddress>("address", Address);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CheckInClaim>("checkIns", CheckIns);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Place>("children", Children);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.StringDictionary>("customProperties", CustomProperties);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
             writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);

@@ -25,6 +25,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that the partner connector is in an error state. This can occur when the connector has a non-zero error code set due to an internal error in processing. Please see https://go.microsoft.com/fwlink/?linkid=2239039 for more information on connector states.</summary>
         [EnumMember(Value = "error")]
         Error,
+        /// <summary>Indicates that the partner connector catalog entry exists but the tenant has never configured it.</summary>
+        [EnumMember(Value = "neverConfigured")]
+        NeverConfigured,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,

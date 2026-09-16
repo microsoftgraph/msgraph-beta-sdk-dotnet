@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("relations", value); }
         }
 #endif
+        /// <summary>A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq &apos;breached&apos;). The all() lambda operator and other collection functions aren&apos;t supported. Doesn&apos;t support $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseSlaPolicyEntry>? SlaPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseSlaPolicyEntry>?>("slaPolicies"); }
+            set { BackingStore?.Set("slaPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseSlaPolicyEntry> SlaPolicies
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseSlaPolicyEntry>>("slaPolicies"); }
+            set { BackingStore?.Set("slaPolicies", value); }
+        }
+#endif
         /// <summary>The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +177,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
                 { "customFields", n => { CustomFields = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CustomFieldValues>(global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CustomFieldValues.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "relations", n => { Relations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation>(global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "slaPolicies", n => { SlaPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseSlaPolicyEntry>(global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseSlaPolicyEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.TaskObject>(global::Microsoft.Graph.Beta.Models.Security.CaseManagement.TaskObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };

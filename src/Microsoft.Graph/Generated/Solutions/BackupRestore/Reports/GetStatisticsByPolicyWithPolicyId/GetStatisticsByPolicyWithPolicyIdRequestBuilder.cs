@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.GetStatisticsByPo
         {
         }
         /// <summary>
-        /// Invoke function getStatisticsByPolicy
+        /// Get the statistics that correspond to the specified policy ID of a backupPolicyReport.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backupreport-getstatisticsbypolicy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.BackupPolicyReport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.BackupPolicyReport?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -61,11 +61,10 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.GetStatisticsByPo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.BackupPolicyReport>(requestInfo, global::Microsoft.Graph.Beta.Models.BackupPolicyReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getStatisticsByPolicy
+        /// Get the statistics that correspond to the specified policy ID of a backupPolicyReport.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,7 +84,6 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.GetStatisticsByPo
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.GetStatisticsByPolicyWithPolicyId.GetStatisticsByPolicyWithPolicyIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17")]
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.GetStatisticsByPolicyWithPolicyId.GetStatisticsByPolicyWithPolicyIdRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.Reports.GetStatisticsByPolicyWithPolicyId.GetStatisticsByPolicyWithPolicyIdRequestBuilder(rawUrl, RequestAdapter);
