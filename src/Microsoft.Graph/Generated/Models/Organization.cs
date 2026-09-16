@@ -342,6 +342,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
+        /// <summary>The resourceQuotas property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ResourceQuota>? ResourceQuotas
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourceQuota>?>("resourceQuotas"); }
+            set { BackingStore?.Set("resourceQuotas", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ResourceQuota> ResourceQuotas
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourceQuota>>("resourceQuotas"); }
+            set { BackingStore?.Set("resourceQuotas", value); }
+        }
+#endif
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -520,6 +536,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "privacyProfile", n => { PrivacyProfile = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PrivacyProfile>(global::Microsoft.Graph.Beta.Models.PrivacyProfile.CreateFromDiscriminatorValue); } },
                 { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisionedPlan>(global::Microsoft.Graph.Beta.Models.ProvisionedPlan.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resourceQuotas", n => { ResourceQuotas = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceQuota>(global::Microsoft.Graph.Beta.Models.ResourceQuota.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "securityComplianceNotificationMails", n => { SecurityComplianceNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "securityComplianceNotificationPhones", n => { SecurityComplianceNotificationPhones = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.OrganizationSettings>(global::Microsoft.Graph.Beta.Models.OrganizationSettings.CreateFromDiscriminatorValue); } },
@@ -563,6 +580,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PrivacyProfile>("privacyProfile", PrivacyProfile);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourceQuota>("resourceQuotas", ResourceQuotas);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationMails", SecurityComplianceNotificationMails);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationPhones", SecurityComplianceNotificationPhones);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.OrganizationSettings>("settings", Settings);

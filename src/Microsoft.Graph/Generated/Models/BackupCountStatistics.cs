@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The lastComputedDateTime property</summary>
+        /// <summary>The date and time when this metric was calculated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastComputedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastComputedDateTime"); }
@@ -43,55 +43,55 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The offboardRequested property</summary>
+        /// <summary>The count of artifacts in offboardRequested state. This metric captures artifacts in protection‑unit–level offboarding and artifacts offboarded due to an unhealthy billing profile.</summary>
         public int? OffboardRequested
         {
             get { return BackingStore?.Get<int?>("offboardRequested"); }
             set { BackingStore?.Set("offboardRequested", value); }
         }
-        /// <summary>The protectedCompleted property</summary>
+        /// <summary>The count of artifacts in protected state.</summary>
         public int? ProtectedCompleted
         {
             get { return BackingStore?.Get<int?>("protectedCompleted"); }
             set { BackingStore?.Set("protectedCompleted", value); }
         }
-        /// <summary>The protectedFailed property</summary>
+        /// <summary>The count of artifacts whose protection was attempted but failed. These artifacts typically have unprotected as their status.</summary>
         public int? ProtectedFailed
         {
             get { return BackingStore?.Get<int?>("protectedFailed"); }
             set { BackingStore?.Set("protectedFailed", value); }
         }
-        /// <summary>The protectedInProgress property</summary>
+        /// <summary>The count of artifacts whose protection attempt is currently in progress. This metric applies to artifacts for which the process to start or resume taking backups is still required.</summary>
         public int? ProtectedInProgress
         {
             get { return BackingStore?.Get<int?>("protectedInProgress"); }
             set { BackingStore?.Set("protectedInProgress", value); }
         }
-        /// <summary>The removed property</summary>
+        /// <summary>The count of artifacts not associated with any policy. This property is always null for a policy-level report. Nullable.</summary>
         public int? Removed
         {
             get { return BackingStore?.Get<int?>("removed"); }
             set { BackingStore?.Set("removed", value); }
         }
-        /// <summary>The total property</summary>
+        /// <summary>The count of artifacts in the specified entity. The currently supported entity is a backup policy.</summary>
         public int? Total
         {
             get { return BackingStore?.Get<int?>("total"); }
             set { BackingStore?.Set("total", value); }
         }
-        /// <summary>The unprotectedCompleted property</summary>
+        /// <summary>The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are being taken.</summary>
         public int? UnprotectedCompleted
         {
             get { return BackingStore?.Get<int?>("unprotectedCompleted"); }
             set { BackingStore?.Set("unprotectedCompleted", value); }
         }
-        /// <summary>The unprotectedFailed property</summary>
+        /// <summary>The count of artifacts for which unprotection was attempted but didn&apos;t complete. These artifacts are typically in the protected state.</summary>
         public int? UnprotectedFailed
         {
             get { return BackingStore?.Get<int?>("unprotectedFailed"); }
             set { BackingStore?.Set("unprotectedFailed", value); }
         }
-        /// <summary>The unprotectedInProgress property</summary>
+        /// <summary>The count of artifacts for which unprotection is currently in progress.</summary>
         public int? UnprotectedInProgress
         {
             get { return BackingStore?.Get<int?>("unprotectedInProgress"); }

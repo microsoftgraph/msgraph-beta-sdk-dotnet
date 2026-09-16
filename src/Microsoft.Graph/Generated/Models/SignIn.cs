@@ -729,6 +729,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
+        /// <summary>The rootActorId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RootActorId
+        {
+            get { return BackingStore?.Get<string?>("rootActorId"); }
+            set { BackingStore?.Set("rootActorId", value); }
+        }
+#nullable restore
+#else
+        public string RootActorId
+        {
+            get { return BackingStore?.Get<string>("rootActorId"); }
+            set { BackingStore?.Set("rootActorId", value); }
+        }
+#endif
         /// <summary>The unique identifier of the key credential used by the service principal to authenticate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1083,6 +1099,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>(); } },
                 { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>(); } },
                 { "riskState", n => { RiskState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskState>(); } },
+                { "rootActorId", n => { RootActorId = n.GetStringValue(); } },
                 { "servicePrincipalCredentialKeyId", n => { ServicePrincipalCredentialKeyId = n.GetStringValue(); } },
                 { "servicePrincipalCredentialThumbprint", n => { ServicePrincipalCredentialThumbprint = n.GetStringValue(); } },
                 { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
@@ -1169,6 +1186,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskState>("riskState", RiskState);
+            writer.WriteStringValue("rootActorId", RootActorId);
             writer.WriteStringValue("servicePrincipalCredentialKeyId", ServicePrincipalCredentialKeyId);
             writer.WriteStringValue("servicePrincipalCredentialThumbprint", ServicePrincipalCredentialThumbprint);
             writer.WriteStringValue("servicePrincipalId", ServicePrincipalId);

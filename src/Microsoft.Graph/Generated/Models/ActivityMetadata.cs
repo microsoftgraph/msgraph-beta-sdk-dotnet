@@ -43,6 +43,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The participants property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.InteractionParticipant>? Participants
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.InteractionParticipant>?>("participants"); }
+            set { BackingStore?.Set("participants", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.InteractionParticipant> Participants
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.InteractionParticipant>>("participants"); }
+            set { BackingStore?.Set("participants", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ActivityMetadata"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "activity", n => { Activity = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.UserActivityType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InteractionParticipant>(global::Microsoft.Graph.Beta.Models.InteractionParticipant.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -82,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.UserActivityType>("activity", Activity);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InteractionParticipant>("participants", Participants);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

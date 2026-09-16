@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AuthenticationMethodsPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class AuthenticationMethodsPolicy : global::Microsoft.Graph.Beta.Models.PolicyDeletableItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
@@ -58,6 +58,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id
+        {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#nullable restore
+#else
+        public string Id
+        {
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
         }
 #endif
         /// <summary>The date and time of the last update to the policy.</summary>
@@ -159,6 +175,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy"/> and sets the default values.
+        /// </summary>
+        public AuthenticationMethodsPolicy() : base()
+        {
+            OdataType = "#microsoft.graph.authenticationMethodsPolicy";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy"/></returns>
@@ -179,6 +202,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "authenticationMethodConfigurations", n => { AuthenticationMethodConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration>(global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "microsoftAuthenticatorPlatformSettings", n => { MicrosoftAuthenticatorPlatformSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorPlatformSettings>(global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorPlatformSettings.CreateFromDiscriminatorValue); } },
                 { "policyMigrationState", n => { PolicyMigrationState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicyMigrationState>(); } },
@@ -200,6 +224,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration>("authenticationMethodConfigurations", AuthenticationMethodConfigurations);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorPlatformSettings>("microsoftAuthenticatorPlatformSettings", MicrosoftAuthenticatorPlatformSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicyMigrationState>("policyMigrationState", PolicyMigrationState);

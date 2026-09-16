@@ -61,5 +61,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Windows Recovery and Remediation Configuration Policy</summary>
         [EnumMember(Value = "windowsRecoveryAndRemediationConfiguration")]
         WindowsRecoveryAndRemediationConfiguration,
+        /// <summary>Indicates Template Family for Maintenance Windows templates</summary>
+        [EnumMember(Value = "maintenanceWindows")]
+        MaintenanceWindows,
     }
 }

@@ -3,6 +3,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Count;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectId;
+using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectIdWithRole;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserPrincipalName;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserPrincipalNameWithRole;
 using Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item;
@@ -77,6 +79,28 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainerCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the getByUser method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectId.GetByUserWithUserObjectIdRequestBuilder"/></returns>
+        /// <param name="userObjectId">Usage: userObjectId={userObjectId}</param>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectId.GetByUserWithUserObjectIdRequestBuilder GetByUserWithUserObjectId(Guid? userObjectId)
+        {
+            if(ReferenceEquals(userObjectId, null)) throw new ArgumentNullException(nameof(userObjectId));
+            return new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectId.GetByUserWithUserObjectIdRequestBuilder(PathParameters, RequestAdapter, userObjectId);
+        }
+        /// <summary>
+        /// Provides operations to call the getByUser method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectIdWithRole.GetByUserWithUserObjectIdWithRoleRequestBuilder"/></returns>
+        /// <param name="role">Usage: role=&apos;{role}&apos;</param>
+        /// <param name="userObjectId">Usage: userObjectId={userObjectId}</param>
+        public global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectIdWithRole.GetByUserWithUserObjectIdWithRoleRequestBuilder GetByUserWithUserObjectIdWithRole(string role, Guid? userObjectId)
+        {
+            if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
+            if(ReferenceEquals(userObjectId, null)) throw new ArgumentNullException(nameof(userObjectId));
+            return new global::Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.GetByUserWithUserObjectIdWithRole.GetByUserWithUserObjectIdWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userObjectId);
         }
         /// <summary>
         /// Provides operations to call the getByUser method.
