@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernancePol
         {
         }
         /// <summary>
-        /// Get a list of the governancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
+        /// Get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancepolicytemplates?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantGovernancePolicyTemplateCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernancePol
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantGovernancePolicyTemplateCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantGovernancePolicyTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new governancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
+        /// Create a new tenantGovernancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governancepolicytemplates?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantGovernancePolicyTemplate"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernancePol
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantGovernancePolicyTemplate>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantGovernancePolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the governancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
+        /// Get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernancePol
             return requestInfo;
         }
         /// <summary>
-        /// Create a new governancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
+        /// Create a new tenantGovernancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernancePol
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.GovernancePolicyTemplates.GovernancePolicyTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the governancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
+        /// Get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GovernancePolicyTemplatesRequestBuilderGetQueryParameters 

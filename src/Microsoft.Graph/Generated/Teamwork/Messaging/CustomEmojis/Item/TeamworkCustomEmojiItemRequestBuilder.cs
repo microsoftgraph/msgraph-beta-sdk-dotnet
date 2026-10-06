@@ -16,22 +16,22 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item
     /// Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TeamworkCustomEmojiDisplayNameItemRequestBuilder : BaseRequestBuilder
+    public partial class TeamworkCustomEmojiItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamworkCustomEmojiDisplayNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/messaging/customEmojis/{teamworkCustomEmoji%2DdisplayName}{?%24expand,%24select}", pathParameters)
+        public TeamworkCustomEmojiItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/messaging/customEmojis/{teamworkCustomEmoji%2Did}{?%24expand,%24select}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamworkCustomEmojiDisplayNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/messaging/customEmojis/{teamworkCustomEmoji%2DdisplayName}{?%24expand,%24select}", rawUrl)
+        public TeamworkCustomEmojiItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/messaging/customEmojis/{teamworkCustomEmoji%2Did}{?%24expand,%24select}", rawUrl)
         {
         }
         /// <summary>
@@ -65,11 +65,11 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder.TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder.TeamworkCustomEmojiItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder.TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder.TeamworkCustomEmojiItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder.TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder.TeamworkCustomEmojiItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder.TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder.TeamworkCustomEmojiItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -167,25 +167,25 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TeamworkCustomEmojiDisplayNameItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class TeamworkCustomEmojiItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The collection of custom emojis available in organization messaging.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters 
+        public partial class TeamworkCustomEmojiItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TeamworkCustomEmojiDisplayNameItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder.TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters>
+        public partial class TeamworkCustomEmojiItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder.TeamworkCustomEmojiItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TeamworkCustomEmojiDisplayNameItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class TeamworkCustomEmojiItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

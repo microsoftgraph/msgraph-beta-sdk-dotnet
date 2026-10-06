@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class InvestigationActionStep : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionUrl property</summary>
+        /// <summary>The follow-on API reference for the step, containing the URL template and a machine-readable execution directive that a client uses to retrieve the drill-in data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.InvestigationActionUrl? ActionUrl
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The stepNumber property</summary>
+        /// <summary>The one-based order, as a string, in which the step should be evaluated by a client. Steps are intended to be run in ascending stepNumber order because later steps can depend on the output of earlier steps. This value is the key of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StepNumber
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("stepNumber", value); }
         }
 #endif
-        /// <summary>The text property</summary>
+        /// <summary>Human-readable guidance that explains what the step does and why it&apos;s useful for investigating the related metric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text

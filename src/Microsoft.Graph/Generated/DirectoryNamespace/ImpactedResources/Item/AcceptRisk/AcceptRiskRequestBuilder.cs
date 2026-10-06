@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.AcceptR
         {
         }
         /// <summary>
-        /// Invoke action acceptRisk
+        /// Accept the risk for an impactedResource object and update its status to riskAccepted.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-acceptrisk?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ImpactedResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.AcceptR
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ImpactedResource>(requestInfo, global::Microsoft.Graph.Beta.Models.ImpactedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action acceptRisk
+        /// Accept the risk for an impactedResource object and update its status to riskAccepted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

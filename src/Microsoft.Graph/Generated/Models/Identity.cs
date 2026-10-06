@@ -90,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.applicationIdentity" => new global::Microsoft.Graph.Beta.Models.ApplicationIdentity(),
                 "#microsoft.graph.auditUserIdentity" => new global::Microsoft.Graph.Beta.Models.AuditUserIdentity(),
                 "#microsoft.graph.azureCommunicationServicesUserIdentity" => new global::Microsoft.Graph.Beta.Models.AzureCommunicationServicesUserIdentity(),
                 "#microsoft.graph.callRecords.userIdentity" => new global::Microsoft.Graph.Beta.Models.CallRecords.UserIdentity(),

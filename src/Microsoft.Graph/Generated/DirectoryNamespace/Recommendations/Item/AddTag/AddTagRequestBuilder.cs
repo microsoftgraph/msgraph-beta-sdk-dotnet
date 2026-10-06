@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.AddTag
         {
         }
         /// <summary>
-        /// Invoke action addTag
+        /// Add a user-defined tag to a recommendation object. Tags help you organize, group, and filter recommendations in the Microsoft Entra admin center.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-addtag?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RecommendationTag"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.AddTag
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RecommendationTag>(requestInfo, global::Microsoft.Graph.Beta.Models.RecommendationTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action addTag
+        /// Add a user-defined tag to a recommendation object. Tags help you organize, group, and filter recommendations in the Microsoft Entra admin center.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

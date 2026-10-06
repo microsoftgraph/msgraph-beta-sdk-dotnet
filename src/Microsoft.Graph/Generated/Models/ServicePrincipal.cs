@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #endif
-        /// <summary>The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.</summary>
+        /// <summary>The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (publishedPermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AppRole>? AppRoles
@@ -682,7 +682,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("preferredTokenSigningKeyThumbprint", value); }
         }
 #endif
-        /// <summary>The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity&apos;s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.</summary>
+        /// <summary>The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity&apos;s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PermissionScope>? PublishedPermissionScopes

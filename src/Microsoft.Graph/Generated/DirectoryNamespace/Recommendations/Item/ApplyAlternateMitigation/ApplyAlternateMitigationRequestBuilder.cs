@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ApplyAlte
         {
         }
         /// <summary>
-        /// Invoke action applyAlternateMitigation
+        /// Apply an alternate mitigation for a recommendation object and update its status to alternateMitigation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-applyalternatemitigation?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Recommendation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ApplyAlte
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Recommendation>(requestInfo, global::Microsoft.Graph.Beta.Models.Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action applyAlternateMitigation
+        /// Apply an alternate mitigation for a recommendation object and update its status to alternateMitigation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -88,6 +88,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("meetingNotes", value); }
         }
 #endif
+        /// <summary>The recapUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RecapUrl
+        {
+            get { return BackingStore?.Get<string?>("recapUrl"); }
+            set { BackingStore?.Set("recapUrl", value); }
+        }
+#nullable restore
+#else
+        public string RecapUrl
+        {
+            get { return BackingStore?.Get<string>("recapUrl"); }
+            set { BackingStore?.Set("recapUrl", value); }
+        }
+#endif
         /// <summary>The viewpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +144,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingNotes", n => { MeetingNotes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingNote>(global::Microsoft.Graph.Beta.Models.MeetingNote.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recapUrl", n => { RecapUrl = n.GetStringValue(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CallAiInsightViewPoint>(global::Microsoft.Graph.Beta.Models.CallAiInsightViewPoint.CreateFromDiscriminatorValue); } },
             };
         }
@@ -145,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingNote>("meetingNotes", MeetingNotes);
+            writer.WriteStringValue("recapUrl", RecapUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CallAiInsightViewPoint>("viewpoint", Viewpoint);
         }
     }

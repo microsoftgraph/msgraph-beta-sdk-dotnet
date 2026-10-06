@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Tags.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tags from directory
+        /// The user-defined free-form labels applied to the recommendation. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RecommendationTag"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Tags.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get tags from directory
+        /// The user-defined free-form labels applied to the recommendation. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Tags.Item
         {
         }
         /// <summary>
-        /// Get tags from directory
+        /// The user-defined free-form labels applied to the recommendation. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecommendationTagItemRequestBuilderGetQueryParameters 

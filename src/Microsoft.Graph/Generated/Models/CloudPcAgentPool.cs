@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("billingConfiguration", value); }
         }
 #endif
+        /// <summary>The capabilities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration? Capabilities
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration?>("capabilities"); }
+            set { BackingStore?.Set("capabilities", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration Capabilities
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration>("capabilities"); }
+            set { BackingStore?.Set("capabilities", value); }
+        }
+#endif
         /// <summary>The endpoint URL used to check out and check in agent sessions. This value becomes available after the pool reaches the active status. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "billingConfiguration", n => { BillingConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolBillingConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolBillingConfiguration.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration.CreateFromDiscriminatorValue); } },
                 { "poolUrl", n => { PoolUrl = n.GetStringValue(); } },
                 { "scalingPolicy", n => { ScalingPolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolScalingPolicy>(global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolScalingPolicy.CreateFromDiscriminatorValue); } },
                 { "sessionUsage", n => { SessionUsage = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolSessionUsage>(global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolSessionUsage.CreateFromDiscriminatorValue); } },
@@ -116,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolBillingConfiguration>("billingConfiguration", BillingConfiguration);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration>("capabilities", Capabilities);
             writer.WriteStringValue("poolUrl", PoolUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolScalingPolicy>("scalingPolicy", ScalingPolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolSessionUsage>("sessionUsage", SessionUsage);

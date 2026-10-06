@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("initial", value); }
         }
 #endif
-        /// <summary>The investigationHints property</summary>
+        /// <summary>Ordered drill-in guidance for investigating B2B registration metrics. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=b2BRegistrationMetrics($expand=investigationHints).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.InvestigationActionStep>? InvestigationHints

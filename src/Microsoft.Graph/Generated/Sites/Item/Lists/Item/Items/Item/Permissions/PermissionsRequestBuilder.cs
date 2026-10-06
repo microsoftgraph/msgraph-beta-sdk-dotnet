@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Permissions
         {
         }
         /// <summary>
-        /// The set of permissions for the item. Read-only. Nullable.
+        /// Get a list of the permission objects associated with a listItem.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-list-permissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Permissions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Permission>(requestInfo, global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of permissions for the item. Read-only. Nullable.
+        /// Get a list of the permission objects associated with a listItem.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Permissions
             return new global::Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Permissions.PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The set of permissions for the item. Read-only. Nullable.
+        /// Get a list of the permission objects associated with a listItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionsRequestBuilderGetQueryParameters 

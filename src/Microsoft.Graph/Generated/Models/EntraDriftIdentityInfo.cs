@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EntraDriftIdentityInfo : global::Microsoft.Graph.Beta.Models.DriftIdentityInfo, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The identityType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityType
+        {
+            get { return BackingStore?.Get<string?>("identityType"); }
+            set { BackingStore?.Set("identityType", value); }
+        }
+#nullable restore
+#else
+        public string IdentityType
+        {
+            get { return BackingStore?.Get<string>("identityType"); }
+            set { BackingStore?.Set("identityType", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.EntraDriftIdentityInfo"/> and sets the default values.
         /// </summary>
@@ -37,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "identityType", n => { IdentityType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("identityType", IdentityType);
         }
     }
 }

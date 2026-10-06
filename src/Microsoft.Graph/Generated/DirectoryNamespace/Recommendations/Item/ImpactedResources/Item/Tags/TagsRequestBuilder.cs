@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         {
         }
         /// <summary>
-        /// Get tags from directory
+        /// The user-defined free-form labels applied to the impactedResource. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RecommendationTagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RecommendationTag>(requestInfo, global::Microsoft.Graph.Beta.Models.RecommendationTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tags from directory
+        /// The user-defined free-form labels applied to the impactedResource. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.Item.Tags.TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get tags from directory
+        /// The user-defined free-form labels applied to the impactedResource. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderGetQueryParameters 

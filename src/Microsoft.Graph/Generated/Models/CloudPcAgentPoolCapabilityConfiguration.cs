@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcAgentPoolCapabilityConfiguration : global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>When true, provisioned Cloud PCs support single sign-on, allowing users to authenticate with password-less options (such as FIDO2 keys) via Microsoft Entra ID. Default value is false.</summary>
-        public bool? EnableSingleSignOn
-        {
-            get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }
-            set { BackingStore?.Set("enableSingleSignOn", value); }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CloudPcAgentPoolCapabilityConfiguration"/> and sets the default values.
         /// </summary>
@@ -43,7 +37,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "enableSingleSignOn", n => { EnableSingleSignOn = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -54,7 +47,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("enableSingleSignOn", EnableSingleSignOn);
         }
     }
 }

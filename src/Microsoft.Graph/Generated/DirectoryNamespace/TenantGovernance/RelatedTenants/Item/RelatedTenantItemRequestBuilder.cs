@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of microsoft.graph.tenantGovernanceServices.relatedTenant object.
+        /// Read the properties and relationships of microsoft.graph.relatedTenant object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RelatedTenant"/></returns>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of microsoft.graph.tenantGovernanceServices.relatedTenant object.
+        /// Read the properties and relationships of microsoft.graph.relatedTenant object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
         {
         }
         /// <summary>
-        /// Read the properties and relationships of microsoft.graph.tenantGovernanceServices.relatedTenant object.
+        /// Read the properties and relationships of microsoft.graph.relatedTenant object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelatedTenantItemRequestBuilderGetQueryParameters 
