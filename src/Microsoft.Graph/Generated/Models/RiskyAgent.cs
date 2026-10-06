@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RiskyAgent : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The additionalInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AdditionalInfo
+        {
+            get { return BackingStore?.Get<string?>("additionalInfo"); }
+            set { BackingStore?.Set("additionalInfo", value); }
+        }
+#nullable restore
+#else
+        public string AdditionalInfo
+        {
+            get { return BackingStore?.Get<string>("additionalInfo"); }
+            set { BackingStore?.Set("additionalInfo", value); }
+        }
+#endif
         /// <summary>Name of the agent.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +44,54 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentDisplayName", value); }
         }
 #endif
+        /// <summary>The agentPlatform property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgentPlatform
+        {
+            get { return BackingStore?.Get<string?>("agentPlatform"); }
+            set { BackingStore?.Set("agentPlatform", value); }
+        }
+#nullable restore
+#else
+        public string AgentPlatform
+        {
+            get { return BackingStore?.Get<string>("agentPlatform"); }
+            set { BackingStore?.Set("agentPlatform", value); }
+        }
+#endif
+        /// <summary>The associatedUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssociatedUserId
+        {
+            get { return BackingStore?.Get<string?>("associatedUserId"); }
+            set { BackingStore?.Set("associatedUserId", value); }
+        }
+#nullable restore
+#else
+        public string AssociatedUserId
+        {
+            get { return BackingStore?.Get<string>("associatedUserId"); }
+            set { BackingStore?.Set("associatedUserId", value); }
+        }
+#endif
+        /// <summary>The blastRadiusRisk property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.BlastRadiusRisk? BlastRadiusRisk
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BlastRadiusRisk?>("blastRadiusRisk"); }
+            set { BackingStore?.Set("blastRadiusRisk", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.BlastRadiusRisk BlastRadiusRisk
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.BlastRadiusRisk>("blastRadiusRisk"); }
+            set { BackingStore?.Set("blastRadiusRisk", value); }
+        }
+#endif
         /// <summary>The identifier of the blueprint associated with the agent. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +106,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("blueprintId"); }
             set { BackingStore?.Set("blueprintId", value); }
+        }
+#endif
+        /// <summary>The deviceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeviceId
+        {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#nullable restore
+#else
+        public string DeviceId
+        {
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#endif
+        /// <summary>The exposureRisk property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ExposureRisk? ExposureRisk
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExposureRisk?>("exposureRisk"); }
+            set { BackingStore?.Set("exposureRisk", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ExposureRisk ExposureRisk
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExposureRisk>("exposureRisk"); }
+            set { BackingStore?.Set("exposureRisk", value); }
         }
 #endif
         /// <summary>The identityType property</summary>
@@ -68,6 +164,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isProcessing"); }
             set { BackingStore?.Set("isProcessing", value); }
         }
+        /// <summary>The machineId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MachineId
+        {
+            get { return BackingStore?.Get<string?>("machineId"); }
+            set { BackingStore?.Set("machineId", value); }
+        }
+#nullable restore
+#else
+        public string MachineId
+        {
+            get { return BackingStore?.Get<string>("machineId"); }
+            set { BackingStore?.Set("machineId", value); }
+        }
+#endif
         /// <summary>The riskDetail property</summary>
         public global::Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail
         {
@@ -92,6 +204,38 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
+        /// <summary>The runtimeRisk property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RuntimeRisk? RuntimeRisk
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RuntimeRisk?>("runtimeRisk"); }
+            set { BackingStore?.Set("runtimeRisk", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RuntimeRisk RuntimeRisk
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RuntimeRisk>("runtimeRisk"); }
+            set { BackingStore?.Set("runtimeRisk", value); }
+        }
+#endif
+        /// <summary>The sources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Sources
+        {
+            get { return BackingStore?.Get<List<string>?>("sources"); }
+            set { BackingStore?.Set("sources", value); }
+        }
+#nullable restore
+#else
+        public List<string> Sources
+        {
+            get { return BackingStore?.Get<List<string>>("sources"); }
+            set { BackingStore?.Set("sources", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -118,16 +262,25 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "additionalInfo", n => { AdditionalInfo = n.GetStringValue(); } },
                 { "agentDisplayName", n => { AgentDisplayName = n.GetStringValue(); } },
+                { "agentPlatform", n => { AgentPlatform = n.GetStringValue(); } },
+                { "associatedUserId", n => { AssociatedUserId = n.GetStringValue(); } },
+                { "blastRadiusRisk", n => { BlastRadiusRisk = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.BlastRadiusRisk>(global::Microsoft.Graph.Beta.Models.BlastRadiusRisk.CreateFromDiscriminatorValue); } },
                 { "blueprintId", n => { BlueprintId = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "exposureRisk", n => { ExposureRisk = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ExposureRisk>(global::Microsoft.Graph.Beta.Models.ExposureRisk.CreateFromDiscriminatorValue); } },
                 { "identityType", n => { IdentityType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>(); } },
                 { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
+                { "machineId", n => { MachineId = n.GetStringValue(); } },
                 { "riskDetail", n => { RiskDetail = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>(); } },
                 { "riskLastModifiedDateTime", n => { RiskLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "riskLevel", n => { RiskLevel = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>(); } },
                 { "riskState", n => { RiskState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RiskState>(); } },
+                { "runtimeRisk", n => { RuntimeRisk = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RuntimeRisk>(global::Microsoft.Graph.Beta.Models.RuntimeRisk.CreateFromDiscriminatorValue); } },
+                { "sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -138,16 +291,25 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("additionalInfo", AdditionalInfo);
             writer.WriteStringValue("agentDisplayName", AgentDisplayName);
+            writer.WriteStringValue("agentPlatform", AgentPlatform);
+            writer.WriteStringValue("associatedUserId", AssociatedUserId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.BlastRadiusRisk>("blastRadiusRisk", BlastRadiusRisk);
             writer.WriteStringValue("blueprintId", BlueprintId);
+            writer.WriteStringValue("deviceId", DeviceId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ExposureRisk>("exposureRisk", ExposureRisk);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AgentIdentityType>("identityType", IdentityType);
             writer.WriteBoolValue("isDeleted", IsDeleted);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isProcessing", IsProcessing);
+            writer.WriteStringValue("machineId", MachineId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteDateTimeOffsetValue("riskLastModifiedDateTime", RiskLastModifiedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskLevel>("riskLevel", RiskLevel);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RiskState>("riskState", RiskState);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RuntimeRisk>("runtimeRisk", RuntimeRisk);
+            writer.WriteCollectionOfPrimitiveValues<string>("sources", Sources);
         }
     }
 }

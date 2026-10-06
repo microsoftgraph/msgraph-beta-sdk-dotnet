@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.RemoveTag
         {
         }
         /// <summary>
-        /// Invoke action removeTag
+        /// Remove a user-defined tag from a recommendation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-removetag?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Recommendation"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.RemoveTag
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Recommendation>(requestInfo, global::Microsoft.Graph.Beta.Models.Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action removeTag
+        /// Remove a user-defined tag from a recommendation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

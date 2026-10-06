@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis;
+using Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojisWithDisplayName;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -39,6 +40,16 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public MessagingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/messaging{?%24expand,%24select}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojisWithDisplayName.CustomEmojisWithDisplayNameRequestBuilder"/></returns>
+        /// <param name="displayName">Alternate key of teamworkCustomEmoji</param>
+        public global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojisWithDisplayName.CustomEmojisWithDisplayNameRequestBuilder CustomEmojisWithDisplayName(string displayName)
+        {
+            if(string.IsNullOrEmpty(displayName)) throw new ArgumentNullException(nameof(displayName));
+            return new global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojisWithDisplayName.CustomEmojisWithDisplayNameRequestBuilder(PathParameters, RequestAdapter, displayName);
         }
         /// <summary>
         /// Delete navigation property messaging for teamwork

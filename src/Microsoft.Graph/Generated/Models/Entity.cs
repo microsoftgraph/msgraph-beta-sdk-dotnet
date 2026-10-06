@@ -2069,6 +2069,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.teamTemplateDefinition" => new global::Microsoft.Graph.Beta.Models.TeamTemplateDefinition(),
                 "#microsoft.graph.teamwork" => new global::Microsoft.Graph.Beta.Models.Teamwork(),
                 "#microsoft.graph.teamworkBot" => new global::Microsoft.Graph.Beta.Models.TeamworkBot(),
+                "#microsoft.graph.teamworkCustomEmoji" => new global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji(),
                 "#microsoft.graph.teamworkDevice" => new global::Microsoft.Graph.Beta.Models.TeamworkDevice(),
                 "#microsoft.graph.teamworkDeviceActivity" => new global::Microsoft.Graph.Beta.Models.TeamworkDeviceActivity(),
                 "#microsoft.graph.teamworkDeviceConfiguration" => new global::Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration(),

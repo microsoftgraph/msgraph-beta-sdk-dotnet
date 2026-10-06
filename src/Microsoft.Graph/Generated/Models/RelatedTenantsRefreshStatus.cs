@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isFirstRefresh property</summary>
+        /// <summary>Describes whether the related tenants refresh was the initial aggregation done by our service or not.</summary>
         public bool? IsFirstRefresh
         {
             get { return BackingStore?.Get<bool?>("isFirstRefresh"); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("mostRecentRefreshDateTime"); }
             set { BackingStore?.Set("mostRecentRefreshDateTime", value); }
         }
-        /// <summary>The mostRecentRefreshRequestStatus property</summary>
+        /// <summary>The status of the refresh operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MostRecentRefreshRequestStatus

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The period of time to retain the protected data for a single Microsoft 365 service.</summary>
+        /// <summary>The period of time to retain the protected data for a single Microsoft 365 service. The possible values are: P90D, P180D, P365D, P730D, P1095D, P1460D, P1825D, P2190D, P2555D, P2920D, P3285D, and P3650D. Other values aren&apos;t supported.</summary>
         public TimeSpan? Period
         {
             get { return BackingStore?.Get<TimeSpan?>("period"); }

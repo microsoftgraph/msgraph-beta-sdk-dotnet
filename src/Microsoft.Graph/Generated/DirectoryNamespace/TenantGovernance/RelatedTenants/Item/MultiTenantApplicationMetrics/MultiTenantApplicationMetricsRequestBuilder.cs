@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
         {
         }
         /// <summary>
-        /// Get multiTenantApplicationMetrics from directory
+        /// Multi-tenant application usage metrics for this related tenant. Expanded by default.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MultiTenantApplicationMetrics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MultiTenantApplicationMetrics>(requestInfo, global::Microsoft.Graph.Beta.Models.MultiTenantApplicationMetrics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get multiTenantApplicationMetrics from directory
+        /// Multi-tenant application usage metrics for this related tenant. Expanded by default.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenant
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.TenantGovernance.RelatedTenants.Item.MultiTenantApplicationMetrics.MultiTenantApplicationMetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get multiTenantApplicationMetrics from directory
+        /// Multi-tenant application usage metrics for this related tenant. Expanded by default.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MultiTenantApplicationMetricsRequestBuilderGetQueryParameters 

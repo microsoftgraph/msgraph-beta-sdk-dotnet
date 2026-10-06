@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         {
         }
         /// <summary>
-        /// Invoke action removeTag
+        /// Remove a user-defined tag from an impactedResource object. To remove the same tag from multiple impacted resources in a single request, use the removeTag action on the impactedResources collection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-removetag?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ImpactedResource"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ImpactedResource>(requestInfo, global::Microsoft.Graph.Beta.Models.ImpactedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action removeTag
+        /// Remove a user-defined tag from an impactedResource object. To remove the same tag from multiple impacted resources in a single request, use the removeTag action on the impactedResources collection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
