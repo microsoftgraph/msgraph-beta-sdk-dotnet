@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The catalogIdentifier property</summary>
+        /// <summary>The identifier of the entitlement management catalog that contains the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CatalogIdentifier
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("catalogIdentifier", value); }
         }
 #endif
-        /// <summary>The catalogName property</summary>
+        /// <summary>The display name of the entitlement management catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CatalogName
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("catalogName", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the governed resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The identifier property</summary>
+        /// <summary>The unique identifier of the governed resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identifier

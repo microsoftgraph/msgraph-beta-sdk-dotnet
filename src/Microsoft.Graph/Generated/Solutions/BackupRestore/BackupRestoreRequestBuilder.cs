@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnits;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.EmailNotificationsSetting;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.Enable;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.EntraProtectionPolicies;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExclusionUnits;
@@ -96,6 +97,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.Enable.EnableRequestBuilder Enable
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the entraProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.EntraProtectionPolicies.EntraProtectionPoliciesRequestBuilder EntraProtectionPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.EntraProtectionPolicies.EntraProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicies.ExchangeProtectionPoliciesRequestBuilder ExchangeProtectionPolicies

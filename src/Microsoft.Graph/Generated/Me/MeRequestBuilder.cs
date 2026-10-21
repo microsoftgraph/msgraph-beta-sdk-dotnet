@@ -68,6 +68,7 @@ using Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked;
 using Microsoft.Graph.Beta.Me.JoinedGroups;
 using Microsoft.Graph.Beta.Me.JoinedTeams;
 using Microsoft.Graph.Beta.Me.LicenseDetails;
+using Microsoft.Graph.Beta.Me.Lifecycle;
 using Microsoft.Graph.Beta.Me.MailFolders;
 using Microsoft.Graph.Beta.Me.MailboxSettings;
 using Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests;
@@ -76,6 +77,9 @@ using Microsoft.Graph.Beta.Me.ManagedDevices;
 using Microsoft.Graph.Beta.Me.Manager;
 using Microsoft.Graph.Beta.Me.MemberOf;
 using Microsoft.Graph.Beta.Me.Messages;
+using Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor;
+using Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAttest;
+using Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor;
 using Microsoft.Graph.Beta.Me.MobileAppIntentAndStates;
 using Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents;
 using Microsoft.Graph.Beta.Me.Notifications;
@@ -462,6 +466,11 @@ namespace Microsoft.Graph.Beta.Me
         {
             get => new global::Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the lifecycle property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Lifecycle.LifecycleRequestBuilder Lifecycle
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Lifecycle.LifecycleRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The mailboxSettings property</summary>
         public global::Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
@@ -501,6 +510,21 @@ namespace Microsoft.Graph.Beta.Me
         public global::Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the addSelfAsSponsor method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor.MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder MicrosoftGraphIdentityGovernanceAddSelfAsSponsor
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor.MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the attest method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder MicrosoftGraphIdentityGovernanceAttest
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeSelfAsSponsor method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder MobileAppIntentAndStates

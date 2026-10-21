@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AccessDriftReport : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The downloadUri property</summary>
+        /// <summary>The time-limited SAS URI for downloading the report file. This property is populated only in the response of the generateDownloadUri action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DownloadUri
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("downloadUri", value); }
         }
 #endif
-        /// <summary>The expiresAt property</summary>
+        /// <summary>The date and time when the download URI expires. This property is populated only in the response of the generateDownloadUri action.</summary>
         public DateTimeOffset? ExpiresAt
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expiresAt"); }

@@ -208,7 +208,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.DirectoryAudit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.DirectoryAudit();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.appManagementAudit" => new global::Microsoft.Graph.Beta.Models.AppManagementAudit(),
+                _ => new global::Microsoft.Graph.Beta.Models.DirectoryAudit(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

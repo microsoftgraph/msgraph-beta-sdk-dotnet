@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Archive;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Buckets;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Details;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.ExtendExpiry;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.GetUsageRights;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Goals;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.HistoryItems;
@@ -41,6 +42,11 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Details.DetailsRequestBuilder Details
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the extendExpiry method.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder ExtendExpiry
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUsageRights method.</summary>
         public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder GetUsageRights

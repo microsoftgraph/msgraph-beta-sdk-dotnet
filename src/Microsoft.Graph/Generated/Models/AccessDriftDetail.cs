@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AccessDriftDetail : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the drift record was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AccessDriftType?>("driftType"); }
             set { BackingStore?.Set("driftType", value); }
         }
-        /// <summary>The identities property</summary>
+        /// <summary>The identities affected by this drift record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriftIdentityInfo>? Identities

@@ -5,8 +5,10 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Planner.Buckets;
 using Microsoft.Graph.Beta.Planner.Goals;
 using Microsoft.Graph.Beta.Planner.Plans;
+using Microsoft.Graph.Beta.Planner.Plans_v2;
 using Microsoft.Graph.Beta.Planner.Rosters;
 using Microsoft.Graph.Beta.Planner.Tasks;
+using Microsoft.Graph.Beta.Planner.Tasks_v2;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -38,6 +40,11 @@ namespace Microsoft.Graph.Beta.Planner
         {
             get => new global::Microsoft.Graph.Beta.Planner.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the plans_v2 property of the microsoft.graph.planner entity.</summary>
+        public global::Microsoft.Graph.Beta.Planner.Plans_v2.Plans_v2RequestBuilder Plans_v2
+        {
+            get => new global::Microsoft.Graph.Beta.Planner.Plans_v2.Plans_v2RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the rosters property of the microsoft.graph.planner entity.</summary>
         public global::Microsoft.Graph.Beta.Planner.Rosters.RostersRequestBuilder Rosters
         {
@@ -47,6 +54,11 @@ namespace Microsoft.Graph.Beta.Planner
         public global::Microsoft.Graph.Beta.Planner.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Microsoft.Graph.Beta.Planner.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tasks_v2 property of the microsoft.graph.planner entity.</summary>
+        public global::Microsoft.Graph.Beta.Planner.Tasks_v2.Tasks_v2RequestBuilder Tasks_v2
+        {
+            get => new global::Microsoft.Graph.Beta.Planner.Tasks_v2.Tasks_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Planner.PlannerRequestBuilder"/> and sets the default values.
@@ -65,7 +77,8 @@ namespace Microsoft.Graph.Beta.Planner
         {
         }
         /// <summary>
-        /// Get planner
+        /// Read the properties and relationships of planner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Planner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +101,8 @@ namespace Microsoft.Graph.Beta.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Planner>(requestInfo, global::Microsoft.Graph.Beta.Models.Planner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update planner
+        /// Update the properties of a planner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Planner"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +127,7 @@ namespace Microsoft.Graph.Beta.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Planner>(requestInfo, global::Microsoft.Graph.Beta.Models.Planner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get planner
+        /// Read the properties and relationships of planner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +146,7 @@ namespace Microsoft.Graph.Beta.Planner
             return requestInfo;
         }
         /// <summary>
-        /// Update planner
+        /// Update the properties of a planner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +177,7 @@ namespace Microsoft.Graph.Beta.Planner
             return new global::Microsoft.Graph.Beta.Planner.PlannerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get planner
+        /// Read the properties and relationships of planner object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerRequestBuilderGetQueryParameters 

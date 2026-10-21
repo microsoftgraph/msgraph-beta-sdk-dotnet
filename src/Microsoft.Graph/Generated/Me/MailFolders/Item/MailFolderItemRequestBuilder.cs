@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Copy;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ImportMime;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.MessageRules;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Move;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.Copy.CopyRequestBuilder Copy
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.Copy.CopyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the importMime method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ImportMime.ImportMimeRequestBuilder ImportMime
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ImportMime.ImportMimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.</summary>
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.MessageRules.MessageRulesRequestBuilder MessageRules

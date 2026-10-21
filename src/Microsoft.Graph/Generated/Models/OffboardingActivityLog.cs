@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OffboardingActivityLog : global::Microsoft.Graph.Beta.Models.ActivityLogBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The offboardingDetails property</summary>
+        /// <summary>Contains detailed information about the offboarding operation, including affected protection units and their status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OffboardingDetails? OffboardingDetails
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offboardingDetails", value); }
         }
 #endif
-        /// <summary>The policyId property</summary>
+        /// <summary>The unique identifier of the protection policy associated with the activity log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The policyName property</summary>
+        /// <summary>Name of the protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyName

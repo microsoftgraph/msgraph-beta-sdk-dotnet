@@ -157,6 +157,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.contentActivityMetadata" => new global::Microsoft.Graph.Beta.Models.ContentActivityMetadata(),
+                "#microsoft.graph.evaluationIncompleteActivityMetadata" => new global::Microsoft.Graph.Beta.Models.EvaluationIncompleteActivityMetadata(),
                 "#microsoft.graph.processConversationMetadata" => new global::Microsoft.Graph.Beta.Models.ProcessConversationMetadata(),
                 "#microsoft.graph.processFileMetadata" => new global::Microsoft.Graph.Beta.Models.ProcessFileMetadata(),
                 _ => new global::Microsoft.Graph.Beta.Models.ProcessContentMetadataBase(),

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The missing property</summary>
+        /// <summary>The number of assignments that are expected but not present on the resource.</summary>
         public int? Missing
         {
             get { return BackingStore?.Get<int?>("missing"); }
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The total property</summary>
+        /// <summary>The total number of unauthorized and missing access assignments.</summary>
         public int? Total
         {
             get { return BackingStore?.Get<int?>("total"); }
             set { BackingStore?.Set("total", value); }
         }
-        /// <summary>The unauthorized property</summary>
+        /// <summary>The number of assignments that exist on the resource but are not expected.</summary>
         public int? Unauthorized
         {
             get { return BackingStore?.Get<int?>("unauthorized"); }

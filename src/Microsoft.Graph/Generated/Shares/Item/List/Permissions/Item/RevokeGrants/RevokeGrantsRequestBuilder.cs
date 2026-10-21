@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Permissions.Item.RevokeGrants
         {
         }
         /// <summary>
-        /// Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
+        /// Revoke access to a listItem or driveItem granted via a sharing link by removing the specified driveRecipient entries from the link. Recipients who already redeemed the link and recipients who only received an invitation both lose access. Revoking a grant removes the recipient from this sharing link only; it doesn&apos;t remove any access the recipient has through a different sharing link, a direct grant, or membership in a group that has access.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Permissions.Item.RevokeGrants
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Permission>(requestInfo, global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
+        /// Revoke access to a listItem or driveItem granted via a sharing link by removing the specified driveRecipient entries from the link. Recipients who already redeemed the link and recipients who only received an invitation both lose access. Revoking a grant removes the recipient from this sharing link only; it doesn&apos;t remove any access the recipient has through a different sharing link, a direct grant, or membership in a group that has access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

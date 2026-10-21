@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("plans", value); }
         }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 plans.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Plan>? PlansV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Plan>?>("plans_v2"); }
+            set { BackingStore?.Set("plans_v2", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Plan> PlansV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Plan>>("plans_v2"); }
+            set { BackingStore?.Set("plans_v2", value); }
+        }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified rosters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +108,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 tasks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TaskObject>? TasksV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TaskObject>?>("tasks_v2"); }
+            set { BackingStore?.Set("tasks_v2", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TaskObject> TasksV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TaskObject>>("tasks_v2"); }
+            set { BackingStore?.Set("tasks_v2", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -113,8 +145,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerBucket>(global::Microsoft.Graph.Beta.Models.PlannerBucket.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "goals", n => { Goals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerGoal>(global::Microsoft.Graph.Beta.Models.PlannerGoal.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "plans_v2", n => { PlansV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Plan>(global::Microsoft.Graph.Beta.Models.Plan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rosters", n => { Rosters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerRoster>(global::Microsoft.Graph.Beta.Models.PlannerRoster.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>(global::Microsoft.Graph.Beta.Models.PlannerTask.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tasks_v2", n => { TasksV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TaskObject>(global::Microsoft.Graph.Beta.Models.TaskObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -128,8 +162,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerBucket>("buckets", Buckets);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerGoal>("goals", Goals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("plans", Plans);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Plan>("plans_v2", PlansV2);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerRoster>("rosters", Rosters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TaskObject>("tasks_v2", TasksV2);
         }
     }
 }

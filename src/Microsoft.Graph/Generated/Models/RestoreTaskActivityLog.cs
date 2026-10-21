@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DestinationType?>("destinationType"); }
             set { BackingStore?.Set("destinationType", value); }
         }
-        /// <summary>The restoreArtifactDetails property</summary>
+        /// <summary>Contains detailed information about the artifacts being restored, including counts and status of restored items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RestoreArtifactDetails? RestoreArtifactDetails
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("restoreArtifactDetails", value); }
         }
 #endif
-        /// <summary>The restoreCompletionDateTime property</summary>
+        /// <summary>The date and time when the restore task was completed.</summary>
         public DateTimeOffset? RestoreCompletionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restoreCompletionDateTime"); }
             set { BackingStore?.Set("restoreCompletionDateTime", value); }
         }
-        /// <summary>The restoreSessionId property</summary>
+        /// <summary>The unique identifier of the restore session associated with this activity log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestoreSessionId
