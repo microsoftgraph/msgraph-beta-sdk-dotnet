@@ -23,10 +23,23 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.bucket" => new global::Microsoft.Graph.Beta.Models.Bucket(),
                 "#microsoft.graph.businessScenarioTask" => new global::Microsoft.Graph.Beta.Models.BusinessScenarioTask(),
+                "#microsoft.graph.categoryDefinition" => new global::Microsoft.Graph.Beta.Models.CategoryDefinition(),
+                "#microsoft.graph.checklistItemV4" => new global::Microsoft.Graph.Beta.Models.ChecklistItemV4(),
+                "#microsoft.graph.contentLink" => new global::Microsoft.Graph.Beta.Models.ContentLink(),
+                "#microsoft.graph.customChoiceOption" => new global::Microsoft.Graph.Beta.Models.CustomChoiceOption(),
+                "#microsoft.graph.customFieldDefinition" => new global::Microsoft.Graph.Beta.Models.CustomFieldDefinition(),
+                "#microsoft.graph.customFieldValue" => new global::Microsoft.Graph.Beta.Models.CustomFieldValue(),
+                "#microsoft.graph.dependency" => new global::Microsoft.Graph.Beta.Models.Dependency(),
+                "#microsoft.graph.goal" => new global::Microsoft.Graph.Beta.Models.Goal(),
+                "#microsoft.graph.historyItem" => new global::Microsoft.Graph.Beta.Models.HistoryItem(),
+                "#microsoft.graph.plan" => new global::Microsoft.Graph.Beta.Models.Plan(),
+                "#microsoft.graph.planContextLink" => new global::Microsoft.Graph.Beta.Models.PlanContextLink(),
                 "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new global::Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat(),
                 "#microsoft.graph.plannerBucket" => new global::Microsoft.Graph.Beta.Models.PlannerBucket(),
                 "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new global::Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerChatMessage" => new global::Microsoft.Graph.Beta.Models.PlannerChatMessage(),
                 "#microsoft.graph.plannerGoal" => new global::Microsoft.Graph.Beta.Models.PlannerGoal(),
                 "#microsoft.graph.plannerHistoryItem" => new global::Microsoft.Graph.Beta.Models.PlannerHistoryItem(),
                 "#microsoft.graph.plannerPlan" => new global::Microsoft.Graph.Beta.Models.PlannerPlan(),
@@ -35,7 +48,9 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.plannerTask" => new global::Microsoft.Graph.Beta.Models.PlannerTask(),
                 "#microsoft.graph.plannerTaskDetails" => new global::Microsoft.Graph.Beta.Models.PlannerTaskDetails(),
                 "#microsoft.graph.plannerUser" => new global::Microsoft.Graph.Beta.Models.PlannerUser(),
+                "#microsoft.graph.task" => new global::Microsoft.Graph.Beta.Models.TaskObject(),
                 "#microsoft.graph.taskHistoryItem" => new global::Microsoft.Graph.Beta.Models.TaskHistoryItem(),
+                "#microsoft.graph.userAssignment" => new global::Microsoft.Graph.Beta.Models.UserAssignment(),
                 _ => new global::Microsoft.Graph.Beta.Models.PlannerDelta(),
             };
         }

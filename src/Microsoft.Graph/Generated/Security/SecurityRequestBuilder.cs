@@ -39,6 +39,7 @@ using Microsoft.Graph.Beta.Security.TiIndicators;
 using Microsoft.Graph.Beta.Security.TriggerTypes;
 using Microsoft.Graph.Beta.Security.Triggers;
 using Microsoft.Graph.Beta.Security.UserSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Workbooks;
 using Microsoft.Graph.Beta.Security.Zones;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -235,6 +236,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder UserSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the workbooks property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.Workbooks.WorkbooksRequestBuilder Workbooks
+        {
+            get => new global::Microsoft.Graph.Beta.Security.Workbooks.WorkbooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the zones property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.Zones.ZonesRequestBuilder Zones

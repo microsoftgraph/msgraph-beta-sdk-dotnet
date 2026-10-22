@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The cancelledCount property</summary>
+        /// <summary>The number of protection units whose offboarding was cancelled during the operation.</summary>
         public int? CancelledCount
         {
             get { return BackingStore?.Get<int?>("cancelledCount"); }
             set { BackingStore?.Set("cancelledCount", value); }
         }
-        /// <summary>The failedCount property</summary>
+        /// <summary>The number of protection units that failed to be offboarded during the operation.</summary>
         public int? FailedCount
         {
             get { return BackingStore?.Get<int?>("failedCount"); }
@@ -49,19 +49,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The offboardedCount property</summary>
+        /// <summary>The number of protection units that were successfully offboarded during the operation.</summary>
         public int? OffboardedCount
         {
             get { return BackingStore?.Get<int?>("offboardedCount"); }
             set { BackingStore?.Set("offboardedCount", value); }
         }
-        /// <summary>The offboardEndDateTime property</summary>
+        /// <summary>The date and time when the offboarding operation ended.</summary>
         public DateTimeOffset? OffboardEndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("offboardEndDateTime"); }
             set { BackingStore?.Set("offboardEndDateTime", value); }
         }
-        /// <summary>The offboardingStatus property</summary>
+        /// <summary>The current status of the offboarding operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OffboardingStatus
@@ -77,13 +77,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offboardingStatus", value); }
         }
 #endif
-        /// <summary>The offboardStartDateTime property</summary>
+        /// <summary>The date and time when the offboarding operation started.</summary>
         public DateTimeOffset? OffboardStartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("offboardStartDateTime"); }
             set { BackingStore?.Set("offboardStartDateTime", value); }
         }
-        /// <summary>The totalRequestedCount property</summary>
+        /// <summary>The total number of protection units that were requested to be offboarded in this operation.</summary>
         public int? TotalRequestedCount
         {
             get { return BackingStore?.Get<int?>("totalRequestedCount"); }

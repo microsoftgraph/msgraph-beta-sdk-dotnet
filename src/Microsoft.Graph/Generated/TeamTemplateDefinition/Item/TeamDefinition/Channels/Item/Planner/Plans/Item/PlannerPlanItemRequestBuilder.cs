@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.Archive;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.Buckets;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.Details;
+using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.ExtendExpiry;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.GetUsageRights;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.Goals;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.HistoryItems;
@@ -41,6 +42,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
         public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.Details.DetailsRequestBuilder Details
         {
             get => new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the extendExpiry method.</summary>
+        public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder ExtendExpiry
+        {
+            get => new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUsageRights method.</summary>
         public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder GetUsageRights

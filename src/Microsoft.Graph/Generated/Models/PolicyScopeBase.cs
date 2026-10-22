@@ -97,6 +97,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyActions", value); }
         }
 #endif
+        /// <summary>The effective configuration for policy evaluation scenarios. This property can be omitted or null when no configuration is available or applicable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.PolicyConfiguration? PolicyConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PolicyConfiguration?>("policyConfiguration"); }
+            set { BackingStore?.Set("policyConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.PolicyConfiguration PolicyConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PolicyConfiguration>("policyConfiguration"); }
+            set { BackingStore?.Set("policyConfiguration", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.PolicyScopeBase"/> and sets the default values.
         /// </summary>
@@ -135,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>(global::Microsoft.Graph.Beta.Models.PolicyLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyActions", n => { PolicyActions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DlpActionInfo>(global::Microsoft.Graph.Beta.Models.DlpActionInfo.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "policyConfiguration", n => { PolicyConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PolicyConfiguration>(global::Microsoft.Graph.Beta.Models.PolicyConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -150,6 +167,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyLocation>("locations", Locations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DlpActionInfo>("policyActions", PolicyActions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PolicyConfiguration>("policyConfiguration", PolicyConfiguration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

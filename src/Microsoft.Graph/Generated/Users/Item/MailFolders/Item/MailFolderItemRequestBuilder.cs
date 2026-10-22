@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ImportMime;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy.CopyRequestBuilder Copy
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy.CopyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the importMime method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ImportMime.ImportMimeRequestBuilder ImportMime
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ImportMime.ImportMimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules.MessageRulesRequestBuilder MessageRules

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("plans", value); }
         }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Plan>? PlansV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Plan>?>("plans_v2"); }
+            set { BackingStore?.Set("plans_v2", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Plan> PlansV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Plan>>("plans_v2"); }
+            set { BackingStore?.Set("plans_v2", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "plans_v2", n => { PlansV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Plan>(global::Microsoft.Graph.Beta.Models.Plan.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("plans", Plans);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Plan>("plans_v2", PlansV2);
         }
     }
 }

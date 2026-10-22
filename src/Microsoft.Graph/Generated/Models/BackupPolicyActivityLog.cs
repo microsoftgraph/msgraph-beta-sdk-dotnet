@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class BackupPolicyActivityLog : global::Microsoft.Graph.Beta.Models.ActivityLogBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The oldPolicyName property</summary>
+        /// <summary>The previous policy name, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OldPolicyName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("oldPolicyName", value); }
         }
 #endif
-        /// <summary>The policyId property</summary>
+        /// <summary>The unique identifier of the protection policy associated with the activity log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The policyName property</summary>
+        /// <summary>Name of the protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyName
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ProtectionPolicyStatus?>("policyStatus"); }
             set { BackingStore?.Set("policyStatus", value); }
         }
-        /// <summary>The protectionUnitDetails property</summary>
+        /// <summary>Contains Protection unit counts information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ProtectionUnitDetails? ProtectionUnitDetails
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("protectionUnitDetails", value); }
         }
 #endif
-        /// <summary>The retentionPeriod property</summary>
+        /// <summary>The period of time to retain the protected data for a single Microsoft 365 service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RetentionPeriod

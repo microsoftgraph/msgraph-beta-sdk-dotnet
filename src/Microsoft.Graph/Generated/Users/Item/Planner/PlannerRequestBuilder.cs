@@ -6,9 +6,11 @@ using Microsoft.Graph.Beta.Users.Item.Planner.All;
 using Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans;
 using Microsoft.Graph.Beta.Users.Item.Planner.MyDayTasks;
 using Microsoft.Graph.Beta.Users.Item.Planner.Plans;
+using Microsoft.Graph.Beta.Users.Item.Planner.Plans_v2;
 using Microsoft.Graph.Beta.Users.Item.Planner.RecentPlans;
 using Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans;
 using Microsoft.Graph.Beta.Users.Item.Planner.Tasks;
+using Microsoft.Graph.Beta.Users.Item.Planner.Tasks_v2;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -45,6 +47,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the plans_v2 property of the microsoft.graph.plannerUser entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans_v2.Plans_v2RequestBuilder Plans_v2
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans_v2.Plans_v2RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Planner.RecentPlans.RecentPlansRequestBuilder RecentPlans
         {
@@ -59,6 +66,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tasks_v2 property of the microsoft.graph.plannerUser entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Planner.Tasks_v2.Tasks_v2RequestBuilder Tasks_v2
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Tasks_v2.Tasks_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.Planner.PlannerRequestBuilder"/> and sets the default values.

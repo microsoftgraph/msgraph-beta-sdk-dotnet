@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("plans", value); }
         }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.Plan>? PlansV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Plan>?>("plans_v2"); }
+            set { BackingStore?.Set("plans_v2", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.Plan> PlansV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.Plan>>("plans_v2"); }
+            set { BackingStore?.Set("plans_v2", value); }
+        }
+#endif
         /// <summary>A collection that contains references to the plans that the user recently viewed in apps that support recent plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,6 +172,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TaskObject>? TasksV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TaskObject>?>("tasks_v2"); }
+            set { BackingStore?.Set("tasks_v2", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TaskObject> TasksV2
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TaskObject>>("tasks_v2"); }
+            set { BackingStore?.Set("tasks_v2", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -179,10 +211,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "favoritePlans", n => { FavoritePlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "myDayTasks", n => { MyDayTasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>(global::Microsoft.Graph.Beta.Models.PlannerTask.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "plans_v2", n => { PlansV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Plan>(global::Microsoft.Graph.Beta.Models.Plan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recentPlanReferences", n => { RecentPlanReferences = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PlannerRecentPlanReferenceCollection>(global::Microsoft.Graph.Beta.Models.PlannerRecentPlanReferenceCollection.CreateFromDiscriminatorValue); } },
                 { "recentPlans", n => { RecentPlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rosterPlans", n => { RosterPlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>(global::Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>(global::Microsoft.Graph.Beta.Models.PlannerTask.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tasks_v2", n => { TasksV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TaskObject>(global::Microsoft.Graph.Beta.Models.TaskObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -198,10 +232,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("favoritePlans", FavoritePlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>("myDayTasks", MyDayTasks);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("plans", Plans);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Plan>("plans_v2", PlansV2);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PlannerRecentPlanReferenceCollection>("recentPlanReferences", RecentPlanReferences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("recentPlans", RecentPlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerPlan>("rosterPlans", RosterPlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PlannerTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TaskObject>("tasks_v2", TasksV2);
         }
     }
 }

@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<bool?>("isRecordCountLimitExceeded"); }
             set { BackingStore?.Set("isRecordCountLimitExceeded", value); }
         }
-        /// <summary>Free text field to search non-indexed properties of the audit log.</summary>
+        /// <summary>Free text to match against the non-indexed content of each record: the workload-specific properties inside auditData, including its AppAccessContext object. The indexed common-schema properties, such as the operation name, aren&apos;t matched by keyword; use their own filters, such as operationFilters, for those.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KeywordFilter

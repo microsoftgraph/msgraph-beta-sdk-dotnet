@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.Item.InheritsPermissionsFrom.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId;
+using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinition
         public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.Item.InheritsPermissionsFrom.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.Item.InheritsPermissionsFrom.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder"/> and sets the default values.

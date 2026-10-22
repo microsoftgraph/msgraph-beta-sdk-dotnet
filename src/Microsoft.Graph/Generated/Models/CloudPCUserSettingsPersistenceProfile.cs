@@ -43,6 +43,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The profileDiskEncryptionType property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionType? ProfileDiskEncryptionType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionType?>("profileDiskEncryptionType"); }
+            set { BackingStore?.Set("profileDiskEncryptionType", value); }
+        }
         /// <summary>Indicates the unique identifier of the Cloud PC user settings persistence profile for the selected Cloud PC user settings persistence. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +77,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>The usageDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileUsageDetail? UsageDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileUsageDetail?>("usageDetail"); }
+            set { BackingStore?.Set("usageDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileUsageDetail UsageDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileUsageDetail>("usageDetail"); }
+            set { BackingStore?.Set("usageDetail", value); }
+        }
+#endif
         /// <summary>The user principal name of the owner of the cloud profile. For example, connie@contoso.com. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,9 +137,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "lastProfileAttachedDateTime", n => { LastProfileAttachedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "profileDiskEncryptionType", n => { ProfileDiskEncryptionType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionType>(); } },
                 { "profileId", n => { ProfileId = n.GetStringValue(); } },
                 { "profileSizeInGB", n => { ProfileSizeInGB = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileStatus>(); } },
+                { "usageDetail", n => { UsageDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileUsageDetail>(global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileUsageDetail.CreateFromDiscriminatorValue); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -130,9 +154,11 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("lastProfileAttachedDateTime", LastProfileAttachedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionType>("profileDiskEncryptionType", ProfileDiskEncryptionType);
             writer.WriteStringValue("profileId", ProfileId);
             writer.WriteIntValue("profileSizeInGB", ProfileSizeInGB);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileStatus>("status", Status);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceProfileUsageDetail>("usageDetail", UsageDetail);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);
         }

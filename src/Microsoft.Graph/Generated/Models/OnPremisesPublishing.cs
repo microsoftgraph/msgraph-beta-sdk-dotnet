@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isContinuousAccessEvaluationEnabled"); }
             set { BackingStore?.Set("isContinuousAccessEvaluationEnabled", value); }
         }
-        /// <summary>The isDeviceAccessEnabled property</summary>
+        /// <summary>Indicates whether the Microsoft Entra Private Access application is accessible or available in device access mode. false by default.</summary>
         public bool? IsDeviceAccessEnabled
         {
             get { return BackingStore?.Get<bool?>("isDeviceAccessEnabled"); }

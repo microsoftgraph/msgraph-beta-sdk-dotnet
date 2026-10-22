@@ -21,6 +21,38 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages.Item.Repl
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The reactionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReactionId
+        {
+            get { return BackingStore?.Get<string?>("reactionId"); }
+            set { BackingStore?.Set("reactionId", value); }
+        }
+#nullable restore
+#else
+        public string ReactionId
+        {
+            get { return BackingStore?.Get<string>("reactionId"); }
+            set { BackingStore?.Set("reactionId", value); }
+        }
+#endif
         /// <summary>The reactionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +95,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages.Item.Repl
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "reactionId", n => { ReactionId = n.GetStringValue(); } },
                 { "reactionType", n => { ReactionType = n.GetStringValue(); } },
             };
         }
@@ -73,6 +107,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages.Item.Repl
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("reactionId", ReactionId);
             writer.WriteStringValue("reactionType", ReactionType);
             writer.WriteAdditionalData(AdditionalData);
         }

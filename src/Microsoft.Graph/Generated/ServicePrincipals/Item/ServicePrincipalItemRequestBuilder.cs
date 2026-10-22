@@ -22,7 +22,9 @@ using Microsoft.Graph.Beta.ServicePrincipals.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.LicenseDetails;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Lifecycle;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.MemberOf;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.MicrosoftGraphIdentityGovernanceAttest;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Oauth2PermissionGrants;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners;
@@ -145,10 +147,20 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the lifecycle property of the microsoft.graph.servicePrincipal entity.</summary>
+        public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Lifecycle.LifecycleRequestBuilder Lifecycle
+        {
+            get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Lifecycle.LifecycleRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.</summary>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.MemberOf.MemberOfRequestBuilder MemberOf
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the attest method.</summary>
+        public global::Microsoft.Graph.Beta.ServicePrincipals.Item.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder MicrosoftGraphIdentityGovernanceAttest
+        {
+            get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.</summary>
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants

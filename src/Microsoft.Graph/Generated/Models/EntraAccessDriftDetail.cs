@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EntraAccessDriftDetail : global::Microsoft.Graph.Beta.Models.AccessDriftDetail, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessPackage property</summary>
+        /// <summary>The access package associated with this drift record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DriftAccessPackageInfo? AccessPackage
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessPackage", value); }
         }
 #endif
-        /// <summary>The assignedRole property</summary>
+        /// <summary>The role currently assigned to the identity on the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedRole
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignedRole", value); }
         }
 #endif
-        /// <summary>The expectedRole property</summary>
+        /// <summary>The role expected based on the access package assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedRole
