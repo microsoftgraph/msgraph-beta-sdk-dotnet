@@ -286,6 +286,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.androidAospReferencedApp" => new global::Microsoft.Graph.Beta.Models.AndroidAospReferencedApp(),
                 "#microsoft.graph.androidForWorkApp" => new global::Microsoft.Graph.Beta.Models.AndroidForWorkApp(),
                 "#microsoft.graph.androidLobApp" => new global::Microsoft.Graph.Beta.Models.AndroidLobApp(),
                 "#microsoft.graph.androidManagedStoreApp" => new global::Microsoft.Graph.Beta.Models.AndroidManagedStoreApp(),

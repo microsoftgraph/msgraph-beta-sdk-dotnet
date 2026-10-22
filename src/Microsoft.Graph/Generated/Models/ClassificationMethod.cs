@@ -24,5 +24,17 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         MachineLearning,
         #pragma warning restore CS1591
+        [EnumMember(Value = "privacyDataMatch")]
+        #pragma warning disable CS1591
+        PrivacyDataMatch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "aiPowered")]
+        #pragma warning disable CS1591
+        AiPowered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
+        UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -35,6 +35,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         }
         /// <summary>
         /// Invoke action addTag
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-addtag-collection?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.AddTag.AddTagPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         }
         /// <summary>
         /// Invoke action addTag
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-addtag-collection?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.AddTag.AddTagResponse"/></returns>
         /// <param name="body">The request body</param>

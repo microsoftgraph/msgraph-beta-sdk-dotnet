@@ -109,11 +109,115 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("microsoftDefenderForEndpointAttachEnabled"); }
             set { BackingStore?.Set("microsoftDefenderForEndpointAttachEnabled", value); }
         }
+        /// <summary>The display name of the Mobile Threat Defense partner. This is a read-only property determined by the partner metadata.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PartnerDisplayName
+        {
+            get { return BackingStore?.Get<string?>("partnerDisplayName"); }
+            set { BackingStore?.Set("partnerDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string PartnerDisplayName
+        {
+            get { return BackingStore?.Get<string>("partnerDisplayName"); }
+            set { BackingStore?.Set("partnerDisplayName", value); }
+        }
+#endif
+        /// <summary>The minimum Android version supported by the Mobile Threat Defense partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PartnerMinimumSupportedAndroidVersion
+        {
+            get { return BackingStore?.Get<string?>("partnerMinimumSupportedAndroidVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedAndroidVersion", value); }
+        }
+#nullable restore
+#else
+        public string PartnerMinimumSupportedAndroidVersion
+        {
+            get { return BackingStore?.Get<string>("partnerMinimumSupportedAndroidVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedAndroidVersion", value); }
+        }
+#endif
+        /// <summary>The minimum iOS version supported by the Mobile Threat Defense partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PartnerMinimumSupportedIosVersion
+        {
+            get { return BackingStore?.Get<string?>("partnerMinimumSupportedIosVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedIosVersion", value); }
+        }
+#nullable restore
+#else
+        public string PartnerMinimumSupportedIosVersion
+        {
+            get { return BackingStore?.Get<string>("partnerMinimumSupportedIosVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedIosVersion", value); }
+        }
+#endif
+        /// <summary>The minimum macOS version supported by the Mobile Threat Defense partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PartnerMinimumSupportedMacVersion
+        {
+            get { return BackingStore?.Get<string?>("partnerMinimumSupportedMacVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedMacVersion", value); }
+        }
+#nullable restore
+#else
+        public string PartnerMinimumSupportedMacVersion
+        {
+            get { return BackingStore?.Get<string>("partnerMinimumSupportedMacVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedMacVersion", value); }
+        }
+#endif
+        /// <summary>The minimum Windows version supported by the Mobile Threat Defense partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PartnerMinimumSupportedWindowsVersion
+        {
+            get { return BackingStore?.Get<string?>("partnerMinimumSupportedWindowsVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedWindowsVersion", value); }
+        }
+#nullable restore
+#else
+        public string PartnerMinimumSupportedWindowsVersion
+        {
+            get { return BackingStore?.Get<string>("partnerMinimumSupportedWindowsVersion"); }
+            set { BackingStore?.Set("partnerMinimumSupportedWindowsVersion", value); }
+        }
+#endif
         /// <summary>Partner state of this tenant.</summary>
         public global::Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState? PartnerState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState?>("partnerState"); }
             set { BackingStore?.Set("partnerState", value); }
+        }
+        /// <summary>When TRUE, indicates that the Mobile Threat Defense partner supports Android Mobile Application Management.</summary>
+        public bool? PartnerSupportsAndroidMam
+        {
+            get { return BackingStore?.Get<bool?>("partnerSupportsAndroidMam"); }
+            set { BackingStore?.Set("partnerSupportsAndroidMam", value); }
+        }
+        /// <summary>When TRUE, indicates that the Mobile Threat Defense partner supports iOS certificate sync.</summary>
+        public bool? PartnerSupportsIosCertificateSync
+        {
+            get { return BackingStore?.Get<bool?>("partnerSupportsIosCertificateSync"); }
+            set { BackingStore?.Set("partnerSupportsIosCertificateSync", value); }
+        }
+        /// <summary>When TRUE, indicates that the Mobile Threat Defense partner supports iOS Mobile Application Management.</summary>
+        public bool? PartnerSupportsIosMam
+        {
+            get { return BackingStore?.Get<bool?>("partnerSupportsIosMam"); }
+            set { BackingStore?.Set("partnerSupportsIosMam", value); }
+        }
+        /// <summary>When TRUE, indicates that the Mobile Threat Defense partner supports Windows Mobile Application Management.</summary>
+        public bool? PartnerSupportsWindowsMam
+        {
+            get { return BackingStore?.Get<bool?>("partnerSupportsWindowsMam"); }
+            set { BackingStore?.Set("partnerSupportsWindowsMam", value); }
         }
         /// <summary>Indicates the number of days without receiving a heartbeat from a Mobile Threat Defense partner before the partner is marked as unresponsive. Intune will the ignore the data from this Mobile Threat Defense Partner for next compliance calculation.</summary>
         public int? PartnerUnresponsivenessThresholdInDays
@@ -179,7 +283,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "macDeviceBlockedOnMissingPartnerData", n => { MacDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
                 { "macEnabled", n => { MacEnabled = n.GetBoolValue(); } },
                 { "microsoftDefenderForEndpointAttachEnabled", n => { MicrosoftDefenderForEndpointAttachEnabled = n.GetBoolValue(); } },
+                { "partnerDisplayName", n => { PartnerDisplayName = n.GetStringValue(); } },
+                { "partnerMinimumSupportedAndroidVersion", n => { PartnerMinimumSupportedAndroidVersion = n.GetStringValue(); } },
+                { "partnerMinimumSupportedIosVersion", n => { PartnerMinimumSupportedIosVersion = n.GetStringValue(); } },
+                { "partnerMinimumSupportedMacVersion", n => { PartnerMinimumSupportedMacVersion = n.GetStringValue(); } },
+                { "partnerMinimumSupportedWindowsVersion", n => { PartnerMinimumSupportedWindowsVersion = n.GetStringValue(); } },
                 { "partnerState", n => { PartnerState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState>(); } },
+                { "partnerSupportsAndroidMam", n => { PartnerSupportsAndroidMam = n.GetBoolValue(); } },
+                { "partnerSupportsIosCertificateSync", n => { PartnerSupportsIosCertificateSync = n.GetBoolValue(); } },
+                { "partnerSupportsIosMam", n => { PartnerSupportsIosMam = n.GetBoolValue(); } },
+                { "partnerSupportsWindowsMam", n => { PartnerSupportsWindowsMam = n.GetBoolValue(); } },
                 { "partnerUnresponsivenessThresholdInDays", n => { PartnerUnresponsivenessThresholdInDays = n.GetIntValue(); } },
                 { "partnerUnsupportedOsVersionBlocked", n => { PartnerUnsupportedOsVersionBlocked = n.GetBoolValue(); } },
                 { "windowsDeviceBlockedOnMissingPartnerData", n => { WindowsDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
@@ -211,7 +324,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("macDeviceBlockedOnMissingPartnerData", MacDeviceBlockedOnMissingPartnerData);
             writer.WriteBoolValue("macEnabled", MacEnabled);
             writer.WriteBoolValue("microsoftDefenderForEndpointAttachEnabled", MicrosoftDefenderForEndpointAttachEnabled);
+            writer.WriteStringValue("partnerDisplayName", PartnerDisplayName);
+            writer.WriteStringValue("partnerMinimumSupportedAndroidVersion", PartnerMinimumSupportedAndroidVersion);
+            writer.WriteStringValue("partnerMinimumSupportedIosVersion", PartnerMinimumSupportedIosVersion);
+            writer.WriteStringValue("partnerMinimumSupportedMacVersion", PartnerMinimumSupportedMacVersion);
+            writer.WriteStringValue("partnerMinimumSupportedWindowsVersion", PartnerMinimumSupportedWindowsVersion);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState>("partnerState", PartnerState);
+            writer.WriteBoolValue("partnerSupportsAndroidMam", PartnerSupportsAndroidMam);
+            writer.WriteBoolValue("partnerSupportsIosCertificateSync", PartnerSupportsIosCertificateSync);
+            writer.WriteBoolValue("partnerSupportsIosMam", PartnerSupportsIosMam);
+            writer.WriteBoolValue("partnerSupportsWindowsMam", PartnerSupportsWindowsMam);
             writer.WriteIntValue("partnerUnresponsivenessThresholdInDays", PartnerUnresponsivenessThresholdInDays);
             writer.WriteBoolValue("partnerUnsupportedOsVersionBlocked", PartnerUnsupportedOsVersionBlocked);
             writer.WriteBoolValue("windowsDeviceBlockedOnMissingPartnerData", WindowsDeviceBlockedOnMissingPartnerData);

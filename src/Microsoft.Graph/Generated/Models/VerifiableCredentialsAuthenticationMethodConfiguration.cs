@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class VerifiableCredentialsAuthenticationMethodConfiguration : global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The identityVerificationEventsConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration? IdentityVerificationEventsConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration?>("identityVerificationEventsConfiguration"); }
+            set { BackingStore?.Set("identityVerificationEventsConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration IdentityVerificationEventsConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration>("identityVerificationEventsConfiguration"); }
+            set { BackingStore?.Set("identityVerificationEventsConfiguration", value); }
+        }
+#endif
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "identityVerificationEventsConfiguration", n => { IdentityVerificationEventsConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration>(global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration.CreateFromDiscriminatorValue); } },
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VerifiableCredentialAuthenticationMethodTarget>(global::Microsoft.Graph.Beta.Models.VerifiableCredentialAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -64,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration>("identityVerificationEventsConfiguration", IdentityVerificationEventsConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VerifiableCredentialAuthenticationMethodTarget>("includeTargets", IncludeTargets);
         }
     }

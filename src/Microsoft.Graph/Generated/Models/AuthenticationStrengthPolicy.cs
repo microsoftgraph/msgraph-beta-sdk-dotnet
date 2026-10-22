@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AuthenticationStrengthPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
+    public partial class AuthenticationStrengthPolicy : global::Microsoft.Graph.Beta.Models.PolicyDeletableItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of authentication method modes that are required be used to satify this authentication strength.</summary>
@@ -82,6 +82,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id
+        {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#nullable restore
+#else
+        public string Id
+        {
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#endif
         /// <summary>The datetime when this policy was last modified.</summary>
         public DateTimeOffset? ModifiedDateTime
         {
@@ -99,6 +115,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRequirements?>("requirementsSatisfied"); }
             set { BackingStore?.Set("requirementsSatisfied", value); }
+        }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy"/> and sets the default values.
+        /// </summary>
+        public AuthenticationStrengthPolicy() : base()
+        {
+            OdataType = "#microsoft.graph.authenticationStrengthPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -123,6 +146,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "policyType", n => { PolicyType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicyType>(); } },
                 { "requirementsSatisfied", n => { RequirementsSatisfied = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRequirements>(); } },
@@ -141,6 +165,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicyType>("policyType", PolicyType);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AuthenticationStrengthRequirements>("requirementsSatisfied", RequirementsSatisfied);

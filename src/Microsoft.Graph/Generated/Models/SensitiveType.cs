@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models
     public partial class SensitiveType : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The classificationMethod property</summary>
+        /// <summary>The classification method. The possible values are: patternMatch, exactDataMatch, fingerprint, machineLearning, privacyDataMatch, aiPowered, unknownFutureValue. privacyDataMatch performs privacy data matching based on tenant data. aiPowered performs AI-powered classification and can benefit from supported caller-supplied embeddings. unknownFutureValue is an evolvable enumeration sentinel value. Don&apos;t use it.</summary>
         public global::Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ClassificationMethod?>("classificationMethod"); }
             set { BackingStore?.Set("classificationMethod", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the sensitive information type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the sensitive information type was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the sensitive information type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The publisherName property</summary>
+        /// <summary>The name of the publisher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublisherName
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publisherName", value); }
         }
 #endif
-        /// <summary>The rulePackageId property</summary>
+        /// <summary>The identifier of the rule package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RulePackageId
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rulePackageId", value); }
         }
 #endif
-        /// <summary>The rulePackageType property</summary>
+        /// <summary>The type of the rule package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RulePackageType
@@ -104,19 +104,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rulePackageType", value); }
         }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>The scope of the sensitive information type. The possible values are: fullDocument, partialDocument.</summary>
         public global::Microsoft.Graph.Beta.Models.SensitiveTypeScope? Scope
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SensitiveTypeScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
-        /// <summary>The sensitiveTypeSource property</summary>
+        /// <summary>The source of sensitive type. The possible values are: outOfBox, tenant.</summary>
         public global::Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SensitiveTypeSource?>("sensitiveTypeSource"); }
             set { BackingStore?.Set("sensitiveTypeSource", value); }
         }
-        /// <summary>The state property</summary>
+        /// <summary>The state of the sensitive information type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State

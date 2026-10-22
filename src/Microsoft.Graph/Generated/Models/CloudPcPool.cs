@@ -28,22 +28,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>The capabilities property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration? Capabilities
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration?>("capabilities"); }
-            set { BackingStore?.Set("capabilities", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration Capabilities
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration>("capabilities"); }
-            set { BackingStore?.Set("capabilities", value); }
-        }
-#endif
         /// <summary>The cloudPcConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,7 +128,6 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment>(global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration.CreateFromDiscriminatorValue); } },
                 { "cloudPcConfiguration", n => { CloudPcConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcConfiguration.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -162,7 +145,6 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcPoolAssignment>("assignments", Assignments);
-            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcPoolCapabilityConfiguration>("capabilities", Capabilities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcConfiguration>("cloudPcConfiguration", CloudPcConfiguration);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);

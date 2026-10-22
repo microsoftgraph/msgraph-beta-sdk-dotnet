@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         {
         }
         /// <summary>
-        /// Invoke action applyAlternateMitigation
+        /// Apply an alternate mitigation for an impactedResource object and update its status to alternateMitigation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-applyalternatemitigation?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ImpactedResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ImpactedResource>(requestInfo, global::Microsoft.Graph.Beta.Models.ImpactedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action applyAlternateMitigation
+        /// Apply an alternate mitigation for an impactedResource object and update its status to alternateMitigation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

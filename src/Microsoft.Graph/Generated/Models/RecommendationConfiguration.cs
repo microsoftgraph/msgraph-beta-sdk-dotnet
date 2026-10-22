@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isNotificationEnabled"); }
             set { BackingStore?.Set("isNotificationEnabled", value); }
         }
-        /// <summary>The lastRefreshedDateTime property</summary>
+        /// <summary>The date and time of the most recent refresh cycle in which every pipeline that populates Microsoft Entra recommendations completed successfully for the tenant&apos;s region. The value advances only when all contributing pipelines succeed and remains at the last fully successful cycle if any contributing pipeline is unhealthy. A successful refresh doesn&apos;t imply that any individual recommendation changed. Is null when no fully successful refresh has been recorded yet. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }

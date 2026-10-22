@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The effectiveFromDateTime property</summary>
+        /// <summary>The date and time from which the retention period change takes effect. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026, is 2026-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EffectiveFromDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("effectiveFromDateTime"); }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RetentionPeriodChangeStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The targetRetentionPeriodInDays property</summary>
+        /// <summary>Specifies the retention period, in days, that applies after the change is completed.</summary>
         public int? TargetRetentionPeriodInDays
         {
             get { return BackingStore?.Get<int?>("targetRetentionPeriodInDays"); }

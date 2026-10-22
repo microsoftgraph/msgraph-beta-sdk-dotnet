@@ -27,14 +27,14 @@ namespace Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis
         }
         /// <summary>Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.</summary>
         /// <param name="position">The unique identifier of teamworkCustomEmoji</param>
-        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder"/></returns>
-        public global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("teamworkCustomEmoji%2DdisplayName", position);
-                return new global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("teamworkCustomEmoji%2Did", position);
+                return new global::Microsoft.Graph.Beta.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

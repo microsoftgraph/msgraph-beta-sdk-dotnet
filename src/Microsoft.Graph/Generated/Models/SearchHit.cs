@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("_id", value); }
         }
 #endif
-        /// <summary>Indicates whether the current result is collapses when the collapseProperties property in the searchRequest is used.</summary>
+        /// <summary>Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.</summary>
         public bool? IsCollapsed
         {
             get { return BackingStore?.Get<bool?>("isCollapsed"); }
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resource", value); }
         }
 #endif
-        /// <summary>ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.</summary>
+        /// <summary>ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchResponse as well.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResultTemplateId
@@ -149,6 +149,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("_summary"); }
             set { BackingStore?.Set("_summary", value); }
+        }
+#endif
+        /// <summary>The sensitivity label applied to the search result resource, or null if the resource has no sensitivity label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.SensitivityLabelInfo? SensitivityLabel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SensitivityLabelInfo?>("sensitivityLabel"); }
+            set { BackingStore?.Set("sensitivityLabel", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.SensitivityLabelInfo SensitivityLabel
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.SensitivityLabelInfo>("sensitivityLabel"); }
+            set { BackingStore?.Set("sensitivityLabel", value); }
         }
 #endif
         /// <summary>The source property</summary>
@@ -219,6 +235,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "resultTemplateId", n => { ResultTemplateId = n.GetStringValue(); } },
                 { "_score", n => { Score = n.GetIntValue(); } },
                 { "_summary", n => { SearchHitSummary = n.GetStringValue(); } },
+                { "sensitivityLabel", n => { SensitivityLabel = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SensitivityLabelInfo>(global::Microsoft.Graph.Beta.Models.SensitivityLabelInfo.CreateFromDiscriminatorValue); } },
                 { "_source", n => { Source = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Entity>(global::Microsoft.Graph.Beta.Models.Entity.CreateFromDiscriminatorValue); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
             };
@@ -240,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("resultTemplateId", ResultTemplateId);
             writer.WriteIntValue("_score", Score);
             writer.WriteStringValue("_summary", SearchHitSummary);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SensitivityLabelInfo>("sensitivityLabel", SensitivityLabel);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Entity>("_source", Source);
             writer.WriteStringValue("summary", Summary);
             writer.WriteAdditionalData(AdditionalData);

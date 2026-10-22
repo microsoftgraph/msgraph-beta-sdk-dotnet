@@ -62,6 +62,8 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.authenticationMethodsPolicy" => new global::Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy(),
+                "#microsoft.graph.authenticationStrengthPolicy" => new global::Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy(),
                 "#microsoft.graph.compliantNetworkNamedLocation" => new global::Microsoft.Graph.Beta.Models.CompliantNetworkNamedLocation(),
                 "#microsoft.graph.conditionalAccessPolicy" => new global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy(),
                 "#microsoft.graph.countryNamedLocation" => new global::Microsoft.Graph.Beta.Models.CountryNamedLocation(),

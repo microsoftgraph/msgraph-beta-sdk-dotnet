@@ -7,12 +7,13 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>
+    /// Represents a single cloud environment onboarded for security posture management.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class EnvironmentObject : global::Microsoft.Graph.Beta.Models.Entity, IParsable
-    #pragma warning restore CS1591
     {
-        /// <summary>The kind property</summary>
+        /// <summary>The kind of cloud environment onboarded to security posture management.</summary>
         public global::Microsoft.Graph.Beta.Models.Security.EnvironmentKind? Kind
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.EnvironmentKind?>("kind"); }

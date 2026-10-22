@@ -22,6 +22,7 @@ using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema;
+using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceId;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.Partner;
@@ -154,6 +155,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder MicrosoftGraphSecurityGetHuntingSchema
         {
             get => new global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchema.MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getHuntingSchemaTables method.</summary>
+        public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceId.MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceIdRequestBuilder MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceId
+        {
+            get => new global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceId.MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the runHuntingQuery method.</summary>
         public global::Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery
@@ -288,7 +294,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Update security
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Security"/></returns>
-        /// <param name="body">Security singleton providing access to audit log resources.</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
@@ -332,7 +338,7 @@ namespace Microsoft.Graph.Beta.Security
         /// Update security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Security singleton providing access to audit log resources.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

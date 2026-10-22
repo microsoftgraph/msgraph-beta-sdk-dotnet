@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Optional offset metadata for the text chunks that produced this embedding data. The starts property is required when chunkOffsets is present. When lengths is also present, the decoded element counts must match and pair by index.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ChunkOffsets? ChunkOffsets
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChunkOffsets?>("chunkOffsets"); }
+            set { BackingStore?.Set("chunkOffsets", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ChunkOffsets ChunkOffsets
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ChunkOffsets>("chunkOffsets"); }
+            set { BackingStore?.Set("chunkOffsets", value); }
+        }
+#endif
         /// <summary>The embedding vectors the model produced for the text, encoded as a base64 string of little-endian 32-bit floats. Every vector the model emitted (for example, one per text chunk) is concatenated in order; each contributes exactly the modelType&apos;s embedding dimension worth of float components, so the decoded length must be a whole multiple of that dimension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "chunkOffsets", n => { ChunkOffsets = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChunkOffsets>(global::Microsoft.Graph.Beta.Models.ChunkOffsets.CreateFromDiscriminatorValue); } },
                 { "data", n => { Data = n.GetStringValue(); } },
                 { "modelType", n => { ModelType = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -107,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChunkOffsets>("chunkOffsets", ChunkOffsets);
             writer.WriteStringValue("data", Data);
             writer.WriteStringValue("modelType", ModelType);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -60,20 +60,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("notes", value); }
         }
 #endif
-        /// <summary>The unique identifier of the distribution list in the mailbox. Read-only.</summary>
+        /// <summary>The personId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonIdentifier
+        public string? PersonId
         {
-            get { return BackingStore?.Get<string?>("personIdentifier"); }
-            set { BackingStore?.Set("personIdentifier", value); }
+            get { return BackingStore?.Get<string?>("personId"); }
+            set { BackingStore?.Set("personId", value); }
         }
 #nullable restore
 #else
-        public string PersonIdentifier
+        public string PersonId
         {
-            get { return BackingStore?.Get<string>("personIdentifier"); }
-            set { BackingStore?.Set("personIdentifier", value); }
+            get { return BackingStore?.Get<string>("personId"); }
+            set { BackingStore?.Set("personId", value); }
         }
 #endif
         /// <summary>The collection of single-value extended properties defined for the distribution list. Read-only.</summary>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionListMember>(global::Microsoft.Graph.Beta.Models.DistributionListMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "personIdentifier", n => { PersonIdentifier = n.GetStringValue(); } },
+                { "personId", n => { PersonId = n.GetStringValue(); } },
                 { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>(global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DistributionListMember>("members", Members);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteStringValue("personIdentifier", PersonIdentifier);
+            writer.WriteStringValue("personId", PersonId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
         }
     }

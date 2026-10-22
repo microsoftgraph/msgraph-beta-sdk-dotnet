@@ -56,13 +56,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecommendationCategoryGroup?>("categoryGroup"); }
             set { BackingStore?.Set("categoryGroup", value); }
         }
-        /// <summary>The completedBySystemDateTime property</summary>
+        /// <summary>The date and time when the recommendations service verified that the recommendation was fully remediated and set its status to completedBySystem. Is null if the recommendation wasn&apos;t completed by the system. Supports $filter.</summary>
         public DateTimeOffset? CompletedBySystemDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completedBySystemDateTime"); }
             set { BackingStore?.Set("completedBySystemDateTime", value); }
         }
-        /// <summary>The completedByUserDateTime property</summary>
+        /// <summary>The date and time when the recommendation was marked as completed by the user for the current review cycle, including when the value is rolled up from all impacted resources being marked as completed by the user. Is null if the recommendation wasn&apos;t completed by a user in the current cycle. Supports $filter.</summary>
         public DateTimeOffset? CompletedByUserDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completedByUserDateTime"); }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The failedReviewDateTime property</summary>
+        /// <summary>The date and time when the recommendations service most recently verified that one or more impacted resources the user marked as completed are still impacted, moving them to needsMoreAction. Is cleared when the reviewed resources are remediated, so it&apos;s mutually exclusive with remediatedDateTime. Is null when no user-reviewed resource is currently failing verification. Supports $filter.</summary>
         public DateTimeOffset? FailedReviewDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("failedReviewDateTime"); }
@@ -206,13 +206,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<double?>("maxScore"); }
             set { BackingStore?.Set("maxScore", value); }
         }
-        /// <summary>The needsMoreActionResourceCount property</summary>
+        /// <summary>The number of impacted resources that the user marked as completed and that the recommendations service subsequently verified are still impacted (moved to needsMoreAction). This value is greater than zero exactly when failedReviewDateTime is set. Is null when the recommendation doesn&apos;t participate in the review lifecycle.</summary>
         public int? NeedsMoreActionResourceCount
         {
             get { return BackingStore?.Get<int?>("needsMoreActionResourceCount"); }
             set { BackingStore?.Set("needsMoreActionResourceCount", value); }
         }
-        /// <summary>The nistClassifications property</summary>
+        /// <summary>The NIST Cybersecurity Framework (CSF) 2.0 categories that the recommendation maps to. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.NistClassification>? NistClassifications
@@ -262,7 +262,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("releaseType", value); }
         }
 #endif
-        /// <summary>The remediatedDateTime property</summary>
+        /// <summary>The date and time when the recommendations service verified that the impacted resources the user marked as completed were remediated, meaning the user-reviewed resources reached completedBySystem. Is superseded by failedReviewDateTime if a reviewed resource subsequently fails verification. Is null if the system hasn&apos;t verified a user-driven remediation in the current cycle. Supports $filter.</summary>
         public DateTimeOffset? RemediatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("remediatedDateTime"); }
@@ -284,7 +284,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("remediationImpact", value); }
         }
 #endif
-        /// <summary>The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue, aatp. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: aatp.</summary>
+        /// <summary>The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue, aatp, microsoftEntraSuite. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: aatp, microsoftEntraSuite.</summary>
         public global::Microsoft.Graph.Beta.Models.RequiredLicenses? RequiredLicenses
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RequiredLicenses?>("requiredLicenses"); }
@@ -296,13 +296,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecommendationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The statusModifiedDateTime property</summary>
+        /// <summary>The date and time when the recommendation&apos;s status last changed, for example from active to completedByUser, dismissed, postponed, or needsMoreAction. Unlike lastModifiedDateTime, this value isn&apos;t updated when only the recommendation&apos;s insight data changes while the status stays the same. Is null until the recommendation&apos;s status changes for the first time. Supports $filter.</summary>
         public DateTimeOffset? StatusModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("statusModifiedDateTime"); }
             set { BackingStore?.Set("statusModifiedDateTime", value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>The user-defined free-form labels applied to the recommendation. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.RecommendationTag>? Tags

@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("imageDisplayName", value); }
         }
 #endif
-        /// <summary>The isDisasterRecoveryActive property</summary>
+        /// <summary>Indicates whether the Cloud PC currently runs in its disaster recovery region after a failover event. true if the Cloud PC is currently running in its disaster recovery region; otherwise, false. Read-only.</summary>
         public bool? IsDisasterRecoveryActive
         {
             get { return BackingStore?.Get<bool?>("isDisasterRecoveryActive"); }
@@ -328,7 +328,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("provisionedDateTime"); }
             set { BackingStore?.Set("provisionedDateTime", value); }
         }
-        /// <summary>The provisioningConfiguration property</summary>
+        /// <summary>The policy-derived configuration of the Cloud PC. Contains properties inherited from the provisioning policy that were applied during the most recent provisioning or reprovisioning. Returned only when explicitly selected with $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcProvisioningConfiguration? ProvisioningConfiguration

@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subjectId", value); }
         }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>The user-defined free-form labels applied to the impactedResource. The collection isn&apos;t directly writable; tags are created and removed through the addTag and removeTag actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.RecommendationTag>? Tags

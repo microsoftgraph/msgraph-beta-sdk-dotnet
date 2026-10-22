@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TenantDataSecurityAndGovernance : global::Microsoft.Graph.Beta.Models.DataSecurityAndGovernance, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The activities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TenantActivitiesContainer? Activities
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TenantActivitiesContainer?>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TenantActivitiesContainer Activities
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TenantActivitiesContainer>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#endif
         /// <summary>The policyFiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activities", n => { Activities = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantActivitiesContainer>(global::Microsoft.Graph.Beta.Models.TenantActivitiesContainer.CreateFromDiscriminatorValue); } },
                 { "policyFiles", n => { PolicyFiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyFile>(global::Microsoft.Graph.Beta.Models.PolicyFile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "protectionScopes", n => { ProtectionScopes = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer>(global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer.CreateFromDiscriminatorValue); } },
             };
@@ -81,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TenantActivitiesContainer>("activities", Activities);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicyFile>("policyFiles", PolicyFiles);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TenantProtectionScopeContainer>("protectionScopes", ProtectionScopes);
         }

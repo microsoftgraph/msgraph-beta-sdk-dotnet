@@ -61,6 +61,9 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.anonymousCalendarSharingFreeBusyDetail" => new global::Microsoft.Graph.Beta.Models.AnonymousCalendarSharingFreeBusyDetail(),
+                "#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer" => new global::Microsoft.Graph.Beta.Models.AnonymousCalendarSharingFreeBusyReviewer(),
+                "#microsoft.graph.anonymousCalendarSharingFreeBusySimple" => new global::Microsoft.Graph.Beta.Models.AnonymousCalendarSharingFreeBusySimple(),
                 "#microsoft.graph.crossTenantCalendarAvailabilityBasic" => new global::Microsoft.Graph.Beta.Models.CrossTenantCalendarAvailabilityBasic(),
                 "#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails" => new global::Microsoft.Graph.Beta.Models.CrossTenantCalendarAvailabilityLimitedDetails(),
                 "#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail" => new global::Microsoft.Graph.Beta.Models.CrossTenantCalendarSharingFreeBusyDetail(),

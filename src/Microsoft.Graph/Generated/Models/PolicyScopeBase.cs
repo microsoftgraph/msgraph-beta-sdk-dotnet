@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ExecutionMode?>("executionMode"); }
             set { BackingStore?.Set("executionMode", value); }
         }
-        /// <summary>The locationExclusions property</summary>
+        /// <summary>Locations excluded from the policy scope. When specified, the effective scope is the set of locations in locations minus the locations in locationExclusions. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PolicyLocation>? LocationExclusions

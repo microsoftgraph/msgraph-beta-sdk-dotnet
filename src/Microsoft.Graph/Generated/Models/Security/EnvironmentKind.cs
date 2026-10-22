@@ -3,58 +3,45 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    /// <summary>The kind of cloud environment onboarded to security posture management.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum EnvironmentKind
-    #pragma warning restore CS1591
     {
+        /// <summary>An Azure subscription.</summary>
         [EnumMember(Value = "azureSubscription")]
-        #pragma warning disable CS1591
         AzureSubscription,
-        #pragma warning restore CS1591
+        /// <summary>An AWS organization.</summary>
         [EnumMember(Value = "awsOrganization")]
-        #pragma warning disable CS1591
         AwsOrganization,
-        #pragma warning restore CS1591
+        /// <summary>An AWS account.</summary>
         [EnumMember(Value = "awsAccount")]
-        #pragma warning disable CS1591
         AwsAccount,
-        #pragma warning restore CS1591
+        /// <summary>A GCP organization.</summary>
         [EnumMember(Value = "gcpOrganization")]
-        #pragma warning disable CS1591
         GcpOrganization,
-        #pragma warning restore CS1591
+        /// <summary>A GCP project.</summary>
         [EnumMember(Value = "gcpProject")]
-        #pragma warning disable CS1591
         GcpProject,
-        #pragma warning restore CS1591
+        /// <summary>A Docker Hub organization.</summary>
         [EnumMember(Value = "dockersHubOrganization")]
-        #pragma warning disable CS1591
         DockersHubOrganization,
-        #pragma warning restore CS1591
+        /// <summary>A DevOps connection.</summary>
         [EnumMember(Value = "devOpsConnection")]
-        #pragma warning disable CS1591
         DevOpsConnection,
-        #pragma warning restore CS1591
+        /// <summary>An Azure DevOps organization.</summary>
         [EnumMember(Value = "azureDevOpsOrganization")]
-        #pragma warning disable CS1591
         AzureDevOpsOrganization,
-        #pragma warning restore CS1591
+        /// <summary>A GitHub organization.</summary>
         [EnumMember(Value = "gitHubOrganization")]
-        #pragma warning disable CS1591
         GitHubOrganization,
-        #pragma warning restore CS1591
+        /// <summary>A GitLab group.</summary>
         [EnumMember(Value = "gitLabGroup")]
-        #pragma warning disable CS1591
         GitLabGroup,
-        #pragma warning restore CS1591
+        /// <summary>A JFrog Artifactory instance.</summary>
         [EnumMember(Value = "jFrogArtifactory")]
-        #pragma warning disable CS1591
         JFrogArtifactory,
-        #pragma warning restore CS1591
+        /// <summary>A marker value for members added after the release of this API.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        #pragma warning disable CS1591
         UnknownFutureValue,
-        #pragma warning restore CS1591
     }
 }

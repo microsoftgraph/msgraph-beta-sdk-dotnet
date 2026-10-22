@@ -348,7 +348,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("protectionUnits", value); }
         }
 #endif
-        /// <summary>The reports property</summary>
+        /// <summary>Report corresponding to a protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.BackupReport? Reports

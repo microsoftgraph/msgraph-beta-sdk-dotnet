@@ -35,6 +35,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         }
         /// <summary>
         /// Invoke action removeTag
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-removetag-collection?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.RemoveTag.RemoveTagPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         }
         /// <summary>
         /// Invoke action removeTag
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-removetag-collection?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.RemoveTag.RemoveTagResponse"/></returns>
         /// <param name="body">The request body</param>

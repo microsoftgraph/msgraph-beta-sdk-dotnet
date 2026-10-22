@@ -36,8 +36,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserP
         {
         }
         /// <summary>
-        /// Get a list of fileStorageContainer objects that are owned by a user (either as owner or as principalOwner). You can also filter the results to only list containers for which the user is the principalOwner.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-getbyuser?view=graph-rest-beta" />
+        /// Invoke function getByUser
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserP
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameGetResponse>(requestInfo, global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of fileStorageContainer objects that are owned by a user (either as owner or as principalOwner). You can also filter the results to only list containers for which the user is the principalOwner.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-getbyuser?view=graph-rest-beta" />
+        /// Invoke function getByUser
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +83,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserP
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameResponse>(requestInfo, global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of fileStorageContainer objects that are owned by a user (either as owner or as principalOwner). You can also filter the results to only list containers for which the user is the principalOwner.
+        /// Invoke function getByUser
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserP
             return new global::Microsoft.Graph.Beta.Storage.FileStorage.Containers.GetByUserWithUserPrincipalName.GetByUserWithUserPrincipalNameRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of fileStorageContainer objects that are owned by a user (either as owner or as principalOwner). You can also filter the results to only list containers for which the user is the principalOwner.
+        /// Invoke function getByUser
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetByUserWithUserPrincipalNameRequestBuilderGetQueryParameters 
