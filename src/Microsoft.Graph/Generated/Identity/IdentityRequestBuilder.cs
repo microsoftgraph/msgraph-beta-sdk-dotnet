@@ -83,6 +83,7 @@ namespace Microsoft.Graph.Beta.Identity
             get => new global::Microsoft.Graph.Beta.Identity.RiskPrevention.RiskPreventionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the signInIdentifiers property of the microsoft.graph.identityContainer entity.</summary>
+        [Obsolete(" as of 2025-03/SignInWithAlias on 2025-03-26 and will be removed 2025-12-25")]
         public global::Microsoft.Graph.Beta.Identity.SignInIdentifiers.SignInIdentifiersRequestBuilder SignInIdentifiers
         {
             get => new global::Microsoft.Graph.Beta.Identity.SignInIdentifiers.SignInIdentifiersRequestBuilder(PathParameters, RequestAdapter);
@@ -93,6 +94,7 @@ namespace Microsoft.Graph.Beta.Identity
             get => new global::Microsoft.Graph.Beta.Identity.UserFlowAttributes.UserFlowAttributesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.</summary>
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
         public global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder UserFlows
         {
             get => new global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder(PathParameters, RequestAdapter);

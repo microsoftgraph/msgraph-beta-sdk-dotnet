@@ -114,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.cloudPcBulkPowerOff" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkPowerOff(),
                 "#microsoft.graph.cloudPcBulkPowerOn" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkPowerOn(),
                 "#microsoft.graph.cloudPcBulkReinstallAgent" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkReinstallAgent(),
+                "#microsoft.graph.cloudPcBulkRelocate" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkRelocate(),
                 "#microsoft.graph.cloudPcBulkReprovision" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkReprovision(),
                 "#microsoft.graph.cloudPcBulkResize" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkResize(),
                 "#microsoft.graph.cloudPcBulkRestart" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkRestart(),

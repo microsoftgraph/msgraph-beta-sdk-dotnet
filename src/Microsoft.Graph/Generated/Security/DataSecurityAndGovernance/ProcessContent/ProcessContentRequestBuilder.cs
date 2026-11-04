@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContent
         {
         }
         /// <summary>
-        /// Evaluate content against Microsoft Purview Data Loss Prevention (DLP) policies and return the policy actions that apply to the supplied content. Use this API when an application needs to evaluate content before or during data movement. In Agent-to-Tool (A2T) scenarios, the agent runtime calls this API before invoking an external tool to determine whether the content should be allowed, blocked, or audited according to Microsoft Purview policies. For A2T scenarios: The response contains any applicable policy actions together with the protection scope state, allowing callers to determine whether cached protection scopes should be refreshed.
+        /// Process content from an agent interaction against tenant data protection policies. The protected agent is identified in protectedAppMetadata.applicationLocation, and the other parties in the interaction are identified in activityMetadata.participants.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantdatasecurityandgovernance-processcontent?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ProcessContentResponse"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProcessContent
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ProcessContentResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ProcessContentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Evaluate content against Microsoft Purview Data Loss Prevention (DLP) policies and return the policy actions that apply to the supplied content. Use this API when an application needs to evaluate content before or during data movement. In Agent-to-Tool (A2T) scenarios, the agent runtime calls this API before invoking an external tool to determine whether the content should be allowed, blocked, or audited according to Microsoft Purview policies. For A2T scenarios: The response contains any applicable policy actions together with the protection scope state, allowing callers to determine whether cached protection scopes should be refreshed.
+        /// Process content from an agent interaction against tenant data protection policies. The protected agent is identified in protectedAppMetadata.applicationLocation, and the other parties in the interaction are identified in activityMetadata.participants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

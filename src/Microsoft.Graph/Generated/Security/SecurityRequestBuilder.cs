@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Security
     public partial class SecurityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.Alerts.AlertsRequestBuilder Alerts
         {
             get => new global::Microsoft.Graph.Beta.Security.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
@@ -88,6 +89,7 @@ namespace Microsoft.Graph.Beta.Security
             get => new global::Microsoft.Graph.Beta.Security.Cases.CasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder CloudAppSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
@@ -108,16 +110,19 @@ namespace Microsoft.Graph.Beta.Security
             get => new global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder DomainSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.FileSecurityProfiles.FileSecurityProfilesRequestBuilder FileSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.FileSecurityProfiles.FileSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.HostSecurityProfiles.HostSecurityProfilesRequestBuilder HostSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.HostSecurityProfiles.HostSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
@@ -143,6 +148,7 @@ namespace Microsoft.Graph.Beta.Security
             get => new global::Microsoft.Graph.Beta.Security.InformationProtection.InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.IpSecurityProfiles.IpSecurityProfilesRequestBuilder IpSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.IpSecurityProfiles.IpSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
@@ -173,6 +179,7 @@ namespace Microsoft.Graph.Beta.Security
             get => new global::Microsoft.Graph.Beta.Security.Partner.PartnerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder ProviderTenantSettings
         {
             get => new global::Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -193,6 +200,7 @@ namespace Microsoft.Graph.Beta.Security
             get => new global::Microsoft.Graph.Beta.Security.SecureScores.SecureScoresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the securityActions property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.SecurityActions.SecurityActionsRequestBuilder SecurityActions
         {
             get => new global::Microsoft.Graph.Beta.Security.SecurityActions.SecurityActionsRequestBuilder(PathParameters, RequestAdapter);
@@ -218,6 +226,7 @@ namespace Microsoft.Graph.Beta.Security
             get => new global::Microsoft.Graph.Beta.Security.ThreatSubmission.ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.TiIndicators.TiIndicatorsRequestBuilder TiIndicators
         {
             get => new global::Microsoft.Graph.Beta.Security.TiIndicators.TiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
@@ -233,6 +242,7 @@ namespace Microsoft.Graph.Beta.Security
             get => new global::Microsoft.Graph.Beta.Security.TriggerTypes.TriggerTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder UserSecurityProfiles
         {
             get => new global::Microsoft.Graph.Beta.Security.UserSecurityProfiles.UserSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);

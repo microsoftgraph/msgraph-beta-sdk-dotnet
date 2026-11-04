@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.Rings
         {
         }
         /// <summary>
-        /// Get a list of the ring objects and their properties. You can use this method with the following child object type: qualityUpdateRing.
+        /// Get a list of the ring objects and their properties. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-policy-list-rings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.RingCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.Rings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.RingCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.RingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ring object. You can use this method with the following child object type: qualityUpdateRing.
+        /// Create a new ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-policy-post-rings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.Ring"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.Rings
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Ring>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.Ring.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the ring objects and their properties. You can use this method with the following child object type: qualityUpdateRing.
+        /// Get a list of the ring objects and their properties. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.Rings
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ring object. You can use this method with the following child object type: qualityUpdateRing.
+        /// Create a new ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.Rings
             return new global::Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.Rings.RingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the ring objects and their properties. You can use this method with the following child object type: qualityUpdateRing.
+        /// Get a list of the ring objects and their properties. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RingsRequestBuilderGetQueryParameters 

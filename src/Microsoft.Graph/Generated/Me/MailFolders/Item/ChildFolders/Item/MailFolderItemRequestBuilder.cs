@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.mailFolder entity.</summary>
+        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Operations.OperationsRequestBuilder Operations
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
@@ -63,6 +64,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateAllMessagesReadState method.</summary>
+        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder UpdateAllMessagesReadState
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder(PathParameters, RequestAdapter);

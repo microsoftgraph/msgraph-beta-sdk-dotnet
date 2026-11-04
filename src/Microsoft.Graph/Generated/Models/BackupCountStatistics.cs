@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("total"); }
             set { BackingStore?.Set("total", value); }
         }
-        /// <summary>The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are being taken.</summary>
+        /// <summary>The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are taken.</summary>
         public int? UnprotectedCompleted
         {
             get { return BackingStore?.Get<int?>("unprotectedCompleted"); }

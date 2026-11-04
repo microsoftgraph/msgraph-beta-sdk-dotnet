@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The policyId property</summary>
+        /// <summary>The unique identifier of the policy that contains the restriction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyId
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementAuditLogRestrictionState?>("restrictionState"); }
             set { BackingStore?.Set("restrictionState", value); }
         }
-        /// <summary>The restrictionType property</summary>
+        /// <summary>The type of restriction applied to the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestrictionType

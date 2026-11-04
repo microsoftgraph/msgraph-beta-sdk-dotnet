@@ -244,6 +244,38 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         PermissionCheckUnknownError,
         #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckAccessDenied")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckAccessDenied,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckVaultNotReachable")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckVaultNotReachable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckNotFound")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckDisabled")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckDisabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckExpired")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckExpired,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckEmptyValue")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckEmptyValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckTransientServiceError")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckTransientServiceError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "keyVaultSecretCheckUnknownError")]
+        #pragma warning disable CS1591
+        KeyVaultSecretCheckUnknownError,
+        #pragma warning restore CS1591
         [EnumMember(Value = "udpConnectivityCheckStunUrlNotAllowListed")]
         #pragma warning disable CS1591
         UdpConnectivityCheckStunUrlNotAllowListed,

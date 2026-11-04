@@ -16,54 +16,6 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         PasswordProtectedFile,
         #pragma warning restore CS1591
-        [EnumMember(Value = "fileTooLarge")]
-        #pragma warning disable CS1591
-        FileTooLarge,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "archiveSizeTooLarge")]
-        #pragma warning disable CS1591
-        ArchiveSizeTooLarge,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "textExceedsMceThreshold")]
-        #pragma warning disable CS1591
-        TextExceedsMceThreshold,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "partiallyScannedArchive")]
-        #pragma warning disable CS1591
-        PartiallyScannedArchive,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "partialImageExtraction")]
-        #pragma warning disable CS1591
-        PartialImageExtraction,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "imageOcrPartialResult")]
-        #pragma warning disable CS1591
-        ImageOcrPartialResult,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ocrProcessingFailure")]
-        #pragma warning disable CS1591
-        OcrProcessingFailure,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ocrQuotaExhausted")]
-        #pragma warning disable CS1591
-        OcrQuotaExhausted,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "classificationServiceError")]
-        #pragma warning disable CS1591
-        ClassificationServiceError,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "sitExtractionFailure")]
-        #pragma warning disable CS1591
-        SitExtractionFailure,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "textExtractionFailure")]
-        #pragma warning disable CS1591
-        TextExtractionFailure,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "archiveTextExtractionError")]
-        #pragma warning disable CS1591
-        ArchiveTextExtractionError,
-        #pragma warning restore CS1591
         [EnumMember(Value = "missingOrInvalidConfiguration")]
         #pragma warning disable CS1591
         MissingOrInvalidConfiguration,
@@ -99,6 +51,26 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "serviceUnavailable")]
         #pragma warning disable CS1591
         ServiceUnavailable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "contentTooLarge")]
+        #pragma warning disable CS1591
+        ContentTooLarge,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "partiallyScanned")]
+        #pragma warning disable CS1591
+        PartiallyScanned,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unscannable")]
+        #pragma warning disable CS1591
+        Unscannable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "billingNotSetup")]
+        #pragma warning disable CS1591
+        BillingNotSetup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "authenticationOrAuthorizationFailed")]
+        #pragma warning disable CS1591
+        AuthenticationOrAuthorizationFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591

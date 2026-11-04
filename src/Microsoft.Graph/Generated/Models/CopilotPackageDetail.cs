@@ -110,6 +110,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("longDescription", value); }
         }
 #endif
+        /// <summary>Request metadata returned by an explicit opt-in package detail read. Null when not loaded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CopilotPackageRequestMetadata? RequestMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestMetadata?>("requestMetadata"); }
+            set { BackingStore?.Set("requestMetadata", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CopilotPackageRequestMetadata RequestMetadata
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestMetadata>("requestMetadata"); }
+            set { BackingStore?.Set("requestMetadata", value); }
+        }
+#endif
         /// <summary>The sensitivity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,6 +203,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "exceptionRate", n => { ExceptionRate = n.GetDoubleValue(); } },
                 { "lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "longDescription", n => { LongDescription = n.GetStringValue(); } },
+                { "requestMetadata", n => { RequestMetadata = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CopilotPackageRequestMetadata>(global::Microsoft.Graph.Beta.Models.CopilotPackageRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "sensitivity", n => { Sensitivity = n.GetStringValue(); } },
                 { "sharedWithUsersAndGroups", n => { SharedWithUsersAndGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PackageAccessEntity>(global::Microsoft.Graph.Beta.Models.PackageAccessEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totalRunTimeInHours", n => { TotalRunTimeInHours = n.GetDoubleValue(); } },

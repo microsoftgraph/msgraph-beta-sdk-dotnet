@@ -85,6 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartners.ExternalPartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
+        [Obsolete("The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.ExternalPartnerSettingsRequestBuilder ExternalPartnerSettings
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings.ExternalPartnerSettingsRequestBuilder(PathParameters, RequestAdapter);

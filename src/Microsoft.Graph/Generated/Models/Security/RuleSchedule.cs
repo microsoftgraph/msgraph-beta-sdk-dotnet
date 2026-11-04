@@ -27,6 +27,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<TimeSpan?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
+        /// <summary>The lookback property</summary>
+        public TimeSpan? Lookback
+        {
+            get { return BackingStore?.Get<TimeSpan?>("lookback"); }
+            set { BackingStore?.Set("lookback", value); }
+        }
         /// <summary>Timestamp of the custom detection rule&apos;s next scheduled run. Deprecated. This property will be removed from this resource on 2026-10-01.</summary>
         public DateTimeOffset? NextRunDateTime
         {
@@ -92,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "frequency", n => { Frequency = n.GetTimeSpanValue(); } },
+                { "lookback", n => { Lookback = n.GetTimeSpanValue(); } },
                 { "nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "period", n => { Period = n.GetStringValue(); } },
@@ -105,6 +112,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteTimeSpanValue("frequency", Frequency);
+            writer.WriteTimeSpanValue("lookback", Lookback);
             writer.WriteDateTimeOffsetValue("nextRunDateTime", NextRunDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("period", Period);

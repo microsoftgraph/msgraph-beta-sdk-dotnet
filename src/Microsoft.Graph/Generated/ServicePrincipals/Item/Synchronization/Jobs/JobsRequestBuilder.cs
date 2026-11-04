@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateCredentials method.</summary>
+        [Obsolete("Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials.ValidateCredentialsRequestBuilder ValidateCredentials
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials.ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);

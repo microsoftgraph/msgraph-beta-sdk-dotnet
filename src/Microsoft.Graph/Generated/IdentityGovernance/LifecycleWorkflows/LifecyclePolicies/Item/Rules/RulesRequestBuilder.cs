@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePo
         {
         }
         /// <summary>
-        /// Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+        /// Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecyclepolicy-list-rules?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyRuleCollectionResponse"/></returns>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyRuleCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityGovernance.LifecyclePolicyRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+        /// Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePo
             return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicies.Item.Rules.RulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+        /// Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PrivilegedAccessRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The custom extensions configured for PIM role management operations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.RoleManagementCustomCalloutExtension>? CustomExtensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RoleManagementCustomCalloutExtension>?>("customExtensions"); }
+            set { BackingStore?.Set("customExtensions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.RoleManagementCustomCalloutExtension> CustomExtensions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RoleManagementCustomCalloutExtension>>("customExtensions"); }
+            set { BackingStore?.Set("customExtensions", value); }
+        }
+#endif
         /// <summary>A group that&apos;s governed through Privileged Identity Management (PIM).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "customExtensions", n => { CustomExtensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleManagementCustomCalloutExtension>(global::Microsoft.Graph.Beta.Models.RoleManagementCustomCalloutExtension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroup>(global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroup.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RoleManagementCustomCalloutExtension>("customExtensions", CustomExtensions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PrivilegedAccessGroup>("group", Group);
         }
     }

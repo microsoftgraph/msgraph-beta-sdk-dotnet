@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.ApplicableCon
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents content applicable for offering to the related collection of devices.
+        /// The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.ApplicableCon
             return requestInfo;
         }
         /// <summary>
-        /// Represents content applicable for offering to the related collection of devices.
+        /// The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.Item.ApplicableCon
         {
         }
         /// <summary>
-        /// Represents content applicable for offering to the related collection of devices.
+        /// The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicableContentCatalogEntryItemRequestBuilderGetQueryParameters 

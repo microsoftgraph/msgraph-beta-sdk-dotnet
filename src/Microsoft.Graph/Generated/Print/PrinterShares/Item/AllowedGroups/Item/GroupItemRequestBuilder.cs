@@ -17,11 +17,13 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Item
     public partial class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of print entities.</summary>
+        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Item.Ref.RefRequestBuilder Ref
         {
             get => new global::Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
+        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
             get => new global::Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);

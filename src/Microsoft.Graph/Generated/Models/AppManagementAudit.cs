@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AppManagementAudit : global::Microsoft.Graph.Beta.Models.DirectoryAudit, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appliedAppManagementPolicyRestrictions property</summary>
+        /// <summary>Details of the app management policy restrictions applied to the activity. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AppliedAppManagementPolicyRestriction>? AppliedAppManagementPolicyRestrictions

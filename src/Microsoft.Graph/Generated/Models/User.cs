@@ -985,7 +985,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identities", value); }
         }
 #endif
-        /// <summary>The identity governance settings for the user, including the approver delegate configuration. Nullable. Returned only on $select. Supports $expand.</summary>
+        /// <summary>The identity governance settings for the user. You can get or update the user&apos;s approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings? IdentityGovernance

@@ -50,16 +50,19 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetActionStatusReports.GetActionStatusReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcPerformanceReport method.</summary>
+        [Obsolete("Starting from December 31, 2024, this API (&apos;getCloudPcPerformanceReport&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcTenantMetricsReport API. as of 2024-09/getCloudPcPerformanceReport on 2024-09-10 and will be removed 2024-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportRequestBuilder GetCloudPcPerformanceReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcRecommendationReports method.</summary>
+        [Obsolete("Starting from July 01, 2025, this API (&apos;getCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcRecommendationReports API. as of 2025-02/getCloudPcRecommendationReports on 2025-02-27 and will be removed 2025-07-01")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcRecommendationReports.GetCloudPcRecommendationReportsRequestBuilder GetCloudPcRecommendationReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcRecommendationReports.GetCloudPcRecommendationReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConnectionQualityReports method.</summary>
+        [Obsolete("Starting from December 31, 2024, this API (&apos;getConnectionQualityReports&apos;) will be deprecated and no longer supported. Please use the retrieveConnectionQualityReports API. as of 2024-09/getConnectionQualityReports on 2024-09-10 and will be removed 2024-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetConnectionQualityReports.GetConnectionQualityReportsRequestBuilder GetConnectionQualityReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetConnectionQualityReports.GetConnectionQualityReportsRequestBuilder(PathParameters, RequestAdapter);
@@ -70,6 +73,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDailyAggregatedRemoteConnectionReports.GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFrontlineReport method.</summary>
+        [Obsolete("Starting from December 31, 2024, this API (&apos;getFrontlineReport&apos;) will be deprecated and no longer supported. Please use the retrieveFrontlineReports API. as of 2024-09/getFrontlineReport on 2024-08-22 and will be removed 2024-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFrontlineReport.GetFrontlineReportRequestBuilder GetFrontlineReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFrontlineReport.GetFrontlineReportRequestBuilder(PathParameters, RequestAdapter);
@@ -105,6 +109,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcPerformanceMetricsReport.RetrieveCloudPcPerformanceMetricsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCloudPcRecommendationReports method.</summary>
+        [Obsolete("Starting from December 31, 2025, this API (&apos;cloudPcReports/retrieveCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the cloudPcReport/retrieveCloudPcRecommendationReports API. as of 2025-09/cloudPcReports/retrieveCloudPcRecommendationReports on 2025-09-01 and will be removed 2025-12-31")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcRecommendationReports.RetrieveCloudPcRecommendationReportsRequestBuilder RetrieveCloudPcRecommendationReports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCloudPcRecommendationReports.RetrieveCloudPcRecommendationReportsRequestBuilder(PathParameters, RequestAdapter);

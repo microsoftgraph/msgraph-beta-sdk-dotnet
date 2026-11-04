@@ -465,6 +465,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mail", value); }
         }
 #endif
+        /// <summary>The identifier of the Exchange mailbox associated with a Microsoft 365 group. Treat this value as an opaque identifier and don&apos;t parse or validate its format. If the group mailbox isn&apos;t provisioned, this property returns 00000000-0000-0000-0000-000000000000. Requires $select to retrieve. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MailboxId
+        {
+            get { return BackingStore?.Get<string?>("mailboxId"); }
+            set { BackingStore?.Set("mailboxId", value); }
+        }
+#nullable restore
+#else
+        public string MailboxId
+        {
+            get { return BackingStore?.Get<string>("mailboxId"); }
+            set { BackingStore?.Set("mailboxId", value); }
+        }
+#endif
         /// <summary>Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).</summary>
         public bool? MailEnabled
         {
@@ -1207,6 +1223,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "mail", n => { Mail = n.GetStringValue(); } },
                 { "mailEnabled", n => { MailEnabled = n.GetBoolValue(); } },
                 { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                { "mailboxId", n => { MailboxId = n.GetStringValue(); } },
                 { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membersWithLicenseErrors", n => { MembersWithLicenseErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1300,6 +1317,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isSubscribedByMail", IsSubscribedByMail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LicenseProcessingState>("licenseProcessingState", LicenseProcessingState);
             writer.WriteStringValue("mail", Mail);
+            writer.WriteStringValue("mailboxId", MailboxId);
             writer.WriteBoolValue("mailEnabled", MailEnabled);
             writer.WriteStringValue("mailNickname", MailNickname);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("memberOf", MemberOf);

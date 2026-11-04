@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ToolParticipant : global::Microsoft.Graph.Beta.Models.InteractionParticipant, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The mcpServerId property</summary>
+        /// <summary>The stable identifier of the Model Context Protocol (MCP) server that hosts the tool. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? McpServerId

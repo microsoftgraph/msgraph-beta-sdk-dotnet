@@ -28,6 +28,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings
             get => new global::Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights.ContactInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the itemInsights property of the microsoft.graph.organizationSettings entity.</summary>
+        [Obsolete("The Organization ItemInsights endpoint will stop returning data on January 1st, 2024. Please use the new Admin People ItemInsights endpoint. as of 2023-10/Beta:ItemInsightsOranizationSettings on 2023-10-17 and will be removed 2024-01-01")]
         public global::Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights.ItemInsightsRequestBuilder ItemInsights
         {
             get => new global::Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights.ItemInsightsRequestBuilder(PathParameters, RequestAdapter);

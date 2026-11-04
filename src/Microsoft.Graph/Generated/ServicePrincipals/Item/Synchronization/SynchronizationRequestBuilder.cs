@@ -24,6 +24,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization
     public partial class SynchronizationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the acquireAccessToken method.</summary>
+        [Obsolete("This action acquires an access token via Oauth Code Grant Flow. Code Grant will be completely deprecated so this action will be obsolete. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.AcquireAccessToken.AcquireAccessTokenRequestBuilder AcquireAccessToken
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.AcquireAccessToken.AcquireAccessTokenRequestBuilder(PathParameters, RequestAdapter);
@@ -39,6 +40,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Ping.PingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secrets property</summary>
+        [Obsolete("Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06")]
         public global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsRequestBuilder Secrets
         {
             get => new global::Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets.SecretsRequestBuilder(PathParameters, RequestAdapter);

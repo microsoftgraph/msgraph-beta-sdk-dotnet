@@ -33,6 +33,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
             get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
         public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder AuthenticationStrengths
         {
             get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);

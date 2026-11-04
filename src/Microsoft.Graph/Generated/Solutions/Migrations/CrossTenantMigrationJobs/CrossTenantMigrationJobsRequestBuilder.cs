@@ -21,7 +21,6 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
     public partial class CrossTenantMigrationJobsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +28,6 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
         /// <summary>Provides operations to manage the crossTenantMigrationJobs property of the microsoft.graph.migrationsRoot entity.</summary>
         /// <param name="position">The unique identifier of crossTenantMigrationJob</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.CrossTenantMigrationJobItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.Item.CrossTenantMigrationJobItemRequestBuilder this[string position]
         {
             get
@@ -56,14 +54,13 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
         {
         }
         /// <summary>
-        /// Get a list of the crossTenantMigrationJob objects and their properties. By default 20 objects are returned. More can be retrieved through the @odata.nextLink url provided in the response.
+        /// Get a list of the crossTenantMigrationJob objects and their properties. By default, 20 objects are returned. You can retrieve more objects by using the @odata.nextLink URL provided in the response.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/migrationsroot-list-crosstenantmigrationjobs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.CrossTenantMigrationJobsRequestBuilder.CrossTenantMigrationJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,7 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new crossTenantMigrationJob. A job defines the migration batch but doesn&apos;t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
+        /// Create a new crossTenantMigrationJob object. A job defines the migration batch but doesn&apos;t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/migrationsroot-post-crosstenantmigrationjobs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob"/></returns>
@@ -89,7 +86,6 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob?> PostAsync(global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -108,11 +104,10 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the crossTenantMigrationJob objects and their properties. By default 20 objects are returned. More can be retrieved through the @odata.nextLink url provided in the response.
+        /// Get a list of the crossTenantMigrationJob objects and their properties. By default, 20 objects are returned. You can retrieve more objects by using the @odata.nextLink URL provided in the response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.CrossTenantMigrationJobsRequestBuilder.CrossTenantMigrationJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -128,12 +123,11 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
             return requestInfo;
         }
         /// <summary>
-        /// Create a new crossTenantMigrationJob. A job defines the migration batch but doesn&apos;t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
+        /// Create a new crossTenantMigrationJob object. A job defines the migration batch but doesn&apos;t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -155,13 +149,12 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.CrossTenantMigrationJobsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.CrossTenantMigrationJobsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobs.CrossTenantMigrationJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the crossTenantMigrationJob objects and their properties. By default 20 objects are returned. More can be retrieved through the @odata.nextLink url provided in the response.
+        /// Get a list of the crossTenantMigrationJob objects and their properties. By default, 20 objects are returned. You can retrieve more objects by using the @odata.nextLink URL provided in the response.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CrossTenantMigrationJobsRequestBuilderGetQueryParameters 

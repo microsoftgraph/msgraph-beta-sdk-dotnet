@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProtectedApplicationMetadata : global::Microsoft.Graph.Beta.Models.IntegratedApplicationMetadata, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The location of the application being protected. For Agent-to-Tool (A2T) scenarios, this represents the tool receiving the content. Required.</summary>
+        /// <summary>The location that identifies the protected application. For agent evaluation, use policyLocationAgent. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PolicyLocation? ApplicationLocation

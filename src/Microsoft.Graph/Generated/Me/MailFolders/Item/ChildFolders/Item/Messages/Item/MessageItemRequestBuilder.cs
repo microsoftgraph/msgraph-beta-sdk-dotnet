@@ -77,11 +77,13 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the markAsJunk method.</summary>
+        [Obsolete("The MarkAsJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Junk on 2025-04-25 and will be removed 2025-12-30")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsJunk.MarkAsJunkRequestBuilder MarkAsJunk
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsJunk.MarkAsJunkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the markAsNotJunk method.</summary>
+        [Obsolete("The MarkAsNotJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Not_Junk on 2025-04-25 and will be removed 2025-12-30")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsNotJunk.MarkAsNotJunkRequestBuilder MarkAsNotJunk
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsNotJunk.MarkAsNotJunkRequestBuilder(PathParameters, RequestAdapter);

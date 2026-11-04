@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isOfficePhoneAllowed"); }
             set { BackingStore?.Set("isOfficePhoneAllowed", value); }
         }
+        /// <summary>Settings for routing voice authentication traffic through a telecom provider integration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TelecomProviderSettings? TelecomProviderSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TelecomProviderSettings?>("telecomProviderSettings"); }
+            set { BackingStore?.Set("telecomProviderSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TelecomProviderSettings TelecomProviderSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TelecomProviderSettings>("telecomProviderSettings"); }
+            set { BackingStore?.Set("telecomProviderSettings", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
@@ -78,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "callerIdNumber", n => { CallerIdNumber = n.GetStringValue(); } },
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodTarget>(global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isOfficePhoneAllowed", n => { IsOfficePhoneAllowed = n.GetBoolValue(); } },
+                { "telecomProviderSettings", n => { TelecomProviderSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TelecomProviderSettings>(global::Microsoft.Graph.Beta.Models.TelecomProviderSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("callerIdNumber", CallerIdNumber);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.VoiceAuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isOfficePhoneAllowed", IsOfficePhoneAllowed);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TelecomProviderSettings>("telecomProviderSettings", TelecomProviderSettings);
         }
     }
 }

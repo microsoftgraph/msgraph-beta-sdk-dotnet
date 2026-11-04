@@ -47,6 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks.HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the refreshDeviceComplianceReportSummarization method.</summary>
+        [Obsolete("This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
         public global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization.RefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization.RefreshDeviceComplianceReportSummarizationRequestBuilder(PathParameters, RequestAdapter);

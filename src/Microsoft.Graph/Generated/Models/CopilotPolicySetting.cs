@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("value", value); }
         }
 #endif
+        /// <summary>The native JSON representation of a complex setting, or null for scalar settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CopilotPolicySettingValueObject? ValueObject
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CopilotPolicySettingValueObject?>("valueObject"); }
+            set { BackingStore?.Set("valueObject", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CopilotPolicySettingValueObject ValueObject
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CopilotPolicySettingValueObject>("valueObject"); }
+            set { BackingStore?.Set("valueObject", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
+                { "valueObject", n => { ValueObject = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CopilotPolicySettingValueObject>(global::Microsoft.Graph.Beta.Models.CopilotPolicySettingValueObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("value", Value);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CopilotPolicySettingValueObject>("valueObject", ValueObject);
         }
     }
 }

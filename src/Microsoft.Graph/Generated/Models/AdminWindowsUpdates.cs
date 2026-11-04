@@ -29,6 +29,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("catalog", value); }
         }
 #endif
+        /// <summary>Read-only Windows Autopatch device, policy assignment, applicability, and driver reporting data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateData? Data
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateData?>("data"); }
+            set { BackingStore?.Set("data", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateData Data
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateData>("data"); }
+            set { BackingStore?.Set("data", value); }
+        }
+#endif
         /// <summary>The set of updatableAsset resources to which a deployment can apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +125,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceConnections", value); }
         }
 #endif
+        /// <summary>The Windows Autopatch settings for the current tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.WindowsUpdates.TenantSetting? TenantSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.TenantSetting?>("tenantSettings"); }
+            set { BackingStore?.Set("tenantSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.WindowsUpdates.TenantSetting TenantSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.TenantSetting>("tenantSettings"); }
+            set { BackingStore?.Set("tenantSettings", value); }
+        }
+#endif
         /// <summary>Assets registered with Windows Autopatch that can receive updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,11 +192,13 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "catalog", n => { Catalog = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateData>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateData.CreateFromDiscriminatorValue); } },
                 { "deploymentAudiences", n => { DeploymentAudiences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceConnections", n => { ResourceConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tenantSettings", n => { TenantSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.TenantSetting>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.TenantSetting.CreateFromDiscriminatorValue); } },
                 { "updatableAssets", n => { UpdatableAssets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updatePolicies", n => { UpdatePolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -178,11 +212,13 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>("catalog", Catalog);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateData>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>("deploymentAudiences", DeploymentAudiences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>("deployments", Deployments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>("policies", Policies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Product>("products", Products);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>("resourceConnections", ResourceConnections);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.TenantSetting>("tenantSettings", TenantSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("updatableAssets", UpdatableAssets);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>("updatePolicies", UpdatePolicies);
         }

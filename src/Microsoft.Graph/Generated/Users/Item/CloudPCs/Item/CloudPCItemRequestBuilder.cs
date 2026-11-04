@@ -12,6 +12,7 @@ using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetSupportedCloudPcRemoteAct
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.PowerOff;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.PowerOn;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reboot;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Relocate;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Resize;
@@ -63,6 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item
             get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcLaunchInfo method.</summary>
+        [Obsolete("Starting from Oct 30, 2026, this API: getCloudPcLaunchInfo will be deprecated and no longer be supported. Please use the new API:retrieveCloudPcLaunchDetail to retrieve same details. as of 2025-09/cloudPcLaunchInfo on 2025-09-30 and will be removed 2026-10-30")]
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo.GetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo.GetCloudPcLaunchInfoRequestBuilder(PathParameters, RequestAdapter);
@@ -91,6 +93,11 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reboot.RebootRequestBuilder Reboot
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reboot.RebootRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the relocate method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Relocate.RelocateRequestBuilder Relocate
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Relocate.RelocateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rename method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Rename.RenameRequestBuilder Rename
