@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("restoreCompletionDateTime"); }
             set { BackingStore?.Set("restoreCompletionDateTime", value); }
         }
+        /// <summary>Indicates whether the restore job is standard, bulk, or granular. The possible values are: standard, bulk, unknownFutureValue, granular. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: granular.</summary>
+        public global::Microsoft.Graph.Beta.Models.RestoreJobType? RestoreJobType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreJobType?>("restoreJobType"); }
+            set { BackingStore?.Set("restoreJobType", value); }
+        }
         /// <summary>The unique identifier of the restore session associated with this activity log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,12 +67,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus?>("restoreSessionStatus"); }
             set { BackingStore?.Set("restoreSessionStatus", value); }
-        }
-        /// <summary>The tags property</summary>
-        public global::Microsoft.Graph.Beta.Models.RestorePointTags? Tags
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestorePointTags?>("tags"); }
-            set { BackingStore?.Set("tags", value); }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.RestoreTaskActivityLog"/> and sets the default values.
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "destinationType", n => { DestinationType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DestinationType>(); } },
                 { "restoreArtifactDetails", n => { RestoreArtifactDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RestoreArtifactDetails>(global::Microsoft.Graph.Beta.Models.RestoreArtifactDetails.CreateFromDiscriminatorValue); } },
                 { "restoreCompletionDateTime", n => { RestoreCompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "restoreJobType", n => { RestoreJobType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestoreJobType>(); } },
                 { "restoreSessionId", n => { RestoreSessionId = n.GetStringValue(); } },
                 { "restoreSessionStatus", n => { RestoreSessionStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus>(); } },
-                { "tags", n => { Tags = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestorePointTags>(); } },
             };
         }
         /// <summary>
@@ -112,9 +112,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DestinationType>("destinationType", DestinationType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RestoreArtifactDetails>("restoreArtifactDetails", RestoreArtifactDetails);
             writer.WriteDateTimeOffsetValue("restoreCompletionDateTime", RestoreCompletionDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestoreJobType>("restoreJobType", RestoreJobType);
             writer.WriteStringValue("restoreSessionId", RestoreSessionId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus>("restoreSessionStatus", RestoreSessionStatus);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestorePointTags>("tags", Tags);
         }
     }
 }

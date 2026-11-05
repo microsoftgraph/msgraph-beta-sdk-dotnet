@@ -28,11 +28,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
     public partial class AccessPackageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.</summary>
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AccessPackageAssignmentPolicies.AccessPackageAssignmentPoliciesRequestBuilder AccessPackageAssignmentPolicies
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AccessPackageAssignmentPolicies.AccessPackageAssignmentPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the accessPackageCatalog property of the microsoft.graph.accessPackage entity.</summary>
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AccessPackageCatalog.AccessPackageCatalogRequestBuilder AccessPackageCatalog
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AccessPackageCatalog.AccessPackageCatalogRequestBuilder(PathParameters, RequestAdapter);

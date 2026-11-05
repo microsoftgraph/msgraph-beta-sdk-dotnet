@@ -27,22 +27,6 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EvaluationErrorCategory?>("errorCategory"); }
             set { BackingStore?.Set("errorCategory", value); }
         }
-        /// <summary>The errorMessage property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ErrorMessage
-        {
-            get { return BackingStore?.Get<string?>("errorMessage"); }
-            set { BackingStore?.Set("errorMessage", value); }
-        }
-#nullable restore
-#else
-        public string ErrorMessage
-        {
-            get { return BackingStore?.Get<string>("errorMessage"); }
-            set { BackingStore?.Set("errorMessage", value); }
-        }
-#endif
         /// <summary>The errorType property</summary>
         public global::Microsoft.Graph.Beta.Models.EvaluationErrorType? ErrorType
         {
@@ -92,7 +76,6 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errorCategory", n => { ErrorCategory = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.EvaluationErrorCategory>(); } },
-                { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "errorType", n => { ErrorType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.EvaluationErrorType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -105,7 +88,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.EvaluationErrorCategory>("errorCategory", ErrorCategory);
-            writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.EvaluationErrorType>("errorType", ErrorType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

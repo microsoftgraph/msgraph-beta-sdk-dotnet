@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists
         {
         }
         /// <summary>
-        /// Get a list of the distributionList objects in the user&apos;s mailbox.
+        /// Get a list of the personal distribution lists in the user&apos;s mailbox.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-distributionlists?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DistributionListCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DistributionListCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DistributionListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new distributionList in the user&apos;s mailbox.
+        /// Create a new personal distribution list in the user&apos;s mailbox.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-distributionlists?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DistributionList"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DistributionList>(requestInfo, global::Microsoft.Graph.Beta.Models.DistributionList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the distributionList objects in the user&apos;s mailbox.
+        /// Get a list of the personal distribution lists in the user&apos;s mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists
             return requestInfo;
         }
         /// <summary>
-        /// Create a new distributionList in the user&apos;s mailbox.
+        /// Create a new personal distribution list in the user&apos;s mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.DistributionLists
             return new global::Microsoft.Graph.Beta.Me.DistributionLists.DistributionListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the distributionList objects in the user&apos;s mailbox.
+        /// Get a list of the personal distribution lists in the user&apos;s mailbox.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DistributionListsRequestBuilderGetQueryParameters 

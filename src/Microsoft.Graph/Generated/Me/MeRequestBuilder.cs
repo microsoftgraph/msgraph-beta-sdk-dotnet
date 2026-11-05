@@ -537,6 +537,7 @@ namespace Microsoft.Graph.Beta.Me
             get => new global::Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notifications property of the microsoft.graph.user entity.</summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20")]
         public global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder Notifications
         {
             get => new global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);

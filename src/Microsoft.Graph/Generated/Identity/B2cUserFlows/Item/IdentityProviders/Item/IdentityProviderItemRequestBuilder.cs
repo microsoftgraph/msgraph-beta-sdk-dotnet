@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item
     public partial class IdentityProviderItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
         public global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item.Ref.RefRequestBuilder Ref
         {
             get => new global::Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);

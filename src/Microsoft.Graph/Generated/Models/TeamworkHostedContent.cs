@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.chatMessageHostedContent" => new global::Microsoft.Graph.Beta.Models.ChatMessageHostedContent(),
+                "#microsoft.graph.teamworkCustomEmoji" => new global::Microsoft.Graph.Beta.Models.TeamworkCustomEmoji(),
                 _ => new global::Microsoft.Graph.Beta.Models.TeamworkHostedContent(),
             };
         }

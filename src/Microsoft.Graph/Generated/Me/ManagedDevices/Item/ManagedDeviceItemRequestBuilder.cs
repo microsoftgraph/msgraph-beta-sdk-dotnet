@@ -327,6 +327,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item
             get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.RotateRecoveryLockPasscode.RotateRecoveryLockPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.</summary>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
         public global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder SecurityBaselineStates
         {
             get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder(PathParameters, RequestAdapter);

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("bulkUpload", value); }
         }
 #endif
+        /// <summary>Connector data store linkage records contained by the job. During public preview, retrieve an individual connection using a known objectId, or delete it to clear its cached linkage. Collection listing isn&apos;t supported and returns 400 Bad Request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ObjectConnection>? ObjectConnections
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ObjectConnection>?>("objectConnections"); }
+            set { BackingStore?.Set("objectConnections", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ObjectConnection> ObjectConnections
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ObjectConnection>>("objectConnections"); }
+            set { BackingStore?.Set("objectConnections", value); }
+        }
+#endif
         /// <summary>Schedule used to run the job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "bulkUpload", n => { BulkUpload = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.BulkUpload>(global::Microsoft.Graph.Beta.Models.BulkUpload.CreateFromDiscriminatorValue); } },
+                { "objectConnections", n => { ObjectConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectConnection>(global::Microsoft.Graph.Beta.Models.ObjectConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SynchronizationSchedule>(global::Microsoft.Graph.Beta.Models.SynchronizationSchedule.CreateFromDiscriminatorValue); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SynchronizationSchema>(global::Microsoft.Graph.Beta.Models.SynchronizationSchema.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SynchronizationStatus>(global::Microsoft.Graph.Beta.Models.SynchronizationStatus.CreateFromDiscriminatorValue); } },
@@ -143,6 +160,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.BulkUpload>("bulkUpload", BulkUpload);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectConnection>("objectConnections", ObjectConnections);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SynchronizationSchedule>("schedule", Schedule);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SynchronizationSchema>("schema", Schema);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SynchronizationStatus>("status", Status);

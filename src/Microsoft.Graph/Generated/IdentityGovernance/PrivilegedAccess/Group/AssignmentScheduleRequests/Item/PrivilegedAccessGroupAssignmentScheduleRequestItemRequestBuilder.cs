@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentS
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.Group;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.Principal;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.TargetSchedule;
+using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.UpdateRequest;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
         public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder TargetSchedule
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateRequest method.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.UpdateRequest.UpdateRequestRequestBuilder UpdateRequest
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.UpdateRequest.UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.PrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder"/> and sets the default values.

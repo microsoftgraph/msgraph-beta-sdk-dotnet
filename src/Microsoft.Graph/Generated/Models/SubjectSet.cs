@@ -62,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.AllExcludingSpecificObjectsSubjectSet(),
                 "#microsoft.graph.identityGovernance.groupBasedSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.GroupBasedSubjectSet(),
                 "#microsoft.graph.identityGovernance.ruleBasedSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.RuleBasedSubjectSet(),
+                "#microsoft.graph.identityGovernance.selectedAgentBuilderPlatformsSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.SelectedAgentBuilderPlatformsSubjectSet(),
                 "#microsoft.graph.identityGovernance.selectedObjectsSubjectSet" => new global::Microsoft.Graph.Beta.Models.IdentityGovernance.SelectedObjectsSubjectSet(),
                 _ => new global::Microsoft.Graph.Beta.Models.SubjectSet(),
             };

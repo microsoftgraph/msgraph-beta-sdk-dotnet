@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
     public partial class LifecyclePolicyRule : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The optional grace period, in days, that starts when the rule violation is first detected. The allowed range is 0 through 30. If omitted or set to null, the gracePeriodInDays value of the containing lifecycle policy applies. A value of 0 means no additional grace period. If multiple rules remain violated, the earliest rule grace-period expiry starts the policy action sequence; the policy-level grace period isn&apos;t added again.</summary>
+        public int? GracePeriodInDays
+        {
+            get { return BackingStore?.Get<int?>("gracePeriodInDays"); }
+            set { BackingStore?.Set("gracePeriodInDays", value); }
+        }
         /// <summary>Indicates whether the rule is enabled and evaluated as part of its policy.</summary>
         public bool? IsEnabled
         {
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "gracePeriodInDays", n => { GracePeriodInDays = n.GetIntValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
             };
         }
@@ -56,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteIntValue("gracePeriodInDays", GracePeriodInDays);
             writer.WriteBoolValue("isEnabled", IsEnabled);
         }
     }

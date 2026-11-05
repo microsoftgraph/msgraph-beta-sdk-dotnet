@@ -457,6 +457,7 @@ namespace Microsoft.Graph.Beta
             get => new global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityProvider entities.</summary>
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
         public global::Microsoft.Graph.Beta.IdentityProviders.IdentityProvidersRequestBuilder IdentityProviders
         {
             get => new global::Microsoft.Graph.Beta.IdentityProviders.IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
@@ -562,6 +563,7 @@ namespace Microsoft.Graph.Beta
             get => new global::Microsoft.Graph.Beta.Privacy.PrivacyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedAccess entities.</summary>
+        [Obsolete("The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.PrivilegedAccess.PrivilegedAccessRequestBuilder PrivilegedAccess
         {
             get => new global::Microsoft.Graph.Beta.PrivilegedAccess.PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);

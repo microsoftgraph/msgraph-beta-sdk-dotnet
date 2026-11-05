@@ -32,6 +32,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item
             get => new global::Microsoft.Graph.Beta.Print.Printers.Item.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCapabilities method.</summary>
+        [Obsolete("The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities.GetCapabilitiesRequestBuilder GetCapabilities
         {
             get => new global::Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities.GetCapabilitiesRequestBuilder(PathParameters, RequestAdapter);
@@ -42,6 +43,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item
             get => new global::Microsoft.Graph.Beta.Print.Printers.Item.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetDefaults method.</summary>
+        [Obsolete("The resetDefaults API is deprecated and will stop returning data on July 31, 2023. Please use the restoreFactoryDefaults API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.Printers.Item.ResetDefaults.ResetDefaultsRequestBuilder ResetDefaults
         {
             get => new global::Microsoft.Graph.Beta.Print.Printers.Item.ResetDefaults.ResetDefaultsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,6 +54,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item
             get => new global::Microsoft.Graph.Beta.Print.Printers.Item.RestoreFactoryDefaults.RestoreFactoryDefaultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the share property of the microsoft.graph.printer entity.</summary>
+        [Obsolete("The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.Printers.Item.Share.ShareRequestBuilder Share
         {
             get => new global::Microsoft.Graph.Beta.Print.Printers.Item.Share.ShareRequestBuilder(PathParameters, RequestAdapter);

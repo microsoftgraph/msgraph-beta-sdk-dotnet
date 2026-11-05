@@ -22,19 +22,16 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
     public partial class CrossTenantMigrationJobsWithDisplayNameRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the cancel method.</summary>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the migrate method.</summary>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Migrate.MigrateRequestBuilder Migrate
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Migrate.MigrateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validate method.</summary>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Validate.ValidateRequestBuilder Validate
         {
             get => new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
@@ -63,7 +60,6 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,14 +77,13 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.
+        /// Read the properties and relationships of a crossTenantMigrationJob object. This API provides details about the migration job, but not about the individual crossTenantMigrationTasks objects associated with the migration job.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantmigrationjob-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.CrossTenantMigrationJobsWithDisplayNameRequestBuilder.CrossTenantMigrationJobsWithDisplayNameRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,7 +101,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob>(requestInfo, global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the completeAfterDateTime of a crossTenantMigrationJob object. Only updates to the completeAfterDateTime are supported. Use this function to change when the crossTenantMigrationJob starts processing. If completeAfterDateTime is set to the past, the crossTenantMigrationJob starts processing.
+        /// Update the completeAfterDateTime property of a crossTenantMigrationJob object. Only updates to completeAfterDateTime are supported. This property specifies when the migration job can proceed toward completion. If the value is in the past, the service treats it as already due and proceeds toward completion during its next processing cycle. This behavior doesn&apos;t bypass earlier validation or synchronization stages.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantmigrationjob-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob"/></returns>
@@ -114,7 +109,6 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob?> PatchAsync(global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -137,7 +131,6 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -153,11 +146,10 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.
+        /// Read the properties and relationships of a crossTenantMigrationJob object. This API provides details about the migration job, but not about the individual crossTenantMigrationTasks objects associated with the migration job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.CrossTenantMigrationJobsWithDisplayNameRequestBuilder.CrossTenantMigrationJobsWithDisplayNameRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -173,12 +165,11 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
             return requestInfo;
         }
         /// <summary>
-        /// Update the completeAfterDateTime of a crossTenantMigrationJob object. Only updates to the completeAfterDateTime are supported. Use this function to change when the crossTenantMigrationJob starts processing. If completeAfterDateTime is set to the past, the crossTenantMigrationJob starts processing.
+        /// Update the completeAfterDateTime property of a crossTenantMigrationJob object. Only updates to completeAfterDateTime are supported. This property specifies when the migration job can proceed toward completion. If the value is in the past, the service treats it as already due and proceeds toward completion during its next processing cycle. This behavior doesn&apos;t bypass earlier validation or synchronization stages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CrossTenantMigrationJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -200,7 +191,6 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.CrossTenantMigrationJobsWithDisplayNameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09")]
         public global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.CrossTenantMigrationJobsWithDisplayNameRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWithDisplayName.CrossTenantMigrationJobsWithDisplayNameRequestBuilder(rawUrl, RequestAdapter);
@@ -214,7 +204,7 @@ namespace Microsoft.Graph.Beta.Solutions.Migrations.CrossTenantMigrationJobsWith
         {
         }
         /// <summary>
-        /// Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.
+        /// Read the properties and relationships of a crossTenantMigrationJob object. This API provides details about the migration job, but not about the individual crossTenantMigrationTasks objects associated with the migration job.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CrossTenantMigrationJobsWithDisplayNameRequestBuilderGetQueryParameters 

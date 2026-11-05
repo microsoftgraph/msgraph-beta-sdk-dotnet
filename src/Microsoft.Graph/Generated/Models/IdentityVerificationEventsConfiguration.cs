@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether identity verification events and credential provenance information are collected and exposed for Verified ID verification across the tenant. The default value is false when this property is omitted from the configuration object.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }

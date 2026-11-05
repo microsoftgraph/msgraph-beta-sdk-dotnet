@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The agentAdministrativeUnitId property</summary>
+        /// <summary>The identifier of the administrative unit associated with the agent. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentAdministrativeUnitId
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentAdministrativeUnitId", value); }
         }
 #endif
-        /// <summary>The agentBlueprintId property</summary>
+        /// <summary>The identifier of the blueprint from which the agent was created. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentBlueprintId
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentBlueprintId", value); }
         }
 #endif
-        /// <summary>The agentCategory property</summary>
+        /// <summary>The category of the agent, for example, Agents.Foundry.MicrosoftAzure, Agents.Copilot.Studio, or Agents.Local. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentCategory
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentCategory", value); }
         }
 #endif
-        /// <summary>The agentOwner property</summary>
+        /// <summary>The owner associated with the agent. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentOwner
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentOwner", value); }
         }
 #endif
-        /// <summary>The agentPublisher property</summary>
+        /// <summary>The publisher associated with the agent. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentPublisher
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agentPublisher", value); }
         }
 #endif
-        /// <summary>The altAgentIds property</summary>
+        /// <summary>Alternate identifiers that can identify the agent. Required when agentMetadata is provided. Use an empty collection ([]) when the agent has no alternate identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AltAgentIds
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isEntraAgentId property</summary>
+        /// <summary>Indicates whether the value property of the associated policyLocationAgent is a Microsoft Entra agent ID. Required when agentMetadata is provided.</summary>
         public bool? IsEntraAgentId
         {
             get { return BackingStore?.Get<bool?>("isEntraAgentId"); }

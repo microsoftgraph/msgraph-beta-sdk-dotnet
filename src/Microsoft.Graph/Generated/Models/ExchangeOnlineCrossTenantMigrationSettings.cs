@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Name of the Migration Endpoint in the source tenant</summary>
+        /// <summary>Name of the migration endpoint in the source tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceEndpoint
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceEndpoint", value); }
         }
 #endif
-        /// <summary>Delivery domain on the target tenant</summary>
+        /// <summary>Delivery domain on the target tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDeliveryDomain

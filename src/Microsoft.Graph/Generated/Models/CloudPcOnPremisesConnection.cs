@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("adDomainName", value); }
         }
 #endif
-        /// <summary>The password associated with adDomainUsername.</summary>
+        /// <summary>The password associated with adDomainUsername. This deprecated property is retained for backward compatibility and will be removed on December 31, 2026. Going forward use the domainJoinCredential property instead. If both properties are provided, domainJoinCredential takes precedence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdDomainPassword
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("adDomainPassword", value); }
         }
 #endif
-        /// <summary>The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.</summary>
+        /// <summary>The username of an Active Directory account that has permissions to create computer objects in Active Directory. This deprecated property is retained for backward compatibility and will be removed on December 31, 2026. Going forward use the domainJoinCredential/domainUserPrincipalName property instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdDomainUsername
@@ -98,6 +98,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The Active Directory credential that Windows 365 uses to join Cloud PCs to the on-premises domain. Set @odata.type to #microsoft.graph.cloudPcPlainTextDomainJoinCredential to supply the username and password directly, or to #microsoft.graph.cloudPcKeyVaultDomainJoinCredential to retrieve the password from a customer-owned Azure Key Vault. Takes precedence over the deprecated adDomainPassword property when both are supplied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinCredential? DomainJoinCredential
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinCredential?>("domainJoinCredential"); }
+            set { BackingStore?.Set("domainJoinCredential", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinCredential DomainJoinCredential
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinCredential>("domainJoinCredential"); }
+            set { BackingStore?.Set("domainJoinCredential", value); }
+        }
+#endif
         /// <summary>Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.</summary>
         public bool? HealthCheckPaused
         {
@@ -126,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #endif
-        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
+        /// <summary>Indicates the health checks for the connection and their respective results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only. The healthCheckStatusDetails property is deprecated and stopped returning data on January 31, 2024. Going forward, use the healthCheckStatusDetail property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetails? HealthCheckStatusDetails
@@ -334,6 +350,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 { "connectionType", n => { ConnectionType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "domainJoinCredential", n => { DomainJoinCredential = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinCredential>(global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinCredential.CreateFromDiscriminatorValue); } },
                 { "healthCheckPaused", n => { HealthCheckPaused = n.GetBoolValue(); } },
                 { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatus>(); } },
                 { "healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetail>(global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
@@ -367,6 +384,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionType>("connectionType", ConnectionType);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDomainJoinCredential>("domainJoinCredential", DomainJoinCredential);
             writer.WriteBoolValue("healthCheckPaused", HealthCheckPaused);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail", HealthCheckStatusDetail);

@@ -131,6 +131,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Caller-supplied sensitivity labels describing the content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CurrentLabel>? SensitivityLabels
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CurrentLabel>?>("sensitivityLabels"); }
+            set { BackingStore?.Set("sensitivityLabels", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CurrentLabel> SensitivityLabels
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CurrentLabel>>("sensitivityLabels"); }
+            set { BackingStore?.Set("sensitivityLabels", value); }
+        }
+#endif
         /// <summary>A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.</summary>
         public long? SequenceNumber
         {
@@ -181,6 +197,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CurrentLabel>(global::Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sequenceNumber", n => { SequenceNumber = n.GetLongValue(); } },
             };
         }
@@ -201,6 +218,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CurrentLabel>("sensitivityLabels", SensitivityLabels);
             writer.WriteLongValue("sequenceNumber", SequenceNumber);
             writer.WriteAdditionalData(AdditionalData);
         }

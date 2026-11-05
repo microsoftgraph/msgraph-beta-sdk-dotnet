@@ -50,6 +50,7 @@ using Microsoft.Graph.Beta.Reports.GetMailboxUsageStorageWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion;
 using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion;
 using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365Emissions;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail;
@@ -202,6 +203,7 @@ namespace Microsoft.Graph.Beta.Reports
             get => new global::Microsoft.Graph.Beta.Reports.Correlations.CorrelationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.</summary>
+        [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails
         {
             get => new global::Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
@@ -222,11 +224,13 @@ namespace Microsoft.Graph.Beta.Reports
             get => new global::Microsoft.Graph.Beta.Reports.DailyPrintUsageByUser.DailyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dailyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.</summary>
+        [Obsolete("The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByPrinter.DailyPrintUsageSummariesByPrinterRequestBuilder DailyPrintUsageSummariesByPrinter
         {
             get => new global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByPrinter.DailyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dailyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.</summary>
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder DailyPrintUsageSummariesByUser
         {
             get => new global::Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
@@ -247,16 +251,19 @@ namespace Microsoft.Graph.Beta.Reports
             get => new global::Microsoft.Graph.Beta.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAttackSimulationRepeatOffenders method.</summary>
+        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20")]
         public global::Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders
         {
             get => new global::Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAttackSimulationSimulationUserCoverage method.</summary>
+        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20")]
         public global::Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverageRequestBuilder GetAttackSimulationSimulationUserCoverage
         {
             get => new global::Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAttackSimulationTrainingUserCoverage method.</summary>
+        [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20")]
         public global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder GetAttackSimulationTrainingUserCoverage
         {
             get => new global::Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder(PathParameters, RequestAdapter);
@@ -265,6 +272,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount.GetCredentialUserRegistrationCountRequestBuilder GetCredentialUserRegistrationCount
         {
             get => new global::Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount.GetCredentialUserRegistrationCountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMicrosoft365Emissions method.</summary>
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365Emissions.GetMicrosoft365EmissionsRequestBuilder GetMicrosoft365Emissions
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365Emissions.GetMicrosoft365EmissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getOffice365ActivationCounts method.</summary>
         public global::Microsoft.Graph.Beta.Reports.GetOffice365ActivationCounts.GetOffice365ActivationCountsRequestBuilder GetOffice365ActivationCounts
@@ -322,11 +334,13 @@ namespace Microsoft.Graph.Beta.Reports
             get => new global::Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monthlyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.</summary>
+        [Obsolete("The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter.MonthlyPrintUsageSummariesByPrinterRequestBuilder MonthlyPrintUsageSummariesByPrinter
         {
             get => new global::Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter.MonthlyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.</summary>
+        [Obsolete("The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser.MonthlyPrintUsageSummariesByUserRequestBuilder MonthlyPrintUsageSummariesByUser
         {
             get => new global::Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser.MonthlyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
@@ -357,6 +371,7 @@ namespace Microsoft.Graph.Beta.Reports
             get => new global::Microsoft.Graph.Beta.Reports.Sla.SlaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
+        [Obsolete("The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails
         {
             get => new global::Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder(PathParameters, RequestAdapter);

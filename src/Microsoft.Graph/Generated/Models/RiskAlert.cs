@@ -91,6 +91,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Severity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
+        /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source
+        {
+            get { return BackingStore?.Get<string?>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+#nullable restore
+#else
+        public string Source
+        {
+            get { return BackingStore?.Get<string>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.RiskAlert"/> and sets the default values.
         /// </summary>
@@ -122,6 +138,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "providerAlertId", n => { ProviderAlertId = n.GetStringValue(); } },
                 { "severity", n => { Severity = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Severity>(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -136,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("providerAlertId", ProviderAlertId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Severity>("severity", Severity);
+            writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
