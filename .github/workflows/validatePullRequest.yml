@@ -24,8 +24,8 @@ jobs:
         uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5.4.0
         with:
           dotnet-version: |
-            8.x
             10.x
+            11.x
       - name: Restore dependencies
         run: dotnet restore ${{ env.solutionName }}
       # Build each TFM sequentially to avoid OOM kills on the runner.
@@ -34,10 +34,10 @@ jobs:
         run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release
       - name: Build for netstandard2.1
         run: dotnet build ${{ env.projectName }} -f netstandard2.1 --no-restore -c Release
-      - name: Build for net8.0
-        run: dotnet build ${{ env.projectName }} -f net8.0 --no-restore -c Release
       - name: Build for net10.0
         run: dotnet build ${{ env.projectName }} -f net10.0 --no-restore -c Release
+      - name: Build for net11.0
+        run: dotnet build ${{ env.projectName }} -f net11.0 --no-restore -c Release
       - name: Build test project
         run: dotnet build ${{ env.solutionName }} --no-restore -c Release
       - name: Test
@@ -64,8 +64,8 @@ jobs:
       uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5.4.0
       with:
         dotnet-version: |
-          8.x
           10.x
+          11.x
     - name: Restore dependencies
       run: dotnet restore ${{ env.solutionName }}
     - name: Build for netstandard2.0
