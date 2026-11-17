@@ -70,7 +70,6 @@ using Microsoft.Graph.Beta.IdentityProtection;
 using Microsoft.Graph.Beta.IdentityProviders;
 using Microsoft.Graph.Beta.InformationProtection;
 using Microsoft.Graph.Beta.Invitations;
-using Microsoft.Graph.Beta.Me;
 using Microsoft.Graph.Beta.MessageEvents;
 using Microsoft.Graph.Beta.MessageRecipients;
 using Microsoft.Graph.Beta.MessageTraces;
@@ -471,11 +470,6 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.Invitations.InvitationsRequestBuilder Invitations
         {
             get => new global::Microsoft.Graph.Beta.Invitations.InvitationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the user singleton.</summary>
-        public global::Microsoft.Graph.Beta.Me.MeRequestBuilder Me
-        {
-            get => new global::Microsoft.Graph.Beta.Me.MeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageEvent entities.</summary>
         public global::Microsoft.Graph.Beta.MessageEvents.MessageEventsRequestBuilder MessageEvents

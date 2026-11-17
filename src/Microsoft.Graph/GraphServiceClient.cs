@@ -12,6 +12,8 @@ namespace Microsoft.Graph.Beta
     using Microsoft.Graph;
     using Microsoft.Graph.Core.Requests;
     using Microsoft.Graph.Beta.Requests;
+    using Microsoft.Graph.Beta.Users;
+    using Microsoft.Graph.Beta.Users.Item;
     using Microsoft.Kiota.Abstractions.Authentication;
     using Microsoft.Kiota.Abstractions;
     using Azure.Core;
@@ -98,6 +100,16 @@ namespace Microsoft.Graph.Beta
         /// Gets the <see cref="IRequestAdapter"/> for sending requests.
         /// </summary>
         public new IRequestAdapter RequestAdapter { get; set; }
+
+        /// <summary>
+        /// Gets the request builder for the signed-in user.
+        /// </summary>
+        /// <remarks>
+        /// The request uses a placeholder user ID that Microsoft.Graph.Core replaces with /me when sending.
+        /// Custom HTTP clients must include the Graph URI replacement handler.
+        /// </remarks>
+        public UserItemRequestBuilder Me =>
+            new UsersRequestBuilder(PathParameters, RequestAdapter)[CoreConstants.ReplacementConstants.UserIdTokenToReplace];
 
         /// <summary>
         /// Gets the <see cref="BatchRequestBuilder"/> for building batch Requests

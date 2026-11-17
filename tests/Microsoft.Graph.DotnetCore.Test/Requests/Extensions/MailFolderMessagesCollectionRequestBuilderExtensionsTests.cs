@@ -15,7 +15,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         public void DeletedItems()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/DeletedItems");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/users/TokenToReplace/mailFolders/DeletedItems");
             var mailFolderRequestInformation = graphServiceClient.Me.MailFolders["DeletedItems"].ToGetRequestInformation();
             
             Assert.NotNull(mailFolderRequestInformation);
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         public void Drafts()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/Drafts");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/users/TokenToReplace/mailFolders/Drafts");
             var mailFolderRequestInformation = graphServiceClient.Me.MailFolders["Drafts"].ToGetRequestInformation();
             
             Assert.NotNull(mailFolderRequestInformation);
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         public void Inbox()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/Inbox");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/users/TokenToReplace/mailFolders/Inbox");
             var mailFolderRequestInformation = graphServiceClient.Me.MailFolders["Inbox"].ToGetRequestInformation();
             
             Assert.NotNull(mailFolderRequestInformation);
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
         public void SentItems()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/SentItems");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/users/TokenToReplace/mailFolders/SentItems");
             var mailFolderRequestInformation = graphServiceClient.Me.MailFolders["SentItems"].ToGetRequestInformation();
             
             Assert.NotNull(mailFolderRequestInformation);

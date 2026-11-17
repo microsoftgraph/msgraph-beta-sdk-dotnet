@@ -25,7 +25,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void BuildRequest()
         {            
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/manager");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/users/TokenToReplace/manager");
             var requestInformation = graphServiceClient.Me.Manager.ToGetRequestInformation();
             
             Assert.NotNull(requestInformation);
