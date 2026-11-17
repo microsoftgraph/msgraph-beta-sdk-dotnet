@@ -21,6 +21,25 @@ To install the client library via NuGet:
 
 The Beta library is generated with the `Microsoft.Graph.Beta` namespace. This means that it can be used alongside the V1 package by using the `Microsoft.Graph` namespace while using the `Microsoft.Graph.Beta` namespace from the beta library.
 
+### Signed-in user requests
+
+`graphClient.Me` reuses `Microsoft.Graph.Beta.Users.Item.UserItemRequestBuilder`. Fluent calls
+such as `graphClient.Me.Messages.GetAsync()` still target `/me`; no user ID lookup is needed.
+Explicit request-builder, request-body, response, and request-configuration types previously
+under `Microsoft.Graph.Beta.Me` must instead use their equivalents under
+`Microsoft.Graph.Beta.Users.Item` (for example, `Users.Item.SendMail.SendMailPostRequestBody`).
+`BaseGraphServiceClient` no longer exposes `Me`; use `GraphServiceClient` for this entry point.
+
+This requires Microsoft.Graph.Core with `CoreConstants.ReplacementConstants.UserIdTokenToReplace`
+and Graph URI replacement support, including batch-step replacement. The existing `4.*`
+dependency must resolve to a core release containing those changes before this SDK is published.
+`ToGetRequestInformation()` and other request-information methods expose the synthetic
+`/users/TokenToReplace` path; the default Graph HTTP pipeline rewrites it to `/me` when sending.
+Custom HTTP clients should be created with `GraphClientFactory.Create()`, or include
+`new UriReplacementHandler<GraphUriReplacementHandlerOption>(new GraphUriReplacementHandlerOption())`
+from Microsoft.Kiota.Http.HttpClientLibrary.Middleware and Microsoft.Graph respectively.
+Custom request adapters must provide the equivalent remapping if they do not use that pipeline.
+
 ## Getting started
 
 Please see [msgraph-sdk-dotnet](https://github.com/microsoftgraph/msgraph-sdk-dotnet) for information on getting started with this library.

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var startDateTime = "now";
             var endDateTime = "later";
 
-            var methodBaseUrl = string.Format("{0}/me/reminderView", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            var methodBaseUrl = string.Format("{0}/users/TokenToReplace/reminderView", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             var expectedRequestUrl = string.Format("{0}(StartDateTime='{2}',EndDateTime='{1}')", methodBaseUrl, startDateTime, endDateTime);
 
             var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime(startDateTime, endDateTime).ToGetRequestInformation();
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void Top()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/reminderView(StartDateTime='now',EndDateTime='then')?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/reminderView(StartDateTime='now',EndDateTime='then')?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").ToGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Top =1 );
             
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void Skip()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/reminderView(StartDateTime='now',EndDateTime='then')?%24skip=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/reminderView(StartDateTime='now',EndDateTime='then')?%24skip=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").ToGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Skip =1 );
             

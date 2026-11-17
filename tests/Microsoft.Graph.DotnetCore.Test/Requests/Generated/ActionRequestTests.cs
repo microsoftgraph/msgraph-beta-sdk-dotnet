@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using Microsoft.Graph.Beta;
 using Microsoft.Graph.DotnetCore.Test.Mocks;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.CreateLink;
-using Microsoft.Graph.Beta.Me.AssignLicense;
-using Microsoft.Graph.Beta.Me.CheckMemberGroups;
-using Microsoft.Graph.Beta.Me.GetMemberGroups;
+using Microsoft.Graph.Beta.Users.Item.AssignLicense;
+using Microsoft.Graph.Beta.Users.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Users.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void MultipleRequiredParameters()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/me/assignLicense";
+            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/users/TokenToReplace/assignLicense";
 
             var addLicenses = new List<AssignedLicense> { new AssignedLicense() };
 
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void OptionalParameterWithNonNullableType_NullValue()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/me/getMemberGroups";
+            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/users/TokenToReplace/getMemberGroups";
 
             var requestBody = new GetMemberGroupsPostRequestBody { };
             var requestInformation = graphServiceClient.Me.GetMemberGroups.ToPostRequestInformation(requestBody);
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void OptionalParameterWithNonNullableType_ValueSet()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/getMemberGroups", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/getMemberGroups", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestBody = new GetMemberGroupsPostRequestBody { SecurityEnabledOnly = true};
             var requestInformation = graphServiceClient.Me.GetMemberGroups.ToPostRequestInformation(requestBody);
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var messageId = "messageId";
-            var expectedRequestUrl = string.Format("{0}/me/mailFolders/Drafts/messages/{1}/send", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"), messageId);
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/mailFolders/Drafts/messages/{1}/send", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"), messageId);
 
             var requestInformation = graphServiceClient.Me.MailFolders["Drafts"].Messages[messageId].Send.ToPostRequestInformation();
 

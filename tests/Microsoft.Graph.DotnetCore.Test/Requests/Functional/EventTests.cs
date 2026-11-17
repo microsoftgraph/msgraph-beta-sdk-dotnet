@@ -8,7 +8,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Xunit;
-    using Microsoft.Graph.Beta.Me.FindMeetingTimes;
+    using Microsoft.Graph.Beta.Users.Item.FindMeetingTimes;
     using Microsoft.Graph.Beta.Models;
     
     public class EventTests : GraphTestBase

@@ -5,7 +5,7 @@
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using Microsoft.Graph.Beta.Models;
-    using Microsoft.Graph.Beta.Me.SendMail;
+    using Microsoft.Graph.Beta.Users.Item.SendMail;
     using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
     using System;
     using System.Collections.Generic;
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 while (messagePage.OdataNextLink != null)
                 {
-                    messagePage = await new Beta.Me.Messages.MessagesRequestBuilder(messagePage.OdataNextLink, graphClient.RequestAdapter).GetAsync();
+                    messagePage = await new Beta.Users.Item.Messages.MessagesRequestBuilder(messagePage.OdataNextLink, graphClient.RequestAdapter).GetAsync();
                     messages.AddRange(messagePage.Value);
                 }
             }
