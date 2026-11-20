@@ -13,6 +13,14 @@ All pull requests should be submitted against the **main** branch or a specific 
 
 When a new package is about to be released, the release PR will be merged into main. The package will be generated from main.
 
+The `pipelines/ci-build.yml` pipeline builds and signs `Microsoft.Graph.Beta`, then publishes
+the package and its `.snupkg` symbols through ESRP after the `nuget-org` environment approval.
+Only the package and symbol files are staged in the dedicated ESRP submission folder; release
+scripts remain outside it. `NuGetOrganizationName` is set to `microsoftgraph`, a listed owner
+on the [NuGet package page](https://www.nuget.org/packages/Microsoft.Graph.Beta) and
+[NuGet owner profile](https://www.nuget.org/profiles/microsoftgraph). ESRP waits for release
+completion, while the separate Release Please workflow continues to manage GitHub releases.
+
 ## Commit message format
 
 To support our automated release process, pull requests are required to follow the [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/)
