@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitCustomExtension(),
                 "#microsoft.graph.onOtpSendCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnOtpSendCustomExtension(),
                 "#microsoft.graph.onPasswordSubmitCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnPasswordSubmitCustomExtension(),
+                "#microsoft.graph.onPasswordUpdateCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnPasswordUpdateCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension(),
                 "#microsoft.graph.onVerifiedIdClaimValidationCustomExtension" => new global::Microsoft.Graph.Beta.Models.OnVerifiedIdClaimValidationCustomExtension(),
                 _ => new global::Microsoft.Graph.Beta.Models.CustomAuthenticationExtension(),

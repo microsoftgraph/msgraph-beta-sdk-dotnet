@@ -12,12 +12,76 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPCUserSettingsPersistenceDetail : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The autoCleanupDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail? AutoCleanupDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail?>("autoCleanupDetail"); }
+            set { BackingStore?.Set("autoCleanupDetail", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail AutoCleanupDetail
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail>("autoCleanupDetail"); }
+            set { BackingStore?.Set("autoCleanupDetail", value); }
+        }
+#endif
         /// <summary>Indicates the grace period end time when user settings persistence exceeds the available quota. If usage exceeds the available quota when the grace period expires, the system automatically deletes the profile with the oldest last attached timestamp. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? GracePeriodEndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("gracePeriodEndDateTime"); }
             set { BackingStore?.Set("gracePeriodEndDateTime", value); }
         }
+        /// <summary>The snapshotConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration? SnapshotConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration?>("snapshotConfiguration"); }
+            set { BackingStore?.Set("snapshotConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration SnapshotConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration>("snapshotConfiguration"); }
+            set { BackingStore?.Set("snapshotConfiguration", value); }
+        }
+#endif
+        /// <summary>The storageConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcStorageConfiguration? StorageConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcStorageConfiguration?>("storageConfiguration"); }
+            set { BackingStore?.Set("storageConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcStorageConfiguration StorageConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcStorageConfiguration>("storageConfiguration"); }
+            set { BackingStore?.Set("storageConfiguration", value); }
+        }
+#endif
+        /// <summary>The userProfileSnapshots property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcUserProfileSnapshot>? UserProfileSnapshots
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcUserProfileSnapshot>?>("userProfileSnapshots"); }
+            set { BackingStore?.Set("userProfileSnapshots", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudPcUserProfileSnapshot> UserProfileSnapshots
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudPcUserProfileSnapshot>>("userProfileSnapshots"); }
+            set { BackingStore?.Set("userProfileSnapshots", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +100,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "autoCleanupDetail", n => { AutoCleanupDetail = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail>(global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail.CreateFromDiscriminatorValue); } },
                 { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "snapshotConfiguration", n => { SnapshotConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration.CreateFromDiscriminatorValue); } },
+                { "storageConfiguration", n => { StorageConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStorageConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcStorageConfiguration.CreateFromDiscriminatorValue); } },
+                { "userProfileSnapshots", n => { UserProfileSnapshots = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcUserProfileSnapshot>(global::Microsoft.Graph.Beta.Models.CloudPcUserProfileSnapshot.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -47,7 +115,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail>("autoCleanupDetail", AutoCleanupDetail);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration>("snapshotConfiguration", SnapshotConfiguration);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcStorageConfiguration>("storageConfiguration", StorageConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcUserProfileSnapshot>("userProfileSnapshots", UserProfileSnapshots);
         }
     }
 }

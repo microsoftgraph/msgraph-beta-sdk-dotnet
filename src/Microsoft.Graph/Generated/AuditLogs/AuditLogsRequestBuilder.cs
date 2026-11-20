@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.AuditLogs.GetSummarizedMSISignInsWithAggregationWindo
 using Microsoft.Graph.Beta.AuditLogs.GetSummarizedNonInteractiveSignInsWithAggregationWindow;
 using Microsoft.Graph.Beta.AuditLogs.GetSummarizedServicePrincipalSignInsWithAggregationWindow;
 using Microsoft.Graph.Beta.AuditLogs.Provisioning;
+using Microsoft.Graph.Beta.AuditLogs.ResourcePolicy;
 using Microsoft.Graph.Beta.AuditLogs.SignInEventsAppSummary;
 using Microsoft.Graph.Beta.AuditLogs.SignInEventsSummary;
 using Microsoft.Graph.Beta.AuditLogs.SignIns;
@@ -54,6 +55,11 @@ namespace Microsoft.Graph.Beta.AuditLogs
         public global::Microsoft.Graph.Beta.AuditLogs.Provisioning.ProvisioningRequestBuilder Provisioning
         {
             get => new global::Microsoft.Graph.Beta.AuditLogs.Provisioning.ProvisioningRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourcePolicy property of the microsoft.graph.auditLogRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.AuditLogs.ResourcePolicy.ResourcePolicyRequestBuilder ResourcePolicy
+        {
+            get => new global::Microsoft.Graph.Beta.AuditLogs.ResourcePolicy.ResourcePolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the signInEventsAppSummary property of the microsoft.graph.auditLogRoot entity.</summary>
         public global::Microsoft.Graph.Beta.AuditLogs.SignInEventsAppSummary.SignInEventsAppSummaryRequestBuilder SignInEventsAppSummary

@@ -78,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
                 "#microsoft.graph.security.caseManagement.incidentRelation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.IncidentRelation(),
                 "#microsoft.graph.security.caseManagement.recommendationRelation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.RecommendationRelation(),
                 "#microsoft.graph.security.caseManagement.relation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Relation(),
+                "#microsoft.graph.security.caseManagement.slaPolicyDefinition" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.SlaPolicyDefinition(),
                 "#microsoft.graph.security.caseManagement.task" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.TaskObject(),
                 "#microsoft.graph.security.caseManagement.workspaceIndicatorRelation" => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.WorkspaceIndicatorRelation(),
                 _ => new global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseManagementEntity(),

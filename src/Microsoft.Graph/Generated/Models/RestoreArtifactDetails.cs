@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedCount property</summary>
+        /// <summary>The number of artifacts that failed to be restored during the restore operation.</summary>
         public int? FailedCount
         {
             get { return BackingStore?.Get<int?>("failedCount"); }
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The restoredCount property</summary>
+        /// <summary>The number of artifacts that were successfully restored during the restore operation.</summary>
         public int? RestoredCount
         {
             get { return BackingStore?.Get<int?>("restoredCount"); }
             set { BackingStore?.Set("restoredCount", value); }
         }
-        /// <summary>The totalArtifactsCount property</summary>
+        /// <summary>The total number of artifacts included in the restore operation.</summary>
         public int? TotalArtifactsCount
         {
             get { return BackingStore?.Get<int?>("totalArtifactsCount"); }

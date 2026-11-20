@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.Plans;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.Plans_v2;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
         public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.Plans.PlansRequestBuilder Plans
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the plans_v2 property of the microsoft.graph.teamsChannelPlanner entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.Plans_v2.Plans_v2RequestBuilder Plans_v2
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.Plans_v2.Plans_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner.PlannerRequestBuilder"/> and sets the default values.
@@ -63,7 +69,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.
+        /// Read the properties and relationships of teamsChannelPlanner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamschannelplanner-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +137,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
             return requestInfo;
         }
         /// <summary>
-        /// Selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.
+        /// Read the properties and relationships of teamsChannelPlanner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +195,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
         {
         }
         /// <summary>
-        /// Selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.
+        /// Read the properties and relationships of teamsChannelPlanner object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerRequestBuilderGetQueryParameters 

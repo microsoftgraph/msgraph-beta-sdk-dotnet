@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule" => new global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyApprovalRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule" => new global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAuthenticationContextRule(),
+                "#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule" => new global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyCustomExtensionRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyEnablementRule" => new global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyEnablementRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule" => new global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyExpirationRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyNotificationRule" => new global::Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyNotificationRule(),

@@ -4,9 +4,11 @@ using Microsoft.Graph.Beta.Me.Planner.All;
 using Microsoft.Graph.Beta.Me.Planner.FavoritePlans;
 using Microsoft.Graph.Beta.Me.Planner.MyDayTasks;
 using Microsoft.Graph.Beta.Me.Planner.Plans;
+using Microsoft.Graph.Beta.Me.Planner.Plans_v2;
 using Microsoft.Graph.Beta.Me.Planner.RecentPlans;
 using Microsoft.Graph.Beta.Me.Planner.RosterPlans;
 using Microsoft.Graph.Beta.Me.Planner.Tasks;
+using Microsoft.Graph.Beta.Me.Planner.Tasks_v2;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -45,6 +47,11 @@ namespace Microsoft.Graph.Beta.Me.Planner
         {
             get => new global::Microsoft.Graph.Beta.Me.Planner.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the plans_v2 property of the microsoft.graph.plannerUser entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Planner.Plans_v2.Plans_v2RequestBuilder Plans_v2
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Planner.Plans_v2.Plans_v2RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.</summary>
         public global::Microsoft.Graph.Beta.Me.Planner.RecentPlans.RecentPlansRequestBuilder RecentPlans
         {
@@ -59,6 +66,11 @@ namespace Microsoft.Graph.Beta.Me.Planner
         public global::Microsoft.Graph.Beta.Me.Planner.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Microsoft.Graph.Beta.Me.Planner.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tasks_v2 property of the microsoft.graph.plannerUser entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Planner.Tasks_v2.Tasks_v2RequestBuilder Tasks_v2
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Planner.Tasks_v2.Tasks_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.Planner.PlannerRequestBuilder"/> and sets the default values.
@@ -99,7 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Planner
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Read the properties and relationships of plannerUser object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlannerUser"/></returns>
@@ -168,7 +180,7 @@ namespace Microsoft.Graph.Beta.Me.Planner
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Read the properties and relationships of plannerUser object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -226,7 +238,7 @@ namespace Microsoft.Graph.Beta.Me.Planner
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Read the properties and relationships of plannerUser object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerRequestBuilderGetQueryParameters 

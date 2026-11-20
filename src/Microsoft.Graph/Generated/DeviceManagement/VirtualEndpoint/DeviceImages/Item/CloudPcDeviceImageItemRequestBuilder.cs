@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.RetryUpload.RetryUploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reupload method.</summary>
+        [Obsolete("The reupload is deprecated and will not be supported starting June 25, 2026. Please use retryUpload instead. as of 2026-01/reupload on 2026-01-09 and will be removed 2026-06-25")]
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload.ReuploadRequestBuilder Reupload
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload.ReuploadRequestBuilder(PathParameters, RequestAdapter);

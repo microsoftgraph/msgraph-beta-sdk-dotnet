@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AzureAdTokenAuthentication : global::Microsoft.Graph.Beta.Models.CustomExtensionAuthenticationConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appID of the Microsoft Entra application to use to authenticate a logic app with a custom access package workflow extension.</summary>
+        /// <summary>The app ID or identifier URI of the Microsoft Entra application used to authenticate calls to the external app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceId

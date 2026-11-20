@@ -10,16 +10,20 @@ using Microsoft.Graph.Beta.Me.CloudPCs.Item.GetSupportedCloudPcRemoteActions;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOff;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOn;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.Relocate;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPcLaunchDetail;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFlexCloudPcAccessConfiguration;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFlexCloudPcConfigurationDetail;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFrontlineCloudPcDetail;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveSnapshots;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.SetDeviceName;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.SetReviewStatus;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Start;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Stop;
@@ -63,6 +67,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcLaunchInfo method.</summary>
+        [Obsolete("Starting from Oct 30, 2026, this API: getCloudPcLaunchInfo will be deprecated and no longer be supported. Please use the new API:retrieveCloudPcLaunchDetail to retrieve same details. as of 2025-09/cloudPcLaunchInfo on 2025-09-30 and will be removed 2026-10-30")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo.GetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo.GetCloudPcLaunchInfoRequestBuilder(PathParameters, RequestAdapter);
@@ -91,6 +96,11 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot.RebootRequestBuilder Reboot
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot.RebootRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the relocate method.</summary>
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Relocate.RelocateRequestBuilder Relocate
+        {
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Relocate.RelocateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rename method.</summary>
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename.RenameRequestBuilder Rename
@@ -122,6 +132,16 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveFlexCloudPcAccessConfiguration method.</summary>
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFlexCloudPcAccessConfiguration.RetrieveFlexCloudPcAccessConfigurationRequestBuilder RetrieveFlexCloudPcAccessConfiguration
+        {
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFlexCloudPcAccessConfiguration.RetrieveFlexCloudPcAccessConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveFlexCloudPcConfigurationDetail method.</summary>
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFlexCloudPcConfigurationDetail.RetrieveFlexCloudPcConfigurationDetailRequestBuilder RetrieveFlexCloudPcConfigurationDetail
+        {
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFlexCloudPcConfigurationDetail.RetrieveFlexCloudPcConfigurationDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retrieveFrontlineCloudPcDetail method.</summary>
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveFrontlineCloudPcDetail.RetrieveFrontlineCloudPcDetailRequestBuilder RetrieveFrontlineCloudPcDetail
         {
@@ -141,6 +161,11 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation.RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation.RetryPartnerAgentInstallationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setDeviceName method.</summary>
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.SetDeviceName.SetDeviceNameRequestBuilder SetDeviceName
+        {
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.SetDeviceName.SetDeviceNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setReviewStatus method.</summary>
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.SetReviewStatus.SetReviewStatusRequestBuilder SetReviewStatus

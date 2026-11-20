@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkSectionItemCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkSectionItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user&apos;s teamwork. Each item can belong to only one section at a time. You can only add items that are currently in a system-defined section. If the item is already in another user-defined section, use the move action to relocate it.
+        /// Add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user&apos;s teamwork. An item can belong to only one section at a time. If the item is in a different user-defined section, this request moves it to the target section. If the item is already in the target section, the request succeeds without making changes.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworksection-post-items?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkSectionItem"/></returns>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.Sections.Item.Items
             return requestInfo;
         }
         /// <summary>
-        /// Add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user&apos;s teamwork. Each item can belong to only one section at a time. You can only add items that are currently in a system-defined section. If the item is already in another user-defined section, use the move action to relocate it.
+        /// Add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user&apos;s teamwork. An item can belong to only one section at a time. If the item is in a different user-defined section, this request moves it to the target section. If the item is already in the target section, the request succeeds without making changes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

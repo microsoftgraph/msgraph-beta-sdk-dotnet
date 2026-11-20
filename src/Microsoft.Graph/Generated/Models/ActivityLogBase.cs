@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActivityLogOperationType?>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
-        /// <summary>The error property</summary>
+        /// <summary>Contains error details if an error occurred while processing this activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PublicError? Error
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The eventDateTime property</summary>
+        /// <summary>Timestamp of activity completion.</summary>
         public DateTimeOffset? EventDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The performedBy property</summary>
+        /// <summary>The identity of the person who performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PerformedBy

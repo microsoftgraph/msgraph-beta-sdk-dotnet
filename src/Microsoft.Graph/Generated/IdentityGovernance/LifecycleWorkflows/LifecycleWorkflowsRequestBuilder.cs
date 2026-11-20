@@ -3,6 +3,8 @@
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicies;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicyPriorityConfigurations;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinitions;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates;
@@ -39,6 +41,16 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder Insights
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lifecyclePolicies property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicies.LifecyclePoliciesRequestBuilder LifecyclePolicies
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicies.LifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lifecyclePolicyPriorityConfigurations property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicyPriorityConfigurations.LifecyclePolicyPriorityConfigurationsRequestBuilder LifecyclePolicyPriorityConfigurations
+        {
+            get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecyclePolicyPriorityConfigurations.LifecyclePolicyPriorityConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings.SettingsRequestBuilder Settings

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class DynamicRuleActivityLog : global::Microsoft.Graph.Beta.Models.ActivityLogBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The policyId property</summary>
+        /// <summary>The unique identifier of the protection policy associated with the activity log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The policyName property</summary>
+        /// <summary>Name of the protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policyName", value); }
         }
 #endif
-        /// <summary>The protectionUnitDetails property</summary>
+        /// <summary>Contains Protection unit counts information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ProtectionUnitDetails? ProtectionUnitDetails

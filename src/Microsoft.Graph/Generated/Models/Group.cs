@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #endif
-        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it&apos;s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.</summary>
+        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it&apos;s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AssignedLabel>? AssignedLabels
@@ -421,6 +421,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isFavorite"); }
             set { BackingStore?.Set("isFavorite", value); }
         }
+        /// <summary>Indicates whether hard deletion protection is enabled for the group. Supported for cloud-only groups. When true, permanent deletion is blocked for seven days after soft deletion. The group can still be soft deleted and restored. Once enabled, protection can&apos;t be disabled or set to null. Enable protection on an existing group by using Update group; enabling it during creation isn&apos;t supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).</summary>
+        public bool? IsHardDeleteProtectionEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isHardDeleteProtectionEnabled"); }
+            set { BackingStore?.Set("isHardDeleteProtectionEnabled", value); }
+        }
         /// <summary>Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.</summary>
         public bool? IsManagementRestricted
         {
@@ -463,6 +469,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("mail"); }
             set { BackingStore?.Set("mail", value); }
+        }
+#endif
+        /// <summary>The identifier of the Exchange mailbox associated with a Microsoft 365 group. Treat this value as an opaque identifier and don&apos;t parse or validate its format. If the group mailbox isn&apos;t provisioned, this property returns 00000000-0000-0000-0000-000000000000. Requires $select to retrieve. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MailboxId
+        {
+            get { return BackingStore?.Get<string?>("mailboxId"); }
+            set { BackingStore?.Set("mailboxId", value); }
+        }
+#nullable restore
+#else
+        public string MailboxId
+        {
+            get { return BackingStore?.Get<string>("mailboxId"); }
+            set { BackingStore?.Set("mailboxId", value); }
         }
 #endif
         /// <summary>Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).</summary>
@@ -1201,12 +1223,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isAssignableToRole", n => { IsAssignableToRole = n.GetBoolValue(); } },
                 { "isFavorite", n => { IsFavorite = n.GetBoolValue(); } },
+                { "isHardDeleteProtectionEnabled", n => { IsHardDeleteProtectionEnabled = n.GetBoolValue(); } },
                 { "isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 { "isSubscribedByMail", n => { IsSubscribedByMail = n.GetBoolValue(); } },
                 { "licenseProcessingState", n => { LicenseProcessingState = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.LicenseProcessingState>(global::Microsoft.Graph.Beta.Models.LicenseProcessingState.CreateFromDiscriminatorValue); } },
                 { "mail", n => { Mail = n.GetStringValue(); } },
                 { "mailEnabled", n => { MailEnabled = n.GetBoolValue(); } },
                 { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                { "mailboxId", n => { MailboxId = n.GetStringValue(); } },
                 { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membersWithLicenseErrors", n => { MembersWithLicenseErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1296,10 +1320,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isAssignableToRole", IsAssignableToRole);
             writer.WriteBoolValue("isFavorite", IsFavorite);
+            writer.WriteBoolValue("isHardDeleteProtectionEnabled", IsHardDeleteProtectionEnabled);
             writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isSubscribedByMail", IsSubscribedByMail);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.LicenseProcessingState>("licenseProcessingState", LicenseProcessingState);
             writer.WriteStringValue("mail", Mail);
+            writer.WriteStringValue("mailboxId", MailboxId);
             writer.WriteBoolValue("mailEnabled", MailEnabled);
             writer.WriteStringValue("mailNickname", MailNickname);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("memberOf", MemberOf);

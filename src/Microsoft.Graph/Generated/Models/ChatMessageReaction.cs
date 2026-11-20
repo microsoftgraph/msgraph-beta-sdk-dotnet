@@ -75,6 +75,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reactionContentUrl", value); }
         }
 #endif
+        /// <summary>The service-issued identifier for a custom emoji reaction. The identifier is scoped to the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReactionId
+        {
+            get { return BackingStore?.Get<string?>("reactionId"); }
+            set { BackingStore?.Set("reactionId", value); }
+        }
+#nullable restore
+#else
+        public string ReactionId
+        {
+            get { return BackingStore?.Get<string>("reactionId"); }
+            set { BackingStore?.Set("reactionId", value); }
+        }
+#endif
         /// <summary>The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "reactionContentUrl", n => { ReactionContentUrl = n.GetStringValue(); } },
+                { "reactionId", n => { ReactionId = n.GetStringValue(); } },
                 { "reactionType", n => { ReactionType = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageReactionIdentitySet>(global::Microsoft.Graph.Beta.Models.ChatMessageReactionIdentitySet.CreateFromDiscriminatorValue); } },
             };
@@ -152,6 +169,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("reactionContentUrl", ReactionContentUrl);
+            writer.WriteStringValue("reactionId", ReactionId);
             writer.WriteStringValue("reactionType", ReactionType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChatMessageReactionIdentitySet>("user", User);
             writer.WriteAdditionalData(AdditionalData);

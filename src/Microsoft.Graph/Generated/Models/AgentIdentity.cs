@@ -82,6 +82,40 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("inheritedOauth2PermissionGrants", value); }
         }
 #endif
+        /// <summary>The lifecyclePolicyComplianceState property</summary>
+        public global::Microsoft.Graph.Beta.Models.LifecyclePolicyComplianceState? LifecyclePolicyComplianceState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.LifecyclePolicyComplianceState?>("lifecyclePolicyComplianceState"); }
+            set { BackingStore?.Set("lifecyclePolicyComplianceState", value); }
+        }
+        /// <summary>The lifecyclePolicyComplianceStateLastModifiedDateTime property</summary>
+        public DateTimeOffset? LifecyclePolicyComplianceStateLastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lifecyclePolicyComplianceStateLastModifiedDateTime"); }
+            set { BackingStore?.Set("lifecyclePolicyComplianceStateLastModifiedDateTime", value); }
+        }
+        /// <summary>The lifecyclePolicyComplianceStateReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LifecyclePolicyComplianceStateReason
+        {
+            get { return BackingStore?.Get<string?>("lifecyclePolicyComplianceStateReason"); }
+            set { BackingStore?.Set("lifecyclePolicyComplianceStateReason", value); }
+        }
+#nullable restore
+#else
+        public string LifecyclePolicyComplianceStateReason
+        {
+            get { return BackingStore?.Get<string>("lifecyclePolicyComplianceStateReason"); }
+            set { BackingStore?.Set("lifecyclePolicyComplianceStateReason", value); }
+        }
+#endif
+        /// <summary>The lifecyclePolicyNonComplianceDisablementDateTime property</summary>
+        public DateTimeOffset? LifecyclePolicyNonComplianceDisablementDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lifecyclePolicyNonComplianceDisablementDateTime"); }
+            set { BackingStore?.Set("lifecyclePolicyNonComplianceDisablementDateTime", value); }
+        }
         /// <summary>The collection of application IDs designated as managers of this agent identity&apos;s backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it&apos;s registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can&apos;t make this change — they must ask an owner or administrator in the blueprint&apos;s home tenant. Not nullable. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,6 +178,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "inheritedAppRoleAssignments", n => { InheritedAppRoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>(global::Microsoft.Graph.Beta.Models.AppRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inheritedOauth2PermissionGrants", n => { InheritedOauth2PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>(global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "lifecyclePolicyComplianceState", n => { LifecyclePolicyComplianceState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.LifecyclePolicyComplianceState>(); } },
+                { "lifecyclePolicyComplianceStateLastModifiedDateTime", n => { LifecyclePolicyComplianceStateLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lifecyclePolicyComplianceStateReason", n => { LifecyclePolicyComplianceStateReason = n.GetStringValue(); } },
+                { "lifecyclePolicyNonComplianceDisablementDateTime", n => { LifecyclePolicyNonComplianceDisablementDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managerApplications", n => { ManagerApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -161,6 +199,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AppRoleAssignment>("inheritedAppRoleAssignments", InheritedAppRoleAssignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OAuth2PermissionGrant>("inheritedOauth2PermissionGrants", InheritedOauth2PermissionGrants);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.LifecyclePolicyComplianceState>("lifecyclePolicyComplianceState", LifecyclePolicyComplianceState);
+            writer.WriteDateTimeOffsetValue("lifecyclePolicyComplianceStateLastModifiedDateTime", LifecyclePolicyComplianceStateLastModifiedDateTime);
+            writer.WriteStringValue("lifecyclePolicyComplianceStateReason", LifecyclePolicyComplianceStateReason);
+            writer.WriteDateTimeOffsetValue("lifecyclePolicyNonComplianceDisablementDateTime", LifecyclePolicyNonComplianceDisablementDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("sponsors", Sponsors);
         }
     }

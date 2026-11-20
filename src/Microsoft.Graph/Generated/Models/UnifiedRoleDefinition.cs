@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AllowedRolePrincipalTypes?>("allowedPrincipalTypes"); }
             set { BackingStore?.Set("allowedPrincipalTypes", value); }
         }
+        /// <summary>The date and time when the custom role definition was deleted. The value is null for active and restored role definitions. Read-only.</summary>
+        public DateTimeOffset? DeletedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
+            set { BackingStore?.Set("deletedDateTime", value); }
+        }
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,6 +173,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowedPrincipalTypes", n => { AllowedPrincipalTypes = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AllowedRolePrincipalTypes>(); } },
+                { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>(global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -188,6 +195,7 @@ namespace Microsoft.Graph.Beta.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AllowedRolePrincipalTypes>("allowedPrincipalTypes", AllowedPrincipalTypes);
+            writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);

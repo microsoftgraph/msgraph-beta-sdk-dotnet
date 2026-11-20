@@ -41,16 +41,19 @@ namespace Microsoft.Graph.Beta.Me.Outlook
             get => new global::Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.</summary>
+        [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20")]
         public global::Microsoft.Graph.Beta.Me.Outlook.TaskFolders.TaskFoldersRequestBuilder TaskFolders
         {
             get => new global::Microsoft.Graph.Beta.Me.Outlook.TaskFolders.TaskFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.</summary>
+        [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20")]
         public global::Microsoft.Graph.Beta.Me.Outlook.TaskGroups.TaskGroupsRequestBuilder TaskGroups
         {
             get => new global::Microsoft.Graph.Beta.Me.Outlook.TaskGroups.TaskGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.</summary>
+        [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20")]
         public global::Microsoft.Graph.Beta.Me.Outlook.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Microsoft.Graph.Beta.Me.Outlook.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isShared"); }
             set { BackingStore?.Set("isShared", value); }
         }
-        /// <summary>The collection of single-value extended properties defined for the task list. Read-only. Nullable.</summary>
+        /// <summary>The collection of single-value extended properties defined for the task list. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.SingleValueExtendedProperty>? SingleValueExtendedProperties

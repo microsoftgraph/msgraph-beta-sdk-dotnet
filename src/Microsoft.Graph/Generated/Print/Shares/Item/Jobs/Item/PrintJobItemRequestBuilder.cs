@@ -37,6 +37,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item
             get => new global::Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancelPrintJob method.</summary>
+        [Obsolete("The cancelPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the cancel API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.CancelPrintJob.CancelPrintJobRequestBuilder CancelPrintJob
         {
             get => new global::Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.CancelPrintJob.CancelPrintJobRequestBuilder(PathParameters, RequestAdapter);
@@ -57,6 +58,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item
             get => new global::Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.Start.StartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the startPrintJob method.</summary>
+        [Obsolete("The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
         public global::Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.StartPrintJob.StartPrintJobRequestBuilder StartPrintJob
         {
             get => new global::Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.StartPrintJob.StartPrintJobRequestBuilder(PathParameters, RequestAdapter);

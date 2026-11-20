@@ -36,5 +36,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         PasswordSubmit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "passwordUpdate")]
+        #pragma warning disable CS1591
+        PasswordUpdate,
+        #pragma warning restore CS1591
     }
 }

@@ -98,6 +98,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("v26_0"); }
             set { BackingStore?.Set("v26_0", value); }
         }
+        /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 27.0 or later is required to install the app. If &apos;False&apos;, iOS Version 27.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        public bool? V270
+        {
+            get { return BackingStore?.Get<bool?>("v27_0"); }
+            set { BackingStore?.Set("v27_0", value); }
+        }
         /// <summary>Indicates the minimum iOS version support required for the managed device. When &apos;True&apos;, iOS with OS Version 8.0 or later is required to install the app. If &apos;False&apos;, iOS Version 8.0  is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V80
         {
@@ -147,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "v17_0", n => { V170 = n.GetBoolValue(); } },
                 { "v18_0", n => { V180 = n.GetBoolValue(); } },
                 { "v26_0", n => { V260 = n.GetBoolValue(); } },
+                { "v27_0", n => { V270 = n.GetBoolValue(); } },
                 { "v8_0", n => { V80 = n.GetBoolValue(); } },
                 { "v9_0", n => { V90 = n.GetBoolValue(); } },
             };
@@ -169,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("v17_0", V170);
             writer.WriteBoolValue("v18_0", V180);
             writer.WriteBoolValue("v26_0", V260);
+            writer.WriteBoolValue("v27_0", V270);
             writer.WriteBoolValue("v8_0", V80);
             writer.WriteBoolValue("v9_0", V90);
             writer.WriteAdditionalData(AdditionalData);

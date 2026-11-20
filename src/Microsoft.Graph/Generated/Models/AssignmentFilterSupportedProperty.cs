@@ -38,6 +38,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dataType", value); }
         }
 #endif
+        /// <summary>Identifies the data source used to evaluate an assignment filter property.</summary>
+        public global::Microsoft.Graph.Beta.Models.AssignmentFilterPropertyEvaluationSource? EvaluationSource
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AssignmentFilterPropertyEvaluationSource?>("evaluationSource"); }
+            set { BackingStore?.Set("evaluationSource", value); }
+        }
         /// <summary>Indicates whether the property is a collection type or not.</summary>
         public bool? IsCollection
         {
@@ -151,6 +157,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dataType", n => { DataType = n.GetStringValue(); } },
+                { "evaluationSource", n => { EvaluationSource = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AssignmentFilterPropertyEvaluationSource>(); } },
                 { "isCollection", n => { IsCollection = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -167,6 +174,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataType", DataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AssignmentFilterPropertyEvaluationSource>("evaluationSource", EvaluationSource);
             writer.WriteBoolValue("isCollection", IsCollection);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);

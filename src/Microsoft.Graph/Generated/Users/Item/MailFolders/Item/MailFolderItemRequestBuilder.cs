@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ImportMime;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move;
@@ -37,6 +38,11 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy.CopyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the importMime method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ImportMime.ImportMimeRequestBuilder ImportMime
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ImportMime.ImportMimeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules.MessageRulesRequestBuilder MessageRules
         {
@@ -53,6 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.mailFolder entity.</summary>
+        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations.OperationsRequestBuilder Operations
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
@@ -63,6 +70,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateAllMessagesReadState method.</summary>
+        [Obsolete(" as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30")]
         public global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder UpdateAllMessagesReadState
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UpdateAllMessagesReadState.UpdateAllMessagesReadStateRequestBuilder(PathParameters, RequestAdapter);

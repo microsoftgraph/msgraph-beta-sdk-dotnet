@@ -77,6 +77,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item
             get => new global::Microsoft.Graph.Beta.App.OnlineMeetings.Item.Recordings.RecordingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.</summary>
+        [Obsolete("The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12")]
         public global::Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.RegistrationRequestBuilder Registration
         {
             get => new global::Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.RegistrationRequestBuilder(PathParameters, RequestAdapter);

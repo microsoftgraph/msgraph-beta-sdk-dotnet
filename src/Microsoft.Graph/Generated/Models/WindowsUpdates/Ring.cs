@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The quality update deferral period in days. The value must be between 0 and 30. Optional.</summary>
+        /// <summary>The update deferral period in days. The value must be between 0 and 30. Optional.</summary>
         public int? DeferralInDays
         {
             get { return BackingStore?.Get<int?>("deferralInDays"); }
@@ -88,13 +88,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("includedGroupAssignment", value); }
         }
 #endif
-        /// <summary>The pause action for the quality update ring policy. Required.</summary>
+        /// <summary>The pause action for the update ring. Required.</summary>
         public bool? IsPaused
         {
             get { return BackingStore?.Get<bool?>("isPaused"); }
             set { BackingStore?.Set("isPaused", value); }
         }
-        /// <summary>The date and time whenthe ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
+        /// <summary>The date and time when the ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -111,6 +111,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.windowsUpdates.driverUpdateRing" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateRing(),
+                "#microsoft.graph.windowsUpdates.featureUpdateRing" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.FeatureUpdateRing(),
                 "#microsoft.graph.windowsUpdates.qualityUpdateRing" => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateRing(),
                 _ => new global::Microsoft.Graph.Beta.Models.WindowsUpdates.Ring(),
             };

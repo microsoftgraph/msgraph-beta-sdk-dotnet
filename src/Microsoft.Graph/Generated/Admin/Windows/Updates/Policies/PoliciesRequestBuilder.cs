@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies
         {
         }
         /// <summary>
-        /// Get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+        /// Get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-adminwindowsupdates-list-policies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.PolicyCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.PolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.PolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+        /// Create a new Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-adminwindowsupdates-post-policies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.Policy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+        /// Get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies
             return requestInfo;
         }
         /// <summary>
-        /// Create a new Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+        /// Create a new Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Policies
             return new global::Microsoft.Graph.Beta.Admin.Windows.Updates.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+        /// Get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetQueryParameters 

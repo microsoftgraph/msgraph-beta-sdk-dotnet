@@ -20,5 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "audit")]
+        #pragma warning disable CS1591
+        Audit,
+        #pragma warning restore CS1591
     }
 }

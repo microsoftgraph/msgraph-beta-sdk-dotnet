@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EntraDriftIdentityInfo : global::Microsoft.Graph.Beta.Models.DriftIdentityInfo, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identityType property</summary>
+        /// <summary>The type of identity. The possible values are user and group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityType

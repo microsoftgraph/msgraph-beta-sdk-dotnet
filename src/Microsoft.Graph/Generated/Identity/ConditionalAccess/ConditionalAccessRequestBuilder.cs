@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Identity.ConditionalAccess.DeletedItems;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.Settings;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
@@ -33,6 +34,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
             get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
         public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder AuthenticationStrengths
         {
             get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);
@@ -56,6 +58,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
         public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder Policies
         {
             get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the settings property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.TemplatesRequestBuilder Templates

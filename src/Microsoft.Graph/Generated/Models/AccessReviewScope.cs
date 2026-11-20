@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.accessReviewAccessPackageAssignmentPolicyScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewAccessPackageAssignmentPolicyScope(),
+                "#microsoft.graph.accessReviewCatalogScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewCatalogScope(),
                 "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewInactiveUsersQueryScope(),
                 "#microsoft.graph.accessReviewPrincipalScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewPrincipalScope(),
                 "#microsoft.graph.accessReviewQueryScope" => new global::Microsoft.Graph.Beta.Models.AccessReviewQueryScope(),

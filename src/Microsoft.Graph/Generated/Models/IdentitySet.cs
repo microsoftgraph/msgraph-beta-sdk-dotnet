@@ -112,6 +112,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.communicationsIdentitySet" => new global::Microsoft.Graph.Beta.Models.CommunicationsIdentitySet(),
                 "#microsoft.graph.customEmojiFromIdentitySet" => new global::Microsoft.Graph.Beta.Models.CustomEmojiFromIdentitySet(),
                 "#microsoft.graph.engagementIdentitySet" => new global::Microsoft.Graph.Beta.Models.EngagementIdentitySet(),
+                "#microsoft.graph.investigationIdentitySet" => new global::Microsoft.Graph.Beta.Models.InvestigationIdentitySet(),
                 "#microsoft.graph.sharePointIdentitySet" => new global::Microsoft.Graph.Beta.Models.SharePointIdentitySet(),
                 _ => new global::Microsoft.Graph.Beta.Models.IdentitySet(),
             };

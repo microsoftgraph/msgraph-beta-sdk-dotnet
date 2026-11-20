@@ -51,6 +51,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #endif
+        /// <summary>The in-use deferral and countdown settings for the associated app assignment. These settings are only applied when the app&apos;s `installExperience.inUseBehavior` is set to `terminateWithUserInteraction`. When `inUseBehavior` is set to any other value, this property is ignored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Win32LobAppInUseSettings? InUseSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Win32LobAppInUseSettings?>("inUseSettings"); }
+            set { BackingStore?.Set("inUseSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Win32LobAppInUseSettings InUseSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Win32LobAppInUseSettings>("inUseSettings"); }
+            set { BackingStore?.Set("inUseSettings", value); }
+        }
+#endif
         /// <summary>Contains value for notification status.</summary>
         public global::Microsoft.Graph.Beta.Models.Win32LobAppNotification? Notifications
         {
@@ -105,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "autoUpdateSettings", n => { AutoUpdateSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings>(global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings.CreateFromDiscriminatorValue); } },
                 { "deliveryOptimizationPriority", n => { DeliveryOptimizationPriority = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppDeliveryOptimizationPriority>(); } },
+                { "inUseSettings", n => { InUseSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppInUseSettings>(global::Microsoft.Graph.Beta.Models.Win32LobAppInUseSettings.CreateFromDiscriminatorValue); } },
                 { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppInstallTimeSettings>(global::Microsoft.Graph.Beta.Models.MobileAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
                 { "notifications", n => { Notifications = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppNotification>(); } },
                 { "restartSettings", n => { RestartSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppRestartSettings>(global::Microsoft.Graph.Beta.Models.Win32LobAppRestartSettings.CreateFromDiscriminatorValue); } },
@@ -121,6 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings>("autoUpdateSettings", AutoUpdateSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppDeliveryOptimizationPriority>("deliveryOptimizationPriority", DeliveryOptimizationPriority);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppInUseSettings>("inUseSettings", InUseSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppNotification>("notifications", Notifications);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppRestartSettings>("restartSettings", RestartSettings);
         }

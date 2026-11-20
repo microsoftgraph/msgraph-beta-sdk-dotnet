@@ -40,6 +40,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.</summary>
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder Catalogs
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.Catalogs.CatalogsRequestBuilder(PathParameters, RequestAdapter);

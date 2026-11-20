@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class RbacApplication : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Container for soft-deleted directory role management resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.DirectoryRoleManagementDeletedItemContainer? DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DirectoryRoleManagementDeletedItemContainer?>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.DirectoryRoleManagementDeletedItemContainer DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DirectoryRoleManagementDeletedItemContainer>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+#endif
         /// <summary>The resourceNamespaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,6 +222,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "deletedItems", n => { DeletedItems = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryRoleManagementDeletedItemContainer>(global::Microsoft.Graph.Beta.Models.DirectoryRoleManagementDeletedItemContainer.CreateFromDiscriminatorValue); } },
                 { "resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>(global::Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleAssignmentApprovals", n => { RoleAssignmentApprovals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Approval>(global::Microsoft.Graph.Beta.Models.Approval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleAssignmentScheduleInstances", n => { RoleAssignmentScheduleInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance>(global::Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -227,6 +244,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryRoleManagementDeletedItemContainer>("deletedItems", DeletedItems);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>("resourceNamespaces", ResourceNamespaces);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Approval>("roleAssignmentApprovals", RoleAssignmentApprovals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>("roleAssignments", RoleAssignments);

@@ -39,16 +39,19 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decryptBuffer method.</summary>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DecryptBuffer.DecryptBufferRequestBuilder DecryptBuffer
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DecryptBuffer.DecryptBufferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the encryptBuffer method.</summary>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.EncryptBuffer.EncryptBufferRequestBuilder EncryptBuffer
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.EncryptBuffer.EncryptBufferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policy property of the microsoft.graph.informationProtection entity.</summary>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Policy.PolicyRequestBuilder Policy
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
@@ -64,6 +67,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SensitivityPolicySettings.SensitivityPolicySettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the signDigest method.</summary>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest.SignDigestRequestBuilder SignDigest
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest.SignDigestRequestBuilder(PathParameters, RequestAdapter);
@@ -74,6 +78,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.ThreatAssessmentRequests.ThreatAssessmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the verifySignature method.</summary>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.VerifySignature.VerifySignatureRequestBuilder VerifySignature
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.VerifySignature.VerifySignatureRequestBuilder(PathParameters, RequestAdapter);

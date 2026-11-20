@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ProtectionUnitDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The addedCount property</summary>
+        /// <summary>The number of protection units that were successfully added to the backup policy.</summary>
         public int? AddedCount
         {
             get { return BackingStore?.Get<int?>("addedCount"); }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The backupConfigurationType property</summary>
+        /// <summary>The type of backup configuration applied to the protection units.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BackupConfigurationType
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("backupConfigurationType", value); }
         }
 #endif
-        /// <summary>The failedCount property</summary>
+        /// <summary>The number of protection unit operations that failed during processing.</summary>
         public int? FailedCount
         {
             get { return BackingStore?.Get<int?>("failedCount"); }
@@ -65,19 +65,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The removedCount property</summary>
+        /// <summary>The number of protection units that were successfully removed from the backup policy.</summary>
         public int? RemovedCount
         {
             get { return BackingStore?.Get<int?>("removedCount"); }
             set { BackingStore?.Set("removedCount", value); }
         }
-        /// <summary>The requestedToAddCount property</summary>
+        /// <summary>The number of protection units that were requested to be added to the backup policy.</summary>
         public int? RequestedToAddCount
         {
             get { return BackingStore?.Get<int?>("requestedToAddCount"); }
             set { BackingStore?.Set("requestedToAddCount", value); }
         }
-        /// <summary>The requestedToRemoveCount property</summary>
+        /// <summary>The number of protection units that were requested to be removed from the backup policy.</summary>
         public int? RequestedToRemoveCount
         {
             get { return BackingStore?.Get<int?>("requestedToRemoveCount"); }

@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.RemoveEmail;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.StartMigration;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tabs;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tags;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -108,6 +109,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel
         public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tabs.TabsRequestBuilder Tabs
         {
             get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tabs.TabsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tags property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tags.TagsRequestBuilder Tags
+        {
+            get => new global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
         public global::Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Unarchive.UnarchiveRequestBuilder Unarchive

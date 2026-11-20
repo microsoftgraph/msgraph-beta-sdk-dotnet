@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
         {
         }
         /// <summary>
-        /// Invoke action compute
+        /// Compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputePostResponse>(requestInfo, global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action compute
+        /// Compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputeResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScop
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputeResponse>(requestInfo, global::Microsoft.Graph.Beta.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action compute
+        /// Compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

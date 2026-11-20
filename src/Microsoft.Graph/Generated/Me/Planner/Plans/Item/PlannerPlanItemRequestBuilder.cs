@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Me.Planner.Plans.Item.Archive;
 using Microsoft.Graph.Beta.Me.Planner.Plans.Item.Buckets;
 using Microsoft.Graph.Beta.Me.Planner.Plans.Item.Details;
+using Microsoft.Graph.Beta.Me.Planner.Plans.Item.ExtendExpiry;
 using Microsoft.Graph.Beta.Me.Planner.Plans.Item.GetUsageRights;
 using Microsoft.Graph.Beta.Me.Planner.Plans.Item.Goals;
 using Microsoft.Graph.Beta.Me.Planner.Plans.Item.HistoryItems;
@@ -42,12 +43,18 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
         {
             get => new global::Microsoft.Graph.Beta.Me.Planner.Plans.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the extendExpiry method.</summary>
+        public global::Microsoft.Graph.Beta.Me.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder ExtendExpiry
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getUsageRights method.</summary>
         public global::Microsoft.Graph.Beta.Me.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder GetUsageRights
         {
             get => new global::Microsoft.Graph.Beta.Me.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the goals property of the microsoft.graph.plannerPlan entity.</summary>
+        [Obsolete("private preview elements are required to be marked as deprecated as of 2025-03/Tasks_And_Plans on 2025-03-26 and will be removed 2026-03-26")]
         public global::Microsoft.Graph.Beta.Me.Planner.Plans.Item.Goals.GoalsRequestBuilder Goals
         {
             get => new global::Microsoft.Graph.Beta.Me.Planner.Plans.Item.Goals.GoalsRequestBuilder(PathParameters, RequestAdapter);

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class VerifiableCredentialsAuthenticationMethodConfiguration : global::Microsoft.Graph.Beta.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identityVerificationEventsConfiguration property</summary>
+        /// <summary>The optional tenant-level configuration that controls whether identity verification events and credential provenance information are collected and exposed for Verified ID verification. This setting isn&apos;t scoped to individual Verified ID profiles. If no configuration is stored or the stored value is null, event collection and exposure are disabled. Omitting this property from a PATCH request leaves its existing value unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentityVerificationEventsConfiguration? IdentityVerificationEventsConfiguration

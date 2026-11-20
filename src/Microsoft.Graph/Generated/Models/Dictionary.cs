@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.Partner.Security;
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
@@ -66,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.partner.security.additionalDataDictionary" => new global::Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary(),
                 "#microsoft.graph.plannerFormsDictionary" => new global::Microsoft.Graph.Beta.Models.PlannerFormsDictionary(),
                 "#microsoft.graph.resultTemplateDictionary" => new global::Microsoft.Graph.Beta.Models.ResultTemplateDictionary(),
+                "#microsoft.graph.security.workbookContent" => new global::Microsoft.Graph.Beta.Models.Security.WorkbookContent(),
                 "#microsoft.graph.stringDictionary" => new global::Microsoft.Graph.Beta.Models.StringDictionary(),
                 "#microsoft.graph.wafAllowedHeadersDictionary" => new global::Microsoft.Graph.Beta.Models.WafAllowedHeadersDictionary(),
                 _ => new global::Microsoft.Graph.Beta.Models.Dictionary(),

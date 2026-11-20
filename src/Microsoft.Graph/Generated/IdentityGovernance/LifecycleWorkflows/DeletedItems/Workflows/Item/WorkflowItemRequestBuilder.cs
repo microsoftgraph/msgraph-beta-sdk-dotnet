@@ -74,6 +74,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancelProcessing method.</summary>
+        [Obsolete(" as of 2025-11/PrivatePreview:cancelWorkflows on 2025-10-28 and will be removed 2026-10-28")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing.MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder MicrosoftGraphIdentityGovernanceCancelProcessing
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing.MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder(PathParameters, RequestAdapter);
@@ -89,11 +90,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion.MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the previewTaskFailures method.</summary>
+        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-08-12 and will be removed 2026-02-28")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures.MicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder MicrosoftGraphIdentityGovernancePreviewTaskFailures
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures.MicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the previewWorkflow method.</summary>
+        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-08-12 and will be removed 2026-02-28")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow.MicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder MicrosoftGraphIdentityGovernancePreviewWorkflow
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow.MicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder(PathParameters, RequestAdapter);
@@ -104,6 +107,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore.MicrosoftGraphIdentityGovernanceRestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the previewScope property of the microsoft.graph.identityGovernance.workflow entity.</summary>
+        [Obsolete(" as of 2025-01/PrivatePreview:organizationalUnit on 2025-08-12 and will be removed 2026-02-28")]
         public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.PreviewScope.PreviewScopeRequestBuilder PreviewScope
         {
             get => new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.PreviewScope.PreviewScopeRequestBuilder(PathParameters, RequestAdapter);

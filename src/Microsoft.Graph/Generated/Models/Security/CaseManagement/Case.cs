@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("relations", value); }
         }
 #endif
-        /// <summary>A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq &apos;breached&apos;). The all() lambda operator and other collection functions aren&apos;t supported. Doesn&apos;t support $orderby.</summary>
+        /// <summary>A read-only collection of SLA (service level agreement) policy status entries for the case. Each entry contains the policy&apos;s current status and breach target time. Computed by the service. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq &apos;breached&apos;). The all() lambda operator and other collection functions aren&apos;t supported. Doesn&apos;t support $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CaseSlaPolicyEntry>? SlaPolicies

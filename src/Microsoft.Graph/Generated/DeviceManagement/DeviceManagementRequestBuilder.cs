@@ -442,6 +442,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationUserStateSummaries property of the microsoft.graph.deviceManagement entity.</summary>
+        [Obsolete("This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07")]
         public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder DeviceConfigurationUserStateSummaries
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder(PathParameters, RequestAdapter);

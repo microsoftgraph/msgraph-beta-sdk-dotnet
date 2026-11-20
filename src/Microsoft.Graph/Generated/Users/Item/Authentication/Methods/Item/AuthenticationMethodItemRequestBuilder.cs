@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.AttestProvenance;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.DisableSmsSignIn;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.EnableSmsSignIn;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassword;
@@ -21,6 +22,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthenticationMethodItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the attestProvenance method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.AttestProvenance.AttestProvenanceRequestBuilder AttestProvenance
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.AttestProvenance.AttestProvenanceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the disableSmsSignIn method.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.DisableSmsSignIn.DisableSmsSignInRequestBuilder DisableSmsSignIn
         {

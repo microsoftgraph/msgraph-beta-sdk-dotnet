@@ -57,6 +57,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Represents the mode used by the service to evaluate an assignment filter.</summary>
+        public global::Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationMode? EvaluationMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationMode?>("evaluationMode"); }
+            set { BackingStore?.Set("evaluationMode", value); }
+        }
         /// <summary>Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
@@ -144,6 +150,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "evaluationMode", n => { EvaluationMode = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationMode>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PayloadByFilter>(global::Microsoft.Graph.Beta.Models.PayloadByFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platform", n => { Platform = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DevicePlatformType>(); } },
@@ -163,6 +170,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationMode>("evaluationMode", EvaluationMode);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PayloadByFilter>("payloads", Payloads);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DevicePlatformType>("platform", Platform);

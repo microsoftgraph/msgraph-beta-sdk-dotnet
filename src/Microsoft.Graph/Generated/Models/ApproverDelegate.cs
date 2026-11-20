@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The identity that receives the approval delegation. Only singleUser and groupMembers are currently supported.</summary>
+        /// <summary>The user or group that receives the approval delegation. Only the singleUser and groupMembers subtypes are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.UserSet? Delegate
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The schedule for the delegation, including start date and expiration pattern (duration, end date, or no expiration).</summary>
+        /// <summary>The period during which the delegation is in effect, expressed as a start date and an expiration pattern. If you don&apos;t specify a schedule, the delegation starts immediately and doesn&apos;t expire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RequestSchedule? Schedule

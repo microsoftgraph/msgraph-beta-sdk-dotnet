@@ -108,6 +108,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("policies", value); }
         }
 #endif
+        /// <summary>The tenant-wide Conditional Access settings, including user-action exclusions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessSettings? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ConditionalAccessSettings Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ConditionalAccessSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +164,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deletedItems", n => { DeletedItems = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot>(global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot.CreateFromDiscriminatorValue); } },
                 { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NamedLocation>(global::Microsoft.Graph.Beta.Models.NamedLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessSettings>(global::Microsoft.Graph.Beta.Models.ConditionalAccessSettings.CreateFromDiscriminatorValue); } },
                 { "templates", n => { Templates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>(global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -165,6 +182,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CaPoliciesDeletableRoot>("deletedItems", DeletedItems);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.NamedLocation>("namedLocations", NamedLocations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("policies", Policies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ConditionalAccessSettings>("settings", Settings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>("templates", Templates);
         }
     }

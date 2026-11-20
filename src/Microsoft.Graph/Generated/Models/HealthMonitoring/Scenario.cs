@@ -36,5 +36,9 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         #pragma warning disable CS1591
         Gsa,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agentId")]
+        #pragma warning disable CS1591
+        AgentId,
+        #pragma warning restore CS1591
     }
 }

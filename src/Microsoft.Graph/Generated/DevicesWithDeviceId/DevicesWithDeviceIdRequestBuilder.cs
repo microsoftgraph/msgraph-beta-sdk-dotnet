@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DevicesWithDeviceId
         {
         }
         /// <summary>
-        /// Delete a registered device.
+        /// Delete a registered device. When deleted, the device is moved to the deleted items container and is available for recovery for up to 30 days. After 30 days, the device is permanently deleted.- To learn more, see deletedItems.- For more information about soft deletion behavior for devices, see Device soft delete overview (preview).
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.DevicesWithDeviceId
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Device>(requestInfo, global::Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a registered device.
+        /// Delete a registered device. When deleted, the device is moved to the deleted items container and is available for recovery for up to 30 days. After 30 days, the device is permanently deleted.- To learn more, see deletedItems.- For more information about soft deletion behavior for devices, see Device soft delete overview (preview).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

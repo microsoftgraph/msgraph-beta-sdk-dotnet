@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security.CaseManagement;
 using Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.CustomFields;
+using Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.SlaPolicies;
 using Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.Statuses;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.It
         public global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.CustomFields.CustomFieldsRequestBuilder CustomFields
         {
             get => new global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.CustomFields.CustomFieldsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the slaPolicies property of the microsoft.graph.security.caseManagement.caseTypeConfiguration entity.</summary>
+        public global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.SlaPolicies.SlaPoliciesRequestBuilder SlaPolicies
+        {
+            get => new global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.SlaPolicies.SlaPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the statuses property of the microsoft.graph.security.caseManagement.caseTypeConfiguration entity.</summary>
         public global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.Statuses.StatusesRequestBuilder Statuses

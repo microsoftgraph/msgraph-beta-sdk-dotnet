@@ -92,6 +92,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("issuerHintsConfiguration", value); }
         }
 #endif
+        /// <summary>When set to true, Microsoft Entra ID matches the SID in the Security Identifier (SID) extension or the SAN URI SID value from the user&apos;s X.509 certificate to the user&apos;s on-premises SID attribute for hybrid users and cloud SID for cloud-only users. Certificate-based authentication fails if the values don&apos;t match. The value can&apos;t be null. The default value is false.</summary>
+        public bool? RequireCertificateSidAlignment
+        {
+            get { return BackingStore?.Get<bool?>("requireCertificateSidAlignment"); }
+            set { BackingStore?.Set("requireCertificateSidAlignment", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
@@ -122,6 +128,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "certificateUserBindings", n => { CertificateUserBindings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.X509CertificateUserBinding>(global::Microsoft.Graph.Beta.Models.X509CertificateUserBinding.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethodTarget>(global::Microsoft.Graph.Beta.Models.AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "issuerHintsConfiguration", n => { IssuerHintsConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.X509CertificateIssuerHintsConfiguration>(global::Microsoft.Graph.Beta.Models.X509CertificateIssuerHintsConfiguration.CreateFromDiscriminatorValue); } },
+                { "requireCertificateSidAlignment", n => { RequireCertificateSidAlignment = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -137,6 +144,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.X509CertificateUserBinding>("certificateUserBindings", CertificateUserBindings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.X509CertificateIssuerHintsConfiguration>("issuerHintsConfiguration", IssuerHintsConfiguration);
+            writer.WriteBoolValue("requireCertificateSidAlignment", RequireCertificateSidAlignment);
         }
     }
 }

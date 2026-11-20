@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
     public partial class Comment : global::Microsoft.Graph.Beta.Models.Security.CaseManagement.Activity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The comment body. Supports $filter.</summary>
+        /// <summary>The comment body. The maximum length is 1,000 characters for incident cases and 5,000 characters for generic cases. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message

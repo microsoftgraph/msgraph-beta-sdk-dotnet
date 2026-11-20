@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Read-only. Indicates whether the entity is archived.</summary>
+        public bool? IsArchived
+        {
+            get { return BackingStore?.Get<bool?>("isArchived"); }
+            set { BackingStore?.Set("isArchived", value); }
+        }
         /// <summary>Read-only. Reason why the entity was archived or unarchived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +43,28 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("justification", value); }
         }
 #endif
+        /// <summary>Read-only. Identity of the user who archived or unarchived the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentitySet? ModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("modifiedBy"); }
+            set { BackingStore?.Set("modifiedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentitySet ModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("modifiedBy"); }
+            set { BackingStore?.Set("modifiedBy", value); }
+        }
+#endif
+        /// <summary>Read-only. Date and time at which the entity&apos;s archive status changed.</summary>
+        public DateTimeOffset? ModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
+            set { BackingStore?.Set("modifiedDateTime", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,7 +129,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
+                { "modifiedBy", n => { ModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "statusChangedBy", n => { StatusChangedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "statusChangedDateTime", n => { StatusChangedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -114,7 +145,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("modifiedBy", ModifiedBy);
+            writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("statusChangedBy", StatusChangedBy);
             writer.WriteDateTimeOffsetValue("statusChangedDateTime", StatusChangedDateTime);

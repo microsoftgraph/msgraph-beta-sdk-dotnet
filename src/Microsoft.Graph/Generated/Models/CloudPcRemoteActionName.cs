@@ -64,5 +64,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         MoveRegion,
         #pragma warning restore CS1591
+        [EnumMember(Value = "setDeviceName")]
+        #pragma warning disable CS1591
+        SetDeviceName,
+        #pragma warning restore CS1591
     }
 }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("expirationDate"); }
             set { BackingStore?.Set("expirationDate", value); }
         }
-        /// <summary>The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The offer property is deprecated and will stop returning data on January 31, 2024. Going forward, use the offerName property.</summary>
+        /// <summary>The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The offer property is deprecated and will stop returning data on December 7, 2026. Going forward, use the offerName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Offer
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offer", value); }
         }
 #endif
-        /// <summary>The official display offer name of this gallery image. For example, Windows 11 Enterprise. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.</summary>
+        /// <summary>The official display offer name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps. The offerDisplayName property is deprecated and will stop returning data on December 7, 2026. Going forward, use the displayName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfferDisplayName
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("osVersionNumber", value); }
         }
 #endif
-        /// <summary>The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on January 31, 2024. Going forward, use the publisherName property.</summary>
+        /// <summary>The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on December 7, 2026. Going forward, use the publisherName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Publisher
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publisherName", value); }
         }
 #endif
-        /// <summary>The recommended Cloud PC SKU for this gallery image. Read-only. The recommendedSku property is deprecated and will stop returning data on January 31, 2024.</summary>
+        /// <summary>The recommended Cloud PC SKU for this gallery image. Read-only. The recommendedSku property is deprecated and will stop returning data on December 7, 2026. No replacement is planned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecommendedSku
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("sizeInGB"); }
             set { BackingStore?.Set("sizeInGB", value); }
         }
-        /// <summary>The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only. The sku property is deprecated and will stop returning data on January 31, 2024. Going forward, use the skuName property.</summary>
+        /// <summary>The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only. The sku property is deprecated and will stop returning data on December 7, 2026. Going forward, use the skuName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sku
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sku", value); }
         }
 #endif
-        /// <summary>The official display SKU name of this gallery image. For example, 2004. Read-only. The skuDisplayName property is deprecated and will stop returning data on January 31, 2024.</summary>
+        /// <summary>The official display SKU name of this gallery image. For example, 22H2. Read-only. The skuDisplayName property is deprecated and will stop returning data on December 7, 2026. Going forward, use the displayName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuDisplayName

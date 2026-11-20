@@ -59,6 +59,7 @@ using Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps;
 using Microsoft.Graph.Beta.Me.GetMemberGroups;
 using Microsoft.Graph.Beta.Me.GetMemberObjects;
 using Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials;
+using Microsoft.Graph.Beta.Me.IdentityVerificationStatus;
 using Microsoft.Graph.Beta.Me.InferenceClassification;
 using Microsoft.Graph.Beta.Me.InformationProtection;
 using Microsoft.Graph.Beta.Me.Insights;
@@ -68,6 +69,7 @@ using Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked;
 using Microsoft.Graph.Beta.Me.JoinedGroups;
 using Microsoft.Graph.Beta.Me.JoinedTeams;
 using Microsoft.Graph.Beta.Me.LicenseDetails;
+using Microsoft.Graph.Beta.Me.Lifecycle;
 using Microsoft.Graph.Beta.Me.MailFolders;
 using Microsoft.Graph.Beta.Me.MailboxSettings;
 using Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests;
@@ -76,6 +78,9 @@ using Microsoft.Graph.Beta.Me.ManagedDevices;
 using Microsoft.Graph.Beta.Me.Manager;
 using Microsoft.Graph.Beta.Me.MemberOf;
 using Microsoft.Graph.Beta.Me.Messages;
+using Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor;
+using Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAttest;
+using Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor;
 using Microsoft.Graph.Beta.Me.MobileAppIntentAndStates;
 using Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents;
 using Microsoft.Graph.Beta.Me.Notifications;
@@ -417,6 +422,11 @@ namespace Microsoft.Graph.Beta.Me
         {
             get => new global::Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the identityVerificationStatus property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.IdentityVerificationStatus.IdentityVerificationStatusRequestBuilder IdentityVerificationStatus
+        {
+            get => new global::Microsoft.Graph.Beta.Me.IdentityVerificationStatus.IdentityVerificationStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Me.InferenceClassification.InferenceClassificationRequestBuilder InferenceClassification
         {
@@ -462,6 +472,11 @@ namespace Microsoft.Graph.Beta.Me
         {
             get => new global::Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the lifecycle property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Lifecycle.LifecycleRequestBuilder Lifecycle
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Lifecycle.LifecycleRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The mailboxSettings property</summary>
         public global::Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
@@ -502,6 +517,21 @@ namespace Microsoft.Graph.Beta.Me
         {
             get => new global::Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the addSelfAsSponsor method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor.MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder MicrosoftGraphIdentityGovernanceAddSelfAsSponsor
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor.MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the attest method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder MicrosoftGraphIdentityGovernanceAttest
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeSelfAsSponsor method.</summary>
+        public global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor
+        {
+            get => new global::Microsoft.Graph.Beta.Me.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder MobileAppIntentAndStates
         {
@@ -513,6 +543,7 @@ namespace Microsoft.Graph.Beta.Me
             get => new global::Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notifications property of the microsoft.graph.user entity.</summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20")]
         public global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder Notifications
         {
             get => new global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);

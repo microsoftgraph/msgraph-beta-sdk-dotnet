@@ -43,6 +43,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly
             get => new global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers.InactiveUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
+        [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs on 2024-02-02 and will be removed 2024-02-16")]
         public global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsersByApplication.InactiveUsersByApplicationRequestBuilder InactiveUsersByApplication
         {
             get => new global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsersByApplication.InactiveUsersByApplicationRequestBuilder(PathParameters, RequestAdapter);

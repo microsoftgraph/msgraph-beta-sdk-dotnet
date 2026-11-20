@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a client.</summary>
+        /// <summary>The sign-in activity reported as app-only authentication where the application acts as a client. Subject to the preview classification limitation described above.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SignInActivity? ApplicationAuthenticationClientSignInActivity
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applicationAuthenticationClientSignInActivity", value); }
         }
 #endif
-        /// <summary>The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a resource.</summary>
+        /// <summary>The sign-in activity reported as app-only authentication where the application acts as a resource. Subject to the preview classification limitation described above.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SignInActivity? ApplicationAuthenticationResourceSignInActivity
