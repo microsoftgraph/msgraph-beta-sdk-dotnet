@@ -19,6 +19,10 @@ using Microsoft.Graph.Beta.Reports.ServiceActivity.GetAudioStreamsOverUdpMetrics
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetConnectivityMetricsForExchangeWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForEmailDeliveryWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
+using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessBlockedSignInWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
 using Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes;
@@ -320,6 +324,54 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity
             if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
             if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
             return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMessageVolumeMetricsForTeamsChatWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForAgentIdAutonomousSignInFailure method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdAutonomousSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForAgentIdAutonomousSignInSuccess method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdAutonomousSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForAgentIdInteractiveSignInFailure method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdInteractiveSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getMetricsForAgentIdInteractiveSignInSuccess method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"/></returns>
+        /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
+        /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
+        public global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime)
+        {
+            if(ReferenceEquals(exclusiveIntervalEndDateTime, null)) throw new ArgumentNullException(nameof(exclusiveIntervalEndDateTime));
+            if(ReferenceEquals(inclusiveIntervalStartDateTime, null)) throw new ArgumentNullException(nameof(inclusiveIntervalStartDateTime));
+            return new global::Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes.GetMetricsForAgentIdInteractiveSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(PathParameters, RequestAdapter, exclusiveIntervalEndDateTime, inclusiveIntervalStartDateTime);
         }
         /// <summary>
         /// Provides operations to call the getMetricsForConditionalAccessBlockedSignIn method.

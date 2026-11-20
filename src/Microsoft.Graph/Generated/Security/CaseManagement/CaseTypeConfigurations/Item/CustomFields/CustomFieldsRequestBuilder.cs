@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.It
         {
         }
         /// <summary>
-        /// The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+        /// The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CustomFieldDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CustomFieldDefinitionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CustomFieldDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+        /// The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.It
             return new global::Microsoft.Graph.Beta.Security.CaseManagement.CaseTypeConfigurations.Item.CustomFields.CustomFieldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+        /// The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomFieldsRequestBuilderGetQueryParameters 

@@ -284,6 +284,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("tabs", value); }
         }
 #endif
+        /// <summary>The tags owned by the channel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.TeamworkChannelTag>? Tags
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamworkChannelTag>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.TeamworkChannelTag> Tags
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.TeamworkChannelTag>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#endif
         /// <summary>The ID of the Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -356,6 +372,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>(global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "summary", n => { Summary = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ChannelSummary>(global::Microsoft.Graph.Beta.Models.ChannelSummary.CreateFromDiscriminatorValue); } },
                 { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>(global::Microsoft.Graph.Beta.Models.TeamsTab.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamworkChannelTag>(global::Microsoft.Graph.Beta.Models.TeamworkChannelTag.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
@@ -390,6 +407,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ChannelSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamsTab>("tabs", Tabs);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.TeamworkChannelTag>("tags", Tags);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("webUrl", WebUrl);
         }

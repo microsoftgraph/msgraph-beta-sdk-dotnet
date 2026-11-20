@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class UserAssignment : global::Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Identity of the user (or application) that made the assignment.</summary>
+        /// <summary>Identity of the user (or application) that made the assignment. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? AssignedBy
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignedBy", value); }
         }
 #endif
-        /// <summary>Date and time the assignment was made.</summary>
+        /// <summary>Date and time the assignment was made. Read-only.</summary>
         public DateTimeOffset? AssignedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("assignedDateTime"); }

@@ -24,6 +24,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastUsedDateTime"); }
             set { BackingStore?.Set("lastUsedDateTime", value); }
         }
+        /// <summary>The provenance and trust classification of the authentication method. Supports administrative attestation. Returned for FIDO2 authentication methods; null for method types that don&apos;t support provenance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CredentialProvenance? Provenance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CredentialProvenance?>("provenance"); }
+            set { BackingStore?.Set("provenance", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CredentialProvenance Provenance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CredentialProvenance>("provenance"); }
+            set { BackingStore?.Set("provenance", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "provenance", n => { Provenance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CredentialProvenance>(global::Microsoft.Graph.Beta.Models.CredentialProvenance.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,6 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastUsedDateTime", LastUsedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CredentialProvenance>("provenance", Provenance);
         }
     }
 }

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Identity of the user who deleted the custom field definition, if it was deleted.</summary>
+        /// <summary>Identity of the user who deleted the custom field definition, if it was deleted. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? DeletedBy
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deletedBy", value); }
         }
 #endif
-        /// <summary>Date and time the custom field definition was deleted, if applicable.</summary>
+        /// <summary>Date and time the custom field definition was deleted, if applicable. Read-only.</summary>
         public DateTimeOffset? DeletedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomFieldRollupType?>("rollupType"); }
             set { BackingStore?.Set("rollupType", value); }
         }
-        /// <summary>Data type of the custom field&apos;s values.. The possible values are: text, date, utcDateTime, number, decimal, flag, singleChoiceText, multipleChoiceText, unknownFutureValue.</summary>
+        /// <summary>Data type of the custom field&apos;s values. Immutable after creation. The possible values are: text, date, utcDateTime, number, decimal, flag, singleChoiceText, multipleChoiceText, unknownFutureValue. The values utcDateTime, decimal, and multipleChoiceText can occur on existing fields; they aren&apos;t supported types for new field definitions.</summary>
         public global::Microsoft.Graph.Beta.Models.CustomFieldValueType? ValueType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomFieldValueType?>("valueType"); }

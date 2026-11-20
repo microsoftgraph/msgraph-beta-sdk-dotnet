@@ -13,6 +13,22 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CostManagementRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
+        /// <summary>The collection of credit requests for this tenant. Excludes audit-only requests by default.A list or requested-count dependency failure returns a Graph serviceNotAvailable error.Supports $filter on state and serviceId (eq), $select, $count=true, and $top (default 50, maximum 200).Results are ordered newest-first; $orderby is not supported.Server-driven paging returns an OData nextLink when additional pages are available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CreditRequest>? CreditRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CreditRequest>?>("creditRequests"); }
+            set { BackingStore?.Set("creditRequests", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CreditRequest> CreditRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CreditRequest>>("creditRequests"); }
+            set { BackingStore?.Set("creditRequests", value); }
+        }
+#endif
         /// <summary>The spending policies that govern Copilot Credits consumption.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +43,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SpendingPolicy>>("spendingPolicies"); }
             set { BackingStore?.Set("spendingPolicies", value); }
+        }
+#endif
+        /// <summary>Reported consumption of Copilot Credits, split by user, group, service and funding.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CostManagementUsageReportRoot? UsageReports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CostManagementUsageReportRoot?>("usageReports"); }
+            set { BackingStore?.Set("usageReports", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CostManagementUsageReportRoot UsageReports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CostManagementUsageReportRoot>("usageReports"); }
+            set { BackingStore?.Set("usageReports", value); }
         }
 #endif
         /// <summary>Per-user consumption balances, addressed by the user&apos;s identifier.</summary>
@@ -63,7 +95,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "creditRequests", n => { CreditRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CreditRequest>(global::Microsoft.Graph.Beta.Models.CreditRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "spendingPolicies", n => { SpendingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SpendingPolicy>(global::Microsoft.Graph.Beta.Models.SpendingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "usageReports", n => { UsageReports = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CostManagementUsageReportRoot>(global::Microsoft.Graph.Beta.Models.CostManagementUsageReportRoot.CreateFromDiscriminatorValue); } },
                 { "userBalances", n => { UserBalances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CostManagementUserBalance>(global::Microsoft.Graph.Beta.Models.CostManagementUserBalance.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -75,7 +109,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CreditRequest>("creditRequests", CreditRequests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SpendingPolicy>("spendingPolicies", SpendingPolicies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CostManagementUsageReportRoot>("usageReports", UsageReports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CostManagementUserBalance>("userBalances", UserBalances);
         }
     }

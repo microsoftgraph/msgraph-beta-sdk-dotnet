@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
+        /// Get the configurationBaseline attached to a monitor or a configurationTemplateVersion.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationbaseline-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationBaseline"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationBaseline>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationBaseline.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
+        /// Get the configurationBaseline attached to a monitor or a configurationTemplateVersion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return new global::Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonitors.Item.Baseline.BaselineRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
+        /// Get the configurationBaseline attached to a monitor or a configurationTemplateVersion.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BaselineRequestBuilderGetQueryParameters 

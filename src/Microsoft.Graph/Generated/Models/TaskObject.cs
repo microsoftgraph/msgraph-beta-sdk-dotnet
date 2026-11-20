@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class TaskObject : global::Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Information about whether the entity is archived, and when it was archived.</summary>
+        /// <summary>Service-populated information about whether the entity is archived, and when it was archived. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerArchivalInfo? ArchivalInfo
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("capabilities", value); }
         }
 #endif
-        /// <summary>The collection of checklist items on the task. Read-only. Nullable.</summary>
+        /// <summary>Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ChecklistItemV4>? Checklist
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("checklist", value); }
         }
 #endif
-        /// <summary>Identity of the user who marked the task complete.</summary>
+        /// <summary>Identity of the user who marked the task complete. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? CompletedBy
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("completedBy", value); }
         }
 #endif
-        /// <summary>Date and time the task was completed.</summary>
+        /// <summary>Date and time the task was completed. Read-only.</summary>
         public DateTimeOffset? CompletedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
@@ -210,19 +210,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("goalIds", value); }
         }
 #endif
-        /// <summary>Indicates whether the task has an associated chat.</summary>
+        /// <summary>Indicates whether the task has an associated chat. Read-only.</summary>
         public bool? HasChat
         {
             get { return BackingStore?.Get<bool?>("hasChat"); }
             set { BackingStore?.Set("hasChat", value); }
         }
-        /// <summary>Indicates whether the task has subtasks.</summary>
+        /// <summary>Indicates whether the task has subtasks. Read-only.</summary>
         public bool? HasChildren
         {
             get { return BackingStore?.Get<bool?>("hasChildren"); }
             set { BackingStore?.Set("hasChildren", value); }
         }
-        /// <summary>Indicates whether the task is on the critical path, as computed from its dependencies.</summary>
+        /// <summary>Indicates whether the task is on the critical path, as computed from its dependencies. Read-only.</summary>
         public bool? IsCritical
         {
             get { return BackingStore?.Get<bool?>("isCritical"); }
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The collection of content links attached to the task. Read-only. Nullable.</summary>
+        /// <summary>Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ContentLink>? Links
@@ -412,7 +412,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PlannerTaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The collection of user assignments on the task. Read-only. Nullable.</summary>
+        /// <summary>User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.UserAssignment>? UserAssignments

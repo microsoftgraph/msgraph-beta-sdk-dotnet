@@ -15,6 +15,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.RemoveEmail;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.StartMigration;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Tabs;
+using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Tags;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Unarchive;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -108,6 +109,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Tabs.TabsRequestBuilder Tabs
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Tabs.TabsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tags property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Tags.TagsRequestBuilder Tags
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Unarchive.UnarchiveRequestBuilder Unarchive

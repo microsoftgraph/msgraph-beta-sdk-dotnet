@@ -215,6 +215,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("reportSettings", value); }
         }
 #endif
+        /// <summary>The resourcePolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.ResourcePolicyRoot? ResourcePolicy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ResourcePolicyRoot?>("resourcePolicy"); }
+            set { BackingStore?.Set("resourcePolicy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.ResourcePolicyRoot ResourcePolicy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ResourcePolicyRoot>("resourcePolicy"); }
+            set { BackingStore?.Set("resourcePolicy", value); }
+        }
+#endif
         /// <summary>A container for service communications resources. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -333,6 +349,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "people", n => { People = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PeopleAdminSettings>(global::Microsoft.Graph.Beta.Models.PeopleAdminSettings.CreateFromDiscriminatorValue); } },
                 { "reportSettings", n => { ReportSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AdminReportSettings>(global::Microsoft.Graph.Beta.Models.AdminReportSettings.CreateFromDiscriminatorValue); } },
+                { "resourcePolicy", n => { ResourcePolicy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ResourcePolicyRoot>(global::Microsoft.Graph.Beta.Models.ResourcePolicyRoot.CreateFromDiscriminatorValue); } },
                 { "serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ServiceAnnouncement>(global::Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
                 { "sharepoint", n => { Sharepoint = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Sharepoint>(global::Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue); } },
                 { "teams", n => { Teams = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsAdminRoot>(global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsAdminRoot.CreateFromDiscriminatorValue); } },
@@ -359,6 +376,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PeopleAdminSettings>("people", People);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AdminReportSettings>("reportSettings", ReportSettings);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ResourcePolicyRoot>("resourcePolicy", ResourcePolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Sharepoint>("sharepoint", Sharepoint);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsAdminRoot>("teams", Teams);

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks_v2.Item
         {
         }
         /// <summary>
-        /// Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+        /// Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TaskObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks_v2.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TaskObject>(requestInfo, global::Microsoft.Graph.Beta.Models.TaskObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+        /// Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks_v2.Item
             return new global::Microsoft.Graph.Beta.Users.Item.Planner.Tasks_v2.Item.TaskItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+        /// Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TaskItemRequestBuilderGetQueryParameters 

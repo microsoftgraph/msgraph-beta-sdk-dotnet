@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans_v2
         {
         }
         /// <summary>
-        /// Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+        /// Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans_v2
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlanCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.PlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+        /// Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans_v2
             return new global::Microsoft.Graph.Beta.Me.Planner.Plans_v2.Plans_v2RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+        /// Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Plans_v2RequestBuilderGetQueryParameters 

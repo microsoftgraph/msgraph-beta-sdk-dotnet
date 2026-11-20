@@ -24,5 +24,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         Shared,
         #pragma warning restore CS1591
+        [EnumMember(Value = "unTyped")]
+        #pragma warning disable CS1591
+        UnTyped,
+        #pragma warning restore CS1591
     }
 }

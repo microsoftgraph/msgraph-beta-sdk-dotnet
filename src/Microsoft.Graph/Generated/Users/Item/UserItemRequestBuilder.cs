@@ -61,6 +61,7 @@ using Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingApps;
 using Microsoft.Graph.Beta.Users.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Users.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Users.Item.GetPasswordSingleSignOnCredentials;
+using Microsoft.Graph.Beta.Users.Item.IdentityVerificationStatus;
 using Microsoft.Graph.Beta.Users.Item.InferenceClassification;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection;
 using Microsoft.Graph.Beta.Users.Item.Insights;
@@ -420,6 +421,11 @@ namespace Microsoft.Graph.Beta.Users.Item
         public global::Microsoft.Graph.Beta.Users.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the identityVerificationStatus property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.IdentityVerificationStatus.IdentityVerificationStatusRequestBuilder IdentityVerificationStatus
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.IdentityVerificationStatus.IdentityVerificationStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Beta.Users.Item.InferenceClassification.InferenceClassificationRequestBuilder InferenceClassification

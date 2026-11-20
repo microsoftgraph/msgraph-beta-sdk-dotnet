@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<TimeSpan?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
-        /// <summary>The lookback property</summary>
+        /// <summary>The time window evaluated by each scheduled rule run, expressed as an ISO 8601 duration, for example PT4H for four hours. Events match this window based on either event time or ingestion time. The value must be at least frequency. When omitted, the service derives the default lookback from frequency. Not supported for near-real-time rules with a zero frequency.</summary>
         public TimeSpan? Lookback
         {
             get { return BackingStore?.Get<TimeSpan?>("lookback"); }

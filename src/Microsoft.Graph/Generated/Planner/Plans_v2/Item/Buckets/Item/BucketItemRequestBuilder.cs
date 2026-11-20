@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.Item
         {
         }
         /// <summary>
-        /// Delete navigation property buckets for planner
+        /// Delete a bucket object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plan-delete-buckets?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of buckets in the plan. Read-only. Nullable.
+        /// Read the properties and relationships of bucket object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bucket-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Bucket"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Bucket>(requestInfo, global::Microsoft.Graph.Beta.Models.Bucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property buckets in planner
+        /// Update the properties of a bucket object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bucket-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Bucket"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +108,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Bucket>(requestInfo, global::Microsoft.Graph.Beta.Models.Bucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property buckets for planner
+        /// Delete a bucket object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.Item
             return requestInfo;
         }
         /// <summary>
-        /// The collection of buckets in the plan. Read-only. Nullable.
+        /// Read the properties and relationships of bucket object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property buckets in planner
+        /// Update the properties of a bucket object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +185,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.Item
         {
         }
         /// <summary>
-        /// The collection of buckets in the plan. Read-only. Nullable.
+        /// Read the properties and relationships of bucket object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BucketItemRequestBuilderGetQueryParameters 

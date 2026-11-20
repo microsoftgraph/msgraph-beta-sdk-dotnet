@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The type of tag. Default is standard.</summary>
+        /// <summary>The type of tag. The possible values are: standard, unknownFutureValue. The default value is standard.</summary>
         public global::Microsoft.Graph.Beta.Models.TeamworkTagType? TagType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TeamworkTagType?>("tagType"); }
@@ -96,7 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         public static new global::Microsoft.Graph.Beta.Models.TeamworkTag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.TeamworkTag();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.teamworkChannelTag" => new global::Microsoft.Graph.Beta.Models.TeamworkChannelTag(),
+                _ => new global::Microsoft.Graph.Beta.Models.TeamworkTag(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

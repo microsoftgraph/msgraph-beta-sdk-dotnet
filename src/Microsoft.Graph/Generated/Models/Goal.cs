@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("notes", value); }
         }
 #endif
-        /// <summary>ID of the plan that contains the goal. Required, and immutable after creation.</summary>
+        /// <summary>ID of the plan that contains the goal. Immutable after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlanId

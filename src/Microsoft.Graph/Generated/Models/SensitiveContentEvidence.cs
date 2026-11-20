@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The length property</summary>
+        /// <summary>The length of the evidence text.</summary>
         public int? Length
         {
             get { return BackingStore?.Get<int?>("length"); }
             set { BackingStore?.Set("length", value); }
         }
-        /// <summary>The match property</summary>
+        /// <summary>The matched evidence text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Match
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The offset property</summary>
+        /// <summary>The start position of the evidence text.</summary>
         public int? Offset
         {
             get { return BackingStore?.Get<int?>("offset"); }

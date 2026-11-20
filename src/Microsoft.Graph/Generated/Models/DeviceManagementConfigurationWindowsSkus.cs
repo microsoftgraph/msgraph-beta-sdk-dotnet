@@ -53,5 +53,14 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the Device Management Configuration Windows SKU is &apos;surfaceHub&apos; </summary>
         [EnumMember(Value = "surfaceHub")]
         SurfaceHub,
+        /// <summary>Indicates that the setting is applicable to the Windows CPC SKU family. Existing public beta member.</summary>
+        [EnumMember(Value = "windowsCPC")]
+        WindowsCPC,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+        /// <summary>Indicates that the setting is applicable to the Windows Server SKU family. Use the Prefer: include-unknown-enum-members request header to receive this value.</summary>
+        [EnumMember(Value = "windowsServer")]
+        WindowsServer,
     }
 }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("actionSummary", value); }
         }
 #endif
-        /// <summary>The cloudPcIds property</summary>
+        /// <summary>IDs of the Cloud PCs the bulk action applies to. Individual Cloud PC IDs are GUID-formatted strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CloudPcIds
@@ -119,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.cloudPcBulkResize" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkResize(),
                 "#microsoft.graph.cloudPcBulkRestart" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkRestart(),
                 "#microsoft.graph.cloudPcBulkRestore" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkRestore(),
+                "#microsoft.graph.cloudPcBulkSetDeviceName" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkSetDeviceName(),
                 "#microsoft.graph.cloudPcBulkSetReviewStatus" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkSetReviewStatus(),
                 "#microsoft.graph.cloudPcBulkTroubleshoot" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkTroubleshoot(),
                 _ => new global::Microsoft.Graph.Beta.Models.CloudPcBulkAction(),

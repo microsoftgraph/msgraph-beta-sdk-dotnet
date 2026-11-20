@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2
         }
         /// <summary>
         /// Get a list of the task objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plan-list-tasks?view=graph-rest-beta" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-list-tasks_v2?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2
         }
         /// <summary>
         /// Create a new task object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plan-post-tasks?view=graph-rest-beta" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-tasks_v2?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TaskObject"/></returns>
         /// <param name="body">The request body</param>

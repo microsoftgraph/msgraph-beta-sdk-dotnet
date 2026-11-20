@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationMonitor>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationMonitor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
+        /// Update the properties of a configurationMonitor, including its name, description, baseline, mode, status, or referenced version of the same template. When updating an inline baseline, provide the full monitor body as described in the request body section.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationMonitor"/></returns>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
+        /// Update the properties of a configurationMonitor, including its name, description, baseline, mode, status, or referenced version of the same template. When updating an inline baseline, provide the full monitor body as described in the request body section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
