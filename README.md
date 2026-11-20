@@ -10,6 +10,8 @@ The Microsoft Graph Beta .NET Client Library 4.x targets .NetStandard 2.0 and .N
 
 The Microsoft Graph Beta .NET Client Library 5.x targets .NetStandard 2.0
 
+The current Microsoft Graph Beta .NET Client Library targets .NET Standard 2.0, .NET Standard 2.1, .NET 10.0, and .NET 11.0. As a breaking change for .NET target framework alignment with .NET support lifecycles, it replaces the dedicated .NET 8.0 target with .NET 11.0. .NET 8 applications can still consume the retained compatible .NET Standard assets, but .NET 8 is no longer a dedicated build or test target.
+
 ## Installation via NuGet
 
 To install the client library via NuGet:
@@ -56,9 +58,10 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 If you are looking to build the library locally for the purposes of contributing code or running tests, you will need to:
 
-- Have the .NET Core SDK (> 1.0) installed
-- Run `dotnet restore` from the command line in your package directory
-- Run `nuget restore` and `msbuild` from CLI or run Build from Visual Studio to restore Nuget packages and build the project
+- Have the .NET 11 SDK installed, and the .NET 10 runtime to run tests for both supported .NET targets
+- Run `dotnet restore Microsoft.Graph.Beta.sln` from the repository root
+- Build the library one target framework at a time with `dotnet build src/Microsoft.Graph/Microsoft.Graph.Beta.csproj -f <framework> --no-restore`, using `netstandard2.0`, `netstandard2.1`, `net10.0`, and `net11.0` to avoid exhausting memory
+- Run `dotnet test tests/Microsoft.Graph.DotnetCore.Test/Microsoft.Graph.DotnetCore.Test.csproj` to run tests for .NET 10.0 and .NET 11.0
 
 > Due to long file names you may need to run `git config --system core.longpaths true` before cloning the repo to your system.
 
