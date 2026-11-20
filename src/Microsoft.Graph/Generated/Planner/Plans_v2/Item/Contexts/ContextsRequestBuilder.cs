@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Contexts
         {
         }
         /// <summary>
-        /// The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+        /// Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlanContextLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Contexts
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlanContextLink>(requestInfo, global::Microsoft.Graph.Beta.Models.PlanContextLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+        /// Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Contexts
             return new global::Microsoft.Graph.Beta.Planner.Plans_v2.Item.Contexts.ContextsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+        /// Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContextsRequestBuilderGetQueryParameters 

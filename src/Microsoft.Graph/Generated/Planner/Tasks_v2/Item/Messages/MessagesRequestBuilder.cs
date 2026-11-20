@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Messages
         {
         }
         /// <summary>
-        /// The collection of chat messages associated with the task. Read-only. Nullable.
+        /// Get a list of the plannerChatMessage objects associated with the task.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/task-list-messages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlannerChatMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Messages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlannerChatMessage>(requestInfo, global::Microsoft.Graph.Beta.Models.PlannerChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of chat messages associated with the task. Read-only. Nullable.
+        /// Get a list of the plannerChatMessage objects associated with the task.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Messages
             return new global::Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Messages.MessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of chat messages associated with the task. Read-only. Nullable.
+        /// Get a list of the plannerChatMessage objects associated with the task.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessagesRequestBuilderGetQueryParameters 

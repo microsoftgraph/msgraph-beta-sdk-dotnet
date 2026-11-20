@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
     public partial class CaseTypeConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.</summary>
+        /// <summary>The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.CustomFieldDefinition>? CustomFields
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.</summary>
+        /// <summary>The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.SlaPolicyDefinition>? SlaPolicies
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security.CaseManagement
             set { BackingStore?.Set("slaPolicies", value); }
         }
 #endif
-        /// <summary>The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.</summary>
+        /// <summary>The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.CaseManagement.StatusDefinition>? Statuses

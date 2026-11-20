@@ -89,8 +89,7 @@ namespace Microsoft.Graph.Beta.Me.Planner
         {
         }
         /// <summary>
-        /// Delete a plannerUser object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-delete-planner?view=graph-rest-beta" />
+        /// Delete navigation property planner for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +161,7 @@ namespace Microsoft.Graph.Beta.Me.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlannerUser>(requestInfo, global::Microsoft.Graph.Beta.Models.PlannerUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a plannerUser object.
+        /// Delete navigation property planner for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

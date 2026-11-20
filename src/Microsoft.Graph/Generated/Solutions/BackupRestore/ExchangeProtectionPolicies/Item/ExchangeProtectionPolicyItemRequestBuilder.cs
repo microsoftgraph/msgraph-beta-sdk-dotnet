@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an Exchange protection policy. This method adds a mailboxprotectionunit to or removes it from the protection policy.
+        /// Update an Exchange protection policy. This method updates retention settings or adds a mailboxProtectionUnit to or removes it from the protection policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ExchangeProtectionPolicy"/></returns>
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeProtectionPolicie
             return requestInfo;
         }
         /// <summary>
-        /// Update an Exchange protection policy. This method adds a mailboxprotectionunit to or removes it from the protection policy.
+        /// Update an Exchange protection policy. This method updates retention settings or adds a mailboxProtectionUnit to or removes it from the protection policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

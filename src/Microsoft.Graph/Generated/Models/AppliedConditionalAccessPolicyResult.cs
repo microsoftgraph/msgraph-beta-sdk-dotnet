@@ -48,5 +48,13 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         ReportOnlyInterrupted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "notAppliedAllAppsExclusion")]
+        #pragma warning disable CS1591
+        NotAppliedAllAppsExclusion,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "reportOnlyNotAppliedAllAppsExclusion")]
+        #pragma warning disable CS1591
+        ReportOnlyNotAppliedAllAppsExclusion,
+        #pragma warning restore CS1591
     }
 }

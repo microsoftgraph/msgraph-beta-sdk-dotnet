@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner
         {
         }
         /// <summary>
-        /// Delete a plannerGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-planner?view=graph-rest-beta" />
+        /// Delete navigation property planner for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,8 +93,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlannerGroup>(requestInfo, global::Microsoft.Graph.Beta.Models.PlannerGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a plannerGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannergroup-update?view=graph-rest-beta" />
+        /// Update the navigation property planner in groups
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PlannerGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PlannerGroup>(requestInfo, global::Microsoft.Graph.Beta.Models.PlannerGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a plannerGroup object.
+        /// Delete navigation property planner for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a plannerGroup object.
+        /// Update the navigation property planner in groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

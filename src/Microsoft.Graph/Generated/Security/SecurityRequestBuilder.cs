@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.AgenticSecurity;
 using Microsoft.Graph.Beta.Security.Alerts;
 using Microsoft.Graph.Beta.Security.Alerts_v2;
 using Microsoft.Graph.Beta.Security.AttackSimulation;
@@ -10,6 +11,7 @@ using Microsoft.Graph.Beta.Security.CaseManagement;
 using Microsoft.Graph.Beta.Security.Cases;
 using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Collaboration;
+using Microsoft.Graph.Beta.Security.ContentManagement;
 using Microsoft.Graph.Beta.Security.DataDiscovery;
 using Microsoft.Graph.Beta.Security.DataSecurityAndGovernance;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
@@ -57,6 +59,11 @@ namespace Microsoft.Graph.Beta.Security
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecurityRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agenticSecurity property</summary>
+        public global::Microsoft.Graph.Beta.Security.AgenticSecurity.AgenticSecurityRequestBuilder AgenticSecurity
+        {
+            get => new global::Microsoft.Graph.Beta.Security.AgenticSecurity.AgenticSecurityRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Beta.Security.Alerts.AlertsRequestBuilder Alerts
@@ -98,6 +105,11 @@ namespace Microsoft.Graph.Beta.Security
         public global::Microsoft.Graph.Beta.Security.Collaboration.CollaborationRequestBuilder Collaboration
         {
             get => new global::Microsoft.Graph.Beta.Security.Collaboration.CollaborationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The contentManagement property</summary>
+        public global::Microsoft.Graph.Beta.Security.ContentManagement.ContentManagementRequestBuilder ContentManagement
+        {
+            get => new global::Microsoft.Graph.Beta.Security.ContentManagement.ContentManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataDiscovery property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Beta.Security.DataDiscovery.DataDiscoveryRequestBuilder DataDiscovery

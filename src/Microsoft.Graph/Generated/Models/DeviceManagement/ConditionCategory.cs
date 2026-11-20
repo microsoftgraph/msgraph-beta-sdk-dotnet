@@ -64,5 +64,17 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         #pragma warning disable CS1591
         CloudPcReserveDeprovisionFailedThreshold,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcReserveLicensesAvailabilityBelowThreshold")]
+        #pragma warning disable CS1591
+        CloudPcReserveLicensesAvailabilityBelowThreshold,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "reserveCloudPcUnlicensedUsersAssignment")]
+        #pragma warning disable CS1591
+        ReserveCloudPcUnlicensedUsersAssignment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cloudPcMaxUserStorageUsageThresholdExceeded")]
+        #pragma warning disable CS1591
+        CloudPcMaxUserStorageUsageThresholdExceeded,
+        #pragma warning restore CS1591
     }
 }

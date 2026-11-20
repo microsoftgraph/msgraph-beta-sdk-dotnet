@@ -52,5 +52,13 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         #pragma warning disable CS1591
         RemoteNetworkBgpConnectivity,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agentIdAutonomousSignInFailure")]
+        #pragma warning disable CS1591
+        AgentIdAutonomousSignInFailure,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentIdInteractiveSignInFailure")]
+        #pragma warning disable CS1591
+        AgentIdInteractiveSignInFailure,
+        #pragma warning restore CS1591
     }
 }

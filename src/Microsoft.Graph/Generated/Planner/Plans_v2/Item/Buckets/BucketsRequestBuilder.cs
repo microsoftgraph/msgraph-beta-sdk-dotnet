@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets
         {
         }
         /// <summary>
-        /// The collection of buckets in the plan. Read-only. Nullable.
+        /// Get a list of the bucket objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plan-list-buckets?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.BucketCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.BucketCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.BucketCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to buckets for planner
+        /// Create a new bucket object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plan-post-buckets?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Bucket"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Bucket>(requestInfo, global::Microsoft.Graph.Beta.Models.Bucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of buckets in the plan. Read-only. Nullable.
+        /// Get a list of the bucket objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to buckets for planner
+        /// Create a new bucket object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets
             return new global::Microsoft.Graph.Beta.Planner.Plans_v2.Item.Buckets.BucketsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of buckets in the plan. Read-only. Nullable.
+        /// Get a list of the bucket objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BucketsRequestBuilderGetQueryParameters 

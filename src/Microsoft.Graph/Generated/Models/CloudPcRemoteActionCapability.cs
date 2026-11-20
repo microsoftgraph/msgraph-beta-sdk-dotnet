@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ActionCapability?>("actionCapability"); }
             set { BackingStore?.Set("actionCapability", value); }
         }
-        /// <summary>The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
+        /// <summary>The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview, unknownFutureValue, setDeviceName. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: setDeviceName. The default value is unknown.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionName? ActionName
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcRemoteActionName?>("actionName"); }

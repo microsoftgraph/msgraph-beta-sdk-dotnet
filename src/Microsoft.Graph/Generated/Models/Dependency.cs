@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>ID of the source item in the dependency.</summary>
+        /// <summary>ID of the source item in the dependency. Immutable after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceItemId
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceItemId", value); }
         }
 #endif
-        /// <summary>ID of the target item in the dependency.</summary>
+        /// <summary>ID of the target item in the dependency. Immutable after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetItemId

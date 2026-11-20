@@ -102,8 +102,7 @@ namespace Microsoft.Graph.Beta.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Planner>(requestInfo, global::Microsoft.Graph.Beta.Models.Planner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a planner object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-update?view=graph-rest-beta" />
+        /// Update planner
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Planner"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +146,7 @@ namespace Microsoft.Graph.Beta.Planner
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a planner object.
+        /// Update planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

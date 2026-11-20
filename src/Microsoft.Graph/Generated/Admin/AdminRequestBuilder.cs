@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Admin.Forms;
 using Microsoft.Graph.Beta.Admin.Microsoft365Apps;
 using Microsoft.Graph.Beta.Admin.People;
 using Microsoft.Graph.Beta.Admin.ReportSettings;
+using Microsoft.Graph.Beta.Admin.ResourcePolicy;
 using Microsoft.Graph.Beta.Admin.ServiceAnnouncement;
 using Microsoft.Graph.Beta.Admin.Sharepoint;
 using Microsoft.Graph.Beta.Admin.Teams;
@@ -88,6 +89,11 @@ namespace Microsoft.Graph.Beta.Admin
         public global::Microsoft.Graph.Beta.Admin.ReportSettings.ReportSettingsRequestBuilder ReportSettings
         {
             get => new global::Microsoft.Graph.Beta.Admin.ReportSettings.ReportSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourcePolicy property of the microsoft.graph.admin entity.</summary>
+        public global::Microsoft.Graph.Beta.Admin.ResourcePolicy.ResourcePolicyRequestBuilder ResourcePolicy
+        {
+            get => new global::Microsoft.Graph.Beta.Admin.ResourcePolicy.ResourcePolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.</summary>
         public global::Microsoft.Graph.Beta.Admin.ServiceAnnouncement.ServiceAnnouncementRequestBuilder ServiceAnnouncement

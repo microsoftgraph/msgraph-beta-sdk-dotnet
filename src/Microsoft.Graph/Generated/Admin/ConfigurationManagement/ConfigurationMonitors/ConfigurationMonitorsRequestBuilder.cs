@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ConfigurationMonitorCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ConfigurationMonitorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+        /// Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency to detect configuration drift in monitorOnly mode, or applies a desired-state baseline once in applyOnce mode.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ConfigurationMonitor"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Admin.ConfigurationManagement.ConfigurationMonito
             return requestInfo;
         }
         /// <summary>
-        /// Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+        /// Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency to detect configuration drift in monitorOnly mode, or applies a desired-state baseline once in applyOnce mode.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("date"); }
             set { BackingStore?.Set("date", value); }
         }
-        /// <summary>Indicates whether a specific time (not just a date) was provided.</summary>
+        /// <summary>Indicates whether a specific time (not just a date) was provided. Read-only.</summary>
         public bool? IsTimeSpecified
         {
             get { return BackingStore?.Get<bool?>("isTimeSpecified"); }
@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The optional time-of-day component of the value.</summary>
+        /// <summary>The optional time-of-day component of the value. Read-only.</summary>
         public Time? Time
         {
             get { return BackingStore?.Get<Time?>("time"); }
             set { BackingStore?.Set("time", value); }
         }
-        /// <summary>Time zone the time value is expressed in, if time is set.</summary>
+        /// <summary>Time zone the time value is expressed in, if time is set. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZone

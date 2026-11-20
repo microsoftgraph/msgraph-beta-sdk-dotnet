@@ -985,7 +985,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identities", value); }
         }
 #endif
-        /// <summary>The identity governance settings for the user. You can get or update the user&apos;s approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.</summary>
+        /// <summary>The identity governance settings for the user, including the approver delegate configuration. You can get or update the user&apos;s approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings? IdentityGovernance
@@ -1015,6 +1015,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("identityParentId"); }
             set { BackingStore?.Set("identityParentId", value); }
+        }
+#endif
+        /// <summary>The user&apos;s overall identity verification state and recent verification events. Retrieve through the get identity verification status operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentityVerificationStatus? IdentityVerificationStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerificationStatus?>("identityVerificationStatus"); }
+            set { BackingStore?.Set("identityVerificationStatus", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentityVerificationStatus IdentityVerificationStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentityVerificationStatus>("identityVerificationStatus"); }
+            set { BackingStore?.Set("identityVerificationStatus", value); }
         }
 #endif
         /// <summary>The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).</summary>
@@ -1129,6 +1145,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("invitedBy", value); }
         }
 #endif
+        /// <summary>Indicates whether hard deletion protection is enabled for the user (excluding on-premises synchronized users). When true, permanent deletion is blocked for seven days after soft deletion. The user can still be soft deleted and restored. Once enabled, protection can&apos;t be disabled or set to null. Enable protection on an existing user by using Update user; enabling it during creation isn&apos;t supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).</summary>
+        public bool? IsHardDeleteProtectionEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isHardDeleteProtectionEnabled"); }
+            set { BackingStore?.Set("isHardDeleteProtectionEnabled", value); }
+        }
         /// <summary>Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).</summary>
         public bool? IsLicenseReconciliationNeeded
         {
@@ -2624,6 +2646,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>(global::Microsoft.Graph.Beta.Models.ObjectIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identityGovernance", n => { IdentityGovernance = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>(global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings.CreateFromDiscriminatorValue); } },
                 { "identityParentId", n => { IdentityParentId = n.GetStringValue(); } },
+                { "identityVerificationStatus", n => { IdentityVerificationStatus = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerificationStatus>(global::Microsoft.Graph.Beta.Models.IdentityVerificationStatus.CreateFromDiscriminatorValue); } },
                 { "imAddresses", n => { ImAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "inferenceClassification", n => { InferenceClassification = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>(global::Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue); } },
                 { "infoCatalogs", n => { InfoCatalogs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -2631,6 +2654,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "insights", n => { Insights = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemInsights>(global::Microsoft.Graph.Beta.Models.ItemInsights.CreateFromDiscriminatorValue); } },
                 { "interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "invitedBy", n => { InvitedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "isHardDeleteProtectionEnabled", n => { IsHardDeleteProtectionEnabled = n.GetBoolValue(); } },
                 { "isLicenseReconciliationNeeded", n => { IsLicenseReconciliationNeeded = n.GetBoolValue(); } },
                 { "isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 { "isResourceAccount", n => { IsResourceAccount = n.GetBoolValue(); } },
@@ -2801,6 +2825,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ObjectIdentity>("identities", Identities);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernanceUserSettings>("identityGovernance", IdentityGovernance);
             writer.WriteStringValue("identityParentId", IdentityParentId);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityVerificationStatus>("identityVerificationStatus", IdentityVerificationStatus);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InferenceClassification>("inferenceClassification", InferenceClassification);
             writer.WriteCollectionOfPrimitiveValues<string>("infoCatalogs", InfoCatalogs);
@@ -2808,6 +2833,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DirectoryObject>("invitedBy", InvitedBy);
+            writer.WriteBoolValue("isHardDeleteProtectionEnabled", IsHardDeleteProtectionEnabled);
             writer.WriteBoolValue("isLicenseReconciliationNeeded", IsLicenseReconciliationNeeded);
             writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);

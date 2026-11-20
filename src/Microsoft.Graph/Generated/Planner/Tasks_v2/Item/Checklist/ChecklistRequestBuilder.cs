@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Checklist
         {
         }
         /// <summary>
-        /// The collection of checklist items on the task. Read-only. Nullable.
+        /// Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ChecklistItemV4CollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Checklist
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ChecklistItemV4>(requestInfo, global::Microsoft.Graph.Beta.Models.ChecklistItemV4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of checklist items on the task. Read-only. Nullable.
+        /// Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Checklist
             return new global::Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Checklist.ChecklistRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of checklist items on the task. Read-only. Nullable.
+        /// Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChecklistRequestBuilderGetQueryParameters 

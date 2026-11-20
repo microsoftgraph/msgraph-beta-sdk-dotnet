@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Custom extension field values set on the entity. Supports $select.</summary>
+        /// <summary>Custom extension field values set at creation. Can&apos;t be changed afterward. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ExtensionFieldCollection? Extensions
@@ -98,13 +98,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Type of content the link points to. The possible values are: documentReference, webReference, unknownFutureValue.</summary>
+        /// <summary>Type of content the link points to. Required at creation and immutable afterward. The possible values are: documentReference, webReference, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.ContentLinkType? LinkType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ContentLinkType?>("linkType"); }
             set { BackingStore?.Set("linkType", value); }
         }
-        /// <summary>URL the link points to.</summary>
+        /// <summary>URL the link points to. Required at creation and immutable afterward.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl

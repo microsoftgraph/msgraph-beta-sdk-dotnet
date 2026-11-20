@@ -415,6 +415,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
 #endif
+        /// <summary>The idJag property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdJagServicePrincipalConfiguration? IdJag
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdJagServicePrincipalConfiguration?>("idJag"); }
+            set { BackingStore?.Set("idJag", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdJagServicePrincipalConfiguration IdJag
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdJagServicePrincipalConfiguration>("idJag"); }
+            set { BackingStore?.Set("idJag", value); }
+        }
+#endif
         /// <summary>Basic profile information of the acquired application such as app&apos;s marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -436,6 +452,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<bool?>("isDisabled"); }
             set { BackingStore?.Set("isDisabled", value); }
+        }
+        /// <summary>Indicates whether hard deletion protection is enabled for the service principal. When true, permanent deletion is blocked for seven days after soft deletion. The service principal can still be soft deleted and restored. Once enabled, protection can&apos;t be disabled or set to null. Enable protection on an existing service principal by using Update servicePrincipal; enabling it during creation isn&apos;t supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).</summary>
+        public bool? IsHardDeleteProtectionEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isHardDeleteProtectionEnabled"); }
+            set { BackingStore?.Set("isHardDeleteProtectionEnabled", value); }
         }
         /// <summary>The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1003,8 +1025,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "federatedIdentityCredentials", n => { FederatedIdentityCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential>(global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>(global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "homepage", n => { Homepage = n.GetStringValue(); } },
+                { "idJag", n => { IdJag = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdJagServicePrincipalConfiguration>(global::Microsoft.Graph.Beta.Models.IdJagServicePrincipalConfiguration.CreateFromDiscriminatorValue); } },
                 { "info", n => { Info = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>(global::Microsoft.Graph.Beta.Models.InformationalUrl.CreateFromDiscriminatorValue); } },
                 { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
+                { "isHardDeleteProtectionEnabled", n => { IsHardDeleteProtectionEnabled = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>(global::Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "licenseDetails", n => { LicenseDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LicenseDetails>(global::Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lifecycle", n => { Lifecycle = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityLifecycle>(global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityLifecycle.CreateFromDiscriminatorValue); } },
@@ -1075,8 +1099,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.FederatedIdentityCredential>("federatedIdentityCredentials", FederatedIdentityCredentials);
             writer.WriteStringValue("homepage", Homepage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdJagServicePrincipalConfiguration>("idJag", IdJag);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.InformationalUrl>("info", Info);
             writer.WriteBoolValue("isDisabled", IsDisabled);
+            writer.WriteBoolValue("isHardDeleteProtectionEnabled", IsHardDeleteProtectionEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LicenseDetails>("licenseDetails", LicenseDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityLifecycle>("lifecycle", Lifecycle);

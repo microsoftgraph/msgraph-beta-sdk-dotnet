@@ -117,6 +117,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("provisioning", value); }
         }
 #endif
+        /// <summary>The resourcePolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.ResourcePolicyEvaluationEvent>? ResourcePolicy
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourcePolicyEvaluationEvent>?>("resourcePolicy"); }
+            set { BackingStore?.Set("resourcePolicy", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.ResourcePolicyEvaluationEvent> ResourcePolicy
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ResourcePolicyEvaluationEvent>>("resourcePolicy"); }
+            set { BackingStore?.Set("resourcePolicy", value); }
+        }
+#endif
         /// <summary>Represents the number of sign-in events for a specific application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,6 +229,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "directoryProvisioning", n => { DirectoryProvisioning = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>(global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>(global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resourcePolicy", n => { ResourcePolicy = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourcePolicyEvaluationEvent>(global::Microsoft.Graph.Beta.Models.ResourcePolicyEvaluationEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signInEventsAppSummary", n => { SignInEventsAppSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity>(global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signInEventsSummary", n => { SignInEventsSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsActivity>(global::Microsoft.Graph.Beta.Models.SignInEventsActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signIns", n => { SignIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignIn>(global::Microsoft.Graph.Beta.Models.SignIn.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -232,6 +249,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>("directoryProvisioning", DirectoryProvisioning);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>("provisioning", Provisioning);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ResourcePolicyEvaluationEvent>("resourcePolicy", ResourcePolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsAppActivity>("signInEventsAppSummary", SignInEventsAppSummary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignInEventsActivity>("signInEventsSummary", SignInEventsSummary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SignIn>("signIns", SignIns);

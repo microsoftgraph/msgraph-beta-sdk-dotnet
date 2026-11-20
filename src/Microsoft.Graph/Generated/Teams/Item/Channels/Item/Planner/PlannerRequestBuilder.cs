@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
         {
         }
         /// <summary>
-        /// Delete a teamsChannelPlanner object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-delete-planner?view=graph-rest-beta" />
+        /// Delete navigation property planner for teams
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,8 +93,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a teamsChannelPlanner object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamschannelplanner-update?view=graph-rest-beta" />
+        /// Update the navigation property planner in teams
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamsChannelPlanner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a teamsChannelPlanner object.
+        /// Delete navigation property planner for teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Planner
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a teamsChannelPlanner object.
+        /// Update the navigation property planner in teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

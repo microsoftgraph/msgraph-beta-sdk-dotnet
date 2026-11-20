@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Plan : global::Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Information about whether the entity is archived, and when it was archived.</summary>
+        /// <summary>Service-populated information about whether the entity is archived, and when it was archived. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PlannerArchivalInfo? ArchivalInfo
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentSensitivityLabelAssignment", value); }
         }
 #endif
-        /// <summary>The collection of context links describing where the plan is surfaced. Read-only. Nullable.</summary>
+        /// <summary>Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PlanContextLink>? Contexts
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Duration of the plan, in days.</summary>
+        /// <summary>Computed duration of the plan, in seconds. Read-only.</summary>
         public int? Duration
         {
             get { return BackingStore?.Get<int?>("duration"); }
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("goals", value); }
         }
 #endif
-        /// <summary>Indicates whether the plan has an associated chat.</summary>
+        /// <summary>Indicates whether the plan has an associated chat. Read-only.</summary>
         public bool? HasChat
         {
             get { return BackingStore?.Get<bool?>("hasChat"); }
@@ -270,7 +270,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The collection of content links attached to the plan. Read-only. Nullable.</summary>
+        /// <summary>Content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ContentLink>? Links

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.UserAssignments.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of user assignments on the task. Read-only. Nullable.
+        /// User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UserAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.UserAssignments.Item
             return requestInfo;
         }
         /// <summary>
-        /// The collection of user assignments on the task. Read-only. Nullable.
+        /// User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.UserAssignments.Item
         {
         }
         /// <summary>
-        /// The collection of user assignments on the task. Read-only. Nullable.
+        /// User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserAssignmentItemRequestBuilderGetQueryParameters 

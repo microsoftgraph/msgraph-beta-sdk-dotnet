@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Links.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of content links attached to the task. Read-only. Nullable.
+        /// Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ContentLink"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Links.Item
             return requestInfo;
         }
         /// <summary>
-        /// The collection of content links attached to the task. Read-only. Nullable.
+        /// Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks_v2.Item.Links.Item
         {
         }
         /// <summary>
-        /// The collection of content links attached to the task. Read-only. Nullable.
+        /// Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContentLinkItemRequestBuilderGetQueryParameters 
